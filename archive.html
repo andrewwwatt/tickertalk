@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — Ticker Talk</title>
+<style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
+
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
+
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
+
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
+
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
+
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
+</nav>
+<h1>Archive</h1>
+
+<div class="grand">
+  🟢 34 Bullish · 🟡 27 Neutral · 🔴 7 Bearish · 
+  📊 58 Companies · 📅 15 Editions
+</div>
+
+<div class="filter-bar">
+  <label for="companyFilter">Company:</label>
+  <select id="companyFilter" onchange="filter(this.value)">
+    <option value="">All Companies</option>
+    <option value="ABG">Absa Group (ABG)</option>
+    <option value="APF">Accelerate Property Fund (APF)</option>
+    <option value="APN">Aspen Pharmacare (APN)</option>
+    <option value="BHG">BHP Group (BHG)</option>
+    <option value="BWN">Balwin Properties (BWN)</option>
+    <option value="BLU">Blu Label Unlimited Group (BLU)</option>
+    <option value="BTI">British American Tobacco (BTI)</option>
+    <option value="CAA">CA Sales Holdings (CAA)</option>
+    <option value="CAC">CAFCA (CAC)</option>
+    <option value="CSB">Cashbuild (CSB)</option>
+    <option value="CCD">Cell C Holdings (CCD)</option>
+    <option value="CCC">Cilo Cybin (CCC)</option>
+    <option value="CPR">Copper 360 (CPR)</option>
+    <option value="DRD">DRDGOLD (DRD)</option>
+    <option value="EXX">Exxaro Resources (EXX)</option>
+    <option value="GND">Grindrod (GND)</option>
+    <option value="HCI">Hosken Consolidated Investments (HCI)</option>
+    <option value="HLM">Hulamin (HLM)</option>
+    <option value="IMP">Impala Platinum (IMP)</option>
+    <option value="ITE">Italtile (ITE)</option>
+    <option value="JSE">JSE Limited (JSE)</option>
+    <option value="KAP">KAP Limited (KAP)</option>
+    <option value="LSK">Lesaka Technologies (LSK)</option>
+    <option value="LBR">Libstar Holdings (LBR)</option>
+    <option value="MTN">MTN Group (MTN)</option>
+    <option value="MTA">Metair Investments (MTA)</option>
+    <option value="NRP">NEPI Rockcastle (NRP)</option>
+    <option value="NPN">Naspers (NPN)</option>
+    <option value="NED">Nedbank Group (NED)</option>
+    <option value="NHM">Northam Platinum (NHM)</option>
+    <option value="OUT">OUTsurance Group (OUT)</option>
+    <option value="OAO">Oando PLC (OAO)</option>
+    <option value="PIK">Pick n Pay (PIK)</option>
+    <option value="PWR">Powerfleet (PWR)</option>
+    <option value="PMV">Primeserv Group (PMV)</option>
+    <option value="QLT">Quilter (QLT)</option>
+    <option value="RCL">RCL Foods (RCL)</option>
+    <option value="RBO">Rainbow Chicken (RBO)</option>
+    <option value="RDF">Redefine Properties (RDF)</option>
+    <option value="REN">Renergen (REN)</option>
+    <option value="RES">Resilient REIT (RES)</option>
+    <option value="SBP">Sabvest Capital (SBP)</option>
+    <option value="SAP">Sappi (SAP)</option>
+    <option value="SOL">Sasol (SOL)</option>
+    <option value="SEB">Sebata Holdings (SEB)</option>
+    <option value="SHP">Shoprite (SHP)</option>
+    <option value="SOH">South Ocean Holdings (SOH)</option>
+    <option value="SUR">Spur Corporation (SUR)</option>
+    <option value="SDO">Stadio Holdings (SDO)</option>
+    <option value="SSS">Stor-Age Property REIT (SSS)</option>
+    <option value="SUI">Sun International (SUI)</option>
+    <option value="SPG">Super Group (SPG)</option>
+    <option value="TKG">Telkom (TKG)</option>
+    <option value="SPP">The SPAR Group (SPP)</option>
+    <option value="TGA">Thungela Resources (TGA)</option>
+    <option value="TTO">Trustco Group Holdings (TTO)</option>
+    <option value="TRU">Truworths International (TRU)</option>
+    <option value="WVR">Weaver Fintech (WVR)</option>
+  </select>
+  <span style="font-size:0.8em;color:var(--muted)" id="filterCount"></span>
+</div>
+<div class="date-header">21 Aug 2026 — 3 reviews</div>
+<div class="review neutral" data-t="TRU">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
+  <div class="r-title">Changes to the Board — Retirement of Chairman Hilton Saven after 23 Years</div>
+  <div class="r-prev">← Previous: NEUTRAL on 13 Aug</div>
+  <div class="r-summary">Truworths chairman Hilton Saven is retiring at the November AGM after 23 years on the board. Annemarie Mostert will succeed him. Saven steered Truworths through the post-2015 credit crisis, the Office Shoes acquisition, and the Covid retail wipeout. This is a planned, orderly transition — not a governance panic. But losing a chair who's seen every retail cycle since Mandela was president is a milestone worth noting.</div>
+  <div class="r-body"><p>Hilton Saven is the last of the old guard at Truworths — he joined the board in 2003, became chair in 2005, and has sat through every boom and bust in SA retail for two decades. His retirement at the 5 November AGM is entirely orderly: Annemarie Mostert, an independent non-executive who joined the board in 2021, takes the chair. The board is also refreshing its committee composition with effect from the AGM. This is textbook corporate governance succession — no midnight departures, no 'pursuing other interests', no emergency replacements.</p>
+<p>Does it change the investment case? No. Truworths is still the same business it was last week: a well-run fashion retailer with a 25.9% ROE, 6.95x PE, and 1.73x P/B, trading at R51.61. The full-year results on 27 August (EPS guided 715-730c, down 2-4%) will tell you more about the near term than a board change. The consumer is still stretched, the Middle East oil spike still hurts the discretionary wallet, and the UK (Office) still faces a stronger rand headwind. But Saven's departure matters symbolically — it closes the chapter on the leadership that built Truworths into SA's most profitable fashion retailer. Mostert inherits a good business at a tricky moment. Rating: NEUTRAL. No red flags, no catalysts. A respectful handover at a company that does governance properly.</p></div>
+  <div class="r-metrics"><span>PE: 6.95</span> · <span>P/B: 1.73</span> · <span>ROE: 25.9%</span> · <span>R51.61</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-changes-to-the-board-and-board-committees-2/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="CCD">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Cell C Holdings <span class="r-ticker">(CCD)</span></div>
+  <div class="r-title">Audited Financial Results for the Year Ended 31 May 2026</div>
+  
+  <div class="r-summary">Cell C's maiden results as a JSE-listed company are a proper flex. HEPS R23.37 (+57.4%), group revenue R12.64bn (+14%), reported EBITDA R5.5bn (+162%), adjusted EBITDA R2.4bn (+16.9%). Net debt slashed 64% to R2.02bn. 8.9m subscribers. CEO Jorge Mendes is projecting R3bn adjusted EBITDA in FY2027. The turnaround is real — but the R11.2bn enterprise value (2.18x EV/EBITDA on the headline number) says the market is still cautious.</div>
+  <div class="r-body"><p>Cell C has spent five years in the wilderness — balance sheet restructuring, network-sharing deals with MTN and Vodacom, and a brand that was getting lapped by Telkom Mobile. These maiden JSE results are the first proper look at the post-restructuring Cell C, and the picture is better than the market expected. Service revenue grew 6% to R11.64bn, prepaid revenue up 9.7%, and the wholesale/MVNO business jumped 20% — the capex-light model is working. The headline EBITDA of R5.5bn is flattered by R3.1bn in pre-listing restructuring gains, but even the clean adjusted EBITDA of R2.4bn (up 16.9%) shows the operating engine is turning.</p>
+<p>The balance sheet is the real win. Net debt collapsed from R5.69bn to R2.02bn — leverage of 1.56x against the clean EBITDA, 0.50x against the headline figure. That's night-and-day different from the R9.1bn working capital deficit of a year ago. The caution: current ratio of 0.58 and an Altman Z-score of -0.83 suggest the turnaround isn't complete, and the R11.2bn enterprise value (PE 6.73x on trailing, 4.94x forward) reflects the market's lingering scepticism. CEO Mendes guided FY2027 adjusted EBITDA of ~R3bn — if he delivers, the re-rating will be violent. Rating: BULLISH. The worst is behind Cell C. The market is still pricing in failure; the numbers say recovery.</p></div>
+  <div class="r-metrics"><span>PE: 6.73</span> · <span>P/B: 3.55</span> · <span>R26.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/cell-c-holdings-limited-audited-financial-results-for-the-year-ended-31-may-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="APN">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
+  <div class="r-title">Business Update and Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">Aspen's FY2026 numbers are a tale of two earnings lines. Normalised HEPS from total operations is guided 550-620c — more than double last year's comparable. But R2.3bn in manufacturing restructuring costs flips basic EPS to a loss of ~243.9c. The operational engine (Commercial Pharma + Manufacturing) is building momentum; the P&L is still absorbing the cost of the strategic pivot. Forward PE 17x at R147.63. Results 2 September.</div>
+  <div class="r-body"><p>Aspen spent FY2026 executing the manufacturing restructuring it flagged 18 months ago — rationalising its sterile manufacturing footprint, closing high-cost sites, and shifting to a leaner contract manufacturing model. The R2.3bn bill (roughly R5.18 per share) is the accounting cost of that pivot. It's a one-off, but it's a big one. Excluding it, the underlying business tells a much better story: normalised HEPS of 550-620 cents represents >100% growth on the prior year's comparable base, driven by the Commercial Pharmaceuticals brands (the Anaesthetics portfolio, thrombosis, and the regional brands in Africa, Asia, and Latin America) and improved manufacturing utilisation.</p>
+<p>Group revenue was supported by the Anaesthetics portfolio and a weaker rand, while the Manufacturing segment benefited from contract wins that were part of the restructuring strategy. The balance sheet carries R33bn in debt against a R65.6bn market cap — D/E of 0.41 is manageable, and interest cover of 3.29x is adequate but not comfortable. The stock at R147.63 trades on 0.81x book with a forward PE of 17x — not cheap, but pricing in the recovery. The 2 September results will be the acid test: can Aspen show revenue momentum in Commercial Pharma while keeping the restructuring on track? Rating: NEUTRAL. The operational turnaround is real, but the restructuring bill is a blunt reminder that pivoting a global pharma manufacturer is expensive and messy. Watch results day.</p></div>
+  <div class="r-metrics"><span>P/B: 0.81</span> · <span>ROE: -2.2%</span> · <span>R147.63</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-business-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">20 Aug 2026 — 6 reviews</div>
+<div class="review bullish" data-t="SUR">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Spur Corporation <span class="r-ticker">(SUR)</span></div>
+  <div class="r-title">Audited Annual Financial Statements for the Year Ended 30 June 2026 and Cash Dividend</div>
+  <div class="r-prev">← Previous: NEUTRAL on 07 Aug</div>
+  <div class="r-summary">Ignore the GPS noise — adjusted HEPS +8.9% to 370c, dividend +9% to 326c (7.6% yield). Restaurant sales +6.9% to R12.3bn. Adjusted PE of 11.4x is cheap for a 22.6% ROE franchise.</div>
+  <div class="r-body"><p>Spur's FY26 results require reading past the headline. Reported earnings were clobbered by a GPS litigation provision: EPS -36.1% to 215.69c, HEPS -38.4% to 209.32c. Strip that out and the real picture emerges: adjusted HEPS +8.9% to 370.28 cents, adjusted PBT +12.8% to R453.1 million. Franchised restaurant turnover rose 6.9% to R12.3 billion in a consumer environment that's been brutal for discretionary spending. The board lifted the dividend 9% to 326 cents — a 7.6% yield at R43.</p>
+<p>The market is pricing Spur on the reported PE of 20.5x, but the adjusted PE is just 11.4x — a yawning gap that won't persist. ROE of 21.9%, ROIC of 38.2%, net cash on the balance sheet. This is a franchise machine with strong brands (Spur, Panarottis, RocoMamas, The Hussar Grill) that consistently generates cash and returns it to shareholders. The GPS provision is a one-time legal contingency, not an operational problem. At 7.6% yield and double-digit underlying earnings growth, Spur is the best value in SA consumer discretionary right now.</p></div>
+  <div class="r-metrics"><span>PE: 20.51</span> · <span>P/B: 4.26</span> · <span>ROE: 21.9%</span> · <span>R43.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/spur-corporation-limited-consolidated-audited-annual-financial-statements-for-the-financial-year-ended-30-june-2026-annual-financial-statements-and-payment-of-cash-dividend/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="SUI">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sun International <span class="r-ticker">(SUI)</span></div>
+  <div class="r-title">Retirement of CFO Norman Basthdaw and Appointment of Vanessa Olver as New CFO</div>
+  
+  <div class="r-summary">CFO Norman Basthdaw retiring April 2027. Vanessa Olver (ex-Standard Bank Africa FD, BCX CFO, Investec board) taking over Jan 2027. Textbook succession — smooth 4-month handover. Business itself trades at just 7.5x PE with 51% ROE.</div>
+  <div class="r-body"><p>Sun International announced a CFO transition that's about as well-managed as these things get. Norman Basthdaw, CFO since 2017 and a 13-year veteran of the group, reaches normal retirement age in April 2027. His replacement, Vanessa Olver, brings heavyweight credentials: Finance Director for Standard Bank Africa, CFO and Deputy CEO of Business Connexion, and currently an independent non-executive at Investec where she chairs the Audit and Risk Committee. She starts 1 January 2027, giving a full four-month handover period.</p>
+<p>This announcement tells us nothing about trading, and that's fine — it's a governance update. But the context matters: Sun International trades on 7.48x trailing PE, 3.24x PB, and a staggering 50.91% ROE. The business is a cash machine (P/FCF of 6.32x) albeit with meaningful debt (D/E 1.54x). The next catalyst is FY26 results on 7 September. The CFO transition is well-handled and Olver's resume suggests the finance function is in good hands. But no rating change without fresh trading data.</p></div>
+  <div class="r-metrics"><span>PE: 7.48</span> · <span>P/B: 3.24</span> · <span>ROE: 50.9%</span> · <span>R49.37</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sun-international-limited-retirement-of-mr-n-basthdaw-and-appointment-of-ms-v-olver-as-new-chief-financial-officer-and-finance-director-of-sun-international/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SOH">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">South Ocean Holdings <span class="r-ticker">(SOH)</span></div>
+  <div class="r-title">Unaudited Summarised Results for the Six Months Ended 30 June 2026</div>
+  <div class="r-prev">← Previous: BULLISH on 17 Aug</div>
+  <div class="r-summary">Revenue +30.1% to R1.53bn, swing from R31.6m operating loss to R30.1m profit. EPS 8.02c vs -9.31c. At R1.10, trades at 0.34x NAV. The electrical cable turnaround is real and accelerating.</div>
+  <div class="r-body"><p>South Ocean Holdings didn't just deliver on its trading statement promise — it exceeded it. Revenue surged 30.1% to R1.53 billion, driven by strong demand for electrical cable as infrastructure spend and renewable energy projects ramp up. The group swung from a R31.6 million operating loss to a R30.1 million profit — a R61.7 million turnaround in six months. Earnings per share came in at 8.02 cents versus a restated loss of 9.31 cents. Net asset value ticked up 4.1% to 327.6 cents per share.</p>
+<p>At R1.10, SOH trades at a 66% discount to book value (0.34x P/B). On an annualised basis, the stock is on roughly 6.9x PE — cheap for a business showing 30% revenue momentum. The caveats: no dividend (all cash goes to working capital), thin liquidity (average daily volume of ~11,000 shares), and it's a small-cap in an industry with lumpy project cycles. But the operational trajectory is hard to argue with. After years of disappointment, South Ocean is finally delivering. For patient small-cap investors, this is a genuine deep-value play with improving fundamentals.</p></div>
+  <div class="r-metrics"><span>P/B: 0.35</span> · <span>ROE: -2.3%</span> · <span>R1.10</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/south-ocean-holdings-limited-unaudited-summaried-results-announcement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="LBR">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Libstar Holdings <span class="r-ticker">(LBR)</span></div>
+  <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">Total HEPS -18 to -28% at 12.1-13.7c, but normalised HEPS broadly flat at 23-25c. Dickon Hall integration is the villain — four of seven sub-categories growing. Forward PE of 5x is either a steal or a trap. Full results 8 Sep.</div>
+  <div class="r-body"><p>Libstar's trading statement confirms what the June pre-close update telegraphed: the Dickon Hall Foods division is a serious drag. Total HEPS is expected at 12.1-13.7 cents (down 18-27.5%) and total EPS at 8.0-9.6 cents (down 37-47%). But peel back the non-recurring and non-cash items — impairments, integration costs, unrealised forex — and normalised HEPS lands at 23.0-25.4 cents, essentially flat against last year's 24.8 cents. Four of seven food sub-categories (Dairy, Value-Added Meats, Select Products, Baking) are growing EBITDA. The pain is concentrated.</p>
+<p>At R3.75, the stock looks absurdly cheap on normalised earnings: forward PE around 5x, price-to-book 0.47x, EV/EBITDA 3.59x. The question is whether Dickon Hall's integration into Montagu Foods is a temporary operational headache or a permanent impairment of value. Management sounds confident in a second-half recovery, and the balance sheet (current ratio 2.27x, D/E 0.41x) gives them room to execute. Full interim results on 8 September will be the moment of truth. Too early to call this a buy, but the risk-reward is tilting interesting.</p></div>
+  <div class="r-metrics"><span>PE: 28.17</span> · <span>P/B: 0.47</span> · <span>ROE: 1.6%</span> · <span>R3.75</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/libstar-holdings-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="EXX">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Exxaro Resources <span class="r-ticker">(EXX)</span></div>
+  <div class="r-title">Reviewed Financial Results for the six-month period ended 30 June 2026 and Interim Dividend</div>
+  <div class="r-prev">← Previous: NEUTRAL on 14 Aug</div>
+  <div class="r-summary">Revenue up 7% to R22.1bn but HEPS down 20% to 1,377c as softer coal prices bite. Interim dividend cut 17% to 700c — still a 7.6% yield but the earnings trajectory isn't your friend.</div>
+  <div class="r-body"><p>Exxaro delivered exactly what the trading statement warned: HEPS of 1,377 cents, down 20% from 1,724c a year ago. Revenue grew 7% to R22.1 billion on higher coal volumes, but that volume gain was more than offset by weaker coal prices — the classic commodity producer's dilemma. The board declared a 700c interim dividend, down 17% from last year's 843c, but still representing a chunky 7.6% annualised yield at R184.</p>
+<p>The balance sheet remains fortress-grade with net cash (ex-Cennergi debt) and a current ratio of 2.95x. At 6.45x trailing PE and 0.60x price-to-book, Exxaro screens as deeply cheap. But commodity stocks are always cheap at the top of the cycle and get cheaper on the way down. The forward PE of 4.82x tells you analysts expect further earnings compression. With coal under structural pressure from decarbonisation, the dividend is the only reason to stick around — and even that's shrinking. If you're a yield hunter, 7.6% is tempting. If you're looking for capital appreciation, look elsewhere.</p></div>
+  <div class="r-metrics"><span>PE: 6.45</span> · <span>P/B: 0.60</span> · <span>ROE: 12.4%</span> · <span>R184.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/exxaro-resources-limited-reviewed-financial-results-for-the-six-month-period-ended-30-june-2026-and-interim-dividend/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="CAA">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">CA Sales Holdings <span class="r-ticker">(CAA)</span></div>
+  <div class="r-title">Unaudited results for the six months ended 30 June 2026</div>
+  
+  <div class="r-summary">Revenue +2.2% to R6.08bn, HEPS +5.9% to 53.41c. Solid but uninspiring. Acquisitions of Sunpac and Pantry Club add capabilities. Strong ROE of 20.5% but the stock's down 24% over 12 months for a reason.</div>
+  <div class="r-body"><p>CA Sales delivered a characteristically steady set of numbers: revenue grew 2.2% to R6.08 billion, headline earnings per share rose 5.9% to 53.41 cents, and operating profit ticked up 2.3%. The Botswana pula's depreciation against the rand shaved something off the top line — constant-currency growth would look better. The group deployed R204 million to acquire Sunpac (private-label distribution) and also took a controlling stake in Pantry Club (e-commerce), both sensible bolt-ons to the route-to-market platform.</p>
+<p>At R13.55, the stock trades on 11.89x trailing PE and 2.22x book. ROE of 20.46% and ROIC of 21.93% against a WACC of 4.6% confirm this is a genuine value compounder. But the market has de-rated it 24% over 12 months — partly macro (Africa risk, currency), partly growth (2% revenue growth doesn't excite anyone). Management expects a stronger H2 from recent acquisitions, and the balance sheet has capacity for more. If you believe in Africa's consumer story, this is a quality operator at a reasonable price. If you need catalysts, keep looking.</p></div>
+  <div class="r-metrics"><span>PE: 11.89</span> · <span>P/B: 2.22</span> · <span>ROE: 20.5%</span> · <span>R13.55</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/ca-sales-holdings-limited-unaudited-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">19 Aug 2026 — 3 reviews</div>
+<div class="review neutral" data-t="KAP">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">KAP Limited <span class="r-ticker">(KAP)</span></div>
+  <div class="r-title">Update on the Merger of PG Bison Southern Cape and Mto Forestry Businesses</div>
+  <div class="r-prev">← Previous: NEUTRAL on 14 Aug</div>
+  <div class="r-summary">KAP's forestry merger is still happening — but with a detour. Safcol (the state forestry company) hasn't transferred its MTO Forestry shares to the community trust as planned, so the deal has been restructured. Safcol retains 11.32% of MTO Forestry pending the trust's establishment. PG Bison will end up with 49% of the merged Cape Forest Products entity, with Wild Peach holding 51%. The effective date is now 1 October 2026. The deal is alive, but the state's involvement continues to complicate things.</div>
+  <div class="r-body"><p>KAP announced the PG Bison/Mto Forestry merger back in October 2025 — a sensible deal to consolidate the Southern Cape's forestry and sawmilling operations into a single, more efficient entity called Cape Forest Products. The original plan was for Safcol to transfer its MTO Forestry shares to a community trust, which would then hold the community's stake in CFP. That hasn't happened. The SENS is diplomatic — 'Safcol has not transferred its shares' — but the subtext is clear: the state's community empowerment machinery is grinding slowly, and the deal can't wait.</p>
+<p>The amended structure keeps the deal alive. Safcol will retain a minority 11.32% of MTO Forestry pending the trust's establishment, and PG Bison's subsidiary (PGBSC) will be sold to Cape Pine Investment Holdings instead of merging directly. The end result is the same: PG Bison gets 49% of CFP, Wild Peach gets 51%, and the combined forestry/sawmilling operations achieve scale. The Competition Commission already approved the deal in May 2026, and the Competition authorities have been notified of the amended structure. Effective date: 1 October 2026. This is a follow-up to our 14 August KAP review — the operational turnaround is real (HEPS +82-92%), but the balance sheet is still saddled with goodwill impairments. The forestry merger is a sensible move to extract value from a non-core asset. Rating: NEUTRAL. The deal is progressing, but Safcol's inability to execute on its side of the bargain is a reminder that state-owned entities remain a wildcard in any transaction. Watch for the 1 October effective date.</p></div>
+  <div class="r-metrics"><span>PE: 55.07</span> · <span>P/B: 0.52</span> · <span>ROE: 1.5%</span> · <span>R2.75</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/kap-limited-update-on-the-merger-of-the-southern-cape-forestry-and-sawmilling-businesses-of-pg-bison-southern-cape-pty-ltd-and-mto-forestry-pty-ltd/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="DRD">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">DRDGOLD <span class="r-ticker">(DRD)</span></div>
+  <div class="r-title">Reviewed Condensed Consolidated Financial Statements and Dividend Declaration for the Year Ended 30 June 2026</div>
+  <div class="r-prev">← Previous: BULLISH on 13 Aug</div>
+  <div class="r-summary">DRDGOLD delivered exactly as promised — and then some. Revenue R11.16bn (+42%), operating profit R6.45bn (+83%), EPS 492.1c (+89%), HEPS 491.9c (+89%). Final dividend 120c per share, tripling last year's 40c. The gold tailings machine is printing cash, and the R1.63bn tax bill is a happy problem. Zero bank debt, R2.8bn in cash. This is what happens when you own exposed gold at a fixed cost base.</div>
+  <div class="r-body"><p>The numbers land almost precisely on the midpoints of the 13 August trading statement guidance (EPS 481.4-507.4c, HEPS 481.3-507.3c). Revenue of R11,159 million is up 42% on R7,878 million in FY2025, driven by a 40% higher average rand gold price received of R2,289,250/kg. Gold sold was essentially flat at 4,865kg. The operating leverage in this business is breathtaking: operating profit of R6,452 million, up 83%. The EBITDA margin is staggering — the tailings-retreatment model delivers a cost base that barely moves while the revenue line soars. That's the whole investment thesis in one sentence.</p>
+<p>The dividend is the exclamation point. 120 cents per share final — triple last year's 40c — and the R120c dividend alone represents a 2.7% yield on the R44.65 share price. The balance sheet remains fortress-grade: R2.8 billion in cash, zero bank debt, and R1bn+ in undrawn revolving facilities. Capex surged 57% to R3.5bn to fund the Far West Gold Recoveries expansion, all funded from internal cash flow. The 39.4% ROE, 3.05x P/B, and 9.14x trailing PE look expensive only if you think gold is rolling over. At R44.65, the forward PE of 8.08x suggests the market is still cautious. Rating: BULLISH. DRDGOLD is the purest gold-price leverage on the JSE. The day the rand gold price drops, this stock drops harder. But while gold stays above $3,000 and the rand stays weak, DRDGOLD is a money printer. Follow-up on our 13 August call — the numbers delivered.</p></div>
+  <div class="r-metrics"><span>PE: 9.14</span> · <span>P/B: 3.05</span> · <span>ROE: 39.4%</span> · <span>R44.65</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/drdgold-limited-reviewed-condensed-consolidated-financial-statements-and-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="CSB">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Cashbuild <span class="r-ticker">(CSB)</span></div>
+  <div class="r-title">Trading Statement for the 52 Weeks Ended 28 June 2026</div>
+  
+  <div class="r-summary">Cashbuild's headline numbers are ugly — EPS guided down 22-27% to 765.2-817.4c. But the real story is the Malawi exit. Strip out the R1.74/share loss on the Malawi disposal and HEPS is down a more manageable 5-10% to 939.1-991.1c. The core SA business is holding up, and the stock got punished 3.2% on the day. At 9.4x forward PE and 1.28x book, the market is pricing in a lot of bad news that may already be behind it.</div>
+  <div class="r-body"><p>Cashbuild is South Africa's largest retailer of building materials and hardware, serving the low-to-middle-income home improvement market. The trading statement for the 52 weeks to June 2026 shows a tale of two numbers. The reported EPS of 765.2-817.4 cents is down 22-27% from last year's 1,042.5 cents — a headline disaster. But the HEPS range of 939.1-991.1 cents is down just 5-10% from 1,040.4 cents. The entire difference is the loss on the disposal of the Malawi subsidiary, which the company had flagged as a non-core exit. The market sold the stock 3.2% to R118.99 anyway — classic headline-driven panic.</p>
+<p>The underlying SA business is not thriving, but it's not collapsing either. The Q4 operational update from 23 July showed revenue up 3% with selling inflation of just 1.5% — implying real volume growth. The balance sheet carries manageable debt (D/E 0.84) and the forward PE of 9.42x on expected HEPS of ~R10.00 is reasonable for a defensive retailer with a 60% institutional shareholder base. The R2.45bn market cap is not demanding. The real question is whether the SA consumer — battered by fuel prices, the Middle East conflict's oil spike, and still-high interest rates — can sustain building and renovation spending. Results 2 September will give the full picture. Rating: BEARISH on the headline, but the Malawi-adjusted numbers are less alarming. This is a show-me story. Watch the September results for colour on the SA consumer.</p></div>
+  <div class="r-metrics"><span>PE: 12.11</span> · <span>P/B: 1.28</span> · <span>ROE: 11.5%</span> · <span>R118.99</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/cashbuild-limited-trading-statement-10/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">18 Aug 2026 — 4 reviews</div>
+<div class="review neutral" data-t="TTO">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Trustco Group Holdings <span class="r-ticker">(TTO)</span></div>
+  <div class="r-title">Requisitioned General Meeting — All Resolutions to Remove Directors Fail</div>
+  
+  <div class="r-summary">Trustco's dissident shareholder revolt collapsed. The requisitioned GM was ruled invalid — the requisitionist wasn't even a member. All seven resolutions to remove directors (including founder Quinton van Rooyen) failed by ~58% to ~42% margins. The attempted boardroom coup is dead. For a company that hasn't updated its stock price since January 2025, this is corporate theatre that changes nothing.</div>
+  <div class="r-body"><p>The Trustco saga has lurched from opaque to absurd. A shareholder group called a general meeting to oust the entire board — including founder and controlling figure Quinton van Rooyen — and replace them with a slate of five new directors. The meeting was held on 18 August. The result: the meeting was found not to be validly requisitioned because the requisitionist wasn't even a registered member of Trustco Group Holdings. Despite the invalidity, voting was allowed 'for record purposes', and every single removal resolution failed by roughly 58% against to 42% for. The proposed new directors fared even worse — 58.3% against to 41.7% for.</p>
+<p>This is the definition of a pointless SENS. The company trades at 30 cents on the JSE — a price that hasn't budged since the stock was suspended or went dormant in January 2025. Revenue and net income are negative, there's no PE ratio to speak of, and the stock has lost 40% of its value over the past year. The requisitioned meeting was a sideshow designed to give the appearance of shareholder activism, but without the legal standing to back it up. Rating: NEUTRAL. Trustco remains what it has been for years: a governance black box trading in penny stock territory. The boardroom drama changes nothing. Stay away unless you have a very specific reason to be here.</p></div>
+  <div class="r-metrics"><span>R0.30</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/trustco-group-holdings-limited-requisitioned-general-meeting/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="NRP">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">NEPI Rockcastle <span class="r-ticker">(NRP)</span></div>
+  <div class="r-title">Reviewed Interim Condensed Consolidated Financial Statements for Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">NEPI Rockcastle delivered another textbook set of results. Net rental income +3.8% to €318M, DEPS +3.5% to 32.14c, distribution +3.5% to 28.93c (90% payout). Portfolio value rose €126M to €8.4bn with 98.2% occupancy. S&P upgraded to BBB+. Guidance raised to 3.5-4% DEPS growth for FY2026. First investment outside CEE — a Bilbao, Spain acquisition. This is what compound growth looks like in retail property.</div>
+  <div class="r-body"><p>NEPI Rockcastle is the best property company on the JSE and it's not close. The H1 2026 numbers are classic NRP: not flashy, just relentlessly consistent. Net rental income grew 3.8% to €317.7M, distributable earnings per share rose 3.5% to 32.14 euro cents, and the distribution followed at 28.93c. The 90% payout ratio is maintained while LTV stays at a conservative 33.1% — well below the 35% strategic threshold. Tenant sales were 2.7% higher like-for-like with average basket size up 3.3%. The recovery rate hit 99% by July. These are the numbers of a business with genuine pricing power.</p>
+<p>The S&P upgrade to BBB+ in July 2026 is the cherry on top — it validates the balance sheet quality and opens the door to cheaper debt for the development pipeline. Speaking of which: NEPI's first investment outside Central and Eastern Europe, in Bilbao, Spain, signals that management sees growth opportunities beyond its traditional hunting ground. Guidance was raised to 3.5-4% DEPS growth for the full year. At R149.55, NRP trades on a PE of 10.9x and 1.12x book with a yield of ~7.7% (in EUR terms). Rating: BULLISH. NEPI is the closest thing the JSE has to a sure bet. Buy the compounder, collect the dividends, sleep well.</p></div>
+  <div class="r-metrics"><span>PE: 10.91</span> · <span>P/B: 1.12</span> · <span>ROE: 10.3%</span> · <span>R149.55</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/nepi-rockcastle-nv-reviewed-interim-condensed-consolidated-financial-statements-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="BHG">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">BHP Group <span class="r-ticker">(BHG)</span></div>
+  <div class="r-title">FY2026 Full Year Results</div>
+  
+  <div class="r-summary">BHP's FY2026 is a copper story disguised as a mining result. Underlying profit +30% to $13.2bn, revenue +15.6% to $59.3bn. Copper operating earnings of $18.19bn surpassed iron ore ($14.53bn) for the first time as the dominant earnings driver. Full-year dividend $1.72/share — the highest in four years. Net debt down to $8.7bn. New CEO Brandon Craig is pushing a copper growth vision to 40% more production by 2035.</div>
+  <div class="r-body"><p>Copper has officially dethroned iron ore as BHP's profit engine. Operating earnings from copper hit $18.19 billion in FY2026, well ahead of iron ore's $14.53 billion. That's a tectonic shift for a company that built its fortune on Pilbara red dirt. Record copper prices above $14,000/ton — driven by AI data centre buildouts and the energy transition — transformed BHP's earnings power. The underlying attributable profit of $13.20 billion came in 4% above consensus, and the full-year dividend of $1.72 per share (final: 99 US cents) is the biggest shareholder return since FY2022. The stock jumped as much as 4.2% in Sydney on the news.</p>
+<p>New CEO Brandon Craig, just one month into the job, is talking copper growth — 40% more production by 2035 from the project pipeline, even as near-term output dips. The Jansen potash project adds a third leg to the stool. Iron ore's Western Australia operations grew earnings 2% to $14.67bn despite Port Hedland labour tensions, and net debt fell to $8.69bn — below the $10-12bn target range. The JSE listing trades at R719.57 with a PE of 23.2x, which looks full but reflects the copper growth premium. Rating: BULLISH. BHP is no longer an iron ore miner with copper on the side. It's a copper supermajor that also happens to dig up iron ore. The highest dividend in four years is just the cherry on top.</p></div>
+  <div class="r-metrics"><span>PE: 23.21</span> · <span>R719.57</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/bhp-group-limited-fy-2026-results-announcement/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="ABG">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Absa Group <span class="r-ticker">(ABG)</span></div>
+  <div class="r-title">Unaudited Consolidated Interim Results for Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">Absa delivered a clean set of numbers. HEPS +7.9% to 1,545c, revenue +4.1% to R58.8bn, dividend +8.3% to 850c. ROE holding at 15%, cost-to-income 53.4%. Stage 3 loan ratio improved from 5.90% to 5.30%. CET1 12.8%. At 8x PE and 0.94x book with a 7.6% dividend yield, Absa is the cheapest Big Four bank delivering the biggest dividend growth.</div>
+  <div class="r-body"><p>Absa's interim results are what you want from a bank: steady earnings growth, improving asset quality, and a bigger cheque for shareholders. HEPS of 1,545.4 cents (+7.9%) came from a combination of revenue growth (+4.1% to R58.8bn) and disciplined cost management — the cost-to-income ratio ticked up marginally to 53.4% from 53.2% but that's rounding error territory. Net interest margin compressed slightly to 4.46% from 4.58% as rate cuts filter through, but loan growth of 5% and deposit growth of 8% more than compensated. The real standout: the Stage 3 loans ratio improved from 5.90% to 5.30%, and the credit loss ratio followed suit. In an economy where consumers are stretched, that's genuinely impressive risk management.</p>
+<p>The dividend is the headline-grabber — 850 cents per share, up 8.3% year-on-year. That's a 7.6% yield at R222.60. The balance sheet is fortress-grade: CET1 of 12.8% and LCR of 125.2% give ample room for further capital returns or growth investment. The pan-African story (12 countries, Kenya and Ghana being the key markets outside SA) adds optionality. At a trailing PE of 7.98x and 0.94x book, Absa remains the cheapest Big Four bank by a comfortable margin. Rating: BULLISH. When a bank grows HEPS 7.9%, lifts the dividend 8.3%, and still trades below book value, the market is leaving money on the table.</p></div>
+  <div class="r-metrics"><span>PE: 7.98</span> · <span>P/B: 0.94</span> · <span>ROE: 13.9%</span> · <span>R222.60</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/absa-group-limited-unaudited-consolidated-interim-results-and-ordinary-share-dividend-declaration-for-the-reporting-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">17 Aug 2026 — 6 reviews</div>
+<div class="review bullish" data-t="TGA">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Thungela Resources <span class="r-ticker">(TGA)</span></div>
+  <div class="r-title">Interim Results for Six Months Ended 30 June 2026 and R5.50 Dividend</div>
+  <div class="r-prev">← Previous: BULLISH on 07 Aug</div>
+  <div class="r-summary">Thungela delivered exactly what its trading statement promised — and then some. EPS R10.95 (up 467%), HEPS R4.80 (up 150%), adjusted operating free cash flow R1.9bn (up 291%), net cash R6.1bn, and a R5.50 interim dividend (up 175%). Full-year guidance reaffirmed. The stock rallied 10% on the day.</div>
+  <div class="r-body"><p>This is what a coal exporter should look like when the market turns. Thungela's H1 2026 results land almost precisely on the numbers flagged in its 7 August trading statement — EPS of R10.95 versus the R10.75-R11.10 guidance, HEPS of R4.80 versus R4.60-R4.95. Revenue hit R15.2bn (up 2%) despite an 11% stronger rand, because benchmark coal prices ran 15% higher in South Africa and 25% higher in Australia. Export saleable production rose 6% to 8.5Mt, with Ensham in Australia the standout — 2.2Mt versus 1.6Mt, after finally shaking off the geological gremlins that plagued H1 2025. Adjusted EBITDA nearly doubled to R1.3bn.</p>
+<p>The real story is cash. Adjusted operating free cash flow of R1.9bn — nearly four times the prior period — sits on top of a R6.1bn net cash pile. That balance-sheet strength is what funds the R5.50 interim dividend, a 175% hike on last year's R2.00, and still leaves room for the Lephalale coal bed methane optionality and the Goedehoop North disposal due in H2. Management reaffirmed full-year guidance and flagged that SA environmental liabilities should be fully cash-collateralised by year-end. The one shadow is price risk: the Middle East conflict has propped up coal, but that's not a durable earnings floor. Rating: BULLISH. Thungela is printing cash and handing it back to shareholders. Follow-up on our 7 August call — the numbers delivered.</p></div>
+  <div class="r-metrics"><span>P/B: 0.84</span> · <span>R107.45</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/thungela-resources-limited-interim-results-for-the-six-months-ended-30-june-2026-and-ordinary-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="SPP">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">The SPAR Group <span class="r-ticker">(SPP)</span></div>
+  <div class="r-title">Resignation of Chairman and Deputy Chair with Immediate Effect</div>
+  
+  <div class="r-summary">SPAR's boardroom bloodbath claims its biggest scalps yet. Chairman Mike Bosman and deputy chair Shirley Zinn quit with immediate effect, three months after 1,300 independent store owners demanded a board overhaul. Risk committee chair Lwazi Koyana steps in as interim chair. The share has collapsed from R127 to R43 since Bosman took the chair in December 2022.</div>
+  <div class="r-body"><p>The SENS says Bosman and Zinn resigned 'in the best interest of the Company' after 'the context of the period that both these directors and the Board have recently experienced.' Read between the lines: this is a store-owner revolt made flesh. In May the National Council of the Spar Guild — representing the independent retailers who actually own and run SPAR's stores — issued a petition demanding Bosman's resignation, bluntly stating he had become 'an obstacle to renewal, confidence-building, and the restoration of constructive relations.' The board batted it away at the time. Three months later, the chair and deputy chair are gone.</p>
+<p>This is governance crisis stacked on governance crisis. Since December 2022 SPAR has churned through a chairman (Graham O'Connor, forced out over a scandal), a CEO (Brett Botten), a replacement CEO (Angelo Swartz), and now the chairman and deputy who were supposed to stabilise the ship. Bosman and Zinn's own joint statement referenced 'capricious behaviour' and 'sustained personal attacks, hostility and, at times, threats' from current and former retailers and employees. The Financial Mail also flags a rumoured probe into potential conflicts of interest around Zinn's directorship of Tuesday Consulting. The share price tells the whole story: R127 when Bosman arrived, R43.32 today. Turnaround strategy 'unaffected,' says the board — but a board can only say that so many times while its leadership walks out the door. Rating: BEARISH. Interim chair Koyana has a brutal brief: rebuild trust with the very retailers who just forced his predecessors out.</p></div>
+  <div class="r-metrics"><span>PE: 24.30</span> · <span>P/B: 1.54</span> · <span>ROE: 5.8%</span> · <span>R43.32</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/the-spar-group-limited-resignation-of-chairman-and-deputy-chair-appointment-of-interim-chairman-and-update-on-board-succession/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SOH">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">South Ocean Holdings <span class="r-ticker">(SOH)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">South Ocean Holdings swung from a 9.31c per-share loss to 8.02c of earnings — a 186% turn — and the market loved it, bidding the stock up 25% to R1.00 on the day. The electric-cable maker has quietly returned to profitability after a bruising prior year.</div>
+  <div class="r-body"><p>South Ocean is a micro-cap — market cap around R208m — but the turnaround it just flagged is unambiguous. For the year ended June 2026, both EPS and HEPS moved from a loss of 9.31 cents to earnings of 8.02 cents, a 186.1% swing into the black. That's not a marginal recovery; it's a full return to profitability, and the market responded by pushing the share up 25% in a single session.</p>
+<p>The catch is the usual one for a company this size: a thin free float, a heavy debt-to-equity ratio (0.37) relative to its R381m enterprise value, and an interest-coverage ratio that only just turns positive as earnings recover. The trailing metrics are still ugly because the profitable year hasn't fed through to the balance sheet yet — P/B sits at 0.32, which is either a bargain or a warning, depending on your view of the cable market's durability. There's no commentary in the statement explaining the drivers, so the recovery's quality is unproven until full results land. Rating: BULLISH — but with both hands. This is a speculative turnaround at a R1.00 share price, not a quality compounder. Position size accordingly.</p></div>
+  <div class="r-metrics"><span>P/B: 0.32</span> · <span>R1.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/south-ocean-holdings-limited-trading-statement-26/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="RCL">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">RCL Foods <span class="r-ticker">(RCL)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended June 2026</div>
+  
+  <div class="r-summary">RCL's sugar business is drowning in cheap imports, and it's dragging everything down. HEPS guided 30-35% lower to 101.6-109.4c, EPS 50-55% lower to 81-90.1c. Underlying HEPS down 25-30%. Sugar, its Eswatini associate RES, and pet food all took hits. Culinary and Baking held up. A 20.3c/share Sunshine impairment adds insult.</div>
+  <div class="r-body"><p>RCL's year is a story of one structural problem and two self-inflicted wounds. The structural problem is sugar. With no effective tariff protection, deep-sea imports flooded the market — local industry sales volumes fell 10.3% while export volumes jumped 48.3% into a market where international raw sugar prices fell 22.6% and the rand strengthened. The gap between local and export prices hit roughly R7,000/ton. RCL couldn't raise local prices, so its Sugar unit, plus associate Royal Eswatini Sugar, took the pain. The tariff question remains unresolved at ITAC — and until it is, this bleeds every quarter.</p>
+<p>The self-inflicted wounds are pet food and the Sunshine brand. Pet food volumes fell 20.5% after the food-safety production disruptions reported in March, which also drove stock write-offs through H2. And the Sunshine cash-generating unit took a 20.3c/share goodwill and brands impairment, triggered by volumes that never recovered from the December 2024 Durban factory labour disruption. Culinary and Baking delivered 'good performances' — but they can't offset a structurally wounded sugar division. Underlying HEPS of 102.3-109.6c is down 25-30% from 146.1c. At R8.27 the stock trades on 6.8x trailing earnings, so a lot of this is priced in. But the tariff overhang is unresolved and the impairments are a blunt admission of past mistakes. Rating: BEARISH. Results land 31 August — the sugar tariff outcome is the only thing that moves the needle.</p></div>
+  <div class="r-metrics"><span>PE: 6.83</span> · <span>P/B: 0.70</span> · <span>ROE: 10.7%</span> · <span>R8.27</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/rcl-foods-limited-trading-statement-year-ended-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="OUT">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
+  <div class="r-title">Appointment of Four Independent Non-Executive Directors</div>
+  
+  <div class="r-summary">OUTsurance refreshes its board with four new independent NEDs — an ex-RMB investment banker (Kamo Kroll), an Allan & Gill Gray research director (Nazia Kahlon), an ex-PwC actuary (Renasha Werbeloff) and a Standard Bank tech veteran (Magnus Taljaard). The move locks in the board's independent majority. Clean governance, no drama.</div>
+  <div class="r-body"><p>This is the board refresh OUTsurance telegraphed back in November 2025, and it lands exactly as promised. Four independent non-executive directors join the OUTsurance Group and OUTsurance Holdings boards, keeping a majority of independents in the boardroom — a deliberate, governance-first posture for a company whose founding family (the Roos/Wolff lineage via RMI) still looms large over the shareholder register. The appointments span the skills a R128bn insurer actually needs: capital-markets nous, research discipline, actuarial depth, and enterprise technology.</p>
+<p>None of this moves earnings. OUTsurance's quality is already reflected in the numbers — 37% ROE, a 25.6x PE, and a fortress balance sheet with effectively zero debt (D/E 0.03). What this does is quietly de-risk the governance story. After years of scrutiny over the RMI/OUTsurance relationship and related-party arrangements, methodically rebuilding an independent board is the right, boring, correct thing to do. Fit-and-proper assessments done, no integrity flags. Rating: NEUTRAL. You don't buy or sell OUTsurance on this announcement — but you file it under 'reasons the premium rating is justified.'</p></div>
+  <div class="r-metrics"><span>PE: 25.62</span> · <span>P/B: 8.55</span> · <span>ROE: 37.1%</span> · <span>R82.48</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-appointment-of-independent-non-executive-directors/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="BWN">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Balwin Properties <span class="r-ticker">(BWN)</span></div>
+  <div class="r-title">Results of General Meeting — Delisting Scheme Approved</div>
+  
+  <div class="r-summary">Balwin shareholders voted 98.48% in favour of the Bidco scheme of arrangement to take the R2bn residential developer private and delist from the JSE. The vote is effectively a formality on the path to closing, subject to remaining scheme conditions.</div>
+  <div class="r-body"><p>Balwin's exit from the JSE is now a matter of process, not persuasion. Shareholders approved all three scheme resolutions by 98.48%, with 78.85% of votable shares exercised — comfortably clearing the thresholds needed for the Bidco-led scheme of arrangement to proceed. The firm intention to delist was flagged back in May, and Monday's GM was the rubber stamp. Balwin — founded by Steve Brookes, who built it into SA's largest sectional-title residential developer — will delist once the remaining conditions are met.</p>
+<p>The numbers tell you why the market wasn't moved (the stock ticked up 0.47%): the scheme has been a known quantity for months. Balwin trades at R4.24, a market cap of just R2bn against an enterprise value of R5bn — the debt-laden balance sheet (D/E 0.70) is part of why the delisting offer looked attractive to a board fighting a hostile residential market. For shareholders, the scheme crystallises an exit at the agreed consideration rather than waiting out a property cycle. Rating: NEUTRAL. This is the closing chapter, not a new story. Watch for the finalisation date and fulfilment of remaining conditions.</p></div>
+  <div class="r-metrics"><span>PE: 8.29</span> · <span>P/B: 0.44</span> · <span>R4.24</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/balwin-properties-limited-results-of-general-meeting-of-balwin-shareholders/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">14 Aug 2026 — 5 reviews</div>
+<div class="review bullish" data-t="SDO">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Stadio Holdings <span class="r-ticker">(SDO)</span></div>
+  <div class="r-title">Voluntary Trading Statement and Publication Date of Financial Results</div>
+  
+  <div class="r-summary">Stadio keeps compounding. EPS guided 23.2-24.8c, up 11.5-19.2%. HEPS up 12.1-19.8%, Core HEPS up 14.5-22.2% to 23.7-25.3c. Private higher education is one of the most defensive growth stories in SA — rising enrolments, tuition pricing power, and a structural shortage of quality tertiary places. No drama, just steady double-digit growth.</div>
+  <div class="r-body"><p>Stadio is the quiet compounding machine of SA private higher education. The business model is simple and powerful: enrol more students, charge tuition that rises with (or slightly above) inflation, and let the fixed campus cost base generate operating leverage. The voluntary trading statement confirms the machine is running smoothly — EPS of 23.2-24.8 cents is up 11.5-19.2% on last year's 20.8 cents, HEPS up 12.1-19.8%, and Core HEPS (management's preferred measure) of 23.7-25.3 cents is up 14.5-22.2%.\n\nThe structural tailwinds are real. South Africa has a chronic undersupply of quality tertiary places, and private providers like Stadio (with its distance-learning and contact campuses) are the natural beneficiaries. The balance sheet is clean — D/E of just 0.12, interest cover of 27.7x — and the business generates real cash. The one caveat is the price: at R12.57 the trailing PE is 33x, which is rich by JSE standards and reflects the market's confidence in the growth durability. The 16.4% ROE is solid but not spectacular. Results 28 August will be the test of whether enrolments kept climbing. Rating: BULLISH. You pay up for Stadio, but you're buying a compounder, not a turnaround.</p></div>
+  <div class="r-metrics"><span>PE: 33.08</span> · <span>P/B: 4.96</span> · <span>ROE: 16.4%</span> · <span>R12.57</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/stadio-holdings-limited-voluntary-trading-statement-and-publication-date-of-financial-results-for-the-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="KAP">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">KAP Limited <span class="r-ticker">(KAP)</span></div>
+  <div class="r-title">Updated Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">KAP's operational turnaround is real — HEPS guided 43.8-46.2c, up a stunning 82-92% on last year's 24.1c. But the goodwill bill has come due: impairments on Restonic (bedding), Safripol (polymers) and Optix (Australia) flip EPS into a 3.8-6.2c loss. Net debt down more than R1bn, ahead of target. The good news and the bad news arrive together.</div>
+  <div class="r-body"><p>KAP is a sprawling industrial group — polymers (Safripol), bedding (Restonic), automotive components, timber (PG Bison), and logistics. The FY26 story is genuinely two-sided. On the operational side, the turnaround is unambiguous: HEPS is guided at 43.8-46.2 cents, up 82-92% on the 24.1 cents from a year ago. Higher operating profit, lower net finance costs, and tax incentives from PG Bison's new MDF line all contributed. Net debt was cut by more than R1 billion — double the R500m target — driven by stronger operating cash flow. That's what a disciplined management team does.\n\nThe other side is the balance-sheet reality check. Under IFRS, KAP has impaired goodwill on Restonic (the bedding market is deteriorating under subdued consumer demand and competitive pressure), the remaining Safripol intangibles (a stronger rand and a polymer cycle expected to stay in the trough until beyond 2030), and Optix's intangibles (the Australian division's continued underperformance). The net effect flips EPS into a loss of 3.8-6.2 cents. None of this is cash — but it's a blunt admission that the acquisitions behind these assets have under-delivered. At R2.82, the forward PE of 6.81x and 0.55x book price in a lot of the bad news. Results 1 September. Rating: NEUTRAL. The operational engine is fixed; the acquisition ledger is still bleeding. Watch what the new numbers say about Safripol's trough.</p></div>
+  <div class="r-metrics"><span>PE: 57.28</span> · <span>P/B: 0.55</span> · <span>ROE: 1.5%</span> · <span>R2.82</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/kap-limited-updated-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="EXX">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">Exxaro Resources <span class="r-ticker">(EXX)</span></div>
+  <div class="r-title">Trading Statement for the Six-Month Period Ended 30 June 2026</div>
+  
+  <div class="r-summary">Exxaro's headline numbers are going backwards — HEPS guided 18-23% lower to 1,327-1,414c. But read the fine print: the drag is entirely from its equity-accounted investments (Sishen Iron Ore and Black Mountain), hit by a stronger rand and higher input costs. Exxaro's own operations held up, with EBITDA broadly flat. At 5.8x earnings and 0.61x book, the market is already pricing in the bad news.</div>
+  <div class="r-body"><p>Exxaro is a diversified miner with three legs: coal (its own operations), iron ore (via its 19.98% stake in Sishen Iron Ore Company), and a growing renewable energy business (Cennergi). The H1 trading statement shows the headache is concentrated in the equity-accounted investments. HEPS is guided down 18-23% to 1,327-1,414 cents, and AEPS down a similar amount — but the company is explicit that this is driven by lower income from SIOC and Black Mountain Mining. SIOC was hit by the stronger rand against the dollar and above-inflation increases in mining input costs (exacerbated by the Middle East conflict), while BMM suffered higher production costs and a delayed ramp-up at Gamsberg.\n\nThe crucial line is that Exxaro's own EBITDA is expected to be broadly in line with last year. The coal operations are holding the fort while the associates drag the reported number. At R187.99, Exxaro trades on a trailing PE of 5.83x, 0.61x book, and a 4.99x forward PE — with a net cash-rich, low-debt balance sheet (D/E 0.19). The market has already marked down the stock for the associate weakness. The full results on 20 August will show whether the coal cash engine is still generating enough to support the dividend. Rating: NEUTRAL. Cheap, but the associate overhang needs a catalyst to clear. Watch the rand and iron ore.</p></div>
+  <div class="r-metrics"><span>PE: 5.83</span> · <span>P/B: 0.61</span> · <span>ROE: 14.1%</span> · <span>R187.99</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/exxaro-resources-limited-exx-trading-statement-for-the-six-month-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="CAC">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">CAFCA <span class="r-ticker">(CAC)</span></div>
+  <div class="r-title">Trading Update for the 3rd Quarter Ended 30 June 2026</div>
+  
+  <div class="r-summary">CAFCA — the Zimbabwean cable maker — is quietly having a cracker of a year. Q3 volumes jumped 32%, taking year-to-date volumes to +20% (local +21%, exports +8%). Revenue is up 31% and profit before tax is up a blistering 147%, as operating leverage and cost discipline meet Zimbabwe's stabilising currency. At 5x earnings and 0.51x book, this micro-cap is punching well above its weight.</div>
+  <div class="r-body"><p>CAFCA is a small Zimbabwean manufacturer of electrical cables and conductors, and it's been one of the JSE's quiet outperformers — the stock has more than doubled over 52 weeks. The Q3 trading update shows why. Sales volumes for the quarter jumped 32% year-on-year, lifting the year-to-date figure to +20%, with local volumes up 21% and exports up 8%. Revenue is up 31% on the back of volume growth and price adjustments made in sympathy with raw material costs (which rose 36%). And profit before tax is up 147% — the clearest possible evidence of operating leverage kicking in as cost containment offsets supply-chain-driven inflation.\n\nThe backdrop is Zimbabwe's improving monetary stability, which has given the company the confidence to convert demand into revenue and exports. The balance sheet is conservative — a current ratio of 4.08 and near-zero debt. The catches are the obvious ones: it's a R268m market cap with a thin free float (a 3.17m share float), Zimbabwe sovereign risk is real, and the trailing ROE of 0.09% reflects a business that's only just returning to health after years of hyperinflation. At R7.90 — 5x earnings and 0.51x book — you're paying very little for a business growing PBT at triple digits. Rating: BULLISH. Small position, big optionality. This is a speculative snack, not a meal.</p></div>
+  <div class="r-metrics"><span>PE: 5.05</span> · <span>P/B: 0.51</span> · <span>ROE: 0.1%</span> · <span>R7.90</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/cafca-limited-trading-update-for-the-3rd-quarter-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="BLU">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Blu Label Unlimited Group <span class="r-ticker">(BLU)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 31 May 2026</div>
+  
+  <div class="r-summary">The reported numbers are horrifying — EPS swings to a loss of -536c to -542c. But this is entirely Cell C's accounting hangover. Strip out Cell C and the restructuring noise and Blu Label actually did: R9.4bn revenue, R923m EBITDA, R677m net profit, and Core HEPS of 75.33c. The underlying prepaid-and-payments engine generated R99.9bn of imputed gross revenue. Ignore the headline, buy the business.</div>
+  <div class="r-body"><p>Blu Label (formerly Blue Label Telecoms) is the JSE's most misunderstood earnings story right now. The trading statement shows reported EPS crashing from +276.52 cents to a loss of between -536.96 and -542.50 cents, with HEPS down 81-83% and Core HEPS down 80-82%. Those numbers are genuinely awful — but they are almost entirely the non-cash accounting consequences of the Cell C restructuring transactions and its subsequent listing. The company told the market this was coming at the interim stage, and it has arrived exactly as guided.\n\nThe real business is in fine shape. Excluding Cell C, Comm Equipment, and all the restructuring/impairment noise, Blu Label would have reported revenue of R9.4 billion, gross income of R2.555 billion, EBITDA of R923 million, net profit after tax of R677 million, and Core HEPS of 75.33 cents. The underlying platform is enormous — because Blu Label only recognises the gross profit on PINless top-ups, prepaid electricity, ticketing and universal vouchers as revenue, the imputed gross revenue flowing through its rails was R99.9 billion. That's a payments and distribution giant wearing a telecoms costume. The stock has halved over 52 weeks, pricing in the Cell C mess. Once the accounting noise clears and the market refocuses on the 75.33c of clean core earnings, the re-rating should be violent. Results 26 August. Rating: BULLISH. Buy the rails, not the reported number.</p></div>
+  <div class="r-metrics"><span>P/B: 3.29</span> · <span>ROE: -71.0%</span> · <span>R8.12</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/blu-label-unlimited-group-limited-trading-statement-for-the-year-ended-31-may-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">13 Aug 2026 — 3 reviews</div>
+<div class="review neutral" data-t="TRU">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
+  <div class="r-title">Business Update and Voluntary Trading Statement for the 52 Weeks Ended 28 June 2026</div>
+  
+  <div class="r-summary">Truworths got mugged by geopolitics. Group retail sales slipped 0.9% to R21.8bn, and EPS is guided 2-4% lower at 715-730c (from 745.2c). The culprit is a Middle East conflict that spiked oil prices and killed consumer confidence just as SA shoppers were finding their feet. But the balance sheet is strong, the credit book is well-managed, and the owned-brand model is intact. This is a quality retailer in a lousy year.</div>
+  <div class="r-body"><p>The trading update reads like a story of two halves. The first half was subdued, as expected, with SA consumer spending constrained by global trade tensions and UK households cautious. Then the second half opened constructively — moderating inflation, the prospect of further rate relief, and a well-received national budget pointed to a real recovery in consumer confidence. And then, within days, the Middle East conflict escalated, oil prices spiked, and fuel costs crushed the discretionary income of exactly the consumers Truworths serves. Sentiment weakened across both South Africa and the UK.\n\nThe result: group retail sales down 0.9% to R21.8bn, with the stronger rand/pound exchange rate compounding the pressure on the UK (Office) contribution. EPS is guided 2-4% lower at 715-730 cents. It's not a collapse — it's a grinding year. The redeeming features are the fortress balance sheet, net cash position, and a credit book that management deliberately kept prudent through the uncertainty. At R54.23, the 7.3x PE and 25.9% ROE mean the market isn't paying much for the recovery. Results 27 August. Rating: NEUTRAL. Truworths is a well-run retailer waiting for a consumer that keeps getting interrupted. Watch the fuel price — that's the swing factor.</p></div>
+  <div class="r-metrics"><span>PE: 7.34</span> · <span>P/B: 1.83</span> · <span>ROE: 25.9%</span> · <span>R54.23</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-business-update-and-voluntary-trading-statement-for-the-52-week-period-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="RBO">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Rainbow Chicken <span class="r-ticker">(RBO)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 28 June 2026</div>
+  
+  <div class="r-summary">Rainbow just printed its best year since listing. EPS guided 141.87c to 154.68c — up 122-142% on last year's 64.04c. HEPS up 118-138% to 143.00-156.12c. The driver is textbook: stronger poultry demand, lower feed (commodity) prices, and operational cost efficiencies all firing at once. The chicken cycle has finally turned, and Rainbow is the purest play on it.</div>
+  <div class="r-body"><p>Rainbow Chicken was unbundled from RCL Foods in 2024 with a mandate to fix a poultry business that had been underperforming for years. This trading statement is the payoff. EPS of 141.87-154.68 cents is up 122-142% on the 64.04 cents reported a year ago, and HEPS of 143.00-156.12 cents is up 118-138%. The company points to three things: stronger demand for poultry products, lower commodity (feed) prices, and robust agricultural and operational performance with cost efficiencies. That last point matters — Rainbow isn't just riding the cycle, it's extracting margin from it.\n\nThe poultry cycle is the story. Feed is the single biggest input cost for a chicken producer, and grain prices have come down hard while consumer demand for affordable protein has held up through a brutal consumer environment. At R6.25, Rainbow trades on a trailing PE of just 6.08x with an 18.8% ROE and a near-debt-free balance sheet (D/E of 0.05). That's cheap for a company printing triple-digit earnings growth. The full results land 28 August — the market will be watching for dividend reinstatement and any colour on the next leg. Rating: BULLISH. The chicken cycle doesn't last forever, but right now Rainbow is cashing in.</p></div>
+  <div class="r-metrics"><span>PE: 6.08</span> · <span>P/B: 1.10</span> · <span>ROE: 18.8%</span> · <span>R6.25</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/rainbow-chicken-limited-trading-statement-for-the-year-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="DRD">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">DRDGOLD <span class="r-ticker">(DRD)</span></div>
+  <div class="r-title">Trading Statement and Trading Update for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">DRDGOLD is the purest gold-price leverage on the JSE, and this trading statement proves it. EPS guided 481.4-507.4c — up 85-95% on last year's 260.1c. Revenue jumped 42% to R11.16bn on a 40% higher rand gold price. Cash operating costs rose only 8%. Zero bank debt, R2.8bn in cash. The tailings-retreatment machine is printing money while the gold price stays high.</div>
+  <div class="r-body"><p>DRDGOLD doesn't mine gold — it reprocesses the tailings dumps that the old Johannesburg and East Rand mines left behind. That's a beautiful business model: the ore is already on the surface, already paid for, and the economics are a pure function of the gold price against a mostly-fixed cost base. The FY26 numbers show exactly what happens when that lever tips in your favour. Revenue of R11,159 million is up 42%, driven by a 40% jump in the average rand gold price received to R2,289,250/kg. Gold sold was essentially flat at 4,865kg. Yet EPS is guided 85-95% higher at 481.4-507.4 cents. That's operating leverage, pure and simple.\n\nThe balance sheet is the real moat. DRDGOLD remains entirely free of bank debt, sits on R2.8 billion in cash, and has a R1bn revolving facility (plus R500m accordion and R500m general facility) — all undrawn. Capex surged 57% to R3.5bn as the company builds out its growth pipeline (including the Far West Gold Recoveries expansion), funded entirely from cash flow. At R40.12, the trailing PE of 10.6x and 34.7% ROE still look undemanding if gold holds these levels. Results on 19 August. Rating: BULLISH. DRDGOLD is a toll booth on the gold price — and gold is paying top dollar to drive through.</p></div>
+  <div class="r-metrics"><span>PE: 10.61</span> · <span>P/B: 3.16</span> · <span>ROE: 34.7%</span> · <span>R40.12</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/drdgold-limited-trading-statement-and-trading-update-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">12 Aug 2026 — 8 reviews</div>
+<div class="review bearish" data-t="WVR">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Weaver Fintech <span class="r-ticker">(WVR)</span></div>
+  <div class="r-title">Unaudited Interim Results for H1 ended 30 June 2026 and Board Changes</div>
+  
+  <div class="r-summary">Weaver's top line is growing — revenue +10% to R2.8bn, fintech fee income +43%. But profit conversion is broken. Trading profit +2%, EPS dropped 10% to 256.5c (from 285.5c). Credit provisions are rising, payment processing issues surfaced, and the lending book is showing stress. 5.1m customers and R1.1bn in cash are the cushions. But growth without profit conversion isn't growth — it's expensive marketing.</div>
+  <div class="r-body"><p>Weaver Fintech is a genuinely interesting business — 5.1 million customers across lending, payments, and insurance, with a connected ecosystem that creates real network effects. Fintech fee income jumped 43% and cash generated from operations rose 43% to R320 million. The revenue story is intact. The problem is that all that growth isn't converting to the bottom line. EPS of 256.5c is down from 285.5c a year ago. Trading profit grew just 2% on 10% revenue growth — that's negative operating leverage. Management cited 'lending credit performance with payment processing issues, macroeconomic pressure and a deliberate increase in credit provisions.' Translation: their loan book is getting worse, and they're booking provisions for it.</p>
+<p>The board changes add uncertainty: Pierre Joubert moves from lead independent to chairman, Shirley Maltz to executive deputy chair. Succession is orderly but it's a lot of moving chairs mid-cycle. At PE 12.9x and PB 1.3x, the market hasn't punished Weaver yet — it's still pricing the growth story, not the profit problem. The R1.1bn in cash and facilities provides runway, but if credit losses keep rising, that cash will get consumed. Rating: BEARISH. Top-line growth is seductive, but earnings direction is what matters. This one needs to prove its lending model works through a cycle first.</p></div>
+  <div class="r-metrics"><span>PE: 12.87</span> · <span>P/B: 1.30</span> · <span>ROE: 10.5%</span> · <span>R53.99</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/weaver-fintech-limited-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SHP">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Shoprite <span class="r-ticker">(SHP)</span></div>
+  <div class="r-title">Operational Update for the 52 Weeks Ended 28 June 2026</div>
+  
+  <div class="r-summary">Shoprite delivered and the stock roared — +8.2% on the day. Total sales R270.8bn (+7.2%), HEPS guided 1,498-1,567c (+10-15%). Checkers +10%, Sixty60 +34.5% to R25.5bn. Internal price inflation at 0.8% — less than a quarter of CPI Food. They're buying market share while others raise prices. This is what a fortress balance sheet and operational excellence look like.</div>
+  <div class="r-body"><p>The operational update is a masterclass in what makes Shoprite the best-run retailer in Africa. Sales of R270.8 billion — adding R18.1 billion year-on-year — with the core Supermarkets RSA (84.5% of Group) growing 7.1%. Checkers and Checkers Hyper at +10% is genuinely elite retailing. Sixty60, the on-demand delivery platform, hit R25.5 billion in sales, up 34.5%. That's a R25.5 billion business growing at 35% inside a retailer that most people think is boring. Think about that.</p>
+<p>Internal selling price inflation of 0.8% versus Stats SA CPI Food of 3.9% means Shoprite is deliberately absorbing margin to protect its customer base. That's a long-game strategy and it's working — like-for-like sales grew 2.0%, implying real volume growth. Adjacent businesses (+57.4%) and new formats (Petshop Science, Uniq, Checkers Outdoor) are tiny but growing fast — call options on future retail categories. The HEPS guidance of 1,498-1,567c puts the stock on a forward PE of ~20x. Not cheap, but quality rarely is. The full year results on 1 September should confirm the trajectory. Rating: BULLISH. Shoprite is a compounding machine dressed up as a supermarket.</p></div>
+  <div class="r-metrics"><span>PE: 22.12</span> · <span>P/B: 5.44</span> · <span>ROE: 25.9%</span> · <span>R307.85</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/shoprite-holdings-limited-operational-update-for-the-52-weeksended-28-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="SEB">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sebata Holdings <span class="r-ticker">(SEB)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 31 March 2026</div>
+  
+  <div class="r-summary">Sebata's EPS collapsed 93-94% from 91c to 5-6c, and HEPS dropped 94-95% from 101c to 5-6c. The culprit: 'substantial non-recurring items recognised in the previous corresponding period, which are not repeated.' Translation: last year's R1.01 HEPS was a mirage of one-offs. The real business earns 5-6c a share. The company is profitable, the balance sheet is clean, but the market now needs to reprice a business that's 95% smaller than it thought.</div>
+  <div class="r-body"><p>This trading statement is a brutal reality check. Prior year HEPS of 100.66 cents per share — which made Sebata look like a mini-conglomerate giant trading on a PE of 1.4x — was entirely propped up by non-recurring items that have now vanished. The normalized earnings base is 4.66-5.96 cents of HEPS, putting the stock on a forward PE of roughly 25x. That's no longer a screaming bargain; it's a fairly-priced micro-cap. The company remains profitable, which is more than many General Segment listings can say, and the PB of 0.37x suggests some asset backing. But the days of triple-digit earnings were an illusion.</p>
+<p>The Altman Z-Score of 0.95 is worrying — technically in distress territory. Insiders own 83.7%, meaning the free float is roughly R25 million. That's a rounding error. The full results are due 14 August, which should shed light on what the actual operating segments earn. Until then, this is a show-me story. Rating: NEUTRAL. The prior year's earnings were a house of cards. The real Sebata is a much smaller, much less exciting business. Wait for the full results.</p></div>
+  <div class="r-metrics"><span>PE: 1.53</span> · <span>P/B: 0.37</span> · <span>ROE: 27.6%</span> · <span>R1.36</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sebata-holdings-limited-trading-statement-15/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="RES">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Resilient REIT <span class="r-ticker">(RES)</span></div>
+  <div class="r-title">Unaudited Interim Results and Dividend Declaration for H1 ended 30 June 2026</div>
+  
+  <div class="r-summary">Resilient keeps delivering. Interim dividend 274.38c, up 11.7%. NPI +6% like-for-like, vacancies a tiny 1.9%. The Lighthouse dividend (in euros) +9.7%, amplified to +11.2% in rands via forward contracts. Interest rates 70bps lower. PE 6.0x, PB 1.03x — this REIT is pricing like retail property is dead. The numbers say otherwise.</div>
+  <div class="r-body"><p>Resilient is the best-run retail REIT in South Africa, and these interim numbers show why. Like-for-like NPI growth of 6.0% is outstanding in an economy where retail sales grew just 2.9%. Vacancies at 1.9% — including planned vacancies for asset management initiatives — is world-class. Lease renewals concluded 2.5% higher than expiring rentals; new leases 7.1% higher. Escalations of 5.2% on renewals and new leases. The pricing power is real.</p>
+<p>The offshore portfolio continues to perform: France NPI +6.6% despite political uncertainty, Spain retail sales +8.5%, and the Lighthouse dividend grew 11.2% in rand terms. The solar strategy (94.4 MWp installed capacity, supplying 43.2% of electricity needs) is a genuine moat — lower costs and energy security in a country where Eskom's cost-reflective pricing transition is just beginning. At PE 6.0x and PB 1.03x with a 6.7% trailing dividend yield, the market is pricing Resilient as if retail property has no future. The data disagrees. Rating: BULLISH. Resilient is boringly excellent. Buy the discount to NAV while it lasts.</p></div>
+  <div class="r-metrics"><span>PE: 6.01</span> · <span>P/B: 1.03</span> · <span>ROE: 19.1%</span> · <span>R81.90</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/resilient-reit-limited-unaudited-financial-results-and-declaration-of-interim-dividend-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="PWR">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Powerfleet <span class="r-ticker">(PWR)</span></div>
+  <div class="r-title">Form 8-K — CFO Change: David Wilson Out, Paul Lalljie In</div>
+  
+  <div class="r-summary">Powerfleet terminated CFO David Wilson and appointed Paul Lalljie — a veteran with stints as CFO of 2U (the edtech that filed Chapter 11 in 2024) and a decade as CFO of Neustar. Lalljie gets $475k salary, 85% bonus, $100k sign-on, and 450k in RSUs/PSUs. Wilson exits with a $37k/month consulting gig. Sudden CFO terminations at Nasdaq-listed companies are rarely good news. But at least the replacement has real public company experience.</div>
+  <div class="r-body"><p>Powerfleet — the Nasdaq-listed IoT and fleet management company with a secondary JSE listing — just showed its CFO the door. David Wilson was terminated effective 10 August, replaced by Paul Lalljie who was appointed President and CFO on 11 August. The speed is notable: no transition period, no 'mutual decision,' no 'pursuing other opportunities.' Just gone. The separation agreement suggests a clean break — Wilson gets COBRA coverage and a $37k/month consulting arrangement for 90 days. There's no suggestion of misconduct. But sudden CFO departures at a R65 stock raise eyebrows.</p>
+<p>Lalljie's CV is a mixed bag. He spent nearly a decade as CFO of Neustar — a successful data analytics company — before jumping to 2U as CFO in 2019 and later CEO. 2U filed for Chapter 11 bankruptcy in July 2024. That's not a great reference for a new CFO. On the other hand, he was there through a brutal period for edtech and the bankruptcy was pre-packaged. He currently sits on the board of a Bitcoin company. The compensation package — $475k base, up to 85% bonus, 225k RSUs vesting over 3 years, 225k PSUs tied to stock price through 2029 — is aggressive. This is either a turnaround CFO hire or a board that's overpaying for a rebuild. Rating: NEUTRAL. A sudden CFO change always warrants caution. Watch for more management churn.</p></div>
+  <div class="r-metrics"><span>R65.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/powerfleet-inc-form-8-k-current-report-relating-to-a-change-to-the-chief-financial-officer/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="IMP">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Impala Platinum <span class="r-ticker">(IMP)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">Implats just printed the comeback of the year. Headline earnings guided R21.8bn-R23.8bn — up from R0.7bn. HEPS of 2,429-2,652c vs 82c. That's not a recovery, it's a resurrection. PGM prices, production, and the Impala Rustenburg impairment reversal all firing at once. Forward PE of ~8x for the world's second-largest primary PGM producer. The debt? Pocket change at 0.03x equity.</div>
+  <div class="r-body"><p>The numbers are staggering: 6E production up 5% to 3.56 million ounces, revenue per ounce surging 51% to R38,116, EBITDA hitting ~R43.6 billion, and free cash flow of R22 billion — and that's after a working capital drag from Zimplats receivables. The R8.1 billion impairment reversal at Impala Rustenburg (904c per share, post-tax) reflects higher prevailing rand PGM pricing. The balance sheet has never looked better. Debt-to-equity of 0.03x means they could buy back a quarter of the company if they wanted.</p>
+<p>Unit costs rose 8% to R24,249/oz — not great, but more than absorbed by the revenue surge. The weighted share count dipped slightly thanks to buybacks. The trailing PE of 23x is meaningless — based on last year's R0.7bn earnings. The forward PE on the midpoint of the HEPS range (~2,540c) is roughly 8.4x. That's cheap for a diversified PGM miner with 3.56 million ounces of production. The full results on 3 September will reveal the dividend — the market is expecting a monster. Rating: BULLISH. Implats is printing money again. The question isn't whether it's cheap — it's how long the PGM cycle runs.</p></div>
+  <div class="r-metrics"><span>PE: 23.43</span> · <span>P/B: 1.88</span> · <span>ROE: 8.3%</span> · <span>R213.34</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/naspers-limited-dealing-in-securities-by-director-25/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="GND">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Grindrod <span class="r-ticker">(GND)</span></div>
+  <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">Grindrod's headline numbers look horrific — EPS down 58-61% — but it's all one-off noise. Prior period included R902.8m in non-recurring FX gains from the Matola acquisition and marine fuel exit. Strip that out and headline earnings are flat (+4.3% to -4.2%). The market punished the stock 11.4% anyway. Classic overreaction to a noisy trading statement.</div>
+  <div class="r-body"><p>The headline EPS range of 85.9-93.4c versus last year's 219.8c looks like a catastrophe. It isn't. Last year's H1 included R902.8 million in once-off net profits from foreign currency translation reserves released on two transactions: acquiring the remaining 35% of the Matola terminal and exiting the marine fuel trading JV. Strip those out and the comparable earnings were ~R592 million — roughly the same as this year's R568-618 million.</p>
+<p>Headline earnings per share of 85-92.5c versus 88.7c tells the real story: the underlying logistics and port operations are stable. Grindrod's core business — the Matola dry bulk terminal in Mozambique, the Maputo port operations, and the coastal shipping and clearing/forwarding — is a steady, hard-to-replicate infrastructure franchise. At PE 7.2x and PB 1.5x with 21.8% ROE, the market is pricing Grindrod like it's broken. It's not. The 11.4% sell-off is an opportunity for investors who read past the headline. The full results on 25 August will hopefully clarify the story. Rating: NEUTRAL. Headline numbers are scary but misleading. The underlying business is fine. Overreaction creates opportunity.</p></div>
+  <div class="r-metrics"><span>PE: 7.18</span> · <span>P/B: 1.53</span> · <span>ROE: 21.8%</span> · <span>R22.25</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/grindrod-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="CCC">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Cilo Cybin <span class="r-ticker">(CCC)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 31 March 2026</div>
+  
+  <div class="r-summary">Cilo Cybin's trading statement is a masterclass in how reverse acquisitions destroy reported earnings. EPS swung from +9.49c to a loss of 0.85c, thanks to a R217.5m IFRS 2 listing expense. The prior year was restated under reverse acquisition accounting. Beneath the accounting noise, there's an actual business — a pharmaceutical company that reverse-listed into a shell. But the numbers are opaque, the stock hasn't traded since July, and the ROE is -273%. Caveat emptor.</div>
+  <div class="r-body"><p>Cilo Cybin is a reverse takeover story. The company acquired Cilo Cybin Pharmaceutical in September 2025, settling in shares. Under IFRS, this is a reverse acquisition — the private company (CC Pharmaceutical) is deemed the acquirer, and the listed shell the acquiree. Because the listed shell didn't meet the definition of a 'business,' the excess consideration of R217.5 million was expensed as an IFRS 2 share-based payment. Result: a massive one-off charge that flipped EPS from a restated 9.49c profit to a 0.85c loss. That's not an operational problem — it's an accounting artefact of obtaining a JSE listing via a reverse takeover. But it's a red flag for governance quality.</p>
+<p>The underlying pharmaceutical business might be viable — we simply don't know, because the SENS contains almost no operational disclosure. Stock hasn't traded since 31 July. The market cap is R288m on a PB of 2.88x with -273% ROE. The annual results are due 28 August. Those will be the first real look at what Cilo Cybin actually earns. Until then, this is a black box wrapped in IFRS complexity. Rating: BEARISH. Reverse acquisitions are messy, and the opacity here is a warning. Wait for the 28 August results before forming any view on the actual business.</p></div>
+  <div class="r-metrics"><span>P/B: 2.88</span> · <span>ROE: -273.2%</span> · <span>R1.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/cilo-cybin-holdings-limited-trading-statement-for-the-year-ended-31-march-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">11 Aug 2026 — 3 reviews</div>
+<div class="review neutral" data-t="NPN">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 22 Jun</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Naspers <span class="r-ticker">(NPN)</span></div>
+  <div class="r-title">Changes to the Composition of the Board and Committees</div>
+  
+  <div class="r-summary">Naspers has appointed Pedro Arnt — the man who spent 12+ years as MercadoLibre's CFO during its rise to a ~US$100bn market cap — as an independent non-executive director. He joins the audit and risk committees effective 10 August 2026. Arnt is now CEO of payments firm dLocal. This is a high-calibre fintech/e-commerce veteran joining the board of a company that desperately needs expertise exactly like his.</div>
+  <div class="r-body"><p>Pedro Arnt isn't a ceremonial director. He was one of MercadoLibre's earliest executives, joining in 1999 and spending 24 years building what became Latin America's dominant e-commerce and fintech platform. As CFO from 2011 to 2023, he oversaw the company's growth from a regional marketplace to a US$100bn technology giant. Now he's CEO of dLocal, the emerging markets payments processor. The skillset — emerging markets fintech, e-commerce platform scaling, capital allocation — is precisely what Naspers/Prosus needs on its board.</p>
+<p>Does this fix the Naspers discount? No. The holding company discount is a structural problem tied to the cross-holding with Prosus, and one non-executive director won't change that. But it signals that the board is bringing in world-class operators with direct experience in the businesses Prosus owns. Arnt understands marketplace economics, payments infrastructure, and Latin American growth — three things at the core of the Prosus portfolio. At R875 with a PE of 8.37x and P/B of 0.72, Naspers remains optically cheap. Rating: NEUTRAL. A governance upgrade that adds real expertise. Not a catalyst, but a building block.</p></div>
+  <div class="r-metrics"><span>PE: 8.37</span> · <span>P/B: 0.72</span> · <span>ROE: 22.1%</span> · <span>R875.03</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/naspers-limited-changes-to-the-composition-of-the-board-and-committees-2/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="NHM">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Northam Platinum <span class="r-ticker">(NHM)</span></div>
+  <div class="r-title">Increase of the Revolving Credit Facility to R15.0 Billion</div>
+  
+  <div class="r-summary">Northam has increased its revolving credit facility from R13.3bn to R15.0bn, with maturity in August 2027 and all other terms unchanged. The banks are backing Northam's growth ambitions with an extra R1.7bn in undrawn credit — at a time when PGM prices are under pressure, that's a serious vote of confidence. This is balance sheet strength translating into firepower for the next leg of growth.</div>
+  <div class="r-body"><p>Northam didn't need to increase this facility. R13.3bn was already substantial. But the company is clearly positioning for more than just staying afloat — it's gearing up for the next phase of investment. The RCF now sits at R15bn with unchanged terms, which tells you the banking syndicate sees Northam's credit risk the same way despite the PGM price headwinds. That's remarkable given where the basket price is. The facility matures in August 2027, giving the company a comfortable runway.</p>
+<p>This is the same Northam that's been methodically building one of the best-run PGM operations in the country — Booysendal, Zondereinde, Eland. The balance sheet carries moderate debt with strong coverage ratios. At R267.69 per share, Northam trades on a forward PE of 7.5x against an ROE of 26%. That's cheap for a company with this asset quality. The RCF increase is a small announcement that says something big: management sees opportunities worth funding, and the banks agree. Rating: BULLISH. When lenders are throwing more credit at you in a down cycle, you're doing something right.</p></div>
+  <div class="r-metrics"><span>PE: 11.49</span> · <span>P/B: 2.68</span> · <span>ROE: 26.3%</span> · <span>R267.69</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/northam-platinum-holdings-limited-increase-of-the-revolving-credit-facility-to-r15-0-billion/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="ITE">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 03 Mar</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Italtile <span class="r-ticker">(ITE)</span></div>
+  <div class="r-title">Business Update and Voluntary Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">Italtile held system-wide retail turnover flat in a brutal consumer environment, but manufacturing — specifically Ceramic Industries — dragged on group results. EPS and HEPS expected to fall 7.5% to 12.7% year-on-year. The bright spots: a new CEO (Brandon Wood from 1 July), the highest dividend in company history, and webstores gaining traction. It's a resilient business being tested by a consumer with no money.</div>
+  <div class="r-body"><p>The retail side of Italtile is doing what it's always done — grinding out market share in a market where nobody's renovating. System-wide retail turnover was stable year-on-year. That's no small feat when South African consumers are being squeezed by interest rates, food inflation, and stagnant wages. The integrated import supply chain businesses saw sales fall 6% but margins improved, which speaks to good cost management. Webstores are showing increased traffic and sales, which is where the future growth lives.</p>
+<p>The problem child is manufacturing. Ceramic Industries faced significant margin pressure and dragged on group results, contributing to the 7.5-12.7% decline in HEPS. This is the cyclical nature of the business — when demand softens, the fixed-cost manufacturing base hurts. The incoming CEO Brandon Wood takes the reins at a challenging moment, but the balance sheet is clean (PE 8.58x, P/B 1.55, 18% ROE, 0.12 debt-to-equity) and the dividend signals confidence. Rating: NEUTRAL. Italtile is a quality operator in a tough cycle. The manufacturing headwinds are real, but the retail franchise remains a cash-generating machine. Wait for the full results on 24 August.</p></div>
+  <div class="r-metrics"><span>PE: 8.58</span> · <span>P/B: 1.55</span> · <span>ROE: 18.2%</span> · <span>R9.89</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/italtile-limited-business-update-and-voluntary-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">07 Aug 2026 — 4 reviews</div>
+<div class="review bullish" data-t="TGA">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">Thungela Resources <span class="r-ticker">(TGA)</span></div>
+  <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">EPS surged 457-475% to R10.75-R11.10 (H1 2025: R1.93). HEPS up 140-158% to R4.60-R4.95, stripping a R1.0bn non-cash Kleinkopje mining right disposal gain. Headline earnings R580m-R630m on improved coal prices, better RBCT throughput, and rand weakness. Full results 17 August.</div>
+  <div class="r-body"><p>Thungela's H1 2026 trading statement is what a commodity recovery looks like in raw numbers — EPS rocketing from R1.93 to a R10.75-R11.10 range, a nearly 5x improvement. The eye-watering headline is flattered by a R1.0bn non-cash gain from the Kleinkopje mining right disposal, but even stripping that out, HEPS of R4.60-R4.95 represents a 140-158% lift from the depressed H1 2025 base of R1.92. That's genuine operational recovery, not accounting smoke.</p>
+<p>The three drivers here are textbook coal-exporter arithmetic: stronger API4 benchmark prices, improving throughput at Richards Bay Coal Terminal (finally), and a weaker rand amplifying dollar revenues. Headline earnings attributable to shareholders are guided at R580m-R630m. With the share count trimmed to ~127m shares, the per-share maths works in investors' favour. The Kleinkopje gain, while excluded from HEPS, is strategically interesting — it's portfolio rationalisation, crystallising balance sheet value from an asset approaching end-of-life. Full results drop 17 August. The market will be watching for the dividend signal.</p></div>
+  <div class="r-metrics"><span>PE: 4.98</span> · <span>P/B: 0.80</span> · <span>R96.48</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/thungela-resources-limited-thungela-resources-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="SUR">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">Spur Corporation <span class="r-ticker">(SUR)</span></div>
+  <div class="r-title">Market Update and Trading Statement</div>
+  
+  <div class="r-summary">Arbitrator awarded R74.6m in damages against Spur Group in the GPS Food Group dispute, forcing a R129.5m total provision. Spur is appealing (hearing Feb 2027, senior counsel confident of success). Reported EPS guided 31-41% lower (199-233c) but adjusted HEPS up 5-13% (357-384c). Dividends unaffected — strong cash reserves. Year-end results 20 August.</div>
+  <div class="r-body"><p>The GPS Food Group saga has been dragging on since 2019, and the latest quantum award — R74.6m in damages plus interest and legal costs totalling R129.5m — isn't the outcome Spur wanted. However, management is appealing in its entirety and senior counsel believes the group has strong prospects of success. The appeal panel of three independent arbitrators sits in February 2027. For now, Spur books the provision but continues business as usual.</p>
+<p>The more important number is adjusted HEPS — excluding the once-off GPS provision, it's guided at 357c to 384c, up 5-13% year-on-year. That's from a base of 339.88c in FY2025. The underlying restaurant franchise business is healthy, with sufficient cash reserves to absorb the provision without touching dividends. The market will want to hear about restaurant count growth and franchisee profitability at the 20 August results. If the GPS appeal goes Spur's way, that R129.5m flows straight back. For now, the market is pricing the litigation overhang while the operations hum along.</p></div>
+  <div class="r-metrics"><span>PE: 11.26</span> · <span>P/B: 4.31</span> · <span>ROE: 39.0%</span> · <span>R41.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/spur-corporation-limited-market-update-and-trading-statement/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="NED">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
+  <div class="r-title">Resignation of Director and Changes to Board Committees</div>
+  <div class="r-prev">← Previous: BULLISH on 04 Aug</div>
+  <div class="r-summary">Nedbank announced a board director resignation with associated committee changes, and flagged further board changes before end-August. Rob Leith has been reappointed to a key committee role as the bank stabilises governance. The boardroom reshuffle comes against a backdrop of strong operational performance — Nedbank's PE of 7.88x remains the cheapest of the Big Four.</div>
+  <div class="r-body"><p>Nedbank's boardroom is in flux. A director resignation announced Friday evening triggered committee reshuffles, and management has pre-announced more changes before the end of August. The reappointment of Rob Leith to a key committee signals an effort to steady the ship. Board-level churn at a bank this size is never ideal, but Nedbank's executive team under Jason Quinn has been delivering — HEPS was up 2% in the latest interim results, and the cost-to-income ratio improved to 56.2%.</p>
+<p>The governance noise shouldn't distract from the valuation case. At a PE of 7.88x, P/B of 1.16, and ROE of 13.78%, Nedbank is the cheapest Big Four bank by most metrics. The market is pricing in the board uncertainty but the operational engine is running smoothly. More detail promised before month-end — investors should watch for who's filling the vacant seats.</p></div>
+  <div class="r-metrics"><span>PE: 7.88</span> · <span>P/B: 1.16</span> · <span>ROE: 13.8%</span> · <span>R295.20</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/nedbank-group-limited-resignation-of-director-and-changes-to-board-committees/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="MTN">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">MTN Group <span class="r-ticker">(MTN)</span></div>
+  <div class="r-title">Update on the IHS Holding Transaction and Notice of IHS Latam Towers Sale</div>
+  
+  <div class="r-summary">MTN updated the market that IHS Towers has completed the sale of its Latin American tower operations on 7 August 2026. This is a procedural step in the broader $6.2bn all-cash acquisition of IHS by MTN at $8.50/share — a deal that will give MTN 100% control of Africa's largest independent tower operator.</div>
+  <div class="r-body"><p>This SENS is process, not fireworks — MTN notifying shareholders that IHS Holdings has completed the sale of its Latam tower operations, a housekeeping step in the path to MTN's full acquisition of IHS. The $6.2bn deal, announced in February 2026, will see MTN take 100% ownership of IHS at $8.50 per share. The Latam divestiture cleans up IHS's portfolio ahead of closing.</p>
+<p>Strategically, this matters enormously. MTN already uses IHS towers across its African footprint for network infrastructure. Bringing tower assets in-house removes a cost line and gives MTN operational control over a critical part of its infrastructure stack. The forward PE of 12.2x reflects some deal optimism but the balance sheet will stretch — IHS carries meaningful debt. With MTN's H1 results due 14 August, the market will be watching for colour on financing plans and synergy targets. For now, this is a checkbox ticked on the way to a transformational deal.</p></div>
+  <div class="r-metrics"><span>PE: 18.66</span> · <span>P/B: 2.22</span> · <span>ROE: 17.8%</span> · <span>R205.50</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/mtn-group-limited-update-on-the-ihs-holding-limited-ihs-transaction-and-notice-of-ihs-latam-towers-sale/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">06 Aug 2026 — 6 reviews</div>
+<div class="review bearish" data-t="SAP">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sappi <span class="r-ticker">(SAP)</span></div>
+  <div class="r-title">Results for Third Quarter Ended June 2026</div>
+  
+  <div class="r-summary">Sappi's Q3 was ugly. Revenue flat at $1,334m. Adjusted EBITDA crashed 34% to $53m. Headline loss of 27 US cents per share. A $152m forestry fair value loss pushed the P&L deep into the red (-$181m). Net debt hit $1,997m with leverage at 6.9x. The silver lining: DWP prices rose $53/ton to $898/ton, and Somerset PM2 is ramping. But this is a recovery story that keeps getting postponed.</div>
+  <div class="r-body"><p>The numbers don't lie — Sappi is in a tough spot. Revenue of $1,334m was barely positive (+1%) while profitability evaporated. The $152m forestry fair value adjustment is mostly a paper loss driven by currency and fuel costs, but the $53m adjusted EBITDA tells the real story: the underlying business is barely covering its costs. The strong ZAR crushed SA division earnings, the Ngodwana maintenance shut cost $22m, and depressed selling prices across most product categories mean the top line isn't flowing through. Net debt of nearly $2bn with 6.9x leverage is uncomfortable territory, even with covenant testing suspended until March 2027.</p>
+<p>There are green shoots if you squint. DWP pricing momentum is real — Chinese hardwood DWP hit $898/ton, up $53 in the quarter, and the lag benefit should support Q4. The Somerset PM2 ramp is progressing and North American paperboard demand is improving. The UPM/Sappi graphic papers JV is on track for year-end close. But "the outlook is improving" has been the Sappi refrain for six quarters now. Rating: BEARISH. The recovery thesis is intact but the timeline keeps slipping. At 0.69x book, it's cheap for a reason. Wait for actual earnings, not promises.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sappi-limited-results-for-the-third-quarter-ended-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="REN">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Renergen <span class="r-ticker">(REN)</span></div>
+  <div class="r-title">Tetra4 Signs Take-or-Pay LNG Contract with Domestic Food Processor</div>
+  
+  <div class="r-summary">Renergen's Tetra4 subsidiary signed a multi-year take-or-pay LNG contract with a domestic food processor. This is real contracted cash flow for Phase 1 of the Virginia Gas Project, which is targeting commercial operations in Q3 2026. For a company that has been trading on promises, a signed contract with a penalty clause is tangible progress.</div>
+  <div class="r-body"><p>Renergen has been a story stock for years — the only onshore natural gas and helium producer in South Africa, with a unique asset in the Virginia Gas Project. The helium is the headline-grabber, but the LNG business is what pays the bills. This take-or-pay contract with a food processor provides visible, recurring revenue that de-risks Phase 1. Food processors need reliable energy — load-shedding may be over, but grid costs keep rising. LNG at a fixed price is a competitive advantage for the customer and steady cash flow for Renergen.</p>
+<p>The caveats are real: Phase 1 isn't in commercial production yet. The company has missed timelines before. The JSE listing is a secondary one via ASP Isotopes, and liquidity is thin. But a take-or-pay contract is the kind of derisking event that turns a story stock into a real business. One contract at a time. Rating: BULLISH. Small position only — this is still a speculative bet. But the bet is getting less speculative by the quarter.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/asp-isotopes-inc-aspi-announces-that-renergen-limiteds-subsidiary-has-entered-into-a-take-or-pay-contract/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="QLT">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Quilter <span class="r-ticker">(QLT)</span></div>
+  <div class="r-title">Interim Results for Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">Quilter is firing on all cylinders. Record core net flows of £6.0bn (+32%), AuMA up 11% to £157.4bn. Adjusted PBT +12% to £112m. Revenue +12% to £379m. Adjusted diluted EPS +13% to 6.1p. Dividend up 5% to 2.1p. £100m buyback underway. Solvency II ratio of 202%. This is what a quality wealth manager looks like in a bull market.</div>
+  <div class="r-body"><p>The UK wealth management market is consolidating, and Quilter is winning. The dual-distribution model — Quilter's own advisers plus the IFA channel — is a competitive moat. IFA platform net inflows of £3.7bn (+27%) show they're taking share from competitors. The Quilter channel's productivity hit £3.9m per adviser (annualised), up 18% — that's operating leverage in the people business. WealthSelect, the UK's largest MPS at £29.3bn (+15%), is the silent growth engine.</p>
+<p>The numbers are clean. Revenue margin compressed only 2bps to 40bps — tiered pricing is doing its job without destroying economics. Operating margin held at 30% despite 13% cost growth from strategic investments. The Solvency II ratio of 202% after the dividend payment means the balance sheet is fortress-grade. The £100m buyback is the cherry on top. Rating: BULLISH. Quilter is a compounding machine wrapped in a wealth manager. When flows are this strong, the earnings follow.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/quilter-plc-quilter-plc-interim-results-for-the-period-ended-30-june-2026-and-interim-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="PIK">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Pick n Pay <span class="r-ticker">(PIK)</span></div>
+  <div class="r-title">Trading Update for 20 Weeks Ended 19 July 2026 and CFO Transition</div>
+  
+  <div class="r-summary">Pick n Pay's turnaround is making progress but it's slow and messy. Group turnover +2.7%, like-for-like +2.5%. Boxer doing the heavy lifting (+7.2%). Company-owned supermarkets +3.3% like-for-like — the best number in a year. But the S189A retrenchment process is contested in the Labour Court, and CFO Lerena Olivier is out, replaced by Tina Rookledge. Green shoots visible, but this garden still has weeds.</div>
+  <div class="r-body"><p>The glass-half-full reading: Pick n Pay's company-owned supermarkets delivered 3.3% like-for-like growth with implied volume growth of 2.0%. Internal inflation of just 1.3% means they're gaining share by keeping prices below CPI Food (2.5%). Online turnover surged 37.5% as asap! and Mr D gain traction. Boxer remains the crown jewel — 7.2% turnover growth in a market where consumers are stretched thin. Clothing improved from an ugly -5.6% to a less ugly -1.3%. The direction is right.</p>
+<p>The glass-half-empty reading: Group turnover growth of 2.7% is below inflation. The store reset — closing or converting 35 underperforming corporate stores — is necessary but painful, with the S189A process now in the Labour Court. The remuneration policy got only 80.7% support from ordinary shareholders — that's a yellow card. And the CFO change, while planned, adds execution risk to an already complex turnaround. Tina Rookledge is highly qualified — CA(SA), big company experience — but she's new to the role. Rating: NEUTRAL. The turnaround train is on the tracks but still being assembled. Boxer alone justifies the share price; the rest needs more time.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/pick-n-pay-stores-limited-trading-update-for-the-20-weeks-ended-19-july-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="CPR">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Copper 360 <span class="r-ticker">(CPR)</span></div>
+  <div class="r-title">Neal Froneman Appointed Chairman</div>
+  
+  <div class="r-summary">Neal Froneman — the man who built Sibanye-Stillwater from a R10bn gold spin-off into a global mining powerhouse — is now Chairman of Copper 360. This is the biggest board appointment in the junior mining sector in years. Froneman doesn't lend his name to losers. He's betting on copper, and he's betting on the Northern Cape.</div>
+  <div class="r-body"><p>This is not a ceremonial chairmanship. Neal Froneman spent four decades building mining businesses — gold, PGMs, battery metals. He took Sibanye from zero to a R100bn+ market cap through disciplined M&A and relentless operational focus. Now he's joining a junior copper miner with a market cap south of R2bn. The signal is unmistakable: Froneman sees something here worth his time, and that alone will make institutional investors sit up and take notice.</p>
+<p>Copper 360 has real assets — the Northern Cape copper belt is underexplored and underexploited. But it's a junior. It needs capital, credibility, and an operator's mindset. Froneman brings all three. The retiring chairman Rupert Smith was a steady legal hand; Froneman is a builder. The stock jumped on the news and rightly so. Rating: BULLISH. When one of the best mining executives in the world puts his name on your company, the market should pay attention. We are.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/copper-360-limited-changes-to-the-board-of-directors-2/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="BTI">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">British American Tobacco <span class="r-ticker">(BTI)</span></div>
+  <div class="r-title">Management Board Changes — CMO Succession</div>
+  
+  <div class="r-summary">BAT's CMO Luciano Comin is retiring after 34 years. Internal successor Pascale Meulemeester (currently APMEA head) takes over in March 2027. Celina Li joins from Ocean Spray to run APMEA. This is orderly succession — no drama, no gaps, no surprises. The smokeless transformation (19.8% of revenue, 35m consumers) continues on autopilot.</div>
+  <div class="r-body"><p>CMO changes at a consumer goods company matter — the CMO is the steward of brand equity and the architect of new category growth. Comin spent 8 years on the Management Board, 3 as CMO, steering BAT's pivot from cigarettes to smokeless alternatives. The fact that his successor is internal (Meulemeester built APMEA into a growth region) and the external hire (Li from Ocean Spray/Coca-Cola/AB InBev) fills the regional gap, not the CMO seat, is reassuring. This is a company that plans succession.</p>
+<p>BAT's investment case doesn't change on this news. The smokeless transition is the only thing that matters — 19.8% of group revenue and 35m consumers on the path to 50m by 2030. The 8%+ dividend yield remains the core attraction for SA investors. Rating: NEUTRAL. Good governance, orderly handover. Come back when the H1 numbers drop — that's where the real action is.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/british-american-tobacco-plc-bat-announces-management-board-changes-3/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">05 Aug 2026 — 3 reviews</div>
+<div class="review bullish" data-t="SPG">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Super Group <span class="r-ticker">(SPG)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">Super Group's continuing operations are on fire. HEPS +34-41% to 329-347c, EPS +29-36% to 330-348c. Gained market share across most businesses despite infrastructure and supply chain headwinds. The post-SG Fleet Super Group is leaner, meaner, and the market hasn't caught up — trading at just 6x earnings with a P/B of 0.50.</div>
+  <div class="r-body"><p>Ignore the total earnings numbers — they're distorted by last year's SG Fleet disposal which included 10 months of trading plus a R10+ per share profit on sale. The real story is in the continuing operations. HEPS of 329-347 cents is up 34-41% from the 246.1 cents base. That's an exceptional result in an economy that's barely growing. Super Group gained market share across most of its businesses while managing infrastructure constraints and supply chain disruptions. The balance sheet is in good shape with modest net debt leverage and ample headroom against covenants.</p>
+<p>At R20.02, Super Group trades on a trailing PE of around 6x continuing HEPS and just 0.50x book value. The ROE of 2.16% looks terrible but reflects the SG Fleet disposal proceeds sitting on the balance sheet — the return on operating assets is much higher. Management has navigated a complex operational environment and delivered. The 8 September results should confirm the trajectory. Rating: BULLISH. A quality business at a liquidation multiple. The market is still mourning SG Fleet instead of celebrating what's left.</p></div>
+  <div class="r-metrics"><span>PE: 6.81</span> · <span>P/B: 0.50</span> · <span>ROE: 2.2%</span> · <span>R20.02</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SOL">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 22 Jul</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sasol <span class="r-ticker">(SOL)</span></div>
+  <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">Sasol's recovery is real. EPS guided +65-84% to R17.50-R19.50, HEPS +2-14% to R36-R40. Adjusted EBITDA +12-20% to R58-R62bn. Higher Brent, rebounding refining margins, and 4% volume growth did the heavy lifting. Impairments are down but not gone. The Secunda overhang remains, but the direction of travel is clear.</div>
+  <div class="r-body"><p>Sasol is a leveraged bet on the oil price and the Rand, and both moved in its favour. Brent up 7% in USD terms, refining margins more than doubling, and 4% higher sales volumes across the portfolio. That combination drove adjusted EBITDA to as much as R62 billion — up from R51.8 billion. The HEPS range of R36-R40 puts the stock on a forward PE of roughly 4.5-5.0x at R181. That is absurdly cheap for an integrated energy company if these earnings are sustainable. The problem: they might not be.</p>
+<p>Secunda remains fully impaired — all R7.7 billion of capitalised costs written off. Another R3.7 billion impairment on polyethylene, and R3.9 billion on the Mozambique PSA. The total impairment bill of R16.8 billion, while lower than last year's R20.7 billion, is still a staggering number. And the R4.3 billion Transnet settlement from last year won't repeat. Higher working capital also means the earnings improvement won't fully translate to free cash flow. Still, at 6x trailing PE and 0.79x book, the market is pricing in almost permanent distress. It's overdone. Rating: BULLISH. Sasol is ugly, but at these levels the risk/reward favours the brave.</p></div>
+  <div class="r-metrics"><span>PE: 6.06</span> · <span>P/B: 0.79</span> · <span>ROE: 1.1%</span> · <span>R181.61</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sasol-limited-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SBP">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sabvest Capital <span class="r-ticker">(SBP)</span></div>
+  <div class="r-title">Trading Statement for Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">Sabcap's NAV per share jumped 18-24% to 16,381-17,214 cents. That's compounding at its finest. The 40c dividend is maintained. With the stock at R139 trading at a 15-19% discount to NAV and a trailing PE of 4.8x, this is one of the cheapest compounders on the JSE. Quiet, boring, brilliant.</div>
+  <div class="r-body"><p>Sabvest Capital is the JSE's best-kept secret. A holding company for a portfolio of unlisted and listed investments — Apex Partners, Corvest, SA Bias Industries, and the listed securities book — that has compounded NAV at mid-teens for years without fanfare. The H1 2026 NAV range of 16,381-17,214 cents represents 18-24% growth from the 13,882 cent base. That's roughly a 35-48% annualised ROE. The NAV was 16,105 cents at December 2025, so H2 added 276-1,109 cents of additional value. The compounding engine is running.</p>
+<p>The stock at R139 trades at a 15-19% discount to the H1 NAV range and just 4.8x trailing earnings. That's a gift-wrapped discount for a business run by one of the most disciplined capital allocators on the JSE (Chris Seabrooke). The holding company discount is a feature, not a bug — it lets patient investors buy R1 of assets for 81-85 cents. The 40 cent dividend is just the cherry on top. Rating: BULLISH. Buy the discount, wait for the NAV to keep compounding. The market will eventually notice.</p></div>
+  <div class="r-metrics"><span>PE: 4.79</span> · <span>P/B: 0.77</span> · <span>R139.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sabvest-capital-limited-trading-statement-in-respect-of-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">04 Aug 2026 — 5 reviews</div>
+<div class="review neutral" data-t="RDF">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Redefine Properties <span class="r-ticker">(RDF)</span></div>
+  <div class="r-title">Change to the Board and Board Committees</div>
+  
+  <div class="r-summary">Redefine appointed Nadya Bhettay as an independent non-executive director. She is a CA(SA) with a serious CV — Vodafone Ireland FD, Vodacom Group Chief Strategy Officer, and currently on Capitec's board. This is a quality board appointment for a REIT that needs all the strategic thinking it can get.</div>
+  <div class="r-body"><p>Redefine is SA's second-largest REIT but it has been a tough decade for commercial property. The office sector is still bleeding, and retail is under pressure from e-commerce. Bhettay brings telecoms and tech experience — exactly the kind of thinking a property company needs when the world is going digital. She is on the Audit, Remuneration, and Risk/Compliance/Technology committees. That is not a ceremonial appointment — she will have real influence.</p>
+<p>But let us be honest: one board appointment does not fix a REIT. Redefine's portfolio is what it is — a mix of retail, office, and industrial in a tough economy. The LTV is manageable, the dividend is being rebuilt, but the sector headwinds are real. Bhettay is a good hire. The question is whether the board as a whole can navigate the next five years. Rating: NEUTRAL. Good governance, but the property cycle is the real driver here.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/redefine-properties-limited-change-to-the-board-and-board-committees/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="OAO">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 07 Jul</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Oando PLC <span class="r-ticker">(OAO)</span></div>
+  <div class="r-title">H1 2026 Unaudited Results Release</div>
+  
+  <div class="r-summary">Oando is delivering. Production +16% to 42,789 boepd, revenue +20% to N2.1 trillion, PAT +8% to N68.6bn. Production opex dropped 18% to $16.83/boe. Cash from operations swung from -N287.9bn to +N179.5bn. The turnaround from the Eni/NAOC acquisition is real.</div>
+  <div class="r-body"><p>Oando's transformation from a trading company into Nigeria's leading indigenous upstream operator is one of the most underfollowed stories on the JSE. The Eni/NAOC acquisition was a bet-the-company move, and it is paying off. Facility uptime of 92% (from ~85%), zero lost-time injuries, and a drilling programme that is accelerating. Cash of N544.9bn gives them breathing room. The gas monetisation play — 11.2 MMscfd to the Bayelsa power plant — diversifies the revenue base beyond oil.</p>
+<p>But there are risks. The rights issue and $1.5bn multi-instrument issuance programme are coming — that is dilution. Nigeria's regulatory environment is never predictable. And the 50,000 boepd target for FY2026 is ambitious. The JSE secondary listing is liquid enough for SA investors to get exposure, but this is not a stock for the faint-hearted. Rating: BULLISH. High risk, high reward — but the operational momentum is undeniable.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/oando-plc-h1-2026-unaudited-results-release/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="NED">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 22 Jul</span></span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
+  <div class="r-title">Unaudited Interim Financial Results for the 6 Months ended 30 June 2026 and Cash Dividend Declaration</div>
+  <div class="r-prev">← Previous: NEUTRAL on 31 Jul</div>
+  <div class="r-summary">Nedbank delivered a solid set of numbers. Headline earnings flat at R8.4bn at face value, but strip out the ETI disposal and underlying growth was 12%. Revenue +6%, dividend up 2.3% to 1052c, ROE holding at 15%. The NCBA acquisition is the game-changer — 79.9% acceptance secured.</div>
+  <div class="r-body"><p>Nedbank is the quiet achiever of the Big Four. Jason Quinn has spent two years repositioning the franchise — becoming more client-centred, buying iKhokha and Eqstra, and now the transformative NCBA deal in East Africa. The numbers are starting to reflect the strategy. CIB is gaining momentum, BCB is seeing early synergies from acquisitions, and PPB is taking market share in home loans and deposits. The brand value jumped 16% to R24bn. That is not just marketing spend — it is what happens when you actually deliver.</p>
+<p>The credit loss ratio ticked up to 95bps from 81bps — that is the one blemish. Higher rates and a tougher consumer environment are starting to bite. But the CET1 ratio of 12.6% gives plenty of buffer. The NCBA acquisition is the big swing factor — if they execute the integration well, this is a bank that can genuinely diversify earnings away from SA. Rating: BULLISH. Nedbank is executing. The market is still pricing this like a laggard.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/nedbank-group-limited-unaudited-interim-financial-results-for-the-6-months-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="JSE">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 05 Aug</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">JSE Limited <span class="r-ticker">(JSE)</span></div>
+  <div class="r-title">Unreviewed Interim Results for the six months ended 30 June 2026</div>
+  
+  <div class="r-summary">The JSE delivered a cracking first half. Operating income +14.6% to R2.0bn, HEPS +18.8% to 816c, NPAT +16.9% to R652m. R2.6bn cash on the balance sheet. Not bad for a company that is supposedly being disrupted by listing emigration and offshore investing.</div>
+  <div class="r-body"><p>The JSE is the ultimate 'picks and shovels' play on SA capital markets. When volumes are up, they print money. And volumes were up — equity market revenue drove the Capital Markets and Post-Trade Services segments, while non-trading income hit R659m (+8.1%). The 99.99% market availability with zero outages is genuinely impressive. You don't think about the plumbing until it breaks. It hasn't.</p>
+<p>Total costs rose 11.5% but strip out once-off redesign costs and the CEO departure, and the real opex increase was just 3.5%. That is positive operating leverage of 3.1%. The capex spike to R110m (from R27m) is the FORGE 2031 strategy in action — investing in the exchange's future relevance. The JSE trades on a modest multiple and is a beneficiary of any improvement in SA's economic trajectory. Rating: BULLISH. The exchange is open for business, and business is good.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/jse-limited-unreviewed-interim-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="HCI">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 27 May</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Hosken Consolidated Investments <span class="r-ticker">(HCI)</span></div>
+  <div class="r-title">Implementation of Transaction and Disclosure of Disposal and Acquisition of Securities</div>
+  
+  <div class="r-summary">The SACTWU/Squirewood corporate restructure is done. SACTWU now holds 27.98% of HCI via Squirewood (25.73%) plus direct (2.25%). This is the Copelyn succession plan taking shape — a tidying-up of the control structure for the post-Copelyn era.</div>
+  <div class="r-body"><p>HCI is one of those companies that looks like a bargain on a sum-of-the-parts basis but has a permanent discount because it is controlled by a trade union. The Squirewood transaction does not change that — it just moves the deck chairs. SACTWU still calls the shots. The question is what happens after Johnny Copelyn retires. He has been the architect of HCI's strategy for three decades. The 27.98% stake is now consolidated in a cleaner structure, which might make it easier to monetise down the line.</p>
+<p>HCI's underlying assets — Tsogo Sun, eMedia, mining — are a mixed bag. Gaming and hotels are recovering, media is tough, and mining is cyclical. The discount to NAV is probably justified until the market sees proof that the post-Copelyn era can create value. Rating: NEUTRAL. The structure is tidier. The strategy still needs to prove itself without Copelyn.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/hosken-consolidated-investments-limited-implementation-of-transaction-and-disclosure-of-disposal-and-acquisition-of-securities/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">03 Aug 2026 — 4 reviews</div>
+<div class="review bullish" data-t="TKG">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 04 Aug</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Telkom <span class="r-ticker">(TKG)</span></div>
+  <div class="r-title">Trading update for Q1 ended 30 June 2026</div>
+  
+  <div class="r-summary">Telkom's data-led strategy is working. Group data revenue +8.8%, EBITDA +10% with margin expanding to 27.7%. Mobile subs 25.3m (+6.1%), pre-paid ARPU holding at R59. Openserve launched its own ISP. This isn't the Telkom of five years ago.</div>
+  <div class="r-body"><p>Telkom has been quietly transforming from a dying fixed-line business into a credible mobile and fibre player, and the Q1 numbers prove it. Group data revenue now contributes 62.4% of the top line, mobile service revenue re-accelerated, and Openserve external revenue grew 18.2%. The EBITDA margin expansion from 25.9% to 27.7% shows the cost discipline is real — total expenses down 1.9%. They're spending less and earning more. That's the holy grail.</p>
+<p>The BCX problem persists — revenue down 10.9% — but new management is reshaping the IT business and the cybersecurity and cloud segments are growing. Plus they sold 100 properties for R200m with another R264m in the pipeline. The capex intensity has room to ramp. Rating: BULLISH. Telkom is executing. The market still prices this like a turnaround. The turnaround is here.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/telkom-sa-soc-limited-trading-update-for-the-first-quarter-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="MTA">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 04 Aug</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Metair Investments <span class="r-ticker">(MTA)</span></div>
+  <div class="r-title">Trading update and trading statement for H1 ended 30 June 2026</div>
+  
+  <div class="r-summary">HEPS guided 70-75c (up 7-15%), EPS swinging from -93c loss to 65-75c profit. R3.3bn debt refinanced for 5 years. AutoZone back in the black from May. But Hesto volumes down 15-20% and a Numsa strike at First Battery clouds the outlook.</div>
+  <div class="r-body"><p>The headline numbers look like progress — HEPS up double digits, EPS back in positive territory after last year's Hesto-induced accounting carnage, and the R3.3bn debt package now locked in for five years with rates that ratchet down as leverage falls. The refinancing removes the R1.6bn subordinated loan cliff that was due June 2027. That's genuinely good news. AutoZone returning to profitability in May is also a tangible win for the turnaround playbook.</p>
+<p>But flip the page and the picture gets messier. Hesto — the big acquisition — is seeing revenue drop 15-20% with margins compressing. The Numsa strike at First Battery, though suspended, signals unresolved labour tension. And that R400m Rombat fine in Europe is still grinding through the courts with a guarantee now required. Metair has done the hard work of restructuring. The question is whether the rewards will actually materialise, or whether this is just a car parts company treading water in a brutal industry. Rating: NEUTRAL. The refinancing buys time. Now management needs to convert time into growth.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/metair-investments-limited-trading-update-and-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="LSK">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 08 May</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Lesaka Technologies <span class="r-ticker">(LSK)</span></div>
+  <div class="r-title">Results of Special Meeting — Executive Chairman Option Award Approved</div>
+  
+  <div class="r-summary">Shareholders approved 1 million share options for Executive Chairman Ali Mazanderani at $5.00 strike — well above current levels. Vesting in 2028, exercisable from 2029. This is skin in the game, not a handout. When the chairman's payout depends on creating real value, investors should cheer.</div>
+  <div class="r-body"><p>Executive compensation votes usually induce eye-rolls, but this one is different. Mazanderani gets options at $5.00 per share — a strike price that's meaningfully above where Lesaka trades on Nasdaq. He can't exercise until April 2029 and only if he's still employed through April 2028. This is a long-dated, performance-aligned incentive that puts the chairman squarely on the same side as shareholders. 38 million votes for, 1.2 million against — the market gets it.</p>
+<p>Lesaka is building something interesting in SA fintech — an integrated payments and banking platform for the underbanked. They've got the Nasdaq listing, Bank Zero partnerships, and a growing merchant network. The business still needs to prove it can scale profitably, but when the executive chairman's personal wealth is tied to a $5.00+ share price, you know where his focus is. Rating: BULLISH. Alignment matters. Mazanderani eats his own cooking — and he's betting it tastes good.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/lesaka-technologies-inc-results-of-lesaka-august-3-2026-special-meeting-of-shareholders/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="HLM">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 03 Aug</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Hulamin <span class="r-ticker">(HLM)</span></div>
+  <div class="r-title">Unaudited Consolidated Results for H1 ended 30 June 2026</div>
+  <div class="r-prev">← Previous: BULLISH on 31 Jul</div>
+  <div class="r-summary">The numbers are out and they're good. Revenue +2% to R7.2bn, EBITDA surged 103% to R470m. HEPS 79cps. The quiet turnaround we flagged on Thursday just got loud, and the stock responded with a 25% surge.</div>
+  <div class="r-body"><p>Hulamin delivered exactly what the trading statement promised — and then some. Revenue growth of 2% looks pedestrian until you see EBITDA doubling. That's operating leverage doing its thing. When your costs are under control and volumes are rising, profit flows straight to the bottom line. The operational recovery from H2 2025's mess is substantially complete, and the can-stream ramp is on track.</p>
+<p>The portfolio clean-up is the cherry on top. Disposals of Extrusions and Containers unlock ~R100m in working capital in H2, all going to debt reduction. Cleaner balance sheet, leaner operations, and a management team that's actually delivering. Rating: BULLISH. We liked it on Thursday at R1.90. We like it even more now.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/hulamin-limited-unaudited-consolidated-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="date-header">31 Jul 2026 — 5 reviews</div>
+<div class="review bullish" data-t="SSS">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 18 Jun</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Stor-Age Property REIT <span class="r-ticker">(SSS)</span></div>
+  <div class="r-title">Voluntary Announcement — Acquisition of Xtraspace Portfolio</div>
+  
+  <div class="r-summary">Stor-Age is buying the Xtraspace portfolio — consolidating its position as the dominant self-storage operator in SA. This is exactly what you want a niche REIT to do: buy the competition, extract cost synergies, and widen the moat. Smart, boring, accretive.</div>
+  <div class="r-body"><p>Stor-Age keeps doing exactly what it says on the tin. The Xtraspace acquisition is a bolt-on that strengthens their already-dominant position in SA self-storage. They know these assets better than anyone — every site, every occupancy rate, every rand per square metre.</p>
+<p>Self-storage is one of the few property sub-sectors with genuine structural growth. People accumulate stuff, downsize, relocate. The economics are better than retail or office: lower capex, higher margins, stickier customers. Stor-Age's UK expansion is the wildcard, but the SA business is the cash engine. Rating: BULLISH. A REIT that actually grows — rare and worth owning.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/stor-age-property-reit-limited-voluntary-announcement-acquisition-of-xtraspace-portfolio/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="PMV">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Primeserv Group <span class="r-ticker">(PMV)</span></div>
+  <div class="r-title">Amendment to Dividend Timetable — 21.5c final dividend declared</div>
+  
+  <div class="r-summary">Primeserv declared a 21.5c final dividend — up 72% from 12.5c last year. That's not a typo. The staffing and HR services business is throwing off cash and returning it to shareholders. A small-cap that doesn't get much attention, but this dividend says the business is healthy.</div>
+  <div class="r-body"><p>Primeserv flies under the radar — R200m market cap, thin liquidity, no analyst coverage. But when a company grows its dividend 72% year-on-year, you pay attention. Staffing is cyclical, yes, but the cash generation here is real.</p>
+<p>The caution: small caps with thin liquidity can be traps. You might like the story but struggle to get out if you need to. That said, a business that can nearly double its payout is doing something right. Rating: BULLISH. A small position only — this is a tasty snack, not a meal.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/primeserv-group-limited-amendment-to-dividend-timetable/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="NED">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 22 Jul</span></span><span class="r-num follow">Review #3</span></div>
+  <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
+  <div class="r-title">Executive Leadership Change — Retirement of Mfundo Nkuhlu</div>
+  
+  <div class="r-summary">Mfundo Nkuhlu is retiring from Nedbank's executive leadership. He ran Corporate and Investment Banking — a key profit driver. Leadership changes at banks always matter, but this looks orderly. Succession planning in a R200bn+ institution should not be a crisis.</div>
+  <div class="r-body"><p>Nkuhlu's departure from Nedbank CIB deserves attention — he's been a steady hand on one of the group's most important divisions. CIB contributes roughly a quarter of Nedbank's earnings. You don't shrug off a change at that level.</p>
+<p>But this is a retirement, not a resignation. There's a difference. Nedbank has had time to plan for this and the broader Africa strategy (NCBA acquisition in Kenya) is set. The real question isn't who replaces him — it's whether Nedbank can ever close the gap with Standard Bank. Rating: NEUTRAL. Watch the CIB numbers over the next two quarters for any wobble.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/nedbank-group-limited-nedbank-group-executive-leadership-change-retirement-of-mfundo-nkuhlu/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="HLM">
+  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 03 Aug</span></span><span class="r-num follow">Review #2</span></div>
+  <div class="r-company">Hulamin <span class="r-ticker">(HLM)</span></div>
+  <div class="r-title">Trading Statement and Business Review for H1 ended 30 June 2026</div>
+  
+  <div class="r-summary">Hulamin delivered a strong H1 with improved volumes and better margins across rolled and extruded products. The turnaround is real — the balance sheet is cleaner and the operational improvements are sticking. Not a flashy business, but aluminium packaging isn't going anywhere.</div>
+  <div class="r-body"><p>Hulamin has been quietly fixing itself and the numbers are starting to show it. The trading statement points to meaningful improvement in both the rolled products and extrusions businesses. Canmaking stock is a steady earner and the auto sector exposure through extrusions is recovering.</p>
+<p>The market has been sleeping on this one — it trades at a discount to its own net asset value. If the recovery continues into H2, that gap closes. For patient investors, this is the kind of boring story that pays off. Rating: BULLISH. Buy the quiet achievers.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/hulamin-limited-trading-statement-and-business-review-for-the-half-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="APF">
+  <div class="r-header"><span class="r-badge bearish">BEARISH<span class="ghost-date">Ghost: 03 Aug</span></span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Accelerate Property Fund <span class="r-ticker">(APF)</span></div>
+  <div class="r-title">Updated Trading Statement for the year ended 31 March 2026</div>
+  
+  <div class="r-summary">Accelerate's updated trading statement doesn't change the narrative: this is a deeply troubled property fund. Fourways Mall remains an albatross. The correction to the trading statement adds another layer of concern — getting your numbers right the first time shouldn't be this hard.</div>
+  <div class="r-body"><p>Accelerate is the poster child for everything that went wrong in SA commercial property. Fourways Mall — the biggest super-regional centre nobody asked for — continues to drag the entire portfolio down. When your flagship asset needs an independent manager just to function, the investment case is broken.</p>
+<p>And now a correction to the trading statement? That's the kind of thing that erodes whatever credibility management has left. The share price reflects the damage — it's been obliterated. Some will argue it's cheap on a price-to-NAV basis. It's also cheap for a reason. Rating: BEARISH. There are better ways to play SA property. This one needs a miracle, not a recovery.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/accelerate-property-fund-limited-correction-of-trading-statement-for-the-year-ended-31-march-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div>
+<script>
+function filter(ticker) {
+  let visible = 0, total = 0;
+  document.querySelectorAll('.review').forEach(el => {
+    total++;
+    if (!ticker || el.getAttribute('data-t') === ticker) {
+      el.style.display = ''; visible++;
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  document.querySelectorAll('.date-header').forEach(el => {
+    let sib = el.nextElementSibling;
+    let hasVisible = false;
+    while (sib && !sib.classList.contains('date-header')) {
+      if (sib.style.display !== 'none') hasVisible = true;
+      sib = sib.nextElementSibling;
+    }
+    el.style.display = (ticker && !hasVisible) ? 'none' : '';
+  });
+  document.getElementById('filterCount').textContent = ticker ? `(${visible} of ${total} reviews)` : '';
+}
+</script>
+
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
+</body>
+</html>

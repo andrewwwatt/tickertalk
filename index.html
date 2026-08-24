@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today's Reviews — Ticker Talk</title>
+<style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
+
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
+
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
+
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
+
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
+
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
+</nav>
+<h1>Today's Reviews</h1>
+
+<div class="stats">
+  <div class="stat">🟢 1 Bullish</div>
+  <div class="stat">🟡 2 Neutral</div>
+  <div class="stat">🔴 0 Bearish</div>
+  <div class="stat">📅 21 Aug 2026</div>
+</div>
+<div class="review neutral" data-t="TRU">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
+  <div class="r-title">Changes to the Board — Retirement of Chairman Hilton Saven after 23 Years</div>
+  <div class="r-prev">← Previous: NEUTRAL on 13 Aug</div>
+  <div class="r-summary">Truworths chairman Hilton Saven is retiring at the November AGM after 23 years on the board. Annemarie Mostert will succeed him. Saven steered Truworths through the post-2015 credit crisis, the Office Shoes acquisition, and the Covid retail wipeout. This is a planned, orderly transition — not a governance panic. But losing a chair who's seen every retail cycle since Mandela was president is a milestone worth noting.</div>
+  <div class="r-body"><p>Hilton Saven is the last of the old guard at Truworths — he joined the board in 2003, became chair in 2005, and has sat through every boom and bust in SA retail for two decades. His retirement at the 5 November AGM is entirely orderly: Annemarie Mostert, an independent non-executive who joined the board in 2021, takes the chair. The board is also refreshing its committee composition with effect from the AGM. This is textbook corporate governance succession — no midnight departures, no 'pursuing other interests', no emergency replacements.</p>
+<p>Does it change the investment case? No. Truworths is still the same business it was last week: a well-run fashion retailer with a 25.9% ROE, 6.95x PE, and 1.73x P/B, trading at R51.61. The full-year results on 27 August (EPS guided 715-730c, down 2-4%) will tell you more about the near term than a board change. The consumer is still stretched, the Middle East oil spike still hurts the discretionary wallet, and the UK (Office) still faces a stronger rand headwind. But Saven's departure matters symbolically — it closes the chapter on the leadership that built Truworths into SA's most profitable fashion retailer. Mostert inherits a good business at a tricky moment. Rating: NEUTRAL. No red flags, no catalysts. A respectful handover at a company that does governance properly.</p></div>
+  <div class="r-metrics"><span>PE: 6.95</span> · <span>P/B: 1.73</span> · <span>ROE: 25.9%</span> · <span>R51.61</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-changes-to-the-board-and-board-committees-2/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="CCD">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Cell C Holdings <span class="r-ticker">(CCD)</span></div>
+  <div class="r-title">Audited Financial Results for the Year Ended 31 May 2026</div>
+  
+  <div class="r-summary">Cell C's maiden results as a JSE-listed company are a proper flex. HEPS R23.37 (+57.4%), group revenue R12.64bn (+14%), reported EBITDA R5.5bn (+162%), adjusted EBITDA R2.4bn (+16.9%). Net debt slashed 64% to R2.02bn. 8.9m subscribers. CEO Jorge Mendes is projecting R3bn adjusted EBITDA in FY2027. The turnaround is real — but the R11.2bn enterprise value (2.18x EV/EBITDA on the headline number) says the market is still cautious.</div>
+  <div class="r-body"><p>Cell C has spent five years in the wilderness — balance sheet restructuring, network-sharing deals with MTN and Vodacom, and a brand that was getting lapped by Telkom Mobile. These maiden JSE results are the first proper look at the post-restructuring Cell C, and the picture is better than the market expected. Service revenue grew 6% to R11.64bn, prepaid revenue up 9.7%, and the wholesale/MVNO business jumped 20% — the capex-light model is working. The headline EBITDA of R5.5bn is flattered by R3.1bn in pre-listing restructuring gains, but even the clean adjusted EBITDA of R2.4bn (up 16.9%) shows the operating engine is turning.</p>
+<p>The balance sheet is the real win. Net debt collapsed from R5.69bn to R2.02bn — leverage of 1.56x against the clean EBITDA, 0.50x against the headline figure. That's night-and-day different from the R9.1bn working capital deficit of a year ago. The caution: current ratio of 0.58 and an Altman Z-score of -0.83 suggest the turnaround isn't complete, and the R11.2bn enterprise value (PE 6.73x on trailing, 4.94x forward) reflects the market's lingering scepticism. CEO Mendes guided FY2027 adjusted EBITDA of ~R3bn — if he delivers, the re-rating will be violent. Rating: BULLISH. The worst is behind Cell C. The market is still pricing in failure; the numbers say recovery.</p></div>
+  <div class="r-metrics"><span>PE: 6.73</span> · <span>P/B: 3.55</span> · <span>R26.00</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/cell-c-holdings-limited-audited-financial-results-for-the-year-ended-31-may-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="APN">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
+  <div class="r-title">Business Update and Trading Statement for the Year Ended 30 June 2026</div>
+  
+  <div class="r-summary">Aspen's FY2026 numbers are a tale of two earnings lines. Normalised HEPS from total operations is guided 550-620c — more than double last year's comparable. But R2.3bn in manufacturing restructuring costs flips basic EPS to a loss of ~243.9c. The operational engine (Commercial Pharma + Manufacturing) is building momentum; the P&L is still absorbing the cost of the strategic pivot. Forward PE 17x at R147.63. Results 2 September.</div>
+  <div class="r-body"><p>Aspen spent FY2026 executing the manufacturing restructuring it flagged 18 months ago — rationalising its sterile manufacturing footprint, closing high-cost sites, and shifting to a leaner contract manufacturing model. The R2.3bn bill (roughly R5.18 per share) is the accounting cost of that pivot. It's a one-off, but it's a big one. Excluding it, the underlying business tells a much better story: normalised HEPS of 550-620 cents represents >100% growth on the prior year's comparable base, driven by the Commercial Pharmaceuticals brands (the Anaesthetics portfolio, thrombosis, and the regional brands in Africa, Asia, and Latin America) and improved manufacturing utilisation.</p>
+<p>Group revenue was supported by the Anaesthetics portfolio and a weaker rand, while the Manufacturing segment benefited from contract wins that were part of the restructuring strategy. The balance sheet carries R33bn in debt against a R65.6bn market cap — D/E of 0.41 is manageable, and interest cover of 3.29x is adequate but not comfortable. The stock at R147.63 trades on 0.81x book with a forward PE of 17x — not cheap, but pricing in the recovery. The 2 September results will be the acid test: can Aspen show revenue momentum in Commercial Pharma while keeping the restructuring on track? Rating: NEUTRAL. The operational turnaround is real, but the restructuring bill is a blunt reminder that pivoting a global pharma manufacturer is expensive and messy. Watch results day.</p></div>
+  <div class="r-metrics"><span>P/B: 0.81</span> · <span>ROE: -2.2%</span> · <span>R147.63</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-business-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div>
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
+</body>
+</html>

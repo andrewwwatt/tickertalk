@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 Ratings Tracker — Ticker Talk</title>
+<style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
+
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
+
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
+
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
+
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
+
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
+</style>
+
+</head>
+<body>
+<nav>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
+</nav>
+<h1>📊 Ratings Tracker</h1>
+
+<table>
+<thead>
+<tr>
+  <th>Ticker</th>
+  <th>Company</th>
+  <th>TT Rating</th>
+  <th>Since</th>
+  <th>Perf</th>
+  <th>Ghost Mail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ABG</td>
+  <td>Absa Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>18 Aug</td>
+  <td class="perf-pos">+2.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>APF</td>
+  <td>Accelerate Property Fund</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>31 Jul</td>
+  <td class="perf-neg">-6.7%</td>
+  <td>NEUTRAL<span class="ghost-date">03 Aug</span></td>
+</tr>
+<tr>
+  <td>APN</td>
+  <td>Aspen Pharmacare</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>21 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BWN</td>
+  <td>Balwin Properties</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>17 Aug</td>
+  <td class="perf-pos">+1.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BHG</td>
+  <td>BHP Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>18 Aug</td>
+  <td class="perf-pos">+6.3%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BLU</td>
+  <td>Blu Label Unlimited Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>14 Aug</td>
+  <td class="perf-pos">+1.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BTI</td>
+  <td>British American Tobacco</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>06 Aug</td>
+  <td class="perf-neg">-6.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CAA</td>
+  <td>CA Sales Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CAC</td>
+  <td>CAFCA</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>14 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CSB</td>
+  <td>Cashbuild</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>19 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CCD</td>
+  <td>Cell C Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>21 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CCC</td>
+  <td>Cilo Cybin</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+28.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CPR</td>
+  <td>Copper 360</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>DRD</td>
+  <td>DRDGOLD</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>19 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>EXX</td>
+  <td>Exxaro Resources</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>GND</td>
+  <td>Grindrod</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+8.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>HCI</td>
+  <td>Hosken Consolidated Investments</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>04 Aug</td>
+  <td class="perf-neg">-10.1%</td>
+  <td>NEUTRAL<span class="ghost-date">27 May</span></td>
+</tr>
+<tr>
+  <td>HLM</td>
+  <td>Hulamin</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>03 Aug</td>
+  <td class="perf-neg">-6.4%</td>
+  <td>NEUTRAL<span class="ghost-date">03 Aug</span></td>
+</tr>
+<tr>
+  <td>IMP</td>
+  <td>Impala Platinum</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+11.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>ITE</td>
+  <td>Italtile</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>11 Aug</td>
+  <td class="perf-neg">-3.9%</td>
+  <td>BEARISH<span class="ghost-date">03 Mar</span></td>
+</tr>
+<tr>
+  <td>JSE</td>
+  <td>JSE Limited</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>04 Aug</td>
+  <td class="perf-pos">+2.0%</td>
+  <td>BULLISH<span class="ghost-date">05 Aug</span></td>
+</tr>
+<tr>
+  <td>KAP</td>
+  <td>KAP Limited</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>19 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>LSK</td>
+  <td>Lesaka Technologies</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>03 Aug</td>
+  <td class="perf-pos">+1.2%</td>
+  <td>BULLISH<span class="ghost-date">08 May</span></td>
+</tr>
+<tr>
+  <td>LBR</td>
+  <td>Libstar Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>MTA</td>
+  <td>Metair Investments</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>03 Aug</td>
+  <td class="perf-pos">+0.8%</td>
+  <td>BULLISH<span class="ghost-date">04 Aug</span></td>
+</tr>
+<tr>
+  <td>MTN</td>
+  <td>MTN Group</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>07 Aug</td>
+  <td class="perf-neg">-6.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NPN</td>
+  <td>Naspers</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>11 Aug</td>
+  <td class="perf-neg">-10.3%</td>
+  <td>BULLISH<span class="ghost-date">22 Jun</span></td>
+</tr>
+<tr>
+  <td>NED</td>
+  <td>Nedbank Group</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>07 Aug</td>
+  <td class="perf-pos">+2.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NRP</td>
+  <td>NEPI Rockcastle</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>18 Aug</td>
+  <td class="perf-neg">-1.5%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NHM</td>
+  <td>Northam Platinum</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>11 Aug</td>
+  <td class="perf-pos">+8.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>OAO</td>
+  <td>Oando PLC</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>04 Aug</td>
+  <td class="perf-neg">-23.1%</td>
+  <td>BULLISH<span class="ghost-date">07 Jul</span></td>
+</tr>
+<tr>
+  <td>OUT</td>
+  <td>OUTsurance Group</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>17 Aug</td>
+  <td class="perf-neg">-3.3%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>PIK</td>
+  <td>Pick n Pay</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>06 Aug</td>
+  <td class="perf-pos">+1.9%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>PWR</td>
+  <td>Powerfleet</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-26.6%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>PMV</td>
+  <td>Primeserv Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>31 Jul</td>
+  <td class="perf-pos">+5.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>QLT</td>
+  <td>Quilter</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-neg">-2.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RBO</td>
+  <td>Rainbow Chicken</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>13 Aug</td>
+  <td class="perf-neg">-1.3%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RCL</td>
+  <td>RCL Foods</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>17 Aug</td>
+  <td class="perf-neg">-6.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RDF</td>
+  <td>Redefine Properties</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>04 Aug</td>
+  <td class="perf-neg">-5.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>REN</td>
+  <td>Renergen</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RES</td>
+  <td>Resilient REIT</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-6.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SBP</td>
+  <td>Sabvest Capital</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>05 Aug</td>
+  <td class="perf-pos">+5.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SAP</td>
+  <td>Sappi</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-pos">+12.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SOL</td>
+  <td>Sasol</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>05 Aug</td>
+  <td class="perf-pos">+10.1%</td>
+  <td>BULLISH<span class="ghost-date">22 Jul</span></td>
+</tr>
+<tr>
+  <td>SEB</td>
+  <td>Sebata Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+17.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SHP</td>
+  <td>Shoprite</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-3.9%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SOH</td>
+  <td>South Ocean Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>20 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SUR</td>
+  <td>Spur Corporation</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>20 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SDO</td>
+  <td>Stadio Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>14 Aug</td>
+  <td class="perf-neg">-1.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SSS</td>
+  <td>Stor-Age Property REIT</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>31 Jul</td>
+  <td class="perf-neg">-2.0%</td>
+  <td>BEARISH<span class="ghost-date">18 Jun</span></td>
+</tr>
+<tr>
+  <td>SUI</td>
+  <td>Sun International</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SPG</td>
+  <td>Super Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>05 Aug</td>
+  <td class="perf-neg">-6.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TKG</td>
+  <td>Telkom</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>03 Aug</td>
+  <td class="perf-neg">-1.1%</td>
+  <td>BULLISH<span class="ghost-date">04 Aug</span></td>
+</tr>
+<tr>
+  <td>SPP</td>
+  <td>The SPAR Group</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>17 Aug</td>
+  <td class="perf-neg">-6.9%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TGA</td>
+  <td>Thungela Resources</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>17 Aug</td>
+  <td class="perf-pos">+9.9%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TTO</td>
+  <td>Trustco Group Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>18 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TRU</td>
+  <td>Truworths International</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>21 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>WVR</td>
+  <td>Weaver Fintech</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+</tbody>
+</table>
+<div class="agree-section"><h3>✅ Where TT and Ghost Mail Agree</h3>
+<div class="agree-item"><strong>Hosken Consolidated Investments (HCI) — TT: NEUTRAL | Ghost: NEUTRAL</strong>Both share similar views on the company's outlook and valuation.</div>
+<div class="agree-item"><strong>JSE Limited (JSE) — TT: BULLISH | Ghost: BULLISH</strong>Both see the JSE benefiting from increased market activity and strong dividend.</div>
+<div class="agree-item"><strong>Lesaka Technologies (LSK) — TT: BULLISH | Ghost: BULLISH</strong>Both see Lesaka's fintech platform as undervalued with strong growth potential.</div>
+<div class="agree-item"><strong>Oando PLC (OAO) — TT: BULLISH | Ghost: BULLISH</strong>Both see turnaround potential and improving operational metrics.</div>
+<div class="agree-item"><strong>Sasol (SOL) — TT: BULLISH | Ghost: BULLISH</strong>Both see Sasol as undervalued with improving fundamentals and strong chemical margins.</div>
+<div class="agree-item"><strong>Telkom (TKG) — TT: BULLISH | Ghost: BULLISH</strong>Both see Telkom's restructuring and infrastructure assets as undervalued.</div>
+</div>
+<div class="disagree-section"><h3>⚠️ Where TT and Ghost Mail Disagree</h3>
+<div class="disagree-item"><strong>Accelerate Property Fund (APF) — TT: BEARISH | Ghost: NEUTRAL</strong>TT rates BEARISH while Ghost was NEUTRAL. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Hulamin (HLM) — TT: BULLISH | Ghost: NEUTRAL</strong>TT rates BULLISH while Ghost was NEUTRAL. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Italtile (ITE) — TT: NEUTRAL | Ghost: BEARISH</strong>TT rates NEUTRAL while Ghost was BEARISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Metair Investments (MTA) — TT: NEUTRAL | Ghost: BULLISH</strong>TT rates NEUTRAL while Ghost was BULLISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Naspers (NPN) — TT: NEUTRAL | Ghost: BULLISH</strong>TT rates NEUTRAL while Ghost was BULLISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Stor-Age Property REIT (SSS) — TT: BULLISH | Ghost: BEARISH</strong>TT rates BULLISH while Ghost was BEARISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+</div>
+
+<div class="methodology">
+  <strong>Performance Methodology:</strong> Total return = (current price − review price + dividends paid since review) ÷ review price.
+  Prices and dividends sourced from Yahoo Finance (.JO). "—" indicates review is less than 3 trading days old.
+  Ratings reflect the editorial view at the time of review and may change with new information.
+</div>
+
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
+</body>
+</html>
