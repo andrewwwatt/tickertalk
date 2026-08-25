@@ -3,200 +3,259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Today's Reviews — Ticker Talk</title>
+<title>Ticker Talk — Today's Reviews</title>
 <style>
-:root {
-  --bg: #f5f3ef;
-  --card-bg: #ffffff;
-  --border: #e0e0e0;
-  --text: #222222;
-  --muted: #666666;
-  --green: #2e7d32;
-  --red: #c62828;
-  --amber: #e65100;
-  --nav-bg: #1a1a2e;
-}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
-}
-nav {
-  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
-  background: var(--nav-bg); align-items: center;
-}
-nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
-nav a:hover { color: #cccccc; }
-nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
-h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
-h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
+nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
+nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
+nav a:hover, nav a.active { opacity: 1; }
+nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
+.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+h1 { font-size: 24px; margin-bottom: 8px; }
+.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
+.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
+.stat strong { display: block; font-size: 20px; }
 
-.stats { 
-  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
-}
-.stat { 
-  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
-  border: 1px solid var(--border); font-weight: 600;
-}
+/* Review card */
+.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.review.bullish { border-left-color: #2e7d32; }
+.review.bearish { border-left-color: #c62828; }
+.review.neutral { border-left-color: #e65100; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge.bearish { background: #ffebee; color: #c62828; }
+.r-badge.neutral { background: #fff3e0; color: #e65100; }
+.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
+.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
+.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
+.r-num.first { background: #e8f5e9; color: #2e7d32; }
+.r-num.follow { background: #fff3e0; color: #e65100; }
+.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
+.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
+.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
+.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
+.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
+.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
+.r-metrics span { color: #222222; font-weight: 600; }
+.r-link { margin-top: 10px; font-size: 13px; }
+.r-link a { color: #2e7d32; text-decoration: none; }
+.r-link a:hover { text-decoration: underline; }
 
-.review {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-left: 4px solid var(--border); border-radius: 8px;
-  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-.review.bullish { border-left-color: var(--green); }
-.review.bearish { border-left-color: var(--red); }
-.review.neutral { border-left-color: var(--amber); }
+/* Archive filter */
+.filter-bar { margin-bottom: 20px; }
+.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
+.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
 
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
-.r-company { font-size: 1.1em; font-weight: 700; }
-.r-ticker { color: var(--muted); font-size: 0.9em; }
+/* Ratings table */
+.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
+.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
+.ratings-table tr:hover { background: #fafaf8; }
+.perf-pos { color: #2e7d32; font-weight: 700; }
+.perf-neg { color: #c62828; font-weight: 700; }
+.perf-new { color: #aaa; }
+.perf-neutral { color: #e65100; font-weight: 700; }
 
-.r-badge {
-  display: inline-block; padding: 2px 10px; border-radius: 4px;
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-}
-.r-badge.bullish { background: #e8f5e9; color: var(--green); }
-.r-badge.bearish { background: #ffebee; color: var(--red); }
-.r-badge.neutral { background: #fff3e0; color: var(--amber); }
+/* Agreements section */
+.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
+.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
+.disagree-item { border-left-color: #c62828; }
 
-.r-num {
-  font-size: 12px; font-weight: 600;
-}
-.r-num.first { color: var(--green); }
-.r-num.follow { color: var(--amber); }
+/* Methodology */
+.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
+.method-box strong { color: #222; }
 
-.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
-.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
-.r-prev span { color: var(--text); }
-
-.r-summary {
-  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
-  background: #f5f3ef; border-radius: 6px;
-  border-left: 3px solid var(--green);
-}
-.r-body { font-size: 0.9em; white-space: pre-line; }
-.r-body p + p { margin-top: 10px; }
-
-.r-metrics {
-  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-  flex-wrap: wrap;
-}
-.r-metrics span { color: var(--text); }
-
-.r-links { margin-top: 10px; font-size: 0.8em; }
-.r-links a { color: var(--green); }
-
-.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
-
-.grand {
-  text-align: center; padding: 15px; margin: 20px 0;
-  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
-  font-size: 0.9em;
-}
-
-.filter-bar {
-  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
-}
-.filter-bar select { 
-  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
-  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
-}
-.filter-bar label { font-size: 0.85em; color: var(--muted); }
-
-.date-header {
-  color: #1a1a2e; font-size: 1em; font-weight: 600;
-  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
-}
-
-table {
-  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
-}
-th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
-th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
-.perf-pos { color: #2e7d32; }
-.perf-neg { color: #c62828; }
-.perf-new { color: var(--muted); }
-
-.agree-section, .disagree-section { margin-top: 25px; }
-.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
-.agree-section h3 { color: #2e7d32; }
-.disagree-section h3 { color: #c62828; }
-.agree-item, .disagree-item {
-  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
-}
-.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
-.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
-.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
-
-.methodology {
-  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
-  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
-}
-
-footer {
-  text-align: center; padding: 20px; margin-top: 40px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-}
+footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
+footer a { color: #666; }
 </style>
-
 </head>
 <body>
 <nav>
-  <a href="/">Today</a>
-  <a href="/archive.html">Archive</a>
-  <a href="/ratings.html">Ratings</a>
+  <span class="brand">📋 Ticker Talk</span>
+  <a href="index.html" class="active">Today</a>
+  <a href="archive.html" >Archive</a>
+  <a href="ratings.html" >Ratings</a>
 </nav>
+<div class="container">
 <h1>Today's Reviews</h1>
-
+<div class="subtitle">24 Aug 2026 · 9 reviews</div>
 <div class="stats">
-  <div class="stat">🟢 1 Bullish</div>
-  <div class="stat">🟡 2 Neutral</div>
-  <div class="stat">🔴 0 Bearish</div>
-  <div class="stat">📅 21 Aug 2026</div>
+  <div class="stat">🟢 <strong>6</strong> Bullish</div>
+  <div class="stat">🟡 <strong>3</strong> Neutral</div>
+  <div class="stat">🔴 <strong>0</strong> Bearish</div>
 </div>
-<div class="review neutral" data-t="TRU">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
-  <div class="r-title">Changes to the Board — Retirement of Chairman Hilton Saven after 23 Years</div>
-  <div class="r-prev">← Previous: NEUTRAL on 13 Aug</div>
-  <div class="r-summary">Truworths chairman Hilton Saven is retiring at the November AGM after 23 years on the board. Annemarie Mostert will succeed him. Saven steered Truworths through the post-2015 credit crisis, the Office Shoes acquisition, and the Covid retail wipeout. This is a planned, orderly transition — not a governance panic. But losing a chair who's seen every retail cycle since Mandela was president is a milestone worth noting.</div>
-  <div class="r-body"><p>Hilton Saven is the last of the old guard at Truworths — he joined the board in 2003, became chair in 2005, and has sat through every boom and bust in SA retail for two decades. His retirement at the 5 November AGM is entirely orderly: Annemarie Mostert, an independent non-executive who joined the board in 2021, takes the chair. The board is also refreshing its committee composition with effect from the AGM. This is textbook corporate governance succession — no midnight departures, no 'pursuing other interests', no emergency replacements.</p>
-<p>Does it change the investment case? No. Truworths is still the same business it was last week: a well-run fashion retailer with a 25.9% ROE, 6.95x PE, and 1.73x P/B, trading at R51.61. The full-year results on 27 August (EPS guided 715-730c, down 2-4%) will tell you more about the near term than a board change. The consumer is still stretched, the Middle East oil spike still hurts the discretionary wallet, and the UK (Office) still faces a stronger rand headwind. But Saven's departure matters symbolically — it closes the chapter on the leadership that built Truworths into SA's most profitable fashion retailer. Mostert inherits a good business at a tricky moment. Rating: NEUTRAL. No red flags, no catalysts. A respectful handover at a company that does governance properly.</p></div>
-  <div class="r-metrics"><span>PE: 6.95</span> · <span>P/B: 1.73</span> · <span>ROE: 25.9%</span> · <span>R51.61</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-changes-to-the-board-and-board-committees-2/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="CCD">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Cell C Holdings <span class="r-ticker">(CCD)</span></div>
-  <div class="r-title">Audited Financial Results for the Year Ended 31 May 2026</div>
-  
-  <div class="r-summary">Cell C's maiden results as a JSE-listed company are a proper flex. HEPS R23.37 (+57.4%), group revenue R12.64bn (+14%), reported EBITDA R5.5bn (+162%), adjusted EBITDA R2.4bn (+16.9%). Net debt slashed 64% to R2.02bn. 8.9m subscribers. CEO Jorge Mendes is projecting R3bn adjusted EBITDA in FY2027. The turnaround is real — but the R11.2bn enterprise value (2.18x EV/EBITDA on the headline number) says the market is still cautious.</div>
-  <div class="r-body"><p>Cell C has spent five years in the wilderness — balance sheet restructuring, network-sharing deals with MTN and Vodacom, and a brand that was getting lapped by Telkom Mobile. These maiden JSE results are the first proper look at the post-restructuring Cell C, and the picture is better than the market expected. Service revenue grew 6% to R11.64bn, prepaid revenue up 9.7%, and the wholesale/MVNO business jumped 20% — the capex-light model is working. The headline EBITDA of R5.5bn is flattered by R3.1bn in pre-listing restructuring gains, but even the clean adjusted EBITDA of R2.4bn (up 16.9%) shows the operating engine is turning.</p>
-<p>The balance sheet is the real win. Net debt collapsed from R5.69bn to R2.02bn — leverage of 1.56x against the clean EBITDA, 0.50x against the headline figure. That's night-and-day different from the R9.1bn working capital deficit of a year ago. The caution: current ratio of 0.58 and an Altman Z-score of -0.83 suggest the turnaround isn't complete, and the R11.2bn enterprise value (PE 6.73x on trailing, 4.94x forward) reflects the market's lingering scepticism. CEO Mendes guided FY2027 adjusted EBITDA of ~R3bn — if he delivers, the re-rating will be violent. Rating: BULLISH. The worst is behind Cell C. The market is still pricing in failure; the numbers say recovery.</p></div>
-  <div class="r-metrics"><span>PE: 6.73</span> · <span>P/B: 3.55</span> · <span>R26.00</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/cell-c-holdings-limited-audited-financial-results-for-the-year-ended-31-may-2026/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="APN">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
-  <div class="r-title">Business Update and Trading Statement for the Year Ended 30 June 2026</div>
-  
-  <div class="r-summary">Aspen's FY2026 numbers are a tale of two earnings lines. Normalised HEPS from total operations is guided 550-620c — more than double last year's comparable. But R2.3bn in manufacturing restructuring costs flips basic EPS to a loss of ~243.9c. The operational engine (Commercial Pharma + Manufacturing) is building momentum; the P&L is still absorbing the cost of the strategic pivot. Forward PE 17x at R147.63. Results 2 September.</div>
-  <div class="r-body"><p>Aspen spent FY2026 executing the manufacturing restructuring it flagged 18 months ago — rationalising its sterile manufacturing footprint, closing high-cost sites, and shifting to a leaner contract manufacturing model. The R2.3bn bill (roughly R5.18 per share) is the accounting cost of that pivot. It's a one-off, but it's a big one. Excluding it, the underlying business tells a much better story: normalised HEPS of 550-620 cents represents >100% growth on the prior year's comparable base, driven by the Commercial Pharmaceuticals brands (the Anaesthetics portfolio, thrombosis, and the regional brands in Africa, Asia, and Latin America) and improved manufacturing utilisation.</p>
-<p>Group revenue was supported by the Anaesthetics portfolio and a weaker rand, while the Manufacturing segment benefited from contract wins that were part of the restructuring strategy. The balance sheet carries R33bn in debt against a R65.6bn market cap — D/E of 0.41 is manageable, and interest cover of 3.29x is adequate but not comfortable. The stock at R147.63 trades on 0.81x book with a forward PE of 17x — not cheap, but pricing in the recovery. The 2 September results will be the acid test: can Aspen show revenue momentum in Commercial Pharma while keeping the restructuring on track? Rating: NEUTRAL. The operational turnaround is real, but the restructuring bill is a blunt reminder that pivoting a global pharma manufacturer is expensive and messy. Watch results day.</p></div>
-  <div class="r-metrics"><span>P/B: 0.81</span> · <span>ROE: -2.2%</span> · <span>R147.63</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-business-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
-  </div>
+
+    <div class="review bullish" data-t="THA">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 15 Jul · <span class="r-badge-sm bullish">BULLISH</span></div>
+      
+      
+      <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
+      <div class="r-title">Karo Platinum Signs Special Mining Lease Agreement with Government of Zimbabwe</div>
+      <div class="r-summary">This is the milestone Tharisa shareholders have been waiting for. Karo Platinum has signed a 25-year Special Mining Lease with the Zimbabwe government, locking in tenure and fiscal terms for one of the Great Dyke's largest undeveloped PGM assets. With 2.1 Moz in reserves, 11.2 Moz in resources, and over $240m already invested, this de-risks the project enormously. President Mnangagwa attended the signing — that's political buy-in.</div>
+      <div class="r-review">The Special Mining Lease is the key that unlocks Karo Platinum. Under Zimbabwe's Mines and Minerals Act, this 25-year lease over 23,903 hectares provides fiscal certainty and long-term security that institutional investors need to write cheques. Karo is 85% owned by Karo Mining Holdings (a Tharisa vehicle) with the remaining 15% held by the Zimbabwe government on a free carry. The 2.1 Moz open-pit reserve is just the starter — there's 11.2 Moz in total resource and a mine life exceeding 50 years when underground potential is included.
+
+Tharisa trades at a PE of 4.0 with P/B of 0.52 — the market is pricing this like a pure-play chrome miner with a PGM side-hustle, ignoring Karo entirely. That changes now. The lease signing means Karo can move towards first production of PGM concentrate with fiscal terms locked in. Zimbabwe risk remains, but a deal personally witnessed by the President sends a signal. At $240m sunk cost and a tier-one resource, the optionality here is enormous relative to Tharisa's R7.85bn market cap.</div>
+      <div class="r-metrics"><span>PE: 3.97</span> · <span>P/B: 0.52</span> · <span>ROE: 14.5%</span> · <span>R26.50</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-karo-platinum-signs-special-mining-lease-agreement-with-government-of-zimbabwe/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SBP">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 06 Aug · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 05 Aug</div>
+      
+      <div class="r-company">Sabvest Capital <span class="r-ticker">(SBP)</span></div>
+      <div class="r-title">Investment by Sabcap in Frogfoot, Vox and Hypa</div>
+      <div class="r-summary">Sabvest is putting R754m into South Africa's digital backbone — a ≥8.97% stake in a fibre-and-internet group valued at R14.4bn. Frogfoot is the country's 4th largest open-access fibre network operator, Vox is a national ISP, and Hypa targets prepaid fibre for lower-income households. This is exactly the kind of infrastructure-adjacent investment that makes Sabvest's portfolio interesting.</div>
+      <div class="r-review">This is Sabvest doing what Sabvest does best — finding value in unlisted South African assets. The R754m subscription buys them into a DNI-led consortium that will hold 34.8% of the Companies, with Sabvest's existing 19.4% DNI stake adding indirect exposure. The R14.4bn enterprise value implies R8.4bn equity after debt — that's a chunky bet on South Africa's fibre rollout. Frogfoot alone has been building networks for 25+ years. Funding comes from new term bank debt, so no shareholder dilution.
+
+Sabvest remains a fascinating holding company — PE of 5.1, P/B of 0.93, ROE of 20.2%, and the stock is up 58% over 12 months. This transaction is Category 2 (no shareholder vote needed) and closes 1 October. The play here is simple: South Africa needs more fibre, these companies are established players, and Sabvest gets in at what looks like a sensible price alongside experienced operators. Andrew might note we were bullish on SBP on 5 August too — the thesis keeps building.</div>
+      <div class="r-metrics"><span>PE: 5.06</span> · <span>P/B: 0.93</span> · <span>ROE: 20.2%</span> · <span>R150.00</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sabvest-capital-limited-investment-by-sabcap-in-frogfoot-vox-and-hypa/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="MTN">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 08 Aug · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 07 Aug</div>
+      
+      <div class="r-company">MTN Group <span class="r-ticker">(MTN)</span></div>
+      <div class="r-title">Interim Results for the Six Months Ended 30 June 2026 and Share Buyback</div>
+      <div class="r-summary">MTN fired on all cylinders in H1 2026. Constant-currency service revenue jumped 17.5%, adjusted HEPS surged 21.3% to 793c, and the EBITDA margin hit a juicy 47.6%. Net debt is a negligible 0.3x EBITDA. Paired with a R6bn buyback, this is management saying the stock is cheap — and the numbers back them up.</div>
+      <div class="r-review">MTN delivered its strongest half in years. Group service revenue hit R115.3bn with data revenue surging 21% to R57.6bn — that's where the real growth is. Fintech is quietly becoming a monster: $330.5bn in transaction value, up 33.8% in constant currency, with 70.8 million active MoMo users. Fintech revenue was up 13.3% CC excluding regulatory items in Nigeria. Adjusted HEPS of 793c is up 21.3% — strip out once-offs and this business is humming.
+
+Management reaffirmed medium-term guidance and didn't declare an interim dividend — instead they're launching a R6bn share buyback. That's the right call when your stock trades at a forward PE of 11.3 with ROE of 16.7%. The IHS transaction progress adds a catalyst. Capex of R19.7bn at 16.6% intensity shows they're still investing for growth. Nigeria remains the elephant in the room, but the diversification across 19 markets is now clearly paying off. Africa's biggest telco is back.</div>
+      <div class="r-metrics"><span>PE: 19.69</span> · <span>P/B: 2.25</span> · <span>ROE: 16.7%</span> · <span>R189.70</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/mtn-group-limited-interim-financial-results-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="MPT">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 17 Jul · <span class="r-badge-sm bearish">BEARISH</span></div>
+      
+      
+      <div class="r-company">Mpact <span class="r-ticker">(MPT)</span></div>
+      <div class="r-title">Unaudited Interim Results and Cash Dividend Declaration for the Six Months Ended 30 June 2026</div>
+      <div class="r-summary">Mpact is doing the right things in the wrong market. Cash generation jumped to R448m from R173m and net debt fell to R2.6bn, but EPS from continuing ops halved to 50c on weak paper demand. The BM6 cartonboard machine is now discontinued and the recycling footprint is being rationalised. A 15c interim dividend at least keeps income investors warm while the restructuring plays out.</div>
+      <div class="r-review">Bruce Strong is pulling the right levers — cutting capacity, rationalising the cost base, focusing on higher-margin converting and plastics — but the structural oversupply in global containerboard and cartonboard markets is a headwind he can't outrun. Paper Manufacturing margins got squeezed between rising input costs and falling selling prices. The agricultural sector held up (good export crop volumes), but floods in the Cape disrupted packing demand. The Middle East conflict escalation in Q2 pushed up fuel and freight costs, compounding the pain.
+
+Here's the glass-half-full view: Mpact trades at 0.41x book with a PE of 6.2. The balance sheet is improving (net debt down R400m), and the portfolio optimisation is real — BM6 is shut, BM3 continues, recycling is leaner. If the paper cycle turns, this stock could re-rate aggressively. But the -39% 52-week price decline tells you the market isn't betting on a near-term recovery. A Piotroski F-Score of 7 suggests the financials aren't deteriorating, but until demand picks up, this is a value trap that might stay trapped.</div>
+      <div class="r-metrics"><span>PE: 6.17</span> · <span>P/B: 0.41</span> · <span>ROE: 8.5%</span> · <span>R16.95</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/mpact-limited-unaudited-interim-results-and-cash-dividend-declaration-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="ITE">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 12 Aug · <span class="r-badge-sm bearish">BEARISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 11 Aug</div>
+      
+      <div class="r-company">Italtile <span class="r-ticker">(ITE)</span></div>
+      <div class="r-title">Reviewed Annual Results for the Year Ended 30 June 2026 and Dividend Declaration</div>
+      <div class="r-summary">Italtile churned out a flat year in a grim consumer environment. System-wide turnover inched up 0.6% to R11.3bn, but trading profit fell 10% to R1.8bn and HEPS slipped 9% to 113.4c. The dividend took a haircut — 45c ordinary plus 25c special, down from 50c + 98c. Net cash of R1.7bn keeps the balance sheet fortress-like, but there's no top-line catalyst in sight.</div>
+      <div class="r-review">The tile-and-bathroom king had a forgettable year. Every line item went backwards — trading profit -10%, HEPS -9%, NAV per share -7%. The special dividend collapse from 98c to 25c is the real sting for income investors. CEO Brandon Wood points to excess Southern African manufacturing capacity hammering Ceramics margins, while Australia is on the block. Retail held up reasonably — 0.4% system-wide growth with margin up 0.5% — but supply chain imports fell 6.4%.
+
+On the positive side, R1.7bn net cash and a PE of 7.9 means there's a floor. The 45c ordinary dividend still yields 4.9% at R9.10. 213 stores and seven webstores give them unmatched distribution. But with consumer wallets squeezed and competitors flooding the market, Italtile needs a macro tailwind it's not getting. Until building activity picks up, this is a quality business marking time.</div>
+      <div class="r-metrics"><span>PE: 7.89</span> · <span>P/B: 1.43</span> · <span>ROE: 18.2%</span> · <span>R9.10</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/italtile-limited-reviewed-condensed-group-annual-financial-statements-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="DTC">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 29 Jan · <span class="r-badge-sm bullish">BULLISH</span></div>
+      
+      
+      <div class="r-company">Datatec <span class="r-ticker">(DTC)</span></div>
+      <div class="r-title">Declaration of a Special Dividend of R29.00 and Scrip Distribution Alternative</div>
+      <div class="r-summary">Datatec is returning a staggering R7.05bn to shareholders — that's R29.00 per share, a 35% yield on the R83.85 share price. The windfall comes from the Westcon refinancing and minority stake sale to General Atlantic, completed on 4 August. Shareholders can take cash (R23.20 after withholding tax) or scrip. Either way, this is a massive capital return that validates the sum-of-the-parts thesis.</div>
+      <div class="r-review">This is what unlocking value looks like. Datatec spent years trading at a conglomerate discount — a sprawling IT distribution business with a hidden gem (Westcon) that the market refused to price properly. The General Atlantic transaction brought in a strategic partner, refinanced WIGHL's balance sheet, and freed up enough cash to return $435m to shareholders. The special dividend of R29 per share on a 243m share base is the single biggest per-share distribution we've seen on the JSE this year.
+
+There's some nuance: the scrip alternative means shareholders who take shares instead of cash effectively get a capitalisation issue at a 30-day VWAP less the R29 dividend, and the withholding tax doesn't apply. Record date is 16 October. Datatec still retains a controlling stake in Westcon and the Logicalis business. The stock trades at a forward PE of 9.9 with ROE of 17.9% — but the real story is that management finally proved the sceptics wrong. After this distribution, Datatec becomes a cleaner, leaner story. Or you can just bank your R29 and walk away.</div>
+      <div class="r-metrics"><span>PE: 13.73</span> · <span>P/B: 2.00</span> · <span>ROE: 17.9%</span> · <span>R83.85</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/datatec-limited-declaration-of-a-special-dividend-of-2-900-zar-cents-and-scrip-distribution-alternative/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="DIB">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 14 May · <span class="r-badge-sm bullish">BULLISH</span></div>
+      
+      
+      <div class="r-company">Dipula Properties <span class="r-ticker">(DIB)</span></div>
+      <div class="r-title">Category 2 Acquisition of R2.04bn Property Portfolio, Private Placement Results, and Withdrawal of Cautionary</div>
+      <div class="r-summary">Dipula is going shopping in a buyer's market. A R2.04bn acquisition of nine retail properties across four provinces adds 89,168 sqm of GLA anchored by Checkers, Shoprite, Game, Cashbuild and Makro. The deal is immediately earnings-accretive, funded via a private placement, and fits Dipula's strategy of owning convenience and rural retail. Moolman Group is a credible seller with quality assets.</div>
+      <div class="r-review">This is Dipula putting its REIT structure to work. The Moolman portfolio spans nine properties with national-anchor tenants that pay rent every month, recession or not. At a R2.04bn purchase price, the acquisition broadens Dipula's geographic spread and deepens its retail exposure — exactly where they've been steering the ship. The private placement results suggest institutional demand was there to fund it. Withdrawal of the cautionary means the deal is now firm.
+
+Dipula trades at a PE of 7.2 with P/B of 0.92 — classic REIT territory. The 11.3% share count increase over the past year reflects the acquisition funding, but if the assets are genuinely accretive (which management claims they are day one), that dilution is earnings-neutral or better. The 89,168 sqm addition takes the portfolio past a meaningful threshold. With 95.7% institutional ownership, this is a serious property counter. The risk is interest rates — debt/EBITDA of 4.6x is on the higher side for a REIT. But for yield-hungry investors, a well-anchored retail portfolio at close to book value is hard to find.</div>
+      <div class="r-metrics"><span>PE: 7.23</span> · <span>P/B: 0.92</span> · <span>ROE: 14.2%</span> · <span>R6.90</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/dipula-properties-limited-category-2-acquisition-of-a-portfolio-of-properties-results-of-a-private-placement-and-withdrawal-of-cautionary-announcement/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="AEG">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 16 Jan · <span class="r-badge-sm neutral">NEUTRAL</span></div>
+      
+      
+      <div class="r-company">Aveng <span class="r-ticker">(AEG)</span></div>
+      <div class="r-title">Changes to Executive Management, Resignation of Directors and Appointment of Chairman</div>
+      <div class="r-summary">Aveng is getting a leadership overhaul. Fraser Wyllie, a Kiwi civil engineer with a proven turnaround record at McConnell Dowell NZ, becomes CEO on 1 October. Chairman Philip Hourquebie and director Nick Bowen have retired, with Graeme Bevans taking the chair. Wyllie's NZ unit had zero loss-making projects in three years — exactly the operational discipline Aveng desperately needs.</div>
+      <div class="r-review">This is a boardroom refresh with substance. Fraser Wyllie isn't a random appointment — he's been running McConnell Dowell's New Zealand and Pacific Islands business since 2017, turning around underperforming projects and building it into a highly profitable unit. His NZ team has also been collaborating with the Australian business on water infrastructure, which is where Aveng's growth ambitions lie. Wyllie brings 30+ years of civil contracting experience, an engineering degree from Auckland, and an MBA from Massey.
+
+But let's not get ahead of ourselves. Aveng still trades at R4.25 with negative ROE (-8.39%) and an enterprise value that's negative. The P/B of 0.28 screams deep value or deep trouble. The retiring directors served through some of Aveng's darkest hours — Hourquebie was around since 2015. This is a necessary changing of the guard, but a CEO announcement doesn't fix the balance sheet or the order book. Watch for Wyllie's first strategy update before getting excited.</div>
+      <div class="r-metrics"><span>P/B: 0.28</span> · <span>ROE: -8.4%</span> · <span>R4.25</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/aveng-limited-changes-to-executive-management-resignation-of-directors-and-appointment-of-chairman/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="ADH">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 06 Mar · <span class="r-badge-sm bullish">BULLISH</span></div>
+      
+      
+      <div class="r-company">ADvTECH <span class="r-ticker">(ADH)</span></div>
+      <div class="r-title">Interim Results for the Six Months Ended 30 June 2026 and Dividend Declaration</div>
+      <div class="r-summary">ADvTECH keeps delivering the kind of results that make Curro shareholders weep. Revenue up 8% to R5.06bn, operating profit up 14% to R1.12bn, and normalised EPS up 16% to 130.8c. The interim dividend jumps 18% to 53c. Private education demand in South Africa remains structural, not cyclical, and ADvTECH's premium brand positioning gives it pricing power that rivals envy.</div>
+      <div class="r-review">This is a compounder doing compounder things. Revenue growth of 8% translated into 14% operating profit growth — that's operating leverage working in shareholders' favour. Normalised earnings of R717m and HEPS of 130.8c (both +16%) show consistent execution. The board is confident enough to lift the dividend 18% while maintaining 2x cover. With ROE of 20.6% and a Piotroski F-Score of 7, the quality metrics are flashing green.
+
+At a PE of 19.8 and P/B of 3.8, this stock isn't cheap — the market knows what it owns. But education is one of the few sectors where South African parents will cut everything else before pulling their kids out of a good school. The stock is up 42% over 52 weeks, and with 549.9m shares outstanding (barely diluted), the earnings per share growth flows straight to shareholders. The only question is whether you want to pay nearly 20x earnings for it. For a quality business with a structural tailwind, the answer is probably yes.</div>
+      <div class="r-metrics"><span>PE: 19.79</span> · <span>P/B: 3.77</span> · <span>ROE: 20.6%</span> · <span>R46.11</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/advtech-limited-interim-results-for-the-six-months-ended-30-june-2026-and-announcement-of-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
 </div>
-<footer>
-  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
-  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
-</footer>
+<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
 </body>
 </html>
