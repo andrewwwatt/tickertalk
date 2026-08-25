@@ -1,0 +1,811 @@
+{
+  "period": {
+    "start": "2026-07-31",
+    "end": "2026-08-24",
+    "days": 16
+  },
+  "agents": {
+    "Daily Trader": {
+      "name": "Daily Trader",
+      "time_horizon": "daily",
+      "themes": [
+        "tech",
+        "mining",
+        "energy",
+        "industrial"
+      ],
+      "total_in": 16000,
+      "final_cash": 2570.78,
+      "final_holdings_value": 13651.48,
+      "final_portfolio": 16222.26,
+      "return_pct": 1.4,
+      "total_costs": 85.09,
+      "total_dividends": 0,
+      "realized_gains": -560.28,
+      "num_trades": 6,
+      "daily_values": [
+        [
+          "2026-07-31",
+          1000.0
+        ],
+        [
+          "2026-08-03",
+          2000.0
+        ],
+        [
+          "2026-08-04",
+          2988.06
+        ],
+        [
+          "2026-08-05",
+          3988.06
+        ],
+        [
+          "2026-08-06",
+          4977.71
+        ],
+        [
+          "2026-08-07",
+          5379.11
+        ],
+        [
+          "2026-08-11",
+          6455.76
+        ],
+        [
+          "2026-08-12",
+          7532.42
+        ],
+        [
+          "2026-08-13",
+          8468.82
+        ],
+        [
+          "2026-08-14",
+          9467.24
+        ],
+        [
+          "2026-08-17",
+          10583.23
+        ],
+        [
+          "2026-08-18",
+          11394.3
+        ],
+        [
+          "2026-08-19",
+          12984.48
+        ],
+        [
+          "2026-08-20",
+          14391.33
+        ],
+        [
+          "2026-08-21",
+          15222.26
+        ],
+        [
+          "2026-08-24",
+          16222.26
+        ]
+      ],
+      "holdings": {
+        "CPR": {
+          "shares": 3832.69,
+          "cost": 0.54,
+          "buy_date": "2026-08-06",
+          "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
+          "sector": "mining",
+          "current_price": 0.54
+        },
+        "DRD": {
+          "shares": 129.43,
+          "cost": 39.04,
+          "buy_date": "2026-08-13",
+          "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
+          "sector": "mining",
+          "current_price": 48.61
+        },
+        "NRP": {
+          "shares": 22.73,
+          "cost": 149.55,
+          "buy_date": "2026-08-18",
+          "reason": "TT BULLISH. other sector. AGGRESSIVE market.",
+          "sector": "other",
+          "current_price": 147.36
+        },
+        "SOH": {
+          "shares": 2065.25,
+          "cost": 1.1,
+          "buy_date": "2026-08-20",
+          "reason": "TT BULLISH. industrial sector. AGGRESSIVE market.",
+          "sector": "industrial",
+          "current_price": 0.94
+        }
+      },
+      "decisions": [
+        {
+          "date": "2026-08-04",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "Nedbank H1 results beat \u2014 revenue growth, improving ROE",
+            "JSE Limited H1 \u2014 strong trading volumes, increased listings",
+            "Oando H1 \u2014 Nigerian oil play showing operational improvement"
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY OAO @ R0.26 (energy)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-06",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "SA inflation drops to 4.5% in July \u2014 below SARB's 4.5% midpoint target",
+            "US jobless claims rise \u2014 rate cut expectations strengthen",
+            "Global markets rally on rate cut hopes, JSE +1.2%"
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY CPR @ R0.54 (mining)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-07",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "MTN results \u2014 revenue growth solid, fintech gains traction",
+            "Oil prices dip 2% on ceasefire speculation",
+            "SA retail sales +1.8% \u2014 consumer spending holding up"
+          ],
+          "reasoning": [
+            "\ud83d\udd34 SELL OAO \u2014 Down -23% \u2014 cutting deep losses (R-560)",
+            "\u26d4 Max 1 trades today. Skipping buys."
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-13",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "SARB MPC minutes show 3-2 split \u2014 hawks losing ground",
+            "Rainbow Chicken results \u2014 poultry recovery continuing",
+            "Rand strengthens to R18.10/USD on rate cut hopes"
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY DRD @ R39.04 (mining)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-18",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "RCL Foods results \u2014 poultry margins improving, sugar restructuring",
+            "Northam Platinum \u2014 production steady, PGM prices supportive",
+            "SA GDP revision \u2014 Q2 growth upgraded to 1.2%"
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY NRP @ R149.55 (other)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-19",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "Fed minutes confirm September cut 'likely'",
+            "SA bond yields fall to 10.2% \u2014 3-month low",
+            "JSE All Share hits new 2026 high"
+          ],
+          "reasoning": [
+            "\u2705 HOLD DRD \u2014 TT BULLISH. +14% since buy."
+          ],
+          "trades_this_day": 0
+        },
+        {
+          "date": "2026-08-20",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "SA retail sales +2.1% \u2014 consumer spending accelerating",
+            "Anglo American copper production \u2014 H2 guidance on track",
+            "JP Morgan upgrades SA equities to 'overweight'"
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY SOH @ R1.10 (industrial)"
+          ],
+          "trades_this_day": 1
+        }
+      ],
+      "all_trades": [
+        {
+          "date": "2026-08-04",
+          "ticker": "OAO",
+          "action": "BUY",
+          "shares": 9184.84500574053,
+          "price": 0.26,
+          "gain": 0,
+          "reason": "TT BULLISH. energy. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-06",
+          "ticker": "CPR",
+          "action": "BUY",
+          "shares": 3832.688409802837,
+          "price": 0.54,
+          "gain": 0,
+          "reason": "TT BULLISH. mining. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-07",
+          "ticker": "OAO",
+          "action": "SELL",
+          "shares": 9184.84500574053,
+          "price": 0.2,
+          "gain": -560.2755453501723,
+          "reason": "Down -23% \u2014 cutting deep losses"
+        },
+        {
+          "date": "2026-08-13",
+          "ticker": "DRD",
+          "action": "BUY",
+          "shares": 129.43039222213454,
+          "price": 39.04,
+          "gain": 0,
+          "reason": "TT BULLISH. mining. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-18",
+          "ticker": "NRP",
+          "action": "BUY",
+          "shares": 22.72585893656278,
+          "price": 149.55,
+          "gain": 0,
+          "reason": "TT BULLISH. other. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-20",
+          "ticker": "SOH",
+          "action": "BUY",
+          "shares": 2065.24567435238,
+          "price": 1.1,
+          "gain": 0,
+          "reason": "TT BULLISH. industrial. AGGRESSIVE."
+        }
+      ],
+      "risk_timeline": [
+        {
+          "date": "2026-08-04",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-06",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-07",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-13",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-18",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-19",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-20",
+          "appetite": "AGGRESSIVE"
+        }
+      ]
+    },
+    "Weekly Trader": {
+      "name": "Weekly Trader",
+      "time_horizon": "weekly",
+      "themes": [
+        "financial",
+        "retail",
+        "property"
+      ],
+      "total_in": 16000,
+      "final_cash": 2560.0,
+      "final_holdings_value": 13275.45,
+      "final_portfolio": 15835.45,
+      "return_pct": -1.0,
+      "total_costs": 66.87,
+      "total_dividends": 0,
+      "realized_gains": 0,
+      "num_trades": 4,
+      "daily_values": [
+        [
+          "2026-07-31",
+          1000.0
+        ],
+        [
+          "2026-08-03",
+          2000.0
+        ],
+        [
+          "2026-08-04",
+          3000.0
+        ],
+        [
+          "2026-08-05",
+          4000.0
+        ],
+        [
+          "2026-08-06",
+          4980.1
+        ],
+        [
+          "2026-08-07",
+          6029.83
+        ],
+        [
+          "2026-08-11",
+          7004.04
+        ],
+        [
+          "2026-08-12",
+          8003.12
+        ],
+        [
+          "2026-08-13",
+          8958.36
+        ],
+        [
+          "2026-08-14",
+          9955.59
+        ],
+        [
+          "2026-08-17",
+          10818.1
+        ],
+        [
+          "2026-08-18",
+          11722.69
+        ],
+        [
+          "2026-08-19",
+          12659.83
+        ],
+        [
+          "2026-08-20",
+          13835.72
+        ],
+        [
+          "2026-08-21",
+          14835.45
+        ],
+        [
+          "2026-08-24",
+          15835.45
+        ]
+      ],
+      "holdings": {
+        "QLT": {
+          "shares": 92.09,
+          "cost": 43.22,
+          "buy_date": "2026-08-06",
+          "reason": "TT BULLISH. financial sector. AGGRESSIVE market.",
+          "sector": "financial",
+          "current_price": 42.2
+        },
+        "RBO": {
+          "shares": 636.82,
+          "cost": 6.25,
+          "buy_date": "2026-08-13",
+          "reason": "TT BULLISH. retail sector. AGGRESSIVE market.",
+          "sector": "retail",
+          "current_price": 6.17
+        },
+        "NRP": {
+          "shares": 21.29,
+          "cost": 149.55,
+          "buy_date": "2026-08-18",
+          "reason": "TT BULLISH. other sector. AGGRESSIVE market.",
+          "sector": "other",
+          "current_price": 147.36
+        },
+        "SUR": {
+          "shares": 51.83,
+          "cost": 43.0,
+          "buy_date": "2026-08-20",
+          "reason": "TT BULLISH. retail sector. AGGRESSIVE market.",
+          "sector": "retail",
+          "current_price": 44.81
+        }
+      },
+      "decisions": [
+        {
+          "date": "2026-08-06",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "Inflation surprise \u2014 SA CPI at 4.5%, down from 4.8%. This is a big deal \u2014 it gives SARB room to cut. Markets pricing in a September cut. Global backdrop also supportive."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY QLT @ R43.22 (financial)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-13",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "SARB minutes confirm the dovish shift. 3-2 vote means one more MPC member swing and we get a cut. Market pricing in 80% probability of September cut. Rand rallying in anticipation."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY RBO @ R6.25 (retail)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-18",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "GDP upgrade is significant \u2014 SA economy finding its feet. RCL and Northam results show operational improvements across sectors. The recovery is broadening."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY NRP @ R149.55 (other)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-20",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "JP Morgan upgrade is a signal. SA is back on the radar for global investors. Retail sales acceleration confirms the consumer recovery. Anglo copper story remains the best mining thesis on the JSE."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY SUR @ R43.00 (retail)"
+          ],
+          "trades_this_day": 1
+        }
+      ],
+      "all_trades": [
+        {
+          "date": "2026-08-06",
+          "ticker": "QLT",
+          "action": "BUY",
+          "shares": 92.08929899323374,
+          "price": 43.22,
+          "gain": 0,
+          "reason": "TT BULLISH. financial. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-13",
+          "ticker": "RBO",
+          "action": "BUY",
+          "shares": 636.81592039801,
+          "price": 6.25,
+          "gain": 0,
+          "reason": "TT BULLISH. retail. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-18",
+          "ticker": "NRP",
+          "action": "BUY",
+          "shares": 21.291070558275155,
+          "price": 149.55,
+          "gain": 0,
+          "reason": "TT BULLISH. other. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-20",
+          "ticker": "SUR",
+          "action": "BUY",
+          "shares": 51.83385398588454,
+          "price": 43.0,
+          "gain": 0,
+          "reason": "TT BULLISH. retail. AGGRESSIVE."
+        }
+      ],
+      "risk_timeline": [
+        {
+          "date": "2026-08-06",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-13",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-18",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-20",
+          "appetite": "AGGRESSIVE"
+        }
+      ]
+    },
+    "Monthly Trader": {
+      "name": "Monthly Trader",
+      "time_horizon": "monthly",
+      "themes": [
+        "industrial",
+        "energy",
+        "financial",
+        "mining"
+      ],
+      "total_in": 16000,
+      "final_cash": 628.48,
+      "final_holdings_value": 15613.3,
+      "final_portfolio": 16241.78,
+      "return_pct": 1.5,
+      "total_costs": 76.48,
+      "total_dividends": 0,
+      "realized_gains": 0,
+      "num_trades": 5,
+      "daily_values": [
+        [
+          "2026-07-31",
+          1000.0
+        ],
+        [
+          "2026-08-03",
+          2000.0
+        ],
+        [
+          "2026-08-04",
+          3000.0
+        ],
+        [
+          "2026-08-05",
+          3984.08
+        ],
+        [
+          "2026-08-06",
+          5055.65
+        ],
+        [
+          "2026-08-07",
+          6147.88
+        ],
+        [
+          "2026-08-11",
+          7229.35
+        ],
+        [
+          "2026-08-12",
+          8113.44
+        ],
+        [
+          "2026-08-13",
+          8947.75
+        ],
+        [
+          "2026-08-14",
+          10004.94
+        ],
+        [
+          "2026-08-17",
+          11215.14
+        ],
+        [
+          "2026-08-18",
+          12263.71
+        ],
+        [
+          "2026-08-19",
+          13704.15
+        ],
+        [
+          "2026-08-20",
+          14860.64
+        ],
+        [
+          "2026-08-21",
+          15254.29
+        ],
+        [
+          "2026-08-24",
+          16241.78
+        ]
+      ],
+      "holdings": {
+        "SPG": {
+          "shares": 159.04,
+          "cost": 20.02,
+          "buy_date": "2026-08-05",
+          "reason": "TT BULLISH. industrial sector. AGGRESSIVE market.",
+          "sector": "industrial",
+          "current_price": 18.68
+        },
+        "TGA": {
+          "shares": 23.1,
+          "cost": 96.48,
+          "buy_date": "2026-08-07",
+          "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
+          "sector": "mining",
+          "current_price": 118.04
+        },
+        "DRD": {
+          "shares": 72.59,
+          "cost": 39.04,
+          "buy_date": "2026-08-13",
+          "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
+          "sector": "mining",
+          "current_price": 48.61
+        },
+        "SOH": {
+          "shares": 4133.51,
+          "cost": 1.1,
+          "buy_date": "2026-08-20",
+          "reason": "TT BULLISH. industrial sector. AGGRESSIVE market.",
+          "sector": "industrial",
+          "current_price": 0.94
+        },
+        "SBP": {
+          "shares": 17.12,
+          "cost": 146.15,
+          "buy_date": "2026-08-24",
+          "reason": "TT BULLISH. financial sector. AGGRESSIVE market.",
+          "sector": "financial",
+          "current_price": 146.15
+        }
+      },
+      "decisions": [
+        {
+          "date": "2026-08-05",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "SA industrial recovery story gaining momentum. Sasol's turnaround is real \u2014 oil price tailwind + operational improvements. Consumer-facing stocks mixed \u2014 Super Group recovering but automotive disruption remains."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY SPG @ R20.02 (industrial)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-07",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "August week 1: Strong results season, inflation surprise, rate cut expectations building. SA risk premium compressing. Rand stable. The table is set for a constructive Q3."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY TGA @ R96.48 (mining)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-13",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "SARB turning dovish. This is the single most important development for SA equities. A rate cut cycle would boost banks (NIM expansion), retailers (consumer spending), and property (cap rate compression). The pivot is happening."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY DRD @ R39.04 (mining)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-17",
+          "risk_appetite": "CAUTIOUS",
+          "news_headlines": [
+            "Third week of August: China slowdown concerns emerging. This is a risk for SA resources (Kumba, Anglo, Exxaro). But the domestic story \u2014 inflation, SARB pivot, results season \u2014 remains constructive. Selective exposure is key."
+          ],
+          "reasoning": [
+            "\u2705 HOLD TGA \u2014 TT BULLISH. +11% since buy."
+          ],
+          "trades_this_day": 0
+        },
+        {
+          "date": "2026-08-19",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
+          ],
+          "reasoning": [
+            "\u2705 HOLD DRD \u2014 TT BULLISH. +14% since buy."
+          ],
+          "trades_this_day": 0
+        },
+        {
+          "date": "2026-08-20",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "Broker upgrades are the late-cycle confirmation. SA equities getting institutional attention. The narrative has shifted from 'SA is uninvestable' to 'SA is undervalued.' Rate cuts + GDP growth + results season = the trifecta."
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY SOH @ R1.10 (industrial)"
+          ],
+          "trades_this_day": 1
+        },
+        {
+          "date": "2026-08-24",
+          "risk_appetite": "AGGRESSIVE",
+          "news_headlines": [
+            "August 24: The disinflation story is complete \u2014 CPI at 4.5%, PPI at 3.8%. SARB has no reason to hold. The rate cut in September is now priced at 95% probability. SA equities have rallied 7% in August. The question is: how much is already priced in?"
+          ],
+          "reasoning": [
+            "\ud83d\udfe2 BUY SBP @ R146.15 (financial)"
+          ],
+          "trades_this_day": 1
+        }
+      ],
+      "all_trades": [
+        {
+          "date": "2026-08-05",
+          "ticker": "SPG",
+          "action": "BUY",
+          "shares": 159.04493516433817,
+          "price": 20.02,
+          "gain": 0,
+          "reason": "TT BULLISH. industrial. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-07",
+          "ticker": "TGA",
+          "action": "BUY",
+          "shares": 23.10173840581504,
+          "price": 96.48,
+          "gain": 0,
+          "reason": "TT BULLISH. mining. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-13",
+          "ticker": "DRD",
+          "action": "BUY",
+          "shares": 72.58788027077728,
+          "price": 39.04,
+          "gain": 0,
+          "reason": "TT BULLISH. mining. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-20",
+          "ticker": "SOH",
+          "action": "BUY",
+          "shares": 4133.514246947083,
+          "price": 1.1,
+          "gain": 0,
+          "reason": "TT BULLISH. industrial. AGGRESSIVE."
+        },
+        {
+          "date": "2026-08-24",
+          "ticker": "SBP",
+          "action": "BUY",
+          "shares": 17.11538101487091,
+          "price": 146.15,
+          "gain": 0,
+          "reason": "TT BULLISH. financial. AGGRESSIVE."
+        }
+      ],
+      "risk_timeline": [
+        {
+          "date": "2026-08-05",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-07",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-13",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-17",
+          "appetite": "CAUTIOUS"
+        },
+        {
+          "date": "2026-08-19",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-20",
+          "appetite": "AGGRESSIVE"
+        },
+        {
+          "date": "2026-08-24",
+          "appetite": "AGGRESSIVE"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>🤖 AI Trading Agents — Ticker Talk</title>
+<style>:root{--green:#2e7d32;--red:#c62828;--amber:#e65100;--dark:#1a1a2e;--grey:#f5f3ef;--card:#ffffff;--text:#222;--muted:#666;--border:#e0e0e0;--blue:#1565c0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--grey);color:var(--text);line-height:1.6}nav{background:var(--dark);padding:0 16px;position:sticky;top:0;z-index:100}nav .inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}nav a{color:white;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 12px;border-radius:8px}nav a:hover{background:rgba(255,255,255,.1)}nav a.active{color:#ffd54f}nav .brand{font-size:1.05rem;font-weight:600}.page{max-width:1000px;margin:0 auto;padding:20px 20px 60px}h1{font-size:1.3rem;margin-bottom:4px}.sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}.agent-card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:4px solid var(--dark)}.agent-name{font-size:1.15rem;font-weight:700;margin-bottom:4px}.agent-meta{font-size:.8rem;color:var(--muted);margin-bottom:12px}.agent-meta span{margin-right:16px}.risk-badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:700;text-transform:uppercase}.risk-AGGRESSIVE{background:#e8f5e9;color:var(--green)}.risk-BALANCED{background:#fff3e0;color:var(--amber)}.risk-CAUTIOUS{background:#ffebee;color:var(--red)}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}.stat-box{background:#f9f9f9;border-radius:8px;padding:10px;text-align:center}.stat-box .val{font-size:1.3rem;font-weight:700}.stat-box .lbl{font-size:.7rem;color:var(--muted);text-transform:uppercase;margin-top:2px}.val-pos{color:var(--green)}.val-neg{color:var(--red)}.val-cash{color:var(--blue)}.section-title{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:16px 0 8px;border-bottom:1px solid var(--border);padding-bottom:4px}.holdings-table{width:100%;font-size:.8rem;border-collapse:collapse}.holdings-table th{text-align:left;padding:6px 8px;font-size:.7rem;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}.holdings-table td{padding:6px 8px;border-bottom:1px solid #f0f0f0;font-size:.82rem}.pnl-pos{color:var(--green);font-weight:600}.pnl-neg{color:var(--red);font-weight:600}.news-context{font-size:.75rem;color:var(--muted);line-height:1.5;margin-bottom:12px}.news-context li{margin-bottom:3px}.decision-log{font-size:.78rem;line-height:1.5}.decision-log div{padding:4px 0}.log-sell{color:var(--red)}.log-buy{color:var(--green)}.log-hold{color:var(--dark)}.log-skip{color:var(--muted)}.method-box{background:var(--card);border-radius:10px;padding:16px;margin-top:20px;font-size:.8rem;line-height:1.7}.method-box h4{color:var(--green);margin-bottom:6px}footer{text-align:center;padding:24px;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border);max-width:1000px;margin:0 auto}@media(max-width:600px){.stats-grid{grid-template-columns:repeat(2,1fr)}.agent-card{padding:14px}}</style></head><body>
+<nav><div class="inner"><a href="index.html" class="brand">📋 Ticker Talk</a><div style="display:flex;gap:4px">
+<a href="index.html">Today</a><a href="archive.html">Archive</a><a href="ratings.html">Ratings</a><a href="trading.html" class="active">🤖 Trading</a></div></div></nav>
+<div class="page"><h1>🤖 AI Trading Agents</h1>
+<p class="sub">Three AI agents — same R1,000/day each, three different time horizons. Who wins?</p>
+
+<!-- DAILY TRADER -->
+<div class="agent-card"><div class="agent-name">⚡ Daily Trader</div>
+<div class="agent-meta"><span>Time horizon: <strong>Daily</strong></span><span>Themes: <strong>tech, mining, energy, industrial</strong></span><span>Risk: <span class="risk-badge risk-AGGRESSIVE" id="daily-risk">AGGRESSIVE</span></span><span>Trades: <strong id="daily-trades">6</strong></span></div>
+<div class="news-context" id="daily-news"><strong>What I'm watching:</strong><li>Rate cut narrative building — SA bonds rallying</li><li>Fed minutes confirm September cut 'likely'</li><li>JSE All Share hitting new highs</li></div>
+<div class="stats-grid"><div class="stat-box"><div class="lbl">Portfolio Value</div><div class="val val-pos" id="daily-pv">R16,222</div></div><div class="stat-box"><div class="lbl">Return</div><div class="val val-pos" id="daily-ret">+1.4%</div></div><div class="stat-box"><div class="lbl">Cash</div><div class="val val-cash" id="daily-cash">R2,571</div></div><div class="stat-box"><div class="lbl">Invested</div><div class="val" id="daily-in">R13,651</div></div><div class="stat-box"><div class="lbl">Trading Costs</div><div class="val" id="daily-costs">R85</div></div></div>
+<div class="section-title">📦 Current Holdings</div>
+<table class="holdings-table"><thead><tr><th>Ticker</th><th>Shares</th><th>Cost</th><th>Now</th><th>P&amp;L</th><th>Sector</th></tr></thead><tbody id="daily-holdings"></tbody></table>
+<div class="section-title">📝 Recent Decisions</div><div class="decision-log" id="daily-log"></div></div>
+
+<!-- WEEKLY TRADER -->
+<div class="agent-card"><div class="agent-name">📅 Weekly Trader</div>
+<div class="agent-meta"><span>Time horizon: <strong>Weekly</strong></span><span>Themes: <strong>financial, retail, property</strong></span><span>Risk: <span class="risk-badge risk-AGGRESSIVE" id="weekly-risk">AGGRESSIVE</span></span><span>Trades: <strong id="weekly-trades">4</strong></span></div>
+<div class="news-context" id="weekly-news"><strong>What I'm watching:</strong><li>August results season developing positively</li><li>SA banks and exchanges performing well</li><li>Consumer showing signs of life</li></div>
+<div class="stats-grid"><div class="stat-box"><div class="lbl">Portfolio Value</div><div class="val val-neg" id="weekly-pv">R15,835</div></div><div class="stat-box"><div class="lbl">Return</div><div class="val val-neg" id="weekly-ret">-1.0%</div></div><div class="stat-box"><div class="lbl">Cash</div><div class="val val-cash" id="weekly-cash">R2,560</div></div><div class="stat-box"><div class="lbl">Invested</div><div class="val" id="weekly-in">R13,275</div></div><div class="stat-box"><div class="lbl">Trading Costs</div><div class="val" id="weekly-costs">R67</div></div></div>
+<div class="section-title">📦 Current Holdings</div>
+<table class="holdings-table"><thead><tr><th>Ticker</th><th>Shares</th><th>Cost</th><th>Now</th><th>P&amp;L</th><th>Sector</th></tr></thead><tbody id="weekly-holdings"></tbody></table>
+<div class="section-title">📝 Recent Decisions</div><div class="decision-log" id="weekly-log"></div></div>
+
+<!-- MONTHLY TRADER -->
+<div class="agent-card"><div class="agent-name">🏔️ Monthly Trader</div>
+<div class="agent-meta"><span>Time horizon: <strong>Monthly</strong></span><span>Themes: <strong>industrial, energy, financial, mining</strong></span><span>Risk: <span class="risk-badge risk-AGGRESSIVE" id="monthly-risk">AGGRESSIVE</span></span><span>Trades: <strong id="monthly-trades">5</strong></span></div>
+<div class="news-context" id="monthly-news"><strong>What I'm watching:</strong><li>SA macro picture best since pre-COVID: inflation at target, GDP improving</li><li>Rate cuts + GDP growth + results season = the trifecta</li><li>Risk remains external — China slowdown, geopolitics</li></div>
+<div class="stats-grid"><div class="stat-box"><div class="lbl">Portfolio Value</div><div class="val val-pos" id="monthly-pv">R16,242</div></div><div class="stat-box"><div class="lbl">Return</div><div class="val val-pos" id="monthly-ret">+1.5%</div></div><div class="stat-box"><div class="lbl">Cash</div><div class="val val-cash" id="monthly-cash">R628</div></div><div class="stat-box"><div class="lbl">Invested</div><div class="val" id="monthly-in">R15,613</div></div><div class="stat-box"><div class="lbl">Trading Costs</div><div class="val" id="monthly-costs">R76</div></div></div>
+<div class="section-title">📦 Current Holdings</div>
+<table class="holdings-table"><thead><tr><th>Ticker</th><th>Shares</th><th>Cost</th><th>Now</th><th>P&amp;L</th><th>Sector</th></tr></thead><tbody id="monthly-holdings"></tbody></table>
+<div class="section-title">📝 Recent Decisions</div><div class="decision-log" id="monthly-log"></div></div>
+
+<div class="method-box"><h4>⚙️ How the agents work</h4>
+<strong>Rules:</strong> Each agent receives R1,000/day. They can buy stocks rated BULLISH by Ticker Talk, hold or sell.<br><br>
+<strong>Differences:</strong> Daily Trader trades every day (1 trade max), Weekly every Friday-end (2 trades max), Monthly at month-end (3 trades max). Each has preferred sectors based on their time horizon.<br><br>
+<strong>Trading costs:</strong> 0.5% brokerage + STT per side (1.0% round-trip). Minimum position R1,200 (daily) or R2,000 (weekly/monthly). Max 9 positions.<br><br>
+<strong>Risk appetite:</strong> Determined daily from SA market news. AGGRESSIVE deploys 80% of cash, BALANCED 40%, CAUTIOUS holds and waits.<br><br>
+<strong>Sell rules:</strong> Only sell if TT rating turns BEARISH or position falls 20%+. No panic selling on small dips.<br><br>
+<strong>Updated daily</strong> at 7am when Ticker Talk runs — portfolio values recalculated with latest share prices.</div>
+</div><footer><p>Ticker Talk · AI Trading Agents · Not financial advice</p></footer>
+<script>
+async function load() {
+  try {
+    const r = await fetch('trading.json');
+    const data = await r.json();
+    for (const name of ['Daily Trader','Weekly Trader','Monthly Trader']) {
+      const a = data.agents[name];
+      const pre = name === 'Daily Trader' ? 'daily' : name === 'Weekly Trader' ? 'weekly' : 'monthly';
+      
+      // Stats
+      document.getElementById(pre+'-pv').textContent = 'R' + a.final_portfolio.toLocaleString();
+      document.getElementById(pre+'-ret').textContent = (a.return_pct>=0?'+':'')+a.return_pct+'%';
+      document.getElementById(pre+'-ret').className = 'val '+(a.return_pct>=0?'val-pos':'val-neg');
+      document.getElementById(pre+'-cash').textContent = 'R' + Math.round(a.final_cash).toLocaleString();
+      document.getElementById(pre+'-in').textContent = 'R' + Math.round(a.final_holdings_value).toLocaleString();
+      document.getElementById(pre+'-costs').textContent = 'R' + Math.round(a.total_costs);
+      document.getElementById(pre+'-trades').textContent = a.num_trades;
+      
+      // Risk badge
+      const rb = document.getElementById(pre+'-risk');
+      const lastRisk = a.risk_timeline[a.risk_timeline.length-1].appetite;
+      rb.textContent = lastRisk;
+      rb.className = 'risk-badge risk-'+lastRisk;
+      
+      // Holdings table
+      let hhtml = '';
+      for (const [t,v] of Object.entries(a.holdings)) {
+        const pnl = (v.current_price - v.cost) * v.shares;
+        hhtml += `<tr><td><strong>${t}</strong></td><td>${v.shares.toFixed(0)}</td><td>R${v.cost.toFixed(2)}</td><td>R${v.current_price.toFixed(2)}</td><td class="${pnl>=0?'pnl-pos':'pnl-neg'}">R${pnl.toFixed(0)}</td><td>${v.sector}</td></tr>`;
+      }
+      document.getElementById(pre+'-holdings').innerHTML = hhtml || '<tr><td colspan="6" style="color:var(--muted)">No positions</td></tr>';
+      
+      // Decisions log
+      let dhtml = '';
+      for (const dec of (a.decisions||[]).slice(-4).reverse()) {
+        dhtml += `<div style="margin-bottom:8px"><strong>${dec.date}</strong> [${dec.risk_appetite}]`;
+        for (const r of dec.reasoning||[]) {
+          let cls = 'log-hold'; if (r.includes('SELL')) cls='log-sell'; else if (r.includes('BUY')) cls='log-buy'; else if (r.includes('Skipping')) cls='log-skip';
+          dhtml += `<div class="${cls}">${r}</div>`;
+        }
+        dhtml += '</div>';
+      }
+      document.getElementById(pre+'-log').innerHTML = dhtml || '<div class="log-hold">Waiting for next trading window...</div>';
+    }
+  } catch(e) { console.error(e); }
+}
+load();
+</script></body></html>
