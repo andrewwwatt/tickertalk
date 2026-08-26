@@ -16,17 +16,23 @@ nav .brand{font-size:1.05rem;font-weight:600}
 h1{font-size:1.3rem;margin-bottom:4px}
 .sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}
 .agent-card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:4px solid var(--dark)}
-.agent-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.agent-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
 .agent-name{font-size:1.15rem;font-weight:700}
 .agent-sub{font-size:.78rem;color:var(--muted)}
 .risk-badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:700;text-transform:uppercase}
 .risk-AGGRESSIVE{background:#e8f5e9;color:var(--green)}
 .risk-BALANCED{background:#fff3e0;color:var(--amber)}
 .risk-CAUTIOUS{background:#ffebee;color:var(--red)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:14px 0}
-.st{background:#f9f9f9;border-radius:8px;padding:9px;text-align:center}
-.st .v{font-size:1.15rem;font-weight:700}
-.st .l{font-size:.65rem;color:var(--muted);text-transform:uppercase;margin-top:2px}
+/* headline: capital vs portfolio */
+.headline{background:#f9f9f9;border-radius:10px;padding:14px;margin-bottom:14px}
+.headline .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+.headline .cap{font-size:.8rem;color:var(--muted)}
+.headline .cap b{font-size:1.1rem;color:var(--text)}
+.headline .net{font-size:1.15rem;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin:0 0 14px}
+.st{background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:9px;text-align:center}
+.st .v{font-size:1.05rem;font-weight:700}
+.st .l{font-size:.62rem;color:var(--muted);text-transform:uppercase;margin-top:2px}
 .pos{color:var(--green)}.neg{color:var(--red)}.cash{color:var(--blue)}
 .sec{font-size:.78rem;color:var(--muted);margin-bottom:12px;line-height:1.6}
 .sec b{color:var(--text)}
@@ -36,7 +42,8 @@ h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.5px;color:var(--mut
 table{width:100%;font-size:.8rem;border-collapse:collapse}
 th{text-align:left;padding:6px 8px;font-size:.68rem;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
 td{padding:6px 8px;border-bottom:1px solid #f0f0f0;font-size:.8rem}
-td.num{text-align:right}
+th.num,td.num{text-align:right}
+tr.total-row td{border-top:2px solid var(--border);font-weight:700;background:#fafafa}
 .log{font-size:.78rem;line-height:1.55}
 .log .day{margin-bottom:10px}
 .log .day b{color:var(--dark)}
@@ -59,13 +66,14 @@ footer{text-align:center;padding:24px;font-size:.75rem;color:var(--muted);border
 <strong>Decision freedom:</strong> Ratings are one input, not a rule. Agents buy, hold, sell or rotate freely — take profits, cut losses, or swap a weak holding for a better opportunity. The Daily trader is more news-driven; Weekly and Monthly are calmer and weight ratings more heavily.<br><br>
 <strong>Guardrails:</strong> Max 20 holdings · min R1,000 per trade · max 25% of portfolio in one stock · ~10% cash is a soft guideline, not a hard floor.<br><br>
 <strong>Costs:</strong> 0.5% per side (brokerage + STT). Dividends credited to cash.<br><br>
-<strong>Updated daily</strong> at 7am when Ticker Talk runs — portfolio values recalculated with the latest share prices.</div>
+<strong>Reconciliation:</strong> Portfolio value = Cash invested + Realized P&L + Unrealized P&L − Trading costs + Dividends. Always balances to the rand.</div>
 </div>
 <footer><p>Ticker Talk · AI Trading Agents · Not financial advice</p></footer>
 <script>
-const HORIZON = {'Daily Trader':'Daily','Weekly Trader':'Weekly','Monthly Trader':'Monthly'};
-const ICON = {'Daily Trader':'⚡','Weekly Trader':'📅','Monthly Trader':'🏔️'};
+const HORIZON={'Daily Trader':'Daily','Weekly Trader':'Weekly','Monthly Trader':'Monthly'};
+const ICON={'Daily Trader':'⚡','Weekly Trader':'📅','Monthly Trader':'🏔️'};
 function money(x){const n=Number(x)||0;return 'R'+Math.round(n).toLocaleString('en-ZA');}
+function money2(x){const n=Number(x)||0;return 'R'+n.toFixed(2);}
 function pnl(x){const n=Number(x)||0;return (n>=0?'+':'−')+'R'+Math.abs(Math.round(n)).toLocaleString('en-ZA');}
 function pnlCls(x){return (Number(x)||0)>=0?'pos':'neg';}
 async function load(){
@@ -73,18 +81,25 @@ async function load(){
   const el=document.getElementById('agents');let html='';
   for(const name of ['Daily Trader','Weekly Trader','Monthly Trader']){
     const a=d.agents[name];
+    const net=a.final_portfolio-a.total_in;
     html+='<div class="agent-card">';
     html+='<div class="agent-head"><div><div class="agent-name">'+ICON[name]+' '+name+'</div>';
     html+='<div class="agent-sub">Trades '+HORIZON[name].toLowerCase()+' · '+a.news_sensitivity+' news sensitivity · '+a.num_trades+' trades</div></div>';
     html+='<span class="risk-badge risk-'+(a.risk||'BALANCED')+'">'+(a.risk||'BALANCED')+'</span></div>';
-    // stats
+    // headline: capital in vs portfolio now
+    html+='<div class="headline">';
+    html+='<div class="row"><span class="cap">Cash invested: <b>'+money(a.total_in)+'</b></span>';
+    html+='<span class="cap">Portfolio value now: <b>'+money(a.final_portfolio)+'</b></span>';
+    html+='<span class="net '+pnlCls(net)+'">'+pnl(net)+' ('+(a.return_pct>=0?'+':'')+a.return_pct+'%)</span></div>';
+    html+='</div>';
+    // breakdown stats
     html+='<div class="stats">';
-    html+='<div class="st"><div class="v">'+money(a.final_portfolio)+'</div><div class="l">Portfolio</div></div>';
-    html+='<div class="st"><div class="v '+pnlCls(a.return_pct)+'">'+(a.return_pct>=0?'+':'')+a.return_pct+'%</div><div class="l">Return</div></div>';
     html+='<div class="st"><div class="v cash">'+money(a.final_cash)+'</div><div class="l">Cash</div></div>';
-    html+='<div class="st"><div class="v">'+money(a.final_holdings_value)+'</div><div class="l">Invested</div></div>';
+    html+='<div class="st"><div class="v">'+money(a.final_holdings_value)+'</div><div class="l">Holdings</div></div>';
     html+='<div class="st"><div class="v '+pnlCls(a.realized)+'">'+pnl(a.realized)+'</div><div class="l">Realized P&L</div></div>';
     html+='<div class="st"><div class="v '+pnlCls(a.unrealized)+'">'+pnl(a.unrealized)+'</div><div class="l">Unrealized P&L</div></div>';
+    html+='<div class="st"><div class="v">−'+money(a.total_costs)+'</div><div class="l">Trading costs</div></div>';
+    html+='<div class="st"><div class="v">+'+money(a.total_dividends)+'</div><div class="l">Dividends</div></div>';
     html+='</div>';
     // news + sector composition
     html+='<div class="sec"><b>Watching:</b>';
@@ -92,15 +107,32 @@ async function load(){
     html+='<div style="margin-top:6px"><b>Sector mix:</b> ';
     for(const [s,p] of Object.entries(a.sector_composition||{})) html+='<span class="comp">'+s+' '+p+'%</span>';
     html+='</div></div>';
-    // holdings table
-    html+='<h3>Holdings · unrealized P&L per position</h3>';
-    html+='<table><thead><tr><th>Ticker</th><th>Shares</th><th class="num">Cost</th><th class="num">Now</th><th class="num">Unrealized</th><th>Sector</th></tr></thead><tbody>';
+    // holdings table with value column + total
+    html+='<h3>Holdings</h3>';
+    html+='<table><thead><tr><th>Ticker</th><th class="num">Shares</th><th class="num">Cost</th><th class="num">Now</th><th class="num">Value</th><th class="num">Unrealized</th><th>Sector</th></tr></thead><tbody>';
+    let hvTotal=0;
     for(const [t,h] of Object.entries(a.holdings||{})){
+      const val=h.shares*h.current_price;
       const u=(h.current_price-h.cost)*h.shares;
+      hvTotal+=val;
       html+='<tr><td><b>'+t+'</b></td><td class="num">'+Math.round(h.shares).toLocaleString('en-ZA')+'</td>';
-      html+='<td class="num">R'+Number(h.cost).toFixed(2)+'</td><td class="num">R'+Number(h.current_price).toFixed(2)+'</td>';
-      html+='<td class="num '+pnlCls(u)+'">'+pnl(u)+'</td><td>'+h.sector+'</td></tr>';
+      html+='<td class="num">'+money2(h.cost)+'</td><td class="num">'+money2(h.current_price)+'</td>';
+      html+='<td class="num">'+money(val)+'</td><td class="num '+pnlCls(u)+'">'+pnl(u)+'</td><td>'+h.sector+'</td></tr>';
     }
+    html+='<tr class="total-row"><td colspan="4">Total holdings value</td><td class="num">'+money(hvTotal)+'</td><td class="num '+pnlCls(a.unrealized)+'">'+pnl(a.unrealized)+'</td><td></td></tr>';
+    html+='</tbody></table>';
+    // trades table with volume + trade value
+    html+='<h3>Recent trades</h3>';
+    html+='<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th class="num">Volume (shares)</th><th class="num">Price</th><th class="num">Trade value</th><th>Reason</th></tr></thead><tbody>';
+    const trades=(a.all_trades||[]).slice(-12).reverse();
+    for(const t of trades){
+      const val=t.shares*t.price;
+      const actCls=t.action==='BUY'?'l-buy':(t.action==='SELL'?'l-sell':'l-rot');
+      html+='<tr><td>'+t.date+'</td><td class="'+actCls+'"><b>'+t.action+'</b></td><td>'+t.ticker+'</td>';
+      html+='<td class="num">'+Math.round(t.shares).toLocaleString('en-ZA')+'</td><td class="num">'+money2(t.price)+'</td>';
+      html+='<td class="num">'+money(val)+'</td><td style="font-size:.7rem;color:var(--muted)">'+t.reason+'</td></tr>';
+    }
+    if(!trades.length) html+='<tr><td colspan="7" style="color:var(--muted)">No trades yet</td></tr>';
     html+='</tbody></table>';
     // decision log
     html+='<h3>Decision log</h3><div class="log">';
