@@ -16,9 +16,9 @@
       ],
       "total_in": 16000,
       "final_cash": 2570.78,
-      "final_holdings_value": 13651.48,
-      "final_portfolio": 16222.26,
-      "return_pct": 1.4,
+      "final_holdings_value": 13887.54,
+      "final_portfolio": 16458.32,
+      "return_pct": 2.9,
       "total_costs": 85.09,
       "total_dividends": 0,
       "realized_gains": -560.28,
@@ -87,6 +87,10 @@
         [
           "2026-08-24",
           16222.26
+        ],
+        [
+          "2026-08-26",
+          16458.32
         ]
       ],
       "holdings": {
@@ -96,7 +100,7 @@
           "buy_date": "2026-08-06",
           "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
           "sector": "mining",
-          "current_price": 0.54
+          "current_price": 0.57
         },
         "DRD": {
           "shares": 129.43,
@@ -104,7 +108,7 @@
           "buy_date": "2026-08-13",
           "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
           "sector": "mining",
-          "current_price": 48.61
+          "current_price": 49.49
         },
         "NRP": {
           "shares": 22.73,
@@ -112,7 +116,7 @@
           "buy_date": "2026-08-18",
           "reason": "TT BULLISH. other sector. AGGRESSIVE market.",
           "sector": "other",
-          "current_price": 147.36
+          "current_price": 147.65
         },
         "SOH": {
           "shares": 2065.25,
@@ -314,9 +318,9 @@
       ],
       "total_in": 16000,
       "final_cash": 2560.0,
-      "final_holdings_value": 13275.45,
-      "final_portfolio": 15835.45,
-      "return_pct": -1.0,
+      "final_holdings_value": 13246.55,
+      "final_portfolio": 15806.55,
+      "return_pct": -1.2,
       "total_costs": 66.87,
       "total_dividends": 0,
       "realized_gains": 0,
@@ -385,6 +389,10 @@
         [
           "2026-08-24",
           15835.45
+        ],
+        [
+          "2026-08-26",
+          15806.55
         ]
       ],
       "holdings": {
@@ -394,7 +402,7 @@
           "buy_date": "2026-08-06",
           "reason": "TT BULLISH. financial sector. AGGRESSIVE market.",
           "sector": "financial",
-          "current_price": 42.2
+          "current_price": 42.04
         },
         "RBO": {
           "shares": 636.82,
@@ -402,7 +410,7 @@
           "buy_date": "2026-08-13",
           "reason": "TT BULLISH. retail sector. AGGRESSIVE market.",
           "sector": "retail",
-          "current_price": 6.17
+          "current_price": 6.18
         },
         "NRP": {
           "shares": 21.29,
@@ -410,7 +418,7 @@
           "buy_date": "2026-08-18",
           "reason": "TT BULLISH. other sector. AGGRESSIVE market.",
           "sector": "other",
-          "current_price": 147.36
+          "current_price": 147.65
         },
         "SUR": {
           "shares": 51.83,
@@ -418,7 +426,7 @@
           "buy_date": "2026-08-20",
           "reason": "TT BULLISH. retail sector. AGGRESSIVE market.",
           "sector": "retail",
-          "current_price": 44.81
+          "current_price": 44.3
         }
       },
       "decisions": [
@@ -535,9 +543,9 @@
       ],
       "total_in": 16000,
       "final_cash": 628.48,
-      "final_holdings_value": 15613.3,
-      "final_portfolio": 16241.78,
-      "return_pct": 1.5,
+      "final_holdings_value": 15801.45,
+      "final_portfolio": 16429.93,
+      "return_pct": 2.7,
       "total_costs": 76.48,
       "total_dividends": 0,
       "realized_gains": 0,
@@ -606,6 +614,10 @@
         [
           "2026-08-24",
           16241.78
+        ],
+        [
+          "2026-08-26",
+          16429.93
         ]
       ],
       "holdings": {
@@ -615,7 +627,7 @@
           "buy_date": "2026-08-05",
           "reason": "TT BULLISH. industrial sector. AGGRESSIVE market.",
           "sector": "industrial",
-          "current_price": 18.68
+          "current_price": 18.37
         },
         "TGA": {
           "shares": 23.1,
@@ -623,7 +635,7 @@
           "buy_date": "2026-08-07",
           "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
           "sector": "mining",
-          "current_price": 118.04
+          "current_price": 122.68
         },
         "DRD": {
           "shares": 72.59,
@@ -631,7 +643,7 @@
           "buy_date": "2026-08-13",
           "reason": "TT BULLISH. mining sector. AGGRESSIVE market.",
           "sector": "mining",
-          "current_price": 48.61
+          "current_price": 49.49
         },
         "SOH": {
           "shares": 4133.51,
@@ -647,7 +659,7 @@
           "buy_date": "2026-08-24",
           "reason": "TT BULLISH. financial sector. AGGRESSIVE market.",
           "sector": "financial",
-          "current_price": 146.15
+          "current_price": 150.0
         }
       },
       "decisions": [
