@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-08-25",
-    "days": 17,
+    "end": "2026-08-26",
+    "days": 18,
     "cash_date": "2026-08-03",
     "monthly_cash": 25000.0
   },
@@ -12,11 +12,11 @@
       "news_sensitivity": "high",
       "total_in": 25000.0,
       "final_cash": 248.5,
-      "final_holdings_value": 24306.73,
-      "final_portfolio": 24555.23,
-      "return_pct": -1.8,
+      "final_holdings_value": 24322.79,
+      "final_portfolio": 24571.29,
+      "return_pct": -1.7,
       "realized": 7.38,
-      "unrealized": -306.54,
+      "unrealized": -290.48,
       "total_costs": 145.49,
       "total_dividends": 0,
       "num_trades": 7,
@@ -97,7 +97,11 @@
         ],
         [
           "2026-08-26",
-          24555.23
+          24571.41
+        ],
+        [
+          "2026-08-27",
+          24571.29
         ]
       ],
       "holdings": {
@@ -105,7 +109,7 @@
           "shares": 380.36,
           "cost": 16.35,
           "buy_date": "2026-08-03",
-          "current_price": 16.1,
+          "current_price": 16.03,
           "sector": "property"
         },
         "PMV": {
@@ -126,22 +130,22 @@
           "shares": 66.87,
           "cost": 56.15,
           "buy_date": "2026-08-03",
-          "current_price": 53.73,
+          "current_price": 53.74,
           "sector": "telecoms"
         },
         "LSK": {
           "shares": 27.64,
           "cost": 80.5,
           "buy_date": "2026-08-07",
-          "current_price": 77.48,
+          "current_price": 79.0,
           "sector": "tech"
         }
       },
       "sector_composition": {
-        "property": 24.9,
+        "property": 24.8,
         "industrial": 50.7,
         "telecoms": 14.6,
-        "tech": 8.7,
+        "tech": 8.9,
         "cash": 1.0
       },
       "all_trades": [
@@ -257,11 +261,11 @@
       "news_sensitivity": "medium",
       "total_in": 25000.0,
       "final_cash": 375.0,
-      "final_holdings_value": 24459.4,
-      "final_portfolio": 24834.4,
-      "return_pct": -0.7,
+      "final_holdings_value": 24497.98,
+      "final_portfolio": 24872.98,
+      "return_pct": -0.5,
       "realized": 0,
-      "unrealized": -43.41,
+      "unrealized": -4.83,
       "total_costs": 122.51,
       "total_dividends": 0,
       "num_trades": 5,
@@ -340,7 +344,11 @@
         ],
         [
           "2026-08-26",
-          24834.4
+          24872.66
+        ],
+        [
+          "2026-08-27",
+          24872.98
         ]
       ],
       "holdings": {
@@ -348,7 +356,7 @@
           "shares": 378.51,
           "cost": 16.43,
           "buy_date": "2026-08-07",
-          "current_price": 16.1,
+          "current_price": 16.03,
           "sector": "property"
         },
         "PMV": {
@@ -369,22 +377,22 @@
           "shares": 46.26,
           "cost": 54.28,
           "buy_date": "2026-08-07",
-          "current_price": 53.73,
+          "current_price": 53.74,
           "sector": "telecoms"
         },
         "LSK": {
           "shares": 42.51,
           "cost": 79.0,
           "buy_date": "2026-08-14",
-          "current_price": 77.48,
+          "current_price": 79.0,
           "sector": "tech"
         }
       },
       "sector_composition": {
-        "property": 24.5,
-        "industrial": 50.7,
+        "property": 24.4,
+        "industrial": 50.6,
         "telecoms": 10.0,
-        "tech": 13.3,
+        "tech": 13.5,
         "cash": 1.5
       },
       "all_trades": [
@@ -465,11 +473,11 @@
       "news_sensitivity": "low",
       "total_in": 25000.0,
       "final_cash": 3750.0,
-      "final_holdings_value": 21361.24,
-      "final_portfolio": 25111.24,
-      "return_pct": 0.4,
+      "final_holdings_value": 21334.82,
+      "final_portfolio": 25084.82,
+      "return_pct": 0.3,
       "realized": 0,
-      "unrealized": 216.93,
+      "unrealized": 190.52,
       "total_costs": 105.72,
       "total_dividends": 0,
       "num_trades": 4,
@@ -548,7 +556,11 @@
         ],
         [
           "2026-08-26",
-          25111.24
+          25084.8
+        ],
+        [
+          "2026-08-27",
+          25084.82
         ]
       ],
       "holdings": {
@@ -556,7 +568,7 @@
           "shares": 383.88,
           "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 16.1,
+          "current_price": 16.03,
           "sector": "property"
         },
         "PMV": {
@@ -577,12 +589,12 @@
           "shares": 45.71,
           "cost": 54.93,
           "buy_date": "2026-08-19",
-          "current_price": 53.73,
+          "current_price": 53.74,
           "sector": "telecoms"
         }
       },
       "sector_composition": {
-        "property": 24.6,
+        "property": 24.5,
         "industrial": 50.7,
         "telecoms": 9.8,
         "cash": 14.9
