@@ -1,5 +1,149 @@
 [
   {
+    "date": "2026-08-27",
+    "ticker": "SSW",
+    "company": "Sibanye Stillwater",
+    "title": "Trading Statement and Operating Update for the Six Months Ended 30 June 2026",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-trading-statement-and-operating-update-for-the-six-months-ended-30-june-2026/",
+    "rating": "BULLISH",
+    "summary": "HEPS guided up more than 200% to 571–631c and EPS swings from a 127c loss to 597–658c, as gold and PGM prices fire on all cylinders.",
+    "review": "Sibanye is back. HEPS for H1 2026 is guided to 571–631c, a more-than-200% jump from 190c a year ago, while EPS swings from a 127c loss to a 597–658c profit — an improvement north of 560%. The drivers are brutal and simple: SA gold delivered record financial performance with adjusted EBITDA up ~85% on a 35% higher rand gold price, and the SA PGM division saw EBITDA up ~300% on a 67% higher 4E basket price. Recycling ounces sold jumped 142% to 2.79moz. Crucially, impairments — R9.7bn of them last year — all but vanished.\n\nThe clever bit: last year's numbers were flattered by R5.1bn of Section 45X tax credits, so the underlying improvement is even stronger than the headline suggests. Higher royalties and taxes are the only real offsets. Keliber is finally moving from construction to commissioning. At a forward PE of ~4.4x, the market still doesn't believe the recovery — the full results land on 1 September and could change that fast.",
+    "pe_ratio": null,
+    "price_to_book": 3.14,
+    "roe": -10.25,
+    "share_price": 49.07,
+    "price_at_review": 49.07,
+    "price_current": 49.07,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "OUT",
+    "company": "OUTsurance Group",
+    "title": "Trading Update and Trading Statement for the Year Ended 30 June 2026",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-trading-update-and-trading-statement-for-the-year-ended-30-june-2026/",
+    "rating": "BULLISH",
+    "summary": "HEPS guided +21–26% to 361–376c and normalised EPS +15–21%, as SA short-term profit surges more than 40% — the stock rocketed 9%.",
+    "review": "OUTsurance delivered a genuine beat. HEPS is guided to 360.9–375.9c, up 21–26% on the 298.3c of FY25, while normalised EPS (NEPS) rises 15–21% to 352.1–370.5c. Gross written premium ex-BZI grew 15.7% and net earned premium 18.7%. The engine room is SA short-term insurance, where profit surged more than 40%, with Youi and Ireland finally past their peak loss-making years.\n\nThe market was caught flat-footed — the stock jumped 8.99% on the day to R88.39. At 27x trailing earnings and a 37% ROE, this is priced for the quality it delivers: disciplined underwriting, a fortress balance sheet (0.03x debt/equity) and compounding premium growth. The old RMI-to-OUTsurance transition continues to pay off for patient holders.",
+    "pe_ratio": 27.45,
+    "price_to_book": 9.16,
+    "roe": 37.1,
+    "share_price": 88.39,
+    "price_at_review": 88.39,
+    "price_current": 88.39,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "TRU",
+    "company": "Truworths International",
+    "title": "Group Annual Results and Cash Dividend for the 52 Weeks Ended 28 June 2026",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/truworths-international-limited-group-annual-financial-statements-summarised-audited-group-annual-results-cash-dividend-declaration-for-the-52-weeks-ended-28-june-2026/",
+    "rating": "NEUTRAL",
+    "summary": "HEPS slips 2.6% to 732.2c and the final dividend is cut 10% to 153c, as a tough consumer and weak UK trading weigh on the full year.",
+    "review": "A soft landing, not a crash. Truworths reported HEPS of 732.2c for the 52 weeks to 28 June, down 2.6% from 752.1c — dead in line with its own guidance. Group retail sales slipped 0.9% to R21.8bn while the gross margin held firm at 51.3%. The final dividend was trimmed to 153c from 170c, reflecting the weaker profit. Africa started the year strongly then lost momentum as fuel prices squeezed discretionary spend, and the UK (Office) stayed grim.\n\nThe stock fell 4.1% to R48.24, but at 6.5x trailing earnings, a 26% ROE and a near-double-digit dividend yield, the bad news is largely in the price. This is a cash-generative retailer marking time until the consumer recovers — cheap, but with no obvious catalyst to re-rate it right now.",
+    "pe_ratio": 6.49,
+    "price_to_book": 1.62,
+    "roe": 25.93,
+    "share_price": 48.24,
+    "price_at_review": 48.24,
+    "price_current": 48.24,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "ACT",
+    "company": "AfroCentric Investment Corporation",
+    "title": "Trading Statement for the Six Months Ended 30 June 2026",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/afrocentric-investment-corporation-limited-trading-statement-for-the-six-months-ended-30-june-2026/",
+    "rating": "BEARISH",
+    "summary": "EPS guided down 22–42% to 6.7–9.0c as client contract losses in administration and managed care, plus rightsizing costs, bite hard.",
+    "review": "AfroCentric is shrinking, not growing. EPS for H1 2026 is guided to 6.68–8.98c, a fall of 22.2–42.1% on the 11.54c of the prior period, while HEPS drops 16.9–36.9% to 7.37–9.71c. The culprit is lower operating profitability in the Services cluster — client contract losses in administration and managed care — compounded by rightsizing and cost-reset expenses. The Retail cluster also weakened after designated service provider contracts ended last year.\n\nAt R0.77 a share, a 0.32x price-to-book and a R630m market cap, the market has already voted. ROE is deeply negative (-24.7%) and the shares are down 53% in a year. Interim results land 1 September; until the contract churn stabilises and the cost base is right-sized, this looks like a value trap rather than a bargain.",
+    "pe_ratio": null,
+    "price_to_book": 0.32,
+    "roe": -24.74,
+    "share_price": 0.77,
+    "price_at_review": 0.77,
+    "price_current": 0.77,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "MTU",
+    "company": "Mantengu",
+    "title": "Cautionary — Resignation of Auditor, Withdrawal of Audit Report and Deferred Tax Dispute",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/mantengu-limited-cautionary-ann-resig-of-auditors-withdrawal-of-audit-report-associated-dispute-on-deferred-taxation-agm/",
+    "rating": "BEARISH",
+    "summary": "Auditor HLB withdraws its opinion, flags a reportable irregularity and resigns, alleging the deferred tax asset was overstated by ~R58.3m.",
+    "review": "A five-alarm fire at a R65m market cap. Auditor HLB CMA wrote to Mantengu on 21 August asserting the group had overstated its deferred tax asset by ~R58.3m — claiming individual entities wouldn't generate enough future taxable profit to realise it. By 26 August, HLB had withdrawn its audit opinion, reported a reportable irregularity over the board's refusal to amend the financials, and resigned with immediate effect. The board hit back, insisting each entity's tax position was calculated separately and that this is merely a 'differing view on future profitability'.\n\nThe optics are brutal regardless of who's right: a withdrawn audit opinion and a reported irregularity days before the AGM. The shares — R0.20, down 69% in a year, ROE -85% — were already signalling distress. The 'we've done nothing wrong' defence rarely lands well with a market that can see the numbers. Avoid until a new auditor signs off clean.",
+    "pe_ratio": null,
+    "price_to_book": 0.28,
+    "roe": -85.21,
+    "share_price": 0.2,
+    "price_at_review": 0.2,
+    "price_current": 0.2,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "LAB",
+    "company": "Labat Africa",
+    "title": "Suspension of Listing",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/labat-africa-limited-suspension-of-listing-labat-africa-limited/",
+    "rating": "BEARISH",
+    "summary": "The JSE suspends Labat's listing with immediate effect for failing to publish its financials and failing to pay a declared dividend.",
+    "review": "Labat is back in the naughty corner. The JSE suspended the listing of Labat Africa's securities with immediate effect for non-compliance with the Listings Requirements — the company hasn't published its condensed financial statements and failed to pay a declared dividend, without making alternative arrangements.\n\nThis is a well-worn pattern: Labat was suspended before and only had its listing lifted in December 2024 after similar failures. At R0.03 a share and a R37m market cap, the only thing less liquid than the stock is the company's compliance record. Suspended means untradeable — and for a serial offender, that could drag on.",
+    "pe_ratio": null,
+    "price_to_book": 0.12,
+    "roe": null,
+    "share_price": 0.03,
+    "price_at_review": 0.03,
+    "price_current": 0.03,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "SEA",
+    "company": "Spear REIT",
+    "title": "Implementation of Acquisition of Watergate Centre",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/spear-reit-limited-implementation-of-acquisition-of-watergate-centre/",
+    "rating": "BULLISH",
+    "summary": "Watergate Centre transfers into Spear's name, accretive from day one at an estimated 8.37% initial yield — and not yet in DIPS guidance.",
+    "review": "Spear locked it in. The acquisition of Watergate Centre in Mitchells Plain, Cape Town, was finalised on 27 August with ownership registered in Spear's name. The deal is accretive from the implementation date, carrying an estimated 8.37% initial yield to shareholders — a tidy spread over the cost of debt for a REIT.\n\nThe kicker: the financial effects aren't yet reflected in Spear's FY27 distributable-income-per-share guidance issued in May, so there's upside baked in for the next update. At R12.70, 6.2x earnings, a 17% ROE and a 0.98x book multiple, Spear keeps quietly executing its Western Cape retail strategy. Small, clean and on-message.",
+    "pe_ratio": 6.16,
+    "price_to_book": 0.98,
+    "roe": 17.18,
+    "share_price": 12.7,
+    "price_at_review": 12.7,
+    "price_current": 12.7,
+    "dividends_paid": 0,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-08-27",
+    "ticker": "TON",
+    "company": "Tongaat Hulett",
+    "title": "Constitutional Court Order and RGS Application for Leave to Appeal",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/tongaat-hulett-limited-notice-to-affected-persons-order-of-the-constitutional-court-and-application-for-leave-to-appeal-by-rgs-group-holdings-limited/",
+    "rating": "BEARISH",
+    "summary": "The ConCourt rejects Tongaat's sugar-levy appeal with costs, while bidder RGS launches yet another assault on the business rescue plan.",
+    "review": "More legal trench warfare for the zombie sugar producer. The Constitutional Court rejected Tongaat's leave-to-appeal application — over its sugar levy obligations — with costs, a judgment that lands squarely on the side of the SA Sugar Association. Separately, RGS Group Holdings has applied for leave to appeal in its long-running campaign against the business rescue plan and the Vision consortium's control.\n\nTongaat's shares remain suspended, so this is a creditors' saga rather than a tradeable thesis. Every round of litigation simply extends the uncertainty for affected persons — creditors, growers and employees alike. There is no retail angle here, and there hasn't been for a long time.",
+    "pe_ratio": null,
+    "price_to_book": null,
+    "roe": null,
+    "share_price": null,
+    "price_at_review": null,
+    "price_current": null,
+    "dividends_paid": 0.0,
+    "performance_pct": null
+  },
+  {
     "date": "2026-08-26",
     "ticker": "BID",
     "company": "Bid Corporation",
@@ -14,7 +158,7 @@
     "share_price": 437.99,
     "price_at_review": 437.99,
     "price_current": 437.99,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -32,7 +176,7 @@
     "share_price": 258.51,
     "price_at_review": 258.51,
     "price_current": 258.51,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -50,7 +194,7 @@
     "share_price": 415.8,
     "price_at_review": 415.8,
     "price_current": 415.8,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -68,7 +212,7 @@
     "share_price": 4.99,
     "price_at_review": 4.99,
     "price_current": 4.99,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -86,7 +230,7 @@
     "share_price": 85.1,
     "price_at_review": 85.1,
     "price_current": 85.1,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -104,7 +248,7 @@
     "share_price": 8.0,
     "price_at_review": 8.0,
     "price_current": 8.0,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -122,7 +266,7 @@
     "share_price": 38.75,
     "price_at_review": 38.75,
     "price_current": 38.75,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -140,7 +284,7 @@
     "share_price": 0.55,
     "price_at_review": 0.55,
     "price_current": 0.55,
-    "dividends_paid": 0.0,
+    "dividends_paid": 0,
     "performance_pct": null
   },
   {
@@ -157,7 +301,7 @@
     "roe": 58.68,
     "share_price": 766.09,
     "price_at_review": 766.09,
-    "price_current": 766.09,
+    "price_current": 772.93,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -175,7 +319,7 @@
     "roe": 26.32,
     "share_price": 299.06,
     "price_at_review": 299.06,
-    "price_current": 299.06,
+    "price_current": 295.46,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -193,7 +337,7 @@
     "roe": 13.0,
     "share_price": 23.76,
     "price_at_review": 23.76,
-    "price_current": 23.76,
+    "price_current": 24.13,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -229,7 +373,7 @@
     "roe": 3.54,
     "share_price": 26.05,
     "price_at_review": 26.05,
-    "price_current": 26.05,
+    "price_current": 26.32,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -247,7 +391,7 @@
     "roe": null,
     "share_price": 58.38,
     "price_at_review": 58.38,
-    "price_current": 58.38,
+    "price_current": 58.63,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -265,7 +409,7 @@
     "roe": 56.62,
     "share_price": 13.27,
     "price_at_review": 13.27,
-    "price_current": 13.27,
+    "price_current": 13.3,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -283,7 +427,7 @@
     "roe": null,
     "share_price": 913.08,
     "price_at_review": 913.08,
-    "price_current": 913.08,
+    "price_current": 914.14,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -301,7 +445,7 @@
     "roe": 14.52,
     "share_price": 26.5,
     "price_at_review": 26.5,
-    "price_current": 26.5,
+    "price_current": 27.07,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -319,7 +463,7 @@
     "roe": 20.19,
     "share_price": 150.0,
     "price_at_review": 150.0,
-    "price_current": 149.22,
+    "price_current": 150.0,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -337,7 +481,7 @@
     "roe": 16.7,
     "share_price": 189.7,
     "price_at_review": 189.7,
-    "price_current": 188.59,
+    "price_current": 188.2,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -373,7 +517,7 @@
     "roe": 18.19,
     "share_price": 9.1,
     "price_at_review": 9.1,
-    "price_current": 9.18,
+    "price_current": 8.78,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -391,7 +535,7 @@
     "roe": 17.93,
     "share_price": 83.85,
     "price_at_review": 83.85,
-    "price_current": 78.94,
+    "price_current": 82.35,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -409,7 +553,7 @@
     "roe": 14.17,
     "share_price": 6.9,
     "price_at_review": 6.9,
-    "price_current": 6.79,
+    "price_current": 6.75,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -427,7 +571,7 @@
     "roe": -8.39,
     "share_price": 4.25,
     "price_at_review": 4.25,
-    "price_current": 4.25,
+    "price_current": 4.35,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -445,7 +589,7 @@
     "roe": 20.56,
     "share_price": 46.11,
     "price_at_review": 46.11,
-    "price_current": 45.96,
+    "price_current": 48.31,
     "dividends_paid": 0,
     "performance_pct": null
   },
@@ -464,9 +608,9 @@
     "roe": 25.93,
     "share_price": 51.61,
     "price_at_review": 51.61,
-    "price_current": 50.97,
+    "price_current": 50.3,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": -2.54
   },
   {
     "date": "2026-08-21",
@@ -482,9 +626,9 @@
     "roe": null,
     "share_price": 26.0,
     "price_at_review": 26.0,
-    "price_current": 25.61,
+    "price_current": 25.48,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": -2.0
   },
   {
     "date": "2026-08-21",
@@ -501,9 +645,9 @@
     "roe": -2.17,
     "share_price": 147.63,
     "price_at_review": 147.63,
-    "price_current": 148.69,
+    "price_current": 154.48,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": 4.64
   },
   {
     "date": "2026-08-20",
@@ -519,9 +663,9 @@
     "roe": 21.91,
     "share_price": 43.0,
     "price_at_review": 43.0,
-    "price_current": 44.45,
+    "price_current": 44.3,
     "dividends_paid": 0,
-    "performance_pct": 3.37
+    "performance_pct": 3.02
   },
   {
     "date": "2026-08-20",
@@ -537,9 +681,9 @@
     "roe": 50.91,
     "share_price": 49.37,
     "price_at_review": 49.37,
-    "price_current": 48.72,
+    "price_current": 47.74,
     "dividends_paid": 0,
-    "performance_pct": -1.32
+    "performance_pct": -3.3
   },
   {
     "date": "2026-08-20",
@@ -591,9 +735,9 @@
     "roe": 12.36,
     "share_price": 184.0,
     "price_at_review": 184.0,
-    "price_current": 184.16,
+    "price_current": 185.53,
     "dividends_paid": 0,
-    "performance_pct": 0.09
+    "performance_pct": 0.83
   },
   {
     "date": "2026-08-20",
@@ -609,9 +753,9 @@
     "roe": 20.46,
     "share_price": 13.55,
     "price_at_review": 13.55,
-    "price_current": 13.85,
+    "price_current": 13.75,
     "dividends_paid": 0,
-    "performance_pct": 2.21
+    "performance_pct": 1.48
   },
   {
     "date": "2026-08-19",
@@ -627,9 +771,9 @@
     "roe": 1.53,
     "share_price": 2.75,
     "price_at_review": 2.75,
-    "price_current": 2.7,
+    "price_current": 2.72,
     "dividends_paid": 0,
-    "performance_pct": -1.82
+    "performance_pct": -1.09
   },
   {
     "date": "2026-08-19",
@@ -645,9 +789,9 @@
     "roe": 39.35,
     "share_price": 44.65,
     "price_at_review": 44.65,
-    "price_current": 49.2,
+    "price_current": 47.95,
     "dividends_paid": 0,
-    "performance_pct": 10.19
+    "performance_pct": 7.39
   },
   {
     "date": "2026-08-19",
@@ -663,9 +807,9 @@
     "roe": 11.52,
     "share_price": 118.99,
     "price_at_review": 118.99,
-    "price_current": 114.23,
+    "price_current": 116.0,
     "dividends_paid": 0,
-    "performance_pct": -4.0
+    "performance_pct": -2.51
   },
   {
     "date": "2026-08-18",
@@ -680,10 +824,10 @@
     "price_to_book": null,
     "roe": null,
     "share_price": 0.3,
-    "price_at_review": 0.0,
-    "price_current": 0.0,
+    "price_at_review": 0.0030000001192092896,
+    "price_current": 0.0030000001192092896,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": 0.0
   },
   {
     "date": "2026-08-18",
@@ -699,9 +843,9 @@
     "roe": 10.3,
     "share_price": 149.55,
     "price_at_review": 149.55,
-    "price_current": 148.57,
+    "price_current": 149.4,
     "dividends_paid": 0,
-    "performance_pct": -0.66
+    "performance_pct": -0.1
   },
   {
     "date": "2026-08-18",
@@ -717,9 +861,9 @@
     "roe": null,
     "share_price": 719.57,
     "price_at_review": 719.57,
-    "price_current": 772.0,
+    "price_current": 767.76,
     "dividends_paid": 0,
-    "performance_pct": 7.29
+    "performance_pct": 6.7
   },
   {
     "date": "2026-08-18",
@@ -735,9 +879,9 @@
     "roe": 13.9,
     "share_price": 222.6,
     "price_at_review": 222.6,
-    "price_current": 227.6,
+    "price_current": 229.86,
     "dividends_paid": 0,
-    "performance_pct": 2.25
+    "performance_pct": 3.26
   },
   {
     "date": "2026-08-17",
@@ -753,9 +897,9 @@
     "roe": null,
     "share_price": 107.45,
     "price_at_review": 107.45,
-    "price_current": 119.19,
+    "price_current": 120.32,
     "dividends_paid": 0,
-    "performance_pct": 10.93
+    "performance_pct": 11.98
   },
   {
     "date": "2026-08-17",
@@ -771,9 +915,9 @@
     "roe": 5.76,
     "share_price": 43.32,
     "price_at_review": 43.32,
-    "price_current": 37.88,
+    "price_current": 39.95,
     "dividends_paid": 0,
-    "performance_pct": -12.56
+    "performance_pct": -7.78
   },
   {
     "date": "2026-08-17",
@@ -825,9 +969,9 @@
     "roe": 37.1,
     "share_price": 82.48,
     "price_at_review": 82.48,
-    "price_current": 80.25,
+    "price_current": 81.1,
     "dividends_paid": 0,
-    "performance_pct": -2.7
+    "performance_pct": -1.67
   },
   {
     "date": "2026-08-17",
@@ -843,9 +987,9 @@
     "roe": null,
     "share_price": 4.24,
     "price_at_review": 4.24,
-    "price_current": 4.25,
+    "price_current": 4.3,
     "dividends_paid": 0,
-    "performance_pct": 0.24
+    "performance_pct": 1.42
   },
   {
     "date": "2026-08-14",
@@ -861,9 +1005,9 @@
     "roe": 16.37,
     "share_price": 12.57,
     "price_at_review": 12.57,
-    "price_current": 12.39,
+    "price_current": 12.4,
     "dividends_paid": 0,
-    "performance_pct": -1.43
+    "performance_pct": -1.35
   },
   {
     "date": "2026-08-14",
@@ -879,9 +1023,9 @@
     "roe": 1.53,
     "share_price": 2.82,
     "price_at_review": 2.86,
-    "price_current": 2.7,
+    "price_current": 2.72,
     "dividends_paid": 0,
-    "performance_pct": -5.59
+    "performance_pct": -4.9
   },
   {
     "date": "2026-08-14",
@@ -897,9 +1041,9 @@
     "roe": 14.11,
     "share_price": 187.99,
     "price_at_review": 185.32,
-    "price_current": 184.16,
+    "price_current": 185.53,
     "dividends_paid": 0,
-    "performance_pct": -0.63
+    "performance_pct": 0.11
   },
   {
     "date": "2026-08-14",
@@ -914,8 +1058,8 @@
     "price_to_book": 0.51,
     "roe": 0.09,
     "share_price": 7.9,
-    "price_at_review": 0.06,
-    "price_current": 0.06,
+    "price_at_review": 0.059499998092651364,
+    "price_current": 0.059499998092651364,
     "dividends_paid": 0,
     "performance_pct": 0.0
   },
@@ -933,9 +1077,9 @@
     "roe": -70.99,
     "share_price": 8.12,
     "price_at_review": 8.12,
-    "price_current": 8.32,
+    "price_current": 8.0,
     "dividends_paid": 0,
-    "performance_pct": 2.46
+    "performance_pct": -1.48
   },
   {
     "date": "2026-08-13",
@@ -951,9 +1095,9 @@
     "roe": 25.93,
     "share_price": 54.23,
     "price_at_review": 54.95,
-    "price_current": 50.97,
+    "price_current": 50.3,
     "dividends_paid": 0,
-    "performance_pct": -7.24
+    "performance_pct": -8.46
   },
   {
     "date": "2026-08-13",
@@ -969,9 +1113,9 @@
     "roe": 18.79,
     "share_price": 6.25,
     "price_at_review": 6.25,
-    "price_current": 6.22,
+    "price_current": 6.24,
     "dividends_paid": 0,
-    "performance_pct": -0.48
+    "performance_pct": -0.16
   },
   {
     "date": "2026-08-13",
@@ -987,9 +1131,9 @@
     "roe": 34.71,
     "share_price": 40.12,
     "price_at_review": 39.04,
-    "price_current": 49.2,
+    "price_current": 47.95,
     "dividends_paid": 0,
-    "performance_pct": 26.02
+    "performance_pct": 22.82
   },
   {
     "date": "2026-08-12",
@@ -1005,9 +1149,9 @@
     "roe": 10.5,
     "share_price": 53.99,
     "price_at_review": 49.0,
-    "price_current": 47.5,
+    "price_current": 45.99,
     "dividends_paid": 0,
-    "performance_pct": -3.06
+    "performance_pct": -6.14
   },
   {
     "date": "2026-08-12",
@@ -1023,9 +1167,9 @@
     "roe": 25.89,
     "share_price": 307.85,
     "price_at_review": 307.85,
-    "price_current": 302.2,
+    "price_current": 301.1,
     "dividends_paid": 0,
-    "performance_pct": -1.84
+    "performance_pct": -2.19
   },
   {
     "date": "2026-08-12",
@@ -1059,9 +1203,9 @@
     "roe": 19.05,
     "share_price": 81.9,
     "price_at_review": 81.9,
-    "price_current": 77.42,
+    "price_current": 77.2,
     "dividends_paid": 0,
-    "performance_pct": -5.47
+    "performance_pct": -5.74
   },
   {
     "date": "2026-08-12",
@@ -1095,9 +1239,9 @@
     "roe": 8.28,
     "share_price": 213.34,
     "price_at_review": 213.34,
-    "price_current": 229.63,
+    "price_current": 227.01,
     "dividends_paid": 0,
-    "performance_pct": 7.64
+    "performance_pct": 6.41
   },
   {
     "date": "2026-08-12",
@@ -1113,9 +1257,9 @@
     "roe": 21.84,
     "share_price": 22.25,
     "price_at_review": 22.25,
-    "price_current": 23.76,
+    "price_current": 24.13,
     "dividends_paid": 0,
-    "performance_pct": 6.79
+    "performance_pct": 8.45
   },
   {
     "date": "2026-08-12",
@@ -1149,9 +1293,9 @@
     "roe": 22.06,
     "share_price": 875.03,
     "price_at_review": 875.03,
-    "price_current": 764.74,
+    "price_current": 765.46,
     "dividends_paid": 0,
-    "performance_pct": -12.6,
+    "performance_pct": -12.52,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-06-22"
   },
@@ -1169,9 +1313,9 @@
     "roe": 26.32,
     "share_price": 267.69,
     "price_at_review": 267.69,
-    "price_current": 299.06,
+    "price_current": 295.46,
     "dividends_paid": 0,
-    "performance_pct": 11.72,
+    "performance_pct": 10.37,
     "ghost_rating": null,
     "ghost_date": null
   },
@@ -1189,9 +1333,9 @@
     "roe": 18.19,
     "share_price": 9.89,
     "price_at_review": 9.89,
-    "price_current": 9.18,
+    "price_current": 8.78,
     "dividends_paid": 0,
-    "performance_pct": -7.18,
+    "performance_pct": -11.22,
     "ghost_rating": "BEARISH",
     "ghost_date": "2026-03-03"
   },
@@ -1208,9 +1352,9 @@
     "price_to_book": 0.8,
     "roe": null,
     "share_price": 96.48,
-    "performance_pct": 23.54,
+    "performance_pct": 24.71,
     "price_at_review": 96.48,
-    "price_current": 119.19,
+    "price_current": 120.32,
     "dividends_paid": 0
   },
   {
@@ -1226,9 +1370,9 @@
     "price_to_book": 4.31,
     "roe": 38.99,
     "share_price": 41.0,
-    "performance_pct": 8.41,
+    "performance_pct": 8.05,
     "price_at_review": 41.0,
-    "price_current": 44.45,
+    "price_current": 44.3,
     "dividends_paid": 0
   },
   {
@@ -1244,9 +1388,9 @@
     "price_to_book": 1.16,
     "roe": 13.78,
     "share_price": 295.2,
-    "performance_pct": 6.59,
+    "performance_pct": 3.03,
     "price_at_review": 295.2,
-    "price_current": 304.12,
+    "price_current": 293.63,
     "dividends_paid": 10.52
   },
   {
@@ -1262,9 +1406,9 @@
     "price_to_book": 2.22,
     "roe": 17.83,
     "share_price": 205.5,
-    "performance_pct": -8.23,
+    "performance_pct": -8.42,
     "price_at_review": 205.5,
-    "price_current": 188.59,
+    "price_current": 188.2,
     "dividends_paid": 0
   },
   {
@@ -1281,9 +1425,9 @@
     "roe": null,
     "share_price": null,
     "price_at_review": 14.07,
-    "price_current": 14.62,
+    "price_current": 14.4,
     "dividends_paid": 0,
-    "performance_pct": 3.91
+    "performance_pct": 2.35
   },
   {
     "date": "2026-08-06",
@@ -1313,9 +1457,9 @@
     "roe": null,
     "share_price": null,
     "price_at_review": 43.22,
-    "price_current": 42.05,
+    "price_current": 41.5,
     "dividends_paid": 0.46,
-    "performance_pct": -1.64
+    "performance_pct": -2.91
   },
   {
     "date": "2026-08-06",
@@ -1331,9 +1475,9 @@
     "roe": null,
     "share_price": null,
     "price_at_review": 19.1,
-    "price_current": 18.91,
+    "price_current": 18.97,
     "dividends_paid": 0,
-    "performance_pct": -0.99
+    "performance_pct": -0.68
   },
   {
     "date": "2026-08-06",
@@ -1349,9 +1493,9 @@
     "roe": null,
     "share_price": null,
     "price_at_review": 0.54,
-    "price_current": 0.53,
+    "price_current": 0.56,
     "dividends_paid": 0,
-    "performance_pct": -1.85
+    "performance_pct": 3.7
   },
   {
     "date": "2026-08-06",
@@ -1367,9 +1511,9 @@
     "roe": null,
     "share_price": null,
     "price_at_review": 963.98,
-    "price_current": 896.25,
+    "price_current": 918.38,
     "dividends_paid": 0,
-    "performance_pct": -7.03
+    "performance_pct": -4.73
   },
   {
     "date": "2026-08-05",
@@ -1385,9 +1529,9 @@
     "roe": 2.16,
     "share_price": 20.02,
     "price_at_review": 20.02,
-    "price_current": 17.86,
+    "price_current": 17.77,
     "dividends_paid": 0,
-    "performance_pct": -10.79
+    "performance_pct": -11.24
   },
   {
     "date": "2026-08-05",
@@ -1403,9 +1547,9 @@
     "roe": 1.09,
     "share_price": 181.61,
     "price_at_review": 181.61,
-    "price_current": 185.14,
+    "price_current": 181.75,
     "dividends_paid": 0,
-    "performance_pct": 1.94,
+    "performance_pct": 0.08,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-07-22"
   },
@@ -1423,9 +1567,9 @@
     "roe": null,
     "share_price": 139.0,
     "price_at_review": 139.0,
-    "price_current": 149.22,
+    "price_current": 150.0,
     "dividends_paid": 0,
-    "performance_pct": 7.35
+    "performance_pct": 7.91
   },
   {
     "date": "2026-08-04",
@@ -1437,9 +1581,9 @@
     "summary": "Redefine appointed Nadya Bhettay as an independent non-executive director. She is a CA(SA) with a serious CV — Vodafone Ireland FD, Vodacom Group Chief Strategy Officer, and currently on Capitec's board. This is a quality board appointment for a REIT that needs all the strategic thinking it can get.",
     "review": "Redefine is SA's second-largest REIT but it has been a tough decade for commercial property. The office sector is still bleeding, and retail is under pressure from e-commerce. Bhettay brings telecoms and tech experience — exactly the kind of thinking a property company needs when the world is going digital. She is on the Audit, Remuneration, and Risk/Compliance/Technology committees. That is not a ceremonial appointment — she will have real influence.\n\nBut let us be honest: one board appointment does not fix a REIT. Redefine's portfolio is what it is — a mix of retail, office, and industrial in a tough economy. The LTV is manageable, the dividend is being rebuilt, but the sector headwinds are real. Bhettay is a good hire. The question is whether the board as a whole can navigate the next five years. Rating: NEUTRAL. Good governance, but the property cycle is the real driver here.",
     "price_at_review": 6.45,
-    "price_current": 6.15,
+    "price_current": 6.05,
     "dividends_paid": 0,
-    "performance_pct": -4.65
+    "performance_pct": -6.2
   },
   {
     "date": "2026-08-04",
@@ -1467,8 +1611,8 @@
     "summary": "Nedbank delivered a solid set of numbers. Headline earnings flat at R8.4bn at face value, but strip out the ETI disposal and underlying growth was 12%. Revenue +6%, dividend up 2.3% to 1052c, ROE holding at 15%. The NCBA acquisition is the game-changer — 79.9% acceptance secured.",
     "review": "Nedbank is the quiet achiever of the Big Four. Jason Quinn has spent two years repositioning the franchise — becoming more client-centred, buying iKhokha and Eqstra, and now the transformative NCBA deal in East Africa. The numbers are starting to reflect the strategy. CIB is gaining momentum, BCB is seeing early synergies from acquisitions, and PPB is taking market share in home loans and deposits. The brand value jumped 16% to R24bn. That is not just marketing spend — it is what happens when you actually deliver.\n\nThe credit loss ratio ticked up to 95bps from 81bps — that is the one blemish. Higher rates and a tougher consumer environment are starting to bite. But the CET1 ratio of 12.6% gives plenty of buffer. The NCBA acquisition is the big swing factor — if they execute the integration well, this is a bank that can genuinely diversify earnings away from SA. Rating: BULLISH. Nedbank is executing. The market is still pricing this like a laggard.",
     "price_at_review": 294.23,
-    "price_current": 304.12,
-    "performance_pct": 6.94,
+    "price_current": 293.63,
+    "performance_pct": 3.37,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-07-22",
     "dividends_paid": 10.52
@@ -1483,8 +1627,8 @@
     "summary": "The JSE delivered a cracking first half. Operating income +14.6% to R2.0bn, HEPS +18.8% to 816c, NPAT +16.9% to R652m. R2.6bn cash on the balance sheet. Not bad for a company that is supposedly being disrupted by listing emigration and offshore investing.",
     "review": "The JSE is the ultimate 'picks and shovels' play on SA capital markets. When volumes are up, they print money. And volumes were up — equity market revenue drove the Capital Markets and Post-Trade Services segments, while non-trading income hit R659m (+8.1%). The 99.99% market availability with zero outages is genuinely impressive. You don't think about the plumbing until it breaks. It hasn't.\n\nTotal costs rose 11.5% but strip out once-off redesign costs and the CEO departure, and the real opex increase was just 3.5%. That is positive operating leverage of 3.1%. The capex spike to R110m (from R27m) is the FORGE 2031 strategy in action — investing in the exchange's future relevance. The JSE trades on a modest multiple and is a beneficiary of any improvement in SA's economic trajectory. Rating: BULLISH. The exchange is open for business, and business is good.",
     "price_at_review": 151.0,
-    "price_current": 154.0,
-    "performance_pct": 1.99,
+    "price_current": 154.78,
+    "performance_pct": 2.5,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-08-05",
     "dividends_paid": 0
@@ -1499,8 +1643,8 @@
     "summary": "The SACTWU/Squirewood corporate restructure is done. SACTWU now holds 27.98% of HCI via Squirewood (25.73%) plus direct (2.25%). This is the Copelyn succession plan taking shape — a tidying-up of the control structure for the post-Copelyn era.",
     "review": "HCI is one of those companies that looks like a bargain on a sum-of-the-parts basis but has a permanent discount because it is controlled by a trade union. The Squirewood transaction does not change that — it just moves the deck chairs. SACTWU still calls the shots. The question is what happens after Johnny Copelyn retires. He has been the architect of HCI's strategy for three decades. The 27.98% stake is now consolidated in a cleaner structure, which might make it easier to monetise down the line.\n\nHCI's underlying assets — Tsogo Sun, eMedia, mining — are a mixed bag. Gaming and hotels are recovering, media is tough, and mining is cyclical. The discount to NAV is probably justified until the market sees proof that the post-Copelyn era can create value. Rating: NEUTRAL. The structure is tidier. The strategy still needs to prove itself without Copelyn.",
     "price_at_review": 176.62,
-    "price_current": 159.63,
-    "performance_pct": -9.62,
+    "price_current": 158.13,
+    "performance_pct": -10.47,
     "ghost_rating": "NEUTRAL",
     "ghost_date": "2026-05-27",
     "dividends_paid": 0
@@ -1515,8 +1659,8 @@
     "summary": "Telkom's data-led strategy is working. Group data revenue +8.8%, EBITDA +10% with margin expanding to 27.7%. Mobile subs 25.3m (+6.1%), pre-paid ARPU holding at R59. Openserve launched its own ISP. This isn't the Telkom of five years ago.",
     "review": "Telkom has been quietly transforming from a dying fixed-line business into a credible mobile and fibre player, and the Q1 numbers prove it. Group data revenue now contributes 62.4% of the top line, mobile service revenue re-accelerated, and Openserve external revenue grew 18.2%. The EBITDA margin expansion from 25.9% to 27.7% shows the cost discipline is real — total expenses down 1.9%. They're spending less and earning more. That's the holy grail.\n\nThe BCX problem persists — revenue down 10.9% — but new management is reshaping the IT business and the cybersecurity and cloud segments are growing. Plus they sold 100 properties for R200m with another R264m in the pipeline. The capex intensity has room to ramp. Rating: BULLISH. Telkom is executing. The market still prices this like a turnaround. The turnaround is here.",
     "price_at_review": 56.15,
-    "price_current": 53.74,
-    "performance_pct": -4.29,
+    "price_current": 54.33,
+    "performance_pct": -3.24,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-08-04",
     "ghost_verdict": "Telkom's first quarter is a strong foundation for the rest of the year.",
@@ -1532,8 +1676,8 @@
     "summary": "HEPS guided 70-75c (up 7-15%), EPS swinging from -93c loss to 65-75c profit. R3.3bn debt refinanced for 5 years. AutoZone back in the black from May. But Hesto volumes down 15-20% and a Numsa strike at First Battery clouds the outlook.",
     "review": "The headline numbers look like progress — HEPS up double digits, EPS back in positive territory after last year's Hesto-induced accounting carnage, and the R3.3bn debt package now locked in for five years with rates that ratchet down as leverage falls. The refinancing removes the R1.6bn subordinated loan cliff that was due June 2027. That's genuinely good news. AutoZone returning to profitability in May is also a tangible win for the turnaround playbook.\n\nBut flip the page and the picture gets messier. Hesto — the big acquisition — is seeing revenue drop 15-20% with margins compressing. The Numsa strike at First Battery, though suspended, signals unresolved labour tension. And that R400m Rombat fine in Europe is still grinding through the courts with a guarantee now required. Metair has done the hard work of restructuring. The question is whether the rewards will actually materialise, or whether this is just a car parts company treading water in a brutal industry. Rating: NEUTRAL. The refinancing buys time. Now management needs to convert time into growth.",
     "price_at_review": 4.95,
-    "price_current": 4.97,
-    "performance_pct": 0.4,
+    "price_current": 4.99,
+    "performance_pct": 0.81,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-08-04",
     "ghost_verdict": "This is the most promising update I've seen from Metair in a very long time.",
@@ -1549,8 +1693,8 @@
     "summary": "Shareholders approved 1 million share options for Executive Chairman Ali Mazanderani at $5.00 strike — well above current levels. Vesting in 2028, exercisable from 2029. This is skin in the game, not a handout. When the chairman's payout depends on creating real value, investors should cheer.",
     "review": "Executive compensation votes usually induce eye-rolls, but this one is different. Mazanderani gets options at $5.00 per share — a strike price that's meaningfully above where Lesaka trades on Nasdaq. He can't exercise until April 2029 and only if he's still employed through April 2028. This is a long-dated, performance-aligned incentive that puts the chairman squarely on the same side as shareholders. 38 million votes for, 1.2 million against — the market gets it.\n\nLesaka is building something interesting in SA fintech — an integrated payments and banking platform for the underbanked. They've got the Nasdaq listing, Bank Zero partnerships, and a growing merchant network. The business still needs to prove it can scale profitably, but when the executive chairman's personal wealth is tied to a $5.00+ share price, you know where his focus is. Rating: BULLISH. Alignment matters. Mazanderani eats his own cooking — and he's betting it tastes good.",
     "price_at_review": 79.0,
-    "price_current": 79.0,
-    "performance_pct": 0.0,
+    "price_current": 77.99,
+    "performance_pct": -1.28,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-05-08",
     "dividends_paid": 0
@@ -1565,8 +1709,8 @@
     "summary": "The numbers are out and they're good. Revenue +2% to R7.2bn, EBITDA surged 103% to R470m. HEPS 79cps. The quiet turnaround we flagged on Thursday just got loud, and the stock responded with a 25% surge.",
     "review": "Hulamin delivered exactly what the trading statement promised — and then some. Revenue growth of 2% looks pedestrian until you see EBITDA doubling. That's operating leverage doing its thing. When your costs are under control and volumes are rising, profit flows straight to the bottom line. The operational recovery from H2 2025's mess is substantially complete, and the can-stream ramp is on track.\n\nThe portfolio clean-up is the cherry on top. Disposals of Extrusions and Containers unlock ~R100m in working capital in H2, all going to debt reduction. Cleaner balance sheet, leaner operations, and a management team that's actually delivering. Rating: BULLISH. We liked it on Thursday at R1.90. We like it even more now.",
     "price_at_review": 2.2,
-    "price_current": 2.1,
-    "performance_pct": -4.55,
+    "price_current": 2.11,
+    "performance_pct": -4.09,
     "ghost_rating": "NEUTRAL",
     "ghost_date": "2026-08-03",
     "ghost_verdict": "Wait for today's trading before forming conclusions. Stock -22% YTD.",
@@ -1582,8 +1726,8 @@
     "summary": "Stor-Age is buying the Xtraspace portfolio — consolidating its position as the dominant self-storage operator in SA. This is exactly what you want a niche REIT to do: buy the competition, extract cost synergies, and widen the moat. Smart, boring, accretive.",
     "review": "Stor-Age keeps doing exactly what it says on the tin. The Xtraspace acquisition is a bolt-on that strengthens their already-dominant position in SA self-storage. They know these assets better than anyone — every site, every occupancy rate, every rand per square metre.\n\nSelf-storage is one of the few property sub-sectors with genuine structural growth. People accumulate stuff, downsize, relocate. The economics are better than retail or office: lower capex, higher margins, stickier customers. Stor-Age's UK expansion is the wildcard, but the SA business is the cash engine. Rating: BULLISH. A REIT that actually grows — rare and worth owning.",
     "price_at_review": 16.4,
-    "price_current": 16.03,
-    "performance_pct": -2.26,
+    "price_current": 16.04,
+    "performance_pct": -2.2,
     "ghost_rating": "BEARISH",
     "ghost_date": "2026-06-18",
     "dividends_paid": 0
@@ -1612,8 +1756,8 @@
     "summary": "Mfundo Nkuhlu is retiring from Nedbank's executive leadership. He ran Corporate and Investment Banking — a key profit driver. Leadership changes at banks always matter, but this looks orderly. Succession planning in a R200bn+ institution should not be a crisis.",
     "review": "Nkuhlu's departure from Nedbank CIB deserves attention — he's been a steady hand on one of the group's most important divisions. CIB contributes roughly a quarter of Nedbank's earnings. You don't shrug off a change at that level.\n\nBut this is a retirement, not a resignation. There's a difference. Nedbank has had time to plan for this and the broader Africa strategy (NCBA acquisition in Kenya) is set. The real question isn't who replaces him — it's whether Nedbank can ever close the gap with Standard Bank. Rating: NEUTRAL. Watch the CIB numbers over the next two quarters for any wobble.",
     "price_at_review": 279.64,
-    "price_current": 304.12,
-    "performance_pct": 12.52,
+    "price_current": 293.63,
+    "performance_pct": 8.76,
     "ghost_rating": "BULLISH",
     "ghost_date": "2026-07-22",
     "dividends_paid": 10.52
@@ -1630,8 +1774,8 @@
     "price_at_review": 1.9,
     "price_3m": null,
     "price_6m": null,
-    "price_current": 2.1,
-    "performance_pct": 10.53,
+    "price_current": 2.11,
+    "performance_pct": 11.05,
     "ghost_rating": "NEUTRAL",
     "ghost_date": "2026-08-03",
     "ghost_verdict": "Wait for today's trading before forming conclusions. Stock -22% YTD.",
@@ -1647,8 +1791,8 @@
     "summary": "Accelerate's updated trading statement doesn't change the narrative: this is a deeply troubled property fund. Fourways Mall remains an albatross. The correction to the trading statement adds another layer of concern — getting your numbers right the first time shouldn't be this hard.",
     "review": "Accelerate is the poster child for everything that went wrong in SA commercial property. Fourways Mall — the biggest super-regional centre nobody asked for — continues to drag the entire portfolio down. When your flagship asset needs an independent manager just to function, the investment case is broken.\n\nAnd now a correction to the trading statement? That's the kind of thing that erodes whatever credibility management has left. The share price reflects the damage — it's been obliterated. Some will argue it's cheap on a price-to-NAV basis. It's also cheap for a reason. Rating: BEARISH. There are better ways to play SA property. This one needs a miracle, not a recovery.",
     "price_at_review": 0.45,
-    "price_current": 0.42,
-    "performance_pct": -6.67,
+    "price_current": 0.41,
+    "performance_pct": -8.89,
     "dividends_paid": 0,
     "ghost_rating": "NEUTRAL",
     "ghost_date": "2026-08-03"

@@ -88,14 +88,158 @@ footer a { color: #666; }
 </nav>
 <div class="container">
 <h1>Archive</h1>
-<div class="subtitle">All reviews · 93 total</div>
-<div class="grand">🟢 51 Bullish · 🟡 35 Neutral · 🔴 7 Bearish · 📊 77 Companies · 📝 18 Editions</div>
+<div class="subtitle">All reviews · 101 total</div>
+<div class="grand">🟢 54 Bullish · 🟡 36 Neutral · 🔴 11 Bearish · 📊 83 Companies · 📝 19 Editions</div>
 <div class="filter-bar">
   <select onchange="filterTicker(this.value)">
-    <option value="">All Companies</option><option value="ABG">ABG</option><option value="ADH">ADH</option><option value="AEG">AEG</option><option value="AFT">AFT</option><option value="AGL">AGL</option><option value="APF">APF</option><option value="APN">APN</option><option value="BHG">BHG</option><option value="BID">BID</option><option value="BLU">BLU</option><option value="BTI">BTI</option><option value="BWN">BWN</option><option value="CAA">CAA</option><option value="CAC">CAC</option><option value="CCC">CCC</option><option value="CCD">CCD</option><option value="CPR">CPR</option><option value="CSB">CSB</option><option value="DIB">DIB</option><option value="DRD">DRD</option><option value="DSY">DSY</option><option value="DTC">DTC</option><option value="EXX">EXX</option><option value="GFI">GFI</option><option value="GND">GND</option><option value="HCI">HCI</option><option value="HLM">HLM</option><option value="IMP">IMP</option><option value="ITE">ITE</option><option value="JBL">JBL</option><option value="JSE">JSE</option><option value="KAP">KAP</option><option value="LBR">LBR</option><option value="LSK">LSK</option><option value="MDI">MDI</option><option value="MPT">MPT</option><option value="MTA">MTA</option><option value="MTN">MTN</option><option value="NED">NED</option><option value="NHM">NHM</option><option value="NPH">NPH</option><option value="NPN">NPN</option><option value="NRP">NRP</option><option value="OAO">OAO</option><option value="OPA">OPA</option><option value="OUT">OUT</option><option value="PIK">PIK</option><option value="PMV">PMV</option><option value="PWR">PWR</option><option value="QLT">QLT</option><option value="RBO">RBO</option><option value="RCL">RCL</option><option value="RDF">RDF</option><option value="REN">REN</option><option value="RES">RES</option><option value="S32">S32</option><option value="SAP">SAP</option><option value="SBP">SBP</option><option value="SDO">SDO</option><option value="SEB">SEB</option><option value="SHP">SHP</option><option value="SLM">SLM</option><option value="SNT">SNT</option><option value="SOH">SOH</option><option value="SOL">SOL</option><option value="SPG">SPG</option><option value="SPP">SPP</option><option value="SSS">SSS</option><option value="SUI">SUI</option><option value="SUR">SUR</option><option value="TGA">TGA</option><option value="THA">THA</option><option value="TKG">TKG</option><option value="TPC">TPC</option><option value="TRU">TRU</option><option value="TTO">TTO</option><option value="WVR">WVR</option>
+    <option value="">All Companies</option><option value="ABG">ABG</option><option value="ACT">ACT</option><option value="ADH">ADH</option><option value="AEG">AEG</option><option value="AFT">AFT</option><option value="AGL">AGL</option><option value="APF">APF</option><option value="APN">APN</option><option value="BHG">BHG</option><option value="BID">BID</option><option value="BLU">BLU</option><option value="BTI">BTI</option><option value="BWN">BWN</option><option value="CAA">CAA</option><option value="CAC">CAC</option><option value="CCC">CCC</option><option value="CCD">CCD</option><option value="CPR">CPR</option><option value="CSB">CSB</option><option value="DIB">DIB</option><option value="DRD">DRD</option><option value="DSY">DSY</option><option value="DTC">DTC</option><option value="EXX">EXX</option><option value="GFI">GFI</option><option value="GND">GND</option><option value="HCI">HCI</option><option value="HLM">HLM</option><option value="IMP">IMP</option><option value="ITE">ITE</option><option value="JBL">JBL</option><option value="JSE">JSE</option><option value="KAP">KAP</option><option value="LAB">LAB</option><option value="LBR">LBR</option><option value="LSK">LSK</option><option value="MDI">MDI</option><option value="MPT">MPT</option><option value="MTA">MTA</option><option value="MTN">MTN</option><option value="MTU">MTU</option><option value="NED">NED</option><option value="NHM">NHM</option><option value="NPH">NPH</option><option value="NPN">NPN</option><option value="NRP">NRP</option><option value="OAO">OAO</option><option value="OPA">OPA</option><option value="OUT">OUT</option><option value="PIK">PIK</option><option value="PMV">PMV</option><option value="PWR">PWR</option><option value="QLT">QLT</option><option value="RBO">RBO</option><option value="RCL">RCL</option><option value="RDF">RDF</option><option value="REN">REN</option><option value="RES">RES</option><option value="S32">S32</option><option value="SAP">SAP</option><option value="SBP">SBP</option><option value="SDO">SDO</option><option value="SEA">SEA</option><option value="SEB">SEB</option><option value="SHP">SHP</option><option value="SLM">SLM</option><option value="SNT">SNT</option><option value="SOH">SOH</option><option value="SOL">SOL</option><option value="SPG">SPG</option><option value="SPP">SPP</option><option value="SSS">SSS</option><option value="SSW">SSW</option><option value="SUI">SUI</option><option value="SUR">SUR</option><option value="TGA">TGA</option><option value="THA">THA</option><option value="TKG">TKG</option><option value="TON">TON</option><option value="TPC">TPC</option><option value="TRU">TRU</option><option value="TTO">TTO</option><option value="WVR">WVR</option>
   </select>
 </div>
-<div class="date-header" id="d-2026-08-26">26 Aug 2026 · 8 reviews</div>
+<div class="date-header" id="d-2026-08-27">27 Aug 2026 · 8 reviews</div>
+
+    <div class="review neutral" data-t="TRU">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num follow">Review #3</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 14 Aug · <span class="r-badge-sm bearish">BEARISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 21 Aug</div>
+      
+      <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
+      <div class="r-title">Group Annual Results and Cash Dividend for the 52 Weeks Ended 28 June 2026</div>
+      <div class="r-summary">HEPS slips 2.6% to 732.2c and the final dividend is cut 10% to 153c, as a tough consumer and weak UK trading weigh on the full year.</div>
+      <div class="r-review">A soft landing, not a crash. Truworths reported HEPS of 732.2c for the 52 weeks to 28 June, down 2.6% from 752.1c — dead in line with its own guidance. Group retail sales slipped 0.9% to R21.8bn while the gross margin held firm at 51.3%. The final dividend was trimmed to 153c from 170c, reflecting the weaker profit. Africa started the year strongly then lost momentum as fuel prices squeezed discretionary spend, and the UK (Office) stayed grim.
+
+The stock fell 4.1% to R48.24, but at 6.5x trailing earnings, a 26% ROE and a near-double-digit dividend yield, the bad news is largely in the price. This is a cash-generative retailer marking time until the consumer recovers — cheap, but with no obvious catalyst to re-rate it right now.</div>
+      <div class="r-metrics"><span>PE: 6.49</span> · <span>P/B: 1.62</span> · <span>ROE: 25.9%</span> · <span>R48.24</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-group-annual-financial-statements-summarised-audited-group-annual-results-cash-dividend-declaration-for-the-52-weeks-ended-28-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="TON">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Tongaat Hulett <span class="r-ticker">(TON)</span></div>
+      <div class="r-title">Constitutional Court Order and RGS Application for Leave to Appeal</div>
+      <div class="r-summary">The ConCourt rejects Tongaat's sugar-levy appeal with costs, while bidder RGS launches yet another assault on the business rescue plan.</div>
+      <div class="r-review">More legal trench warfare for the zombie sugar producer. The Constitutional Court rejected Tongaat's leave-to-appeal application — over its sugar levy obligations — with costs, a judgment that lands squarely on the side of the SA Sugar Association. Separately, RGS Group Holdings has applied for leave to appeal in its long-running campaign against the business rescue plan and the Vision consortium's control.
+
+Tongaat's shares remain suspended, so this is a creditors' saga rather than a tradeable thesis. Every round of litigation simply extends the uncertainty for affected persons — creditors, growers and employees alike. There is no retail angle here, and there hasn't been for a long time.</div>
+      
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/tongaat-hulett-limited-notice-to-affected-persons-order-of-the-constitutional-court-and-application-for-leave-to-appeal-by-rgs-group-holdings-limited/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SSW">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 11 May · <span class="r-badge-sm bullish">BULLISH</span></div>
+      
+      
+      <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
+      <div class="r-title">Trading Statement and Operating Update for the Six Months Ended 30 June 2026</div>
+      <div class="r-summary">HEPS guided up more than 200% to 571–631c and EPS swings from a 127c loss to 597–658c, as gold and PGM prices fire on all cylinders.</div>
+      <div class="r-review">Sibanye is back. HEPS for H1 2026 is guided to 571–631c, a more-than-200% jump from 190c a year ago, while EPS swings from a 127c loss to a 597–658c profit — an improvement north of 560%. The drivers are brutal and simple: SA gold delivered record financial performance with adjusted EBITDA up ~85% on a 35% higher rand gold price, and the SA PGM division saw EBITDA up ~300% on a 67% higher 4E basket price. Recycling ounces sold jumped 142% to 2.79moz. Crucially, impairments — R9.7bn of them last year — all but vanished.
+
+The clever bit: last year's numbers were flattered by R5.1bn of Section 45X tax credits, so the underlying improvement is even stronger than the headline suggests. Higher royalties and taxes are the only real offsets. Keliber is finally moving from construction to commissioning. At a forward PE of ~4.4x, the market still doesn't believe the recovery — the full results land on 1 September and could change that fast.</div>
+      <div class="r-metrics"><span>P/B: 3.14</span> · <span>ROE: -10.2%</span> · <span>R49.07</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-trading-statement-and-operating-update-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SEA">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 14 Jul · <span class="r-badge-sm bullish">BULLISH</span></div>
+      
+      
+      <div class="r-company">Spear REIT <span class="r-ticker">(SEA)</span></div>
+      <div class="r-title">Implementation of Acquisition of Watergate Centre</div>
+      <div class="r-summary">Watergate Centre transfers into Spear's name, accretive from day one at an estimated 8.37% initial yield — and not yet in DIPS guidance.</div>
+      <div class="r-review">Spear locked it in. The acquisition of Watergate Centre in Mitchells Plain, Cape Town, was finalised on 27 August with ownership registered in Spear's name. The deal is accretive from the implementation date, carrying an estimated 8.37% initial yield to shareholders — a tidy spread over the cost of debt for a REIT.
+
+The kicker: the financial effects aren't yet reflected in Spear's FY27 distributable-income-per-share guidance issued in May, so there's upside baked in for the next update. At R12.70, 6.2x earnings, a 17% ROE and a 0.98x book multiple, Spear keeps quietly executing its Western Cape retail strategy. Small, clean and on-message.</div>
+      <div class="r-metrics"><span>PE: 6.16</span> · <span>P/B: 0.98</span> · <span>ROE: 17.2%</span> · <span>R12.70</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/spear-reit-limited-implementation-of-acquisition-of-watergate-centre/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="OUT">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 27 Feb · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 17 Aug</div>
+      
+      <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
+      <div class="r-title">Trading Update and Trading Statement for the Year Ended 30 June 2026</div>
+      <div class="r-summary">HEPS guided +21–26% to 361–376c and normalised EPS +15–21%, as SA short-term profit surges more than 40% — the stock rocketed 9%.</div>
+      <div class="r-review">OUTsurance delivered a genuine beat. HEPS is guided to 360.9–375.9c, up 21–26% on the 298.3c of FY25, while normalised EPS (NEPS) rises 15–21% to 352.1–370.5c. Gross written premium ex-BZI grew 15.7% and net earned premium 18.7%. The engine room is SA short-term insurance, where profit surged more than 40%, with Youi and Ireland finally past their peak loss-making years.
+
+The market was caught flat-footed — the stock jumped 8.99% on the day to R88.39. At 27x trailing earnings and a 37% ROE, this is priced for the quality it delivers: disciplined underwriting, a fortress balance sheet (0.03x debt/equity) and compounding premium growth. The old RMI-to-OUTsurance transition continues to pay off for patient holders.</div>
+      <div class="r-metrics"><span>PE: 27.45</span> · <span>P/B: 9.16</span> · <span>ROE: 37.1%</span> · <span>R88.39</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-trading-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="MTU">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 20 Jul · <span class="r-badge-sm bearish">BEARISH</span></div>
+      
+      
+      <div class="r-company">Mantengu <span class="r-ticker">(MTU)</span></div>
+      <div class="r-title">Cautionary — Resignation of Auditor, Withdrawal of Audit Report and Deferred Tax Dispute</div>
+      <div class="r-summary">Auditor HLB withdraws its opinion, flags a reportable irregularity and resigns, alleging the deferred tax asset was overstated by ~R58.3m.</div>
+      <div class="r-review">A five-alarm fire at a R65m market cap. Auditor HLB CMA wrote to Mantengu on 21 August asserting the group had overstated its deferred tax asset by ~R58.3m — claiming individual entities wouldn't generate enough future taxable profit to realise it. By 26 August, HLB had withdrawn its audit opinion, reported a reportable irregularity over the board's refusal to amend the financials, and resigned with immediate effect. The board hit back, insisting each entity's tax position was calculated separately and that this is merely a 'differing view on future profitability'.
+
+The optics are brutal regardless of who's right: a withdrawn audit opinion and a reported irregularity days before the AGM. The shares — R0.20, down 69% in a year, ROE -85% — were already signalling distress. The 'we've done nothing wrong' defence rarely lands well with a market that can see the numbers. Avoid until a new auditor signs off clean.</div>
+      <div class="r-metrics"><span>P/B: 0.28</span> · <span>ROE: -85.2%</span> · <span>R0.20</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/mantengu-limited-cautionary-ann-resig-of-auditors-withdrawal-of-audit-report-associated-dispute-on-deferred-taxation-agm/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="LAB">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Labat Africa <span class="r-ticker">(LAB)</span></div>
+      <div class="r-title">Suspension of Listing</div>
+      <div class="r-summary">The JSE suspends Labat's listing with immediate effect for failing to publish its financials and failing to pay a declared dividend.</div>
+      <div class="r-review">Labat is back in the naughty corner. The JSE suspended the listing of Labat Africa's securities with immediate effect for non-compliance with the Listings Requirements — the company hasn't published its condensed financial statements and failed to pay a declared dividend, without making alternative arrangements.
+
+This is a well-worn pattern: Labat was suspended before and only had its listing lifted in December 2024 after similar failures. At R0.03 a share and a R37m market cap, the only thing less liquid than the stock is the company's compliance record. Suspended means untradeable — and for a serial offender, that could drag on.</div>
+      <div class="r-metrics"><span>P/B: 0.12</span> · <span>R0.03</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/labat-africa-limited-suspension-of-listing-labat-africa-limited/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="ACT">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">AfroCentric Investment Corporation <span class="r-ticker">(ACT)</span></div>
+      <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
+      <div class="r-summary">EPS guided down 22–42% to 6.7–9.0c as client contract losses in administration and managed care, plus rightsizing costs, bite hard.</div>
+      <div class="r-review">AfroCentric is shrinking, not growing. EPS for H1 2026 is guided to 6.68–8.98c, a fall of 22.2–42.1% on the 11.54c of the prior period, while HEPS drops 16.9–36.9% to 7.37–9.71c. The culprit is lower operating profitability in the Services cluster — client contract losses in administration and managed care — compounded by rightsizing and cost-reset expenses. The Retail cluster also weakened after designated service provider contracts ended last year.
+
+At R0.77 a share, a 0.32x price-to-book and a R630m market cap, the market has already voted. ROE is deeply negative (-24.7%) and the shares are down 53% in a year. Interim results land 1 September; until the contract churn stabilises and the cost base is right-sized, this looks like a value trap rather than a bargain.</div>
+      <div class="r-metrics"><span>P/B: 0.32</span> · <span>ROE: -24.7%</span> · <span>R0.77</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/afrocentric-investment-corporation-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div><div class="date-header" id="d-2026-08-26">26 Aug 2026 · 8 reviews</div>
 
     <div class="review neutral" data-t="TPC">
       <div class="r-header">
@@ -552,7 +696,7 @@ At a PE of 19.8 and P/B of 3.8, this stock isn't cheap — the market knows what
         <span class="r-badge neutral">NEUTRAL</span>
         <span class="r-num follow">Review #2</span>
       </div>
-      
+      <div class="r-ghost">Ghost Mail: 14 Aug · <span class="r-badge-sm bearish">BEARISH</span></div>
       <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 13 Aug</div>
       
       <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
@@ -916,7 +1060,7 @@ The self-inflicted wounds are pet food and the Sunshine brand. Pet food volumes 
         <span class="r-badge neutral">NEUTRAL</span>
         <span class="r-num first">Review #1</span>
       </div>
-      
+      <div class="r-ghost">Ghost Mail: 27 Feb · <span class="r-badge-sm bullish">BULLISH</span></div>
       
       
       <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
@@ -1032,7 +1176,7 @@ The numbers tell you why the market wasn't moved (the stock ticked up 0.47%): th
         <span class="r-badge neutral">NEUTRAL</span>
         <span class="r-num first">Review #1</span>
       </div>
-      
+      <div class="r-ghost">Ghost Mail: 14 Aug · <span class="r-badge-sm bearish">BEARISH</span></div>
       
       
       <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
