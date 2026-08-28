@@ -3,242 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ticker Talk — Today's Reviews</title>
+<title>Today's Reviews — Ticker Talk</title>
 <style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
-nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
-nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
-nav a:hover, nav a.active { opacity: 1; }
-nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
-.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
-h1 { font-size: 24px; margin-bottom: 8px; }
-.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
-.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
-.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
-.stat strong { display: block; font-size: 20px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
 
-/* Review card */
-.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-.review.bullish { border-left-color: #2e7d32; }
-.review.bearish { border-left-color: #c62828; }
-.review.neutral { border-left-color: #e65100; }
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge.bearish { background: #ffebee; color: #c62828; }
-.r-badge.neutral { background: #fff3e0; color: #e65100; }
-.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
-.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
-.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
-.r-num.first { background: #e8f5e9; color: #2e7d32; }
-.r-num.follow { background: #fff3e0; color: #e65100; }
-.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
-.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
-.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
-.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
-.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
-.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
-.r-metrics span { color: #222222; font-weight: 600; }
-.r-link { margin-top: 10px; font-size: 13px; }
-.r-link a { color: #2e7d32; text-decoration: none; }
-.r-link a:hover { text-decoration: underline; }
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
 
-/* Archive filter */
-.filter-bar { margin-bottom: 20px; }
-.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
-.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
-.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
 
-/* Ratings table */
-.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
-.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
-.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
-.ratings-table tr:hover { background: #fafaf8; }
-.perf-pos { color: #2e7d32; font-weight: 700; }
-.perf-neg { color: #c62828; font-weight: 700; }
-.perf-new { color: #aaa; }
-.perf-neutral { color: #e65100; font-weight: 700; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
 
-/* Agreements section */
-.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
-.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
-.disagree-item { border-left-color: #c62828; }
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
 
-/* Methodology */
-.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
-.method-box strong { color: #222; }
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
 
-footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
-footer a { color: #666; }
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
 </style>
+
 </head>
 <body>
 <nav>
-  <span class="brand">📋 Ticker Talk</span>
-  <a href="index.html" class="active">Today</a>
-  <a href="archive.html" >Archive</a>
-  <a href="trading.html" >🤖 Trading</a>
-  <a href="ratings.html" >Ratings</a>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
 </nav>
-<div class="container">
 <h1>Today's Reviews</h1>
-<div class="subtitle">27 Aug 2026 · 8 reviews</div>
+
 <div class="stats">
-  <div class="stat">🟢 <strong>3</strong> Bullish</div>
-  <div class="stat">🟡 <strong>1</strong> Neutral</div>
-  <div class="stat">🔴 <strong>4</strong> Bearish</div>
+  <div class="stat">🟢 5 Bullish</div>
+  <div class="stat">🟡 1 Neutral</div>
+  <div class="stat">🔴 4 Bearish</div>
+  <div class="stat">📅 27 Aug 2026</div>
 </div>
-
-    <div class="review neutral" data-t="TRU">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num follow">Review #3</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 14 Aug · <span class="r-badge-sm bearish">BEARISH</span></div>
-      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 21 Aug</div>
-      
-      <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
-      <div class="r-title">Group Annual Results and Cash Dividend for the 52 Weeks Ended 28 June 2026</div>
-      <div class="r-summary">HEPS slips 2.6% to 732.2c and the final dividend is cut 10% to 153c, as a tough consumer and weak UK trading weigh on the full year.</div>
-      <div class="r-review">A soft landing, not a crash. Truworths reported HEPS of 732.2c for the 52 weeks to 28 June, down 2.6% from 752.1c — dead in line with its own guidance. Group retail sales slipped 0.9% to R21.8bn while the gross margin held firm at 51.3%. The final dividend was trimmed to 153c from 170c, reflecting the weaker profit. Africa started the year strongly then lost momentum as fuel prices squeezed discretionary spend, and the UK (Office) stayed grim.
-
-The stock fell 4.1% to R48.24, but at 6.5x trailing earnings, a 26% ROE and a near-double-digit dividend yield, the bad news is largely in the price. This is a cash-generative retailer marking time until the consumer recovers — cheap, but with no obvious catalyst to re-rate it right now.</div>
-      <div class="r-metrics"><span>PE: 6.49</span> · <span>P/B: 1.62</span> · <span>ROE: 25.9%</span> · <span>R48.24</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-group-annual-financial-statements-summarised-audited-group-annual-results-cash-dividend-declaration-for-the-52-weeks-ended-28-june-2026/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bearish" data-t="TON">
-      <div class="r-header">
-        <span class="r-badge bearish">BEARISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Tongaat Hulett <span class="r-ticker">(TON)</span></div>
-      <div class="r-title">Constitutional Court Order and RGS Application for Leave to Appeal</div>
-      <div class="r-summary">The ConCourt rejects Tongaat's sugar-levy appeal with costs, while bidder RGS launches yet another assault on the business rescue plan.</div>
-      <div class="r-review">More legal trench warfare for the zombie sugar producer. The Constitutional Court rejected Tongaat's leave-to-appeal application — over its sugar levy obligations — with costs, a judgment that lands squarely on the side of the SA Sugar Association. Separately, RGS Group Holdings has applied for leave to appeal in its long-running campaign against the business rescue plan and the Vision consortium's control.
-
-Tongaat's shares remain suspended, so this is a creditors' saga rather than a tradeable thesis. Every round of litigation simply extends the uncertainty for affected persons — creditors, growers and employees alike. There is no retail angle here, and there hasn't been for a long time.</div>
-      
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/tongaat-hulett-limited-notice-to-affected-persons-order-of-the-constitutional-court-and-application-for-leave-to-appeal-by-rgs-group-holdings-limited/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="SSW">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 11 May · <span class="r-badge-sm bullish">BULLISH</span></div>
-      
-      
-      <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
-      <div class="r-title">Trading Statement and Operating Update for the Six Months Ended 30 June 2026</div>
-      <div class="r-summary">HEPS guided up more than 200% to 571–631c and EPS swings from a 127c loss to 597–658c, as gold and PGM prices fire on all cylinders.</div>
-      <div class="r-review">Sibanye is back. HEPS for H1 2026 is guided to 571–631c, a more-than-200% jump from 190c a year ago, while EPS swings from a 127c loss to a 597–658c profit — an improvement north of 560%. The drivers are brutal and simple: SA gold delivered record financial performance with adjusted EBITDA up ~85% on a 35% higher rand gold price, and the SA PGM division saw EBITDA up ~300% on a 67% higher 4E basket price. Recycling ounces sold jumped 142% to 2.79moz. Crucially, impairments — R9.7bn of them last year — all but vanished.
-
-The clever bit: last year's numbers were flattered by R5.1bn of Section 45X tax credits, so the underlying improvement is even stronger than the headline suggests. Higher royalties and taxes are the only real offsets. Keliber is finally moving from construction to commissioning. At a forward PE of ~4.4x, the market still doesn't believe the recovery — the full results land on 1 September and could change that fast.</div>
-      <div class="r-metrics"><span>P/B: 3.14</span> · <span>ROE: -10.2%</span> · <span>R49.07</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-trading-statement-and-operating-update-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="SEA">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 14 Jul · <span class="r-badge-sm bullish">BULLISH</span></div>
-      
-      
-      <div class="r-company">Spear REIT <span class="r-ticker">(SEA)</span></div>
-      <div class="r-title">Implementation of Acquisition of Watergate Centre</div>
-      <div class="r-summary">Watergate Centre transfers into Spear's name, accretive from day one at an estimated 8.37% initial yield — and not yet in DIPS guidance.</div>
-      <div class="r-review">Spear locked it in. The acquisition of Watergate Centre in Mitchells Plain, Cape Town, was finalised on 27 August with ownership registered in Spear's name. The deal is accretive from the implementation date, carrying an estimated 8.37% initial yield to shareholders — a tidy spread over the cost of debt for a REIT.
-
-The kicker: the financial effects aren't yet reflected in Spear's FY27 distributable-income-per-share guidance issued in May, so there's upside baked in for the next update. At R12.70, 6.2x earnings, a 17% ROE and a 0.98x book multiple, Spear keeps quietly executing its Western Cape retail strategy. Small, clean and on-message.</div>
-      <div class="r-metrics"><span>PE: 6.16</span> · <span>P/B: 0.98</span> · <span>ROE: 17.2%</span> · <span>R12.70</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/spear-reit-limited-implementation-of-acquisition-of-watergate-centre/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="OUT">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num follow">Review #2</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 27 Feb · <span class="r-badge-sm bullish">BULLISH</span></div>
-      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 17 Aug</div>
-      
-      <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
-      <div class="r-title">Trading Update and Trading Statement for the Year Ended 30 June 2026</div>
-      <div class="r-summary">HEPS guided +21–26% to 361–376c and normalised EPS +15–21%, as SA short-term profit surges more than 40% — the stock rocketed 9%.</div>
-      <div class="r-review">OUTsurance delivered a genuine beat. HEPS is guided to 360.9–375.9c, up 21–26% on the 298.3c of FY25, while normalised EPS (NEPS) rises 15–21% to 352.1–370.5c. Gross written premium ex-BZI grew 15.7% and net earned premium 18.7%. The engine room is SA short-term insurance, where profit surged more than 40%, with Youi and Ireland finally past their peak loss-making years.
-
-The market was caught flat-footed — the stock jumped 8.99% on the day to R88.39. At 27x trailing earnings and a 37% ROE, this is priced for the quality it delivers: disciplined underwriting, a fortress balance sheet (0.03x debt/equity) and compounding premium growth. The old RMI-to-OUTsurance transition continues to pay off for patient holders.</div>
-      <div class="r-metrics"><span>PE: 27.45</span> · <span>P/B: 9.16</span> · <span>ROE: 37.1%</span> · <span>R88.39</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-trading-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bearish" data-t="MTU">
-      <div class="r-header">
-        <span class="r-badge bearish">BEARISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 20 Jul · <span class="r-badge-sm bearish">BEARISH</span></div>
-      
-      
-      <div class="r-company">Mantengu <span class="r-ticker">(MTU)</span></div>
-      <div class="r-title">Cautionary — Resignation of Auditor, Withdrawal of Audit Report and Deferred Tax Dispute</div>
-      <div class="r-summary">Auditor HLB withdraws its opinion, flags a reportable irregularity and resigns, alleging the deferred tax asset was overstated by ~R58.3m.</div>
-      <div class="r-review">A five-alarm fire at a R65m market cap. Auditor HLB CMA wrote to Mantengu on 21 August asserting the group had overstated its deferred tax asset by ~R58.3m — claiming individual entities wouldn't generate enough future taxable profit to realise it. By 26 August, HLB had withdrawn its audit opinion, reported a reportable irregularity over the board's refusal to amend the financials, and resigned with immediate effect. The board hit back, insisting each entity's tax position was calculated separately and that this is merely a 'differing view on future profitability'.
-
-The optics are brutal regardless of who's right: a withdrawn audit opinion and a reported irregularity days before the AGM. The shares — R0.20, down 69% in a year, ROE -85% — were already signalling distress. The 'we've done nothing wrong' defence rarely lands well with a market that can see the numbers. Avoid until a new auditor signs off clean.</div>
-      <div class="r-metrics"><span>P/B: 0.28</span> · <span>ROE: -85.2%</span> · <span>R0.20</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/mantengu-limited-cautionary-ann-resig-of-auditors-withdrawal-of-audit-report-associated-dispute-on-deferred-taxation-agm/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bearish" data-t="LAB">
-      <div class="r-header">
-        <span class="r-badge bearish">BEARISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Labat Africa <span class="r-ticker">(LAB)</span></div>
-      <div class="r-title">Suspension of Listing</div>
-      <div class="r-summary">The JSE suspends Labat's listing with immediate effect for failing to publish its financials and failing to pay a declared dividend.</div>
-      <div class="r-review">Labat is back in the naughty corner. The JSE suspended the listing of Labat Africa's securities with immediate effect for non-compliance with the Listings Requirements — the company hasn't published its condensed financial statements and failed to pay a declared dividend, without making alternative arrangements.
-
-This is a well-worn pattern: Labat was suspended before and only had its listing lifted in December 2024 after similar failures. At R0.03 a share and a R37m market cap, the only thing less liquid than the stock is the company's compliance record. Suspended means untradeable — and for a serial offender, that could drag on.</div>
-      <div class="r-metrics"><span>P/B: 0.12</span> · <span>R0.03</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/labat-africa-limited-suspension-of-listing-labat-africa-limited/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bearish" data-t="ACT">
-      <div class="r-header">
-        <span class="r-badge bearish">BEARISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">AfroCentric Investment Corporation <span class="r-ticker">(ACT)</span></div>
-      <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
-      <div class="r-summary">EPS guided down 22–42% to 6.7–9.0c as client contract losses in administration and managed care, plus rightsizing costs, bite hard.</div>
-      <div class="r-review">AfroCentric is shrinking, not growing. EPS for H1 2026 is guided to 6.68–8.98c, a fall of 22.2–42.1% on the 11.54c of the prior period, while HEPS drops 16.9–36.9% to 7.37–9.71c. The culprit is lower operating profitability in the Services cluster — client contract losses in administration and managed care — compounded by rightsizing and cost-reset expenses. The Retail cluster also weakened after designated service provider contracts ended last year.
-
-At R0.77 a share, a 0.32x price-to-book and a R630m market cap, the market has already voted. ROE is deeply negative (-24.7%) and the shares are down 53% in a year. Interim results land 1 September; until the contract churn stabilises and the cost base is right-sized, this looks like a value trap rather than a bargain.</div>
-      <div class="r-metrics"><span>P/B: 0.32</span> · <span>ROE: -24.7%</span> · <span>R0.77</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/afrocentric-investment-corporation-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
-    </div>
+<div class="review neutral" data-t="TRU">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
+  <div class="r-title">Group Annual Results and Cash Dividend for the 52 Weeks Ended 28 June 2026</div>
+  <div class="r-prev">← Previous: NEUTRAL on 21 Aug</div>
+  <div class="r-summary">HEPS slips 2.6% to 732.2c and the final dividend is cut 10% to 153c, as a tough consumer and weak UK trading weigh on the full year.</div>
+  <div class="r-body"><p>A soft landing, not a crash. Truworths reported HEPS of 732.2c for the 52 weeks to 28 June, down 2.6% from 752.1c — dead in line with its own guidance. Group retail sales slipped 0.9% to R21.8bn while the gross margin held firm at 51.3%. The final dividend was trimmed to 153c from 170c, reflecting the weaker profit. Africa started the year strongly then lost momentum as fuel prices squeezed discretionary spend, and the UK (Office) stayed grim.</p>
+<p>The stock fell 4.1% to R48.24, but at 6.5x trailing earnings, a 26% ROE and a near-double-digit dividend yield, the bad news is largely in the price. This is a cash-generative retailer marking time until the consumer recovers — cheap, but with no obvious catalyst to re-rate it right now.</p></div>
+  <div class="r-metrics"><span>PE: 6.49</span> · <span>P/B: 1.62</span> · <span>ROE: 25.9%</span> · <span>R48.24</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-group-annual-financial-statements-summarised-audited-group-annual-results-cash-dividend-declaration-for-the-52-weeks-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="TON">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Tongaat Hulett <span class="r-ticker">(TON)</span></div>
+  <div class="r-title">Constitutional Court Order and RGS Application for Leave to Appeal</div>
+  
+  <div class="r-summary">The ConCourt rejects Tongaat's sugar-levy appeal with costs, while bidder RGS launches yet another assault on the business rescue plan.</div>
+  <div class="r-body"><p>More legal trench warfare for the zombie sugar producer. The Constitutional Court rejected Tongaat's leave-to-appeal application — over its sugar levy obligations — with costs, a judgment that lands squarely on the side of the SA Sugar Association. Separately, RGS Group Holdings has applied for leave to appeal in its long-running campaign against the business rescue plan and the Vision consortium's control.</p>
+<p>Tongaat's shares remain suspended, so this is a creditors' saga rather than a tradeable thesis. Every round of litigation simply extends the uncertainty for affected persons — creditors, growers and employees alike. There is no retail angle here, and there hasn't been for a long time.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/tongaat-hulett-limited-notice-to-affected-persons-order-of-the-constitutional-court-and-application-for-leave-to-appeal-by-rgs-group-holdings-limited/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SSW">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
+  <div class="r-title">Trading Statement and Operating Update for the Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">HEPS guided up more than 200% to 571–631c and EPS swings from a 127c loss to 597–658c, as gold and PGM prices fire on all cylinders.</div>
+  <div class="r-body"><p>Sibanye is back. HEPS for H1 2026 is guided to 571–631c, a more-than-200% jump from 190c a year ago, while EPS swings from a 127c loss to a 597–658c profit — an improvement north of 560%. The drivers are brutal and simple: SA gold delivered record financial performance with adjusted EBITDA up ~85% on a 35% higher rand gold price, and the SA PGM division saw EBITDA up ~300% on a 67% higher 4E basket price. Recycling ounces sold jumped 142% to 2.79moz. Crucially, impairments — R9.7bn of them last year — all but vanished.</p>
+<p>The clever bit: last year's numbers were flattered by R5.1bn of Section 45X tax credits, so the underlying improvement is even stronger than the headline suggests. Higher royalties and taxes are the only real offsets. Keliber is finally moving from construction to commissioning. At a forward PE of ~4.4x, the market still doesn't believe the recovery — the full results land on 1 September and could change that fast.</p></div>
+  <div class="r-metrics"><span>P/B: 3.14</span> · <span>ROE: -10.2%</span> · <span>R49.07</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-trading-statement-and-operating-update-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="SEA">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Spear REIT <span class="r-ticker">(SEA)</span></div>
+  <div class="r-title">Implementation of Acquisition of Watergate Centre</div>
+  
+  <div class="r-summary">Watergate Centre transfers into Spear's name, accretive from day one at an estimated 8.37% initial yield — and not yet in DIPS guidance.</div>
+  <div class="r-body"><p>Spear locked it in. The acquisition of Watergate Centre in Mitchells Plain, Cape Town, was finalised on 27 August with ownership registered in Spear's name. The deal is accretive from the implementation date, carrying an estimated 8.37% initial yield to shareholders — a tidy spread over the cost of debt for a REIT.</p>
+<p>The kicker: the financial effects aren't yet reflected in Spear's FY27 distributable-income-per-share guidance issued in May, so there's upside baked in for the next update. At R12.70, 6.2x earnings, a 17% ROE and a 0.98x book multiple, Spear keeps quietly executing its Western Cape retail strategy. Small, clean and on-message.</p></div>
+  <div class="r-metrics"><span>PE: 6.16</span> · <span>P/B: 0.98</span> · <span>ROE: 17.2%</span> · <span>R12.70</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/spear-reit-limited-implementation-of-acquisition-of-watergate-centre/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="S32">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">South32 <span class="r-ticker">(S32)</span></div>
+  <div class="r-title">Financial Results for the Year Ended 30 June 2026 and Dividend Declaration</div>
+  <div class="r-prev">← Previous: BULLISH on 25 Aug</div>
+  <div class="r-summary">South32 turned a modest 7% revenue bump into a 55% earnings surge. Underlying earnings jumped to US$1.03bn and underlying EBITDA rose 28% to US$2.46bn on strong base metals. The board rewarded holders with a 55% fatter total dividend of 9.3 US cents.</div>
+  <div class="r-body"><p>This is what operating leverage looks like. South32 grew underlying revenue just 7% to US$8.6bn, but turned it into a 55% jump in underlying earnings to US$1.03bn and a 28% lift in underlying EBITDA to US$2.46bn. The engine was base metals — aluminium, copper and zinc — where higher realised prices and disciplined cost control did the heavy lifting, offsetting softer bulk commodity prices.\n\nThe balance sheet tells the same story: net cash, a final dividend of 5.4 US cents taking the full-year payout to 9.3 US cents (up 55%), and guidance pointing to more of the same as the portfolio tilts toward copper and aluminium. The Sierra Gorda resource upgrade earlier this week — a 61% lift in ore reserves extending mine life to 2045 — is the cherry on top.\n\nThere are the usual cyclical caveats: base metal prices can turn, and South32 remains a leveraged bet on the global industrial cycle. But on current evidence, this is a well-run, low-cost producer converting the cycle into cash and handing it back to shareholders. BULLISH. Strong results, a growing dividend, and a copper-rich future — hard to ask for much more from a diversified miner.</p></div>
+  <div class="r-metrics"><span>R58.63</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/south32-limited-financial-results-for-the-year-ended-30-june-2026-and-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="OUT">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
+  <div class="r-title">Trading Update and Trading Statement for the Year Ended 30 June 2026</div>
+  <div class="r-prev">← Previous: NEUTRAL on 17 Aug</div>
+  <div class="r-summary">HEPS guided +21–26% to 361–376c and normalised EPS +15–21%, as SA short-term profit surges more than 40% — the stock rocketed 9%.</div>
+  <div class="r-body"><p>OUTsurance delivered a genuine beat. HEPS is guided to 360.9–375.9c, up 21–26% on the 298.3c of FY25, while normalised EPS (NEPS) rises 15–21% to 352.1–370.5c. Gross written premium ex-BZI grew 15.7% and net earned premium 18.7%. The engine room is SA short-term insurance, where profit surged more than 40%, with Youi and Ireland finally past their peak loss-making years.</p>
+<p>The market was caught flat-footed — the stock jumped 8.99% on the day to R88.39. At 27x trailing earnings and a 37% ROE, this is priced for the quality it delivers: disciplined underwriting, a fortress balance sheet (0.03x debt/equity) and compounding premium growth. The old RMI-to-OUTsurance transition continues to pay off for patient holders.</p></div>
+  <div class="r-metrics"><span>PE: 27.45</span> · <span>P/B: 9.16</span> · <span>ROE: 37.1%</span> · <span>R88.39</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-trading-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="MTU">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Mantengu <span class="r-ticker">(MTU)</span></div>
+  <div class="r-title">Cautionary — Resignation of Auditor, Withdrawal of Audit Report and Deferred Tax Dispute</div>
+  
+  <div class="r-summary">Auditor HLB withdraws its opinion, flags a reportable irregularity and resigns, alleging the deferred tax asset was overstated by ~R58.3m.</div>
+  <div class="r-body"><p>A five-alarm fire at a R65m market cap. Auditor HLB CMA wrote to Mantengu on 21 August asserting the group had overstated its deferred tax asset by ~R58.3m — claiming individual entities wouldn't generate enough future taxable profit to realise it. By 26 August, HLB had withdrawn its audit opinion, reported a reportable irregularity over the board's refusal to amend the financials, and resigned with immediate effect. The board hit back, insisting each entity's tax position was calculated separately and that this is merely a 'differing view on future profitability'.</p>
+<p>The optics are brutal regardless of who's right: a withdrawn audit opinion and a reported irregularity days before the AGM. The shares — R0.20, down 69% in a year, ROE -85% — were already signalling distress. The 'we've done nothing wrong' defence rarely lands well with a market that can see the numbers. Avoid until a new auditor signs off clean.</p></div>
+  <div class="r-metrics"><span>P/B: 0.28</span> · <span>ROE: -85.2%</span> · <span>R0.20</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/mantengu-limited-cautionary-ann-resig-of-auditors-withdrawal-of-audit-report-associated-dispute-on-deferred-taxation-agm/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="LAB">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Labat Africa <span class="r-ticker">(LAB)</span></div>
+  <div class="r-title">Suspension of Listing</div>
+  
+  <div class="r-summary">The JSE suspends Labat's listing with immediate effect for failing to publish its financials and failing to pay a declared dividend.</div>
+  <div class="r-body"><p>Labat is back in the naughty corner. The JSE suspended the listing of Labat Africa's securities with immediate effect for non-compliance with the Listings Requirements — the company hasn't published its condensed financial statements and failed to pay a declared dividend, without making alternative arrangements.</p>
+<p>This is a well-worn pattern: Labat was suspended before and only had its listing lifted in December 2024 after similar failures. At R0.03 a share and a R37m market cap, the only thing less liquid than the stock is the company's compliance record. Suspended means untradeable — and for a serial offender, that could drag on.</p></div>
+  <div class="r-metrics"><span>P/B: 0.12</span> · <span>R0.03</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/labat-africa-limited-suspension-of-listing-labat-africa-limited/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="HAR">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Harmony Gold <span class="r-ticker">(HAR)</span></div>
+  <div class="r-title">Results for the Year Ended 30 June 2026 and a Final Dividend Declaration</div>
+  
+  <div class="r-summary">Harmony just printed a defining year. HEPS surged 87% to 4,363c and EPS more than doubled to 4,701c on a 35% higher gold price received and first copper from the CSA mine. Record adjusted free cash flow of R17.1bn funded a record R8.1bn dividend — final div of 750c, nearly five times last year's 155c.</div>
+  <div class="r-body"><p>This is the year Harmony stopped being a gold miner and became a gold-and-copper compounder. The headline numbers are staggering: headline earnings per share up 87% to 4,363c, earnings per share up 103% to 4,701c, and revenue up 34% to R99.2bn. The driver was simple and powerful — a 35% higher average gold price received (R2.07m/kg) meeting copper sales from the newly acquired CSA mine, which delivered 18,207 tonnes at a 3.75% recovered grade, both at the top end of guidance.</p>
+<p>The cash story is the real story. Adjusted free cash flow hit a record R17.1bn, up 54%, and management converted that into a record R8.1bn full-year dividend. The final dividend of 750c is nearly five times the 155c paid a year ago — a statement of intent as much as a payout. Production guidance was met for the eleventh straight year, the underground grade of 5.83g/t came in above guidance, and the balance sheet swung to net debt of just R852m only because of the MAC Copper acquisition.</p>
+<p>Are there nits to pick? AISC rose 13% in rand terms, and gold production actually dipped 3%. But both were inside guidance, and the market's reaction — shares slipped 4.9% on the day — looks more like profit-taking after a strong run than any doubt about the result. Harmony is now diversified, cashed-up, and guiding to a meaningful free-cash-flow inflection beyond 2030 as Eva Copper ramps. BULLISH. This is a quality gold-copper operator paying a real dividend, not a leveraged gold bet.</p></div>
+  <div class="r-metrics"><span>R358.54</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/harmony-gold-mining-company-limited-financial-results-for-the-year-ended-30-june-2026-and-a-final-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bearish" data-t="ACT">
+  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">AfroCentric Investment Corporation <span class="r-ticker">(ACT)</span></div>
+  <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
+  
+  <div class="r-summary">EPS guided down 22–42% to 6.7–9.0c as client contract losses in administration and managed care, plus rightsizing costs, bite hard.</div>
+  <div class="r-body"><p>AfroCentric is shrinking, not growing. EPS for H1 2026 is guided to 6.68–8.98c, a fall of 22.2–42.1% on the 11.54c of the prior period, while HEPS drops 16.9–36.9% to 7.37–9.71c. The culprit is lower operating profitability in the Services cluster — client contract losses in administration and managed care — compounded by rightsizing and cost-reset expenses. The Retail cluster also weakened after designated service provider contracts ended last year.</p>
+<p>At R0.77 a share, a 0.32x price-to-book and a R630m market cap, the market has already voted. ROE is deeply negative (-24.7%) and the shares are down 53% in a year. Interim results land 1 September; until the contract churn stabilises and the cost base is right-sized, this looks like a value trap rather than a bargain.</p></div>
+  <div class="r-metrics"><span>P/B: 0.32</span> · <span>ROE: -24.7%</span> · <span>R0.77</span></div>
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/afrocentric-investment-corporation-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
+  </div>
 </div>
-<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
 </body>
 </html>

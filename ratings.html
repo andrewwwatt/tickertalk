@@ -3,791 +3,865 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ticker Talk — Ratings Tracker</title>
+<title>📊 Ratings Tracker — Ticker Talk</title>
 <style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
-nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
-nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
-nav a:hover, nav a.active { opacity: 1; }
-nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
-.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
-h1 { font-size: 24px; margin-bottom: 8px; }
-.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
-.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
-.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
-.stat strong { display: block; font-size: 20px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
 
-/* Review card */
-.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-.review.bullish { border-left-color: #2e7d32; }
-.review.bearish { border-left-color: #c62828; }
-.review.neutral { border-left-color: #e65100; }
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge.bearish { background: #ffebee; color: #c62828; }
-.r-badge.neutral { background: #fff3e0; color: #e65100; }
-.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
-.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
-.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
-.r-num.first { background: #e8f5e9; color: #2e7d32; }
-.r-num.follow { background: #fff3e0; color: #e65100; }
-.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
-.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
-.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
-.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
-.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
-.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
-.r-metrics span { color: #222222; font-weight: 600; }
-.r-link { margin-top: 10px; font-size: 13px; }
-.r-link a { color: #2e7d32; text-decoration: none; }
-.r-link a:hover { text-decoration: underline; }
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
 
-/* Archive filter */
-.filter-bar { margin-bottom: 20px; }
-.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
-.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
-.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
 
-/* Ratings table */
-.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
-.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
-.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
-.ratings-table tr:hover { background: #fafaf8; }
-.perf-pos { color: #2e7d32; font-weight: 700; }
-.perf-neg { color: #c62828; font-weight: 700; }
-.perf-new { color: #aaa; }
-.perf-neutral { color: #e65100; font-weight: 700; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
 
-/* Agreements section */
-.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
-.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
-.disagree-item { border-left-color: #c62828; }
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
 
-/* Methodology */
-.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
-.method-box strong { color: #222; }
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
 
-footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
-footer a { color: #666; }
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
 </style>
+
 </head>
 <body>
 <nav>
-  <span class="brand">📋 Ticker Talk</span>
-  <a href="index.html" >Today</a>
-  <a href="archive.html" >Archive</a>
-  <a href="trading.html" >🤖 Trading</a>
-  <a href="ratings.html" class="active">Ratings</a>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
 </nav>
-<div class="container">
 <h1>📊 Ratings Tracker</h1>
-<div class="subtitle">83 companies rated · 101 total reviews</div>
-<table class="ratings-table">
-      <thead><tr><th>Ticker</th><th>Company</th><th>TT Rating</th><th>Since</th><th>Perf</th><th>Ghost Mail</th></tr></thead>
-      <tbody><tr>
-          <td><strong>ABG</strong></td>
-          <td>Absa Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">18 Aug</td>
-          <td><span class="perf-pos">+3.3%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>ACT</strong></td>
-          <td>AfroCentric Investment Corporation</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>ADH</strong></td>
-          <td>ADvTECH</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">06 Mar</span></td>
-        </tr><tr>
-          <td><strong>AEG</strong></td>
-          <td>Aveng</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span> <span style="font-size:11px;color:#888">16 Jan</span></td>
-        </tr><tr>
-          <td><strong>AFT</strong></td>
-          <td>Afrimat</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>AGL</strong></td>
-          <td>Anglo American</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>APF</strong></td>
-          <td>Accelerate Property Fund</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">31 Jul</td>
-          <td><span class="perf-neg">-8.9%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>APN</strong></td>
-          <td>Aspen Pharmacare</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">21 Aug</td>
-          <td><span class="perf-pos">+4.6%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>BHG</strong></td>
-          <td>BHP Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">18 Aug</td>
-          <td><span class="perf-pos">+6.7%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>BID</strong></td>
-          <td>Bid Corporation</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">03 Jun</span></td>
-        </tr><tr>
-          <td><strong>BLU</strong></td>
-          <td>Blue Label Telecoms</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span> <span style="font-size:11px;color:#888">17 Aug</span></td>
-        </tr><tr>
-          <td><strong>BTI</strong></td>
-          <td>British American Tobacco</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">06 Aug</td>
-          <td><span class="perf-neg">-4.7%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>BWN</strong></td>
-          <td>Balwin Properties</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">17 Aug</td>
-          <td><span class="perf-pos">+1.4%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>CAA</strong></td>
-          <td>CA Sales Holdings</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">20 Aug</td>
-          <td><span class="perf-pos">+1.5%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>CAC</strong></td>
-          <td>CAFCA</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">14 Aug</td>
-          <td><span class="perf-neutral">+0.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>CCC</strong></td>
-          <td>Cilo Cybin</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-pos">+28.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>CCD</strong></td>
-          <td>Cell C Holdings</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">21 Aug</td>
-          <td><span class="perf-neg">-2.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>CPR</strong></td>
-          <td>Copper 360</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">06 Aug</td>
-          <td><span class="perf-pos">+3.7%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>CSB</strong></td>
-          <td>Cashbuild</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">19 Aug</td>
-          <td><span class="perf-neg">-2.5%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>DIB</strong></td>
-          <td>Dipula Properties</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">14 May</span></td>
-        </tr><tr>
-          <td><strong>DRD</strong></td>
-          <td>DRDGOLD</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">19 Aug</td>
-          <td><span class="perf-pos">+7.4%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>DSY</strong></td>
-          <td>Discovery</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span> <span style="font-size:11px;color:#888">27 Feb</span></td>
-        </tr><tr>
-          <td><strong>DTC</strong></td>
-          <td>Datatec</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">29 Jan</span></td>
-        </tr><tr>
-          <td><strong>EXX</strong></td>
-          <td>Exxaro Resources</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">20 Aug</td>
-          <td><span class="perf-pos">+0.8%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>GFI</strong></td>
-          <td>Gold Fields</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">12 Aug</span></td>
-        </tr><tr>
-          <td><strong>GND</strong></td>
-          <td>Grindrod</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>HCI</strong></td>
-          <td>Hosken Consolidated Investments</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">04 Aug</td>
-          <td><span class="perf-neg">-10.5%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>HLM</strong></td>
-          <td>Hulamin</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">03 Aug</td>
-          <td><span class="perf-neg">-4.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>IMP</strong></td>
-          <td>Impala Platinum</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-pos">+6.4%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>ITE</strong></td>
-          <td>Italtile</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bearish">BEARISH</span> <span style="font-size:11px;color:#888">12 Aug</span></td>
-        </tr><tr>
-          <td><strong>JBL</strong></td>
-          <td>Jubilee Metals Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">10 Jun</span></td>
-        </tr><tr>
-          <td><strong>JSE</strong></td>
-          <td>JSE Limited</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">04 Aug</td>
-          <td><span class="perf-pos">+2.5%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>KAP</strong></td>
-          <td>KAP Limited</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">19 Aug</td>
-          <td><span class="perf-neg">-1.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>LAB</strong></td>
-          <td>Labat Africa</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>LBR</strong></td>
-          <td>Libstar Holdings</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">20 Aug</td>
-          <td><span class="perf-neg">-2.7%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>LSK</strong></td>
-          <td>Lesaka Technologies</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">03 Aug</td>
-          <td><span class="perf-neg">-1.3%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>MDI</strong></td>
-          <td>Master Drilling Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>MPT</strong></td>
-          <td>Mpact</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bearish">BEARISH</span> <span style="font-size:11px;color:#888">17 Jul</span></td>
-        </tr><tr>
-          <td><strong>MTA</strong></td>
-          <td>Metair Investments</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">04 Aug</span></td>
-        </tr><tr>
-          <td><strong>MTN</strong></td>
-          <td>MTN Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">08 Aug</span></td>
-        </tr><tr>
-          <td><strong>MTU</strong></td>
-          <td>Mantengu</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bearish">BEARISH</span> <span style="font-size:11px;color:#888">20 Jul</span></td>
-        </tr><tr>
-          <td><strong>NED</strong></td>
-          <td>Nedbank Group</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">07 Aug</td>
-          <td><span class="perf-pos">+3.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>NHM</strong></td>
-          <td>Northam Platinum</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">11 Aug</td>
-          <td><span class="perf-pos">+10.4%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>NPH</strong></td>
-          <td>Northam Platinum Holdings</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">15 Jul</span></td>
-        </tr><tr>
-          <td><strong>NPN</strong></td>
-          <td>Naspers</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">11 Aug</td>
-          <td><span class="perf-neg">-12.5%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>NRP</strong></td>
-          <td>NEPI Rockcastle</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">18 Aug</td>
-          <td><span class="perf-neg">-0.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>OAO</strong></td>
-          <td>Oando PLC</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">04 Aug</td>
-          <td><span class="perf-neg">-23.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>OPA</strong></td>
-          <td>Optasia</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>OUT</strong></td>
-          <td>OUTsurance Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">27 Feb</span></td>
-        </tr><tr>
-          <td><strong>PIK</strong></td>
-          <td>Pick n Pay</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">06 Aug</td>
-          <td><span class="perf-neg">-0.7%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>PMV</strong></td>
-          <td>Primeserv Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">31 Jul</td>
-          <td><span class="perf-pos">+5.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>PWR</strong></td>
-          <td>Powerfleet</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-neg">-26.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>QLT</strong></td>
-          <td>Quilter</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">06 Aug</td>
-          <td><span class="perf-neg">-2.9%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>RBO</strong></td>
-          <td>Rainbow Chicken</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">13 Aug</td>
-          <td><span class="perf-neg">-0.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>RCL</strong></td>
-          <td>RCL Foods</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">17 Aug</td>
-          <td><span class="perf-neg">-9.3%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>RDF</strong></td>
-          <td>Redefine Properties</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">04 Aug</td>
-          <td><span class="perf-neg">-6.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>REN</strong></td>
-          <td>Renergen</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">06 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>RES</strong></td>
-          <td>Resilient REIT</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-neg">-5.7%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>S32</strong></td>
-          <td>South32</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">25 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SAP</strong></td>
-          <td>Sappi</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">06 Aug</td>
-          <td><span class="perf-pos">+2.4%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SBP</strong></td>
-          <td>Sabvest Capital</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">06 Aug</span></td>
-        </tr><tr>
-          <td><strong>SDO</strong></td>
-          <td>Stadio Holdings</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">14 Aug</td>
-          <td><span class="perf-neg">-1.4%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SEA</strong></td>
-          <td>Spear REIT</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">14 Jul</span></td>
-        </tr><tr>
-          <td><strong>SEB</strong></td>
-          <td>Sebata Holdings</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-pos">+17.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SHP</strong></td>
-          <td>Shoprite</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-neg">-2.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SLM</strong></td>
-          <td>Sanlam</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">22 May</span></td>
-        </tr><tr>
-          <td><strong>SNT</strong></td>
-          <td>Santam</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">19 May</span></td>
-        </tr><tr>
-          <td><strong>SOH</strong></td>
-          <td>South Ocean Holdings</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">20 Aug</td>
-          <td><span class="perf-neg">-14.6%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SOL</strong></td>
-          <td>Sasol</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">05 Aug</td>
-          <td><span class="perf-pos">+0.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SPG</strong></td>
-          <td>Super Group</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">05 Aug</td>
-          <td><span class="perf-neg">-11.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SPP</strong></td>
-          <td>The SPAR Group</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">17 Aug</td>
-          <td><span class="perf-neg">-7.8%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SSS</strong></td>
-          <td>Stor-Age Property REIT</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">31 Jul</td>
-          <td><span class="perf-neg">-2.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SSW</strong></td>
-          <td>Sibanye Stillwater</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">11 May</span></td>
-        </tr><tr>
-          <td><strong>SUI</strong></td>
-          <td>Sun International</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">20 Aug</td>
-          <td><span class="perf-neg">-3.3%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>SUR</strong></td>
-          <td>Spur Corporation</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">20 Aug</td>
-          <td><span class="perf-pos">+3.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>TGA</strong></td>
-          <td>Thungela Resources</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">17 Aug</td>
-          <td><span class="perf-pos">+12.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>THA</strong></td>
-          <td>Tharisa</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">24 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bullish">BULLISH</span> <span style="font-size:11px;color:#888">15 Jul</span></td>
-        </tr><tr>
-          <td><strong>TKG</strong></td>
-          <td>Telkom</td>
-          <td><span class="r-badge-sm bullish">BULLISH</span></td>
-          <td style="font-size:12px;color:#888">03 Aug</td>
-          <td><span class="perf-neg">-3.2%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>TON</strong></td>
-          <td>Tongaat Hulett</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>TPC</strong></td>
-          <td>Transpaco</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">26 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bearish">BEARISH</span> <span style="font-size:11px;color:#888">19 Feb</span></td>
-        </tr><tr>
-          <td><strong>TRU</strong></td>
-          <td>Truworths International</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">27 Aug</td>
-          <td><span class="perf-new">—</span></td>
-          <td><span class="r-badge-sm bearish">BEARISH</span> <span style="font-size:11px;color:#888">14 Aug</span></td>
-        </tr><tr>
-          <td><strong>TTO</strong></td>
-          <td>Trustco Group Holdings</td>
-          <td><span class="r-badge-sm neutral">NEUTRAL</span></td>
-          <td style="font-size:12px;color:#888">18 Aug</td>
-          <td><span class="perf-neutral">+0.0%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr><tr>
-          <td><strong>WVR</strong></td>
-          <td>Weaver Fintech</td>
-          <td><span class="r-badge-sm bearish">BEARISH</span></td>
-          <td style="font-size:12px;color:#888">12 Aug</td>
-          <td><span class="perf-neg">-6.1%</span></td>
-          <td><span style="color:#aaa">—</span></td>
-        </tr></tbody>
-    </table>
 
-<div class="section-title">✅ Agreements (18)</div>
-<p style="color:#666;margin-bottom:16px;font-size:14px">Where Ticker Talk and Ghost Mail share the same view, with shared reasoning.</p>
-<div class="agree-item">
-          <strong>ADvTECH (ADH)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (06 Mar): BULLISH | TT (24 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both view ADvTECH as a premium education business with structural demand tailwinds. Ghost noted excellent growth in the education sector; TT sees 16% NEPS growth and 18% dividend increase as confirmation.</p>
-        </div><div class="agree-item">
-          <strong>Aveng (AEG)</strong> — Both NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (16 Jan): NEUTRAL | TT (24 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Both share a NEUTRAL view on Aveng.</p>
-        </div><div class="agree-item">
-          <strong>Bid Corporation (BID)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (03 Jun): BULLISH | TT (26 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see Bidcorp as a world-class foodservice compounder. Ghost has repeatedly noted Bidcorp growing into its valuation and its constant-currency revenue and trading profit growth; TT agrees the FY26 print — 6.8% HEPS growth, 118% EBITDA-to-cash conversion and a 6.9% dividend hike — confirms the quality.</p>
-        </div><div class="agree-item">
-          <strong>Blue Label Telecoms (BLU)</strong> — Both NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (17 Aug): NEUTRAL | TT (26 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Both are cautious but constructive on Blu Label's de-risking. Ghost has tracked the Cell C restructure through the volatility; TT agrees the separate listing de-risks the group and that the resumption of dividends plus a buyback is a genuine inflection — though the reported R4.88bn loss keeps both NEUTRAL rather than bullish.</p>
-        </div><div class="agree-item">
-          <strong>Dipula Properties (DIB)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (14 May): BULLISH | TT (24 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both like Dipula's retail-focused property strategy. Ghost highlighted the township retail tilt; TT sees the R2.04bn Moolman acquisition as earnings-accretive and strategically sound.</p>
-        </div><div class="agree-item">
-          <strong>Datatec (DTC)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (29 Jan): BULLISH | TT (24 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see the Westcon value crystallisation as a major win. Ghost noted the special dividend crystallises value; TT agrees the R7.05bn return validates the sum-of-parts thesis.</p>
-        </div><div class="agree-item">
-          <strong>Gold Fields (GFI)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (12 Aug): BULLISH | TT (25 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both are bullish on the gold-price tailwind and Gold Fields' cash generation. Ghost flagged doubled free cash flow in the interim period; TT sees the 81% profit jump, the more-than-doubled dividend (1,625c vs 700c) and the lifted US$1.25bn returns programme confirming the thesis.</p>
-        </div><div class="agree-item">
-          <strong>Jubilee Metals Group (JBL)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (10 Jun): BULLISH | TT (26 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both are bullish on Jubilee's copper pivot. Ghost highlighted the Molefe Mine as key to the mine-to-metals copper strategy; TT agrees the US$35m Large Waste Project disposal at a premium funds the integrated copper mining build-out.</p>
-        </div><div class="agree-item">
-          <strong>Metair Investments (MTA)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (04 Aug): BULLISH | TT (26 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see Metair's restructuring finally paying off. Ghost noted the restructuring efforts are "taking hold" and the strategic reset is "substantially complete"; TT agrees the EPS swing from a 93c loss to a 72c profit and the +R188.6m operating cash flow flip confirm the turnaround.</p>
-        </div><div class="agree-item">
-          <strong>MTN Group (MTN)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (08 Aug): BULLISH | TT (24 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see MTN as undervalued with strong earnings momentum. Ghost flagged the IHS catalyst and macro tailwinds; TT agrees that adjusted HEPS growth of 21.3% and the R6bn buyback confirm the bullish thesis.</p>
-        </div><div class="agree-item">
-          <strong>Mantengu (MTU)</strong> — Both BEARISH<br>
-          <span style="font-size:13px;color:#666">Ghost (20 Jul): BEARISH | TT (27 Aug): BEARISH</span>
-          <p style="margin-top:6px;font-size:14px">Both are firmly bearish on Mantengu's distress. Ghost has tracked the mining micro-cap's long decline; TT sees the withdrawn audit opinion, the reported irregularity and the R58.3m disputed deferred tax asset as confirmation that the governance risk is real and unresolved.</p>
-        </div><div class="agree-item">
-          <strong>Northam Platinum Holdings (NPH)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (15 Jul): BULLISH | TT (25 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see Northam as a quality PGM operator with a premium UG2 basket. Ghost highlighted production and cost discipline; TT sees the unsolicited approach and strategic competitive process as the catalyst that crystallises the takeout value in a consolidating sector.</p>
-        </div><div class="agree-item">
-          <strong>OUTsurance Group (OUT)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (27 Feb): BULLISH | TT (27 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both rate OUTsurance as a best-in-class insurer. Ghost has repeatedly praised the underwriting discipline and called the earlier results "blockbuster"; TT agrees the 21–26% HEPS guidance, the 40%+ surge in SA short-term profit and the 37% ROE confirm the compounding quality.</p>
-        </div><div class="agree-item">
-          <strong>Sabvest Capital (SBP)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (06 Aug): BULLISH | TT (24 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both recognise Sabvest as a quality compounder with disciplined capital allocation. Ghost highlighted the track record of value creation; TT notes the Frogfoot/Vox/Hypa investment at sensible prices extends the thesis.</p>
-        </div><div class="agree-item">
-          <strong>Spear REIT (SEA)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (14 Jul): BULLISH | TT (27 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both like Spear REIT's Western Cape retail execution. Ghost noted the REIT "locking in a tidy return" on its property deals; TT agrees the Watergate Centre acquisition at an accretive 8.37% initial yield — with upside still outside DIPS guidance — is clean, sensible growth.</p>
-        </div><div class="agree-item">
-          <strong>Santam (SNT)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (19 May): BULLISH | TT (26 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both rate Santam as a quality insurer. Ghost has long highlighted Santam's disciplined underwriting and franchise strength; TT agrees the operational update — 10% GWP growth, double-digit growth across MiWay, Santam Direct, Re and Partner Solutions, and an underwriting margin above the 5-10% target midpoint — confirms it.</p>
-        </div><div class="agree-item">
-          <strong>Sibanye Stillwater (SSW)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (11 May): BULLISH | TT (27 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see the PGM/gold recovery finally turning Sibanye's fortunes. Ghost flagged the rapid earnings growth across the group in recent updates; TT agrees the >200% HEPS jump, the record SA gold EBITDA (+85%) and the 67% higher PGM basket price confirm a genuine inflection, not a one-off.</p>
-        </div><div class="agree-item">
-          <strong>Tharisa (THA)</strong> — Both BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (15 Jul): BULLISH | TT (24 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Both see Tharisa as undervalued relative to its asset base. Ghost focused on production metrics being on track; TT highlights the Karo Platinum Special Mining Lease as the catalyst that unlocks the tier-one PGM resource.</p>
-        </div>
-
-<div class="section-title">⚠️ Disagreements (6)</div>
-<p style="color:#666;margin-bottom:16px;font-size:14px">Where Ticker Talk and Ghost Mail differ — and why.</p>
-<div class="disagree-item">
-          <strong>Discovery (DSY)</strong> — Ghost: NEUTRAL vs TT: BULLISH<br>
-          <span style="font-size:13px;color:#666">Ghost (27 Feb): NEUTRAL | TT (26 Aug): BULLISH</span>
-          <p style="margin-top:6px;font-size:14px">Ghost has covered Discovery's trading statements with a more cautious, neutral lens (noting the market "didn't enjoy" prior numbers), while TT is BULLISH on the FY26 statement. TT focuses on the underlying engine — the Vitality composite growing 18-23% and normalised HEPS up 18-23% — and treats the 1 Discovery Place gain as a side-show; Ghost has historically weighted the one-off and headline-noise elements more heavily.</p>
-        </div><div class="disagree-item">
-          <strong>Italtile (ITE)</strong> — Ghost: BEARISH vs TT: NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (12 Aug): BEARISH | TT (24 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Ghost has been consistently bearish on Italtile due to sustained margin pressure and weak consumer demand (Aug 12 note: "business remains under pressure"). TT is NEUTRAL — acknowledges the headwinds but notes the R1.7bn net cash balance sheet provides a floor at 7.9x PE. The core difference: Ghost sees further downside risk from overcapacity in ceramics; TT sees the valuation as already pricing in most of the bad news.</p>
-        </div><div class="disagree-item">
-          <strong>Mpact (MPT)</strong> — Ghost: BEARISH vs TT: NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (17 Jul): BEARISH | TT (24 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Ghost was BEARISH on Mpact in mid-2025 citing the share price decline and structural paper demand issues. TT is NEUTRAL — acknowledges the same headwinds but notes cash generation improved dramatically (R448m vs R173m), net debt is falling, and portfolio optimisation is underway. The difference is timeframe: Ghost's bearishness was predicated on a deteriorating cycle; TT sees early signs the restructuring is working, even if recovery is not yet priced in.</p>
-        </div><div class="disagree-item">
-          <strong>Sanlam (SLM)</strong> — Ghost: BULLISH vs TT: NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (22 May): BULLISH | TT (26 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Ghost was BULLISH on Sanlam after the Q1 update (operating profit up 8% — "a decent outcome"), but TT is NEUTRAL on the H1 trading statement. The divergence is the reporting window: Ghost's earlier read predates the one-off gains (Sanlam Investments disposal + Shriram dilution) that flatter EPS. TT strips those out and sees core HEPS guided 10-20% LOWER, so the headline 24-34% EPS growth overstates the core trajectory.</p>
-        </div><div class="disagree-item">
-          <strong>Transpaco (TPC)</strong> — Ghost: BEARISH vs TT: NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (19 Feb): BEARISH | TT (26 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Ghost has been BEARISH on Transpaco ("Transpaco is struggling", noting the December-half revenue fell 1.5% on economic headwinds), while TT is NEUTRAL. TT acknowledges the muted top line (full-year revenue +0.7%) but notes HEPS still grew 6.8%, NAV rose 8.9% to 3,815c and the balance sheet swung to net cash — a steadier full-year picture than Ghost's earlier half-year read suggested. The difference is timeframe and the dividend-backed resilience.</p>
-        </div><div class="disagree-item">
-          <strong>Truworths International (TRU)</strong> — Ghost: BEARISH vs TT: NEUTRAL<br>
-          <span style="font-size:13px;color:#666">Ghost (14 Aug): BEARISH | TT (27 Aug): NEUTRAL</span>
-          <p style="margin-top:6px;font-size:14px">Ghost is BEARISH on Truworths (14 Aug: "Why I don't own Truworths"), pointing to weak local numbers and a structurally tough consumer. TT is NEUTRAL — the 2.6% HEPS decline to 732.2c and the dividend cut to 153c confirm the pressure, but at 6.5x earnings, a 26% ROE and a near-double-digit dividend yield, TT sees the bad news as already in the price. The difference is conviction: Ghost avoids the name entirely on structural consumer weakness, while TT sees a cheap, cash-generative retailer with a valuation floor but no near-term catalyst.</p>
-        </div>
-
-<div class="method-box">
-  <strong>Performance Methodology</strong><br>
-  Total return = (current price − review price + dividends) ÷ review price.<br>
-  Review price = closest daily close on or before review date.<br>
-  Current price = latest Yahoo Finance daily close.<br>
-  Performance shown as "—" for reviews less than 3 trading days old.<br>
-  Data sourced from Yahoo Finance (.JO suffix) and stockanalysis.com.
+<table>
+<thead>
+<tr>
+  <th>Ticker</th>
+  <th>Company</th>
+  <th>TT Rating</th>
+  <th>Since</th>
+  <th>Perf</th>
+  <th>Ghost Mail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>ABG</td>
+  <td>Absa Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>18 Aug</td>
+  <td class="perf-pos">+3.3%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>APF</td>
+  <td>Accelerate Property Fund</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>31 Jul</td>
+  <td class="perf-neg">-8.9%</td>
+  <td>NEUTRAL<span class="ghost-date">03 Aug</span></td>
+</tr>
+<tr>
+  <td>ADH</td>
+  <td>ADvTECH</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>AFT</td>
+  <td>Afrimat</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>ACT</td>
+  <td>AfroCentric Investment Corporation</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>AGL</td>
+  <td>Anglo American</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>APN</td>
+  <td>Aspen Pharmacare</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>21 Aug</td>
+  <td class="perf-pos">+4.6%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>AEG</td>
+  <td>Aveng</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BWN</td>
+  <td>Balwin Properties</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>17 Aug</td>
+  <td class="perf-pos">+1.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BHG</td>
+  <td>BHP Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>18 Aug</td>
+  <td class="perf-pos">+6.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BID</td>
+  <td>Bid Corporation</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BLU</td>
+  <td>Blue Label Telecoms</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>BTI</td>
+  <td>British American Tobacco</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>06 Aug</td>
+  <td class="perf-neg">-4.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CAA</td>
+  <td>CA Sales Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-pos">+1.5%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CAC</td>
+  <td>CAFCA</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>14 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CSB</td>
+  <td>Cashbuild</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>19 Aug</td>
+  <td class="perf-neg">-2.5%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CCD</td>
+  <td>Cell C Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>21 Aug</td>
+  <td class="perf-neg">-2.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CCC</td>
+  <td>Cilo Cybin</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+28.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>CPR</td>
+  <td>Copper 360</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-pos">+3.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>DTC</td>
+  <td>Datatec</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>DIB</td>
+  <td>Dipula Properties</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>DSY</td>
+  <td>Discovery</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>DRD</td>
+  <td>DRDGOLD</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>19 Aug</td>
+  <td class="perf-pos">+7.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>EXX</td>
+  <td>Exxaro Resources</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-pos">+0.8%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>GFI</td>
+  <td>Gold Fields</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>GND</td>
+  <td>Grindrod</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>HAR</td>
+  <td>Harmony Gold</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>HCI</td>
+  <td>Hosken Consolidated Investments</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>04 Aug</td>
+  <td class="perf-neg">-10.5%</td>
+  <td>NEUTRAL<span class="ghost-date">27 May</span></td>
+</tr>
+<tr>
+  <td>HLM</td>
+  <td>Hulamin</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>03 Aug</td>
+  <td class="perf-neg">-4.1%</td>
+  <td>NEUTRAL<span class="ghost-date">03 Aug</span></td>
+</tr>
+<tr>
+  <td>IMP</td>
+  <td>Impala Platinum</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+6.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>ITE</td>
+  <td>Italtile</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td>BEARISH<span class="ghost-date">03 Mar</span></td>
+</tr>
+<tr>
+  <td>JSE</td>
+  <td>JSE Limited</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>04 Aug</td>
+  <td class="perf-pos">+2.5%</td>
+  <td>BULLISH<span class="ghost-date">05 Aug</span></td>
+</tr>
+<tr>
+  <td>JBL</td>
+  <td>Jubilee Metals Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>KAP</td>
+  <td>KAP Limited</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>19 Aug</td>
+  <td class="perf-neg">-1.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>LAB</td>
+  <td>Labat Africa</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>LSK</td>
+  <td>Lesaka Technologies</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>03 Aug</td>
+  <td class="perf-neg">-1.3%</td>
+  <td>BULLISH<span class="ghost-date">08 May</span></td>
+</tr>
+<tr>
+  <td>LBR</td>
+  <td>Libstar Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-neg">-2.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>MTU</td>
+  <td>Mantengu</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>MDI</td>
+  <td>Master Drilling Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>MTA</td>
+  <td>Metair Investments</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>MPT</td>
+  <td>Mpact</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>MTN</td>
+  <td>MTN Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NPN</td>
+  <td>Naspers</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>11 Aug</td>
+  <td class="perf-neg">-12.5%</td>
+  <td>BULLISH<span class="ghost-date">22 Jun</span></td>
+</tr>
+<tr>
+  <td>NED</td>
+  <td>Nedbank Group</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>07 Aug</td>
+  <td class="perf-pos">+3.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NRP</td>
+  <td>NEPI Rockcastle</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>18 Aug</td>
+  <td class="perf-neg">-0.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NHM</td>
+  <td>Northam Platinum</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>11 Aug</td>
+  <td class="perf-pos">+10.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>NPH</td>
+  <td>Northam Platinum Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>OAO</td>
+  <td>Oando PLC</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>04 Aug</td>
+  <td class="perf-neg">-23.1%</td>
+  <td>BULLISH<span class="ghost-date">07 Jul</span></td>
+</tr>
+<tr>
+  <td>OPA</td>
+  <td>Optasia</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>25 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>OUT</td>
+  <td>OUTsurance Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>PIK</td>
+  <td>Pick n Pay</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>06 Aug</td>
+  <td class="perf-neg">-0.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>PWR</td>
+  <td>Powerfleet</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-26.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>PMV</td>
+  <td>Primeserv Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>31 Jul</td>
+  <td class="perf-pos">+5.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>QLT</td>
+  <td>Quilter</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-neg">-2.9%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RBO</td>
+  <td>Rainbow Chicken</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>13 Aug</td>
+  <td class="perf-neg">-0.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RCL</td>
+  <td>RCL Foods</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>17 Aug</td>
+  <td class="perf-neg">-9.3%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RDF</td>
+  <td>Redefine Properties</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>04 Aug</td>
+  <td class="perf-neg">-6.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>REN</td>
+  <td>Renergen</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>RES</td>
+  <td>Resilient REIT</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-5.7%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SBP</td>
+  <td>Sabvest Capital</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SLM</td>
+  <td>Sanlam</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SNT</td>
+  <td>Santam</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SAP</td>
+  <td>Sappi</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>06 Aug</td>
+  <td class="perf-pos">+2.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SOL</td>
+  <td>Sasol</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>05 Aug</td>
+  <td class="perf-pos">+0.1%</td>
+  <td>BULLISH<span class="ghost-date">22 Jul</span></td>
+</tr>
+<tr>
+  <td>SEB</td>
+  <td>Sebata Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>12 Aug</td>
+  <td class="perf-pos">+17.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SHP</td>
+  <td>Shoprite</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-2.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SSW</td>
+  <td>Sibanye Stillwater</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SOH</td>
+  <td>South Ocean Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>20 Aug</td>
+  <td class="perf-neg">-14.6%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>S32</td>
+  <td>South32</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SEA</td>
+  <td>Spear REIT</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SUR</td>
+  <td>Spur Corporation</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>20 Aug</td>
+  <td class="perf-pos">+3.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SDO</td>
+  <td>Stadio Holdings</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>14 Aug</td>
+  <td class="perf-neg">-1.4%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SSS</td>
+  <td>Stor-Age Property REIT</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>31 Jul</td>
+  <td class="perf-neg">-2.2%</td>
+  <td>BEARISH<span class="ghost-date">18 Jun</span></td>
+</tr>
+<tr>
+  <td>SUI</td>
+  <td>Sun International</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>20 Aug</td>
+  <td class="perf-neg">-3.3%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SPG</td>
+  <td>Super Group</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>05 Aug</td>
+  <td class="perf-neg">-11.2%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TKG</td>
+  <td>Telkom</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>03 Aug</td>
+  <td class="perf-neg">-3.2%</td>
+  <td>BULLISH<span class="ghost-date">04 Aug</span></td>
+</tr>
+<tr>
+  <td>THA</td>
+  <td>Tharisa</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>24 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>SPP</td>
+  <td>The SPAR Group</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>17 Aug</td>
+  <td class="perf-neg">-7.8%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TGA</td>
+  <td>Thungela Resources</td>
+  <td><span class="r-badge bullish">BULLISH</span></td>
+  <td>17 Aug</td>
+  <td class="perf-pos">+12.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TON</td>
+  <td>Tongaat Hulett</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TPC</td>
+  <td>Transpaco</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>26 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TTO</td>
+  <td>Trustco Group Holdings</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>18 Aug</td>
+  <td class="perf-pos">0.0%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>TRU</td>
+  <td>Truworths International</td>
+  <td><span class="r-badge neutral">NEUTRAL</span></td>
+  <td>27 Aug</td>
+  <td class="perf-new">—</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+<tr>
+  <td>WVR</td>
+  <td>Weaver Fintech</td>
+  <td><span class="r-badge bearish">BEARISH</span></td>
+  <td>12 Aug</td>
+  <td class="perf-neg">-6.1%</td>
+  <td><span style="color:var(--muted)">—</span></td>
+</tr>
+</tbody>
+</table>
+<div class="agree-section"><h3>✅ Where TT and Ghost Mail Agree</h3>
+<div class="agree-item"><strong>Hosken Consolidated Investments (HCI) — TT: NEUTRAL | Ghost: NEUTRAL</strong>Both share similar views on the company's outlook and valuation.</div>
+<div class="agree-item"><strong>JSE Limited (JSE) — TT: BULLISH | Ghost: BULLISH</strong>Both see the JSE benefiting from increased market activity and strong dividend.</div>
+<div class="agree-item"><strong>Lesaka Technologies (LSK) — TT: BULLISH | Ghost: BULLISH</strong>Both see Lesaka's fintech platform as undervalued with strong growth potential.</div>
+<div class="agree-item"><strong>Oando PLC (OAO) — TT: BULLISH | Ghost: BULLISH</strong>Both see turnaround potential and improving operational metrics.</div>
+<div class="agree-item"><strong>Sasol (SOL) — TT: BULLISH | Ghost: BULLISH</strong>Both see Sasol as undervalued with improving fundamentals and strong chemical margins.</div>
+<div class="agree-item"><strong>Telkom (TKG) — TT: BULLISH | Ghost: BULLISH</strong>Both see Telkom's restructuring and infrastructure assets as undervalued.</div>
 </div>
+<div class="disagree-section"><h3>⚠️ Where TT and Ghost Mail Disagree</h3>
+<div class="disagree-item"><strong>Accelerate Property Fund (APF) — TT: BEARISH | Ghost: NEUTRAL</strong>TT rates BEARISH while Ghost was NEUTRAL. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Hulamin (HLM) — TT: BULLISH | Ghost: NEUTRAL</strong>TT rates BULLISH while Ghost was NEUTRAL. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Italtile (ITE) — TT: NEUTRAL | Ghost: BEARISH</strong>TT rates NEUTRAL while Ghost was BEARISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Naspers (NPN) — TT: NEUTRAL | Ghost: BULLISH</strong>TT rates NEUTRAL while Ghost was BULLISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
+<div class="disagree-item"><strong>Stor-Age Property REIT (SSS) — TT: BULLISH | Ghost: BEARISH</strong>TT rates BULLISH while Ghost was BEARISH. The core difference is likely timing and perspective on near-term catalysts vs long-term value.</div>
 </div>
-<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
+
+<div class="methodology">
+  <strong>Performance Methodology:</strong> Total return = (current price − review price + dividends paid since review) ÷ review price.
+  Prices and dividends sourced from Yahoo Finance (.JO). "—" indicates review is less than 3 trading days old.
+  Ratings reflect the editorial view at the time of review and may change with new information.
+</div>
+
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
 </body>
 </html>
