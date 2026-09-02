@@ -3,285 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Today's Reviews — Ticker Talk</title>
+<title>Ticker Talk — Today's Reviews</title>
 <style>
-:root {
-  --bg: #f5f3ef;
-  --card-bg: #ffffff;
-  --border: #e0e0e0;
-  --text: #222222;
-  --muted: #666666;
-  --green: #2e7d32;
-  --red: #c62828;
-  --amber: #e65100;
-  --nav-bg: #1a1a2e;
-}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
-}
-nav {
-  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
-  background: var(--nav-bg); align-items: center;
-}
-nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
-nav a:hover { color: #cccccc; }
-nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
-h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
-h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
+nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
+nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
+nav a:hover, nav a.active { opacity: 1; }
+nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
+.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+h1 { font-size: 24px; margin-bottom: 8px; }
+.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
+.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
+.stat strong { display: block; font-size: 20px; }
 
-.stats { 
-  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
-}
-.stat { 
-  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
-  border: 1px solid var(--border); font-weight: 600;
-}
+/* Review card */
+.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.review.bullish { border-left-color: #2e7d32; }
+.review.bearish { border-left-color: #c62828; }
+.review.neutral { border-left-color: #e65100; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge.bearish { background: #ffebee; color: #c62828; }
+.r-badge.neutral { background: #fff3e0; color: #e65100; }
+.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
+.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
+.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
+.r-num.first { background: #e8f5e9; color: #2e7d32; }
+.r-num.follow { background: #fff3e0; color: #e65100; }
+.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
+.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
+.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
+.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
+.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
+.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
+.r-metrics span { color: #222222; font-weight: 600; }
+.r-link { margin-top: 10px; font-size: 13px; }
+.r-link a { color: #2e7d32; text-decoration: none; }
+.r-link a:hover { text-decoration: underline; }
 
-.review {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-left: 4px solid var(--border); border-radius: 8px;
-  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-.review.bullish { border-left-color: var(--green); }
-.review.bearish { border-left-color: var(--red); }
-.review.neutral { border-left-color: var(--amber); }
+/* Archive filter */
+.filter-bar { margin-bottom: 20px; }
+.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
+.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
 
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
-.r-company { font-size: 1.1em; font-weight: 700; }
-.r-ticker { color: var(--muted); font-size: 0.9em; }
+/* Ratings table */
+.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
+.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
+.ratings-table tr:hover { background: #fafaf8; }
+.perf-pos { color: #2e7d32; font-weight: 700; }
+.perf-neg { color: #c62828; font-weight: 700; }
+.perf-new { color: #aaa; }
+.perf-neutral { color: #e65100; font-weight: 700; }
 
-.r-badge {
-  display: inline-block; padding: 2px 10px; border-radius: 4px;
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-}
-.r-badge.bullish { background: #e8f5e9; color: var(--green); }
-.r-badge.bearish { background: #ffebee; color: var(--red); }
-.r-badge.neutral { background: #fff3e0; color: var(--amber); }
+/* Agreements section */
+.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
+.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
+.disagree-item { border-left-color: #c62828; }
 
-.r-num {
-  font-size: 12px; font-weight: 600;
-}
-.r-num.first { color: var(--green); }
-.r-num.follow { color: var(--amber); }
+/* Methodology */
+.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
+.method-box strong { color: #222; }
 
-.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
-.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
-.r-prev span { color: var(--text); }
-
-.r-summary {
-  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
-  background: #f5f3ef; border-radius: 6px;
-  border-left: 3px solid var(--green);
-}
-.r-body { font-size: 0.9em; white-space: pre-line; }
-.r-body p + p { margin-top: 10px; }
-
-.r-metrics {
-  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-  flex-wrap: wrap;
-}
-.r-metrics span { color: var(--text); }
-
-.r-links { margin-top: 10px; font-size: 0.8em; }
-.r-links a { color: var(--green); }
-
-.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
-
-.grand {
-  text-align: center; padding: 15px; margin: 20px 0;
-  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
-  font-size: 0.9em;
-}
-
-.filter-bar {
-  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
-}
-.filter-bar select { 
-  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
-  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
-}
-.filter-bar label { font-size: 0.85em; color: var(--muted); }
-
-.date-header {
-  color: #1a1a2e; font-size: 1em; font-weight: 600;
-  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
-}
-
-table {
-  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
-}
-th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
-th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
-.perf-pos { color: #2e7d32; }
-.perf-neg { color: #c62828; }
-.perf-new { color: var(--muted); }
-
-.agree-section, .disagree-section { margin-top: 25px; }
-.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
-.agree-section h3 { color: #2e7d32; }
-.disagree-section h3 { color: #c62828; }
-.agree-item, .disagree-item {
-  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
-}
-.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
-.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
-.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
-
-.methodology {
-  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
-  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
-}
-
-footer {
-  text-align: center; padding: 20px; margin-top: 40px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-}
+footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
+footer a { color: #666; }
 </style>
-
 </head>
 <body>
 <nav>
-  <a href="/">Today</a>
-  <a href="/archive.html">Archive</a>
-  <a href="/ratings.html">Ratings</a>
-  <a href="/trading.html">Trading</a>
+  <span class="brand">📋 Ticker Talk</span>
+  <a href="index.html" class="active">Today</a>
+  <a href="archive.html" >Archive</a>
+  <a href="trading.html" >🤖 Trading</a>
+  <a href="ratings.html" >Ratings</a>
 </nav>
+<div class="container">
 <h1>Today's Reviews</h1>
-
+<div class="subtitle">01 Sep 2026 · 7 reviews</div>
 <div class="stats">
-  <div class="stat">🟢 4 Bullish</div>
-  <div class="stat">🟡 3 Neutral</div>
-  <div class="stat">🔴 3 Bearish</div>
-  <div class="stat">📅 31 Aug 2026</div>
+  <div class="stat">🟢 <strong>5</strong> Bullish</div>
+  <div class="stat">🟡 <strong>1</strong> Neutral</div>
+  <div class="stat">🔴 <strong>1</strong> Bearish</div>
 </div>
-<div class="review bearish" data-t="RNG">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Randgold & Exploration <span class="r-ticker">(RNG)</span></div>
-  <div class="r-title">Summarised Interim Results for H1 2026</div>
-  
-  <div class="r-summary">Operating loss widens to R9.1m, HEPS -10.54c, NAVPS collapsed 29% to 45.44c — R&E continues burning cash with no revenue and no dividend, a R272m market cap shell trading on hope.</div>
-  <div class="r-body"><p>Randgold & Exploration remains what it has been for years: a cash-burning shell with a famous name. H1 2026 brought more of the same — operating loss widened 9% to R9.1 million, HEPS worsened to -10.54 cents from -8.80 cents, and net asset value per share collapsed 29% to 45.44 cents. No revenue. No dividend. Just five employees managing a R272 million market cap that's somehow up 400% over the past 12 months — a testament to the speculative fever that occasionally grips small-cap JSE names with gold in the title.</p>
-<p>At R3.80, the stock trades at 8.4x NAV — a premium that makes zero fundamental sense for a company with negative ROE of -24% and a Piotroski F-Score of 2. The current ratio of 79.8 suggests R&E is basically a pile of cash slowly eroding, but the market is pricing in something more — perhaps residual hope tied to the Randgold brand or a potential reverse listing. Whatever the narrative, the numbers tell a simpler story: a company losing money, shrinking its NAV, and producing nothing of value for shareholders.</p></div>
-  <div class="r-metrics"><span>P/B: 6.68</span> · <span>ROE: -24.0%</span> · <span>R3.80</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831120000&seq=27&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="RLO">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Reunert <span class="r-ticker">(RLO)</span></div>
-  <div class="r-title">Operating Environment, Share-Based Payments and Strategy Update</div>
-  
-  <div class="r-summary">H2 remains tough — weak infrastructure demand, strong rand hurting exports, restructuring power cable facilities — but the Defence order book is strong, Silversoft is acquired, and the Capital Markets Day tomorrow could reframe the narrative.</div>
-  <div class="r-body"><p>Reunert's voluntary update paints a mixed picture heading into year-end. The Electrical Engineering segment is under real pressure: power cable demand is weak across SA and Zambia, forcing management to restructure operating facilities while retaining core skills. The strong rand and kwacha are compounding the pain, squeezing margins in power cables, circuit breakers, and defence exports. The ICT segment is benefiting from prior-year restructuring but facing lower volumes and operational challenges at Nashua. There's also the looming IFRS 2 charge from the cash-settled ESOP — driven by the higher share price ahead of the April 2027 vesting — which could materially impact FY2026 reported earnings.</p>
-<p>But the glass-half-full view is worth considering: 40% of revenue is generated outside SA in hard currency, the Defence order book remains strong, circuit breaker exports to the US are growing, and the Silversoft acquisition adds enterprise software and digital capabilities to iqbusiness. The Capital Markets Day tomorrow (2 September) focuses on Applied Electronics growth opportunities — the most exciting part of the Reunert story. At R55.59, the stock trades on a trailing PE of 9.8x with a 12% ROE. The Piotroski F-Score of 8 and Altman Z-Score of 4.21 suggest financial health — the question is whether the cyclical headwinds in Electrical Engineering have further to run.</p></div>
-  <div class="r-metrics"><span>PE: 9.75</span> · <span>P/B: 1.08</span> · <span>ROE: 12.1%</span> · <span>R55.59</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831170000&seq=45&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bearish" data-t="RCL">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">RCL Foods <span class="r-ticker">(RCL)</span></div>
-  <div class="r-title">Group Financial Results for the Year Ended June 2026</div>
-  <div class="r-prev">← Previous: BEARISH on 17 Aug</div>
-  <div class="r-summary">Revenue -4.1%, HEPS crashed 32.8% to 105.1c, dividend slashed to 40c — Sugar drowning in imports, Pet Food crippled by a Salmonella recall, and the turnaround is nowhere in sight.</div>
-  <div class="r-body"><p>RCL Foods served up a plate of pain. Revenue from continuing operations fell 4.1% to R24.5 billion and EBITDA cratered 15.2% to R2.17 billion. The underlying picture is only marginally better at -8.6%, with total HEPS plunging 32.8% to 105.1 cents. The dividend was slashed from 60c to 40c. Two dragons are breathing fire simultaneously: Sugar is being devoured by deep-sea imports enabled by ineffective tariff protection — forcing local-market sales into the lower-priced raw export market — and Pet Food was crippled by a nationwide product recall after Salmonella was detected, causing production disruptions and stock write-offs that strangled supply in H2.</p>
-<p>There are some green shoots — Culinary delivered higher margins through CI and NRM initiatives, and Baking improved on manufacturing efficiencies — but they're being trampled by two elephants. The balance sheet remains decent (PB 0.66, debt/equity 0.19), and at R7.81 the stock trades on a trailing PE of 9.3x. But that multiple reflects the market's concern that the Sugar problem is structural, not cyclical. Until tariff protection is fixed or the Sugar business is restructured, RCL is a value trap wearing a cheap-looking PE ratio.</p></div>
-  <div class="r-metrics"><span>PE: 9.33</span> · <span>P/B: 0.66</span> · <span>ROE: 7.3%</span> · <span>R7.81</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831070500&seq=2&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="OMU">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Old Mutual <span class="r-ticker">(OMU)</span></div>
-  <div class="r-title">Voluntary Operating Update and Trading Statement for H1 2026</div>
-  
-  <div class="r-summary">Operationally firing: Life APE sales +21%, VNB +32%, results from operations up 2-12% — but adjusted HEPS -25% to -35% as investment returns get demolished by Middle East-driven risk-off conditions.</div>
-  <div class="r-body"><p>Old Mutual's H1 update is a tale of two halves. Operationally, this is the best the Group has looked in years: Life APE sales surged 21% to R7.9 billion, gross flows jumped 21% to R128.9 billion, value of new business rose 32% to R569 million with margins improving 10bps to 1.4%, and net client cash flow improved 69% to -R3.1 billion. The net underwriting margin in Old Mutual Insure held at 7.6% — within the 5-8% target range — despite elevated catastrophe losses. Results from operations per share are guided 6-16% higher at 120.3-131.7 cents. The share buyback programme completed in May 2026 has already reduced the share count to 4.18 billion.</p>
-<p>But the market will fixate on the ugly adjusted headline earnings number: -25% to -35% to 65.7-75.3 cents per share. This is driven entirely by lower shareholder investment returns as the equity and bond portfolios got hammered by Middle East geopolitical risk-off conditions — a mark-to-market headwind, not operational decay. Headline EPS is guided at 91.6-101.4 cents (-6% to +4%), cushioned by strong Zimbabwe performance. At R13.04, the stock trades on a trailing PE of 6.9x — cheap, but the market is waiting for the 8 September interim results to see through the noise.</p></div>
-  <div class="r-metrics"><span>PE: 6.87</span> · <span>P/B: 0.86</span> · <span>ROE: 14.8%</span> · <span>R13.04</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831083000&seq=13&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="NED">
-  <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
-  <div class="r-title">Central Bank of Kenya Approval for NCBA Acquisition</div>
-  <div class="r-prev">← Previous: NEUTRAL on 07 Aug</div>
-  <div class="r-summary">The biggest regulatory hurdle is cleared — Central Bank of Kenya approves Nedbank's c.66% NCBA acquisition. Remaining approvals by end Q3. This deal transforms Nedbank's East Africa story.</div>
-  <div class="r-body"><p>Nedbank cleared the tallest hurdle in its transformative NCBA acquisition: the Central Bank of Kenya has granted approval. This was always the critical regulatory gate — without CBK sign-off, the deal would stall. Now the path is open. Most other regulatory approvals are in the bag, and the remaining ones are expected by end-Q3 2026. Settlement happens within 10-14 trading days after all conditions are fulfilled, meaning Nedbank could own Kenya's largest retail bank by year-end. The deal adds c.66% of NCBA's massive Kenyan retail franchise to Nedbank's existing CIB-heavy African presence, creating meaningful retail-scale diversification outside SA.</p>
-<p>At R294.51, Nedbank trades on a trailing PE of 15.7x with a forward PE of 7.3x — the forward multiple suggests the market is pricing in significant earnings accretion. The NCBA deal is already factored into the forward estimates. The key risk now is execution: integrating a 66% stake in Kenya's largest bank will test Nedbank's management bandwidth. But with the CBK green light — plus the 21 July confirmation that the 66% acceptance threshold was met — this deal is now about when, not if.</p></div>
-  <div class="r-metrics"><span>PE: 15.65</span> · <span>P/B: 1.03</span> · <span>ROE: 8.0%</span> · <span>R294.51</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831135500&seq=34&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="FTA">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Fairvest <span class="r-ticker">(FTA)</span></div>
-  <div class="r-title">S&P Global Ratings Assigns Initial Issuer Credit Ratings & Inaugural Bond Issuance</div>
-  
-  <div class="r-summary">S&P stamps zaAAA/zaA-1+ on Fairvest — the top national-scale rating. Inaugural R500m-R750m bond auction on 29 September. This is a REIT growing up and diversifying its funding base.</div>
-  <div class="r-body"><p>Fairvest just got its corporate upgrade. S&P Global Ratings assigned national-scale long-term and short-term issuer credit ratings of zaAAA and zaA-1+ — the highest possible rating on the South African national scale. The rating reflects Fairvest's dominant position in rural and non-metropolitan retail property, stable cash flows from high occupancy and contractual escalations, and a conservative financial profile. On the back of the rating, Fairvest announced its inaugural debt capital markets issuance: a bond auction targeting R500 million (upsizeable to R750 million) via 3-year and 5-year floating-rate notes on 29 September.</p>
-<p>This is a milestone for a REIT of Fairvest's size. Diversifying funding away from bank debt into the bond market, especially at the zaAAA level, reduces refinancing risk and should lower the marginal cost of debt over time. At R19.29, Fairvest trades on a trailing PE of 22.3x (forward 12.5x) with PB of 1.24 and ROE of 15.9%. The REIT is not cheap on trailing metrics, but the credit rating — and the funding flexibility it unlocks — supports the premium. The bond auction will be the first real test of institutional appetite for Fairvest paper.</p></div>
-  <div class="r-metrics"><span>PE: 22.31</span> · <span>P/B: 1.24</span> · <span>ROE: 15.9%</span> · <span>R19.29</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831153500&seq=36&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="BVT">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Bidvest <span class="r-ticker">(BVT)</span></div>
-  <div class="r-title">Consolidated Financial Results for the Year Ended 30 June 2026</div>
-  
-  <div class="r-summary">Revenue +3% to R130.3bn, trading profit +8%, FCF +27% to R12.5bn — Bidvest delivered across every division, proving the portfolio rebuild is real.</div>
-  <div class="r-body"><p>Bidvest closed FY2026 with a statement result: R130.3 billion in revenue, trading profit up 8% to R13.1 billion, and the margin expanding a full 50 basis points to 10%. Every division grew trading profit — no laggards, no excuses. The cash engine is the real story: R17.2 billion generated from operations (+17%) and R12.5 billion in free cash flow (+27%), enough to push gearing down to 1.9x without the planned capital recycling proceeds even landing yet. Continuing HEPS of 1,864.2 cents grew 6%, and the final dividend of 483 cents is 7% higher.</p>
-<p>The quality of this result separates Bidvest from the pack. Gross margin expansion, disciplined cost control, and active portfolio management are showing up in the numbers — ROFE of 38.6% is world-class for a diversified industrial. The Island View 25-year port lease is signed disposal of Bidvest Bank and Bidvest Life progresses. At R233.80, trading on a forward PE of 11.1x with a 2.1% yield, Bidvest is the kind of boring-excellent that compounds quietly while the market chases the next shiny thing.</p></div>
-  <div class="r-metrics"><span>PE: 13.28</span> · <span>P/B: 1.86</span> · <span>ROE: 15.4%</span> · <span>R233.80</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831070500&seq=5&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bearish" data-t="BEL">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Bell Equipment <span class="r-ticker">(BEL)</span></div>
-  <div class="r-title">Updated Trading Statement for H1 2026</div>
-  
-  <div class="r-summary">HEPS down 67-76% to 60-75c from 248c — a brutal combination of weak demand, price competition, and USA tariffs is crushing Bell's margins across every key market.</div>
-  <div class="r-body"><p>Bell Equipment's trading update is a body blow. HEPS and EPS are expected between 60 and 75 cents — down 67% to 76% from the prior period's 248c and 225c. Three headwinds are hitting simultaneously: a demand slowdown in key markets, pricing pressure from intensified global competition, and USA tariffs directly squeezing margins in what should be a growth market. This isn't a blip — it's a cyclical trough with structural overtones, as the competitive landscape in yellow metal equipment has shifted meaningfully since the post-COVID boom years.</p>
-<p>At R39.94, Bell trades on a trailing PE of 10.8x which reflects the prior year's strong earnings, not the current reality. The balance sheet remains solid (PB 0.65, current ratio 3.38), and the R3.82 billion market cap is backed by hard assets. But with full H1 results due 4 September, the question is whether the market has already priced in the carnage or whether there's more downside to come. The 52-week performance is essentially flat — suggesting investors haven't fully absorbed the magnitude of this earnings reset.</p></div>
-  <div class="r-metrics"><span>PE: 10.77</span> · <span>P/B: 0.65</span> · <span>ROE: 7.0%</span> · <span>R39.94</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831115500&seq=26&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="AEL">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Altron <span class="r-ticker">(AEL)</span></div>
-  <div class="r-title">Voluntary Operational Update for HY27</div>
-  
-  <div class="r-summary">A genuine inflection point — revenue growing again, EBITDA up low-to-mid teens, Platforms now 45% of revenue and 95% of profit, net cash balance sheet. Altron's pivot into a platform economy business is working.</div>
-  <div class="r-body"><p>Altron's voluntary update confirms the thesis: the three-year transformation from legacy IT to a platform business has reached an inflection point. Revenue from continuing operations grew in low single digits — modest, but it's the first time in years both segments are growing simultaneously. Platforms (Netstar, Altron FinTech) delivered high-single-digit revenue growth and now generate approximately 95% of Group operating profit from just 45% of revenue. Group EBITDA and operating profit grew low-to-mid teens, with margins expanding year-on-year — all while absorbing deliberate growth investments in Netstar's platform modernisation and FinTech's SME expansion. The Group maintains a net cash position and ungeared balance sheet after dividends.</p>
-<p>At R28.45, Altron trades on a trailing PE of 14x with ROE of 18.7% — not cheap but reflecting the quality of earnings transformation. The structural shift toward annuity-based revenue (68% of Group revenue) enhances earnings quality and cash generation. The HY27 results in November will be the first clean period with the new segmental disclosure splitting Altron Security into Platform and IT Services components. The market has rewarded the stock with a 51% 12-month gain, and the operational leverage story still has runway.</p></div>
-  <div class="r-metrics"><span>PE: 14.01</span> · <span>P/B: 2.39</span> · <span>ROE: 18.6%</span> · <span>R28.45</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831070500&seq=3&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="ACT">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Afrocentric Investment Corporation <span class="r-ticker">(ACT)</span></div>
-  <div class="r-title">Fulfilment of Conditions Precedent — Disposal of Activo</div>
-  <div class="r-prev">← Previous: BEARISH on 27 Aug</div>
-  <div class="r-summary">The Activo disposal finally closes — all conditions met, implemented 31 August. Afrocentric cashes out of the health administration business. Now the market needs to see what's left.</div>
-  <div class="r-body"><p>Afrocentric has finally closed the Activo disposal, five months after the original April 2026 announcement and the subsequent revised terms. All conditions precedent have been fulfilled and the transaction was implemented on 31 August. The sale — of Activo and its subsidiaries plus the cession of all sale claims against Activo — removes the health administration business from the AfroCentric stable, which was the core of the original transaction rationale when the Category 2 disposal was first flagged.</p>
-<p>At R0.72, Afrocentric is a diminished entity. The stock trades on a PB of 0.30 and has lost 58% of its value over 12 months — the market has been pricing in a slow-motion wind-down. The balance sheet carries R589 million market cap against R736 million enterprise value, with negative ROE of -24.7%. The question is whether Afrocentric becomes a cash shell or pivots to whatever healthcare assets remain post-Activo. For now, this is a disposal milestone — the investment case depends entirely on what management does with the proceeds.</p></div>
-  <div class="r-metrics"><span>P/B: 0.30</span> · <span>ROE: -24.7%</span> · <span>R0.72</span></div>
-  <div class="r-links">
-    <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831163000&seq=42&scode=" target="_blank">📄 SENS announcement</a>
-  </div>
+
+    <div class="review bullish" data-t="SSW">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 11 May · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 27 Aug</div>
+      
+      <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
+      <div class="r-title">Financial Results for the Six Months Ended 30 June 2026 and Interim Dividend Declaration</div>
+      <div class="r-summary">Sibanye just printed the best half in its history. Revenue R90bn (+64%), adjusted EBITDA R31.8bn (+111%), profit R18.8bn. HEPS 601c (from 190c), EPS 627c (from -127c loss). Interim dividend 201c. SA PGM AISC margins of 44%, SA gold 32%. Net debt/EBITDA a trivial 0.18x. The recovery is complete; now it's about how long the cycle runs.</div>
+      <div class="r-review">The 27 August trading statement telegraphed the beat — HEPS >200% higher — but the full results still land with a thud. Revenue of R90 billion is up 64% year-on-year. Adjusted EBITDA of R31.8 billion more than doubled. Profit for the period hit R18.8 billion (US$1.1 billion), and HEPS came in at 601c versus 190c a year ago. The 201c interim dividend — 6.6% trailing yield, 8% annualised — is the gutsiest signal yet that Neal Froneman believes these commodity prices have legs.
+
+The numbers behind the numbers matter more. Net cash from operations of R19.6bn converted at 45% to notional free cash flow of R14.5bn. Gross debt was cut 20% year-on-year to R32.1bn, and net debt/EBITDA collapsed to 0.18x — a rounding error for a R134bn market cap miner. The SA PGM division ran AISC margins of 44% and SA gold 32%. That is world-class operating leverage on a 67% higher rand PGM basket and 35% higher rand gold price. The organic growth pipeline — Burnstone (+130koz gold), Mt Lyell (+26ktpa copper), four SA PGM brownfields projects — is fully funded from cash flow. At a trailing PE of 8.8x (forward 3.8x) and EV/EBITDA of 2.4x, the market is pricing in a commodity roll-off. That makes sense in a normal cycle. But primary PGM supply is shrinking, Northam is in play, and the geopolitical risk premium on SA PGM producers is turning into a scarcity premium. Rating: BULLISH. Sibanye is back. The question isn't whether the numbers are good — it's whether the market is brave enough to believe them.</div>
+      <div class="r-metrics"><span>PE: 8.78</span> · <span>P/B: 2.26</span> · <span>ROE: 34.7%</span> · <span>R47.29</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-financial-results-for-the-six-months-ended-30-june-2026-and-interim-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SOL">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 05 Aug</div>
+      
+      <div class="r-company">Sasol <span class="r-ticker">(SOL)</span></div>
+      <div class="r-title">Short Form Announcement: Audited Financial Results for the Year Ended 30 June 2026</div>
+      <div class="r-summary">The final numbers confirm August's trading statement: adjusted EBITDA R61bn (+17%), EPS R18.99 (+79%), HEPS R38.31 (+9%). Sales volumes +4%, cash fixed costs flat, net debt down 11% to US$3.3bn. Simon Baloyi delivered exactly what his CMD promised — and the Secunda recovery is the proof. A 5x forward PE and sub-1x book for a chemical-energy giant is still absurd.</div>
+      <div class="r-review">Sasol closed FY2026 with validator numbers. The August trading statement promised EPS of R17.50-R19.50 and HEPS of R36-R40 — the audited results delivered R18.99 and R38.31 respectively, bang in the middle. Adjusted EBITDA of R61 billion, up 17%, was driven by the Q4 Middle East oil spike and the operational improvements that Sasol has been methodically building for two years. Sales volumes rose 4% with flat cash fixed costs — that is the positive operating leverage the CMD promised. Capex of R21 billion came in 18% below prior year, and net debt excluding leases fell 11% to US$3.3 billion. Liquidity of ~US$5 billion is fortress-grade.
+
+Secunda Operations is the heart of the story. It achieved its highest annual production in five years and exceeded market guidance, supported by the destoning plant (better coal quality) and higher equipment availability. The oil break-even price has come down, meaning Sasol converts more of the oil price into free cash flow than it did two years ago. The Middle East conflict drove an ugly Q4 for the world but a timely tailwind for Sasol's integrated value chain — and management kept costs flat while converting the price signal into profit. At R194.40, the stock trades on a trailing PE of 10.4x (forward 4.9x) and 0.72x book. The ROE of 8.8% still trails the cost of equity, but the direction is clear. Rating: BULLISH. We liked Sasol on 5 August at R181.61 on the trading statement. The audited numbers confirm the thesis — and at 4.9x forward PE, the market still refuses to believe it. Their loss.</div>
+      <div class="r-metrics"><span>PE: 10.38</span> · <span>P/B: 0.72</span> · <span>ROE: 8.8%</span> · <span>R194.40</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sasol-limited-short-form-announcement-audited-financial-results-for-the-year-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SHP">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 12 Aug · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 12 Aug</div>
+      
+      <div class="r-company">Shoprite <span class="r-ticker">(SHP)</span></div>
+      <div class="r-title">Group Results for the 52 Weeks Ended 28 June 2026 and Cash Dividend Declaration</div>
+      <div class="r-summary">Shoprite delivered its textbook compounding year. Sales R270.8bn (+7.2%), HEPS 1,532.5c (+12.2%), dividend 873c (+11.8%). Checkers +10%, Sixty60 R25.5bn (+34.5%). Internal inflation at 0.8% — less than a QUARTER of CPI Food. This is a retailer that prints money while undercutting everyone on price.</div>
+      <div class="r-review">Pieter Engelbrecht just delivered another masterclass in SA retail. Sale of merchandise hit R270.8 billion — R18.1 billion more product through the tills — driven by the Supermarkets RSA engine (84.5% of Group, +7.1%). Checkers and Checkers Hyper surged 10.0% while Shoprite and Usave managed 4.3% growth on internal deflation of -0.1% and -0.6%. That is the competitive moat in numbers: selling prices are falling, volumes are rising, and the competition is gasping for air. Sixty60 rose 34.5% to R25.5bn — a R25.5bn on-demand platform growing at 35% hidden inside a supermarket chain. The Petshop Science rollout reached 185 stores (+74.5% sales), and acquisitions of Vida e Caffè and R&A Cellular add fresh adjacencies.
+
+Trading profit rose 8.4% to R16.2bn, HEPS landed at 1,532.5c (+12.2%), and the board lifted the dividend 11.8% to 873c. The balance sheet carries manageable debt (D/E 1.66, interest cover 7.4x) and the cash engine generates R8.2bn in free cash flow. At a trailing PE of 20.6x and forward PE of 18.6x, this is not cheap — but Shoprite has never been cheap, and it has rewarded that premium year after year. The ROE of 25.4% and ROIC of 38.4% against a WACC of 6.3% confirm the machine is running at full power. The Supermarkets Non-RSA story (+11.0% sales, improved profitability) adds optionality. Rating: BULLISH. You pay up for Shoprite, but you get a compounding machine that has lapped the competition for a decade. That streak isn't ending any time soon.</div>
+      <div class="r-metrics"><span>PE: 20.65</span> · <span>P/B: 4.96</span> · <span>ROE: 25.4%</span> · <span>R313.14</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/shoprite-holdings-limited-group-results-for-the-52-weeks-ended-28-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SHG">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Sea Harvest <span class="r-ticker">(SHG)</span></div>
+      <div class="r-title">Unaudited Interim Results and Dividend Declaration for the Six Months Ended 30 June 2026</div>
+      <div class="r-summary">Sea Harvest declared its maiden interim dividend (24c) off a solid H1. HEPS +14% to 97c, EBIT margin expanded to 17% from 15%, and net debt halved (1.1x EBITDA from 2.1x). Revenue dipped 6% on currency and fishing rights mix, but profit conversion and the balance sheet repair are the real story.</div>
+      <div class="r-review">Sea Harvest is quietly becoming a better business. Revenue fell 6% to R3.09 billion, but the decline masks a quality shift — the international revenue mix moved from 65% to 63%, reflecting a deliberate pivot toward higher-margin South African hake and a weaker reporting currency mix (the rand strengthened against the euro and dollar). The EBIT margin expanded from 15% to 17%, gross margin held at a solid 32%, and headline earnings rose 13% to R320 million. The operating engine is improving even as the top line treads water.
+
+The balance sheet is the real win. Net debt/EBITDA collapsed from 2.1x to 1.1x — management has been disciplined with cash, and it shows. The maiden 24 cent interim dividend is a statement: this is now a regular dividend payer, not a cyclical fishing stock. NAV per share ticked up 2% to 1,264c, and at R8.64 the stock trades at just 0.70x book with a PE of 9.2x. The fishing rights renewal cycle and the Australian dairy divestiture are the catalysts ahead. For patient investors, Sea Harvest is a well-managed food business with a dividend habit, trading below book value. Rating: BULLISH. The maiden dividend changes the narrative. Sea Harvest is no longer just a fishing bet — it's a cash-returning food stock at a discount.</div>
+      <div class="r-metrics"><span>PE: 9.19</span> · <span>P/B: 0.70</span> · <span>ROE: 7.5%</span> · <span>R8.64</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sea-harvest-group-limited-sea-harvest-unaudited-interim-results-and-dividend-declaration-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="GCT">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Greencoat Renewables <span class="r-ticker">(GCT)</span></div>
+      <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
+      <div class="r-summary">Greencoat swung from a 6.1c per-share loss to 1.0-1.1c of EPS. The Irish wind-and-solar fund is stabilising after a tough 2025. But EPS isn't the right lens — NAV per share is, and the July NAV statement at €1.06 per share (R20+ at current FX) puts the R15.04 JSE price at a discount. An income stock for patient European renewable believers.</div>
+      <div class="r-review">Greencoat Renewables is an Irish-domiciled investment entity that owns wind and solar farms across Europe. As an IFRS 10 investment entity, it does not consolidate its underlying projects — so EPS is a largely meaningless metric driven by fair value movements. The trading statement shows a swing from a 6.1c loss per share to 1.0-1.1c of profit, which is directionally positive but unhelpful as a valuation tool. The company is moving to NAV as its key performance measure going forward — the right call for an infrastructure fund.
+
+The real number is the 29 July NAV statement: €1.06 per share, implying a JSE price of ~R20 at current exchange rates versus the R15.04 trading level. That is a material discount. The portfolio churns out dividends — Greencoat is an income vehicle, not a growth story. For South African investors looking for rand-hedge income with a renewable energy theme, this is one of the few clean plays on the JSE. But liquidity is thin (it's primarily an LSE/Euronext Dublin listing with a secondary JSE line). Rating: NEUTRAL. The discount to NAV is real, but this is a niche income play — size accordingly.</div>
+      <div class="r-metrics"><span>R15.04</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/greencoat-renewables-plc-trading-statement/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="BRN">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Brimstone <span class="r-ticker">(BRN)</span></div>
+      <div class="r-title">Unaudited Interim Results for the Six Months Ended 30 June 2026</div>
+      <div class="r-summary">Brimstone's underlying value keeps compounding while the market sleeps. HEPS +4% to 100.7c, INAV +11.7% to 1,103.7c, cash dividends from associates surged 76.5% to R161.4m, and finance costs dropped 36%. The stock trades at a staggering 52% discount to INAV. That gap cannot last forever.</div>
+      <div class="r-review">Brimstone is the JSE's best-kept compounding secret. Intrinsic net asset value per share rose 11.7% to 1,103.7 cents in six months, driven by portfolio companies (Sea Harvest, Oceana, others) recovering earnings and paying up. Cash dividends received from associates and joint ventures jumped 76.5% to R161.4 million — tangible proof that the underlying investments are generating real returns, not just accounting mark-ups. Finance costs fell 36.3% to R53.8 million as the holding company's balance sheet strengthened. No interim dividend was declared — Brimstone reinvests, as it always has.
+
+The market is completely missing the story. At R5.59, the stock trades at a 52% discount to its own INAV of R11.04 — and the "N" ordinary shares trade at a 55% discount. This is an investment holding company with stakes in quality food and healthcare assets that are growing earnings and paying dividends. The governance framework is tight (the founding families and community trusts control the voting shares, which is both the moat and the discount). With a PE of 38.4x the numbers look expensive, but PE is the wrong lens for a holding company — INAV is the correct yardstick. Over 12 months the stock is up 17% — the discount is narrowing, slowly. Rating: BULLISH. You're buying R1 of quality assets for 48 cents. The catalyst is time.</div>
+      <div class="r-metrics"><span>PE: 38.38</span> · <span>R5.59</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/brimstone-investment-corporation-limited-unaudited-interim-results-for-the-six-months-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="BAC">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Africa Bitcoin Corporation <span class="r-ticker">(BAC)</span></div>
+      <div class="r-title">FSCA Decisions, Precautionary Governance Measures, Appointment of Interim CEO and Board Resignations</div>
+      <div class="r-summary">The FSCA has dropped the hammer on the CEO, CIO and Head of IR. The CEO and CIO are now suspended — no access to offices, no FSP duties. An interim CEO has been parachuted in, three directors have resigned, and the company is scrambling to show it can continue as a going concern. This is a regulatory crisis at a R101m market-cap company that was formerly called Altvest.</div>
+      <div class="r-review">There is no sugar-coating this. The Financial Sector Conduct Authority has issued decisions that directly affect CEO Warren Wheatley, CIO Akshay Karan, and Head of Media and Investor Relations Tatum Wheatley. The board responded with precautionary governance measures — the CEO and CIO are suspended, stripped of access to offices and systems, and removed from FSP responsibilities while maintaining their directorships. An interim CEO has been appointed. Three directors resigned from the board of the Africa Credit Opportunities Fund (ACOF), the subsidiary at the centre of this.
+
+This is a regulatory intervention dressed as governance. The FSCA doesn't issue decisions of this nature lightly — something triggered this action, and the details are being kept tightly confidential under legal advice. The share trades at R9.19, a market cap of R101 million, on a current ratio of 0.03 — yes, 0.03 — meaning the company has virtually no liquid assets relative to short-term obligations. The PE of 4.0x and PB of 0.69x look optically cheap but are meaningless when the FSCA is in the building and the C-suite is locked out. Rating: BEARISH. This is a governance black box. Wait for the FSCA's formal outcome before even thinking about the valuation.</div>
+      <div class="r-metrics"><span>PE: 3.97</span> · <span>P/B: 0.69</span> · <span>ROE: 71.2%</span> · <span>R9.19</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/africa-bitcoin-corporation-limited-fsca-decisions-precautionary-governance-measures-appointment-of-interim-chief-executive-officer-and-board-resignations/" target="_blank">SENS announcement →</a></div>
+    </div>
 </div>
-<footer>
-  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
-  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
-</footer>
+<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
 </body>
 </html>
