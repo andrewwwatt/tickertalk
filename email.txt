@@ -1,0 +1,46 @@
+From: Andrew Watt <andrewwatt@portrush.co.za>
+To: andrewwatt@portrush.co.za
+Cc: gregsalterconnect@gmail.com
+Subject: 📋 Ticker Talk — 3 Sep 2026: Motus Prints Cash, Aspen Flexes, Sibanye Faces Existential Strike
+Content-Type: text/plain; charset=utf-8
+
+From Showrooms to Picket Lines — Your Thursday JSE Briefing
+
+7 significant SENS announcements reviewed from yesterday's filings.
+
+╔════════╤══════════════════╤══════════════════════════════════╤══════════╤════════╤═════════╗
+║ Ticker │ Company          │ Announcement                     │ Rating   │ Price  │ Move    ║
+╠════════╪══════════════════╪══════════════════════════════════╪══════════╪════════╪═════════╣
+║ MTH    │ Motus            │ FY results — HEPS +15%, div +29% │ 🟢 BULL  │ R105.89│ -2.9%   ║
+║ APN    │ Aspen            │ FY results — NHEPS +28% CER      │ 🟢 BULL  │ R145.00│ -6.8%   ║
+║ WHL    │ Woolworths       │ FY results — HEPS +5.3%          │ 🟡 NEUT  │ R41.99 │ -1.6%   ║
+║ TFG    │ Foschini         │ Trading update — sales flat      │ 🟡 NEUT  │ R50.87 │ -0.6%   ║
+║ THA    │ Tharisa          │ USD300m bond for Karo Platinum   │ 🟡 NEUT  │ R27.00 │ -1.5%   ║
+║ CSB    │ Cashbuild        │ FY results — HEPS -9%            │ 🔴 BEAR  │ R108.64│ -0.8%   ║
+║ SSW    │ Sibanye-Stillwater│ US strike — Stillwater East      │ 🔴 BEAR  │ R51.08 │ +8.0%   ║
+╚════════╪══════════════════╪══════════════════════════════════╪══════════╪════════╪═════════╝
+
+📋 Full reviews: https://tickertalk.co.za
+
+🟢 MTH — Motus delivered one of its best results in years: HEPS 1,777c (+15%), dividend 710c (+29%), PBT R4.0bn (+20%). Net debt/EBITDA improved to 1.3x, ROIC of 12.6% exceeds WACC by 3%. At 6x PE, this automotive giant is priced like a cyclical at peak earnings — it's far more resilient than that.
+
+🟢 APN — Aspen transformed its balance sheet with the R28bn APAC sale, ending net cash R0.8bn. Normalised HEPS +28% CER to 801.5c, Manufacturing EBITDA +21%, and a R2.0bn buyback. The reported loss is R2.3bn in once-off restructuring costs — ignore the noise, follow the R3.8bn in free cash flow.
+
+🟡 WHL — Full-year numbers are solid but Q4 was brutal. Turnover R82.8bn (+4.2%), HEPS 282.3c (+5.3%), dividend 199c (+5.9%). Cash conversion surged to 104.5%. But H2 momentum slowed sharply and the consumer isn't getting stronger. Food remains the star; FBH is struggling. Oversold at RSI 28 but the earnings trajectory is flattening.
+
+🟡 TFG — Africa doing the work (+3.4%), Australia drowning (-4.7%). Bash online sales surged 54.1%. But 85 stores closed with ~280 more projected. This is a business in restructuring mode, not growth mode. At 0.64x book it's pricing in the pain. Wait for Australia to stabilise.
+
+🟡 THA — USD300m secured bond for Karo Platinum is a significant step — moving from equity-funded development to debt markets. At 4x PE and 0.53x book, Tharisa is cheap. But adding USD300m in leverage to a R4.5bn market cap company when PGMs are under pressure is bold. Watch the bond pricing.
+
+🔴 CSB — Revenue grew 6% but HEPS fell 9% to 959.9c, operating profit down 15%. Final dividend slashed 22%. More stores closed than opened. Post-period trading flat. The building materials cycle has turned hostile and at 13.9x PE, Cashbuild isn't cheap enough to compensate. This dividend cut probably isn't the last.
+
+🔴 SSW — United Steelworkers served strike notice at Stillwater East (~446 oz/day, 55% of US PGM output). CEO Richard Stewart's language is unprecedented: "if that plan cannot be implemented… there may ultimately be no viable basis for the continued operation." This isn't routine labour negotiation — it's existential for the US PGM operations.
+
+🤖 TRADING AGENTS STANDINGS
+Daily:   R43,326 (-13.3%) | 6 holdings | HLM, JSE, LSK, NED, PMV, SSS
+Weekly:  R43,230 (-13.5%) | 4 holdings | JSE, LSK, SSS, TKG
+Monthly: R44,773 (-10.5%) | 4 holdings | HLM, LSK, PMV, SSS
+
+All three agents remain underwater with September cash deployed. HLM (Hulamin) is the star performer across all agents; PMV (Primeserv) the biggest drag for the Monthly trader.
+---
+Ticker Talk · Daily at 7am · Not financial advice

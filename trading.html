@@ -130,7 +130,7 @@ async function load(){
       const actCls=t.action==='BUY'?'l-buy':(t.action==='SELL'?'l-sell':'l-rot');
       html+='<tr><td>'+t.date+'</td><td class="'+actCls+'"><b>'+t.action+'</b></td><td>'+t.ticker+'</td>';
       html+='<td class="num">'+Math.round(t.shares).toLocaleString('en-ZA')+'</td><td class="num">'+money2(t.price)+'</td>';
-      html+='<td class="num">'+money(val)+'</td><td style="font-size:.7rem;color:var(--muted)">'+t.reason+'</td></tr>';
+      html+='<td class="num">'+money(val)+'</td><td style="font-size:.78rem;line-height:1.4;max-width:280px">'+t.reason+'</td></tr>';
     }
     if(!trades.length) html+='<tr><td colspan="7" style="color:var(--muted)">No trades yet</td></tr>';
     html+='</tbody></table>';
