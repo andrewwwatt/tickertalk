@@ -14,15 +14,15 @@
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 50000.0,
-      "final_cash": 5081.12,
-      "final_holdings_value": 38163.63,
-      "final_portfolio": 43244.75,
-      "return_pct": -13.5,
-      "realized": -6275.42,
-      "unrealized": 178.58,
-      "total_costs": 577.28,
+      "final_cash": 5080.71,
+      "final_holdings_value": 44695.19,
+      "final_portfolio": 49775.89,
+      "return_pct": -0.4,
+      "realized": -129.52,
+      "unrealized": 482.04,
+      "total_costs": 576.63,
       "total_dividends": 0,
-      "num_trades": 24,
+      "num_trades": 23,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -84,46 +84,49 @@
         ],
         [
           "2026-08-20",
-          17621.15
+          24083.2
         ],
         [
           "2026-08-21",
-          17718.65
+          24180.7
         ],
         [
           "2026-08-24",
-          17714.51
+          24176.85
         ],
         [
           "2026-08-25",
-          17829.2
+          24280.73
         ],
         [
           "2026-08-26",
-          17904.26
+          24357.33
         ],
         [
           "2026-08-27",
-          18141.06
+          24611.12
         ],
         [
           "2026-08-31",
-          18436.39
+          24895.66
         ],
         [
           "2026-09-01",
-          43363.8
+          49813.81
         ],
         [
           "2026-09-02",
-          43325.88
-        ],
-        [
-          "2026-09-03",
-          43244.75
+          49775.89
         ]
       ],
       "holdings": {
+        "PMV": {
+          "shares": 2105.48,
+          "cost": 2.95,
+          "buy_date": "2026-08-03",
+          "current_price": 3.1,
+          "sector": "industrial"
+        },
         "JSE": {
           "shares": 35.61,
           "cost": 151.25,
@@ -131,48 +134,48 @@
           "current_price": 156.08,
           "sector": "financial"
         },
-        "PMV": {
-          "shares": 82084.71,
-          "cost": 0.03,
+        "SSS": {
+          "shares": 154.44,
+          "cost": 16.1,
           "buy_date": "2026-08-24",
-          "current_price": 0.03,
-          "sector": "industrial"
+          "current_price": 16.02,
+          "sector": "property"
         },
         "NED": {
-          "shares": 12.2,
+          "shares": 12.18,
           "cost": 294.51,
           "buy_date": "2026-08-31",
           "current_price": 295.05,
           "sector": "financial"
         },
         "HLM": {
-          "shares": 4600.25,
+          "shares": 5283.01,
           "cost": 2.35,
           "buy_date": "2026-09-01",
           "current_price": 2.35,
           "sector": "industrial"
         },
-        "SSS": {
-          "shares": 508.67,
-          "cost": 16.02,
-          "buy_date": "2026-09-01",
-          "current_price": 16.02,
-          "sector": "property"
-        },
         "LSK": {
-          "shares": 96.92,
+          "shares": 83.61,
           "cost": 78.25,
-          "buy_date": "2026-09-02",
+          "buy_date": "2026-09-01",
           "current_price": 78.25,
           "sector": "tech"
+        },
+        "MTA": {
+          "shares": 1531.95,
+          "cost": 4.95,
+          "buy_date": "2026-09-02",
+          "current_price": 4.95,
+          "sector": "industrial"
         }
       },
       "sector_composition": {
-        "financial": 21.2,
-        "industrial": 30.7,
-        "property": 18.8,
-        "tech": 17.5,
-        "cash": 11.7
+        "industrial": 53.3,
+        "financial": 18.4,
+        "property": 5.0,
+        "tech": 13.1,
+        "cash": 10.2
       },
       "all_trades": [
         {
@@ -311,29 +314,20 @@
           "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
-          "date": "2026-08-20",
-          "ticker": "PMV",
-          "action": "SELL",
-          "shares": 2105.4815307055246,
-          "price": 0.030999999046325683,
-          "gain": -6145.90059013737,
-          "reason": "Cut loss -99%"
-        },
-        {
           "date": "2026-08-24",
           "ticker": "TKG",
           "action": "SELL",
           "shares": 40.997301979622655,
           "price": 54.23,
           "gain": -2.049865098981172,
-          "reason": "Rotate out \u2014 PMV (BULLISH) is a better option"
+          "reason": "Rotate out \u2014 SSS (BULLISH) is a better option"
         },
         {
           "date": "2026-08-24",
-          "ticker": "PMV",
+          "ticker": "SSS",
           "action": "BUY",
-          "shares": 82084.71444515897,
-          "price": 0.030999999046325683,
+          "shares": 154.4389840629397,
+          "price": 16.1,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         },
@@ -350,7 +344,7 @@
           "date": "2026-08-31",
           "ticker": "NED",
           "action": "BUY",
-          "shares": 12.19765568065049,
+          "shares": 12.18449066619608,
           "price": 294.51,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
@@ -368,31 +362,44 @@
           "date": "2026-09-01",
           "ticker": "HLM",
           "action": "BUY",
-          "shares": 4600.2541215722895,
+          "shares": 5283.0102473064,
           "price": 2.35,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-01",
-          "ticker": "SSS",
+          "ticker": "LSK",
           "action": "BUY",
-          "shares": 508.6652794670941,
-          "price": 16.02,
+          "shares": 83.61392958753865,
+          "price": 78.25,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-02",
-          "ticker": "LSK",
+          "ticker": "MTA",
           "action": "BUY",
-          "shares": 96.91713718981589,
-          "price": 78.25,
+          "shares": 1531.9486118298946,
+          "price": 4.95,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         }
       ],
       "decisions": [
+        {
+          "date": "2026-08-14",
+          "risk": "AGGRESSIVE",
+          "news": [
+            "Stadio trading statement \u2014 EPS +15-22%, enrolments climbing",
+            "Exxaro results \u2014 coal prices stabilising, dividend maintained",
+            "US PPI prints soft \u2014 rate cut narrative cemented"
+          ],
+          "log": [
+            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 OAO: better BULLISH option",
+            "\ud83d\udfe2 BUY OAO @ R0.23 \u2014 rotated in"
+          ]
+        },
         {
           "date": "2026-08-18",
           "risk": "AGGRESSIVE",
@@ -420,18 +427,6 @@
           ]
         },
         {
-          "date": "2026-08-20",
-          "risk": "AGGRESSIVE",
-          "news": [
-            "SA retail sales +2.1% \u2014 consumer spending accelerating",
-            "Anglo American copper production \u2014 H2 guidance on track",
-            "JP Morgan upgrades SA equities to 'overweight'"
-          ],
-          "log": [
-            "\ud83d\udd34 SELL PMV \u2014 Cut loss -99% (R-6146)"
-          ]
-        },
-        {
           "date": "2026-08-24",
           "risk": "CAUTIOUS",
           "news": [
@@ -440,8 +435,8 @@
             "Global markets cautious ahead of Jackson Hole"
           ],
           "log": [
-            "\ud83d\udd01 ROTATE TKG (BULLISH) \u2192 PMV: better BULLISH option",
-            "\ud83d\udfe2 BUY PMV @ R0.03 \u2014 rotated in"
+            "\ud83d\udd01 ROTATE TKG (BULLISH) \u2192 SSS: better BULLISH option",
+            "\ud83d\udfe2 BUY SSS @ R16.10 \u2014 rotated in"
           ]
         },
         {
@@ -460,7 +455,7 @@
           "log": [
             "\ud83d\udd34 SELL SBP \u2014 Take profit +12% (R+465)",
             "\ud83d\udfe2 BUY HLM @ R2.35 \u2014 BULLISH, CAUTIOUS",
-            "\ud83d\udfe2 BUY SSS @ R16.02 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY LSK @ R78.25 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -468,7 +463,7 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY LSK @ R78.25 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY MTA @ R4.95 \u2014 BULLISH, CAUTIOUS"
           ]
         }
       ]
@@ -477,15 +472,15 @@
       "name": "Weekly Trader",
       "news_sensitivity": "medium",
       "total_in": 50000.0,
-      "final_cash": 26802.41,
-      "final_holdings_value": 16427.07,
-      "final_portfolio": 43229.48,
-      "return_pct": -13.5,
-      "realized": -6406.23,
-      "unrealized": -188.24,
-      "total_costs": 175.35,
+      "final_cash": 25630.38,
+      "final_holdings_value": 24071.24,
+      "final_portfolio": 49701.61,
+      "return_pct": -0.6,
+      "realized": -260.33,
+      "unrealized": 142.47,
+      "total_costs": 180.53,
       "total_dividends": 0,
-      "num_trades": 8,
+      "num_trades": 7,
       "risk": "AGGRESSIVE",
       "news": [
         "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
@@ -545,46 +540,49 @@
         ],
         [
           "2026-08-20",
-          18176.68
+          24638.4
         ],
         [
           "2026-08-21",
-          18242.57
+          24699.12
         ],
         [
           "2026-08-24",
-          18115.46
+          24564.85
         ],
         [
           "2026-08-25",
-          18089.12
+          24545.66
         ],
         [
           "2026-08-26",
-          18119.83
+          24581.95
         ],
         [
           "2026-08-27",
-          18247.48
+          24720.76
         ],
         [
           "2026-08-31",
-          18289.18
+          24768.54
         ],
         [
           "2026-09-01",
-          43230.19
+          49701.61
         ],
         [
           "2026-09-02",
-          43230.19
-        ],
-        [
-          "2026-09-03",
-          43229.48
+          49701.61
         ]
       ],
       "holdings": {
+        "PMV": {
+          "shares": 2105.48,
+          "cost": 2.95,
+          "buy_date": "2026-08-07",
+          "current_price": 3.1,
+          "sector": "industrial"
+        },
         "SSS": {
           "shares": 377.57,
           "cost": 16.43,
@@ -607,7 +605,7 @@
           "sector": "telecoms"
         },
         "JSE": {
-          "shares": 29.5,
+          "shares": 36.66,
           "cost": 154.0,
           "buy_date": "2026-08-21",
           "current_price": 156.08,
@@ -615,11 +613,12 @@
         }
       },
       "sector_composition": {
-        "property": 14.0,
-        "tech": 5.6,
-        "telecoms": 7.7,
-        "financial": 10.7,
-        "cash": 62.0
+        "industrial": 13.1,
+        "property": 12.2,
+        "tech": 4.9,
+        "telecoms": 6.7,
+        "financial": 11.5,
+        "cash": 51.6
       },
       "all_trades": [
         {
@@ -669,15 +668,6 @@
         },
         {
           "date": "2026-08-21",
-          "ticker": "PMV",
-          "action": "SELL",
-          "shares": 2105.4815307055246,
-          "price": 0.030999999046325683,
-          "gain": -6145.90059013737,
-          "reason": "Cut loss -99%"
-        },
-        {
-          "date": "2026-08-21",
           "ticker": "HLM",
           "action": "SELL",
           "shares": 2892.5141733194496,
@@ -689,7 +679,7 @@
           "date": "2026-08-21",
           "ticker": "JSE",
           "action": "BUY",
-          "shares": 29.503930051112498,
+          "shares": 36.657024429460414,
           "price": 154.0,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
@@ -726,7 +716,6 @@
             "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
           ],
           "log": [
-            "\ud83d\udd34 SELL PMV \u2014 Cut loss -99% (R-6146)",
             "\ud83d\udd01 ROTATE HLM (BULLISH) \u2192 JSE: better BULLISH option",
             "\ud83d\udfe2 BUY JSE @ R154.00 \u2014 rotated in"
           ]
@@ -738,11 +727,11 @@
       "news_sensitivity": "low",
       "total_in": 50000.0,
       "final_cash": 28750.0,
-      "final_holdings_value": 16020.72,
-      "final_portfolio": 44770.72,
-      "return_pct": -10.5,
+      "final_holdings_value": 22171.71,
+      "final_portfolio": 50921.71,
+      "return_pct": 1.8,
       "realized": 0,
-      "unrealized": -5123.62,
+      "unrealized": 1027.43,
       "total_costs": 105.72,
       "total_dividends": 0,
       "num_trades": 4,
@@ -805,43 +794,39 @@
         ],
         [
           "2026-08-20",
-          18814.35
+          24963.41
         ],
         [
           "2026-08-21",
-          18946.06
+          25095.12
         ],
         [
           "2026-08-24",
-          18925.68
+          25074.74
         ],
         [
           "2026-08-25",
-          19023.26
+          25172.32
         ],
         [
           "2026-08-26",
-          19025.67
+          25174.73
         ],
         [
           "2026-08-27",
-          19250.5
+          25399.55
         ],
         [
           "2026-08-31",
-          19594.06
+          25743.12
         ],
         [
           "2026-09-01",
-          44772.65
+          50921.71
         ],
         [
           "2026-09-02",
-          44772.65
-        ],
-        [
-          "2026-09-03",
-          44770.72
+          50921.71
         ]
       ],
       "holdings": {
@@ -856,7 +841,7 @@
           "shares": 2003.6,
           "cost": 3.1,
           "buy_date": "2026-08-19",
-          "current_price": 0.03,
+          "current_price": 3.1,
           "sector": "industrial"
         },
         "SSS": {
@@ -875,10 +860,10 @@
         }
       },
       "sector_composition": {
-        "industrial": 16.5,
-        "property": 13.7,
-        "tech": 5.6,
-        "cash": 64.2
+        "industrial": 26.5,
+        "property": 12.0,
+        "tech": 4.9,
+        "cash": 56.5
       },
       "all_trades": [
         {
