@@ -25,8 +25,8 @@
       "num_trades": 23,
       "risk": "CAUTIOUS",
       "news": [
-        "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
-        "Pick n Pay CEO \u2014 turnaround plan showing early results",
+        "SA PPI inflation 3.8% — pipeline pressures easing",
+        "Pick n Pay CEO — turnaround plan showing early results",
         "Global markets cautious ahead of Jackson Hole"
       ],
       "daily_values": [
@@ -234,7 +234,7 @@
           "shares": 7.609033647654059,
           "price": 295.2,
           "gain": 7.380762638224496,
-          "reason": "Rotate out \u2014 TKG (BULLISH) is a better option"
+          "reason": "Rotate out — TKG (BULLISH) is a better option"
         },
         {
           "date": "2026-08-07",
@@ -243,7 +243,7 @@
           "shares": 40.997301979622655,
           "price": 54.28,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-13",
@@ -252,7 +252,7 @@
           "shares": 2826.7752148349164,
           "price": 2.05,
           "gain": -424.0162822252387,
-          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
+          "reason": "Rotate out — JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-13",
@@ -261,7 +261,7 @@
           "shares": 35.61017584431355,
           "price": 151.25,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-14",
@@ -270,7 +270,7 @@
           "shares": 379.4156072855738,
           "price": 16.21,
           "gain": -53.118185019980956,
-          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
+          "reason": "Rotate out — OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-08-14",
@@ -279,7 +279,7 @@
           "shares": 26168.785431145403,
           "price": 0.23,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-18",
@@ -288,7 +288,7 @@
           "shares": 47.525804229813815,
           "price": 78.05,
           "gain": -45.149514018323316,
-          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
+          "reason": "Rotate out — SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-08-18",
@@ -297,7 +297,7 @@
           "shares": 28.21020775381994,
           "price": 138.5,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-19",
@@ -324,7 +324,7 @@
           "shares": 40.997301979622655,
           "price": 54.23,
           "gain": -2.049865098981172,
-          "reason": "Rotate out \u2014 SSS (BULLISH) is a better option"
+          "reason": "Rotate out — SSS (BULLISH) is a better option"
         },
         {
           "date": "2026-08-24",
@@ -333,7 +333,7 @@
           "shares": 154.4389840629397,
           "price": 16.1,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-31",
@@ -395,26 +395,26 @@
           "date": "2026-08-14",
           "risk": "AGGRESSIVE",
           "news": [
-            "Stadio trading statement \u2014 EPS +15-22%, enrolments climbing",
-            "Exxaro results \u2014 coal prices stabilising, dividend maintained",
-            "US PPI prints soft \u2014 rate cut narrative cemented"
+            "Stadio trading statement — EPS +15-22%, enrolments climbing",
+            "Exxaro results — coal prices stabilising, dividend maintained",
+            "US PPI prints soft — rate cut narrative cemented"
           ],
           "log": [
-            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 OAO: better BULLISH option",
-            "\ud83d\udfe2 BUY OAO @ R0.23 \u2014 rotated in"
+            "🔁 ROTATE SSS (BULLISH) → OAO: better BULLISH option",
+            "🟢 BUY OAO @ R0.23 — rotated in"
           ]
         },
         {
           "date": "2026-08-18",
           "risk": "AGGRESSIVE",
           "news": [
-            "RCL Foods results \u2014 poultry margins improving, sugar restructuring",
-            "Northam Platinum \u2014 production steady, PGM prices supportive",
-            "SA GDP revision \u2014 Q2 growth upgraded to 1.2%"
+            "RCL Foods results — poultry margins improving, sugar restructuring",
+            "Northam Platinum — production steady, PGM prices supportive",
+            "SA GDP revision — Q2 growth upgraded to 1.2%"
           ],
           "log": [
-            "\ud83d\udd01 ROTATE LSK (BULLISH) \u2192 SBP: better BULLISH option",
-            "\ud83d\udfe2 BUY SBP @ R138.50 \u2014 rotated in"
+            "🔁 ROTATE LSK (BULLISH) → SBP: better BULLISH option",
+            "🟢 BUY SBP @ R138.50 — rotated in"
           ]
         },
         {
@@ -422,25 +422,25 @@
           "risk": "AGGRESSIVE",
           "news": [
             "Fed minutes confirm September cut 'likely'",
-            "SA bond yields fall to 10.2% \u2014 3-month low",
+            "SA bond yields fall to 10.2% — 3-month low",
             "JSE All Share hits new 2026 high"
           ],
           "log": [
-            "\ud83d\udd34 SELL OAO \u2014 Cut loss -13% (R-785)",
-            "\ud83d\udfe2 BUY HLM @ R2.00 \u2014 BULLISH, AGGRESSIVE"
+            "🔴 SELL OAO — Cut loss -13% (R-785)",
+            "🟢 BUY HLM @ R2.00 — BULLISH, AGGRESSIVE"
           ]
         },
         {
           "date": "2026-08-24",
           "risk": "CAUTIOUS",
           "news": [
-            "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
-            "Pick n Pay CEO \u2014 turnaround plan showing early results",
+            "SA PPI inflation 3.8% — pipeline pressures easing",
+            "Pick n Pay CEO — turnaround plan showing early results",
             "Global markets cautious ahead of Jackson Hole"
           ],
           "log": [
-            "\ud83d\udd01 ROTATE TKG (BULLISH) \u2192 SSS: better BULLISH option",
-            "\ud83d\udfe2 BUY SSS @ R16.10 \u2014 rotated in"
+            "🔁 ROTATE TKG (BULLISH) → SSS: better BULLISH option",
+            "🟢 BUY SSS @ R16.10 — rotated in"
           ]
         },
         {
@@ -448,8 +448,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL HLM \u2014 Take profit +14% (R+708)",
-            "\ud83d\udfe2 BUY NED @ R294.51 \u2014 BULLISH, CAUTIOUS"
+            "🔴 SELL HLM — Take profit +14% (R+708)",
+            "🟢 BUY NED @ R294.51 — BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -457,9 +457,9 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL SBP \u2014 Take profit +12% (R+465)",
-            "\ud83d\udfe2 BUY HLM @ R2.35 \u2014 BULLISH, CAUTIOUS",
-            "\ud83d\udfe2 BUY LSK @ R78.25 \u2014 BULLISH, CAUTIOUS"
+            "🔴 SELL SBP — Take profit +12% (R+465)",
+            "🟢 BUY HLM @ R2.35 — BULLISH, CAUTIOUS",
+            "🟢 BUY LSK @ R78.25 — BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -467,7 +467,7 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY MTA @ R4.95 \u2014 BULLISH, CAUTIOUS"
+            "🟢 BUY MTA @ R4.95 — BULLISH, CAUTIOUS"
           ]
         }
       ]
@@ -487,7 +487,7 @@
       "num_trades": 7,
       "risk": "AGGRESSIVE",
       "news": [
-        "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
+        "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top — SA's external position is solid."
       ],
       "daily_values": [
         [
@@ -681,7 +681,7 @@
           "shares": 2892.5141733194496,
           "price": 2.06,
           "gain": -260.3262755987507,
-          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
+          "reason": "Rotate out — JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-21",
@@ -690,7 +690,7 @@
           "shares": 36.657024429460414,
           "price": 154.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         }
       ],
       "decisions": [
@@ -698,13 +698,13 @@
           "date": "2026-08-07",
           "risk": "BALANCED",
           "news": [
-            "Week ends with MTN results and retail sales data. Consumer is alive but not thriving. SARB rate cut expectations building \u2014 this is the main catalyst for SA equities going forward."
+            "Week ends with MTN results and retail sales data. Consumer is alive but not thriving. SARB rate cut expectations building — this is the main catalyst for SA equities going forward."
           ],
           "log": [
-            "\ud83d\udfe2 BUY HLM @ R2.15 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY PMV @ R2.95 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY SSS @ R16.43 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY LSK @ R80.50 \u2014 BULLISH, BALANCED"
+            "🟢 BUY HLM @ R2.15 — BULLISH, BALANCED",
+            "🟢 BUY PMV @ R2.95 — BULLISH, BALANCED",
+            "🟢 BUY SSS @ R16.43 — BULLISH, BALANCED",
+            "🟢 BUY LSK @ R80.50 — BULLISH, BALANCED"
           ]
         },
         {
@@ -714,18 +714,18 @@
             "Stadio and Exxaro add to the positive results season. Private education is a structural growth story. Coal is cyclical but Exxaro managing well. US rate cut in September now >90% probability."
           ],
           "log": [
-            "\ud83d\udfe2 BUY TKG @ R55.93 \u2014 BULLISH, AGGRESSIVE"
+            "🟢 BUY TKG @ R55.93 — BULLISH, AGGRESSIVE"
           ]
         },
         {
           "date": "2026-08-21",
           "risk": "AGGRESSIVE",
           "news": [
-            "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
+            "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top — SA's external position is solid."
           ],
           "log": [
-            "\ud83d\udd01 ROTATE HLM (BULLISH) \u2192 JSE: better BULLISH option",
-            "\ud83d\udfe2 BUY JSE @ R154.00 \u2014 rotated in"
+            "🔁 ROTATE HLM (BULLISH) → JSE: better BULLISH option",
+            "🟢 BUY JSE @ R154.00 — rotated in"
           ]
         }
       ]
@@ -745,7 +745,7 @@
       "num_trades": 4,
       "risk": "BALANCED",
       "news": [
-        "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
+        "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% — still attractive yield for foreign investors. Capital inflows supporting the rand."
       ],
       "daily_values": [
         [
@@ -920,16 +920,17 @@
           "date": "2026-08-19",
           "risk": "BALANCED",
           "news": [
-            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
+            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% — still attractive yield for foreign investors. Capital inflows supporting the rand."
           ],
           "log": [
-            "\ud83d\udfe2 BUY HLM @ R2.00 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY PMV @ R3.10 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY SSS @ R16.20 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY LSK @ R78.00 \u2014 BULLISH, BALANCED"
+            "🟢 BUY HLM @ R2.00 — BULLISH, BALANCED",
+            "🟢 BUY PMV @ R3.10 — BULLISH, BALANCED",
+            "🟢 BUY SSS @ R16.20 — BULLISH, BALANCED",
+            "🟢 BUY LSK @ R78.00 — BULLISH, BALANCED"
           ]
         }
       ]
     }
-  }
+  },
+  "_build": 1788425143
 }

@@ -77,7 +77,7 @@ function money2(x){const n=Number(x)||0;return 'R'+n.toFixed(2);}
 function pnl(x){const n=Number(x)||0;return (n>=0?'+':'−')+'R'+Math.abs(Math.round(n)).toLocaleString('en-ZA');}
 function pnlCls(x){return (Number(x)||0)>=0?'pos':'neg';}
 async function load(){
-  const r=await fetch('trading.json');const d=await r.json();
+  const r=await fetch('trading.json?v='+Date.now());const d=await r.json();
   const el=document.getElementById('agents');let html='';
   for(const name of ['Daily Trader','Weekly Trader','Monthly Trader']){
     const a=d.agents[name];
