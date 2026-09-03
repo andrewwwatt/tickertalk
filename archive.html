@@ -88,14 +88,126 @@ footer a { color: #666; }
 </nav>
 <div class="container">
 <h1>Archive</h1>
-<div class="subtitle">All reviews · 120 total</div>
-<div class="grand">🟢 65 Bullish · 🟡 40 Neutral · 🔴 15 Bearish · 📊 95 Companies · 📝 21 Editions</div>
+<div class="subtitle">All reviews · 127 total</div>
+<div class="grand">🟢 67 Bullish · 🟡 43 Neutral · 🔴 17 Bearish · 📊 98 Companies · 📝 22 Editions</div>
 <div class="filter-bar">
   <select onchange="filterTicker(this.value)">
-    <option value="">All Companies</option><option value="ABG">ABG</option><option value="ACT">ACT</option><option value="ADH">ADH</option><option value="AEG">AEG</option><option value="AEL">AEL</option><option value="AFT">AFT</option><option value="AGL">AGL</option><option value="APF">APF</option><option value="APN">APN</option><option value="BAC">BAC</option><option value="BEL">BEL</option><option value="BHG">BHG</option><option value="BID">BID</option><option value="BLU">BLU</option><option value="BRN">BRN</option><option value="BTI">BTI</option><option value="BVT">BVT</option><option value="BWN">BWN</option><option value="CAA">CAA</option><option value="CAC">CAC</option><option value="CCC">CCC</option><option value="CCD">CCD</option><option value="CPR">CPR</option><option value="CSB">CSB</option><option value="DIB">DIB</option><option value="DRD">DRD</option><option value="DSY">DSY</option><option value="DTC">DTC</option><option value="EXX">EXX</option><option value="FTA">FTA</option><option value="GCT">GCT</option><option value="GFI">GFI</option><option value="GND">GND</option><option value="HAR">HAR</option><option value="HCI">HCI</option><option value="HLM">HLM</option><option value="IMP">IMP</option><option value="ITE">ITE</option><option value="JBL">JBL</option><option value="JSE">JSE</option><option value="KAP">KAP</option><option value="LAB">LAB</option><option value="LBR">LBR</option><option value="LSK">LSK</option><option value="MDI">MDI</option><option value="MPT">MPT</option><option value="MTA">MTA</option><option value="MTN">MTN</option><option value="MTU">MTU</option><option value="NED">NED</option><option value="NHM">NHM</option><option value="NPH">NPH</option><option value="NPN">NPN</option><option value="NRP">NRP</option><option value="OAO">OAO</option><option value="OMU">OMU</option><option value="OPA">OPA</option><option value="OUT">OUT</option><option value="PIK">PIK</option><option value="PMV">PMV</option><option value="PWR">PWR</option><option value="QLT">QLT</option><option value="RBO">RBO</option><option value="RCL">RCL</option><option value="RDF">RDF</option><option value="REN">REN</option><option value="RES">RES</option><option value="RLO">RLO</option><option value="RNG">RNG</option><option value="S32">S32</option><option value="SAP">SAP</option><option value="SBP">SBP</option><option value="SDO">SDO</option><option value="SEA">SEA</option><option value="SEB">SEB</option><option value="SHG">SHG</option><option value="SHP">SHP</option><option value="SLM">SLM</option><option value="SNT">SNT</option><option value="SOH">SOH</option><option value="SOL">SOL</option><option value="SPG">SPG</option><option value="SPP">SPP</option><option value="SSS">SSS</option><option value="SSW">SSW</option><option value="SUI">SUI</option><option value="SUR">SUR</option><option value="TGA">TGA</option><option value="THA">THA</option><option value="TKG">TKG</option><option value="TON">TON</option><option value="TPC">TPC</option><option value="TRU">TRU</option><option value="TTO">TTO</option><option value="WVR">WVR</option>
+    <option value="">All Companies</option><option value="ABG">ABG</option><option value="ACT">ACT</option><option value="ADH">ADH</option><option value="AEG">AEG</option><option value="AEL">AEL</option><option value="AFT">AFT</option><option value="AGL">AGL</option><option value="APF">APF</option><option value="APN">APN</option><option value="BAC">BAC</option><option value="BEL">BEL</option><option value="BHG">BHG</option><option value="BID">BID</option><option value="BLU">BLU</option><option value="BRN">BRN</option><option value="BTI">BTI</option><option value="BVT">BVT</option><option value="BWN">BWN</option><option value="CAA">CAA</option><option value="CAC">CAC</option><option value="CCC">CCC</option><option value="CCD">CCD</option><option value="CPR">CPR</option><option value="CSB">CSB</option><option value="DIB">DIB</option><option value="DRD">DRD</option><option value="DSY">DSY</option><option value="DTC">DTC</option><option value="EXX">EXX</option><option value="FTA">FTA</option><option value="GCT">GCT</option><option value="GFI">GFI</option><option value="GND">GND</option><option value="HAR">HAR</option><option value="HCI">HCI</option><option value="HLM">HLM</option><option value="IMP">IMP</option><option value="ITE">ITE</option><option value="JBL">JBL</option><option value="JSE">JSE</option><option value="KAP">KAP</option><option value="LAB">LAB</option><option value="LBR">LBR</option><option value="LSK">LSK</option><option value="MDI">MDI</option><option value="MPT">MPT</option><option value="MTA">MTA</option><option value="MTH">MTH</option><option value="MTN">MTN</option><option value="MTU">MTU</option><option value="NED">NED</option><option value="NHM">NHM</option><option value="NPH">NPH</option><option value="NPN">NPN</option><option value="NRP">NRP</option><option value="OAO">OAO</option><option value="OMU">OMU</option><option value="OPA">OPA</option><option value="OUT">OUT</option><option value="PIK">PIK</option><option value="PMV">PMV</option><option value="PWR">PWR</option><option value="QLT">QLT</option><option value="RBO">RBO</option><option value="RCL">RCL</option><option value="RDF">RDF</option><option value="REN">REN</option><option value="RES">RES</option><option value="RLO">RLO</option><option value="RNG">RNG</option><option value="S32">S32</option><option value="SAP">SAP</option><option value="SBP">SBP</option><option value="SDO">SDO</option><option value="SEA">SEA</option><option value="SEB">SEB</option><option value="SHG">SHG</option><option value="SHP">SHP</option><option value="SLM">SLM</option><option value="SNT">SNT</option><option value="SOH">SOH</option><option value="SOL">SOL</option><option value="SPG">SPG</option><option value="SPP">SPP</option><option value="SSS">SSS</option><option value="SSW">SSW</option><option value="SUI">SUI</option><option value="SUR">SUR</option><option value="TFG">TFG</option><option value="TGA">TGA</option><option value="THA">THA</option><option value="TKG">TKG</option><option value="TON">TON</option><option value="TPC">TPC</option><option value="TRU">TRU</option><option value="TTO">TTO</option><option value="WHL">WHL</option><option value="WVR">WVR</option>
   </select>
 </div>
-<div class="date-header" id="d-2026-09-01">01 Sep 2026 · 7 reviews</div>
+<div class="date-header" id="d-2026-09-02">02 Sep 2026 · 7 reviews</div>
+
+    <div class="review neutral" data-t="WHL">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Woolworths Holdings <span class="r-ticker">(WHL)</span></div>
+      <div class="r-title">Audited Group Results for the 52 weeks ended 28 June 2026 and Cash Dividend Declaration</div>
+      <div class="r-summary">Woolworths delivered a solid FY but the second half tells a worrying story. Full-year turnover R82.8bn (+4.2%), HEPS 282.3c (+5.3%), dividend 199c (+5.9%), cash conversion surged to 104.5%. But H2 growth slowed to 3.3% with a brutal Q4. Australian ops are in a net cash position. The 9.7m share buyback at R51.33 avg was well-timed.</div>
+      <div class="r-review">Woolworths' full-year numbers look respectable \u2014 turnover +4.2%, HEPS +5.3%, dividend +5.9%, and cash conversion surging from 82.5% to 104.5%. The Food business continues to be the star, delivering above-market growth of 5.7% with strong online momentum. The balance sheet is manageable with net debt of R5.9bn and a net debt/EBITDA ratio of 1.44x. The share buyback of 9.7m shares at R51.33 was a smart deployment of capital while the stock was weak.\n\nBut the momentum is going the wrong way. H2 growth slowed to 3.3%, the fourth quarter was particularly weak, and the outlook commentary is cautious. FBH (Fashion, Beauty, Home) is under real pressure as consumers trade down. Country Road Group returned to profitability \u2014 that's good \u2014 but growth was modest. At PE 16.4x and P/B 3.75 with an RSI of 28 (oversold), the market has already priced in a lot of bad news. The 52-week decline of 18.6% reflects the reality that SA retail is tough. Management's focus on cost control and working capital is the right playbook for this environment. Rating: NEUTRAL. Quality business but the consumer is under pressure and the earnings trajectory is flattening. Wait for a clearer entry signal.</div>
+      <div class="r-metrics"><span>PE: 16.40</span> · <span>P/B: 3.75</span> · <span>ROE: 22.2%</span> · <span>R41.99</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/woolworths-holdings-limited-audited-group-results-for-the-52-weeks-ended-28-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="THA">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 15 Jul · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 24 Aug</div>
+      
+      <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
+      <div class="r-title">Income Investor Meetings and Contemplated Senior Secured Bond Issue</div>
+      <div class="r-summary">Tharisa is hitting the bond market for USD300m via a 5-year senior secured note to fund the Karo Platinum Mine in Zimbabwe. DNB Carnegie and HSBC are joint bookrunners. This is real progress on Karo \u2014 moving from equity-funded development to debt capital markets financing. But it adds leverage at a time when PGM prices remain under pressure.</div>
+      <div class="r-review">Tharisa's move to raise USD300m in the bond market is a significant step in the Karo Platinum story. The Zimbabwe project is a tier-one PGM asset on the Great Dyke that could transform Tharisa from a mid-tier chrome/PGM producer into a major platinum player. Using debt capital markets rather than dilutive equity is the right approach \u2014 preserve shareholder value while accessing the capital needed for mine development. The engagement of DNB Carnegie and HSBC as joint bookrunners signals institutional confidence in the credit.\n\nBut the timing isn't ideal. PGM prices are under pressure, and adding USD300m in secured debt to a company with a market cap of ~R4.5bn changes the risk profile materially. The Tharisa mine in South Africa remains the cash engine (low-cost, multi-generational) and should comfortably service existing obligations. The question is whether Karo generates returns that justify the leverage. At current PGM basket prices, the economics are tight. The investor meetings starting today will be the real test \u2014 if the bond prices well, it's a strong signal. If it struggles, the market will reassess Karo's viability. Rating: NEUTRAL. The ambition is right but execution risk is real. Watch the bond pricing for the market's verdict on Karo.</div>
+      <div class="r-metrics"><span>PE: 4.04</span> · <span>P/B: 0.53</span> · <span>ROE: 14.5%</span> · <span>R27.00</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-income-investor-meetings-and-contemplated-senior-secured-bond-issue/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="TFG">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">The Foschini Group <span class="r-ticker">(TFG)</span></div>
+      <div class="r-title">Trading update for the 21 weeks ended 22 August 2026</div>
+      <div class="r-summary">TFG is treading water. Group sales flat at +0.2% (+2.0% constant currency). TFG Africa doing the work (+3.4%), TFG London resilient (+2.3% GBP), TFG Australia drowning (-4.7% AUD). Online sales surged 15.3% to 15.9% of total. But 85 stores closed, another ~280 projected. The store rationalisation is necessary but painful. Cautious outlook.</div>
+      <div class="r-review">TFG's trading update paints a picture of a retailer fighting on multiple fronts. TFG Africa delivered 3.4% sales growth with clothing (+3.7%), homeware (+3.7%), and beauty (+12.5%) all performing. Bash is the standout \u2014 online sales up 54.1%, now 10.5% of Africa sales. Gross margins are holding. Credit sales contracted 2.5% which is actually healthy \u2014 TFG is being disciplined about who it lends to, and acceptance rates are marginally up.\n\nThe problem children are structural. TFG Australia is in a world of pain \u2014 sales down 4.7% in AUD with the Tarocash repositioning adding to the misery. 85 stores have been closed already and management is projecting another ~280 closures over three years. That's a confession that the store footprint was too big. The net effect: 60 net store closures so far. TFG London is holding up (+2.3% GBP) but the UK is brutally promotional. Net debt is expected to be broadly stable but this is a business in restructuring mode, not growth mode. At PE 12.45x and P/B 0.64, the stock is pricing in the pain. The 52-week decline of 52% says the market already knows. Rating: NEUTRAL. The Africa business remains a cash generator and Bash is exciting. But until Australia stabilises and the store closure programme runs its course, TFG is a show-me story.</div>
+      <div class="r-metrics"><span>PE: 12.45</span> · <span>P/B: 0.64</span> · <span>ROE: 5.2%</span> · <span>R50.87</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/the-foschini-group-limited-trading-update-for-the-21-weeks-ended-22-august-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="SSW">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num follow">Review #3</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 11 May · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 01 Sep</div>
+      
+      <div class="r-company">Sibanye-Stillwater <span class="r-ticker">(SSW)</span></div>
+      <div class="r-title">Sibanye-Stillwater receives strike notice for sections of its US PGM operations</div>
+      <div class="r-summary">The United Steelworkers union served strike notice at Sibanye's Stillwater East mine and Columbus facility \u2014 strike starts today (3 Sep). These operations produced 76,334 oz in H1 2026 (~55% of US PGM output). CEO Richard Stewart's language is unprecedented: \"if that plan cannot be implemented\u2026 there may ultimately be no viable basis for the continued operation.\" This is existential.</div>
+      <div class="r-review">This is the most confrontational SENS Sibanye-Stillwater has ever issued. The US PGM operations are already burning cash \u2014 a negative notional free cash flow margin in H1 2026 with 137,930 oz produced. Now 55% of that production (Stillwater East at ~446 oz/day) is going on strike. The core disagreement is about a productivity transformation programme that Sibanye says is essential to long-term viability, including mechanisation and modernised work practices that the union doesn't want. The CEO's statement that \"there may ultimately be no viable basis for continued operation\" without these changes is a shot across the bow. He's not bluffing. These mines are marginal at current PGM prices and cannot sustain current cost structures.\n\nThe timing is terrible. PGM prices remain under pressure, the South African operations are carrying the group, and the US assets were supposed to be the diversification story. Four months of negotiations have failed to produce an agreement. The East Boulder mine is covered by a separate CBA and continues to operate, but a prolonged strike at Stillwater East could force Sibanye to confront the question of whether the US operations have a future at all. The balance sheet can absorb short-term pain but not indefinite losses. Rating: BEARISH. This isn't routine labour negotiation \u2014 it's a fight over the operating model of an entire business unit. Until there's a resolution, the US PGM assets are a liability, not an asset.</div>
+      <div class="r-metrics"><span>PE: 9.38</span> · <span>P/B: 2.44</span> · <span>ROE: 34.7%</span> · <span>R51.08</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-sibanye-stillwater-receives-strike-notice-for-sections-of-its-us-pgm-operations/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="MTH">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Motus Holdings <span class="r-ticker">(MTH)</span></div>
+      <div class="r-title">Summarised consolidated results and cash dividend declaration for the year ended 30 June 2026</div>
+      <div class="r-summary">Motus delivered a cracking set of FY results. Revenue R113.6bn (+1%, +3% adjusted ex-MTV disposal), HEPS 1,777c (+15%), dividend 710c (+29%), profit before tax R4.0bn (+20%). Net debt/EBITDA improved to 1.3x from 1.5x, ROE hit 15%, ROIC 12.6% exceeding WACC by 3%. The automotive giant is firing on all cylinders and returning cash to shareholders.</div>
+      <div class="r-review">Motus just printed one of its best sets of results in years. Revenue of R113.6 billion may have only grown 1% at face value, but strip out the MTV disposal from the prior year and adjusted revenue was up 3%. The real story is in the profit line \u2014 operating profit rose 4% to R5.7bn, net finance costs dropped 19% to R1.5bn, and profit before tax jumped 20% to R4.0bn. That's operating leverage in a business that was already efficient. HEPS of 1,777cps (+15%) and a dividend of 710cps (+29%) tell you management is confident about the trajectory.\n\nThe balance sheet is in excellent shape. Net debt to EBITDA fell to 1.3x (from 1.5x), well within the 3x covenant limit. ROE of 15% and ROIC of 12.6% \u2014 exceeding WACC by a full 3 percentage points \u2014 proves this is a genuine value creator. The equity-to-net-debt structure of 69:31 (from 66:34) shows de-leveraging in action. At a trailing PE of 6.09x and P/B of 0.92, the market is pricing Motus like a cyclical at peak earnings. But with 20,000 employees across four segments and a diversified OEM partner base, this is a far more resilient business than it gets credit for. Rating: BULLISH. When a company delivers this kind of earnings quality and trades at 6x, you buy it.</div>
+      <div class="r-metrics"><span>PE: 6.09</span> · <span>P/B: 0.92</span> · <span>ROE: 14.8%</span> · <span>R105.89</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/motus-holdings-limited-summarised-consolidated-results-and-cash-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="CSB">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      
+      <div class="r-prev">← Previous: <span class="r-badge-sm bearish">BEARISH</span> on 19 Aug</div>
+      
+      <div class="r-company">Cashbuild <span class="r-ticker">(CSB)</span></div>
+      <div class="r-title">Annual results and dividend declaration for the year ended 28 June 2026</div>
+      <div class="r-summary">Cashbuild's numbers are heading the wrong direction. Revenue R12.1bn (+6%) but HEPS fell 9% to 959.9c, EPS crashed 25% to 786c on a R34.9m Malawi disposal loss. Operating profit down 15%. Final dividend slashed 22% to 233c. 11 stores closed, only 9 opened. Post-period trading flat. The building materials cycle has turned hostile.</div>
+      <div class="r-review">Cashbuild is feeling the full weight of SA's construction slowdown. Revenue growth of 6% looks okay until you dig deeper \u2014 pre-existing stores (297 of them) grew just 2%, with the remaining 4% coming from 20 new stores. Selling price inflation of just 1.5% means there's no pricing power. Gross margin improved from 24.8% to 25.3% which is the one bright spot, but operating expenses grew 9% (or 7% ex-Malawi), eating all the gains. Operating profit fell 15% to R292m. That's margin destruction in slow motion.\n\nThe dividend tells the real story. A 22% cut in the final dividend to 233c, bringing the full-year to 626c \u2014 flat year-on-year only because the interim was raised. More stores were closed (11) than opened (9), and the post-period update says trading is at similar levels to last year. With a PE of 13.86x on declining earnings and ROE of just 9.3%, the valuation isn't cheap enough to compensate for the deteriorating fundamentals. The R2.0bn cash pile is the only comfort. Rating: BEARISH. Cashbuild is a well-managed retailer caught in a building cycle that isn't turning up anytime soon. The dividend cut is probably not the last.</div>
+      <div class="r-metrics"><span>PE: 13.86</span> · <span>P/B: 1.22</span> · <span>ROE: 9.3%</span> · <span>R108.64</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/cashbuild-limited-annual-results-and-dividend-declaration-for-the-year-ended-28-june-2026/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="APN">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 21 Aug</div>
+      
+      <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
+      <div class="r-title">Reviewed Condensed Group Financial Results for the year ended 30 June 2026 and Cash Dividend Declaration</div>
+      <div class="r-summary">Aspen transformed its balance sheet and delivered strong operational momentum. Normalised HEPS 801.5c (+28% CER), normalised EBITDA R7.7bn (+14% CER), dividend 232c (+10%). APAC disposal at R28bn, net cash position of R0.8bn. Commercial Pharma revenue +5%, Manufacturing EBITDA R828m (+21%). R2.0bn share buyback completed. Semaglutide approved in Canada.</div>
+      <div class="r-review">Aspen's FY2026 results are the strongest strategic statement the company has made in years. The APAC divestment at R28bn turned the balance sheet from leveraged to net cash of R0.8bn, even after R500m in share buybacks. The R2.0bn general repurchase at an average R148.17 (announced separately) adds another 3% share reduction, bringing the total buyback to R2.5bn. That's disciplined capital allocation from a management team that now has options. Normalised HEPS of 801.5cps grew 28% in constant currency, driven by Commercial Pharmaceuticals (+13% EBITDA on +5% revenue) and Manufacturing (+21% EBITDA to R828m). The sterile FDF facilities are nearing the end of their restructuring and are positioned to be the primary EBITDA growth drivers in FY2027.\n\nThe reported numbers are messy \u2014 R2.3bn in restructuring costs and another R2.3bn in intangible impairments hit the bottom line, resulting in a reported loss per share. Ignore the noise. The operational business is generating R7.7bn in normalised EBITDA with a cash conversion rate well above 100%. Free cash flow of R3.8bn before dividends is the real metric. The Health Canada approval for generic semaglutide opens a massive market, and the human insulin manufacturing contract that commenced in May adds another revenue stream. At a forward PE of 12.1x on a P/B of 0.79, the stock doesn't reflect the quality of this turnaround. Rating: BULLISH. Aspen has done the hard work. The market is still focused on the impairments. Focus on the cash flow instead.</div>
+      <div class="r-metrics"><span>P/B: 0.79</span> · <span>ROE: -2.2%</span> · <span>R145.00</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-reviewed-condensed-group-financial-results-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div><div class="date-header" id="d-2026-09-01">01 Sep 2026 · 7 reviews</div>
 
     <div class="review bullish" data-t="SSW">
       <div class="r-header">
