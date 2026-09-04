@@ -3,242 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Today's Reviews — Ticker Talk</title>
+<title>Ticker Talk — Today's Reviews</title>
 <style>
-:root {
-  --bg: #f5f3ef;
-  --card-bg: #ffffff;
-  --border: #e0e0e0;
-  --text: #222222;
-  --muted: #666666;
-  --green: #2e7d32;
-  --red: #c62828;
-  --amber: #e65100;
-  --nav-bg: #1a1a2e;
-}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
-}
-nav {
-  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
-  background: var(--nav-bg); align-items: center;
-}
-nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
-nav a:hover { color: #cccccc; }
-nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
-h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
-h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
+nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
+nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
+nav a:hover, nav a.active { opacity: 1; }
+nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
+.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+h1 { font-size: 24px; margin-bottom: 8px; }
+.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
+.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
+.stat strong { display: block; font-size: 20px; }
 
-.stats { 
-  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
-}
-.stat { 
-  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
-  border: 1px solid var(--border); font-weight: 600;
-}
+/* Review card */
+.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.review.bullish { border-left-color: #2e7d32; }
+.review.bearish { border-left-color: #c62828; }
+.review.neutral { border-left-color: #e65100; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge.bearish { background: #ffebee; color: #c62828; }
+.r-badge.neutral { background: #fff3e0; color: #e65100; }
+.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
+.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
+.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
+.r-num.first { background: #e8f5e9; color: #2e7d32; }
+.r-num.follow { background: #fff3e0; color: #e65100; }
+.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
+.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
+.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
+.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
+.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
+.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
+.r-metrics span { color: #222222; font-weight: 600; }
+.r-link { margin-top: 10px; font-size: 13px; }
+.r-link a { color: #2e7d32; text-decoration: none; }
+.r-link a:hover { text-decoration: underline; }
 
-.review {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-left: 4px solid var(--border); border-radius: 8px;
-  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-.review.bullish { border-left-color: var(--green); }
-.review.bearish { border-left-color: var(--red); }
-.review.neutral { border-left-color: var(--amber); }
+/* Archive filter */
+.filter-bar { margin-bottom: 20px; }
+.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
+.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
 
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
-.r-company { font-size: 1.1em; font-weight: 700; }
-.r-ticker { color: var(--muted); font-size: 0.9em; }
+/* Ratings table */
+.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
+.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
+.ratings-table tr:hover { background: #fafaf8; }
+.perf-pos { color: #2e7d32; font-weight: 700; }
+.perf-neg { color: #c62828; font-weight: 700; }
+.perf-new { color: #aaa; }
+.perf-neutral { color: #e65100; font-weight: 700; }
 
-.r-badge {
-  display: inline-block; padding: 2px 10px; border-radius: 4px;
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-}
-.r-badge.bullish { background: #e8f5e9; color: var(--green); }
-.r-badge.bearish { background: #ffebee; color: var(--red); }
-.r-badge.neutral { background: #fff3e0; color: var(--amber); }
+/* Agreements section */
+.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
+.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
+.disagree-item { border-left-color: #c62828; }
 
-.r-num {
-  font-size: 12px; font-weight: 600;
-}
-.r-num.first { color: var(--green); }
-.r-num.follow { color: var(--amber); }
+/* Methodology */
+.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
+.method-box strong { color: #222; }
 
-.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
-.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
-.r-prev span { color: var(--text); }
-
-.r-summary {
-  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
-  background: #f5f3ef; border-radius: 6px;
-  border-left: 3px solid var(--green);
-}
-.r-body { font-size: 0.9em; white-space: pre-line; }
-.r-body p + p { margin-top: 10px; }
-
-.r-metrics {
-  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-  flex-wrap: wrap;
-}
-.r-metrics span { color: var(--text); }
-
-.r-links { margin-top: 10px; font-size: 0.8em; }
-.r-links a { color: var(--green); }
-
-.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
-
-.grand {
-  text-align: center; padding: 15px; margin: 20px 0;
-  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
-  font-size: 0.9em;
-}
-
-.filter-bar {
-  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
-}
-.filter-bar select { 
-  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
-  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
-}
-.filter-bar label { font-size: 0.85em; color: var(--muted); }
-
-.date-header {
-  color: #1a1a2e; font-size: 1em; font-weight: 600;
-  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
-}
-
-table {
-  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
-}
-th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
-th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
-.perf-pos { color: #2e7d32; }
-.perf-neg { color: #c62828; }
-.perf-new { color: var(--muted); }
-
-.agree-section, .disagree-section { margin-top: 25px; }
-.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
-.agree-section h3 { color: #2e7d32; }
-.disagree-section h3 { color: #c62828; }
-.agree-item, .disagree-item {
-  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
-}
-.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
-.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
-.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
-
-.methodology {
-  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
-  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
-}
-
-footer {
-  text-align: center; padding: 20px; margin-top: 40px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-}
+footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
+footer a { color: #666; }
 </style>
-
 </head>
 <body>
 <nav>
-  <a href="/">Today</a>
-  <a href="/archive.html">Archive</a>
-  <a href="/ratings.html">Ratings</a>
-  <a href="/trading.html">Trading</a>
+  <span class="brand">📋 Ticker Talk</span>
+  <a href="index.html" class="active">Today</a>
+  <a href="archive.html" >Archive</a>
+  <a href="trading.html" >🤖 Trading</a>
+  <a href="ratings.html" >Ratings</a>
 </nav>
+<div class="container">
 <h1>Today's Reviews</h1>
-
+<div class="subtitle">03 Sep 2026 · 5 reviews</div>
 <div class="stats">
-  <div class="stat">🟢 2 Bullish</div>
-  <div class="stat">🟡 3 Neutral</div>
-  <div class="stat">🔴 2 Bearish</div>
-  <div class="stat">📅 02 Sep 2026</div>
+  <div class="stat">🟢 <strong>2</strong> Bullish</div>
+  <div class="stat">🟡 <strong>3</strong> Neutral</div>
+  <div class="stat">🔴 <strong>0</strong> Bearish</div>
 </div>
-<div class="review neutral" data-t="WHL">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Woolworths Holdings <span class="r-ticker">(WHL)</span></div>
-  <div class="r-title">Audited Group Results for the 52 weeks ended 28 June 2026 and Cash Dividend Declaration</div>
-  
-  <div class="r-summary">Woolworths delivered a solid FY but the second half tells a worrying story. Full-year turnover R82.8bn (+4.2%), HEPS 282.3c (+5.3%), dividend 199c (+5.9%), cash conversion surged to 104.5%. But H2 growth slowed to 3.3% with a brutal Q4. Australian ops are in a net cash position. The 9.7m share buyback at R51.33 avg was well-timed.</div>
-  <div class="r-body"><p>Woolworths' full-year numbers look respectable \u2014 turnover +4.2%, HEPS +5.3%, dividend +5.9%, and cash conversion surging from 82.5% to 104.5%. The Food business continues to be the star, delivering above-market growth of 5.7% with strong online momentum. The balance sheet is manageable with net debt of R5.9bn and a net debt/EBITDA ratio of 1.44x. The share buyback of 9.7m shares at R51.33 was a smart deployment of capital while the stock was weak.\n\nBut the momentum is going the wrong way. H2 growth slowed to 3.3%, the fourth quarter was particularly weak, and the outlook commentary is cautious. FBH (Fashion, Beauty, Home) is under real pressure as consumers trade down. Country Road Group returned to profitability \u2014 that's good \u2014 but growth was modest. At PE 16.4x and P/B 3.75 with an RSI of 28 (oversold), the market has already priced in a lot of bad news. The 52-week decline of 18.6% reflects the reality that SA retail is tough. Management's focus on cost control and working capital is the right playbook for this environment. Rating: NEUTRAL. Quality business but the consumer is under pressure and the earnings trajectory is flattening. Wait for a clearer entry signal.</p></div>
-  <div class="r-metrics"><span>PE: 16.40</span> · <span>P/B: 3.75</span> · <span>ROE: 22.2%</span> · <span>R41.99</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/woolworths-holdings-limited-audited-group-results-for-the-52-weeks-ended-28-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="THA">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
-  <div class="r-title">Income Investor Meetings and Contemplated Senior Secured Bond Issue</div>
-  <div class="r-prev">← Previous: BULLISH on 24 Aug</div>
-  <div class="r-summary">Tharisa is hitting the bond market for USD300m via a 5-year senior secured note to fund the Karo Platinum Mine in Zimbabwe. DNB Carnegie and HSBC are joint bookrunners. This is real progress on Karo \u2014 moving from equity-funded development to debt capital markets financing. But it adds leverage at a time when PGM prices remain under pressure.</div>
-  <div class="r-body"><p>Tharisa's move to raise USD300m in the bond market is a significant step in the Karo Platinum story. The Zimbabwe project is a tier-one PGM asset on the Great Dyke that could transform Tharisa from a mid-tier chrome/PGM producer into a major platinum player. Using debt capital markets rather than dilutive equity is the right approach \u2014 preserve shareholder value while accessing the capital needed for mine development. The engagement of DNB Carnegie and HSBC as joint bookrunners signals institutional confidence in the credit.\n\nBut the timing isn't ideal. PGM prices are under pressure, and adding USD300m in secured debt to a company with a market cap of ~R4.5bn changes the risk profile materially. The Tharisa mine in South Africa remains the cash engine (low-cost, multi-generational) and should comfortably service existing obligations. The question is whether Karo generates returns that justify the leverage. At current PGM basket prices, the economics are tight. The investor meetings starting today will be the real test \u2014 if the bond prices well, it's a strong signal. If it struggles, the market will reassess Karo's viability. Rating: NEUTRAL. The ambition is right but execution risk is real. Watch the bond pricing for the market's verdict on Karo.</p></div>
-  <div class="r-metrics"><span>PE: 4.04</span> · <span>P/B: 0.53</span> · <span>ROE: 14.5%</span> · <span>R27.00</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-income-investor-meetings-and-contemplated-senior-secured-bond-issue/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="TFG">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">The Foschini Group <span class="r-ticker">(TFG)</span></div>
-  <div class="r-title">Trading update for the 21 weeks ended 22 August 2026</div>
-  
-  <div class="r-summary">TFG is treading water. Group sales flat at +0.2% (+2.0% constant currency). TFG Africa doing the work (+3.4%), TFG London resilient (+2.3% GBP), TFG Australia drowning (-4.7% AUD). Online sales surged 15.3% to 15.9% of total. But 85 stores closed, another ~280 projected. The store rationalisation is necessary but painful. Cautious outlook.</div>
-  <div class="r-body"><p>TFG's trading update paints a picture of a retailer fighting on multiple fronts. TFG Africa delivered 3.4% sales growth with clothing (+3.7%), homeware (+3.7%), and beauty (+12.5%) all performing. Bash is the standout \u2014 online sales up 54.1%, now 10.5% of Africa sales. Gross margins are holding. Credit sales contracted 2.5% which is actually healthy \u2014 TFG is being disciplined about who it lends to, and acceptance rates are marginally up.\n\nThe problem children are structural. TFG Australia is in a world of pain \u2014 sales down 4.7% in AUD with the Tarocash repositioning adding to the misery. 85 stores have been closed already and management is projecting another ~280 closures over three years. That's a confession that the store footprint was too big. The net effect: 60 net store closures so far. TFG London is holding up (+2.3% GBP) but the UK is brutally promotional. Net debt is expected to be broadly stable but this is a business in restructuring mode, not growth mode. At PE 12.45x and P/B 0.64, the stock is pricing in the pain. The 52-week decline of 52% says the market already knows. Rating: NEUTRAL. The Africa business remains a cash generator and Bash is exciting. But until Australia stabilises and the store closure programme runs its course, TFG is a show-me story.</p></div>
-  <div class="r-metrics"><span>PE: 12.45</span> · <span>P/B: 0.64</span> · <span>ROE: 5.2%</span> · <span>R50.87</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/the-foschini-group-limited-trading-update-for-the-21-weeks-ended-22-august-2026/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bearish" data-t="SSW">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Sibanye-Stillwater <span class="r-ticker">(SSW)</span></div>
-  <div class="r-title">Sibanye-Stillwater receives strike notice for sections of its US PGM operations</div>
-  <div class="r-prev">← Previous: BULLISH on 01 Sep</div>
-  <div class="r-summary">The United Steelworkers union served strike notice at Sibanye's Stillwater East mine and Columbus facility \u2014 strike starts today (3 Sep). These operations produced 76,334 oz in H1 2026 (~55% of US PGM output). CEO Richard Stewart's language is unprecedented: \"if that plan cannot be implemented\u2026 there may ultimately be no viable basis for the continued operation.\" This is existential.</div>
-  <div class="r-body"><p>This is the most confrontational SENS Sibanye-Stillwater has ever issued. The US PGM operations are already burning cash \u2014 a negative notional free cash flow margin in H1 2026 with 137,930 oz produced. Now 55% of that production (Stillwater East at ~446 oz/day) is going on strike. The core disagreement is about a productivity transformation programme that Sibanye says is essential to long-term viability, including mechanisation and modernised work practices that the union doesn't want. The CEO's statement that \"there may ultimately be no viable basis for continued operation\" without these changes is a shot across the bow. He's not bluffing. These mines are marginal at current PGM prices and cannot sustain current cost structures.\n\nThe timing is terrible. PGM prices remain under pressure, the South African operations are carrying the group, and the US assets were supposed to be the diversification story. Four months of negotiations have failed to produce an agreement. The East Boulder mine is covered by a separate CBA and continues to operate, but a prolonged strike at Stillwater East could force Sibanye to confront the question of whether the US operations have a future at all. The balance sheet can absorb short-term pain but not indefinite losses. Rating: BEARISH. This isn't routine labour negotiation \u2014 it's a fight over the operating model of an entire business unit. Until there's a resolution, the US PGM assets are a liability, not an asset.</p></div>
-  <div class="r-metrics"><span>PE: 9.38</span> · <span>P/B: 2.44</span> · <span>ROE: 34.7%</span> · <span>R51.08</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-sibanye-stillwater-receives-strike-notice-for-sections-of-its-us-pgm-operations/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="MTH">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Motus Holdings <span class="r-ticker">(MTH)</span></div>
-  <div class="r-title">Summarised consolidated results and cash dividend declaration for the year ended 30 June 2026</div>
-  
-  <div class="r-summary">Motus delivered a cracking set of FY results. Revenue R113.6bn (+1%, +3% adjusted ex-MTV disposal), HEPS 1,777c (+15%), dividend 710c (+29%), profit before tax R4.0bn (+20%). Net debt/EBITDA improved to 1.3x from 1.5x, ROE hit 15%, ROIC 12.6% exceeding WACC by 3%. The automotive giant is firing on all cylinders and returning cash to shareholders.</div>
-  <div class="r-body"><p>Motus just printed one of its best sets of results in years. Revenue of R113.6 billion may have only grown 1% at face value, but strip out the MTV disposal from the prior year and adjusted revenue was up 3%. The real story is in the profit line \u2014 operating profit rose 4% to R5.7bn, net finance costs dropped 19% to R1.5bn, and profit before tax jumped 20% to R4.0bn. That's operating leverage in a business that was already efficient. HEPS of 1,777cps (+15%) and a dividend of 710cps (+29%) tell you management is confident about the trajectory.\n\nThe balance sheet is in excellent shape. Net debt to EBITDA fell to 1.3x (from 1.5x), well within the 3x covenant limit. ROE of 15% and ROIC of 12.6% \u2014 exceeding WACC by a full 3 percentage points \u2014 proves this is a genuine value creator. The equity-to-net-debt structure of 69:31 (from 66:34) shows de-leveraging in action. At a trailing PE of 6.09x and P/B of 0.92, the market is pricing Motus like a cyclical at peak earnings. But with 20,000 employees across four segments and a diversified OEM partner base, this is a far more resilient business than it gets credit for. Rating: BULLISH. When a company delivers this kind of earnings quality and trades at 6x, you buy it.</p></div>
-  <div class="r-metrics"><span>PE: 6.09</span> · <span>P/B: 0.92</span> · <span>ROE: 14.8%</span> · <span>R105.89</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/motus-holdings-limited-summarised-consolidated-results-and-cash-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bearish" data-t="CSB">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Cashbuild <span class="r-ticker">(CSB)</span></div>
-  <div class="r-title">Annual results and dividend declaration for the year ended 28 June 2026</div>
-  <div class="r-prev">← Previous: BEARISH on 19 Aug</div>
-  <div class="r-summary">Cashbuild's numbers are heading the wrong direction. Revenue R12.1bn (+6%) but HEPS fell 9% to 959.9c, EPS crashed 25% to 786c on a R34.9m Malawi disposal loss. Operating profit down 15%. Final dividend slashed 22% to 233c. 11 stores closed, only 9 opened. Post-period trading flat. The building materials cycle has turned hostile.</div>
-  <div class="r-body"><p>Cashbuild is feeling the full weight of SA's construction slowdown. Revenue growth of 6% looks okay until you dig deeper \u2014 pre-existing stores (297 of them) grew just 2%, with the remaining 4% coming from 20 new stores. Selling price inflation of just 1.5% means there's no pricing power. Gross margin improved from 24.8% to 25.3% which is the one bright spot, but operating expenses grew 9% (or 7% ex-Malawi), eating all the gains. Operating profit fell 15% to R292m. That's margin destruction in slow motion.\n\nThe dividend tells the real story. A 22% cut in the final dividend to 233c, bringing the full-year to 626c \u2014 flat year-on-year only because the interim was raised. More stores were closed (11) than opened (9), and the post-period update says trading is at similar levels to last year. With a PE of 13.86x on declining earnings and ROE of just 9.3%, the valuation isn't cheap enough to compensate for the deteriorating fundamentals. The R2.0bn cash pile is the only comfort. Rating: BEARISH. Cashbuild is a well-managed retailer caught in a building cycle that isn't turning up anytime soon. The dividend cut is probably not the last.</p></div>
-  <div class="r-metrics"><span>PE: 13.86</span> · <span>P/B: 1.22</span> · <span>ROE: 9.3%</span> · <span>R108.64</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/cashbuild-limited-annual-results-and-dividend-declaration-for-the-year-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="APN">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
-  <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
-  <div class="r-title">Reviewed Condensed Group Financial Results for the year ended 30 June 2026 and Cash Dividend Declaration</div>
-  <div class="r-prev">← Previous: NEUTRAL on 21 Aug</div>
-  <div class="r-summary">Aspen transformed its balance sheet and delivered strong operational momentum. Normalised HEPS 801.5c (+28% CER), normalised EBITDA R7.7bn (+14% CER), dividend 232c (+10%). APAC disposal at R28bn, net cash position of R0.8bn. Commercial Pharma revenue +5%, Manufacturing EBITDA R828m (+21%). R2.0bn share buyback completed. Semaglutide approved in Canada.</div>
-  <div class="r-body"><p>Aspen's FY2026 results are the strongest strategic statement the company has made in years. The APAC divestment at R28bn turned the balance sheet from leveraged to net cash of R0.8bn, even after R500m in share buybacks. The R2.0bn general repurchase at an average R148.17 (announced separately) adds another 3% share reduction, bringing the total buyback to R2.5bn. That's disciplined capital allocation from a management team that now has options. Normalised HEPS of 801.5cps grew 28% in constant currency, driven by Commercial Pharmaceuticals (+13% EBITDA on +5% revenue) and Manufacturing (+21% EBITDA to R828m). The sterile FDF facilities are nearing the end of their restructuring and are positioned to be the primary EBITDA growth drivers in FY2027.\n\nThe reported numbers are messy \u2014 R2.3bn in restructuring costs and another R2.3bn in intangible impairments hit the bottom line, resulting in a reported loss per share. Ignore the noise. The operational business is generating R7.7bn in normalised EBITDA with a cash conversion rate well above 100%. Free cash flow of R3.8bn before dividends is the real metric. The Health Canada approval for generic semaglutide opens a massive market, and the human insulin manufacturing contract that commenced in May adds another revenue stream. At a forward PE of 12.1x on a P/B of 0.79, the stock doesn't reflect the quality of this turnaround. Rating: BULLISH. Aspen has done the hard work. The market is still focused on the impairments. Focus on the cash flow instead.</p></div>
-  <div class="r-metrics"><span>P/B: 0.79</span> · <span>ROE: -2.2%</span> · <span>R145.00</span></div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-reviewed-condensed-group-financial-results-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
-  </div>
+
+    <div class="review neutral" data-t="SNT">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 19 May · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 26 Aug</div>
+      
+      <div class="r-company">Santam <span class="r-ticker">(SNT)</span></div>
+      <div class="r-title">Unaudited Condensed Consolidated Interim Financial Statements for the six months ended 30 June 2026 and Declaration of Ordinary Dividend</div>
+      <div class="r-summary">Santam held an 8.1% underwriting margin — squarely in the 5-10% target — despite absorbing R1.5bn in weather catastrophe claims vs just R144m a year ago. Net income rose 7% to R2.19bn, GWP grew 10%, and the interim dividend increased 10.2% to 650c, marking 35 consecutive years of payouts.</div>
+      <div class="r-review">This was a solid defensive performance in a hostile environment. When weather claims jump tenfold — R1.5bn vs R144m — most insurers would be underwater. Santam wasn't. The 8.1% underwriting margin, while down from 11.3% at FY2025, stayed within the 5-10% target band. That's what disciplined underwriting looks like.
+
+The concern is trajectory. The claims ratio deteriorated to 51.3% from 49.6%, and with diesel inflation at 50.8% and petrol at 31.7%, motor claims severity is only going one way. The GWP growth of 10% matches prior year but the quality of earnings is thinning — the underwriting result rose just 12% on a much bigger premium base. The share dropped 2.6% on the day — the market is pricing in H2 margin pressure. At a PE of 11x with ROE of 33%, it's not expensive, but the catalyst for re-rating needs a calmer weather year. Rating: NEUTRAL.</div>
+      <div class="r-metrics"><span>PE: 10.99</span> · <span>P/B: 2.66</span> · <span>ROE: 33.1%</span> · <span>R404.06</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/santam-limited-unaudited-condensed-consolidated-interim-financial-statements-for-the-six-months-ended-30-june-2026-and-declaration-of-ordinary-dividend/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="IMP">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 12 Aug</div>
+      
+      <div class="r-company">Impala Platinum <span class="r-ticker">(IMP)</span></div>
+      <div class="r-title">Audited Consolidated Annual Results for the financial year ended 30 June 2026 and Cash Dividend Declaration</div>
+      <div class="r-summary">Implats delivered a monster year: revenue up 58% to R135.1bn, EBITDA quadrupled to R43.6bn, and HEPS surged 31-fold to 2,548c. Total dividends of 1,855c returned 82% of adjusted free cash flow to shareholders. Net cash position of R22bn with R37bn liquidity headroom.</div>
+      <div class="r-review">When the PGM cycle turns, it turns hard — and Implats has never looked stronger. Revenue of R135.1bn generated a staggering R43.6bn in EBITDA, translating to HEPS of 2,548c. That's a 31x increase year-on-year. The balance sheet is fortress-grade: R22bn adjusted net cash, zero net debt, R37bn in liquidity headroom.
+
+The dividend is the story: 1,855c total for the year — 490c base plus 955c additional — returning 82% of adjusted free cash flow. Production increased, excess inventory was drawn down, and costs remained disciplined. The share jumped 9% on results day. At a trailing PE of 7.1x and PB of 1.84x, it still looks undemanding if PGM prices hold. The risk, as always, is the cycle turning against you — but right now Implats is printing cash at a rate that makes the valuation hard to ignore. Rating: BULLISH.</div>
+      <div class="r-metrics"><span>PE: 7.14</span> · <span>P/B: 1.84</span> · <span>ROE: 29.2%</span> · <span>R245.61</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/impala-platinum-holdings-limited-audited-consolidated-annual-results-for-the-financial-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="FFB">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Fortress REIT <span class="r-ticker">(FFB)</span></div>
+      <div class="r-title">Consolidated audited financial results for the year ended 30 June 2026 and prospects</div>
+      <div class="r-summary">Fortress posted distributable earnings of R2,234m with like-for-like net property income growth of 6.8%. The 2H dividend of 90.91c per share brings the full year payout to 178.80c. The share jumped 5.3% on results day as the market cheered the steady operational delivery.</div>
+      <div class="r-review">Fortress delivered a clean, straightforward set of results. Like-for-like NPI growth of 6.8% is solid for a SA-focused REIT in this economy — it tells you the portfolio is well-located and well-managed. Distributable earnings of R2,234m supported the full-year dividend of 178.80c, with the 2H payout of 90.91c up from 1H's 87.89c — a positive trajectory.
+
+The balance sheet is the mixed bag. Shares outstanding ballooned 70% year-on-year following the accelerated bookbuild, which dilutes per-share metrics. Debt/equity of 0.78x and interest cover of 2.1x are manageable but not conservative. At a PE of 6.0x and PB of 0.87x, you're not paying for growth — you're paying for the yield. The 5.3% share price jump reflects relief that operationally, Fortress is doing what it said it would. A decent income play, but don't expect capital fireworks. Rating: NEUTRAL.</div>
+      <div class="r-metrics"><span>PE: 6.02</span> · <span>P/B: 0.87</span> · <span>ROE: 15.7%</span> · <span>R25.00</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/fortress-real-estate-investments-limited-consolidated-audited-financial-results-for-the-year-ended-30-june-2026-and-prospects/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="DSY">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 27 Feb · <span class="r-badge-sm neutral">NEUTRAL</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 26 Aug</div>
+      
+      <div class="r-company">Discovery <span class="r-ticker">(DSY)</span></div>
+      <div class="r-title">Annual Results for the year ended 30 June 2026 and Cash Dividend Declaration</div>
+      <div class="r-summary">Discovery smashed through the $1bn normalised operating profit barrier for the first time, posting R17.75bn (+17%) with exceptional 85% cash conversion. Headline earnings surged 34% to R12.9bn. The Bank is finally contributing meaningfully — up 600% to R370m — and every SA business grew operating profit.</div>
+      <div class="r-review">This is the set of results Discovery bulls have been waiting for. Normalised operating profit crossed the R17.75bn mark — that's $1bn for the first time — and the quality of earnings is improving. Cash conversion hit 85%, well above the 60-70% target, funding R3bn in debt repayment while still investing for growth. Normalised HEPS grew 21% and ROE ticked up to 16.5% from 15.4%.
+
+Segmentally, Discovery Bank is the star: profit exploded 600% to R370m and it's now a genuine contributor rather than a cost centre. Health grew 9% to R4.6bn, Life added 6% to R5.9bn, and Vitality jumped 21% to R3.9bn. The share fell 1.6% on the day — likely FX headwinds on the UK Vitality contribution and some profit-taking after a strong run. But on fundamentals, this is a quality compounder executing well. Final dividend of 273c. Rating: BULLISH.</div>
+      <div class="r-metrics"><span>PE: 13.49</span> · <span>P/B: 2.11</span> · <span>ROE: 17.8%</span> · <span>R259.70</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/discovery-limited-annual-results-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review neutral" data-t="BYI">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Bytes Technology Group <span class="r-ticker">(BYI)</span></div>
+      <div class="r-title">Chair transition</div>
+      <div class="r-summary">Patrick De Smedt retired as Chair of Bytes Technology Group on 4 September 2026, succeeded by Gavin Rochussen. This is an orderly, well-telegraphed transition — the market has known since July that Rochussen was the chair-designate. No surprises here.</div>
+      <div class="r-review">This is governance housekeeping, not a strategy shift. De Smedt has been chair since Bytes' 2020 IPO and the transition to Rochussen was flagged back in July with a clear timeline. Rochussen brings serious credentials — former CEO of Coronation Fund Managers and currently chairs multiple boards.
+
+The bigger picture for Bytes is the underlying business: FY2026 revenue grew just 1.6% in GBP terms and earnings dipped 6.5% as Microsoft incentive changes and internal sales realignment weighed. At a PE of 19.4x, the rating is generous for a business with low single-digit growth. The chair change doesn't alter the investment thesis — this remains a quality IT reseller with sticky government and corporate relationships, but the growth engine needs a spark. Rating: NEUTRAL.</div>
+      <div class="r-metrics"><span>PE: 19.36</span> · <span>R89.94</span></div>
+      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/bytes-technology-group-plc-chair-transition/" target="_blank">SENS announcement →</a></div>
+    </div>
 </div>
-<footer>
-  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
-  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
-</footer>
+<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
 </body>
 </html>
