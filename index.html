@@ -3,188 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ticker Talk — Today's Reviews</title>
+<title>Today's Reviews — Ticker Talk</title>
 <style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
-nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
-nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
-nav a:hover, nav a.active { opacity: 1; }
-nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
-.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
-h1 { font-size: 24px; margin-bottom: 8px; }
-.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
-.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
-.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
-.stat strong { display: block; font-size: 20px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
 
-/* Review card */
-.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-.review.bullish { border-left-color: #2e7d32; }
-.review.bearish { border-left-color: #c62828; }
-.review.neutral { border-left-color: #e65100; }
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge.bearish { background: #ffebee; color: #c62828; }
-.r-badge.neutral { background: #fff3e0; color: #e65100; }
-.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
-.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
-.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
-.r-num.first { background: #e8f5e9; color: #2e7d32; }
-.r-num.follow { background: #fff3e0; color: #e65100; }
-.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
-.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
-.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
-.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
-.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
-.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
-.r-metrics span { color: #222222; font-weight: 600; }
-.r-link { margin-top: 10px; font-size: 13px; }
-.r-link a { color: #2e7d32; text-decoration: none; }
-.r-link a:hover { text-decoration: underline; }
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
 
-/* Archive filter */
-.filter-bar { margin-bottom: 20px; }
-.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
-.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
-.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
 
-/* Ratings table */
-.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
-.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
-.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
-.ratings-table tr:hover { background: #fafaf8; }
-.perf-pos { color: #2e7d32; font-weight: 700; }
-.perf-neg { color: #c62828; font-weight: 700; }
-.perf-new { color: #aaa; }
-.perf-neutral { color: #e65100; font-weight: 700; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
 
-/* Agreements section */
-.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
-.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
-.disagree-item { border-left-color: #c62828; }
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
 
-/* Methodology */
-.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
-.method-box strong { color: #222; }
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
 
-footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
-footer a { color: #666; }
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
 </style>
+
 </head>
 <body>
 <nav>
-  <span class="brand">📋 Ticker Talk</span>
-  <a href="index.html" class="active">Today</a>
-  <a href="archive.html" >Archive</a>
-  <a href="trading.html" >🤖 Trading</a>
-  <a href="ratings.html" >Ratings</a>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
+  <a href="/trading.html">Trading</a>
 </nav>
-<div class="container">
 <h1>Today's Reviews</h1>
-<div class="subtitle">03 Sep 2026 · 5 reviews</div>
+
 <div class="stats">
-  <div class="stat">🟢 <strong>2</strong> Bullish</div>
-  <div class="stat">🟡 <strong>3</strong> Neutral</div>
-  <div class="stat">🔴 <strong>0</strong> Bearish</div>
+  <div class="stat">🟢 1 Bullish</div>
+  <div class="stat">🟡 3 Neutral</div>
+  <div class="stat">🔴 0 Bearish</div>
+  <div class="stat">📅 04 Sep 2026</div>
 </div>
-
-    <div class="review neutral" data-t="SNT">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num follow">Review #2</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 19 May · <span class="r-badge-sm bullish">BULLISH</span></div>
-      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 26 Aug</div>
-      
-      <div class="r-company">Santam <span class="r-ticker">(SNT)</span></div>
-      <div class="r-title">Unaudited Condensed Consolidated Interim Financial Statements for the six months ended 30 June 2026 and Declaration of Ordinary Dividend</div>
-      <div class="r-summary">Santam held an 8.1% underwriting margin — squarely in the 5-10% target — despite absorbing R1.5bn in weather catastrophe claims vs just R144m a year ago. Net income rose 7% to R2.19bn, GWP grew 10%, and the interim dividend increased 10.2% to 650c, marking 35 consecutive years of payouts.</div>
-      <div class="r-review">This was a solid defensive performance in a hostile environment. When weather claims jump tenfold — R1.5bn vs R144m — most insurers would be underwater. Santam wasn't. The 8.1% underwriting margin, while down from 11.3% at FY2025, stayed within the 5-10% target band. That's what disciplined underwriting looks like.
-
-The concern is trajectory. The claims ratio deteriorated to 51.3% from 49.6%, and with diesel inflation at 50.8% and petrol at 31.7%, motor claims severity is only going one way. The GWP growth of 10% matches prior year but the quality of earnings is thinning — the underwriting result rose just 12% on a much bigger premium base. The share dropped 2.6% on the day — the market is pricing in H2 margin pressure. At a PE of 11x with ROE of 33%, it's not expensive, but the catalyst for re-rating needs a calmer weather year. Rating: NEUTRAL.</div>
-      <div class="r-metrics"><span>PE: 10.99</span> · <span>P/B: 2.66</span> · <span>ROE: 33.1%</span> · <span>R404.06</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/santam-limited-unaudited-condensed-consolidated-interim-financial-statements-for-the-six-months-ended-30-june-2026-and-declaration-of-ordinary-dividend/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="IMP">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num follow">Review #2</span>
-      </div>
-      
-      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 12 Aug</div>
-      
-      <div class="r-company">Impala Platinum <span class="r-ticker">(IMP)</span></div>
-      <div class="r-title">Audited Consolidated Annual Results for the financial year ended 30 June 2026 and Cash Dividend Declaration</div>
-      <div class="r-summary">Implats delivered a monster year: revenue up 58% to R135.1bn, EBITDA quadrupled to R43.6bn, and HEPS surged 31-fold to 2,548c. Total dividends of 1,855c returned 82% of adjusted free cash flow to shareholders. Net cash position of R22bn with R37bn liquidity headroom.</div>
-      <div class="r-review">When the PGM cycle turns, it turns hard — and Implats has never looked stronger. Revenue of R135.1bn generated a staggering R43.6bn in EBITDA, translating to HEPS of 2,548c. That's a 31x increase year-on-year. The balance sheet is fortress-grade: R22bn adjusted net cash, zero net debt, R37bn in liquidity headroom.
-
-The dividend is the story: 1,855c total for the year — 490c base plus 955c additional — returning 82% of adjusted free cash flow. Production increased, excess inventory was drawn down, and costs remained disciplined. The share jumped 9% on results day. At a trailing PE of 7.1x and PB of 1.84x, it still looks undemanding if PGM prices hold. The risk, as always, is the cycle turning against you — but right now Implats is printing cash at a rate that makes the valuation hard to ignore. Rating: BULLISH.</div>
-      <div class="r-metrics"><span>PE: 7.14</span> · <span>P/B: 1.84</span> · <span>ROE: 29.2%</span> · <span>R245.61</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/impala-platinum-holdings-limited-audited-consolidated-annual-results-for-the-financial-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review neutral" data-t="FFB">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Fortress REIT <span class="r-ticker">(FFB)</span></div>
-      <div class="r-title">Consolidated audited financial results for the year ended 30 June 2026 and prospects</div>
-      <div class="r-summary">Fortress posted distributable earnings of R2,234m with like-for-like net property income growth of 6.8%. The 2H dividend of 90.91c per share brings the full year payout to 178.80c. The share jumped 5.3% on results day as the market cheered the steady operational delivery.</div>
-      <div class="r-review">Fortress delivered a clean, straightforward set of results. Like-for-like NPI growth of 6.8% is solid for a SA-focused REIT in this economy — it tells you the portfolio is well-located and well-managed. Distributable earnings of R2,234m supported the full-year dividend of 178.80c, with the 2H payout of 90.91c up from 1H's 87.89c — a positive trajectory.
-
-The balance sheet is the mixed bag. Shares outstanding ballooned 70% year-on-year following the accelerated bookbuild, which dilutes per-share metrics. Debt/equity of 0.78x and interest cover of 2.1x are manageable but not conservative. At a PE of 6.0x and PB of 0.87x, you're not paying for growth — you're paying for the yield. The 5.3% share price jump reflects relief that operationally, Fortress is doing what it said it would. A decent income play, but don't expect capital fireworks. Rating: NEUTRAL.</div>
-      <div class="r-metrics"><span>PE: 6.02</span> · <span>P/B: 0.87</span> · <span>ROE: 15.7%</span> · <span>R25.00</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/fortress-real-estate-investments-limited-consolidated-audited-financial-results-for-the-year-ended-30-june-2026-and-prospects/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="DSY">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num follow">Review #2</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 27 Feb · <span class="r-badge-sm neutral">NEUTRAL</span></div>
-      <div class="r-prev">← Previous: <span class="r-badge-sm bullish">BULLISH</span> on 26 Aug</div>
-      
-      <div class="r-company">Discovery <span class="r-ticker">(DSY)</span></div>
-      <div class="r-title">Annual Results for the year ended 30 June 2026 and Cash Dividend Declaration</div>
-      <div class="r-summary">Discovery smashed through the $1bn normalised operating profit barrier for the first time, posting R17.75bn (+17%) with exceptional 85% cash conversion. Headline earnings surged 34% to R12.9bn. The Bank is finally contributing meaningfully — up 600% to R370m — and every SA business grew operating profit.</div>
-      <div class="r-review">This is the set of results Discovery bulls have been waiting for. Normalised operating profit crossed the R17.75bn mark — that's $1bn for the first time — and the quality of earnings is improving. Cash conversion hit 85%, well above the 60-70% target, funding R3bn in debt repayment while still investing for growth. Normalised HEPS grew 21% and ROE ticked up to 16.5% from 15.4%.
-
-Segmentally, Discovery Bank is the star: profit exploded 600% to R370m and it's now a genuine contributor rather than a cost centre. Health grew 9% to R4.6bn, Life added 6% to R5.9bn, and Vitality jumped 21% to R3.9bn. The share fell 1.6% on the day — likely FX headwinds on the UK Vitality contribution and some profit-taking after a strong run. But on fundamentals, this is a quality compounder executing well. Final dividend of 273c. Rating: BULLISH.</div>
-      <div class="r-metrics"><span>PE: 13.49</span> · <span>P/B: 2.11</span> · <span>ROE: 17.8%</span> · <span>R259.70</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/discovery-limited-annual-results-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review neutral" data-t="BYI">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Bytes Technology Group <span class="r-ticker">(BYI)</span></div>
-      <div class="r-title">Chair transition</div>
-      <div class="r-summary">Patrick De Smedt retired as Chair of Bytes Technology Group on 4 September 2026, succeeded by Gavin Rochussen. This is an orderly, well-telegraphed transition — the market has known since July that Rochussen was the chair-designate. No surprises here.</div>
-      <div class="r-review">This is governance housekeeping, not a strategy shift. De Smedt has been chair since Bytes' 2020 IPO and the transition to Rochussen was flagged back in July with a clear timeline. Rochussen brings serious credentials — former CEO of Coronation Fund Managers and currently chairs multiple boards.
-
-The bigger picture for Bytes is the underlying business: FY2026 revenue grew just 1.6% in GBP terms and earnings dipped 6.5% as Microsoft incentive changes and internal sales realignment weighed. At a PE of 19.4x, the rating is generous for a business with low single-digit growth. The chair change doesn't alter the investment thesis — this remains a quality IT reseller with sticky government and corporate relationships, but the growth engine needs a spark. Rating: NEUTRAL.</div>
-      <div class="r-metrics"><span>PE: 19.36</span> · <span>R89.94</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/bytes-technology-group-plc-chair-transition/" target="_blank">SENS announcement →</a></div>
-    </div>
+<div class="review neutral" data-t="SAP">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Sappi <span class="r-ticker">(SAP)</span></div>
+  <div class="r-title">Changes to the board of directors</div>
+  <div class="r-prev">← Previous: BEARISH on 06 Aug</div>
+  <div class="r-summary">Sappi appointed Busisiwe Silwanyana CA(SA) as an independent non-executive director. She brings deep executive experience — former CEO of Bombela, various senior roles across construction, infrastructure, and financial services. A solid governance hire for a board navigating a tough cycle.</div>
+  <div class="r-body"><p>Sappi's board needed fresh eyes. The company is nursing nearly $2bn in net debt, a 6.9x leverage ratio, and a Q3 FY2026 that delivered just $53m in adjusted EBITDA — a 34% collapse. Silwanyana arrives with infrastructure and operational experience that's directly relevant to Sappi's manufacturing-heavy footprint. Her CA(SA) credential and CEO-level experience at Bombela add financial rigour.</p>
+<p>But a board appointment doesn't fix the demand cycle for dissolving wood pulp, the rand/dollar equation that crushed SA division earnings, or the graphic paper structural decline. Sappi's recovery thesis — DWP prices rising, Somerset PM2 ramping, graphic papers JV unlocking value — is intact but the timeline keeps slipping. As we noted in our Q3 review, this is a stock to watch, not to buy. Rating: NEUTRAL. Good governance hire. The real story is still DWP pricing and the balance sheet.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/sappi-limited-changes-to-the-board-of-directors-8/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="EXX">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Exxaro Resources <span class="r-ticker">(EXX)</span></div>
+  <div class="r-title">VOLUNTARY ANNOUNCEMENT: Exxaro Exercises Its Pre-emptive Right and Agrees to Disposal of Entire Interest in Moranbah South Project</div>
+  <div class="r-prev">← Previous: NEUTRAL on 20 Aug</div>
+  <div class="r-summary">Exxaro flipped Moranbah South for $105m (R1.68bn) — exercising its pre-emptive right over Anglo American's 50% stake, then selling 100% to Stanmore Resources. This is strategic housekeeping from CEO Ben Magara: exit the only offshore asset, crystallise value, and focus on SA coal, renewables, manganese (Tshipi), and copper exploration.</div>
+  <div class="r-body"><p>This is the kind of transaction that separates disciplined capital allocators from empire builders. Moranbah South was Exxaro's only non-SA asset — a Queensland met-coal JV with a 30-year mine life but zero strategic fit with the group's three-pronged focus on SA coal, renewables, and future-facing metals. Magara could have let Anglo's sale to Dhilmar play out passively. Instead, he exercised the pre-emptive right, consolidated 100% ownership, and immediately flipped it to Stanmore — a Brisbane neighbour who sees genuine synergies with its Eagle Downs mine.</p>
+<p>The $105m price tag isn't transformative for a company Exxaro's size, but the signal is: management is ruthlessly simplifying the portfolio. Proceeds will likely flow into the manganese expansion (Mokala acquisition) or copper exploration in the Copperbelt, where Magara has teams 'kicking tyres' in Zambia. This is how you build a focused resources company — narrowing the aperture, concentrating capital where there's genuine competitive advantage. Rating: BULLISH. Small transaction, big signal. Exxaro is being run like owners, not managers.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/exxaro-resources-limited-voluntary-announcement-exxaro-exercises-its-pre-emptive-right-and-agrees-to-the-subsequent-disposal-of-its-entire-interest-in-moranbah-south-project/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="BEL">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Bell Equipment <span class="r-ticker">(BEL)</span></div>
+  <div class="r-title">Unaudited Condensed Consolidated Interim Financial Statements for H1 ended 30 June 2026 and Dividend Declaration</div>
+  <div class="r-prev">← Previous: BEARISH on 31 Aug</div>
+  <div class="r-summary">Bell Equipment's H1 was a downshift. Revenue fell 12.4% to R5.35bn from R6.1bn as mining capex and construction activity softened. Net profit slumped to just R67m, delivering 60-75c EPS. But the dividend was maintained — a signal management doesn't think this is a structural decline.</div>
+  <div class="r-body"><p>Bell Equipment is South Africa's proxy for mining and construction capital expenditure, and right now, both sectors are tapping the brakes. Revenue dropped R757m year-on-year — that's not a rounding error, it's a market telling you that heavy equipment buyers are cautious. The R67m net profit looks anaemic on a R5.3bn revenue base, implying a net margin of barely 1.3%. The 60-75c EPS range puts the stock on a chunky PE for a cyclical at this point in the cycle.</p>
+<p>But Bell didn't cut the dividend. That matters. Management clearly believes the pipeline is just delayed, not dead. The mining sector's long-term fundamentals — ageing fleets, deeper mines, growing African demand — haven't changed. Bell's competitive position (articulated dump trucks, strong dealer network) is intact. The question is timing: when a cyclical is showing revenue declines and margin compression, wait for the inflection, don't try to catch the falling knife. Rating: NEUTRAL. The cycle will turn, but it hasn't yet. Watch the H2 order book commentary.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/bell-equipment-limited-unaudited-condensed-consolidated-interim-financial-statements-for-the-six-months-ended-30-june-2026-and-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="ARI">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">African Rainbow Minerals <span class="r-ticker">(ARI)</span></div>
+  <div class="r-title">Condensed Reviewed Results for FY ended 30 June 2026 and Final Cash Dividend Declaration</div>
+  
+  <div class="r-summary">ARM's FY2026 is a tale of three divisions. Platinum EBITDA exploded 200%+ on higher PGM basket prices, but Ferrous earnings collapsed 42% and Coal swung to a R428m loss. Headline earnings rose 19% to R3.2bn overall — but that masks extreme volatility underneath. The R10.2bn net cash pile and R7/share final dividend are the safety net.</div>
+  <div class="r-body"><p>ARM's results expose the blessing and curse of diversification. The PGM division — Two Rivers, Modikwa — printed cash as palladium and rhodium prices firmed, with headline earnings up over 200%. Harmony's dividend doubled to R512m, a welcome tailwind from Motsepe's gold bet. But Ferrous was ugly: Khumani iron ore earnings hammered by a 7% stronger rand, Beeshoek closure costing R407m in retrenchments and rehabilitation, and manganese crushed by falling alloy prices. Coal lost R428m as prices softened and the rand bit.</p>
+<p>The net result is a 19% HE rise that feels lucky rather than earned. Segmental divergence of this magnitude is a red flag — you can't bank on PGM prices staying elevated forever. The R10.2bn net cash position and R7 dividend provide a floor, but with Ferrous and Coal both bleeding, the earnings base is narrower than it looks. Patrice Motsepe flagged the Surge Copper option — that's the long-term growth story, but a feasibility study only arrives in 2028. Rating: NEUTRAL. Great balance sheet, cyclical uncertainty. Don't chase; wait for a commodity downdraft to buy the dip.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.moneyweb.co.za/mny_sens/african-rainbow-minerals-limited-condensed-reviewed-results-for-the-financial-year-ended-30-june-2026-and-final-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
+  </div>
 </div>
-<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
 </body>
 </html>
