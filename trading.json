@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-09-10",
-    "days": 27,
+    "end": "2026-09-11",
+    "days": 28,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01"
@@ -15,11 +15,11 @@
       "news_sensitivity": "high",
       "total_in": 50000.0,
       "final_cash": 1316.05,
-      "final_holdings_value": 46746.03,
-      "final_portfolio": 48062.08,
-      "return_pct": -3.9,
+      "final_holdings_value": 45716.41,
+      "final_portfolio": 47032.46,
+      "return_pct": -5.9,
       "realized": -1187.44,
-      "unrealized": 8.7,
+      "unrealized": -1021.87,
       "total_costs": 773.28,
       "total_dividends": 15.05,
       "num_trades": 34,
@@ -136,11 +136,11 @@
         ],
         [
           "2026-09-10",
-          48063.01
+          47862.71
         ],
         [
           "2026-09-11",
-          48062.08
+          47032.46
         ]
       ],
       "holdings": {
@@ -148,35 +148,35 @@
           "shares": 68.07,
           "cost": 55.06,
           "buy_date": "2026-08-27",
-          "current_price": 55.25,
+          "current_price": 54.11,
           "sector": "telecoms"
         },
         "NED": {
           "shares": 13.64,
           "cost": 294.51,
           "buy_date": "2026-08-31",
-          "current_price": 294.75,
+          "current_price": 295.97,
           "sector": "financial"
         },
         "HLM": {
           "shares": 5153.7,
           "cost": 2.35,
           "buy_date": "2026-09-01",
-          "current_price": 2.42,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "MTA": {
           "shares": 893.17,
           "cost": 4.95,
           "buy_date": "2026-09-01",
-          "current_price": 4.95,
+          "current_price": 4.9,
           "sector": "industrial"
         },
         "LSK": {
           "shares": 84.51,
           "cost": 78.25,
           "buy_date": "2026-09-02",
-          "current_price": 75.97,
+          "current_price": 77.0,
           "sector": "tech"
         },
         "OAO": {
@@ -190,21 +190,21 @@
           "shares": 6.86,
           "cost": 154.24,
           "buy_date": "2026-09-04",
-          "current_price": 154.0,
+          "current_price": 154.07,
           "sector": "financial"
         },
         "SBP": {
           "shares": 37.62,
           "cost": 154.0,
           "buy_date": "2026-09-04",
-          "current_price": 149.0,
+          "current_price": 145.0,
           "sector": "financial"
         },
         "QLT": {
           "shares": 108.95,
           "cost": 40.28,
           "buy_date": "2026-09-08",
-          "current_price": 40.41,
+          "current_price": 40.54,
           "sector": "financial"
         },
         "SSS": {
@@ -217,12 +217,12 @@
       },
       "sector_composition": {
         "telecoms": 7.8,
-        "financial": 31.4,
-        "industrial": 35.1,
-        "tech": 13.4,
-        "energy": 5.5,
-        "property": 4.0,
-        "cash": 2.7
+        "financial": 31.8,
+        "industrial": 34.0,
+        "tech": 13.8,
+        "energy": 5.6,
+        "property": 4.1,
+        "cash": 2.8
       },
       "all_trades": [
         {
@@ -601,15 +601,15 @@
       "name": "Weekly Trader",
       "news_sensitivity": "medium",
       "total_in": 50000.0,
-      "final_cash": 2562.89,
-      "final_holdings_value": 45998.3,
-      "final_portfolio": 48561.19,
-      "return_pct": -2.9,
-      "realized": -259.68,
-      "unrealized": -883.36,
-      "total_costs": 295.15,
+      "final_cash": 613.15,
+      "final_holdings_value": 47169.01,
+      "final_portfolio": 47782.16,
+      "return_pct": -4.4,
+      "realized": -573.84,
+      "unrealized": -1280.39,
+      "total_costs": 363.6,
       "total_dividends": 0,
-      "num_trades": 9,
+      "num_trades": 12,
       "risk": "AGGRESSIVE",
       "news": [
         "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
@@ -721,21 +721,14 @@
         ],
         [
           "2026-09-10",
-          48561.8
+          48497.3
         ],
         [
           "2026-09-11",
-          48561.19
+          47782.16
         ]
       ],
       "holdings": {
-        "SSS": {
-          "shares": 378.51,
-          "cost": 16.43,
-          "buy_date": "2026-08-07",
-          "current_price": 15.6,
-          "sector": "property"
-        },
         "PMV": {
           "shares": 2105.48,
           "cost": 2.95,
@@ -747,14 +740,14 @@
           "shares": 46.26,
           "cost": 54.28,
           "buy_date": "2026-08-07",
-          "current_price": 55.25,
+          "current_price": 54.11,
           "sector": "telecoms"
         },
         "LSK": {
           "shares": 42.51,
           "cost": 79.0,
           "buy_date": "2026-08-14",
-          "current_price": 75.97,
+          "current_price": 77.0,
           "sector": "tech"
         },
         "OAO": {
@@ -768,25 +761,38 @@
           "shares": 40.69,
           "cost": 298.81,
           "buy_date": "2026-09-04",
-          "current_price": 294.75,
+          "current_price": 295.97,
           "sector": "financial"
         },
         "HLM": {
           "shares": 4422.84,
           "cost": 2.44,
           "buy_date": "2026-09-04",
-          "current_price": 2.42,
+          "current_price": 2.25,
           "sector": "industrial"
+        },
+        "MTA": {
+          "shares": 468.39,
+          "cost": 4.9,
+          "buy_date": "2026-09-11",
+          "current_price": 4.9,
+          "sector": "industrial"
+        },
+        "JSE": {
+          "shares": 35.64,
+          "cost": 154.07,
+          "buy_date": "2026-09-11",
+          "current_price": 154.07,
+          "sector": "financial"
         }
       },
       "sector_composition": {
-        "property": 12.2,
-        "industrial": 34.4,
-        "telecoms": 5.3,
-        "tech": 6.7,
-        "energy": 11.6,
-        "financial": 24.7,
-        "cash": 5.3
+        "industrial": 38.1,
+        "telecoms": 5.2,
+        "tech": 6.9,
+        "energy": 11.8,
+        "financial": 36.7,
+        "cash": 1.3
       },
       "all_trades": [
         {
@@ -869,6 +875,33 @@
           "price": 2.44,
           "gain": 0,
           "reason": "TT BULLISH, AGGRESSIVE market"
+        },
+        {
+          "date": "2026-09-11",
+          "ticker": "MTA",
+          "action": "BUY",
+          "shares": 468.39301964338375,
+          "price": 4.9,
+          "gain": 0,
+          "reason": "Bought MTA after BULLISH upgrade \u2014 turnaround confirmed with EPS swing from 93c loss to 72c profit, AutoZone growing ahead of market, and Ghost Mail also BULLISH on Metair's recovery."
+        },
+        {
+          "date": "2026-09-11",
+          "ticker": "SSS",
+          "action": "SELL",
+          "shares": 378.5091584075969,
+          "price": 15.6,
+          "gain": -314.1626014783051,
+          "reason": "Rotated out of SSS into JSE \u2014 Stor-Age's Xtraspace acquisition was a solid BULLISH call but JSE offers better near-term upside with 18.8% HEPS growth and an R2.6bn cash pile."
+        },
+        {
+          "date": "2026-09-11",
+          "ticker": "JSE",
+          "action": "BUY",
+          "shares": 35.639013885242655,
+          "price": 154.07,
+          "gain": 0,
+          "reason": "Bought JSE as a rotation target \u2014 the exchange operator's H1 HEPS growth of 18.8%, record volumes, and rate-cut tailwind make it the stronger conviction BULLISH play over a property REIT."
         }
       ],
       "decisions": [
@@ -914,6 +947,16 @@
             "\ud83d\udfe2 BUY NED @ R298.81 \u2014 BULLISH, AGGRESSIVE",
             "\ud83d\udfe2 BUY HLM @ R2.44 \u2014 BULLISH, AGGRESSIVE"
           ]
+        },
+        {
+          "date": "2026-09-11",
+          "risk": "AGGRESSIVE",
+          "news": [],
+          "log": [
+            "\ud83d\udfe2 BUY MTA @ R4.90 \u2014 BULLISH, AGGRESSIVE",
+            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 JSE: better BULLISH option",
+            "\ud83d\udfe2 BUY JSE @ R154.07 \u2014 rotated in"
+          ]
         }
       ]
     },
@@ -922,11 +965,11 @@
       "news_sensitivity": "low",
       "total_in": 50000.0,
       "final_cash": 28750.0,
-      "final_holdings_value": 21710.39,
-      "final_portfolio": 50460.39,
-      "return_pct": 0.9,
+      "final_holdings_value": 21130.96,
+      "final_portfolio": 49880.96,
+      "return_pct": -0.2,
       "realized": 0,
-      "unrealized": 566.09,
+      "unrealized": -13.32,
       "total_costs": 105.72,
       "total_dividends": 0,
       "num_trades": 4,
@@ -1041,11 +1084,11 @@
         ],
         [
           "2026-09-10",
-          50460.36
+          50437.41
         ],
         [
           "2026-09-11",
-          50460.39
+          49880.96
         ]
       ],
       "holdings": {
@@ -1067,22 +1110,22 @@
           "shares": 3101.72,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 2.42,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "TKG": {
           "shares": 45.71,
           "cost": 54.93,
           "buy_date": "2026-08-19",
-          "current_price": 55.25,
+          "current_price": 54.11,
           "sector": "telecoms"
         }
       },
       "sector_composition": {
-        "property": 11.9,
-        "industrial": 26.2,
+        "property": 12.0,
+        "industrial": 25.4,
         "telecoms": 5.0,
-        "cash": 57.0
+        "cash": 57.6
       },
       "all_trades": [
         {
