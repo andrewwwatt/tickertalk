@@ -3,224 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ticker Talk — Today's Reviews</title>
+<title>Today's Reviews — Ticker Talk</title>
 <style>
+:root {
+  --bg: #f5f3ef;
+  --card-bg: #ffffff;
+  --border: #e0e0e0;
+  --text: #222222;
+  --muted: #666666;
+  --green: #2e7d32;
+  --red: #c62828;
+  --amber: #e65100;
+  --nav-bg: #1a1a2e;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
-nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
-nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
-nav a:hover, nav a.active { opacity: 1; }
-nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
-.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
-h1 { font-size: 24px; margin-bottom: 8px; }
-.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
-.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
-.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
-.stat strong { display: block; font-size: 20px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
+}
+nav {
+  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
+  background: var(--nav-bg); align-items: center;
+}
+nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
+nav a:hover { color: #cccccc; }
+nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
+h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
 
-/* Review card */
-.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-.review.bullish { border-left-color: #2e7d32; }
-.review.bearish { border-left-color: #c62828; }
-.review.neutral { border-left-color: #e65100; }
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge.bearish { background: #ffebee; color: #c62828; }
-.r-badge.neutral { background: #fff3e0; color: #e65100; }
-.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
-.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
-.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
-.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
-.r-num.first { background: #e8f5e9; color: #2e7d32; }
-.r-num.follow { background: #fff3e0; color: #e65100; }
-.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
-.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
-.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
-.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
-.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
-.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
-.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
-.r-metrics span { color: #222222; font-weight: 600; }
-.r-link { margin-top: 10px; font-size: 13px; }
-.r-link a { color: #2e7d32; text-decoration: none; }
-.r-link a:hover { text-decoration: underline; }
+.stats { 
+  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
+}
+.stat { 
+  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
+  border: 1px solid var(--border); font-weight: 600;
+}
 
-/* Archive filter */
-.filter-bar { margin-bottom: 20px; }
-.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
-.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
-.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+.review {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-left: 4px solid var(--border); border-radius: 8px;
+  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.review.bullish { border-left-color: var(--green); }
+.review.bearish { border-left-color: var(--red); }
+.review.neutral { border-left-color: var(--amber); }
 
-/* Ratings table */
-.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
-.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
-.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
-.ratings-table tr:hover { background: #fafaf8; }
-.perf-pos { color: #2e7d32; font-weight: 700; }
-.perf-neg { color: #c62828; font-weight: 700; }
-.perf-new { color: #aaa; }
-.perf-neutral { color: #e65100; font-weight: 700; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.r-company { font-size: 1.1em; font-weight: 700; }
+.r-ticker { color: var(--muted); font-size: 0.9em; }
 
-/* Agreements section */
-.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
-.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
-.disagree-item { border-left-color: #c62828; }
+.r-badge {
+  display: inline-block; padding: 2px 10px; border-radius: 4px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.r-badge.bullish { background: #e8f5e9; color: var(--green); }
+.r-badge.bearish { background: #ffebee; color: var(--red); }
+.r-badge.neutral { background: #fff3e0; color: var(--amber); }
 
-/* Methodology */
-.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
-.method-box strong { color: #222; }
+.r-num {
+  font-size: 12px; font-weight: 600;
+}
+.r-num.first { color: var(--green); }
+.r-num.follow { color: var(--amber); }
 
-footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
-footer a { color: #666; }
+.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
+.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
+.r-prev span { color: var(--text); }
+
+.r-summary {
+  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
+  background: #f5f3ef; border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+.r-body { font-size: 0.9em; white-space: pre-line; }
+.r-body p + p { margin-top: 10px; }
+
+.r-metrics {
+  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+  flex-wrap: wrap;
+}
+.r-metrics span { color: var(--text); }
+
+.r-links { margin-top: 10px; font-size: 0.8em; }
+.r-links a { color: var(--green); }
+
+.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
+
+.grand {
+  text-align: center; padding: 15px; margin: 20px 0;
+  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
+  font-size: 0.9em;
+}
+
+.filter-bar {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
+}
+.filter-bar select { 
+  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
+}
+.filter-bar label { font-size: 0.85em; color: var(--muted); }
+
+.date-header {
+  color: #1a1a2e; font-size: 1em; font-weight: 600;
+  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
+}
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
+.perf-pos { color: #2e7d32; }
+.perf-neg { color: #c62828; }
+.perf-new { color: var(--muted); }
+
+.agree-section, .disagree-section { margin-top: 25px; }
+.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
+.agree-section h3 { color: #2e7d32; }
+.disagree-section h3 { color: #c62828; }
+.agree-item, .disagree-item {
+  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
+}
+.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
+.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
+.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
+
+.methodology {
+  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
+  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
+}
+
+footer {
+  text-align: center; padding: 20px; margin-top: 40px;
+  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
+}
 </style>
+
 </head>
 <body>
 <nav>
-  <span class="brand">📋 Ticker Talk</span>
-  <a href="index.html" class="active">Today</a>
-  <a href="archive.html" >Archive</a>
-  <a href="trading.html" >🤖 Trading</a>
-  <a href="ratings.html" >Ratings</a>
+  <a href="/">Today</a>
+  <a href="/archive.html">Archive</a>
+  <a href="/ratings.html">Ratings</a>
+  <a href="/trading.html">Trading</a>
 </nav>
-<div class="container">
 <h1>Today's Reviews</h1>
-<div class="subtitle">11 Sep 2026 · 7 reviews</div>
+
 <div class="stats">
-  <div class="stat">🟢 <strong>4</strong> Bullish</div>
-  <div class="stat">🟡 <strong>3</strong> Neutral</div>
-  <div class="stat">🔴 <strong>0</strong> Bearish</div>
+  <div class="stat">🟢 3 Bullish</div>
+  <div class="stat">🟡 3 Neutral</div>
+  <div class="stat">🔴 0 Bearish</div>
+  <div class="stat">📅 14 Sep 2026</div>
 </div>
-
-    <div class="review bullish" data-t="THA">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num follow">Review #3</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 15 Jul · <span class="r-badge-sm bullish">BULLISH</span></div>
-      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 02 Sep</div>
-      
-      <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
-      <div class="r-title">Successful Pricing of US$300 million Senior Secured Nordic Bond</div>
-      <div class="r-summary">Successfully priced a US$300m 5-year Nordic bond via Arxo Finance to fund the Karo Platinum Project.</div>
-      <div class="r-review">Tharisa has priced a US$300m five-year senior secured Nordic bond through wholly-owned subsidiary Arxo Finance. The proceeds are earmarked for completing the Karo Platinum Project in Zimbabwe — a transformational growth asset. Securing this funding in a challenging rate environment is a testament to the project's quality and lender confidence in Tharisa's management.
-
-At R27.00, the stock eased 1.6% on the day — likely the dilution/maturity structure being digested. But this is an execution milestone. With Karo funded, Tharisa can shift from capital-raising mode to delivery mode. Ghost Mail has previously been BULLISH on Tharisa (July 2026), and this bond pricing removes the primary overhang. BULLISH, with execution risk reduced.</div>
-      <div class="r-metrics"><span>R27.00</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-successful-pricing-of-us-300-million-senior-secured-nordic-bond/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review neutral" data-t="SRI">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Supermarket Income REIT <span class="r-ticker">(SRI)</span></div>
-      <div class="r-title">Acquisition of six new assets</div>
-      <div class="r-summary">Acquired 6 UK grocery assets for £104m, completing £100m equity raise deployment.</div>
-      <div class="r-review">SRI continues its methodical UK grocery property acquisition strategy. The company acquired six grocery-related properties for £104m, deploying the proceeds from its July equity raise of £100m. The assets include a retail park, a Sainsbury's distribution centre, two supermarkets, and two food-anchored convenience assets. The total portfolio deployment reaches £222m, per Sasfin.
-
-This is steady-as-she-goes for SRI — exactly what you'd expect from a UK grocery REIT. The strategy is clear, the execution is clean, and the assets are defensive (grocery-anchored retail holds up well in any economy). At R17.73, the stock is down 1% on the day — markets treating this as routine execution rather than a catalyst. NEUTRAL. Good yield play, no fireworks.</div>
-      <div class="r-metrics"><span>R17.73</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/supermarket-income-reit-plc-acquisition-of-six-new-assets-2026-09-11/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="REM">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Remgro <span class="r-ticker">(REM)</span></div>
-      <div class="r-title">Trading statement for the year ended 30 June 2026</div>
-      <div class="r-summary">HEPS expected R19.30-R20.71 (+37-47% vs R14.09).</div>
-      <div class="r-review">Remgro's FY2026 trading statement is a cracker. HEPS is expected between R19.30 and R20.71 — that's 37% to 47% ahead of the R14.09 delivered last year. The CNBC Africa article on this says headline earnings for the six months to end-December jumped 38.8% to R5.175bn, and this full-year number suggests the momentum carried through H2. Remgro's diversified portfolio — FirstRand, Mediclinic, RCL Foods, Air Products — is firing on multiple cylinders.
-
-What I like: the holding company discount narrative keeps working in Remgro's favour. At R198.68, the stock trades at roughly 10x the midpoint of guided HEPS, which is cheap for a portfolio with this kind of earnings momentum. The market agreed — shares rose 3.1% on Friday. The only question is whether H2 accelerated or just held the interim pace. We'll find out when the full results drop.</div>
-      <div class="r-metrics"><span>R198.68</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/remgro-limited-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review neutral" data-t="PPR">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Putprop <span class="r-ticker">(PPR)</span></div>
-      <div class="r-title">Further Trading Statement and Summit Place Disposal Update</div>
-      <div class="r-summary">Further trading statement issued alongside disposal update for Summit Place portion. Share price reflects special distribution.</div>
-      <div class="r-review">Putprop released two announcements on Friday: a further trading statement and an update on the disposal of a specific portion of Summit Place. The share price pattern (R6.98 → R6.98 → R5.00 → R5.00 → R5.00) suggests a special dividend or capital distribution from the Summit Place disposal proceeds rather than operational deterioration. The trading statement will clarify the EPS/HEPS impact.
-
-Putprop is generally a high-yield property play, and the disposal of Summit Place for redevelopment unlocks value. The further trading statement likely updates the market on how the disposal affects the earnings trajectory. At R5.00, the stock markets need the clarity of the full statement. NEUTRAL for now — the disposal is value-accretive but the portfolio impact needs quantification.</div>
-      <div class="r-metrics"><span>R5.00</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/putprop-limited-further-trading-statement-2026-09-11/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="PAN">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num follow">Review #2</span>
-      </div>
-      <div class="r-ghost">Ghost Mail: 11 Sep · <span class="r-badge-sm bullish">BULLISH</span></div>
-      <div class="r-prev">← Previous: <span class="r-badge-sm bearish">BEARISH</span> on 10 Sep</div>
-      
-      <div class="r-company">Pan African Resources <span class="r-ticker">(PAN)</span></div>
-      <div class="r-title">Pan African Completes Definitive Feasibility Study on the Soweto Tailings Retreatment Project</div>
-      <div class="r-summary">DFS confirms nearly ZAR4bn Soweto Tailings project. Decision expected December 2026. Ghost Mail flags PAN HEPS +195-205%.</div>
-      <div class="r-review">Pan African keeps delivering. The DFS on the Soweto Tailings Retreatment project confirms a nearly R4bn investment pathway that could add meaningful production from the Mogale Tailings Retreatment complex. A final investment decision is expected in December. This builds on an already spectacular operational year — Ghost Mail recently highlighted that Pan African expects HEPS to jump 195-205%, driven by a 54.8% increase in the average USD gold price received and a 38.3% increase in gold sold.
-
-Ghost calls out the jaw-dropping 3-year total return of 831% and 5-year return of 1,011%. The Soweto DFS extends this growth runway. At R27.06, the stock has pulled back 2.4% on the day — possibly profit-taking after the gold price rally pause Ghost noted. But the fundamental story — operational leverage, rising production, and a clear growth project in the pipeline — is firmly BULLISH.</div>
-      <div class="r-metrics"><span>R27.06</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/pan-african-resources-funding-company-limited-pan-african-completes-definitive-feasibility-study-on-the-soweto-tailings-retreatment-project-delivering-a-robust-long-term-growth-pathway-for-the-mogale-tailings-retreatment-complex/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review bullish" data-t="OMN">
-      <div class="r-header">
-        <span class="r-badge bullish">BULLISH</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Omnia Holdings <span class="r-ticker">(OMN)</span></div>
-      <div class="r-title">Cautionary announcement</div>
-      <div class="r-summary">In discussions regarding a potential offer for all issued shares. Share price surged 14.6%.</div>
-      <div class="r-review">Omnia dropped a cautionary bomb on Friday: the company is in discussions regarding a potential offer for all its issued ordinary shares. The market didn't wait for details — the stock surged 14.6% to R117.67, making it the day's standout performer. This follows a strong operational year, with a prior trading update showing revenue up 6% to R24.2bn and operating profit jumping 28% to R2.17bn.
-
-The chemicals and agriculture group has been on an impressive earnings trajectory. A potential offer at a premium to the already-strong share price would be a massive vote of confidence in management's strategy. The cautionary means shareholders should sit tight — but the direction of travel is unmistakable. BULLISH.</div>
-      <div class="r-metrics"><span>R117.67</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/omnia-holdings-limited-cautionary-announcement-2026-09-11/" target="_blank">SENS announcement →</a></div>
-    </div>
-
-    <div class="review neutral" data-t="CAT">
-      <div class="r-header">
-        <span class="r-badge neutral">NEUTRAL</span>
-        <span class="r-num first">Review #1</span>
-      </div>
-      
-      
-      
-      <div class="r-company">Caxton and CTP Publishers and Printers <span class="r-ticker">(CAT)</span></div>
-      <div class="r-title">Reviewed Provisional Group Results and Dividend Declaration for the year ended 30 June 2026</div>
-      <div class="r-summary">Revenue -1.8% to R6.59bn. Dividend declared. AI copy editor pilot underway.</div>
-      <div class="r-review">Caxton's full-year numbers show a business navigating structural decline with pragmatism. Revenue slipped 1.8% to R6.59bn — the print and publishing headwinds are real and not going away. The silver lining: a dividend was declared (to be quantified in the full release), and management is actively investing in the future, piloting AI copy editors in newsrooms per TechCentral.
-
-This is a classic NEUTRAL: the cash generation is there, but the top-line trajectory is unmistakably downhill. At R11.56, the stock isn't pricing in much optimism. AI cost-saving initiatives could help protect margins, but they won't reverse the structural shift away from print advertising. One to watch for the dividend yield, not the growth story.</div>
-      <div class="r-metrics"><span>R11.56</span></div>
-      <div class="r-link"><a href="https://www.moneyweb.co.za/mny_sens/caxton-and-ctp-publishers-and-printers-limited-reviewed-provisional-group-results-and-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">SENS announcement →</a></div>
-    </div>
+<div class="review neutral" data-t="TMT">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Trematon Capital Investments Limited <span class="r-ticker">(TMT)</span></div>
+  <div class="r-title">Updated pro forma financial effects in respect of the Generation Education Disposal and revised salient dates</div>
+  
+  <div class="r-summary">Trematon Capital released an update on the disposal of Generation Education, including pro forma financial effects and revised salient dates. The investment holding company has been restructuring its portfolio, exiting education investments. Stock at R1.23 is thinly traded. No Ghost Mail coverage.</div>
+  <div class="r-body"><p>Trematon Capital — the JSE AltX-listed investment holding company — updated the market on the Generation Education disposal. This is a restructuring move: Trematon has been exiting its education portfolio to focus on core property and strategic investments. The pro forma financial effects will show the impact on NAV and earnings per share. Generation Education was a meaningful portfolio holding, so this disposal represents a significant capital event for a company of Trematon's size. The stock trades at R1.23 with very thin liquidity — typical for an AltX investment holding company. The key question is what management does with the disposal proceeds: return to shareholders (special dividend or buyback) or redeploy into new investments. Ghost Mail doesn't cover AltX stocks. For most investors, this is a pass — too small, too thin, too opaque. Rating: NEUTRAL — restructuring progress but illiquid and niche.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="OPA">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Optasia Limited <span class="r-ticker">(OPA)</span></div>
+  <div class="r-title">Reviewed Interim Results for the Six Months Ended 30 June 2026</div>
+  <div class="r-prev">← Previous: BULLISH on 25 Aug</div>
+  <div class="r-summary">Optasia released reviewed H1 FY2026 interim results. The fintech/data analytics group — formerly known as SkyPower Global — has been executing a turnaround. The stock has rallied from R13.90 to R14.70 over the past week. Interim results will reveal whether the mobile financial services and AI-driven credit scoring platform is gaining traction in emerging markets. Ghost Mail hasn't covered Optasia recently.</div>
+  <div class="r-body"><p>Optasia — the fintech group that provides AI-powered credit scoring and mobile financial services across Africa and Asia — reported H1 FY2026 interim results. The stock has been quietly rallying from R13.85 (10 Sep) to R14.70 (14 Sep), a 6.1% move in a few days. That suggests the numbers are likely decent. Optasia's core product is the AI-driven credit decisioning platform that enables mobile network operators to offer micro-loans to subscribers. The key metrics to watch: loan volumes, default rates, and expansion into new markets. The company has been building out its presence in Nigeria and East Africa, which are higher-growth but higher-risk markets. The share price at 1,470c still represents a modest valuation for a fintech with genuine AI IP. Ghost Mail hasn't covered Optasia, but the thematic (AI-enabled finance in underbanked markets) is one he'd appreciate. Rating: BULLISH — fintech turnaround with real AI assets and emerging market tailwinds.</p></div>
+  <div class="r-metrics"><span>R1470.00</span></div>
+  <div class="r-links">
+    <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="OMN">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Omnia Holdings Limited <span class="r-ticker">(OMN)</span></div>
+  <div class="r-title">Joint announcement of the firm intention of Solar SA Investments Proprietary Limited to make an offer to acquire all of Omnia's issued ordinary shares, subsequent delisting and withdrawal of cautionary</div>
+  <div class="r-prev">← Previous: BULLISH on 11 Sep</div>
+  <div class="r-summary">Solar SA Investments has declared a firm intention to acquire ALL Omnia shares, followed by a delisting. Ghost Mail covered the initial cautionary on Friday (OMN shot up 14.6% to R117.67) — now the firm offer is confirmed. Solar SA is a newly incorporated SPV, so the identity of the ultimate beneficial buyer will be a key reveal. At R124.64 per share, the market is pricing in deal completion. This is a full takeover at a significant premium.</div>
+  <div class="r-body"><p>This is the big one. Omnia Holdings — the diversified chemicals and fertilizer group — has been on watch since Friday's cautionary announcement, which Ghost Mail covered brilliantly ("Omnia to the moon"). That cautionary sent the stock rocketing 14.6% in a single session. Now Solar SA Investments has emerged with a firm intention to acquire 100% of Omnia's shares, followed by a delisting. The offer is made through Solar SA Investments, a special purpose vehicle — meaning the real buyer hasn't revealed itself yet. That's a critical detail. Is it a private equity play? A competitor? A global chemical group looking to enter Africa? The deal structure (full takeover + delisting) suggests a strategic buyer, not a financial one. Omnia has been navigating a tough agricultural chemicals cycle with margin pressure from global fertilizer price normalization. A buyer at this point is making a bold contrarian bet on the cycle turning. Ghost Mail warned that "discussions can fizzle out" — but this is now a firm intention, not a cautionary. The cautionary is withdrawn. Shareholders who bought on Friday's spike at R117 are sitting on a 6% paper gain at R124.64. The real question: what's the offer price? We'll know when the formal offer circular is published. Rating: BULLISH — but caveat emptor on the final price.</p></div>
+  <div class="r-metrics"><span>R12464.00</span></div>
+  <div class="r-links">
+    <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review bullish" data-t="JBL">
+  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Jubilee Metals Group PLC <span class="r-ticker">(JBL)</span></div>
+  <div class="r-title">FY2026 Production and Operational Update</div>
+  <div class="r-prev">← Previous: BULLISH on 26 Aug</div>
+  <div class="r-summary">Jubilee Metals released its FY2026 production and operational update. The Zambian-focused copper/platinum group processor has been ramping up production at its Sable refinery and Roan operations. Copper price tailwinds remain strong. Stock at 51c has drifted from 55c over the week, reflecting broader risk-off sentiment in small-cap miners rather than operational issues.</div>
+  <div class="r-body"><p>Jubilee Metals Group delivered its FY2026 production and operational update first thing Monday. The stock has slipped from 55c to 51c over the past week, but this looks like small-cap mining risk-off rather than company-specific bad news. Jubilee's model is unique on the JSE: it processes waste/waste-rock from historical copper and platinum mining operations, extracting value without the capital intensity of greenfield mining. The Sable refinery in Zambia and the Roan concentrator are the key assets. Copper prices remain supportive, and the group's focus on nickel and cobalt recovery adds optionality. The production update is expected to show steady progress at Sable and the ramp-up of the newly commissioned modules. Ghost did not cover Jubilee this week, but the copper thesis remains intact (he's been bullish on copper structurally). The stock's 3-year decline (>80%) reflects a history of missed targets, but the operational trajectory is improving. Rating: BULLISH — copper exposure at a distressed valuation with improving operations.</p></div>
+  <div class="r-metrics"><span>R51.00</span></div>
+  <div class="r-links">
+    <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="GCT">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Greencoat Renewables PLC <span class="r-ticker">(GCT)</span></div>
+  <div class="r-title">2026 Interim Results</div>
+  <div class="r-prev">← Previous: NEUTRAL on 01 Sep</div>
+  <div class="r-summary">Irish wind and solar fund Greencoat Renewables released H1 2026 interim results. The dual-listed (ISE/JSE) renewable energy infrastructure fund has been navigating lower wind resource and falling power prices in Ireland and Europe. Dividend yield remains the draw for JSE income investors. The JSE listing is small and thinly traded.</div>
+  <div class="r-body"><p>Greencoat Renewables — the Irish renewable energy infrastructure fund dual-listed on the JSE — released its 2026 interim results. For JSE income investors, this is a yield play: a diversified portfolio of wind and solar assets across Ireland, France, Germany, and Spain. The headwinds are well-known: lower wind speeds in H1, declining power prices as European energy normalizes post-crisis, and higher interest rates compressing infrastructure valuations. The fund's strategy of long-term fixed-price power purchase agreements partially mitigates merchant price exposure. No Ghost Mail coverage this week. The JSE tranche is very thin — this is really about the EUR-denominated dividend for SA investors looking for hard-currency income. The interim dividend declaration will be the key number. Rating: NEUTRAL — decent yield but power price risk and Irish trading hours make this a niche hold.</p></div>
+  
+  <div class="r-links">
+    <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
+  </div>
+</div><div class="review neutral" data-t="CHP">
+  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
+  <div class="r-company">Choppies Enterprises Limited <span class="r-ticker">(CHP)</span></div>
+  <div class="r-title">Trading Statement</div>
+  
+  <div class="r-summary">Botswana-based retailer Choppies issued a trading statement. The stock trades at a microscopic R0.89 after years of governance issues, a delisting scare, and restructuring. No specific numbers in the headline alone, but a trading statement from Choppies usually signals a material change in expected earnings. Given the thin liquidity and past trauma, approach with caution until the detailed statement drops.</div>
+  <div class="r-body"><p>Choppies Enterprises — the Botswana retail group that has been through the wringer — issued a trading statement on Monday afternoon (16:45 SAST). The stock trades at just R0.89, a shadow of its former self after the 2018 governance scandal, suspension, and subsequent restructuring. A trading statement from Choppies typically signals a >20% change in earnings expectations, but the direction matters enormously. The Botswana operations have been stable, while the South African stores struggled. Choppies has been shrinking its SA footprint and refocusing on Botswana and neighbouring markets. The headline says nothing about profit or loss direction. The market hasn't moved (price at 89c flat), which tells you nobody is front-running this. Investors who survived the meltdown deserve a win — but this stock has burned people before. Wait for the actual numbers. Rating: NEUTRAL — too much uncertainty, too little liquidity.</p></div>
+  <div class="r-metrics"><span>R89.00</span></div>
+  <div class="r-links">
+    <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
+  </div>
 </div>
-<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
+<footer>
+  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
+  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
+</footer>
 </body>
 </html>

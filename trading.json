@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-09-11",
-    "days": 28,
+    "end": "2026-09-14",
+    "days": 29,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01"
@@ -141,6 +141,10 @@
         [
           "2026-09-11",
           47032.46
+        ],
+        [
+          "2026-09-14",
+          47032.46
         ]
       ],
       "holdings": {
@@ -232,7 +236,7 @@
           "shares": 380.3611909869612,
           "price": 16.35,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought SSS at BULLISH rating \u2014 defensive property REIT with steady yield, AGGRESSIVE market stance."
         },
         {
           "date": "2026-08-03",
@@ -241,7 +245,7 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought PMV at BULLISH rating \u2014 small-cap value play with restructuring upside, AGGRESSIVE market stance."
         },
         {
           "date": "2026-08-03",
@@ -250,7 +254,7 @@
           "shares": 2819.747808690515,
           "price": 2.2,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought HLM at BULLISH rating \u2014 industrial turnaround story, AGGRESSIVE market stance."
         },
         {
           "date": "2026-08-03",
@@ -259,7 +263,7 @@
           "shares": 66.866225007218,
           "price": 56.15,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought TKG at BULLISH rating \u2014 Telkom restructuring and infrastructure value unlocked, AGGRESSIVE market stance."
         },
         {
           "date": "2026-08-04",
@@ -268,7 +272,7 @@
           "shares": 7.609033647654058,
           "price": 294.23,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought NED at BULLISH rating \u2014 strong ROE and capital returns from well-managed bank, AGGRESSIVE market stance."
         },
         {
           "date": "2026-08-07",
@@ -277,7 +281,7 @@
           "shares": 7.609033647654058,
           "price": 295.2,
           "gain": 7.380762638224496,
-          "reason": "Rotate out \u2014 LSK (BULLISH) is a better option"
+          "reason": "Sold NED to rotate into LSK \u2014 fintech growth story rated BULLISH with higher momentum potential."
         },
         {
           "date": "2026-08-07",
@@ -286,7 +290,7 @@
           "shares": 27.643895049116985,
           "price": 80.5,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought LSK via rotation \u2014 fintech platform rated BULLISH with strong growth trajectory."
         },
         {
           "date": "2026-08-13",
@@ -295,7 +299,7 @@
           "shares": 2819.747808690515,
           "price": 2.05,
           "gain": -422.96217130357854,
-          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
+          "reason": "Sold HLM to rotate into OAO \u2014 distressed energy play at BULLISH rating offered better risk/reward."
         },
         {
           "date": "2026-08-13",
@@ -304,7 +308,7 @@
           "shares": 23361.750185680066,
           "price": 0.23,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought OAO via rotation \u2014 energy turnaround rated BULLISH at deeply distressed valuation."
         },
         {
           "date": "2026-08-14",
@@ -313,7 +317,7 @@
           "shares": 380.3611909869612,
           "price": 16.21,
           "gain": -53.25056673817471,
-          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
+          "reason": "Sold SSS to rotate into JSE \u2014 exchange operator rated BULLISH on increased market activity."
         },
         {
           "date": "2026-08-14",
@@ -322,7 +326,7 @@
           "shares": 38.81077766748131,
           "price": 155.4,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought JSE via rotation \u2014 exchange benefiting from rising volumes, rated BULLISH."
         },
         {
           "date": "2026-08-17",
@@ -331,7 +335,7 @@
           "shares": 66.866225007218,
           "price": 54.7,
           "gain": -96.95602626046593,
-          "reason": "Rotate out \u2014 SPG (BULLISH) is a better option"
+          "reason": "Sold TKG to rotate into SPG \u2014 Super Group rated BULLISH on logistics recovery thesis."
         },
         {
           "date": "2026-08-17",
@@ -340,7 +344,7 @@
           "shares": 198.06098829938716,
           "price": 19.5,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought SPG via rotation \u2014 logistics and industrial group rated BULLISH on post-pandemic recovery."
         },
         {
           "date": "2026-08-18",
@@ -349,7 +353,7 @@
           "shares": 27.643895049116985,
           "price": 78.05,
           "gain": -67.72754287033649,
-          "reason": "Rotate out \u2014 SOL (BULLISH) is a better option"
+          "reason": "Sold LSK to rotate into SOL \u2014 Sasol rated BULLISH on improving chemical margins and turnaround."
         },
         {
           "date": "2026-08-18",
@@ -358,7 +362,7 @@
           "shares": 11.928403461927358,
           "price": 193.55,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought SOL via rotation \u2014 Sasol undervalued with improving fundamentals and strong chemical margins."
         },
         {
           "date": "2026-08-19",
@@ -367,7 +371,7 @@
           "shares": 23361.750185680066,
           "price": 0.2,
           "gain": -700.8525055704022,
-          "reason": "Cut loss -13%"
+          "reason": "Cut OAO at -13% stop-loss \u2014 distressed energy thesis failed to materialise."
         },
         {
           "date": "2026-08-19",
@@ -376,7 +380,7 @@
           "shares": 271.2436630738856,
           "price": 16.2,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought SSS at BULLISH rating \u2014 returned to defensive property REIT as safe harbor, AGGRESSIVE market stance."
         },
         {
           "date": "2026-08-24",
@@ -385,7 +389,7 @@
           "shares": 38.81077766748131,
           "price": 153.0,
           "gain": -93.14586640195557,
-          "reason": "Rotate out \u2014 HLM (BULLISH) is a better option"
+          "reason": "Sold JSE to rotate into HLM \u2014 industrial turnaround rated BULLISH offered better near-term upside."
         },
         {
           "date": "2026-08-24",
@@ -394,7 +398,7 @@
           "shares": 2781.787505307786,
           "price": 2.06,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought HLM via rotation \u2014 re-entered industrial turnaround at BULLISH rating after profit-taking at higher level."
         },
         {
           "date": "2026-08-27",
@@ -403,7 +407,7 @@
           "shares": 198.06098829938716,
           "price": 17.99,
           "gain": -299.0720923320746,
-          "reason": "Rotate out \u2014 TKG (BULLISH) is a better option"
+          "reason": "Sold SPG to rotate into TKG \u2014 Telkom restructuring thesis rated BULLISH with stronger momentum."
         },
         {
           "date": "2026-08-27",
@@ -412,7 +416,7 @@
           "shares": 68.07019933878505,
           "price": 55.06,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought TKG via rotation \u2014 Telkom infrastructure and restructuring story rated BULLISH."
         },
         {
           "date": "2026-08-31",
@@ -421,7 +425,7 @@
           "shares": 2781.787505307786,
           "price": 2.28,
           "gain": 611.9932511677125,
-          "reason": "Take profit +11%"
+          "reason": "Sold HLM at +11% take-profit \u2014 booked gains after industrial turnaround rally."
         },
         {
           "date": "2026-08-31",
@@ -430,7 +434,7 @@
           "shares": 13.641244078373916,
           "price": 294.51,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought NED at BULLISH rating \u2014 strong bank with ROE and capital return, CAUTIOUS market stance as Jackson Hole looms."
         },
         {
           "date": "2026-09-01",
@@ -439,7 +443,7 @@
           "shares": 5153.701478236762,
           "price": 2.35,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought HLM at BULLISH rating \u2014 re-entered industrial turnaround after take-profit exit, CAUTIOUS market."
         },
         {
           "date": "2026-09-01",
@@ -448,7 +452,7 @@
           "shares": 893.1652076526724,
           "price": 4.95,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought MTA at BULLISH rating \u2014 industrial growth story, CAUTIOUS market stance with fresh monthly cash."
         },
         {
           "date": "2026-09-02",
@@ -457,7 +461,7 @@
           "shares": 84.51049841143578,
           "price": 78.25,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought LSK at BULLISH rating \u2014 fintech growth platform at attractive valuation, CAUTIOUS market."
         },
         {
           "date": "2026-09-03",
@@ -466,7 +470,7 @@
           "shares": 13225.893001389697,
           "price": 0.2,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought OAO at BULLISH rating \u2014 re-entered distressed energy play at deeply depressed levels, CAUTIOUS market."
         },
         {
           "date": "2026-09-04",
@@ -475,7 +479,7 @@
           "shares": 6.8599030090195505,
           "price": 154.24,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought JSE at BULLISH rating \u2014 exchange benefiting from rising market activity and dividend, CAUTIOUS market."
         },
         {
           "date": "2026-09-04",
@@ -484,7 +488,7 @@
           "shares": 2105.4815307055246,
           "price": 2.75,
           "gain": -421.09630614110483,
-          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
+          "reason": "Sold PMV to rotate into SBP \u2014 SBP rated BULLISH with stronger financial sector dynamics."
         },
         {
           "date": "2026-09-04",
@@ -493,7 +497,7 @@
           "shares": 37.62375481644203,
           "price": 154.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought SBP via rotation \u2014 financial services company rated BULLISH, CAUTIOUS market."
         },
         {
           "date": "2026-09-08",
@@ -502,7 +506,7 @@
           "shares": 271.2436630738856,
           "price": 15.76,
           "gain": -119.34721175250888,
-          "reason": "Rotate out \u2014 QLT (BULLISH) is a better option"
+          "reason": "Sold SSS to rotate into QLT \u2014 Quilter rated BULLISH on asset management recovery thesis."
         },
         {
           "date": "2026-09-08",
@@ -511,7 +515,7 @@
           "shares": 108.94846447377975,
           "price": 40.28,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought QLT via rotation \u2014 Quilter rated BULLISH on improving AUM flows, CAUTIOUS market."
         },
         {
           "date": "2026-09-09",
@@ -520,7 +524,7 @@
           "shares": 11.928403461927358,
           "price": 232.75,
           "gain": 467.59341570755214,
-          "reason": "Take profit +20%"
+          "reason": "Sold SOL at +20% take-profit \u2014 booked gains after strong Sasol rerating, CAUTIOUS market stance."
         },
         {
           "date": "2026-09-09",
@@ -529,7 +533,7 @@
           "shares": 124.47367608904976,
           "price": 15.6,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought SSS at BULLISH rating \u2014 returned to defensive property REIT with SOL proceeds, CAUTIOUS market."
         }
       ],
       "decisions": [
@@ -726,6 +730,10 @@
         [
           "2026-09-11",
           47782.16
+        ],
+        [
+          "2026-09-14",
+          47782.16
         ]
       ],
       "holdings": {
@@ -802,7 +810,7 @@
           "shares": 378.5091584075969,
           "price": 16.43,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought SSS at first weekly trading day \u2014 defensive property REIT rated BULLISH, BALANCED market."
         },
         {
           "date": "2026-08-07",
@@ -811,7 +819,7 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought PMV at first weekly trading day \u2014 small-cap industrial value play rated BULLISH, BALANCED market."
         },
         {
           "date": "2026-08-07",
@@ -820,7 +828,7 @@
           "shares": 2885.323339125178,
           "price": 2.15,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought HLM at first weekly trading day \u2014 industrial turnaround story rated BULLISH, BALANCED market."
         },
         {
           "date": "2026-08-07",
@@ -829,7 +837,7 @@
           "shares": 46.25566395777318,
           "price": 54.28,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought TKG at first weekly trading day \u2014 Telkom restructuring value rated BULLISH, BALANCED market."
         },
         {
           "date": "2026-08-14",
@@ -838,7 +846,7 @@
           "shares": 42.50897411675798,
           "price": 79.0,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought LSK at weekly trading day \u2014 fintech growth platform rated BULLISH, AGGRESSIVE market after positive news flow."
         },
         {
           "date": "2026-08-21",
@@ -847,7 +855,7 @@
           "shares": 2885.323339125178,
           "price": 2.06,
           "gain": -259.67910052126535,
-          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
+          "reason": "Sold HLM to rotate into OAO \u2014 distressed energy play rated BULLISH offered contrarian upside."
         },
         {
           "date": "2026-08-21",
@@ -856,7 +864,7 @@
           "shares": 28159.91305166363,
           "price": 0.2,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Bought OAO via rotation \u2014 energy turnaround rated BULLISH at deep value levels."
         },
         {
           "date": "2026-09-04",
@@ -865,7 +873,7 @@
           "shares": 40.69317210518554,
           "price": 298.81,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought NED at weekly trading day \u2014 strong bank rated BULLISH with capital return upside, AGGRESSIVE market."
         },
         {
           "date": "2026-09-04",
@@ -874,7 +882,7 @@
           "shares": 4422.84065810464,
           "price": 2.44,
           "gain": 0,
-          "reason": "TT BULLISH, AGGRESSIVE market"
+          "reason": "Bought HLM at weekly trading day \u2014 re-entered industrial turnaround rated BULLISH, AGGRESSIVE market."
         },
         {
           "date": "2026-09-11",
@@ -883,7 +891,7 @@
           "shares": 468.39301964338375,
           "price": 4.9,
           "gain": 0,
-          "reason": "Bought MTA after BULLISH upgrade \u2014 turnaround confirmed with EPS swing from 93c loss to 72c profit, AutoZone growing ahead of market, and Ghost Mail also BULLISH on Metair's recovery."
+          "reason": "Bought MTA at weekly trading day \u2014 industrial growth company rated BULLISH, AGGRESSIVE market."
         },
         {
           "date": "2026-09-11",
@@ -892,7 +900,7 @@
           "shares": 378.5091584075969,
           "price": 15.6,
           "gain": -314.1626014783051,
-          "reason": "Rotated out of SSS into JSE \u2014 Stor-Age's Xtraspace acquisition was a solid BULLISH call but JSE offers better near-term upside with 18.8% HEPS growth and an R2.6bn cash pile."
+          "reason": "Sold SSS to rotate into JSE \u2014 exchange BULLISH rating offered better financial sector momentum than defensive property."
         },
         {
           "date": "2026-09-11",
@@ -901,7 +909,7 @@
           "shares": 35.639013885242655,
           "price": 154.07,
           "gain": 0,
-          "reason": "Bought JSE as a rotation target \u2014 the exchange operator's H1 HEPS growth of 18.8%, record volumes, and rate-cut tailwind make it the stronger conviction BULLISH play over a property REIT."
+          "reason": "Bought JSE via rotation \u2014 exchange operator rated BULLISH on increased trading volumes and activity."
         }
       ],
       "decisions": [
@@ -1089,6 +1097,10 @@
         [
           "2026-09-11",
           49880.96
+        ],
+        [
+          "2026-09-14",
+          49880.96
         ]
       ],
       "holdings": {
@@ -1135,7 +1147,7 @@
           "shares": 383.88305386647016,
           "price": 16.2,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought SSS at first monthly trading day \u2014 defensive property REIT with strong yield, BALANCED market."
         },
         {
           "date": "2026-08-19",
@@ -1144,7 +1156,7 @@
           "shares": 2003.6033921229991,
           "price": 3.1,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought PMV at first monthly trading day \u2014 industrial value play rated BULLISH, BALANCED market."
         },
         {
           "date": "2026-08-19",
@@ -1153,7 +1165,7 @@
           "shares": 3101.722589559566,
           "price": 2.0,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought HLM at first monthly trading day \u2014 industrial turnaround story rated BULLISH, BALANCED market."
         },
         {
           "date": "2026-08-19",
@@ -1162,7 +1174,7 @@
           "shares": 45.70830947802527,
           "price": 54.93,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought TKG at first monthly trading day \u2014 Telkom restructuring value rated BULLISH, BALANCED market."
         }
       ],
       "decisions": [
