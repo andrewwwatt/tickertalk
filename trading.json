@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-09-15",
-    "days": 30,
+    "end": "2026-09-17",
+    "days": 32,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01"
@@ -14,14 +14,14 @@
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 50000.0,
-      "final_cash": 2857.67,
-      "final_holdings_value": 43555.24,
-      "final_portfolio": 46412.91,
-      "return_pct": -7.2,
-      "realized": -1942.97,
-      "unrealized": -835.28,
-      "total_costs": 823.89,
-      "total_dividends": 15.05,
+      "final_cash": 1249.31,
+      "final_holdings_value": 46789.1,
+      "final_portfolio": 48038.41,
+      "return_pct": -3.9,
+      "realized": -289.54,
+      "unrealized": -871.01,
+      "total_costs": 815.59,
+      "total_dividends": 15.29,
       "num_trades": 36,
       "risk": "CAUTIOUS",
       "news": [
@@ -40,206 +40,219 @@
         ],
         [
           "2026-08-04",
-          24696.75
+          24814.45
         ],
         [
           "2026-08-05",
-          24479.26
+          24957.28
         ],
         [
           "2026-08-06",
-          24512.61
+          24703.45
         ],
         [
           "2026-08-07",
-          24626.29
+          24822.19
         ],
         [
           "2026-08-11",
-          24282.02
+          24423.29
         ],
         [
           "2026-08-12",
-          24205.63
+          24348.89
         ],
         [
           "2026-08-13",
-          24635.57
+          24810.46
         ],
         [
           "2026-08-14",
-          24528.57
+          24799.25
         ],
         [
           "2026-08-17",
-          24512.51
+          24954.64
         ],
         [
           "2026-08-18",
-          24239.0
+          24613.89
         ],
         [
           "2026-08-19",
-          23636.02
+          23988.57
         ],
         [
           "2026-08-20",
-          23454.02
+          24083.2
         ],
         [
           "2026-08-21",
-          23438.88
+          24180.7
         ],
         [
           "2026-08-24",
-          23262.22
+          24176.85
         ],
         [
           "2026-08-25",
-          23102.48
+          24280.73
         ],
         [
           "2026-08-26",
-          23074.75
+          24357.33
         ],
         [
           "2026-08-27",
-          23269.56
+          24611.12
         ],
         [
           "2026-08-31",
-          23689.47
+          24895.66
         ],
         [
           "2026-09-01",
-          48604.36
+          49813.81
         ],
         [
           "2026-09-02",
-          48818.07
+          49805.16
         ],
         [
           "2026-09-03",
-          49145.79
+          50076.65
         ],
         [
           "2026-09-04",
-          48111.39
+          49133.81
         ],
         [
           "2026-09-08",
-          47991.53
+          48860.83
         ],
         [
           "2026-09-09",
-          48063.01
+          48962.69
         ],
         [
           "2026-09-10",
-          47862.71
+          48870.99
         ],
         [
           "2026-09-11",
-          47032.46
+          47912.94
         ],
         [
           "2026-09-14",
-          47009.15
+          47913.66
         ],
         [
           "2026-09-15",
-          46412.91
+          47370.55
+        ],
+        [
+          "2026-09-16",
+          48048.49
+        ],
+        [
+          "2026-09-17",
+          48039.17
+        ],
+        [
+          "2026-09-18",
+          48038.41
         ]
       ],
       "holdings": {
-        "TKG": {
-          "shares": 68.07,
-          "cost": 55.06,
-          "buy_date": "2026-08-27",
-          "current_price": 54.62,
-          "sector": "telecoms"
+        "JSE": {
+          "shares": 35.61,
+          "cost": 151.25,
+          "buy_date": "2026-08-13",
+          "current_price": 153.71,
+          "sector": "financial"
         },
         "NED": {
-          "shares": 13.64,
+          "shares": 12.18,
           "cost": 294.51,
           "buy_date": "2026-08-31",
-          "current_price": 298.17,
+          "current_price": 295.85,
           "sector": "financial"
         },
         "HLM": {
-          "shares": 5153.7,
+          "shares": 5283.01,
           "cost": 2.35,
           "buy_date": "2026-09-01",
           "current_price": 2.24,
           "sector": "industrial"
         },
         "MTA": {
-          "shares": 893.17,
-          "cost": 4.95,
-          "buy_date": "2026-09-01",
-          "current_price": 4.9,
+          "shares": 1525.78,
+          "cost": 4.97,
+          "buy_date": "2026-09-02",
+          "current_price": 4.98,
           "sector": "industrial"
         },
-        "OAO": {
-          "shares": 13225.89,
-          "cost": 0.2,
+        "TKG": {
+          "shares": 53.14,
+          "cost": 57.08,
           "buy_date": "2026-09-03",
+          "current_price": 54.6,
+          "sector": "telecoms"
+        },
+        "OAO": {
+          "shares": 6066.52,
+          "cost": 0.2,
+          "buy_date": "2026-09-04",
           "current_price": 0.2,
           "sector": "energy"
         },
-        "JSE": {
-          "shares": 6.86,
-          "cost": 154.24,
-          "buy_date": "2026-09-04",
-          "current_price": 156.4,
-          "sector": "financial"
-        },
         "SBP": {
-          "shares": 37.62,
+          "shares": 38.23,
           "cost": 154.0,
           "buy_date": "2026-09-04",
           "current_price": 146.0,
           "sector": "financial"
         },
-        "QLT": {
-          "shares": 108.95,
-          "cost": 40.28,
-          "buy_date": "2026-09-08",
-          "current_price": 40.35,
-          "sector": "financial"
-        },
-        "SSS": {
-          "shares": 124.47,
-          "cost": 15.6,
-          "buy_date": "2026-09-09",
-          "current_price": 15.88,
-          "sector": "property"
-        },
         "PMV": {
-          "shares": 1480.97,
-          "cost": 2.88,
-          "buy_date": "2026-09-15",
+          "shares": 714.13,
+          "cost": 2.84,
+          "buy_date": "2026-09-10",
           "current_price": 2.88,
           "sector": "industrial"
+        },
+        "SSS": {
+          "shares": 295.98,
+          "cost": 15.75,
+          "buy_date": "2026-09-16",
+          "current_price": 15.75,
+          "sector": "property"
+        },
+        "LSK": {
+          "shares": 25.23,
+          "cost": 73.92,
+          "buy_date": "2026-09-17",
+          "current_price": 73.92,
+          "sector": "tech"
         }
       },
       "sector_composition": {
-        "telecoms": 8.0,
-        "financial": 32.4,
-        "industrial": 43.5,
-        "energy": 5.7,
-        "property": 4.3,
-        "cash": 6.2
+        "financial": 30.5,
+        "industrial": 44.7,
+        "telecoms": 6.0,
+        "energy": 2.5,
+        "property": 9.7,
+        "tech": 3.9,
+        "cash": 2.6
       },
       "all_trades": [
         {
           "date": "2026-08-03",
-          "ticker": "SSS",
+          "ticker": "HLM",
           "action": "BUY",
-          "shares": 380.3611909869612,
-          "price": 16.35,
+          "shares": 2826.7752148349164,
+          "price": 2.2,
           "gain": 0,
-          "reason": "Initial deployment on BULLISH/AGGRESSIVE \u2014 August results season starting; SA inflation cooling to 4.5% supports risk-on"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-03",
@@ -248,176 +261,140 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "Initial deployment on BULLISH/AGGRESSIVE \u2014 August results season starting; SA inflation cooling to 4.5% supports risk-on"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-03",
-          "ticker": "HLM",
+          "ticker": "SSS",
           "action": "BUY",
-          "shares": 2819.747808690515,
-          "price": 2.2,
+          "shares": 379.4156072855738,
+          "price": 16.35,
           "gain": 0,
-          "reason": "Initial deployment on BULLISH/AGGRESSIVE \u2014 August results season starting; SA inflation cooling to 4.5% supports risk-on"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-03",
-          "ticker": "TKG",
+          "ticker": "LSK",
           "action": "BUY",
-          "shares": 66.866225007218,
-          "price": 56.15,
+          "shares": 47.525804229813815,
+          "price": 79.0,
           "gain": 0,
-          "reason": "Initial deployment on BULLISH/AGGRESSIVE \u2014 August results season starting; SA inflation cooling to 4.5% supports risk-on"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-04",
           "ticker": "NED",
           "action": "BUY",
-          "shares": 7.609033647654058,
+          "shares": 7.609033647654059,
           "price": 294.23,
           "gain": 0,
-          "reason": "Bought NED on BULLISH \u2014 12% underlying growth, 7.9x PE; NCBA deal; SA banking momentum from results season"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-07",
           "ticker": "NED",
           "action": "SELL",
-          "shares": 7.609033647654058,
+          "shares": 7.609033647654059,
           "price": 295.2,
           "gain": 7.380762638224496,
-          "reason": "Rotated NED into LSK \u2014 fintech growth story more compelling at the margin for a high-sensitivity trader"
+          "reason": "Rotate out \u2014 TKG (BULLISH) is a better option"
         },
         {
           "date": "2026-08-07",
-          "ticker": "LSK",
+          "ticker": "TKG",
           "action": "BUY",
-          "shares": 27.643895049116985,
-          "price": 80.5,
+          "shares": 40.997301979622655,
+          "price": 54.28,
           "gain": 0,
-          "reason": "Rotated into LSK \u2014 BULLISH; Lesaka fintech African expansion; Ghost Mail flagged SA FinTech opportunity"
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-13",
           "ticker": "HLM",
           "action": "SELL",
-          "shares": 2819.747808690515,
+          "shares": 2826.7752148349164,
           "price": 2.05,
-          "gain": -422.96217130357854,
-          "reason": "Rotated HLM into OAO \u2014 Nigerian oil play; Ghost Mail flagged Africa energy sector opportunities"
-        },
-        {
-          "date": "2026-08-13",
-          "ticker": "OAO",
-          "action": "BUY",
-          "shares": 23361.750185680066,
-          "price": 0.23,
-          "gain": 0,
-          "reason": "Rotated into OAO \u2014 BULLISH; Oando production +16%, opex -18%; Nigerian upstream recovery thesis intact"
-        },
-        {
-          "date": "2026-08-14",
-          "ticker": "SSS",
-          "action": "SELL",
-          "shares": 380.3611909869612,
-          "price": 16.21,
-          "gain": -53.25056673817471,
+          "gain": -424.0162822252387,
           "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
         },
         {
-          "date": "2026-08-14",
+          "date": "2026-08-13",
           "ticker": "JSE",
           "action": "BUY",
-          "shares": 38.81077766748131,
-          "price": 155.4,
+          "shares": 35.61017584431355,
+          "price": 151.25,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
-          "date": "2026-08-17",
-          "ticker": "TKG",
+          "date": "2026-08-14",
+          "ticker": "SSS",
           "action": "SELL",
-          "shares": 66.866225007218,
-          "price": 54.7,
-          "gain": -96.95602626046593,
-          "reason": "Rotated TKG into SPG \u2014 Super Group industrial recovery story; telecoms lacked near-term catalyst"
+          "shares": 379.4156072855738,
+          "price": 16.21,
+          "gain": -53.118185019980956,
+          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
         },
         {
-          "date": "2026-08-17",
-          "ticker": "SPG",
+          "date": "2026-08-14",
+          "ticker": "OAO",
           "action": "BUY",
-          "shares": 198.06098829938716,
-          "price": 19.5,
+          "shares": 26168.785431145403,
+          "price": 0.23,
           "gain": 0,
-          "reason": "Rotated into SPG \u2014 BULLISH; Super Group revenue +6%, EBITDA +17%; Ghost Mail flagged logistics recovery"
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-18",
           "ticker": "LSK",
           "action": "SELL",
-          "shares": 27.643895049116985,
+          "shares": 47.525804229813815,
           "price": 78.05,
-          "gain": -67.72754287033649,
-          "reason": "Rotated LSK into SOL \u2014 Sasol turnaround story stronger; Ghost Mail flagged Secunda 5-year high production"
+          "gain": -45.149514018323316,
+          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-08-18",
-          "ticker": "SOL",
+          "ticker": "SBP",
           "action": "BUY",
-          "shares": 11.928403461927358,
-          "price": 193.55,
+          "shares": 28.21020775381994,
+          "price": 138.5,
           "gain": 0,
-          "reason": "Rotated into SOL \u2014 BULLISH; Secunda hitting 5-year highs; Ghost Mail raised concerns about India exports offsetting gains"
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-19",
           "ticker": "OAO",
           "action": "SELL",
-          "shares": 23361.750185680066,
+          "shares": 26168.785431145403,
           "price": 0.2,
-          "gain": -700.8525055704022,
-          "reason": "Cut loss -13% on OAO \u2014 Nigerian upstream exposed to forex risk; Ghost Mail flagged Africa oil volatility"
+          "gain": -785.0635629343615,
+          "reason": "Cut loss -13%"
         },
         {
           "date": "2026-08-19",
-          "ticker": "SSS",
-          "action": "BUY",
-          "shares": 271.2436630738856,
-          "price": 16.2,
-          "gain": 0,
-          "reason": "Bought SSS on BULLISH \u2014 SA property REIT at discount to NAV; defensive income play in cautious market"
-        },
-        {
-          "date": "2026-08-24",
-          "ticker": "JSE",
-          "action": "SELL",
-          "shares": 38.81077766748131,
-          "price": 153.0,
-          "gain": -93.14586640195557,
-          "reason": "Rotated JSE into HLM \u2014 HLM EBITDA doubled stronger catalyst; Misses the 1% P&L drag"
-        },
-        {
-          "date": "2026-08-24",
           "ticker": "HLM",
           "action": "BUY",
-          "shares": 2781.787505307786,
-          "price": 2.06,
+          "shares": 2527.111644276368,
+          "price": 2.0,
           "gain": 0,
-          "reason": "Rotated into HLM \u2014 BULLISH; H1 EBITDA doubled; can-ramp delivering; Ghost Mail flags industrial turnaround value"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
-          "date": "2026-08-27",
-          "ticker": "SPG",
-          "action": "SELL",
-          "shares": 198.06098829938716,
-          "price": 17.99,
-          "gain": -299.0720923320746,
-          "reason": "Rotated SPG into TKG \u2014 telecoms offer better value; Ghost Mail noted SA telco infrastructure investment cycle"
-        },
-        {
-          "date": "2026-08-27",
+          "date": "2026-08-24",
           "ticker": "TKG",
+          "action": "SELL",
+          "shares": 40.997301979622655,
+          "price": 54.23,
+          "gain": -2.049865098981172,
+          "reason": "Rotate out \u2014 SSS (BULLISH) is a better option"
+        },
+        {
+          "date": "2026-08-24",
+          "ticker": "SSS",
           "action": "BUY",
-          "shares": 68.07019933878505,
-          "price": 55.06,
+          "shares": 154.4389840629397,
+          "price": 16.1,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         },
@@ -425,62 +402,71 @@
           "date": "2026-08-31",
           "ticker": "HLM",
           "action": "SELL",
-          "shares": 2781.787505307786,
+          "shares": 2527.111644276368,
           "price": 2.28,
-          "gain": 611.9932511677125,
-          "reason": "Took profit +11% on HLM after H1 EBITDA doubled \u2014 Ghost Mail flagged restructuring-driven turnaround; re-entry at pullback"
+          "gain": 707.5912603973829,
+          "reason": "Take profit +14%"
         },
         {
           "date": "2026-08-31",
           "ticker": "NED",
           "action": "BUY",
-          "shares": 13.641244078373916,
+          "shares": 12.18449066619608,
           "price": 294.51,
           "gain": 0,
-          "reason": "Bought NED on BULLISH \u2014 12% underlying growth, 7.9x PE; NCBA Kenya deal closing; Ghost Mail flags SA banking momentum"
+          "reason": "TT BULLISH, CAUTIOUS market"
+        },
+        {
+          "date": "2026-09-01",
+          "ticker": "SBP",
+          "action": "SELL",
+          "shares": 28.21020775381994,
+          "price": 154.98,
+          "gain": 464.90422378295216,
+          "reason": "Take profit +12%"
         },
         {
           "date": "2026-09-01",
           "ticker": "HLM",
           "action": "BUY",
-          "shares": 5153.701478236762,
+          "shares": 5283.0102473064,
           "price": 2.35,
           "gain": 0,
-          "reason": "Bought HLM on BULLISH \u2014 EBITDA doubled year-on-year in H1; Ghost Mail previously flagged can-ramp restructuring paying off"
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-01",
-          "ticker": "MTA",
-          "action": "BUY",
-          "shares": 893.1652076526724,
-          "price": 4.95,
-          "gain": 0,
-          "reason": "Bought MTA on BULLISH \u2014 metals trading proxy; PGM cycle turning; Ghost Mail flagged SA resource sector momentum"
-        },
-        {
-          "date": "2026-09-02",
           "ticker": "LSK",
           "action": "BUY",
-          "shares": 84.51049841143578,
+          "shares": 83.61392958753865,
           "price": 78.25,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
-          "date": "2026-09-03",
-          "ticker": "OAO",
+          "date": "2026-09-02",
+          "ticker": "MTA",
           "action": "BUY",
-          "shares": 13225.893001389697,
-          "price": 0.2,
+          "shares": 1525.7838286836977,
+          "price": 4.97,
+          "gain": 0,
+          "reason": "TT BULLISH, CAUTIOUS market"
+        },
+        {
+          "date": "2026-09-03",
+          "ticker": "TKG",
+          "action": "BUY",
+          "shares": 53.1404739212192,
+          "price": 57.08,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-04",
-          "ticker": "JSE",
+          "ticker": "OAO",
           "action": "BUY",
-          "shares": 6.8599030090195505,
-          "price": 154.24,
+          "shares": 6066.516502846383,
+          "price": 0.2,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
@@ -491,50 +477,50 @@
           "shares": 2105.4815307055246,
           "price": 2.75,
           "gain": -421.09630614110483,
-          "reason": "Rotated PMV into SBP (BULLISH) \u2014 Ghost Mail flagged Sabvest NAV trading at 15-19% discount; 18-24% growth makes it a better value play than staffing"
+          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-09-04",
           "ticker": "SBP",
           "action": "BUY",
-          "shares": 37.62375481644203,
+          "shares": 38.22855427277229,
           "price": 154.0,
-          "gain": 0,
-          "reason": "Rotated into SBP \u2014 BULLISH rating; Ghost Mail-style NAV discount play at 15-19% with 18-24% growth"
-        },
-        {
-          "date": "2026-09-08",
-          "ticker": "SSS",
-          "action": "SELL",
-          "shares": 271.2436630738856,
-          "price": 15.76,
-          "gain": -119.34721175250888,
-          "reason": "Rotate out \u2014 QLT (BULLISH) is a better option"
-        },
-        {
-          "date": "2026-09-08",
-          "ticker": "QLT",
-          "action": "BUY",
-          "shares": 108.94846447377975,
-          "price": 40.28,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
-          "date": "2026-09-09",
-          "ticker": "SOL",
+          "date": "2026-09-08",
+          "ticker": "SSS",
           "action": "SELL",
-          "shares": 11.928403461927358,
-          "price": 232.75,
-          "gain": 467.59341570755214,
-          "reason": "Take profit +20%"
+          "shares": 154.4389840629397,
+          "price": 15.76,
+          "gain": -52.509254581399546,
+          "reason": "Rotate out \u2014 SOL (BULLISH) is a better option"
         },
         {
-          "date": "2026-09-09",
-          "ticker": "SSS",
+          "date": "2026-09-08",
+          "ticker": "SOL",
           "action": "BUY",
-          "shares": 124.47367608904976,
-          "price": 15.6,
+          "shares": 13.014374379183423,
+          "price": 211.88,
+          "gain": 0,
+          "reason": "Rotate in \u2014 better BULLISH option"
+        },
+        {
+          "date": "2026-09-10",
+          "ticker": "SOL",
+          "action": "SELL",
+          "shares": 13.014374379183423,
+          "price": 237.38,
+          "gain": 331.8665466691773,
+          "reason": "Take profit +12%"
+        },
+        {
+          "date": "2026-09-10",
+          "ticker": "PMV",
+          "action": "BUY",
+          "shares": 714.1299308546432,
+          "price": 2.84,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
@@ -542,45 +528,55 @@
           "date": "2026-09-15",
           "ticker": "LSK",
           "action": "SELL",
-          "shares": 84.51049841143578,
+          "shares": 83.61392958753865,
           "price": 69.31,
-          "gain": -755.5238557982357,
-          "reason": "Cut loss -11% on tech weakness \u2014 Ghost Mail flagged growth rotation out of value-call stocks; LSK had delivered FY guidance but momentum turned"
+          "gain": -747.5085305125949,
+          "reason": "Cut loss -11%"
         },
         {
           "date": "2026-09-15",
-          "ticker": "PMV",
+          "ticker": "APF",
           "action": "BUY",
-          "shares": 1480.9668109621593,
-          "price": 2.88,
+          "shares": 12153.776519989695,
+          "price": 0.35,
           "gain": 0,
-          "reason": "Bought PMV on BULLISH rating \u2014 Primeserv dividend up 72% to 21.5c; staffing sector resilient despite weak SA consumer; Ghost Mail value-bucket thesis applies"
+          "reason": "TT BULLISH, CAUTIOUS market"
+        },
+        {
+          "date": "2026-09-16",
+          "ticker": "APF",
+          "action": "SELL",
+          "shares": 12153.776519989695,
+          "price": 0.41,
+          "gain": 729.2265911993818,
+          "reason": "Sold APF at +17% profit after rating NEUTRAL \u2014 Ghost Mail flagged turnaround risk on Cedar Square disposal, take profit on the bounce."
+        },
+        {
+          "date": "2026-09-16",
+          "ticker": "SSS",
+          "action": "BUY",
+          "shares": 295.9751234406019,
+          "price": 15.75,
+          "gain": 0,
+          "reason": "Bought SSS after BULLISH rating on property income resilience, rotating cash into defensive REIT exposure with Ghost noting property fund distress buying opportunities."
+        },
+        {
+          "date": "2026-09-17",
+          "ticker": "LSK",
+          "action": "BUY",
+          "shares": 25.2251525659604,
+          "price": 73.92,
+          "gain": 0,
+          "reason": "Bought LSK after BULLISH rating \u2014 tech sector relief rally with iOCO's Ghost-flagged 37-50% HEPS growth setting positive tone for JSE tech."
         }
       ],
       "decisions": [
-        {
-          "date": "2026-09-01",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udfe2 BUY HLM @ R2.35 \u2014 BULLISH, CAUTIOUS",
-            "\ud83d\udfe2 BUY MTA @ R4.95 \u2014 BULLISH, CAUTIOUS"
-          ]
-        },
-        {
-          "date": "2026-09-02",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udfe2 BUY LSK @ R78.25 \u2014 BULLISH, CAUTIOUS"
-          ]
-        },
         {
           "date": "2026-09-03",
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY OAO @ R0.20 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY TKG @ R57.08 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -588,7 +584,7 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY JSE @ R154.24 \u2014 BULLISH, CAUTIOUS",
+            "\ud83d\udfe2 BUY OAO @ R0.20 \u2014 BULLISH, CAUTIOUS",
             "\ud83d\udd01 ROTATE PMV (BULLISH) \u2192 SBP: better BULLISH option",
             "\ud83d\udfe2 BUY SBP @ R154.00 \u2014 rotated in"
           ]
@@ -598,17 +594,17 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 QLT: better BULLISH option",
-            "\ud83d\udfe2 BUY QLT @ R40.28 \u2014 rotated in"
+            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 SOL: better BULLISH option",
+            "\ud83d\udfe2 BUY SOL @ R211.88 \u2014 rotated in"
           ]
         },
         {
-          "date": "2026-09-09",
+          "date": "2026-09-10",
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL SOL \u2014 Take profit +20% (R+468)",
-            "\ud83d\udfe2 BUY SSS @ R15.60 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL SOL \u2014 Take profit +12% (R+332)",
+            "\ud83d\udfe2 BUY PMV @ R2.84 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -616,8 +612,25 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL LSK \u2014 Cut loss -11% (R-756)",
-            "\ud83d\udfe2 BUY PMV @ R2.88 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL LSK \u2014 Cut loss -11% (R-748)",
+            "\ud83d\udfe2 BUY APF @ R0.35 \u2014 BULLISH, CAUTIOUS"
+          ]
+        },
+        {
+          "date": "2026-09-16",
+          "risk": "CAUTIOUS",
+          "news": [],
+          "log": [
+            "\ud83d\udd34 SELL APF \u2014 Take profit +17% (R+729)",
+            "\ud83d\udfe2 BUY SSS @ R15.75 \u2014 BULLISH, CAUTIOUS"
+          ]
+        },
+        {
+          "date": "2026-09-17",
+          "risk": "CAUTIOUS",
+          "news": [],
+          "log": [
+            "\ud83d\udfe2 BUY LSK @ R73.92 \u2014 BULLISH, CAUTIOUS"
           ]
         }
       ]
@@ -626,13 +639,13 @@
       "name": "Weekly Trader",
       "news_sensitivity": "medium",
       "total_in": 50000.0,
-      "final_cash": 613.15,
-      "final_holdings_value": 47078.26,
-      "final_portfolio": 47691.42,
-      "return_pct": -4.6,
-      "realized": -573.84,
-      "unrealized": -1371.14,
-      "total_costs": 363.6,
+      "final_cash": 611.69,
+      "final_holdings_value": 46943.36,
+      "final_portfolio": 47555.05,
+      "return_pct": -4.9,
+      "realized": -573.71,
+      "unrealized": -1507.23,
+      "total_costs": 363.61,
       "total_dividends": 0,
       "num_trades": 12,
       "risk": "AGGRESSIVE",
@@ -666,99 +679,111 @@
         ],
         [
           "2026-08-11",
-          24565.95
+          24475.18
         ],
         [
           "2026-08-12",
-          24491.05
+          24403.88
         ],
         [
           "2026-08-13",
-          24915.13
+          24876.03
         ],
         [
           "2026-08-14",
-          25042.09
+          24918.83
         ],
         [
           "2026-08-17",
-          25194.46
+          24998.06
         ],
         [
           "2026-08-18",
-          25004.29
+          24876.63
         ],
         [
           "2026-08-19",
-          24661.01
+          24534.58
         ],
         [
           "2026-08-20",
-          24777.95
+          24638.4
         ],
         [
           "2026-08-21",
-          24839.39
+          24699.12
         ],
         [
           "2026-08-24",
-          24748.53
+          24564.85
         ],
         [
           "2026-08-25",
-          24699.37
+          24545.66
         ],
         [
           "2026-08-26",
-          24687.51
+          24581.95
         ],
         [
           "2026-08-27",
-          24757.81
+          24720.76
         ],
         [
           "2026-08-31",
-          24780.75
+          24768.54
         ],
         [
           "2026-09-01",
-          49746.04
+          49701.61
         ],
         [
           "2026-09-02",
-          49745.95
+          49643.67
         ],
         [
           "2026-09-03",
-          49810.63
+          49718.81
         ],
         [
           "2026-09-04",
-          48766.54
+          48655.65
         ],
         [
           "2026-09-08",
-          48934.93
+          48833.13
         ],
         [
           "2026-09-09",
-          48561.8
+          48470.81
         ],
         [
           "2026-09-10",
-          48497.3
+          48417.33
         ],
         [
           "2026-09-11",
-          47782.16
+          47567.66
         ],
         [
           "2026-09-14",
-          47832.71
+          47687.68
         ],
         [
           "2026-09-15",
-          47691.42
+          47558.01
+        ],
+        [
+          "2026-09-16",
+          47555.45
+        ],
+        [
+          "2026-09-17",
+          47555.45
+        ],
+        [
+          "2026-09-18",
+          47555.05
         ]
       ],
       "holdings": {
@@ -769,71 +794,71 @@
           "current_price": 2.88,
           "sector": "industrial"
         },
-        "TKG": {
-          "shares": 46.26,
-          "cost": 54.28,
-          "buy_date": "2026-08-07",
-          "current_price": 54.62,
-          "sector": "telecoms"
-        },
         "LSK": {
-          "shares": 42.51,
-          "cost": 79.0,
-          "buy_date": "2026-08-14",
-          "current_price": 69.31,
+          "shares": 31.19,
+          "cost": 80.5,
+          "buy_date": "2026-08-07",
+          "current_price": 73.92,
           "sector": "tech"
         },
-        "OAO": {
-          "shares": 28159.91,
-          "cost": 0.2,
-          "buy_date": "2026-08-21",
-          "current_price": 0.2,
-          "sector": "energy"
+        "TKG": {
+          "shares": 60.04,
+          "cost": 55.93,
+          "buy_date": "2026-08-14",
+          "current_price": 54.6,
+          "sector": "telecoms"
         },
-        "NED": {
-          "shares": 40.69,
-          "cost": 298.81,
-          "buy_date": "2026-09-04",
-          "current_price": 298.17,
+        "JSE": {
+          "shares": 36.66,
+          "cost": 154.0,
+          "buy_date": "2026-08-21",
+          "current_price": 153.71,
           "sector": "financial"
         },
         "HLM": {
-          "shares": 4422.84,
+          "shares": 4972.11,
           "cost": 2.44,
           "buy_date": "2026-09-04",
           "current_price": 2.24,
           "sector": "industrial"
         },
+        "NED": {
+          "shares": 36.21,
+          "cost": 298.81,
+          "buy_date": "2026-09-04",
+          "current_price": 295.85,
+          "sector": "financial"
+        },
         "MTA": {
-          "shares": 468.39,
+          "shares": 468.42,
           "cost": 4.9,
           "buy_date": "2026-09-11",
-          "current_price": 4.9,
+          "current_price": 4.98,
           "sector": "industrial"
         },
-        "JSE": {
-          "shares": 35.64,
-          "cost": 154.07,
+        "OAO": {
+          "shares": 27389.18,
+          "cost": 0.2,
           "buy_date": "2026-09-11",
-          "current_price": 156.4,
-          "sector": "financial"
+          "current_price": 0.2,
+          "sector": "energy"
         }
       },
       "sector_composition": {
-        "industrial": 38.3,
-        "telecoms": 5.3,
-        "tech": 6.2,
-        "energy": 11.8,
-        "financial": 37.1,
+        "industrial": 41.1,
+        "tech": 4.8,
+        "telecoms": 6.9,
+        "financial": 34.4,
+        "energy": 11.5,
         "cash": 1.3
       },
       "all_trades": [
         {
           "date": "2026-08-07",
-          "ticker": "SSS",
+          "ticker": "HLM",
           "action": "BUY",
-          "shares": 378.5091584075969,
-          "price": 16.43,
+          "shares": 2892.5141733194496,
+          "price": 2.15,
           "gain": 0,
           "reason": "TT BULLISH, BALANCED market"
         },
@@ -848,28 +873,28 @@
         },
         {
           "date": "2026-08-07",
-          "ticker": "HLM",
+          "ticker": "SSS",
           "action": "BUY",
-          "shares": 2885.323339125178,
-          "price": 2.15,
+          "shares": 377.5681788873483,
+          "price": 16.43,
           "gain": 0,
           "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-07",
-          "ticker": "TKG",
+          "ticker": "LSK",
           "action": "BUY",
-          "shares": 46.25566395777318,
-          "price": 54.28,
+          "shares": 31.189533411527048,
+          "price": 80.5,
           "gain": 0,
           "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-14",
-          "ticker": "LSK",
+          "ticker": "TKG",
           "action": "BUY",
-          "shares": 42.50897411675798,
-          "price": 79.0,
+          "shares": 60.04307089618954,
+          "price": 55.93,
           "gain": 0,
           "reason": "TT BULLISH, AGGRESSIVE market"
         },
@@ -877,43 +902,43 @@
           "date": "2026-08-21",
           "ticker": "HLM",
           "action": "SELL",
-          "shares": 2885.323339125178,
+          "shares": 2892.5141733194496,
           "price": 2.06,
-          "gain": -259.67910052126535,
-          "reason": "Took profit on HLM after +11% \u2014 Ghost Mail flagged can-ramp restructuring as one-time catalyst; re-entry at better price"
+          "gain": -260.3262755987507,
+          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-21",
-          "ticker": "OAO",
+          "ticker": "JSE",
           "action": "BUY",
-          "shares": 28159.91305166363,
-          "price": 0.2,
+          "shares": 36.657024429460414,
+          "price": 154.0,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-09-04",
-          "ticker": "NED",
+          "ticker": "HLM",
           "action": "BUY",
-          "shares": 40.69317210518554,
-          "price": 298.81,
+          "shares": 4972.108013191571,
+          "price": 2.44,
           "gain": 0,
-          "reason": "Weekly trader bought NED at R298.81 \u2014 BULLISH; 12% underlying growth, 7.9x PE; NCBA deal closing"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-09-04",
-          "ticker": "HLM",
+          "ticker": "NED",
           "action": "BUY",
-          "shares": 4422.84065810464,
-          "price": 2.44,
+          "shares": 36.212423699068964,
+          "price": 298.81,
           "gain": 0,
-          "reason": "Weekly trader bought HLM at R2.44 \u2014 BULLISH; H1 EBITDA doubled; can-ramp delivering; Ghost Mail industrials thesis"
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-09-11",
           "ticker": "MTA",
           "action": "BUY",
-          "shares": 468.39301964338375,
+          "shares": 468.4199566878824,
           "price": 4.9,
           "gain": 0,
           "reason": "TT BULLISH, AGGRESSIVE market"
@@ -922,17 +947,17 @@
           "date": "2026-09-11",
           "ticker": "SSS",
           "action": "SELL",
-          "shares": 378.5091584075969,
+          "shares": 377.5681788873483,
           "price": 15.6,
-          "gain": -314.1626014783051,
-          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
+          "gain": -313.381588476499,
+          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-09-11",
-          "ticker": "JSE",
+          "ticker": "OAO",
           "action": "BUY",
-          "shares": 35.639013885242655,
-          "price": 154.07,
+          "shares": 27389.180861151373,
+          "price": 0.2,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         }
@@ -945,10 +970,10 @@
             "Week ends with MTN results and retail sales data. Consumer is alive but not thriving. SARB rate cut expectations building \u2014 this is the main catalyst for SA equities going forward."
           ],
           "log": [
-            "\ud83d\udfe2 BUY SSS @ R16.43 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY PMV @ R2.95 \u2014 BULLISH, BALANCED",
             "\ud83d\udfe2 BUY HLM @ R2.15 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY TKG @ R54.28 \u2014 BULLISH, BALANCED"
+            "\ud83d\udfe2 BUY PMV @ R2.95 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY SSS @ R16.43 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY LSK @ R80.50 \u2014 BULLISH, BALANCED"
           ]
         },
         {
@@ -958,7 +983,7 @@
             "Stadio and Exxaro add to the positive results season. Private education is a structural growth story. Coal is cyclical but Exxaro managing well. US rate cut in September now >90% probability."
           ],
           "log": [
-            "\ud83d\udfe2 BUY LSK @ R79.00 \u2014 BULLISH, AGGRESSIVE"
+            "\ud83d\udfe2 BUY TKG @ R55.93 \u2014 BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -968,8 +993,8 @@
             "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
           ],
           "log": [
-            "\ud83d\udd01 ROTATE HLM (BULLISH) \u2192 OAO: better BULLISH option",
-            "\ud83d\udfe2 BUY OAO @ R0.20 \u2014 rotated in"
+            "\ud83d\udd01 ROTATE HLM (BULLISH) \u2192 JSE: better BULLISH option",
+            "\ud83d\udfe2 BUY JSE @ R154.00 \u2014 rotated in"
           ]
         },
         {
@@ -977,8 +1002,8 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY NED @ R298.81 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udfe2 BUY HLM @ R2.44 \u2014 BULLISH, AGGRESSIVE"
+            "\ud83d\udfe2 BUY HLM @ R2.44 \u2014 BULLISH, AGGRESSIVE",
+            "\ud83d\udfe2 BUY NED @ R298.81 \u2014 BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -987,8 +1012,8 @@
           "news": [],
           "log": [
             "\ud83d\udfe2 BUY MTA @ R4.90 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 JSE: better BULLISH option",
-            "\ud83d\udfe2 BUY JSE @ R154.07 \u2014 rotated in"
+            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 OAO: better BULLISH option",
+            "\ud83d\udfe2 BUY OAO @ R0.20 \u2014 rotated in"
           ]
         }
       ]
@@ -997,15 +1022,15 @@
       "name": "Monthly Trader",
       "news_sensitivity": "low",
       "total_in": 50000.0,
-      "final_cash": 28750.0,
-      "final_holdings_value": 21310.89,
-      "final_portfolio": 50060.89,
-      "return_pct": 0.1,
+      "final_cash": 4312.5,
+      "final_holdings_value": 45461.02,
+      "final_portfolio": 49773.52,
+      "return_pct": -0.5,
       "realized": 0,
-      "unrealized": 166.61,
-      "total_costs": 105.72,
+      "unrealized": 1.82,
+      "total_costs": 227.3,
       "total_dividends": 0,
-      "num_trades": 4,
+      "num_trades": 6,
       "risk": "BALANCED",
       "news": [
         "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
@@ -1065,80 +1090,92 @@
         ],
         [
           "2026-08-20",
-          24929.36
+          24963.41
         ],
         [
           "2026-08-21",
-          25057.9
+          25095.12
         ],
         [
           "2026-08-24",
-          25010.0
+          25074.74
         ],
         [
           "2026-08-25",
-          25084.8
+          25172.32
         ],
         [
           "2026-08-26",
-          25146.62
+          25174.73
         ],
         [
           "2026-08-27",
-          25408.32
+          25399.55
         ],
         [
           "2026-08-31",
-          25734.52
+          25743.12
         ],
         [
           "2026-09-01",
-          50937.75
+          50921.71
         ],
         [
           "2026-09-02",
-          50998.51
+          50937.94
         ],
         [
           "2026-09-03",
-          51218.5
+          51131.71
         ],
         [
           "2026-09-04",
-          50441.05
+          50429.43
         ],
         [
           "2026-09-08",
-          50554.17
+          50476.57
         ],
         [
           "2026-09-09",
-          50460.36
+          50384.21
         ],
         [
           "2026-09-10",
-          50437.41
+          50405.05
         ],
         [
           "2026-09-11",
-          49880.96
+          49888.76
         ],
         [
           "2026-09-14",
-          50113.82
+          50016.32
         ],
         [
           "2026-09-15",
-          50060.89
+          49797.49
+        ],
+        [
+          "2026-09-16",
+          49774.53
+        ],
+        [
+          "2026-09-17",
+          49774.53
+        ],
+        [
+          "2026-09-18",
+          49773.52
         ]
       ],
       "holdings": {
-        "SSS": {
-          "shares": 383.88,
-          "cost": 16.2,
+        "HLM": {
+          "shares": 3109.45,
+          "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 15.88,
-          "sector": "property"
+          "current_price": 2.24,
+          "sector": "industrial"
         },
         "PMV": {
           "shares": 2003.6,
@@ -1147,36 +1184,51 @@
           "current_price": 2.88,
           "sector": "industrial"
         },
-        "HLM": {
-          "shares": 3101.72,
-          "cost": 2.0,
+        "SSS": {
+          "shares": 382.93,
+          "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 2.24,
-          "sector": "industrial"
+          "current_price": 15.75,
+          "sector": "property"
         },
-        "TKG": {
-          "shares": 45.71,
-          "cost": 54.93,
+        "LSK": {
+          "shares": 32.19,
+          "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 54.62,
-          "sector": "telecoms"
+          "current_price": 73.92,
+          "sector": "tech"
+        },
+        "NED": {
+          "shares": 41.95,
+          "cost": 295.85,
+          "buy_date": "2026-09-16",
+          "current_price": 295.85,
+          "sector": "financial"
+        },
+        "MTA": {
+          "shares": 2390.35,
+          "cost": 4.98,
+          "buy_date": "2026-09-16",
+          "current_price": 4.98,
+          "sector": "industrial"
         }
       },
       "sector_composition": {
-        "property": 12.2,
-        "industrial": 25.4,
-        "telecoms": 5.0,
-        "cash": 57.4
+        "industrial": 49.5,
+        "property": 12.1,
+        "tech": 4.8,
+        "financial": 24.9,
+        "cash": 8.7
       },
       "all_trades": [
         {
           "date": "2026-08-19",
-          "ticker": "SSS",
+          "ticker": "HLM",
           "action": "BUY",
-          "shares": 383.88305386647016,
-          "price": 16.2,
+          "shares": 3109.4527363184084,
+          "price": 2.0,
           "gain": 0,
-          "reason": "Monthly initial deployment into industrial and property BULLISH names \u2014 low news sensitivity; holding for long-term value"
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-19",
@@ -1185,25 +1237,43 @@
           "shares": 2003.6033921229991,
           "price": 3.1,
           "gain": 0,
-          "reason": "Monthly initial deployment into industrial and property BULLISH names \u2014 low news sensitivity; holding for long-term value"
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-19",
-          "ticker": "HLM",
+          "ticker": "SSS",
           "action": "BUY",
-          "shares": 3101.722589559566,
-          "price": 2.0,
+          "shares": 382.9287147604403,
+          "price": 16.2,
           "gain": 0,
-          "reason": "Monthly initial deployment into industrial and property BULLISH names \u2014 low news sensitivity; holding for long-term value"
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-19",
-          "ticker": "TKG",
+          "ticker": "LSK",
           "action": "BUY",
-          "shares": 45.70830947802527,
-          "price": 54.93,
+          "shares": 32.189197943947796,
+          "price": 78.0,
           "gain": 0,
-          "reason": "Monthly initial deployment into industrial and property BULLISH names \u2014 low news sensitivity; holding for long-term value"
+          "reason": "TT BULLISH, BALANCED market"
+        },
+        {
+          "date": "2026-09-16",
+          "ticker": "NED",
+          "action": "BUY",
+          "shares": 41.95357896016036,
+          "price": 295.85,
+          "gain": 0,
+          "reason": "Bought NED on BULLISH rating \u2014 Nedbank's NCBA acquisition in Kenya adds growth optionality at 8x earnings with 6% yield."
+        },
+        {
+          "date": "2026-09-16",
+          "ticker": "MTA",
+          "action": "BUY",
+          "shares": 2390.3522214149616,
+          "price": 4.98,
+          "gain": 0,
+          "reason": "Bought MTA on BULLISH rating \u2014 industrial conglomerate with diversified earnings at attractive valuation in a risk-off market."
         }
       ],
       "decisions": [
@@ -1214,10 +1284,19 @@
             "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
           ],
           "log": [
-            "\ud83d\udfe2 BUY SSS @ R16.20 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY PMV @ R3.10 \u2014 BULLISH, BALANCED",
             "\ud83d\udfe2 BUY HLM @ R2.00 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY TKG @ R54.93 \u2014 BULLISH, BALANCED"
+            "\ud83d\udfe2 BUY PMV @ R3.10 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY SSS @ R16.20 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY LSK @ R78.00 \u2014 BULLISH, BALANCED"
+          ]
+        },
+        {
+          "date": "2026-09-16",
+          "risk": "BALANCED",
+          "news": [],
+          "log": [
+            "\ud83d\udfe2 BUY NED @ R295.85 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY MTA @ R4.98 \u2014 BULLISH, BALANCED"
           ]
         }
       ]
