@@ -58,7 +58,8 @@ footer{text-align:center;padding:24px;font-size:.75rem;color:var(--muted);border
 <div style="display:flex;gap:4px"><a href="index.html">Today</a><a href="archive.html">Archive</a><a href="ratings.html">Ratings</a><a href="trading.html" class="active">🤖 Trading</a></div></div></nav>
 <div class="page">
 <h1>🤖 AI Trading Agents</h1>
-<p class="sub">Three agents, R25,000 each per month, three time horizons. Who wins?</p>
+<p class="sub">Three core agents, R25,000 each per month, three time horizons. Who wins?</p>
+<h2 style="font-size:1rem;margin-top:32px;padding-top:16px;border-top:2px solid var(--border);color:var(--dark)">⚡ Core Agents</h2>
 <div id="agents"></div>
 <div class="method"><h4>⚙️ How it works</h4>
 <strong>Cash:</strong> R25,000 credited to each agent on the first trading day of every month.<br><br>
@@ -67,6 +68,15 @@ footer{text-align:center;padding:24px;font-size:.75rem;color:var(--muted);border
 <strong>Guardrails:</strong> Max 20 holdings · min R1,000 per trade · max 25% of portfolio in one stock · ~10% cash is a soft guideline, not a hard floor.<br><br>
 <strong>Costs:</strong> 0.5% per side (brokerage + STT). Dividends credited to cash.<br><br>
 <strong>Reconciliation:</strong> Portfolio value = Cash invested + Realized P&L + Unrealized P&L − Trading costs + Dividends. Always balances to the rand.</div>
+
+<h2 style="font-size:1rem;margin-top:32px;padding-top:16px;border-top:2px solid var(--border);color:var(--dark)">📊 BofA Fund Manager Survey Bots</h2>
+<p class="sub">Two bots trade monthly based on Bank of America's Global Fund Manager Survey. Each gets R25,000/month. Trades one week after SA press coverage of each monthly survey.</p>
+<div id="fms-bots"></div>
+<div class="method"><h4>📊 How the FMS bots work</h4>
+<strong>Data source:</strong> Bank of America Global Fund Manager Survey, published monthly (~15th-18th). SA financial press (Moneyweb, BusinessTech, Daily Investor) covers the survey results within 1-2 days.<br><br>
+<strong>Going with the Herd</strong> — reads the survey consensus and <strong>follows the crowd</strong>. If fund managers are overweight commodities and banks, the Herd buys JSE-listed commodity and banking stocks.<br><br>
+<strong>The Contrarian</strong> — does the <strong>opposite</strong>. Buys sectors fund managers are underweight. Looks for value where others see risk. No stupid trades — just unpopular ones.<br><br>
+<strong>Rules:</strong> Same as Monthly Trader (20 max holdings, R1,000 min, 25% cap, 0.5% cost). Trades on 3rd Wednesday. Survey themes are reconstructed from SA media coverage — the survey itself is proprietary to Bank of America.</div>
 </div>
 <footer><p>Ticker Talk · AI Trading Agents · Not financial advice</p></footer>
 <script>
@@ -149,4 +159,52 @@ async function load(){
   el.innerHTML=html;
 }
 load();
+// Load BofA FMS bots
+async function loadFMS(){
+  try{var d=await(await fetch('bofa_results.json?v='+Date.now())).json();}
+  catch(e){document.getElementById('fms-bots').innerHTML='<p style="color:var(--muted)">FMS bot data not yet available. <a href="fms.html">View dedicated FMS page →</a></p>';return;}
+  const el=document.getElementById('fms-bots');let html='';
+  const surveys={'Going with the Herd':{aug:'Bought: commodities, banks, healthcare, gold (following consensus overweight)',sep:'Bought: energy, cyclicals, EM exposure. Sold: bonds-proxy exposure'},
+    'The Contrarian':{aug:'Bought: REITs, Europe-exposed, bonds-proxy (against consensus underweight)',sep:'Bought: defensives, REITs. Avoided: commodities, energy'}};
+  for(const [name,data] of Object.entries(d)){
+    const net=data.final_portfolio-data.total_invested;
+    const pct=(net/data.total_invested*100).toFixed(1);
+    const netCls=net>=0?'pos':'neg';
+    const sign=net>=0?'+':'';
+    const isHerd=name.includes('Herd');
+    html+='<div class="agent-card" style="border-left-color:'+(isHerd?'var(--green)':'var(--amber)')+'">';
+    html+='<div class="agent-head"><div><div class="agent-name">'+(isHerd?'🐂 ':'🐻 ')+name+'</div>';
+    html+='<div class="agent-sub">Trades monthly · 3rd Wednesday · R25,000/month<br><span style="font-size:.7rem">Aug: '+surveys[name].aug+'<br>Sep: '+surveys[name].sep+'</span></div></div></div>';
+    html+='<div class="headline"><div class="row"><span class="cap">Cash invested: <b>'+money(data.total_invested)+'</b></span>';
+    html+='<span class="cap">Portfolio value now: <b>'+money(data.final_portfolio)+'</b></span>';
+    html+='<span class="net '+netCls+'">'+pnl(net)+' ('+sign+pct+'%)</span></div></div>';
+    html+='<div class="stats">';
+    html+='<div class="st"><div class="v cash">'+money(data.cash)+'</div><div class="l">Cash</div></div>';
+    html+='<div class="st"><div class="v">'+(data.holdings?Object.keys(data.holdings).length:0)+'</div><div class="l">Holdings</div></div>';
+    html+='<div class="st"><div class="v '+pnlCls(data.unrealized)+'">'+pnl(data.unrealized)+'</div><div class="l">Unrealized</div></div>';
+    html+='<div class="st"><div class="v '+pnlCls(data.realized)+'">'+pnl(data.realized)+'</div><div class="l">Realized</div></div>';
+    html+='<div class="st"><div class="v">−'+money(data.costs)+'</div><div class="l">Costs</div></div>';
+    html+='</div>';
+    // Holdings table
+    html+='<h3>Holdings</h3><table><thead><tr><th>Ticker</th><th class="num">Shares</th><th class="num">Cost</th><th class="num">Now</th><th class="num">Value</th><th class="num">U'+"'"+'real</th></tr></thead><tbody>';
+    let hv=0;
+    for(const [t,h] of Object.entries(data.holdings||{})){
+      const val=h.shares*h.current_price;hv+=val;
+      const u=h.shares*(h.current_price-h.avg_cost);
+      html+='<tr><td><b>'+t+'</b></td><td class="num">'+Math.round(h.shares)+'</td><td class="num">'+money2(h.avg_cost)+'</td><td class="num">'+money2(h.current_price)+'</td><td class="num">'+money(val)+'</td><td class="num '+pnlCls(u)+'">'+pnl(u)+'</td></tr>';
+    }
+    html+='<tr class="total-row"><td colspan="4">Total</td><td class="num">'+money(hv)+'</td><td class="num '+pnlCls(data.unrealized)+'">'+pnl(data.unrealized)+'</td></tr>';
+    html+='</tbody></table>';
+    // Trades table
+    html+='<h3>Trades</h3><table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th class="num">Shares</th><th class="num">Price</th><th class="num">Value</th><th>Reason</th></tr></thead><tbody>';
+    for(const t of (data.all_trades||[])){
+      const val=t.shares*t.price;
+      const cls=t.action==='BUY'?'l-buy':'l-sell';
+      html+='<tr><td>'+t.date+'</td><td class="'+cls+'\"><b>'+t.action+'</b></td><td>'+t.ticker+'</td><td class="num">'+Math.round(t.shares)+'</td><td class="num">'+money2(t.price)+'</td><td class="num">'+money(val)+'</td><td style="font-size:.75rem">'+t.reason+'</td></tr>';
+    }
+    html+='</tbody></table></div>';
+  }
+  el.innerHTML=html;
+}
+loadFMS();
 </script></body></html>
