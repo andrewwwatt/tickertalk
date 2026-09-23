@@ -1,0 +1,232 @@
+{
+  "Going with the Herd": {
+    "name": "Going with the Herd",
+    "cash": 4312.5,
+    "total_invested": 50000.0,
+    "realized": 0.0,
+    "unrealized": -1309.54,
+    "costs": 227.3,
+    "final_portfolio": 48463.15,
+    "holdings": {
+      "AGL": {
+        "shares": 7.129401314513312,
+        "avg_cost": 872.29,
+        "current_price": 889.34,
+        "buy_date": "2026-08-19",
+        "value": 6340.46,
+        "unrealized": 121.56
+      },
+      "EXX": {
+        "shares": 32.6886506793395,
+        "avg_cost": 190.01,
+        "current_price": 178.07,
+        "buy_date": "2026-08-19",
+        "value": 5820.87,
+        "unrealized": -390.3
+      },
+      "ABG": {
+        "shares": 27.49632187899088,
+        "avg_cost": 225.61,
+        "current_price": 222.39,
+        "buy_date": "2026-08-19",
+        "value": 6114.91,
+        "unrealized": -88.54
+      },
+      "NED": {
+        "shares": 8.201605329853093,
+        "avg_cost": 306.13,
+        "current_price": 299.78,
+        "buy_date": "2026-08-19",
+        "value": 2458.68,
+        "unrealized": -52.08
+      },
+      "SOL": {
+        "shares": 53.322585904869804,
+        "avg_cost": 233.26,
+        "current_price": 217.72,
+        "buy_date": "2026-09-16",
+        "value": 11609.39,
+        "unrealized": -828.63
+      },
+      "MTA": {
+        "shares": 2385.1192790843415,
+        "avg_cost": 4.98,
+        "current_price": 4.95,
+        "buy_date": "2026-09-16",
+        "value": 11806.34,
+        "unrealized": -71.55
+      }
+    },
+    "all_trades": [
+      {
+        "date": "2026-08-19",
+        "ticker": "AGL",
+        "action": "BUY",
+        "shares": 7.129401314513312,
+        "price": 872.29,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "EXX",
+        "action": "BUY",
+        "shares": 32.6886506793395,
+        "price": 190.01,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "ABG",
+        "action": "BUY",
+        "shares": 27.49632187899088,
+        "price": 225.61,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "NED",
+        "action": "BUY",
+        "shares": 8.201605329853093,
+        "price": 306.13,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "SOL",
+        "action": "BUY",
+        "shares": 53.322585904869804,
+        "price": 233.26,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "MTA",
+        "action": "BUY",
+        "shares": 2385.1192790843415,
+        "price": 4.98,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
+      }
+    ]
+  },
+  "The Contrarian": {
+    "name": "The Contrarian",
+    "cash": 4312.5,
+    "total_invested": 50000.0,
+    "realized": 0.0,
+    "unrealized": -181.91,
+    "costs": 227.3,
+    "final_portfolio": 49590.78,
+    "holdings": {
+      "RDF": {
+        "shares": 998.219176988253,
+        "avg_cost": 6.23,
+        "current_price": 6.08,
+        "buy_date": "2026-08-19",
+        "value": 6069.17,
+        "unrealized": -149.73
+      },
+      "HYP": {
+        "shares": 105.77606463864609,
+        "avg_cost": 58.72,
+        "current_price": 60.99,
+        "buy_date": "2026-08-19",
+        "value": 6451.28,
+        "unrealized": 240.11
+      },
+      "GRT": {
+        "shares": 361.50612931929675,
+        "avg_cost": 17.16,
+        "current_price": 16.07,
+        "buy_date": "2026-08-19",
+        "value": 5809.4,
+        "unrealized": -394.04
+      },
+      "BVT": {
+        "shares": 10.299275738895432,
+        "avg_cost": 243.78,
+        "current_price": 227.67,
+        "buy_date": "2026-08-19",
+        "value": 2344.84,
+        "unrealized": -165.92
+      },
+      "NED": {
+        "shares": 41.36437537418841,
+        "avg_cost": 295.85,
+        "current_price": 299.78,
+        "buy_date": "2026-09-16",
+        "value": 12400.21,
+        "unrealized": 162.56
+      },
+      "ABG": {
+        "shares": 54.8737901211045,
+        "avg_cost": 220.11,
+        "current_price": 222.39,
+        "buy_date": "2026-09-16",
+        "value": 12203.38,
+        "unrealized": 125.11
+      }
+    },
+    "all_trades": [
+      {
+        "date": "2026-08-19",
+        "ticker": "RDF",
+        "action": "BUY",
+        "shares": 998.219176988253,
+        "price": 6.23,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "HYP",
+        "action": "BUY",
+        "shares": 105.77606463864609,
+        "price": 58.72,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "GRT",
+        "action": "BUY",
+        "shares": 361.50612931929675,
+        "price": 17.16,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "BVT",
+        "action": "BUY",
+        "shares": 10.299275738895432,
+        "price": 243.78,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "NED",
+        "action": "BUY",
+        "shares": 41.36437537418841,
+        "price": 295.85,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "ABG",
+        "action": "BUY",
+        "shares": 54.8737901211045,
+        "price": 220.11,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
+      }
+    ]
+  }
+}

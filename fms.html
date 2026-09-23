@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>🤖 BofA FMS Bots — Ticker Talk</title>
+<style>
+:root{--green:#2e7d32;--red:#c62828;--amber:#e65100;--dark:#1a1a2e;--grey:#f5f3ef;--card:#fff;--text:#222;--muted:#666;--border:#e0e0e0;--blue:#1565c0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--grey);color:var(--text);line-height:1.6}
+nav{background:var(--dark);padding:0 16px;position:sticky;top:0;z-index:100}
+nav .inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+nav a{color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 12px;border-radius:8px}
+nav a:hover{background:rgba(255,255,255,.1)}
+nav a.active{color:#ffd54f}
+nav .brand{font-size:1.05rem;font-weight:600}
+.page{max-width:1000px;margin:0 auto;padding:20px 20px 60px}
+h1{font-size:1.3rem;margin-bottom:4px}
+.sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+.agent-card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-left:4px solid var(--dark)}
+.agent-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.agent-name{font-size:1.15rem;font-weight:700}
+.agent-sub{font-size:.78rem;color:var(--muted);margin-top:2px}
+.headline{background:#f9f9f9;border-radius:10px;padding:14px;margin-bottom:14px}
+.headline .row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+.headline .cap{font-size:.8rem;color:var(--muted)}
+.headline .cap b{font-size:1.1rem;color:var(--text)}
+.headline .net{font-size:1.15rem;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin:0 0 14px}
+.st{background:#fff;border:1px solid #f0f0f0;border-radius:8px;padding:9px;text-align:center}
+.st .v{font-size:1.05rem;font-weight:700}
+.st .l{font-size:.62rem;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.pos{color:var(--green)}.neg{color:var(--red)}.cash{color:var(--blue)}
+h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin:16px 0 8px;border-bottom:1px solid var(--border);padding-bottom:4px}
+table{width:100%;font-size:.8rem;border-collapse:collapse}
+th{text-align:left;padding:6px 8px;font-size:.68rem;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:6px 8px;border-bottom:1px solid #f0f0f0;font-size:.8rem}
+th.num,td.num{text-align:right}
+.survey-card{background:#f0f4ff;border:1px solid #c5d3f0;border-radius:10px;padding:14px;margin:16px 0;font-size:.82rem;line-height:1.6}
+.survey-card h4{color:var(--blue);margin-bottom:6px;font-size:.85rem}
+.survey-card .theme{display:inline-block;background:#e3edff;padding:2px 8px;border-radius:6px;font-size:.7rem;margin:2px 4px 2px 0}
+.survey-card .theme.sell{background:#ffeaea;color:var(--red)}
+.method{background:var(--card);border-radius:10px;padding:16px;margin-top:20px;font-size:.8rem;line-height:1.7}
+.method h4{color:var(--green);margin-bottom:6px}
+footer{text-align:center;padding:24px;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border)}
+@media(max-width:600px){.agent-card{padding:14px}.stats{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<nav><div class="inner"><a href="index.html" class="brand">📋 Ticker Talk</a>
+<div style="display:flex;gap:4px"><a href="index.html">Today</a><a href="archive.html">Archive</a><a href="ratings.html">Ratings</a><a href="trading.html">🤖 Agents</a><a href="fms.html" class="active">📊 FMS</a></div></div></nav>
+<div class="page">
+<h1>📊 BofA Fund Manager Survey Bots</h1>
+<p class="sub">Two bots trade monthly based on Bank of America's Global Fund Manager Survey. Each bot gets R25,000/month. Trades on the third Wednesday, one week after SA press coverage.</p>
+<div id="bots"></div>
+<div class="method">
+<h4>🤖 How the bots work</h4>
+<p><strong>Going with the Herd</strong> — reads the BofA survey consensus and <strong>follows the crowd</strong>. If fund managers are overweight commodities and banks, the Herd buys JSE-listed commodity and banking stocks.</p>
+<p style="margin-top:8px;"><strong>The Contrarian</strong> — does the <strong>opposite</strong>. Buys sectors fund managers are underweight (REITs when everyone hates property, bonds-proxy stocks when bonds are hated). Looks for value where others see risk. No stupid trades — just unpopular ones.</p>
+<p style="margin-top:8px;"><strong>Data source:</strong> Survey themes reconstructed from SA press coverage (Moneyweb, BusinessTech, Daily Investor). Mapping to JSE tickers is deterministic — global theme → local sector → specific JSE stocks.</p>
+</div>
+</div>
+<script>
+async function load() {
+  try { var d = await (await fetch('bofa_results.json')).json(); }
+  catch(e) { document.getElementById('bots').innerHTML='<p style="color:var(--red)">Data not yet available.</p>'; return; }
+
+  const surveys = {
+    '2026-08': {desc:'Record cash, rotation into commodities, banks overweight for first time in 2 years',
+      herd:'Overweight: commodities, banks, healthcare, gold',
+      contrarian:'Underweight: REITs, Europe-exposed, bonds-proxy'},
+    '2026-09': {desc:'Cash dropping, most bullish commodities in a decade, EM rotation accelerating',
+      herd:'Overweight: commodities, banks, energy, EM, cyclicals',
+      contrarian:'Underweight: REITs, bonds-proxy, defensives'}
+  };
+
+  let html='';
+  for (let [name,data] of Object.entries(d)) {
+    let net = data.final_portfolio - data.total_invested;
+    let pct = (net/data.total_invested*100).toFixed(1);
+    let netClass = net>=0 ? 'pos':'neg';
+    let sign = net>=0 ? '+':'';
+    
+    // Build holdings table
+    let holdRows = '';
+    let hv=0, unreal=0;
+    for (let [t,h] of Object.entries(data.holdings||{})) {
+      hv += h.value||0;
+      unreal += h.unrealized||0;
+      let upct = h.avg_cost ? ((h.current_price-h.avg_cost)/h.avg_cost*100).toFixed(1) : '0';
+      let uClass = h.unrealized >=0 ? 'pos':'neg';
+      holdRows += `<tr><td>${t}</td><td class="num">${h.shares.toFixed(0)}</td><td class="num">R${h.avg_cost.toFixed(2)}</td><td class="num">R${h.current_price.toFixed(2)}</td><td class="num ${uClass}">${h.unrealized>=0?'+':''}R${h.unrealized.toFixed(0)}</td><td class="num ${uClass}">${upct}%</td></tr>`;
+    }
+
+    // Build trades table
+    let tradeRows = '';
+    for (let t of (data.all_trades||[])) {
+      let actClass = t.action==='BUY'?'pos':'neg';
+      let gainStr = t.gain ? `R${t.gain>=0?'+':''}${t.gain.toFixed(0)}` : '';
+      tradeRows += `<tr><td>${t.date}</td><td class="${actClass}">${t.action}</td><td>${t.ticker}</td><td class="num">${t.shares.toFixed(0)}</td><td class="num">R${t.price.toFixed(2)}</td><td class="num">${gainStr}</td><td style="font-size:.68rem;color:var(--muted)">${t.reason?.substring(0,80)}</td></tr>`;
+    }
+
+    html += `
+    <div class="agent-card" style="border-left-color:${name.includes('Herd')?'var(--green)':'var(--red)'}">
+      <div class="agent-head">
+        <div><div class="agent-name">${name}</div><div class="agent-sub">Monthly trader · 3rd Wednesday</div></div>
+      </div>
+      <div class="headline">
+        <div class="row"><span class="cap">Cash: <b>R${data.cash.toFixed(0)}</b></span><span class="cap">Invested: <b>R${data.total_invested.toFixed(0)}</b></span><span class="cap">Portfolio: <b>R${data.final_portfolio.toFixed(0)}</b></span><span class="net ${netClass}">Net P&L: ${sign}R${net.toFixed(0)} (${sign}${pct}%)</span></div>
+      </div>
+      <div class="stats">
+        <div class="st"><div class="v">${data.holdings ? Object.keys(data.holdings).length : 0}</div><div class="l">Holdings</div></div>
+        <div class="st"><div class="v">R${hv.toFixed(0)}</div><div class="l">Holdings Value</div></div>
+        <div class="st"><div class="v ${unreal>=0?'pos':'neg'}">${unreal>=0?'+':''}R${unreal.toFixed(0)}</div><div class="l">Unrealized</div></div>
+        <div class="st"><div class="v ${data.realized>=0?'pos':'neg'}">${data.realized>=0?'+':''}R${data.realized.toFixed(0)}</div><div class="l">Realized</div></div>
+        <div class="st"><div class="v">R${data.costs.toFixed(0)}</div><div class="l">Trading Costs</div></div>
+      </div>`;
+
+    // Survey context
+    html += '<h3 style="margin-top:0">📰 This month\'s survey</h3>';
+    for (let [mo,s] of Object.entries(surveys)) {
+      html += `<div class="survey-card">
+        <h4>${mo === '2026-08' ? 'August' : 'September'} 2026 BofA FMS</h4>
+        <p style="margin-bottom:8px">${s.desc}</p>
+        <p style="font-size:.72rem;color:var(--muted);margin-bottom:4px">${name.includes('Herd') ? s.herd : s.contrarian}</p>
+      </div>`;
+    }
+
+    html += '<h3>📈 Holdings</h3>';
+    html += '<table><thead><tr><th>Ticker</th><th class="num">Shares</th><th class="num">Avg Cost</th><th class="num">Price</th><th class="num">U'+"'"+'real R</th><th class="num">U'+"'"+'real %</th></tr></thead><tbody>'+holdRows+'</tbody></table>';
+
+    html += '<h3>📋 All Trades</h3>';
+    html += '<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th class="num">Shares</th><th class="num">Price</th><th class="num">Gain</th><th>Reason</th></tr></thead><tbody>'+tradeRows+'</tbody></table>';
+
+    html += '</div>';
+  }
+
+  // Add source note
+  html += '<div class="method" style="margin-top:24px">';
+  html += '<h4>📊 Survey data source</h4>';
+  html += '<p>The Bank of America Global Fund Manager Survey is published monthly (~15th-18th). SA financial press (Moneyweb, BusinessTech, Daily Investor) covers it within 1-2 days. These bots trade one week later on the 3rd Wednesday.</p>';
+  html += '<p style="margin-top:6px;font-size:.72rem;color:var(--muted)">Survey themes are reconstructed from SA media coverage. The survey itself is proprietary to Bank of America and cannot be directly accessed. JSE ticker mapping: global theme → local sector → specific JSE stocks.</p>';
+  html += '</div>';
+
+  document.getElementById('bots').innerHTML = html;
+}
+load();
+</script>
+<footer>Ticker Talk · AI Trading Agents · Past performance does not guarantee future results</footer>
+</body></html>
