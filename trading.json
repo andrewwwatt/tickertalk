@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-09-23",
-    "days": 35,
+    "end": "2026-09-28",
+    "days": 36,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01"
@@ -15,18 +15,18 @@
       "news_sensitivity": "high",
       "total_in": 50000.0,
       "final_cash": 1402.85,
-      "final_holdings_value": 46866.39,
-      "final_portfolio": 48269.24,
-      "return_pct": -3.5,
+      "final_holdings_value": 46720.09,
+      "final_portfolio": 48122.94,
+      "return_pct": -3.8,
       "realized": -289.54,
-      "unrealized": -794.46,
+      "unrealized": -940.76,
       "total_costs": 815.59,
       "total_dividends": 168.83,
       "num_trades": 36,
       "risk": "CAUTIOUS",
       "news": [
-        "SA PPI inflation 3.8% — pipeline pressures easing",
-        "Pick n Pay CEO — turnaround plan showing early results",
+        "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
+        "Pick n Pay CEO \u2014 turnaround plan showing early results",
         "Global markets cautious ahead of Jackson Hole"
       ],
       "daily_values": [
@@ -169,6 +169,10 @@
         [
           "2026-09-23",
           48269.24
+        ],
+        [
+          "2026-09-28",
+          48122.94
         ]
       ],
       "holdings": {
@@ -183,28 +187,28 @@
           "shares": 12.18,
           "cost": 294.51,
           "buy_date": "2026-08-31",
-          "current_price": 292.87,
+          "current_price": 290.1,
           "sector": "financial"
         },
         "HLM": {
           "shares": 5283.01,
           "cost": 2.35,
           "buy_date": "2026-09-01",
-          "current_price": 2.27,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "MTA": {
           "shares": 1525.78,
           "cost": 4.97,
           "buy_date": "2026-09-02",
-          "current_price": 4.99,
+          "current_price": 5.0,
           "sector": "industrial"
         },
         "TKG": {
           "shares": 53.14,
           "cost": 57.08,
           "buy_date": "2026-09-03",
-          "current_price": 52.68,
+          "current_price": 52.38,
           "sector": "telecoms"
         },
         "OAO": {
@@ -232,20 +236,20 @@
           "shares": 295.98,
           "cost": 15.75,
           "buy_date": "2026-09-16",
-          "current_price": 15.8,
+          "current_price": 15.75,
           "sector": "property"
         },
         "LSK": {
           "shares": 25.29,
           "cost": 73.72,
           "buy_date": "2026-09-17",
-          "current_price": 70.48,
+          "current_price": 70.82,
           "sector": "tech"
         }
       },
       "sector_composition": {
         "financial": 30.5,
-        "industrial": 44.9,
+        "industrial": 44.8,
         "telecoms": 5.8,
         "energy": 2.5,
         "property": 9.7,
@@ -260,7 +264,7 @@
           "shares": 2826.7752148349164,
           "price": 2.2,
           "gain": 0,
-          "reason": "Bought HLM on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-03",
@@ -269,7 +273,7 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "Bought PMV on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-03",
@@ -278,7 +282,7 @@
           "shares": 379.4156072855738,
           "price": 16.35,
           "gain": 0,
-          "reason": "Bought SSS on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-03",
@@ -287,7 +291,7 @@
           "shares": 47.525804229813815,
           "price": 79.0,
           "gain": 0,
-          "reason": "Bought LSK on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-04",
@@ -296,7 +300,7 @@
           "shares": 7.609033647654059,
           "price": 294.23,
           "gain": 0,
-          "reason": "Bought NED on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-07",
@@ -305,7 +309,7 @@
           "shares": 7.609033647654059,
           "price": 295.2,
           "gain": 7.380762638224496,
-          "reason": "Rotated out of NED into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 TKG (BULLISH) is a better option"
         },
         {
           "date": "2026-08-07",
@@ -314,7 +318,7 @@
           "shares": 40.997301979622655,
           "price": 54.28,
           "gain": 0,
-          "reason": "Rotated into TKG on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-13",
@@ -323,7 +327,7 @@
           "shares": 2826.7752148349164,
           "price": 2.05,
           "gain": -424.0162822252387,
-          "reason": "Rotated out of HLM into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-13",
@@ -332,7 +336,7 @@
           "shares": 35.61017584431355,
           "price": 151.25,
           "gain": 0,
-          "reason": "Rotated into JSE on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-14",
@@ -341,7 +345,7 @@
           "shares": 379.4156072855738,
           "price": 16.21,
           "gain": -53.118185019980956,
-          "reason": "Rotated out of SSS into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-08-14",
@@ -350,7 +354,7 @@
           "shares": 26168.785431145403,
           "price": 0.23,
           "gain": 0,
-          "reason": "Rotated into OAO on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-18",
@@ -359,7 +363,7 @@
           "shares": 47.525804229813815,
           "price": 78.05,
           "gain": -45.149514018323316,
-          "reason": "Rotated out of LSK into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-08-18",
@@ -368,7 +372,7 @@
           "shares": 28.21020775381994,
           "price": 138.5,
           "gain": 0,
-          "reason": "Rotated into SBP on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-19",
@@ -386,7 +390,7 @@
           "shares": 2527.111644276368,
           "price": 2.0,
           "gain": 0,
-          "reason": "Bought HLM on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-24",
@@ -395,7 +399,7 @@
           "shares": 40.997301979622655,
           "price": 54.23,
           "gain": -2.049865098981172,
-          "reason": "Rotated out of TKG into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 SSS (BULLISH) is a better option"
         },
         {
           "date": "2026-08-24",
@@ -404,7 +408,7 @@
           "shares": 154.4389840629397,
           "price": 16.1,
           "gain": 0,
-          "reason": "Rotated into SSS on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-08-31",
@@ -413,7 +417,7 @@
           "shares": 2527.111644276368,
           "price": 2.28,
           "gain": 707.5912603973829,
-          "reason": "Took profit on HLM at +14% — TT rating held but valuation stretched after rally."
+          "reason": "Take profit +14%"
         },
         {
           "date": "2026-08-31",
@@ -422,7 +426,7 @@
           "shares": 12.18449066619608,
           "price": 294.51,
           "gain": 0,
-          "reason": "Bought NED on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-01",
@@ -431,7 +435,7 @@
           "shares": 28.21020775381994,
           "price": 154.98,
           "gain": 464.90422378295216,
-          "reason": "Took profit on SBP at +12% — TT rating held but valuation stretched after rally."
+          "reason": "Take profit +12%"
         },
         {
           "date": "2026-09-01",
@@ -440,7 +444,7 @@
           "shares": 5283.0102473064,
           "price": 2.35,
           "gain": 0,
-          "reason": "Bought HLM on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-01",
@@ -449,7 +453,7 @@
           "shares": 83.61392958753865,
           "price": 78.25,
           "gain": 0,
-          "reason": "Bought LSK on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-02",
@@ -458,7 +462,7 @@
           "shares": 1525.7838286836977,
           "price": 4.97,
           "gain": 0,
-          "reason": "Bought MTA on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-03",
@@ -467,7 +471,7 @@
           "shares": 53.1404739212192,
           "price": 57.08,
           "gain": 0,
-          "reason": "Bought TKG on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-04",
@@ -476,7 +480,7 @@
           "shares": 6066.516502846383,
           "price": 0.2,
           "gain": 0,
-          "reason": "Bought OAO on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-04",
@@ -485,7 +489,7 @@
           "shares": 2105.4815307055246,
           "price": 2.75,
           "gain": -421.09630614110483,
-          "reason": "Rotated out of PMV into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-09-04",
@@ -494,7 +498,7 @@
           "shares": 38.22855427277229,
           "price": 154.0,
           "gain": 0,
-          "reason": "Rotated into SBP on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-09-08",
@@ -503,7 +507,7 @@
           "shares": 154.4389840629397,
           "price": 15.76,
           "gain": -52.509254581399546,
-          "reason": "Rotated out of SSS into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 SOL (BULLISH) is a better option"
         },
         {
           "date": "2026-09-08",
@@ -512,7 +516,7 @@
           "shares": 13.014374379183423,
           "price": 211.88,
           "gain": 0,
-          "reason": "Rotated into SOL on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-09-10",
@@ -521,7 +525,7 @@
           "shares": 13.014374379183423,
           "price": 237.38,
           "gain": 331.8665466691773,
-          "reason": "Took profit on SOL at +12% — TT rating held but valuation stretched after rally."
+          "reason": "Take profit +12%"
         },
         {
           "date": "2026-09-10",
@@ -530,7 +534,7 @@
           "shares": 714.1299308546432,
           "price": 2.84,
           "gain": 0,
-          "reason": "Bought PMV on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-15",
@@ -548,7 +552,7 @@
           "shares": 12153.776519989695,
           "price": 0.35,
           "gain": 0,
-          "reason": "Bought APF on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-16",
@@ -557,7 +561,7 @@
           "shares": 12153.776519989695,
           "price": 0.41,
           "gain": 729.2265911993818,
-          "reason": "Took profit on APF at +17% — TT rating held but valuation stretched after rally."
+          "reason": "Take profit +17%"
         },
         {
           "date": "2026-09-16",
@@ -566,7 +570,7 @@
           "shares": 295.9751234406019,
           "price": 15.75,
           "gain": 0,
-          "reason": "Bought SSS on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-17",
@@ -575,7 +579,7 @@
           "shares": 25.293587597338483,
           "price": 73.72,
           "gain": 0,
-          "reason": "Bought LSK on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, CAUTIOUS market"
         }
       ],
       "decisions": [
@@ -584,7 +588,7 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🟢 BUY TKG @ R57.08 — BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY TKG @ R57.08 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -592,9 +596,9 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🟢 BUY OAO @ R0.20 — BULLISH, CAUTIOUS",
-            "🔁 ROTATE PMV (BULLISH) → SBP: better BULLISH option",
-            "🟢 BUY SBP @ R154.00 — rotated in"
+            "\ud83d\udfe2 BUY OAO @ R0.20 \u2014 BULLISH, CAUTIOUS",
+            "\ud83d\udd01 ROTATE PMV (BULLISH) \u2192 SBP: better BULLISH option",
+            "\ud83d\udfe2 BUY SBP @ R154.00 \u2014 rotated in"
           ]
         },
         {
@@ -602,8 +606,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🔁 ROTATE SSS (BULLISH) → SOL: better BULLISH option",
-            "🟢 BUY SOL @ R211.88 — rotated in"
+            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 SOL: better BULLISH option",
+            "\ud83d\udfe2 BUY SOL @ R211.88 \u2014 rotated in"
           ]
         },
         {
@@ -611,8 +615,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🔴 SELL SOL — Take profit +12% (R+332)",
-            "🟢 BUY PMV @ R2.84 — BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL SOL \u2014 Take profit +12% (R+332)",
+            "\ud83d\udfe2 BUY PMV @ R2.84 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -620,8 +624,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🔴 SELL LSK — Cut loss -11% (R-748)",
-            "🟢 BUY APF @ R0.35 — BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL LSK \u2014 Cut loss -11% (R-748)",
+            "\ud83d\udfe2 BUY APF @ R0.35 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -629,8 +633,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🔴 SELL APF — Take profit +17% (R+729)",
-            "🟢 BUY SSS @ R15.75 — BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL APF \u2014 Take profit +17% (R+729)",
+            "\ud83d\udfe2 BUY SSS @ R15.75 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -638,7 +642,7 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "🟢 BUY LSK @ R73.72 — BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY LSK @ R73.72 \u2014 BULLISH, CAUTIOUS"
           ]
         }
       ]
@@ -648,17 +652,17 @@
       "news_sensitivity": "medium",
       "total_in": 50000.0,
       "final_cash": 611.69,
-      "final_holdings_value": 46760.52,
-      "final_portfolio": 47372.21,
-      "return_pct": -5.3,
+      "final_holdings_value": 46558.04,
+      "final_portfolio": 47169.73,
+      "return_pct": -5.7,
       "realized": -573.71,
-      "unrealized": -1690.47,
+      "unrealized": -1892.95,
       "total_costs": 363.61,
       "total_dividends": 0,
       "num_trades": 12,
       "risk": "AGGRESSIVE",
       "news": [
-        "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top — SA's external position is solid."
+        "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
       ],
       "daily_values": [
         [
@@ -800,6 +804,10 @@
         [
           "2026-09-23",
           47372.21
+        ],
+        [
+          "2026-09-28",
+          47169.73
         ]
       ],
       "holdings": {
@@ -814,14 +822,14 @@
           "shares": 31.19,
           "cost": 80.5,
           "buy_date": "2026-08-07",
-          "current_price": 70.48,
+          "current_price": 70.82,
           "sector": "tech"
         },
         "TKG": {
           "shares": 60.04,
           "cost": 55.93,
           "buy_date": "2026-08-14",
-          "current_price": 52.68,
+          "current_price": 52.38,
           "sector": "telecoms"
         },
         "JSE": {
@@ -835,21 +843,21 @@
           "shares": 4972.11,
           "cost": 2.44,
           "buy_date": "2026-09-04",
-          "current_price": 2.27,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "NED": {
           "shares": 36.21,
           "cost": 298.81,
           "buy_date": "2026-09-04",
-          "current_price": 292.87,
+          "current_price": 290.1,
           "sector": "financial"
         },
         "MTA": {
           "shares": 468.42,
           "cost": 4.9,
           "buy_date": "2026-09-11",
-          "current_price": 4.99,
+          "current_price": 5.0,
           "sector": "industrial"
         },
         "OAO": {
@@ -861,10 +869,10 @@
         }
       },
       "sector_composition": {
-        "industrial": 41.6,
-        "tech": 4.6,
+        "industrial": 41.5,
+        "tech": 4.7,
         "telecoms": 6.7,
-        "financial": 34.3,
+        "financial": 34.2,
         "energy": 11.6,
         "cash": 1.3
       },
@@ -876,7 +884,7 @@
           "shares": 2892.5141733194496,
           "price": 2.15,
           "gain": 0,
-          "reason": "Bought HLM on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-07",
@@ -885,7 +893,7 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "Bought PMV on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-07",
@@ -894,7 +902,7 @@
           "shares": 377.5681788873483,
           "price": 16.43,
           "gain": 0,
-          "reason": "Bought SSS on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-07",
@@ -903,7 +911,7 @@
           "shares": 31.189533411527048,
           "price": 80.5,
           "gain": 0,
-          "reason": "Bought LSK on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-14",
@@ -912,7 +920,7 @@
           "shares": 60.04307089618954,
           "price": 55.93,
           "gain": 0,
-          "reason": "Bought TKG on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-08-21",
@@ -921,7 +929,7 @@
           "shares": 2892.5141733194496,
           "price": 2.06,
           "gain": -260.3262755987507,
-          "reason": "Rotated out of HLM into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-21",
@@ -930,7 +938,7 @@
           "shares": 36.657024429460414,
           "price": 154.0,
           "gain": 0,
-          "reason": "Rotated into JSE on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         },
         {
           "date": "2026-09-04",
@@ -939,7 +947,7 @@
           "shares": 4972.108013191571,
           "price": 2.44,
           "gain": 0,
-          "reason": "Bought HLM on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-09-04",
@@ -948,7 +956,7 @@
           "shares": 36.212423699068964,
           "price": 298.81,
           "gain": 0,
-          "reason": "Bought NED on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-09-11",
@@ -957,7 +965,7 @@
           "shares": 468.4199566878824,
           "price": 4.9,
           "gain": 0,
-          "reason": "Bought MTA on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-09-11",
@@ -966,7 +974,7 @@
           "shares": 377.5681788873483,
           "price": 15.6,
           "gain": -313.381588476499,
-          "reason": "Rotated out of SSS into better BULLISH opportunity — capital efficiency drove the swap."
+          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-09-11",
@@ -975,7 +983,7 @@
           "shares": 27389.180861151373,
           "price": 0.2,
           "gain": 0,
-          "reason": "Rotated into OAO on BULLISH rating — better risk-adjusted return profile."
+          "reason": "Rotate in \u2014 better BULLISH option"
         }
       ],
       "decisions": [
@@ -983,13 +991,13 @@
           "date": "2026-08-07",
           "risk": "BALANCED",
           "news": [
-            "Week ends with MTN results and retail sales data. Consumer is alive but not thriving. SARB rate cut expectations building — this is the main catalyst for SA equities going forward."
+            "Week ends with MTN results and retail sales data. Consumer is alive but not thriving. SARB rate cut expectations building \u2014 this is the main catalyst for SA equities going forward."
           ],
           "log": [
-            "🟢 BUY HLM @ R2.15 — BULLISH, BALANCED",
-            "🟢 BUY PMV @ R2.95 — BULLISH, BALANCED",
-            "🟢 BUY SSS @ R16.43 — BULLISH, BALANCED",
-            "🟢 BUY LSK @ R80.50 — BULLISH, BALANCED"
+            "\ud83d\udfe2 BUY HLM @ R2.15 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY PMV @ R2.95 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY SSS @ R16.43 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY LSK @ R80.50 \u2014 BULLISH, BALANCED"
           ]
         },
         {
@@ -999,18 +1007,18 @@
             "Stadio and Exxaro add to the positive results season. Private education is a structural growth story. Coal is cyclical but Exxaro managing well. US rate cut in September now >90% probability."
           ],
           "log": [
-            "🟢 BUY TKG @ R55.93 — BULLISH, AGGRESSIVE"
+            "\ud83d\udfe2 BUY TKG @ R55.93 \u2014 BULLISH, AGGRESSIVE"
           ]
         },
         {
           "date": "2026-08-21",
           "risk": "AGGRESSIVE",
           "news": [
-            "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top — SA's external position is solid."
+            "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
           ],
           "log": [
-            "🔁 ROTATE HLM (BULLISH) → JSE: better BULLISH option",
-            "🟢 BUY JSE @ R154.00 — rotated in"
+            "\ud83d\udd01 ROTATE HLM (BULLISH) \u2192 JSE: better BULLISH option",
+            "\ud83d\udfe2 BUY JSE @ R154.00 \u2014 rotated in"
           ]
         },
         {
@@ -1018,8 +1026,8 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "🟢 BUY HLM @ R2.44 — BULLISH, AGGRESSIVE",
-            "🟢 BUY NED @ R298.81 — BULLISH, AGGRESSIVE"
+            "\ud83d\udfe2 BUY HLM @ R2.44 \u2014 BULLISH, AGGRESSIVE",
+            "\ud83d\udfe2 BUY NED @ R298.81 \u2014 BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -1027,9 +1035,9 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "🟢 BUY MTA @ R4.90 — BULLISH, AGGRESSIVE",
-            "🔁 ROTATE SSS (BULLISH) → OAO: better BULLISH option",
-            "🟢 BUY OAO @ R0.20 — rotated in"
+            "\ud83d\udfe2 BUY MTA @ R4.90 \u2014 BULLISH, AGGRESSIVE",
+            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 OAO: better BULLISH option",
+            "\ud83d\udfe2 BUY OAO @ R0.20 \u2014 rotated in"
           ]
         }
       ]
@@ -1039,17 +1047,17 @@
       "news_sensitivity": "low",
       "total_in": 50000.0,
       "final_cash": 4312.5,
-      "final_holdings_value": 45362.61,
-      "final_portfolio": 49675.11,
-      "return_pct": -0.6,
+      "final_holdings_value": 45199.91,
+      "final_portfolio": 49512.41,
+      "return_pct": -1.0,
       "realized": 0,
-      "unrealized": -97.59,
+      "unrealized": -260.29,
       "total_costs": 227.3,
       "total_dividends": 0,
       "num_trades": 6,
       "risk": "BALANCED",
       "news": [
-        "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% — still attractive yield for foreign investors. Capital inflows supporting the rand."
+        "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
       ],
       "daily_values": [
         [
@@ -1191,6 +1199,10 @@
         [
           "2026-09-23",
           49675.11
+        ],
+        [
+          "2026-09-28",
+          49512.41
         ]
       ],
       "holdings": {
@@ -1198,7 +1210,7 @@
           "shares": 3109.45,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 2.27,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "PMV": {
@@ -1212,36 +1224,36 @@
           "shares": 382.93,
           "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 15.8,
+          "current_price": 15.75,
           "sector": "property"
         },
         "LSK": {
           "shares": 32.19,
           "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 70.48,
+          "current_price": 70.82,
           "sector": "tech"
         },
         "NED": {
           "shares": 41.95,
           "cost": 295.85,
           "buy_date": "2026-09-16",
-          "current_price": 292.87,
+          "current_price": 290.1,
           "sector": "financial"
         },
         "MTA": {
           "shares": 2390.35,
           "cost": 4.98,
           "buy_date": "2026-09-16",
-          "current_price": 4.99,
+          "current_price": 5.0,
           "sector": "industrial"
         }
       },
       "sector_composition": {
-        "industrial": 49.8,
+        "industrial": 49.9,
         "property": 12.2,
         "tech": 4.6,
-        "financial": 24.7,
+        "financial": 24.6,
         "cash": 8.7
       },
       "all_trades": [
@@ -1252,7 +1264,7 @@
           "shares": 3109.4527363184084,
           "price": 2.0,
           "gain": 0,
-          "reason": "Bought HLM on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-19",
@@ -1261,7 +1273,7 @@
           "shares": 2003.6033921229991,
           "price": 3.1,
           "gain": 0,
-          "reason": "Bought PMV on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-19",
@@ -1270,7 +1282,7 @@
           "shares": 382.9287147604403,
           "price": 16.2,
           "gain": 0,
-          "reason": "Bought SSS on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-08-19",
@@ -1279,7 +1291,7 @@
           "shares": 32.189197943947796,
           "price": 78.0,
           "gain": 0,
-          "reason": "Bought LSK on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-09-16",
@@ -1288,7 +1300,7 @@
           "shares": 41.95357896016036,
           "price": 295.85,
           "gain": 0,
-          "reason": "Bought NED on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         },
         {
           "date": "2026-09-16",
@@ -1297,7 +1309,7 @@
           "shares": 2390.3522214149616,
           "price": 4.98,
           "gain": 0,
-          "reason": "Bought MTA on TT BULLISH rating — positive fundamentals and market sentiment aligned."
+          "reason": "TT BULLISH, BALANCED market"
         }
       ],
       "decisions": [
@@ -1305,13 +1317,13 @@
           "date": "2026-08-19",
           "risk": "BALANCED",
           "news": [
-            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% — still attractive yield for foreign investors. Capital inflows supporting the rand."
+            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
           ],
           "log": [
-            "🟢 BUY HLM @ R2.00 — BULLISH, BALANCED",
-            "🟢 BUY PMV @ R3.10 — BULLISH, BALANCED",
-            "🟢 BUY SSS @ R16.20 — BULLISH, BALANCED",
-            "🟢 BUY LSK @ R78.00 — BULLISH, BALANCED"
+            "\ud83d\udfe2 BUY HLM @ R2.00 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY PMV @ R3.10 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY SSS @ R16.20 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY LSK @ R78.00 \u2014 BULLISH, BALANCED"
           ]
         },
         {
@@ -1319,8 +1331,8 @@
           "risk": "BALANCED",
           "news": [],
           "log": [
-            "🟢 BUY NED @ R295.85 — BULLISH, BALANCED",
-            "🟢 BUY MTA @ R4.98 — BULLISH, BALANCED"
+            "\ud83d\udfe2 BUY NED @ R295.85 \u2014 BULLISH, BALANCED",
+            "\ud83d\udfe2 BUY MTA @ R4.98 \u2014 BULLISH, BALANCED"
           ]
         }
       ]
