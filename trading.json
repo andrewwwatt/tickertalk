@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-09-30",
-    "days": 38,
+    "end": "2026-10-01",
+    "days": 39,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01",
@@ -14,16 +14,16 @@
     "Daily Trader": {
       "name": "Daily Trader",
       "news_sensitivity": "high",
-      "total_in": 50000.0,
-      "final_cash": 1209.88,
-      "final_holdings_value": 46560.78,
-      "final_portfolio": 47770.66,
-      "return_pct": -4.5,
+      "total_in": 75000.0,
+      "final_cash": 10483.95,
+      "final_holdings_value": 62666.11,
+      "final_portfolio": 73150.06,
+      "return_pct": -2.5,
       "realized": -374.36,
-      "unrealized": -1145.67,
-      "total_costs": 878.14,
+      "unrealized": -686.69,
+      "total_costs": 956.38,
       "total_dividends": 168.83,
-      "num_trades": 41,
+      "num_trades": 42,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -181,7 +181,15 @@
         ],
         [
           "2026-09-30",
-          47770.66
+          48229.63
+        ],
+        [
+          "2026-10-01",
+          73151.39
+        ],
+        [
+          "2026-10-02",
+          73150.06
         ]
       ],
       "holdings": {
@@ -189,21 +197,21 @@
           "shares": 35.61,
           "cost": 151.25,
           "buy_date": "2026-08-13",
-          "current_price": 150.67,
+          "current_price": 150.27,
           "sector": "financial"
         },
         "NED": {
           "shares": 12.18,
           "cost": 294.51,
           "buy_date": "2026-08-31",
-          "current_price": 289.3,
+          "current_price": 290.09,
           "sector": "financial"
         },
         "HLM": {
           "shares": 5283.01,
           "cost": 2.35,
           "buy_date": "2026-09-01",
-          "current_price": 2.25,
+          "current_price": 2.34,
           "sector": "industrial"
         },
         "MTA": {
@@ -217,21 +225,21 @@
           "shares": 38.23,
           "cost": 154.0,
           "buy_date": "2026-09-04",
-          "current_price": 147.0,
+          "current_price": 148.0,
           "sector": "financial"
         },
         "SSS": {
           "shares": 295.98,
           "cost": 15.75,
           "buy_date": "2026-09-16",
-          "current_price": 15.46,
+          "current_price": 15.33,
           "sector": "property"
         },
         "LSK": {
           "shares": 25.29,
           "cost": 73.72,
           "buy_date": "2026-09-17",
-          "current_price": 73.85,
+          "current_price": 73.39,
           "sector": "tech"
         },
         "APF": {
@@ -247,14 +255,22 @@
           "buy_date": "2026-09-30",
           "current_price": 3.43,
           "sector": "industrial"
+        },
+        "OAO": {
+          "shares": 120366.86,
+          "cost": 0.13,
+          "buy_date": "2026-10-01",
+          "current_price": 0.13,
+          "sector": "energy"
         }
       },
       "sector_composition": {
-        "financial": 30.4,
-        "industrial": 44.2,
-        "property": 19.0,
-        "tech": 3.9,
-        "cash": 2.5
+        "financial": 19.9,
+        "industrial": 29.5,
+        "property": 12.4,
+        "tech": 2.5,
+        "energy": 21.4,
+        "cash": 14.3
       },
       "all_trades": [
         {
@@ -588,7 +604,7 @@
           "shares": 53.1404739212192,
           "price": 50.98,
           "gain": -324.15689091943705,
-          "reason": "Sold TKG at -11% stop-loss \u2014 Telkom's fixed-line irrelevance and mobile share losses leave it a NEUTRAL defensive hold at best; Ghost Mail notes telecoms are losing pricing power to fibre overbuild"
+          "reason": "Cut loss -11%"
         },
         {
           "date": "2026-09-29",
@@ -597,7 +613,7 @@
           "shares": 6066.516502846383,
           "price": 0.17,
           "gain": -181.99549508539144,
-          "reason": "Rotated OAO at -15% \u2014 energy orphan with no news catalyst and persistent BEARISH thesis; capital better deployed into BULLISH PMV and APF"
+          "reason": "Cut loss -15%"
         },
         {
           "date": "2026-09-29",
@@ -606,7 +622,7 @@
           "shares": 714.1299308546432,
           "price": 3.43,
           "gain": 421.3366592042398,
-          "reason": "Sold PMV at +21% take-profit \u2014 Primeserv's staffing-cycle gains crystallised; tactical rotation to lock in the upswing before re-entering the position on the next trading day"
+          "reason": "Take profit +21%"
         },
         {
           "date": "2026-09-29",
@@ -615,7 +631,7 @@
           "shares": 11286.230426644028,
           "price": 0.4,
           "gain": 0,
-          "reason": "Bought APF at 40c \u2014 Accelerate's Fourways Mall disposal closed, clearing the overhang; rating upgraded to BULLISH as the property restructuring thesis de-risks the portfolio"
+          "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-09-30",
@@ -624,19 +640,19 @@
           "shares": 526.471390164153,
           "price": 3.43,
           "gain": 0,
-          "reason": "Re-bought PMV after profit-taking on Sep 29 \u2014 Primeserv's +72% dividend and payroll services momentum makes it a BULLISH small-cap compounder; Ghost Mail's segmental style would flag the operating leverage in staffing"
+          "reason": "TT BULLISH, CAUTIOUS market"
+        },
+        {
+          "date": "2026-10-01",
+          "ticker": "OAO",
+          "action": "BUY",
+          "shares": 120366.86062795059,
+          "price": 0.13,
+          "gain": 0,
+          "reason": "TT BULLISH, CAUTIOUS market"
         }
       ],
       "decisions": [
-        {
-          "date": "2026-09-08",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udd01 ROTATE SSS (BULLISH) \u2192 SOL: better BULLISH option",
-            "\ud83d\udfe2 BUY SOL @ R211.88 \u2014 rotated in"
-          ]
-        },
         {
           "date": "2026-09-10",
           "risk": "CAUTIOUS",
@@ -690,19 +706,27 @@
           "log": [
             "\ud83d\udfe2 BUY PMV @ R3.43 \u2014 BULLISH, CAUTIOUS"
           ]
+        },
+        {
+          "date": "2026-10-01",
+          "risk": "CAUTIOUS",
+          "news": [],
+          "log": [
+            "\ud83d\udfe2 BUY OAO @ R0.13 \u2014 BULLISH, CAUTIOUS"
+          ]
         }
       ]
     },
     "Weekly Trader": {
       "name": "Weekly Trader",
       "news_sensitivity": "medium",
-      "total_in": 50000.0,
-      "final_cash": 611.69,
-      "final_holdings_value": 46700.75,
-      "final_portfolio": 47312.44,
-      "return_pct": -5.4,
+      "total_in": 75000.0,
+      "final_cash": 25611.69,
+      "final_holdings_value": 46125.14,
+      "final_portfolio": 71736.83,
+      "return_pct": -4.4,
       "realized": -573.71,
-      "unrealized": -1750.24,
+      "unrealized": -2325.45,
       "total_costs": 363.61,
       "total_dividends": 0,
       "num_trades": 12,
@@ -861,7 +885,15 @@
         ],
         [
           "2026-09-30",
-          47312.44
+          46737.22
+        ],
+        [
+          "2026-10-01",
+          71737.22
+        ],
+        [
+          "2026-10-02",
+          71736.83
         ]
       ],
       "holdings": {
@@ -876,35 +908,35 @@
           "shares": 31.19,
           "cost": 80.5,
           "buy_date": "2026-08-07",
-          "current_price": 73.85,
+          "current_price": 73.39,
           "sector": "tech"
         },
         "TKG": {
           "shares": 60.04,
           "cost": 55.93,
           "buy_date": "2026-08-14",
-          "current_price": 50.98,
+          "current_price": 52.2,
           "sector": "telecoms"
         },
         "JSE": {
           "shares": 36.66,
           "cost": 154.0,
           "buy_date": "2026-08-21",
-          "current_price": 150.67,
+          "current_price": 150.27,
           "sector": "financial"
         },
         "HLM": {
           "shares": 4972.11,
           "cost": 2.44,
           "buy_date": "2026-09-04",
-          "current_price": 2.25,
+          "current_price": 2.34,
           "sector": "industrial"
         },
         "NED": {
           "shares": 36.21,
           "cost": 298.81,
           "buy_date": "2026-09-04",
-          "current_price": 289.3,
+          "current_price": 290.09,
           "sector": "financial"
         },
         "MTA": {
@@ -918,17 +950,17 @@
           "shares": 27389.18,
           "cost": 0.2,
           "buy_date": "2026-09-11",
-          "current_price": 0.17,
+          "current_price": 0.13,
           "sector": "energy"
         }
       },
       "sector_composition": {
-        "industrial": 43.7,
-        "tech": 4.9,
-        "telecoms": 6.5,
-        "financial": 33.8,
-        "energy": 9.8,
-        "cash": 1.3
+        "industrial": 29.5,
+        "tech": 3.2,
+        "telecoms": 4.4,
+        "financial": 22.3,
+        "energy": 5.0,
+        "cash": 35.7
       },
       "all_trades": [
         {
@@ -1099,13 +1131,13 @@
     "Monthly Trader": {
       "name": "Monthly Trader",
       "news_sensitivity": "low",
-      "total_in": 50000.0,
-      "final_cash": 4312.5,
-      "final_holdings_value": 45896.26,
-      "final_portfolio": 50208.76,
-      "return_pct": 0.4,
+      "total_in": 75000.0,
+      "final_cash": 29312.5,
+      "final_holdings_value": 46143.68,
+      "final_portfolio": 75456.18,
+      "return_pct": 0.6,
       "realized": 0,
-      "unrealized": 436.06,
+      "unrealized": 684.48,
       "total_costs": 227.3,
       "total_dividends": 0,
       "num_trades": 6,
@@ -1264,7 +1296,15 @@
         ],
         [
           "2026-09-30",
-          50208.76
+          50457.16
+        ],
+        [
+          "2026-10-01",
+          75457.16
+        ],
+        [
+          "2026-10-02",
+          75456.18
         ]
       ],
       "holdings": {
@@ -1272,7 +1312,7 @@
           "shares": 3109.45,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 2.25,
+          "current_price": 2.34,
           "sector": "industrial"
         },
         "PMV": {
@@ -1286,21 +1326,21 @@
           "shares": 382.93,
           "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 15.46,
+          "current_price": 15.33,
           "sector": "property"
         },
         "LSK": {
           "shares": 32.19,
           "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 73.85,
+          "current_price": 73.39,
           "sector": "tech"
         },
         "NED": {
           "shares": 41.95,
           "cost": 295.85,
           "buy_date": "2026-09-16",
-          "current_price": 289.3,
+          "current_price": 290.09,
           "sector": "financial"
         },
         "MTA": {
@@ -1312,11 +1352,11 @@
         }
       },
       "sector_composition": {
-        "industrial": 50.7,
-        "property": 11.8,
-        "tech": 4.7,
-        "financial": 24.2,
-        "cash": 8.6
+        "industrial": 34.1,
+        "property": 7.8,
+        "tech": 3.1,
+        "financial": 16.1,
+        "cash": 38.8
       },
       "all_trades": [
         {
