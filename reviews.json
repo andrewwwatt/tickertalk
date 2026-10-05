@@ -4530,5 +4530,57 @@
     "price_at_review": 2.04,
     "price_current": 2.04,
     "performance_pct": null
+  },
+  {
+    "date": "2026-10-05",
+    "ticker": "NVS",
+    "company": "Novus Holdings Limited",
+    "title": "Disposal of the Novus Print Letting Enterprise — registration of transfer",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/novus-holdings-limited-disposal-of-the-novus-print-letting-enterprise-registration-of-transfer/",
+    "rating": "NEUTRAL",
+    "summary": "Novus Holdings has completed the registration of transfer for the Novus Print Letting Enterprise disposal. This is a procedural step confirming the legal transfer of a previously-announced sale. For a company restructuring its printing operations, this closes a chapter rather than opening one.",
+    "review": "Novus Print's letting enterprise disposal has been formally transferred — the last box ticked on a sale that was more about tidying up the portfolio than reshaping the group. Novus has been methodically streamlining its printing and packaging operations, and this disposal fits that pattern. The letting enterprise (property and equipment leased to third parties) was non-core, and crystallising it frees up capital and management attention.\n\nNVS doesn't trade often enough for us to track price action, but the market barely moved — confirming this is process, not catalyst. The real question for Novus is whether the core printing and packaging operations can generate growth in a digital-first world. Property disposals buy time; they don't build a future. Rating: NEUTRAL. Clean execution on a non-core exit. Results will tell us more.",
+    "price_at_review": null,
+    "price_current": null,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-10-05",
+    "ticker": "GLN",
+    "company": "Glencore PLC",
+    "title": "ASX secondary listing and updated long-term Marketing Adjusted EBIT guidance range methodology",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/glencore-plc-asx-secondary-listing-and-updated-long-term-marketing-adjusted-ebit-guidance-range-methodology/",
+    "rating": "BULLISH",
+    "summary": "Glencore is pursuing an ASX secondary listing — a strategic move deepening its Asia-Pacific investor base. Paired with an updated MA-EBIT (marketing adjusted EBIT) methodology, this formalises how the market should value Glencore's commodity trading engine. A cleaner methodology means less earnings uncertainty — potentially justifying a higher multiple.",
+    "review": "Two announcements from Glencore in one SENS, and both matter. First, the ASX secondary listing. Glencore is already London- and JSE-listed; adding Sydney gives the world's largest commodity trader access to Australia's deep superannuation pool and aligns with its growing coal, copper and zinc operations Down Under. It broadens the shareholder base beyond the UK/SA axis and signals management sees long-term value in the Australian market.\n\nSecond, the updated MA-EBIT methodology. The marketing division is Glencore's hidden gem — its global commodity trading operation that buys physical stuff and sells it at a spread, profiting from logistics, blending, and market access. MA-EBIT is the metric that captures this. Formalising the guidance methodology gives analysts a clearer framework to value a division that is essentially a global logistics-and-finance operation embedded inside a mining company. If the methodology narrows the uncertainty range, the division gets a higher multiple. At roughly 8x earnings on the LSE, Glencore is cheap for a company with diversified commodity exposure, a self-funding marketing engine, and now an ASX runway. Rating: BULLISH. Methodology matters. The market underprices the marketing division; this helps close the gap.",
+    "price_at_review": null,
+    "price_current": null,
+    "performance_pct": null
+  },
+  {
+    "date": "2026-10-05",
+    "ticker": "TTO",
+    "company": "Trustco Group Holdings Limited",
+    "title": "Further cautionary announcement — Meya Mining",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/trustco-group-holdings-limited-further-cautionary-announcement-meya-mining/",
+    "rating": "BEARISH",
+    "summary": "Another 'further cautionary' from Trustco regarding Meya Mining. The stock last traded at R0.30 and has been suspended/dormant since January 2025. Extended cautionaries at a company with no revenue visibility are not caution — they are drift. Meya Mining (the diamond asset) has been in protracted restructuring since 2023.",
+    "review": "Trustco's cautionaries have become a grim running joke on the JSE. The stock hasn't traded meaningfully since January 2025. The share price is R0.30 — or was, the last time anyone could transact. The Meya Mining saga has been dragging since 2023 with restructurings, board coups (remember the failed requisitioned GM in August?), and now another 'further cautionary.' At what point does further become forever?\n\nFor context: Trustco was once a R1bn+ diversified investment holding company spanning mining, manufacturing and financial services. Today it is a governance black box with a dormant stock, no visible revenue, and a cautionary that keeps extending. The market has already priced it at zero — the 30-cent price tag is effectively a lottery ticket on Meya ever producing diamonds at a profit. We covered this on 18 August after the failed board coup. Nothing has improved. Rating: BEARISH. There's nothing here for a serious investor. When a stock stops trading for nine months, the SENS announcements are just noise.",
+    "price_at_review": 0.3,
+    "price_current": 0.3,
+    "performance_pct": 0.0
+  },
+  {
+    "date": "2026-10-05",
+    "ticker": "CGR",
+    "company": "Calgro M3 Holdings Limited",
+    "title": "Disclosure of acquisition of securities",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/calgro-m3-holdings-limited-disclosure-of-acquisition-of-securities/",
+    "rating": "NEUTRAL",
+    "summary": "A shareholder has crossed the disclosure threshold in Calgro M3 Holdings, a property development and investment company. The acquisition disclosure (section 122 of the Companies Act) means a stake crossed a beneficial interest threshold. For a thinly-traded AltX small-cap, any meaningful accumulation by a new or existing investor is worth noting — but without the buyer's identity, it is a data point, not a catalyst.",
+    "review": "Calgro M3 is a tiny Johannesburg AltX-listed property developer — market cap around R50m, thin liquidity, no regular analyst coverage. The SENS says someone accumulated enough shares to trigger a mandatory disclosure. The Companies Act threshold is 5% beneficial interest or a change of 1%+ from the last disclosure. Without the buyer's name or the exact size, all we know is that shareholding changed hands in a meaningful way at a company that barely trades.\n\nFor a stock that has shed 66% of its value over 52 weeks at R0.20, any accumulation could be a distressed seller finding a buyer or a value investor building a position. We simply do not know which. The property development sector remains brutal — high input costs, weak consumer demand, expensive debt. Calgro's previous results showed negative earnings and a PB of 0.13x. The disclosure is worth filing, not trading on. Rating: NEUTRAL. A shareholder moved. The ambiguity is the problem.",
+    "price_at_review": 0.2,
+    "price_current": 0.2,
+    "performance_pct": 0.0
   }
 ]
