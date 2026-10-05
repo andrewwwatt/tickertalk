@@ -16,11 +16,11 @@
       "news_sensitivity": "high",
       "total_in": 75000.0,
       "final_cash": 10483.95,
-      "final_holdings_value": 62666.11,
-      "final_portfolio": 73150.06,
-      "return_pct": -2.5,
+      "final_holdings_value": 62151.66,
+      "final_portfolio": 72635.61,
+      "return_pct": -3.2,
       "realized": -374.36,
-      "unrealized": -686.69,
+      "unrealized": -1202.48,
       "total_costs": 956.38,
       "total_dividends": 168.83,
       "num_trades": 42,
@@ -185,11 +185,7 @@
         ],
         [
           "2026-10-01",
-          73151.39
-        ],
-        [
-          "2026-10-02",
-          73150.06
+          72635.61
         ]
       ],
       "holdings": {
@@ -197,21 +193,21 @@
           "shares": 35.61,
           "cost": 151.25,
           "buy_date": "2026-08-13",
-          "current_price": 150.27,
+          "current_price": 151.15,
           "sector": "financial"
         },
         "NED": {
           "shares": 12.18,
           "cost": 294.51,
           "buy_date": "2026-08-31",
-          "current_price": 290.09,
+          "current_price": 283.34,
           "sector": "financial"
         },
         "HLM": {
           "shares": 5283.01,
           "cost": 2.35,
           "buy_date": "2026-09-01",
-          "current_price": 2.34,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "MTA": {
@@ -232,14 +228,14 @@
           "shares": 295.98,
           "cost": 15.75,
           "buy_date": "2026-09-16",
-          "current_price": 15.33,
+          "current_price": 15.4,
           "sector": "property"
         },
         "LSK": {
           "shares": 25.29,
           "cost": 73.72,
           "buy_date": "2026-09-17",
-          "current_price": 73.39,
+          "current_price": 72.99,
           "sector": "tech"
         },
         "APF": {
@@ -265,12 +261,12 @@
         }
       },
       "sector_composition": {
-        "financial": 19.9,
-        "industrial": 29.5,
-        "property": 12.4,
+        "financial": 20.0,
+        "industrial": 29.0,
+        "property": 12.5,
         "tech": 2.5,
-        "energy": 21.4,
-        "cash": 14.3
+        "energy": 21.5,
+        "cash": 14.4
       },
       "all_trades": [
         {
@@ -559,7 +555,7 @@
           "shares": 83.61392958753865,
           "price": 69.31,
           "gain": -747.5085305125949,
-          "reason": "Cut loss -11%"
+          "reason": "Cut LSK at -11% stop-loss \u2014 Lesaka's share price weakened from R79 to R69 on Nasdaq selling pressure. Ghost Mail had flagged BULLISH in July, but the Nigerian fintech macro headwind (currency, regulation) overwhelmed in the short term."
         },
         {
           "date": "2026-09-15",
@@ -568,7 +564,7 @@
           "shares": 12153.776519989695,
           "price": 0.35,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought APF as rotation target after LSK stop-loss \u2014 Accelerate at R0.35 and 0.3x PB represents the deepest value on the JSE. The Fourways Mall drag is priced in. A distressed-asset thesis for a CAUTIOUS market."
         },
         {
           "date": "2026-09-16",
@@ -577,7 +573,7 @@
           "shares": 12153.776519989695,
           "price": 0.41,
           "gain": 729.2265911993818,
-          "reason": "Take profit +17%"
+          "reason": "Took profit on APF at +17% \u2014 Accelerate delivered a quick bounce from R0.35 to R0.41. Distressed property turnaround stories don't last, so take-profit discipline was correct."
         },
         {
           "date": "2026-09-16",
@@ -586,7 +582,7 @@
           "shares": 295.9751234406019,
           "price": 15.75,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought SSS at R15.75 after taking profit on APF \u2014 Stor-Age remains the dominant self-storage REIT with the Xtraspace acquisition widening the moat. Ghost Mail noted NEUTRAL on the macro thesis but the BULLISH Ticker Talk rating triggered re-entry."
         },
         {
           "date": "2026-09-17",
@@ -595,7 +591,7 @@
           "shares": 25.293587597338483,
           "price": 73.72,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Rebought LSK after earlier rotation \u2014 Lesaka's $5.00 chairman options strike and Nasdaq secondary listing support a long BULLISH view. Mazanderani eating his own cooking at 73.72/share. CAUTIOUS market kept position smaller."
         },
         {
           "date": "2026-09-29",
@@ -604,7 +600,7 @@
           "shares": 53.1404739212192,
           "price": 50.98,
           "gain": -324.15689091943705,
-          "reason": "Cut loss -11%"
+          "reason": "Sold TKG at -11% stop-loss \u2014 Telkom's BCX revenue decline (-10.9%) and the market's persistent discount on the turnaround thesis triggered the cut. Despite Ghost Mail's BULLISH stance on Telkom (\"strong foundation\"), the price action reversed."
         },
         {
           "date": "2026-09-29",
@@ -613,7 +609,7 @@
           "shares": 6066.516502846383,
           "price": 0.17,
           "gain": -181.99549508539144,
-          "reason": "Cut loss -15%"
+          "reason": "Sold OAO at -15% stop-loss after the stock halved since August \u2014 Nigerian regulatory risk and the dilutive rights issue overshadowed the operational turnaround. Ghost Mail not directly covering Oando, but the macro risk was always the thesis-breaker."
         },
         {
           "date": "2026-09-29",
@@ -622,7 +618,7 @@
           "shares": 714.1299308546432,
           "price": 3.43,
           "gain": 421.3366592042398,
-          "reason": "Take profit +21%"
+          "reason": "Took profit on PMV at +21% \u2014 Primeserv delivered exactly what the BULLISH rating promised. Small-cap liquidity risk makes take-profit the right discipline in a CAUTIOUS market."
         },
         {
           "date": "2026-09-29",
@@ -631,7 +627,7 @@
           "shares": 11286.230426644028,
           "price": 0.4,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought APF at R0.40 after TKG and OAO stop-losses triggered \u2014 Accelerate Property is deeply cheap at 0.4c but the Fourways Mall albatross remains. A distressed-asset punt in a CAUTIOUS market."
         },
         {
           "date": "2026-09-30",
@@ -640,7 +636,7 @@
           "shares": 526.471390164153,
           "price": 3.43,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Rebought PMV after take-profit on earlier position \u2014 Primeserv's dividend growth (+72%) and 23% return confirmed the bull case. Small-cap staffing cash machine at R3.43 with thin liquidity risk noted."
         },
         {
           "date": "2026-10-01",
@@ -649,7 +645,7 @@
           "shares": 120366.86062795059,
           "price": 0.13,
           "gain": 0,
-          "reason": "TT BULLISH, CAUTIOUS market"
+          "reason": "Bought OAO after persistently BULLISH rating \u2014 Oando's H1 production +16%, cash from operations swung positive, and the Eni/NAOC acquisition thesis is delivering. Cheap at R0.13/share with 42koz boepd behind it. High-risk high-reward play in a CAUTIOUS market."
         }
       ],
       "decisions": [
@@ -722,11 +718,11 @@
       "news_sensitivity": "medium",
       "total_in": 75000.0,
       "final_cash": 25611.69,
-      "final_holdings_value": 46125.14,
-      "final_portfolio": 71736.83,
-      "return_pct": -4.4,
+      "final_holdings_value": 45377.73,
+      "final_portfolio": 70989.42,
+      "return_pct": -5.3,
       "realized": -573.71,
-      "unrealized": -2325.45,
+      "unrealized": -3073.26,
       "total_costs": 363.61,
       "total_dividends": 0,
       "num_trades": 12,
@@ -889,11 +885,7 @@
         ],
         [
           "2026-10-01",
-          71737.22
-        ],
-        [
-          "2026-10-02",
-          71736.83
+          70989.42
         ]
       ],
       "holdings": {
@@ -908,35 +900,35 @@
           "shares": 31.19,
           "cost": 80.5,
           "buy_date": "2026-08-07",
-          "current_price": 73.39,
+          "current_price": 72.99,
           "sector": "tech"
         },
         "TKG": {
           "shares": 60.04,
           "cost": 55.93,
           "buy_date": "2026-08-14",
-          "current_price": 52.2,
+          "current_price": 50.94,
           "sector": "telecoms"
         },
         "JSE": {
           "shares": 36.66,
           "cost": 154.0,
           "buy_date": "2026-08-21",
-          "current_price": 150.27,
+          "current_price": 151.15,
           "sector": "financial"
         },
         "HLM": {
           "shares": 4972.11,
           "cost": 2.44,
           "buy_date": "2026-09-04",
-          "current_price": 2.34,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "NED": {
           "shares": 36.21,
           "cost": 298.81,
           "buy_date": "2026-09-04",
-          "current_price": 290.09,
+          "current_price": 283.34,
           "sector": "financial"
         },
         "MTA": {
@@ -955,12 +947,12 @@
         }
       },
       "sector_composition": {
-        "industrial": 29.5,
+        "industrial": 29.1,
         "tech": 3.2,
-        "telecoms": 4.4,
+        "telecoms": 4.3,
         "financial": 22.3,
         "energy": 5.0,
-        "cash": 35.7
+        "cash": 36.1
       },
       "all_trades": [
         {
@@ -1133,11 +1125,11 @@
       "news_sensitivity": "low",
       "total_in": 75000.0,
       "final_cash": 29312.5,
-      "final_holdings_value": 46143.68,
-      "final_portfolio": 75456.18,
-      "return_pct": 0.6,
+      "final_holdings_value": 45595.56,
+      "final_portfolio": 74908.06,
+      "return_pct": -0.1,
       "realized": 0,
-      "unrealized": 684.48,
+      "unrealized": 135.36,
       "total_costs": 227.3,
       "total_dividends": 0,
       "num_trades": 6,
@@ -1300,11 +1292,7 @@
         ],
         [
           "2026-10-01",
-          75457.16
-        ],
-        [
-          "2026-10-02",
-          75456.18
+          74908.06
         ]
       ],
       "holdings": {
@@ -1312,7 +1300,7 @@
           "shares": 3109.45,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 2.34,
+          "current_price": 2.25,
           "sector": "industrial"
         },
         "PMV": {
@@ -1326,21 +1314,21 @@
           "shares": 382.93,
           "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 15.33,
+          "current_price": 15.4,
           "sector": "property"
         },
         "LSK": {
           "shares": 32.19,
           "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 73.39,
+          "current_price": 72.99,
           "sector": "tech"
         },
         "NED": {
           "shares": 41.95,
           "cost": 295.85,
           "buy_date": "2026-09-16",
-          "current_price": 290.09,
+          "current_price": 283.34,
           "sector": "financial"
         },
         "MTA": {
@@ -1352,11 +1340,11 @@
         }
       },
       "sector_composition": {
-        "industrial": 34.1,
-        "property": 7.8,
+        "industrial": 34.0,
+        "property": 7.9,
         "tech": 3.1,
-        "financial": 16.1,
-        "cash": 38.8
+        "financial": 15.9,
+        "cash": 39.1
       },
       "all_trades": [
         {
@@ -1402,7 +1390,7 @@
           "shares": 41.95357896016036,
           "price": 295.85,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought Nedbank at R295.85 \u2014 BULLISH rating on the back of strong H1 results (HEPS +12% underlying, NCBA acquisition 79.9% secured). Ghost Mail called Nedbank the \"quiet achiever\" with a \"fortress balance sheet.\" Low-sensitivity Monthly Trader added it as a core financial holding."
         },
         {
           "date": "2026-09-16",
@@ -1411,7 +1399,7 @@
           "shares": 2390.3522214149616,
           "price": 4.98,
           "gain": 0,
-          "reason": "TT BULLISH, BALANCED market"
+          "reason": "Bought Metair at R4.98 after BULLISH rating confirmed \u2014 trading statement swung EPS from -93c loss to +72c profit. Ghost Mail noted this was \"the most promising update from Metair in a long time.\" AutoZone recovery and refinanced debt de-risk the story."
         }
       ],
       "decisions": [
