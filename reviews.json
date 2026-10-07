@@ -4647,5 +4647,50 @@
     "price_at_review": null,
     "price_current": null,
     "performance_pct": null
+  },
+  {
+    "date": "2026-10-07",
+    "ticker": "SNT",
+    "company": "Santam Limited",
+    "title": "Joint Firm Intention Announcement — Sanlam Offer to acquire remaining Santam shares by Scheme of Arrangement",
+    "sens_url": "https://ghostmailsa.beehiiv.com/p/sanlam-wants-the-other-37-3",
+    "rating": "BULLISH",
+    "summary": "Sanlam (SLM) is offering R505/share — a 25% premium to the 30-day VWAP — for the remaining 37.3% of Santam it doesn't already own. Independent board unanimously recommends in favour. Only a Category 2 transaction for Sanlam — meaning Sanlam shareholders don't even need to vote. Long-stop 31 March 2027 but could stretch to October 2027. The stock closed at R475 vs R505 offer — a 6% gap reflecting time value and implementation risk.",
+    "review": "Ghost Mail flagged this one before the SENS hit the wire. Sanlam wants the rest of Santam and they're paying up: R505/share cash, 25% above the 30-day VWAP. The independent board (advised by RMB) unanimously recommends acceptance. At R475 the market is pricing in a mid-2027 implementation, not the end-of-day cash. That 6% gap is the time value of money plus deal risk — reasonable for a transaction that needs competition authority green lights.\n\nFor Sanlam shareholders, this is a Category 2 transaction — no shareholder vote needed. That tells you how enormous Sanlam is relative to Santam. For Santam shareholders, the choice is simple: 75% approval triggers the scheme and you cash out. Ghost Mail captures the cross-selling thesis perfectly — integrated client proposition, unified structure, removal of dual listing complexity. The question Ghost raises is whether this drives more investor interest in OUTsurance as the remaining quality short-term insurer on the JSE. The long-stop date of March 2027 (extendable to October 2027) gives time for regulatory approvals. Rating: BULLISH. If you hold SNT, take the R505. If you don't, watch OUT.",
+    "price_at_review": null,
+    "price_current": null,
+    "performance_pct": null,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-06",
+    "ghost_verdict": "Santam shareholders could cash out. Sanlam wants the other 37.3%. This is enormous organisation doing what it does best — M&A."
+  },
+  {
+    "date": "2026-10-07",
+    "ticker": "OUT",
+    "company": "OUTsurance Group Limited",
+    "title": "Acquisition of remaining shares in OUTsurance Holdings Limited from OHL minority shareholders",
+    "sens_url": null,
+    "rating": "NEUTRAL",
+    "summary": "OUTsurance is acquiring the remaining minority shares in OUTsurance Holdings (OHL) from minority shareholders. This simplifies the group structure, consolidating 100% ownership of the operating entity. Ghost Mail noted that with Santam being taken private by Sanlam, OUTsurance becomes the remaining premium-quality short-term insurer listed on the JSE — which could drive structural demand for the stock.",
+    "review": "OUTsurance tidying up its OHL minority position is the kind of corporate hygiene you expect from a well-run group. The OUTsurance story has always been about the underwriting engine — 37%+ ROE, fortress balance sheet, disciplined underwriting across SA, UK, and Australia. Consolidating OHL ownership simplifies the structure and removes a governance friction point.\n\nGhost Mail's framing is the interesting lens here: with Santam being taken private by Sanlam at R505/share, OUTsurance becomes the last premium-quality listed short-term insurer on the JSE. If institutional investors want SA short-term insurance exposure without the Sanlam overhang, OUT is the only game in town. The August board refresh (four independent NEDs) and this simplification reinforce the governance story. The UK/Australia expansion remains the swing factor — if those books scale profitably, the multiple expands. Rating: NEUTRAL. Good governance hygiene. The Santam delisting thesis is the real catalyst to watch.",
+    "price_at_review": null,
+    "price_current": null,
+    "performance_pct": null,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-06",
+    "ghost_verdict": "Ghost Mail wondered if Santam delisting would create more investor interest in OUT as the remaining premium short-term insurer on the JSE."
+  },
+  {
+    "date": "2026-10-07",
+    "ticker": "OMN",
+    "company": "Omnia Holdings Limited",
+    "title": "TRP121: Notification of acquisition of beneficial interest in shares",
+    "sens_url": null,
+    "rating": "NEUTRAL",
+    "summary": "Omnia disclosed under TRP121 that an entity has acquired a beneficial interest in Omnia shares. Omnia is a diversified chemicals, mining explosives, and agriculture inputs group with a market cap around R8bn. The TRP121 threshold is 5%+ of voting shares. In a listed chemicals business with strategic assets (mining explosives, crop protection), share accumulation by an industry player or financial investor is always worth noting.",
+    "review": "TRP121 filings are the JSE's version of a 13D filing — they reveal when someone crosses 5% of voting shares. Omnia is a serious business in the mining chemicals and agriculture inputs space. Mining explosives are a recurring revenue stream tied to production volumes, not commodity prices, which gives the earnings base more resilience than the headline chemical sector suggests.\n\nWithout the identity and full quantum of the acquirer, this is an incomplete signal. Is an international chemical group positioning for consolidation? A financial investor betting on the agri-cycle turn? Or a passive crossover from an existing holder? Until we know who, the rating stays NEUTRAL. But TRP121 filings at Omnia level are worth flagging because the strategic assets are real. Rating: NEUTRAL. The identity matters more than the fact. Watch for the follow-up disclosure.",
+    "price_at_review": null,
+    "price_current": null,
+    "performance_pct": null
   }
 ]

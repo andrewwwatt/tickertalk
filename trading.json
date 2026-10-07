@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-10-05",
-    "days": 40,
+    "end": "2026-10-07",
+    "days": 41,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01",
@@ -15,15 +15,15 @@
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 75000.0,
-      "final_cash": 4193.58,
-      "final_holdings_value": 68266.74,
-      "final_portfolio": 72460.32,
-      "return_pct": -3.4,
-      "realized": -374.36,
-      "unrealized": -1346.48,
-      "total_costs": 987.67,
+      "final_cash": 4807.52,
+      "final_holdings_value": 66815.11,
+      "final_portfolio": 71622.63,
+      "return_pct": -4.5,
+      "realized": -637.59,
+      "unrealized": -1907.24,
+      "total_costs": 999.96,
       "total_dividends": 168.83,
-      "num_trades": 43,
+      "num_trades": 44,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -189,7 +189,11 @@
         ],
         [
           "2026-10-05",
-          72460.32
+          71623.98
+        ],
+        [
+          "2026-10-07",
+          4807.52
         ]
       ],
       "holdings": {
@@ -197,28 +201,28 @@
           "shares": 35.61,
           "cost": 151.25,
           "buy_date": "2026-08-13",
-          "current_price": 152.2,
+          "current_price": 148.5,
           "sector": "financial"
         },
         "NED": {
           "shares": 12.18,
           "cost": 294.51,
           "buy_date": "2026-08-31",
-          "current_price": 285.26,
+          "current_price": 281.66,
           "sector": "financial"
         },
         "HLM": {
           "shares": 5283.01,
           "cost": 2.35,
           "buy_date": "2026-09-01",
-          "current_price": 2.25,
+          "current_price": 2.2,
           "sector": "industrial"
         },
         "MTA": {
           "shares": 1525.78,
           "cost": 4.97,
           "buy_date": "2026-09-02",
-          "current_price": 4.85,
+          "current_price": 4.84,
           "sector": "industrial"
         },
         "SBP": {
@@ -239,22 +243,15 @@
           "shares": 25.29,
           "cost": 73.72,
           "buy_date": "2026-09-17",
-          "current_price": 72.72,
+          "current_price": 73.0,
           "sector": "tech"
         },
         "APF": {
           "shares": 11286.23,
           "cost": 0.4,
           "buy_date": "2026-09-29",
-          "current_price": 0.39,
+          "current_price": 0.38,
           "sector": "property"
-        },
-        "PMV": {
-          "shares": 526.47,
-          "cost": 3.43,
-          "buy_date": "2026-09-30",
-          "current_price": 3.43,
-          "sector": "industrial"
         },
         "OAO": {
           "shares": 120366.86,
@@ -264,20 +261,20 @@
           "sector": "energy"
         },
         "QLT": {
-          "shares": 163.21,
-          "cost": 38.35,
+          "shares": 185.17,
+          "cost": 38.75,
           "buy_date": "2026-10-05",
-          "current_price": 38.35,
+          "current_price": 38.75,
           "sector": "financial"
         }
       },
       "sector_composition": {
-        "financial": 28.6,
-        "industrial": 29.1,
+        "financial": 29.9,
+        "industrial": 26.5,
         "property": 12.4,
-        "tech": 2.5,
-        "energy": 21.6,
-        "cash": 5.8
+        "tech": 2.6,
+        "energy": 21.8,
+        "cash": 6.7
       },
       "all_trades": [
         {
@@ -287,7 +284,7 @@
           "shares": 2826.7752148349164,
           "price": 2.2,
           "gain": 0,
-          "reason": "Bought HLM at R2.20 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Bought HLM at R2 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-03",
@@ -296,7 +293,7 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "Bought PMV at R2.95 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
+          "reason": "Bought PMV at R3 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-08-03",
@@ -305,7 +302,7 @@
           "shares": 379.4156072855738,
           "price": 16.35,
           "gain": 0,
-          "reason": "Bought SSS at R16.35 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Bought SSS at R16 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-08-03",
@@ -314,7 +311,7 @@
           "shares": 47.525804229813815,
           "price": 79.0,
           "gain": 0,
-          "reason": "Bought LSK at R79.00 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
+          "reason": "Bought LSK at R79 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-08-04",
@@ -323,7 +320,7 @@
           "shares": 7.609033647654059,
           "price": 294.23,
           "gain": 0,
-          "reason": "Bought NED at R294.23 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
+          "reason": "Bought NED at R294 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
         },
         {
           "date": "2026-08-07",
@@ -332,7 +329,7 @@
           "shares": 7.609033647654059,
           "price": 295.2,
           "gain": 7.380762638224496,
-          "reason": "Rotated out of NED into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
+          "reason": "Sold NED \u2014 P&L R+7. Rotated into TKG which has a stronger analytical thesis. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
         },
         {
           "date": "2026-08-07",
@@ -341,7 +338,7 @@
           "shares": 40.997301979622655,
           "price": 54.28,
           "gain": 0,
-          "reason": "Bought TKG at R54.28 \u2014 BEARISH rating from Ticker Talk. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing."
+          "reason": "Rotated out of NED into TKG at R54 \u2014 BULLISH from Ticker Talk. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing \u2014 Ghost Mail agrees it's a strong foundation."
         },
         {
           "date": "2026-08-13",
@@ -350,7 +347,7 @@
           "shares": 2826.7752148349164,
           "price": 2.05,
           "gain": -424.0162822252387,
-          "reason": "Rotated out of HLM into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Sold HLM \u2014 P&L R-424. Rotated into JSE which has a stronger analytical thesis. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-13",
@@ -359,7 +356,7 @@
           "shares": 35.61017584431355,
           "price": 151.25,
           "gain": 0,
-          "reason": "Bought JSE at R151.25 \u2014 NEUTRAL rating from Ticker Talk. JSE delivered strong H1 with 14.6% revenue growth, positive operating leverage of 3.1%, and FORGE 2031 strategy investing in the exchange's future relevance."
+          "reason": "Rotated out of HLM into JSE at R151 \u2014 BULLISH from Ticker Talk. JSE delivered strong H1 with 14.6% revenue growth and positive operating leverage of 3.1% \u2014 FORGE 2031 strategy investing in the exchange's future relevance."
         },
         {
           "date": "2026-08-14",
@@ -368,7 +365,7 @@
           "shares": 379.4156072855738,
           "price": 16.21,
           "gain": -53.118185019980956,
-          "reason": "Rotated out of SSS into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Sold SSS \u2014 P&L R-53. Rotated into OAO which has a stronger analytical thesis. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-08-14",
@@ -377,7 +374,7 @@
           "shares": 26168.785431145403,
           "price": 0.23,
           "gain": 0,
-          "reason": "Bought OAO at R0.23 \u2014 BULLISH rating from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung to positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk."
+          "reason": "Rotated out of SSS into OAO at R0 \u2014 BULLISH from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk. Ghost Mail has been BULLISH."
         },
         {
           "date": "2026-08-18",
@@ -386,7 +383,7 @@
           "shares": 47.525804229813815,
           "price": 78.05,
           "gain": -45.149514018323316,
-          "reason": "Rotated out of LSK into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
+          "reason": "Sold LSK \u2014 P&L R-45. Rotated into SBP which has a stronger analytical thesis. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-08-18",
@@ -395,7 +392,7 @@
           "shares": 28.21020775381994,
           "price": 138.5,
           "gain": 0,
-          "reason": "Bought SBP at R138.50 \u2014 BULLISH rating from Ticker Talk. Sabvest Capital trades at 15-19% discount to NAV \u2014 a holding company run by disciplined capital allocator Chris Seabrooke compounding mid-teens returns."
+          "reason": "Rotated out of LSK into SBP at R138 \u2014 BULLISH from Ticker Talk. Sabvest Capital NAV jumped 18-24% to 16,381-17,214 cents \u2014 compounding at its finest. Trading at 15-19% discount to NAV with P/E of just 4.8x. Ghost Mail flagged this as one of the best-kept secrets on the JSE."
         },
         {
           "date": "2026-08-19",
@@ -404,7 +401,7 @@
           "shares": 26168.785431145403,
           "price": 0.2,
           "gain": -785.0635629343615,
-          "reason": "Cut loss -13%"
+          "reason": "Sold OAO at R0 \u2014 P&L R-785. Rating downgraded/thesis broke. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk. Ghost Mail has been BULLISH."
         },
         {
           "date": "2026-08-19",
@@ -413,7 +410,7 @@
           "shares": 2527.111644276368,
           "price": 2.0,
           "gain": 0,
-          "reason": "Bought HLM at R2.00 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Bought HLM at R2 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-24",
@@ -422,7 +419,7 @@
           "shares": 40.997301979622655,
           "price": 54.23,
           "gain": -2.049865098981172,
-          "reason": "Rotated out of TKG into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing."
+          "reason": "Sold TKG \u2014 P&L R-2. Rotated into SSS which has a stronger analytical thesis. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing \u2014 Ghost Mail agrees it's a strong foundation."
         },
         {
           "date": "2026-08-24",
@@ -431,7 +428,7 @@
           "shares": 154.4389840629397,
           "price": 16.1,
           "gain": 0,
-          "reason": "Bought SSS at R16.10 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Rotated out of TKG into SSS at R16 \u2014 BULLISH from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-08-31",
@@ -440,7 +437,7 @@
           "shares": 2527.111644276368,
           "price": 2.28,
           "gain": 707.5912603973829,
-          "reason": "Take profit +14%"
+          "reason": "Sold HLM at R2 \u2014 P&L R+708. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-31",
@@ -449,7 +446,7 @@
           "shares": 12.18449066619608,
           "price": 294.51,
           "gain": 0,
-          "reason": "Bought NED at R294.51 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
+          "reason": "Bought NED at R295 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
         },
         {
           "date": "2026-09-01",
@@ -458,7 +455,7 @@
           "shares": 28.21020775381994,
           "price": 154.98,
           "gain": 464.90422378295216,
-          "reason": "Take profit +12%"
+          "reason": "Sold SBP at R155 \u2014 P&L R+465. Sabvest Capital NAV jumped 18-24% to 16,381-17,214 cents \u2014 compounding at its finest. Trading at 15-19% discount to NAV with P/E of just 4.8x. Ghost Mail flagged this as one of the best-kept secrets on the JSE."
         },
         {
           "date": "2026-09-01",
@@ -467,7 +464,7 @@
           "shares": 5283.0102473064,
           "price": 2.35,
           "gain": 0,
-          "reason": "Bought HLM at R2.35 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Bought HLM at R2 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-09-01",
@@ -476,7 +473,7 @@
           "shares": 83.61392958753865,
           "price": 78.25,
           "gain": 0,
-          "reason": "Bought LSK at R78.25 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
+          "reason": "Bought LSK at R78 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-09-02",
@@ -485,7 +482,7 @@
           "shares": 1525.7838286836977,
           "price": 4.97,
           "gain": 0,
-          "reason": "Bought MTA at R4.97 \u2014 BULLISH rating from Ticker Talk. Metair swung EPS from -93c loss to +72c profit, R3.3bn debt refinanced. Ghost Mail called this 'the most promising update from Metair in a very long time.' AutoZone recovery key."
+          "reason": "Bought MTA at R5 \u2014 BULLISH rating from Ticker Talk. Metair swung EPS from -93c loss to +72c profit, R3.3bn debt refinanced for 5 years. Ghost Mail called this 'the most promising update from Metair in a very long time.' AutoZone recovery and AutoXpress are key catalysts."
         },
         {
           "date": "2026-09-03",
@@ -494,7 +491,7 @@
           "shares": 53.1404739212192,
           "price": 57.08,
           "gain": 0,
-          "reason": "Bought TKG at R57.08 \u2014 BEARISH rating from Ticker Talk. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing."
+          "reason": "Bought TKG at R57 \u2014 BULLISH rating from Ticker Talk. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing \u2014 Ghost Mail agrees it's a strong foundation."
         },
         {
           "date": "2026-09-04",
@@ -503,7 +500,7 @@
           "shares": 6066.516502846383,
           "price": 0.2,
           "gain": 0,
-          "reason": "Bought OAO at R0.20 \u2014 BULLISH rating from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung to positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk."
+          "reason": "Bought OAO at R0 \u2014 BULLISH rating from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk. Ghost Mail has been BULLISH."
         },
         {
           "date": "2026-09-04",
@@ -512,7 +509,7 @@
           "shares": 2105.4815307055246,
           "price": 2.75,
           "gain": -421.09630614110483,
-          "reason": "Rotated out of PMV into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
+          "reason": "Sold PMV \u2014 P&L R-421. Rotated into OAO which has a stronger analytical thesis. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-09-04",
@@ -521,7 +518,7 @@
           "shares": 38.22855427277229,
           "price": 154.0,
           "gain": 0,
-          "reason": "Bought SBP at R154.00 \u2014 BULLISH rating from Ticker Talk. Sabvest Capital trades at 15-19% discount to NAV \u2014 a holding company run by disciplined capital allocator Chris Seabrooke compounding mid-teens returns."
+          "reason": "Rotated out of PMV into SBP at R154 \u2014 BULLISH from Ticker Talk. Sabvest Capital NAV jumped 18-24% to 16,381-17,214 cents \u2014 compounding at its finest. Trading at 15-19% discount to NAV with P/E of just 4.8x. Ghost Mail flagged this as one of the best-kept secrets on the JSE."
         },
         {
           "date": "2026-09-08",
@@ -530,7 +527,7 @@
           "shares": 154.4389840629397,
           "price": 15.76,
           "gain": -52.509254581399546,
-          "reason": "Rotated out of SSS into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Sold SSS \u2014 P&L R-53. Rotated into SOL which has a stronger analytical thesis. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-09-08",
@@ -539,7 +536,7 @@
           "shares": 13.014374379183423,
           "price": 211.88,
           "gain": 0,
-          "reason": "Bought SOL at R211.88 \u2014 NEUTRAL rating from Ticker Talk. Sasol's FY26 turnaround is real \u2014 HEPS +2-14%, adjusted EBITDA R58-62bn, but impaired Secunda capex R7.7bn and total impairment bill R16.8bn cloud the picture. Forward PE 4.5-5x."
+          "reason": "Rotated out of SSS into SOL at R212 \u2014 BULLISH from Ticker Talk. Sasol's recovery is real \u2014 HEPS R36-R40 puts stock on a forward PE of ~4.5-5x. Brent up 7%, refining margins doubled. Ghost Mail has been consistently BULLISH on the Sasol thesis."
         },
         {
           "date": "2026-09-10",
@@ -548,7 +545,7 @@
           "shares": 13.014374379183423,
           "price": 237.38,
           "gain": 331.8665466691773,
-          "reason": "Take profit +12%"
+          "reason": "Sold SOL at R237 \u2014 P&L R+332. Sasol's recovery is real \u2014 HEPS R36-R40 puts stock on a forward PE of ~4.5-5x. Brent up 7%, refining margins doubled. Ghost Mail has been consistently BULLISH on the Sasol thesis."
         },
         {
           "date": "2026-09-10",
@@ -557,7 +554,7 @@
           "shares": 714.1299308546432,
           "price": 2.84,
           "gain": 0,
-          "reason": "Bought PMV at R2.84 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
+          "reason": "Bought PMV at R3 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-09-15",
@@ -566,7 +563,7 @@
           "shares": 83.61392958753865,
           "price": 69.31,
           "gain": -747.5085305125949,
-          "reason": "Cut loss -11%"
+          "reason": "Sold LSK at R69 \u2014 P&L R-748. Rating downgraded/thesis broke. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-09-15",
@@ -575,7 +572,7 @@
           "shares": 12153.776519989695,
           "price": 0.35,
           "gain": 0,
-          "reason": "Bought APF at R0.35 \u2014 BULLISH rating from Ticker Talk. Accelerate Property Fund \u2014 Fourways Mall still an albatross, trading statement corrections erode credibility. BEARISH rating from Ticker Talk."
+          "reason": "Bought APF at R0 \u2014 BULLISH."
         },
         {
           "date": "2026-09-16",
@@ -584,7 +581,7 @@
           "shares": 12153.776519989695,
           "price": 0.41,
           "gain": 729.2265911993818,
-          "reason": "Take profit +17%"
+          "reason": "Sold APF at R0 \u2014 P&L R+729."
         },
         {
           "date": "2026-09-16",
@@ -593,7 +590,7 @@
           "shares": 295.9751234406019,
           "price": 15.75,
           "gain": 0,
-          "reason": "Bought SSS at R15.75 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Bought SSS at R16 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-09-17",
@@ -602,7 +599,7 @@
           "shares": 25.293587597338483,
           "price": 73.72,
           "gain": 0,
-          "reason": "Bought LSK at R73.72 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
+          "reason": "Bought LSK at R74 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-09-29",
@@ -611,7 +608,7 @@
           "shares": 53.1404739212192,
           "price": 50.98,
           "gain": -324.15689091943705,
-          "reason": "Cut loss -11%"
+          "reason": "Sold TKG at R51 \u2014 P&L R-324. Rating downgraded/thesis broke. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing \u2014 Ghost Mail agrees it's a strong foundation."
         },
         {
           "date": "2026-09-29",
@@ -620,7 +617,7 @@
           "shares": 6066.516502846383,
           "price": 0.17,
           "gain": -181.99549508539144,
-          "reason": "Cut loss -15%"
+          "reason": "Sold OAO at R0 \u2014 P&L R-182. Rating downgraded/thesis broke. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk. Ghost Mail has been BULLISH."
         },
         {
           "date": "2026-09-29",
@@ -629,7 +626,7 @@
           "shares": 714.1299308546432,
           "price": 3.43,
           "gain": 421.3366592042398,
-          "reason": "Take profit +21%"
+          "reason": "Sold PMV at R3 \u2014 P&L R+421. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-09-29",
@@ -638,7 +635,7 @@
           "shares": 11286.230426644028,
           "price": 0.4,
           "gain": 0,
-          "reason": "Bought APF at R0.40 \u2014 BULLISH rating from Ticker Talk. Accelerate Property Fund \u2014 Fourways Mall still an albatross, trading statement corrections erode credibility. BEARISH rating from Ticker Talk."
+          "reason": "Bought APF at R0 \u2014 BULLISH."
         },
         {
           "date": "2026-09-30",
@@ -647,7 +644,7 @@
           "shares": 526.471390164153,
           "price": 3.43,
           "gain": 0,
-          "reason": "Bought PMV at R3.43 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
+          "reason": "Bought PMV at R3 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-10-01",
@@ -656,16 +653,25 @@
           "shares": 120366.86062795059,
           "price": 0.13,
           "gain": 0,
-          "reason": "Bought OAO at R0.13 \u2014 BULLISH rating from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung to positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk."
+          "reason": "Bought OAO at R0 \u2014 BULLISH rating from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk. Ghost Mail has been BULLISH."
+        },
+        {
+          "date": "2026-10-05",
+          "ticker": "PMV",
+          "action": "SELL",
+          "shares": 526.471390164153,
+          "price": 2.93,
+          "gain": -263.2356950820765,
+          "reason": "Sold PMV at R3 \u2014 P&L R-263. Rating downgraded/thesis broke. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-10-05",
           "ticker": "QLT",
           "action": "BUY",
-          "shares": 163.2093025463737,
-          "price": 38.35,
+          "shares": 185.17171964193838,
+          "price": 38.75,
           "gain": 0,
-          "reason": "Bought QLT at R38.35 \u2014 BULLISH rating from Ticker Talk. Quilter record core net flows of \u00a36bn, AuMA +11% to \u00a3157bn, Solvency II at 202%. UK wealth management compounding machine."
+          "reason": "Bought QLT at R39 \u2014 BULLISH."
         }
       ],
       "decisions": [
@@ -727,7 +733,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY QLT @ R38.35 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL PMV \u2014 Cut loss -15% (R-263)",
+            "\ud83d\udfe2 BUY QLT @ R38.75 \u2014 BULLISH, CAUTIOUS"
           ]
         }
       ]
@@ -737,11 +744,11 @@
       "news_sensitivity": "medium",
       "total_in": 75000.0,
       "final_cash": 25611.69,
-      "final_holdings_value": 45460.51,
-      "final_portfolio": 71072.21,
-      "return_pct": -5.2,
+      "final_holdings_value": 43879.45,
+      "final_portfolio": 69491.14,
+      "return_pct": -7.3,
       "realized": -573.71,
-      "unrealized": -2990.48,
+      "unrealized": -4571.14,
       "total_costs": 363.61,
       "total_dividends": 0,
       "num_trades": 12,
@@ -908,7 +915,11 @@
         ],
         [
           "2026-10-05",
-          71072.21
+          69491.5
+        ],
+        [
+          "2026-10-07",
+          25611.69
         ]
       ],
       "holdings": {
@@ -916,49 +927,49 @@
           "shares": 2105.48,
           "cost": 2.95,
           "buy_date": "2026-08-07",
-          "current_price": 3.43,
+          "current_price": 2.93,
           "sector": "industrial"
         },
         "LSK": {
           "shares": 31.19,
           "cost": 80.5,
           "buy_date": "2026-08-07",
-          "current_price": 72.72,
+          "current_price": 73.0,
           "sector": "tech"
         },
         "TKG": {
           "shares": 60.04,
           "cost": 55.93,
           "buy_date": "2026-08-14",
-          "current_price": 50.66,
+          "current_price": 50.37,
           "sector": "telecoms"
         },
         "JSE": {
           "shares": 36.66,
           "cost": 154.0,
           "buy_date": "2026-08-21",
-          "current_price": 152.2,
+          "current_price": 148.5,
           "sector": "financial"
         },
         "HLM": {
           "shares": 4972.11,
           "cost": 2.44,
           "buy_date": "2026-09-04",
-          "current_price": 2.25,
+          "current_price": 2.2,
           "sector": "industrial"
         },
         "NED": {
           "shares": 36.21,
           "cost": 298.81,
           "buy_date": "2026-09-04",
-          "current_price": 285.26,
+          "current_price": 281.66,
           "sector": "financial"
         },
         "MTA": {
           "shares": 468.42,
           "cost": 4.9,
           "buy_date": "2026-09-11",
-          "current_price": 4.85,
+          "current_price": 4.84,
           "sector": "industrial"
         },
         "OAO": {
@@ -970,12 +981,12 @@
         }
       },
       "sector_composition": {
-        "industrial": 29.1,
-        "tech": 3.2,
-        "telecoms": 4.3,
-        "financial": 22.4,
-        "energy": 5.0,
-        "cash": 36.0
+        "industrial": 27.9,
+        "tech": 3.3,
+        "telecoms": 4.4,
+        "financial": 22.5,
+        "energy": 5.1,
+        "cash": 36.9
       },
       "all_trades": [
         {
@@ -985,7 +996,7 @@
           "shares": 2892.5141733194496,
           "price": 2.15,
           "gain": 0,
-          "reason": "Bought HLM at R2.15 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Bought HLM at R2 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-07",
@@ -994,7 +1005,7 @@
           "shares": 2105.4815307055246,
           "price": 2.95,
           "gain": 0,
-          "reason": "Bought PMV at R2.95 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
+          "reason": "Bought PMV at R3 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-08-07",
@@ -1003,7 +1014,7 @@
           "shares": 377.5681788873483,
           "price": 16.43,
           "gain": 0,
-          "reason": "Bought SSS at R16.43 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Bought SSS at R16 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-08-07",
@@ -1012,7 +1023,7 @@
           "shares": 31.189533411527048,
           "price": 80.5,
           "gain": 0,
-          "reason": "Bought LSK at R80.50 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
+          "reason": "Bought LSK at R80 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-08-14",
@@ -1021,7 +1032,7 @@
           "shares": 60.04307089618954,
           "price": 55.93,
           "gain": 0,
-          "reason": "Bought TKG at R55.93 \u2014 BEARISH rating from Ticker Talk. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing."
+          "reason": "Bought TKG at R56 \u2014 BULLISH rating from Ticker Talk. Telkom's data-led strategy is working: data revenue 62.4% of top line, EBITDA margin expanded to 27.7%. BCX the problem child (-10.9%) but cybersecurity and cloud growing \u2014 Ghost Mail agrees it's a strong foundation."
         },
         {
           "date": "2026-08-21",
@@ -1030,7 +1041,7 @@
           "shares": 2892.5141733194496,
           "price": 2.06,
           "gain": -260.3262755987507,
-          "reason": "Rotated out of HLM into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Sold HLM \u2014 P&L R-260. Rotated into JSE which has a stronger analytical thesis. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-21",
@@ -1039,7 +1050,7 @@
           "shares": 36.657024429460414,
           "price": 154.0,
           "gain": 0,
-          "reason": "Bought JSE at R154.00 \u2014 NEUTRAL rating from Ticker Talk. JSE delivered strong H1 with 14.6% revenue growth, positive operating leverage of 3.1%, and FORGE 2031 strategy investing in the exchange's future relevance."
+          "reason": "Rotated out of HLM into JSE at R154 \u2014 BULLISH from Ticker Talk. JSE delivered strong H1 with 14.6% revenue growth and positive operating leverage of 3.1% \u2014 FORGE 2031 strategy investing in the exchange's future relevance."
         },
         {
           "date": "2026-09-04",
@@ -1048,7 +1059,7 @@
           "shares": 4972.108013191571,
           "price": 2.44,
           "gain": 0,
-          "reason": "Bought HLM at R2.44 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Bought HLM at R2 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-09-04",
@@ -1057,7 +1068,7 @@
           "shares": 36.212423699068964,
           "price": 298.81,
           "gain": 0,
-          "reason": "Bought NED at R298.81 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
+          "reason": "Bought NED at R299 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
         },
         {
           "date": "2026-09-11",
@@ -1066,7 +1077,7 @@
           "shares": 468.4199566878824,
           "price": 4.9,
           "gain": 0,
-          "reason": "Bought MTA at R4.90 \u2014 BULLISH rating from Ticker Talk. Metair swung EPS from -93c loss to +72c profit, R3.3bn debt refinanced. Ghost Mail called this 'the most promising update from Metair in a very long time.' AutoZone recovery key."
+          "reason": "Bought MTA at R5 \u2014 BULLISH rating from Ticker Talk. Metair swung EPS from -93c loss to +72c profit, R3.3bn debt refinanced for 5 years. Ghost Mail called this 'the most promising update from Metair in a very long time.' AutoZone recovery and AutoXpress are key catalysts."
         },
         {
           "date": "2026-09-11",
@@ -1075,7 +1086,7 @@
           "shares": 377.5681788873483,
           "price": 15.6,
           "gain": -313.381588476499,
-          "reason": "Rotated out of SSS into another BULLISH-rated stock \u2014 better BULLISH-rated opportunity with stronger analytical tailwinds. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Sold SSS \u2014 P&L R-313. Rotated into MTA which has a stronger analytical thesis. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-09-11",
@@ -1084,7 +1095,7 @@
           "shares": 27389.180861151373,
           "price": 0.2,
           "gain": 0,
-          "reason": "Bought OAO at R0.20 \u2014 BULLISH rating from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung to positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk."
+          "reason": "Rotated out of SSS into OAO at R0 \u2014 BULLISH from Ticker Talk. Oando's Eni/NAOC acquisition paying off \u2014 production +16% to 42,789 boepd, cash flow swung positive. But rights issue and $1.5bn issuance coming \u2014 dilution risk. Ghost Mail has been BULLISH."
         }
       ],
       "decisions": [
@@ -1148,11 +1159,11 @@
       "news_sensitivity": "low",
       "total_in": 75000.0,
       "final_cash": 29312.5,
-      "final_holdings_value": 45705.71,
-      "final_portfolio": 75018.21,
-      "return_pct": 0.0,
+      "final_holdings_value": 44381.55,
+      "final_portfolio": 73694.05,
+      "return_pct": -1.7,
       "realized": 0,
-      "unrealized": 245.51,
+      "unrealized": -1077.64,
       "total_costs": 227.3,
       "total_dividends": 0,
       "num_trades": 6,
@@ -1319,7 +1330,11 @@
         ],
         [
           "2026-10-05",
-          75018.21
+          73695.01
+        ],
+        [
+          "2026-10-07",
+          29312.5
         ]
       ],
       "holdings": {
@@ -1327,14 +1342,14 @@
           "shares": 3109.45,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 2.25,
+          "current_price": 2.2,
           "sector": "industrial"
         },
         "PMV": {
           "shares": 2003.6,
           "cost": 3.1,
           "buy_date": "2026-08-19",
-          "current_price": 3.43,
+          "current_price": 2.93,
           "sector": "industrial"
         },
         "SSS": {
@@ -1348,30 +1363,30 @@
           "shares": 32.19,
           "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 72.72,
+          "current_price": 73.0,
           "sector": "tech"
         },
         "NED": {
           "shares": 41.95,
           "cost": 295.85,
           "buy_date": "2026-09-16",
-          "current_price": 285.26,
+          "current_price": 281.66,
           "sector": "financial"
         },
         "MTA": {
           "shares": 2390.35,
           "cost": 4.98,
           "buy_date": "2026-09-16",
-          "current_price": 4.85,
+          "current_price": 4.84,
           "sector": "industrial"
         }
       },
       "sector_composition": {
-        "industrial": 33.9,
-        "property": 7.9,
-        "tech": 3.1,
+        "industrial": 32.9,
+        "property": 8.1,
+        "tech": 3.2,
         "financial": 16.0,
-        "cash": 39.1
+        "cash": 39.8
       },
       "all_trades": [
         {
@@ -1381,7 +1396,7 @@
           "shares": 3109.4527363184084,
           "price": 2.0,
           "gain": 0,
-          "reason": "Bought HLM at R2.00 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results to confirm the turnaround before taking a view."
+          "reason": "Bought HLM at R2 \u2014 BULLISH rating from Ticker Talk. Ghost Mail was neutral on Hulamin \u2014 waiting for the H1 results before taking a view, but the operational recovery and 103% EBITDA surge proved the turnaround thesis."
         },
         {
           "date": "2026-08-19",
@@ -1390,7 +1405,7 @@
           "shares": 2003.6033921229991,
           "price": 3.1,
           "gain": 0,
-          "reason": "Bought PMV at R3.10 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
+          "reason": "Bought PMV at R3 \u2014 BULLISH rating from Ticker Talk. Primeserv dividend up 72% to 21.5c \u2014 small-cap staffing business throwing off cash. Thin liquidity the only caveat."
         },
         {
           "date": "2026-08-19",
@@ -1399,7 +1414,7 @@
           "shares": 382.9287147604403,
           "price": 16.2,
           "gain": 0,
-          "reason": "Bought SSS at R16.20 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth, UK expansion the wildcard."
+          "reason": "Bought SSS at R16 \u2014 BULLISH rating from Ticker Talk. Stor-Age's Xtraspace acquisition strengthens dominant SA self-storage position \u2014 niche REIT with genuine structural growth in self-storage, UK expansion the wildcard."
         },
         {
           "date": "2026-08-19",
@@ -1408,7 +1423,7 @@
           "shares": 32.189197943947796,
           "price": 78.0,
           "gain": 0,
-          "reason": "Bought LSK at R78.00 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
+          "reason": "Bought LSK at R78 \u2014 NEUTRAL rating from Ticker Talk. Lesaka CEO Mazanderani got $5/share stock options vesting 2028 \u2014 real skin in the game. SA fintech platform growing, Bank Zero partnership adding optionality."
         },
         {
           "date": "2026-09-16",
@@ -1417,7 +1432,7 @@
           "shares": 41.95357896016036,
           "price": 295.85,
           "gain": 0,
-          "reason": "Bought NED at R295.85 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
+          "reason": "Bought NED at R296 \u2014 BULLISH rating from Ticker Talk. Ghost Mail calls Nedbank the 'quiet achiever' of the Big Four with a fortress balance sheet and strong execution on the NCBA acquisition in East Africa."
         },
         {
           "date": "2026-09-16",
@@ -1426,7 +1441,7 @@
           "shares": 2390.3522214149616,
           "price": 4.98,
           "gain": 0,
-          "reason": "Bought MTA at R4.98 \u2014 BULLISH rating from Ticker Talk. Metair swung EPS from -93c loss to +72c profit, R3.3bn debt refinanced. Ghost Mail called this 'the most promising update from Metair in a very long time.' AutoZone recovery key."
+          "reason": "Bought MTA at R5 \u2014 BULLISH rating from Ticker Talk. Metair swung EPS from -93c loss to +72c profit, R3.3bn debt refinanced for 5 years. Ghost Mail called this 'the most promising update from Metair in a very long time.' AutoZone recovery and AutoXpress are key catalysts."
         }
       ],
       "decisions": [
