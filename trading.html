@@ -133,16 +133,16 @@ async function load(){
     html+='</tbody></table>';
     // trades table with volume + trade value
     html+='<h3>Recent trades</h3>';
-    html+='<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th class="num">Volume (shares)</th><th class="num">Price</th><th class="num">Trade value</th><th>Reason</th></tr></thead><tbody>';
+    html+='<table><thead><tr><th>Date</th><th>Action</th><th>Ticker</th><th class="num">Volume (shares)</th><th class="num">Price</th><th class="num">Trade value</th><th class="num">P&amp;L</th><th>Reason</th></tr></thead><tbody>';
     const trades=(a.all_trades||[]).slice(-12).reverse();
     for(const t of trades){
       const val=t.shares*t.price;
       const actCls=t.action==='BUY'?'l-buy':(t.action==='SELL'?'l-sell':'l-rot');
       html+='<tr><td>'+t.date+'</td><td class="'+actCls+'"><b>'+t.action+'</b></td><td>'+t.ticker+'</td>';
       html+='<td class="num">'+Math.round(t.shares).toLocaleString('en-ZA')+'</td><td class="num">'+money2(t.price)+'</td>';
-      html+='<td class="num">'+money(val)+'</td><td style="font-size:.78rem;line-height:1.4;max-width:280px">'+t.reason+'</td></tr>';
+      html+='<td class="num">'+money(val)+'</td><td class="num '+pnlCls(t.gain||0)+'">'+(t.gain?(t.gain>=0?'+':'')+money(t.gain):'—')+'</td><td style="font-size:.78rem;line-height:1.4;max-width:280px">'+t.reason+'</td></tr>';
     }
-    if(!trades.length) html+='<tr><td colspan="7" style="color:var(--muted)">No trades yet</td></tr>';
+    if(!trades.length) html+='<tr><td colspan="8" style="color:var(--muted)">No trades yet</td></tr>';
     html+='</tbody></table>';
     // decision log
     html+='<h3>Decision log</h3><div class="log">';
