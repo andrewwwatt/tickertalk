@@ -29,6 +29,13 @@ h1{font-size:22px;margin-bottom:4px;}
 .chart{width:100%;height:calc(100vh - 260px);min-height:520px;background:var(--card);border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.08);}
 .footer{margin-top:16px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6;}
 .meta{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.indicators{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+.indicator{background:var(--card);border:1px solid #e0ddd6;border-radius:8px;padding:8px 14px;min-width:140px;flex:1 0 auto;max-width:220px;}
+.indicator .iname{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;}
+.indicator .ival{font-size:18px;font-weight:700;font-family:Georgia,serif;letter-spacing:-0.02em;}
+.indicator .ichg{font-size:12px;font-weight:600;margin-top:1px;}
+.chg-pos{color:#2e7d32;}
+.chg-neg{color:#c62828;}
 </style>
 </head>
 <body>
@@ -46,6 +53,7 @@ h1{font-size:22px;margin-bottom:4px;}
   <h1>JSE Heatmap</h1>
   <p class="sub">Block size = market cap · Colour = return · Grouped by sector</p>
   <div class="meta" id="meta">Loading…</div>
+  <div class="indicators" id="indicators"></div>
   <div class="controls">
     <span class="label">Period:</span>
     <button class="btn active" id="b1d" onclick="setPeriod('1d')">1 Day</button>
@@ -186,7 +194,22 @@ function render2(){
 function setPeriod(p){
   period=p;
   ['1d','1w','1m','1y'].forEach(x=>document.getElementById('b'+x).classList.toggle('active',x===p));
+  if(window.indicators) renderIndicators();
   render2();
+}
+
+function renderIndicators(){
+  const el=document.getElementById('indicators');
+  let html='';
+  const p=period;
+  for(const ind of window.indicators){
+    const r=ind.returns?.[p];
+    const val=ind.value?ind.value.toLocaleString('en-ZA',{minimumFractionDigits:ind.type==='currency'?4:2,maximumFractionDigits:ind.type==='currency'?4:0}):'—';
+    const chg=r===null?'—':(r>=0?'+'+r.toFixed(2)+'%':r.toFixed(2)+'%');
+    const cls=r===null?'':(r>=0?'chg-pos':'chg-neg');
+    html+=`<div class="indicator"><div class="iname">${ind.name}</div><div class="ival">${val}</div><div class="ichg ${cls}">${p}: ${chg}</div></div>`;
+  }
+  el.innerHTML=html;
 }
 
 fetch('heatmap.json?v='+Date.now())
@@ -195,7 +218,9 @@ fetch('heatmap.json?v='+Date.now())
     rawData=d.stocks;
     document.getElementById('meta').textContent =
       `${d.stocks.length} JSE-listed companies · generated ${new Date(d.generated).toLocaleString('en-ZA')}`;
-    document.getElementById('gen').textContent = new Date(d.generated).toLocaleString('en-ZA');
+    document.getElementById('gen').textContent=new Date(d.generated).toLocaleString('en-ZA');
+    window.indicators=d.indicators||[];
+    renderIndicators();
     render2();
   })
   .catch(e=>{document.getElementById('meta').textContent='Failed to load heatmap data: '+e;});
