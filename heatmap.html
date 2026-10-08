@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 JSE Heatmap — Ticker Talk</title>
+<style>
+:root{--bg:#f4f1ec;--card:#fff;--ink:#1a1a1a;--muted:#777;--green:#2e7d32;--red:#c62828;--accent:#c9a84c;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);font-family:-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);}
+header{background:#1a1a1a;color:#fff;padding:18px 24px;}
+.logo{font-family:Georgia,serif;font-size:26px;letter-spacing:-0.01em;}
+.logo span{color:var(--accent);font-style:italic;}
+nav{margin-top:6px;}
+nav a{color:#aaa;text-decoration:none;font-size:13px;margin-right:16px;}
+nav a:hover{color:#fff;}
+.container{max-width:1200px;margin:0 auto;padding:20px 24px 60px;}
+h1{font-size:22px;margin-bottom:4px;}
+.sub{color:var(--muted);font-size:13px;margin-bottom:16px;}
+.controls{display:flex;align-items:center;gap:8px;margin-bottom:18px;flex-wrap:wrap;}
+.controls .label{font-size:12px;color:var(--muted);margin-right:6px;}
+.btn{padding:6px 14px;border:1px solid #ddd;background:#fff;border-radius:5px;font-size:13px;cursor:pointer;color:var(--ink);}
+.btn:hover{border-color:var(--accent);}
+.btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.btn.btn-red{color:var(--red);}
+.btn.btn-green{color:var(--green);}
+.legend{display:flex;align-items:center;gap:6px;margin-bottom:14px;font-size:12px;color:var(--muted);}
+.legend .bar{width:180px;height:10px;border-radius:5px;background:linear-gradient(to right,#c62828,#f4a261,#f4f1ec,#64b96a,#2e7d32);}
+.chart{width:100%;height:calc(100vh - 260px);min-height:520px;background:var(--card);border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.08);}
+.footer{margin-top:16px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6;}
+.meta{font-size:12px;color:var(--muted);margin-bottom:8px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">the <span>Shortlist</span> · Ticker Talk</div>
+  <nav>
+    <a href="/">Today</a>
+    <a href="/archive.html">Archive</a>
+    <a href="/ratings.html">Ratings</a>
+    <a href="/trading.html">Trading</a>
+    <a href="/heatmap.html">Heatmap</a>
+  </nav>
+</header>
+<div class="container">
+  <h1>JSE Heatmap</h1>
+  <p class="sub">Block size = market cap · Colour = return · Grouped by sector</p>
+  <div class="meta" id="meta">Loading…</div>
+  <div class="controls">
+    <span class="label">Period:</span>
+    <button class="btn active" id="b1d" onclick="setPeriod('1d')">1 Day</button>
+    <button class="btn" id="b1w" onclick="setPeriod('1w')">1 Week</button>
+    <button class="btn" id="b1m" onclick="setPeriod('1m')">1 Month</button>
+    <button class="btn" id="b1y" onclick="setPeriod('1y')">1 Year</button>
+  </div>
+  <div class="legend">
+    <span>Loss</span><div class="bar"></div><span>Gain</span>
+  </div>
+  <div id="chart" class="chart"></div>
+  <div class="footer">
+    Data: Yahoo Finance (.JO). Market cap in ZAR. Returns exclude dividends.<br>
+    Generated <span id="gen"></span> · Ticker Talk
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<script>
+const chart = echarts.init(document.getElementById('chart'));
+let rawData = [];
+let period = '1d';
+
+function valFor(r){ return r.returns ? r.returns[period] : null; }
+
+function buildTree(){
+  const sectors = {};
+  rawData.forEach(r => {
+    const sec = r.sector || 'other';
+    if(!sectors[sec]) sectors[sec] = {name:sec, children:[], _val:0};
+    sectors[sec].children.push({name:`${r.ticker} — ${r.company}`, value:r.market_cap||0, ret:valFor(r)});
+  });
+  // Filter out zero-market-cap stocks (delisted etc) — keep only data we can size
+  Object.keys(sectors).forEach(k => {
+    sectors[k].children = sectors[k].children.filter(c => c.value > 0);
+    if(sectors[k].children.length) sectors[k]._val = sectors[k].children.reduce((a,c)=>a+c.value,0);
+  });
+  const tree = Object.values(sectors).filter(s => s.children.length).map(s => ({
+    name: s.name, value: s._val, children: s.children
+  }));
+  tree.sort((a,b)=>b.value-a.value);
+  return tree;
+}
+
+function render(){
+  const tree = buildTree();
+  chart.setOption({
+    tooltip: {
+      formatter: function(info){
+        const d = info.data;
+        if(d.children) return `<b>${d.name}</b>`;
+        const r = d.ret;
+        const retStr = r===null||r===undefined ? 'n/a' : (r>=0?'+':'')+r+'%';
+        return `<b>${d.name}</b><br>` +
+          `Market cap: R${(d.value/1e9).toFixed(2)}bn<br>` +
+          `Return (${period}): <span style="color:${r>=0?'#2e7d32':'#c62828'}">${retStr}</span>`;
+      }
+    },
+    series: [{
+      type: 'treemap',
+      roam: true,
+      nodeClick: 'zoomToNode',
+      breadcrumb: {show:true, itemStyle:{color:'#555'}},
+      data: tree,
+      width: '100%', height: '100%',
+      top: 8, left: 4, bottom: 4, right: 4,
+      label: {show:true, formatter:function(p){return p.name.split(' — ')[0];}, fontSize:11},
+      upperLabel: {show:true, height:22, color:'#fff', fontSize:12, fontWeight:600},
+      itemStyle: {borderColor:'#fff', borderWidth:1, gapWidth:1},
+      levels: [
+        {itemStyle:{borderWidth:2, gapWidth:2, borderColor:'#fff'}},
+        {colorSaturation:[0.35,0.6], itemStyle:{borderWidth:1, gapWidth:1}},
+      ],
+      visualMin: -15, visualMax: 15,
+      visualDimension: 0
+    }],
+    visualMap: {
+      show: false,
+      dimension: 2,
+      min: -15, max: 15,
+      inRange: {color:['#c62828','#f4a261','#f4f1ec','#64b96a','#2e7d32']},
+    }
+  });
+}
+
+// Treemap coloring: we add ret as third value [value, ?, ret] via data item ret field
+// Fix: encode ret into value array for visualMap dimension 2
+function buildTree2(){
+  const sectors = {};
+  rawData.forEach(r => {
+    const sec = r.sector || 'other';
+    if(!sectors[sec]) sectors[sec] = {name:sec, children:[], _val:0};
+    const ret = valFor(r);
+    sectors[sec].children.push({
+      name:`${r.ticker} — ${r.company}`,
+      value:[r.market_cap||0, 0, ret===null||ret===undefined?0:ret],
+      ret:ret
+    });
+  });
+  Object.keys(sectors).forEach(k => {
+    sectors[k].children = sectors[k].children.filter(c => c.value[0] > 0);
+    if(sectors[k].children.length) sectors[k]._val = sectors[k].children.reduce((a,c)=>a+c.value[0],0);
+  });
+  const tree = Object.values(sectors).filter(s => s.children.length).map(s => ({
+    name:s.name, value:s._val, children:s.children
+  }));
+  tree.sort((a,b)=>b.value-a.value);
+  return tree;
+}
+
+function render2(){
+  const tree = buildTree2();
+  chart.setOption({
+    tooltip: {formatter:function(info){
+      const d=info.data;
+      if(d.children) return `<b>${d.name}</b>`;
+      const r=d.ret; const retStr=(r===null||r===undefined)?'n/a':(r>=0?'+':'')+r+'%';
+      const rn = d.value ? d.value[2] : 0;
+      return `<b>${d.name}</b><br>Market cap: R${(d.value[0]/1e9).toFixed(2)}bn<br>Return (${period}): <span style="color:${rn>=0?'#2e7d32':'#c62828'}">${retStr}</span>`;
+    }},
+    series:[{type:'treemap', roam:true, nodeClick:'zoomToNode',
+      breadcrumb:{show:true,itemStyle:{color:'#666'}},
+      data:tree, width:'100%',height:'100%',top:8,left:4,bottom:4,right:4,
+      label:{show:true,formatter:function(p){return p.name.split(' — ')[0];},fontSize:11},
+      upperLabel:{show:true,height:22,color:'#fff',fontSize:12,fontWeight:600},
+      itemStyle:{borderColor:'#fff',borderWidth:1,gapWidth:1},
+      levels:[
+        {itemStyle:{borderWidth:2,gapWidth:2,borderColor:'#fff'}},
+        {colorSaturation:[0.35,0.6],itemStyle:{borderWidth:1,gapWidth:1}},
+      ],
+      visualDimension:2,
+      visualMin:-15,visualMax:15,
+    }],
+    visualMap:{show:false,dimension:2,min:-15,max:15,
+      inRange:{color:['#c62828','#f4a261','#f4f1ec','#64b96a','#2e7d32']}}
+  }, true);
+}
+
+function setPeriod(p){
+  period=p;
+  ['1d','1w','1m','1y'].forEach(x=>document.getElementById('b'+x).classList.toggle('active',x===p));
+  render2();
+}
+
+fetch('heatmap.json?v='+Date.now())
+  .then(r=>r.json())
+  .then(d=>{
+    rawData=d.stocks;
+    document.getElementById('meta').textContent =
+      `${d.stocks.length} JSE-listed companies · generated ${new Date(d.generated).toLocaleString('en-ZA')}`;
+    document.getElementById('gen').textContent = new Date(d.generated).toLocaleString('en-ZA');
+    render2();
+  })
+  .catch(e=>{document.getElementById('meta').textContent='Failed to load heatmap data: '+e;});
+window.addEventListener('resize',()=>chart.resize());
+</script>
+</body>
+</html>
