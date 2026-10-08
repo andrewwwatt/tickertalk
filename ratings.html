@@ -60,12 +60,22 @@ h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 40
 .r-badge.bullish { background: #e8f5e9; color: var(--green); }
 .r-badge.bearish { background: #ffebee; color: var(--red); }
 .r-badge.neutral { background: #fff3e0; color: var(--amber); }
-
 .r-num {
   font-size: 12px; font-weight: 600;
 }
 .r-num.first { color: var(--green); }
 .r-num.follow { color: var(--amber); }
+
+.r-price {
+  margin-top: 14px; padding: 10px 14px;
+  background: var(--bg2, #faf8f4); border: 1px solid #e8e3d8; border-radius: 8px;
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #444;
+}
+.r-price .price-cell b { color: #1a1a1a; }
+.r-price .perf-pos b { color: var(--green, #2e7d32); }
+.r-price .perf-neg b { color: var(--red, #c62828); }
+.r-price .muted { color: #888; }
 
 .r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
 .r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
@@ -193,7 +203,7 @@ footer {
   <td>Africa Bitcoin Corporation</td>
   <td><span class="r-badge bearish">BEARISH</span></td>
   <td>01 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -201,7 +211,7 @@ footer {
   <td>African Rainbow Minerals</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>04 Sep</td>
-  <td class="perf-neg">-12.6%</td>
+  <td class="perf-neg">-8.8%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -209,7 +219,7 @@ footer {
   <td>Afrimat</td>
   <td><span class="r-badge bearish">BEARISH</span></td>
   <td>08 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -241,7 +251,7 @@ footer {
   <td>Anglo American</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -249,7 +259,7 @@ footer {
   <td>AngloGold Ashanti</td>
   <td><span class="r-badge bearish">BEARISH</span></td>
   <td>01 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -257,7 +267,7 @@ footer {
   <td>Araxi</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -273,7 +283,7 @@ footer {
   <td>Aspen Pharmacare</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>02 Sep</td>
-  <td class="perf-pos">+9.2%</td>
+  <td class="perf-pos">+10.8%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -281,7 +291,7 @@ footer {
   <td>Attacq</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>16 Sep</td>
-  <td class="perf-pos">+2.9%</td>
+  <td class="perf-pos">+6.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -297,7 +307,7 @@ footer {
   <td>AVI Limited</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>08 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -345,7 +355,7 @@ footer {
   <td>BLU Label</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -369,7 +379,7 @@ footer {
   <td>British American Tobacco</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>01 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -425,7 +435,7 @@ footer {
   <td>Canal+ SA</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>08 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -433,7 +443,7 @@ footer {
   <td>Capitec</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -449,7 +459,7 @@ footer {
   <td>Caxton and CTP Publishers and Printers</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>11 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -569,7 +579,7 @@ footer {
   <td>Europa Metals</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -593,7 +603,7 @@ footer {
   <td>FirstRand</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>29 Sep</td>
-  <td class="perf-neg">-0.5%</td>
+  <td class="perf-pos">+2.6%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -609,7 +619,7 @@ footer {
   <td>Gemfields</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -617,7 +627,7 @@ footer {
   <td>Glencore PLC</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>05 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-neg">-0.6%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -657,7 +667,7 @@ footer {
   <td>Harmony Gold</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>23 Sep</td>
-  <td class="perf-neg">-4.9%</td>
+  <td class="perf-neg">-2.4%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -665,7 +675,7 @@ footer {
   <td>Heriot REIT</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -689,7 +699,7 @@ footer {
   <td>Hyprop Investments</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>09 Sep</td>
-  <td class="perf-pos">+5.5%</td>
+  <td class="perf-pos">+9.5%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -769,7 +779,7 @@ footer {
   <td>Lesaka Technologies</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>08 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td>BULLISH<span class="ghost-date">01 Jul</span></td>
 </tr>
 <tr>
@@ -785,7 +795,7 @@ footer {
   <td>Mantengu</td>
   <td><span class="r-badge bearish">BEARISH</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -793,7 +803,7 @@ footer {
   <td>MAS PLC</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -809,7 +819,7 @@ footer {
   <td>MC Mining</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -849,7 +859,7 @@ footer {
   <td>Mustek</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -873,7 +883,7 @@ footer {
   <td>Nepi Rockcastle</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>01 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -881,7 +891,7 @@ footer {
   <td>Netcare</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -897,7 +907,7 @@ footer {
   <td>Northam Platinum</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>11 Aug</td>
-  <td class="perf-pos">+1.8%</td>
+  <td class="perf-neg">-1.9%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -913,7 +923,7 @@ footer {
   <td>Novus Holdings Limited</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>05 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-neg">-0.9%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -945,7 +955,7 @@ footer {
   <td>Omnia Holdings</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>08 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -961,7 +971,7 @@ footer {
   <td>OUTsurance Group Limited</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>07 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-neg">-1.0%</td>
   <td>BULLISH<span class="ghost-date">06 Oct</span></td>
 </tr>
 <tr>
@@ -977,7 +987,7 @@ footer {
   <td>PBT Holdings</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>08 Sep</td>
-  <td class="perf-neg">-3.4%</td>
+  <td class="perf-neg">-3.5%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1033,7 +1043,7 @@ footer {
   <td>Putprop</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1041,7 +1051,7 @@ footer {
   <td>Quantum Foods Holdings Limited</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>05 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">+6.4%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1057,7 +1067,7 @@ footer {
   <td>Rainbow Chicken</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>23 Sep</td>
-  <td class="perf-neg">-0.5%</td>
+  <td class="perf-pos">+18.9%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1089,7 +1099,7 @@ footer {
   <td>Remgro</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1129,7 +1139,7 @@ footer {
   <td>Sanlam Limited</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>05 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">+4.6%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1137,7 +1147,7 @@ footer {
   <td>Santam Limited</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>07 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">+0.0%</td>
   <td>BULLISH<span class="ghost-date">06 Oct</span></td>
 </tr>
 <tr>
@@ -1145,7 +1155,7 @@ footer {
   <td>Sappi</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>01 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1153,7 +1163,7 @@ footer {
   <td>Sasol</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1161,7 +1171,7 @@ footer {
   <td>Sea Harvest</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>01 Sep</td>
-  <td class="perf-pos">+1.3%</td>
+  <td class="perf-pos">+4.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1185,7 +1195,7 @@ footer {
   <td>Shuka Minerals</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1193,7 +1203,7 @@ footer {
   <td>Sibanye-Stillwater</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1201,7 +1211,7 @@ footer {
   <td>Sirius Real Estate Limited</td>
   <td><span class="r-badge bullish">BULLISH</span></td>
   <td>05 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-neg">-0.8%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1305,7 +1315,7 @@ footer {
   <td>Tharisa</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1321,7 +1331,7 @@ footer {
   <td>The SPAR Group Limited</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>05 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-neg">-0.1%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1369,7 +1379,7 @@ footer {
   <td>Trustco Group Holdings</td>
   <td><span class="r-badge bearish">BEARISH</span></td>
   <td>01 Oct</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1401,7 +1411,7 @@ footer {
   <td>Vodacom</td>
   <td><span class="r-badge bearish">BEARISH</span></td>
   <td>16 Sep</td>
-  <td class="perf-neg">-3.2%</td>
+  <td class="perf-neg">-3.1%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1441,7 +1451,7 @@ footer {
   <td>Woolworths Holdings</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>02 Sep</td>
-  <td class="perf-neg">-9.6%</td>
+  <td class="perf-neg">-9.7%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 <tr>
@@ -1449,7 +1459,7 @@ footer {
   <td>York Timber</td>
   <td><span class="r-badge neutral">NEUTRAL</span></td>
   <td>30 Sep</td>
-  <td class="perf-new">—</td>
+  <td class="perf-pos">0.0%</td>
   <td><span style="color:var(--muted)">—</span></td>
 </tr>
 </tbody>
