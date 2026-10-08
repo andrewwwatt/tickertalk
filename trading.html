@@ -3,15 +3,12 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>🤖 AI Trading Agents — Ticker Talk</title>
 <style>
-:root{--green:#2e7d32;--red:#c62828;--amber:#e65100;--dark:#1a1a2e;--grey:#f5f3ef;--card:#fff;--text:#222;--muted:#666;--border:#e0e0e0;--blue:#1565c0}
+:root{--green:#2e7d32;--red:#c62828;--amber:#e65100;--bg:#f5f3ef;--card:#fff;--text:#222;--muted:#666;--border:#e0e0e0;--blue:#1565c0}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--grey);color:var(--text);line-height:1.6}
-nav{background:var(--dark);padding:0 16px;position:sticky;top:0;z-index:100}
-nav .inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-nav a{color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 12px;border-radius:8px}
-nav a:hover{background:rgba(255,255,255,.1)}
-nav a.active{color:#ffd54f}
-nav .brand{font-size:1.05rem;font-weight:600}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:#1a1a1a;color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
+.logo{font-family:Georgia,serif;font-size:26px;letter-spacing:-0.01em;color:#fff;}
+nav a{color:#aaa;text-decoration:none;font-size:13px;margin-right:18px;}
 .page{max-width:1000px;margin:0 auto;padding:20px 20px 60px}
 h1{font-size:1.3rem;margin-bottom:4px}
 .sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}
@@ -54,8 +51,16 @@ tr.total-row td{border-top:2px solid var(--border);font-weight:700;background:#f
 footer{text-align:center;padding:24px;font-size:.75rem;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:600px){.agent-card{padding:14px}.stats{grid-template-columns:repeat(2,1fr)}}
 </style></head><body>
-<nav><div class="inner"><a href="index.html" class="brand">📋 Ticker Talk</a>
-<div style="display:flex;gap:4px"><a href="index.html">Today</a><a href="archive.html">Archive</a><a href="ratings.html">Ratings</a><a href="trading.html" class="active">🤖 Trading</a></div></div></nav>
+<header>
+<div class="logo">📊 Ticker Talk</div>
+<nav>
+<a href="/">Today</a>
+<a href="/archive.html">Archive</a>
+<a href="/ratings.html">Ratings</a>
+<a href="/trading.html">Trading</a>
+<a href="/heatmap.html">Heatmap</a>
+</nav>
+</header>
 <div class="page">
 <h1>🤖 AI Trading Agents</h1>
 <p class="sub">Three core agents, R25,000 each per month, three time horizons. Who wins?</p>
