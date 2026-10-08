@@ -22,13 +22,13 @@ body {
   background: var(--bg); color: var(--text);
   line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0 20px 20px;
 }
+header{background:#1a1a1a;color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
+.logo{font-family:Georgia,serif;font-size:26px;letter-spacing:-0.01em;color:#fff;}
 nav {
-  display: flex; gap: 24px; padding: 16px 20px; margin: 0 -20px 24px;
-  background: var(--nav-bg); align-items: center;
+  display: flex; gap: 18px; margin-top: 0; align-items: center;
 }
-nav a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 15px; }
-nav a:hover { color: #cccccc; }
-nav .brand { font-weight: 700; font-size: 18px; margin-right: 16px; }
+nav a { color: #aaa; text-decoration: none; font-size: 13px; }
+nav a:hover { color: #fff; }
 h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
 h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
 
@@ -154,6 +154,8 @@ footer {
 
 </head>
 <body>
+<header>
+<div class="logo">📊 Ticker Talk</div>
 <nav>
   <a href="/">Today</a>
   <a href="/archive.html">Archive</a>
@@ -161,6 +163,7 @@ footer {
   <a href="/trading.html">Trading</a>
   <a href="/heatmap.html">Heatmap</a>
 </nav>
+</header>
 <h1>Archive</h1>
 
 <div class="grand">
