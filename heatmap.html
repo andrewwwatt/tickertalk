@@ -8,7 +8,7 @@
 :root{--bg:#f4f1ec;--card:#fff;--ink:#1a1a1a;--muted:#777;--green:#2e7d32;--red:#c62828;--accent:#c9a84c;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);font-family:-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);}
-header{background:#1a1a1a;color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
+header{background:#1a1a1a;color:#fff;padding:18px 24px;max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
 .logo{font-family:Georgia,serif;font-size:26px;letter-spacing:-0.01em;color:#fff;}
 .logo span{color:var(--accent);font-style:italic;}
 nav{display:flex;gap:18px;align-items:center;margin-top:0;}
@@ -40,14 +40,14 @@ h1{font-size:22px;margin-bottom:4px;}
 </head>
 <body>
 <header>
-  <div class="logo">📊 Ticker Talk</div>
-  <nav>
-    <a href="/">Today</a>
-    <a href="/archive.html">Archive</a>
-    <a href="/ratings.html">Ratings</a>
-    <a href="/trading.html">Trading</a>
-    <a href="/heatmap.html">Heatmap</a>
-  </nav>
+<div class="logo">📊 Ticker Talk</div>
+<nav>
+<a href="/">Today</a>
+<a href="/archive.html">Archive</a>
+<a href="/ratings.html">Ratings</a>
+<a href="/trading.html">Trading</a>
+<a href="/heatmap.html">Heatmap</a>
+</nav>
 </header>
 <div class="container">
   <h1>JSE Heatmap</h1>
@@ -204,7 +204,10 @@ function renderIndicators(){
   const p=period;
   for(const ind of window.indicators){
     const r=ind.returns?.[p];
-    const val=ind.value?ind.value.toLocaleString('en-ZA',{minimumFractionDigits:ind.type==='currency'?4:2,maximumFractionDigits:ind.type==='currency'?4:0}):'—';
+    const isCur=ind.type==='currency';
+    const val=ind.value!==null&&ind.value!==undefined
+      ? ind.value.toLocaleString('en-ZA',{minimumFractionDigits:isCur?4:0,maximumFractionDigits:isCur?4:2})
+      : '—';
     const chg=r===null?'—':(r>=0?'+'+r.toFixed(2)+'%':r.toFixed(2)+'%');
     const cls=r===null?'':(r>=0?'chg-pos':'chg-neg');
     html+=`<div class="indicator"><div class="iname">${ind.name}</div><div class="ival">${val}</div><div class="ichg ${cls}">${p}: ${chg}</div></div>`;
