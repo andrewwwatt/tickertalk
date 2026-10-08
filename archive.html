@@ -169,7 +169,7 @@ footer {
 
 <div class="filter-bar">
   <label for="companyFilter">Company:</label>
-  <select id="companyFilter" onchange="filter(this.value)">
+  <select id="companyFilter" onchange="filter()">
     <option value="">All Companies</option>
     <option value="ADH">ADvTECH (ADH)</option>
     <option value="AVI">AVI Limited (AVI)</option>
@@ -333,10 +333,17 @@ footer {
     <option value="YRK">York Timber (YRK)</option>
     <option value="IOC">iOCO (IOC)</option>
   </select>
+  <label for="ratingFilter" style="margin-left:14px">Rating:</label>
+  <select id="ratingFilter" onchange="filter()">
+    <option value="">All Ratings</option>
+    <option value="BULLISH">🟢 Bullish</option>
+    <option value="NEUTRAL">🟡 Neutral</option>
+    <option value="BEARISH">🔴 Bearish</option>
+  </select>
   <span style="font-size:0.8em;color:var(--muted)" id="filterCount"></span>
 </div>
 <div class="date-header">08 Oct 2026 — 7 reviews</div>
-<div class="review neutral" data-t="TON">
+<div class="review neutral" data-t="TON" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Tongaat Hulett <span class="r-ticker">(TON)</span></div>
   <div class="r-title">Further cautionary announcement</div>
@@ -350,7 +357,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/tongaat-hulett-group-limited-further-cautionary-announcement-66/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PRESCIENT">
+</div><div class="review neutral" data-t="PRESCIENT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Prescient Management Company <span class="r-ticker">(PRESCIENT)</span></div>
   <div class="r-title">Delay in publication of results announcement relating to the proposed amalgamation</div>
@@ -363,7 +370,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/delay-in-publication-of-results-announcement-relating-to-the-proposed-amalgamation/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OMN">
+</div><div class="review neutral" data-t="OMN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Omnia Holdings <span class="r-ticker">(OMN)</span></div>
   <div class="r-title">Joint announcement regarding the posting of the combined circular to Omnia shareholders and the notice of scheme meeting</div>
@@ -381,7 +388,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/omnia-holdings-limited-joint-announcement-regarding-the-posting-of-the-combined-circular-to-omnia-shareholders-and-the-notice-of-scheme-meeting/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="LSK">
+</div><div class="review bullish" data-t="LSK" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Lesaka Technologies <span class="r-ticker">(LSK)</span></div>
   <div class="r-title">Notification of filing of directors Form 3 initial statement of beneficial ownership in Lesaka securities</div>
@@ -399,7 +406,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/lesaka-technologies-inc-notification-of-filing-of-directors-form-3-initial-statement-of-beneficial-ownership-in-lesaka-securities/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CNP">
+</div><div class="review neutral" data-t="CNP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Canal+ SA <span class="r-ticker">(CNP)</span></div>
   <div class="r-title">Director/PDMR Shareholding (two notifications)</div>
@@ -417,7 +424,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/canal-sa-limited-director-pdmr-shareholding-7/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AVI">
+</div><div class="review neutral" data-t="AVI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">AVI Limited <span class="r-ticker">(AVI)</span></div>
   <div class="r-title">Dealing in AVI Shares by Directors of Major Subsidiaries</div>
@@ -435,7 +442,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/avi-limited-dealing-in-avi-shares-by-directors-of-major-subsidiaries-4/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="AFT">
+</div><div class="review bearish" data-t="AFT" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Afrimat <span class="r-ticker">(AFT)</span></div>
   <div class="r-title">Trading update and trading statement for six-month period ended 31 August 2026</div>
@@ -455,7 +462,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/afrimat-limited-trading-update-and-trading-statement-for-the-six-month-period-ended-31-august-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">07 Oct 2026 — 3 reviews</div>
-<div class="review bullish" data-t="SNT">
+<div class="review bullish" data-t="SNT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 06 Oct</span></span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Santam Limited <span class="r-ticker">(SNT)</span></div>
   <div class="r-title">Joint Firm Intention Announcement — Sanlam Offer to acquire remaining Santam shares by Scheme of Arrangement</div>
@@ -473,7 +480,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/sanlam-wants-the-other-37-3" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OUT">
+</div><div class="review neutral" data-t="OUT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 06 Oct</span></span><span class="r-num follow">Review #6</span></div>
   <div class="r-company">OUTsurance Group Limited <span class="r-ticker">(OUT)</span></div>
   <div class="r-title">Acquisition of remaining shares in OUTsurance Holdings Limited from OHL minority shareholders</div>
@@ -491,7 +498,7 @@ footer {
   <div class="r-links">
     <a href="None" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OMN">
+</div><div class="review neutral" data-t="OMN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Omnia Holdings Limited <span class="r-ticker">(OMN)</span></div>
   <div class="r-title">TRP121: Notification of acquisition of beneficial interest in shares</div>
@@ -510,7 +517,7 @@ footer {
     <a href="None" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">05 Oct 2026 — 9 reviews</div>
-<div class="review bearish" data-t="TTO">
+<div class="review bearish" data-t="TTO" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Trustco Group Holdings Limited <span class="r-ticker">(TTO)</span></div>
   <div class="r-title">Further cautionary announcement — Meya Mining</div>
@@ -528,7 +535,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/trustco-group-holdings-limited-further-cautionary-announcement-meya-mining/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SRE">
+</div><div class="review bullish" data-t="SRE" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sirius Real Estate Limited <span class="r-ticker">(SRE)</span></div>
   <div class="r-title">Trading Update for the half year ended 30 September 2026</div>
@@ -546,7 +553,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sirius-real-estate-limited-trading-update-for-the-half-year-ended-30-september-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SPP">
+</div><div class="review neutral" data-t="SPP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">The SPAR Group Limited <span class="r-ticker">(SPP)</span></div>
   <div class="r-title">Notice of an Acquisition of a Beneficial Interest in SPAR Securities</div>
@@ -564,7 +571,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/the-spar-group-limited-notice-of-an-acquisition-of-a-beneficial-interest-in-spar-securities-50/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SLM">
+</div><div class="review bullish" data-t="SLM" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Sanlam Limited <span class="r-ticker">(SLM)</span></div>
   <div class="r-title">Joint Firm Intention Announcement — Offer by Sanlam to acquire all Santam shares not already owned</div>
@@ -582,7 +589,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sanlam-limited-joint-firm-intention-announcement-regarding-an-offer-by-sanlam-acting-through-sanlam-life-to-acquire-all-of-the-issued-ordinary-shares-of-santam-not-already-owned-by-sanlam-life-by/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="QFH">
+</div><div class="review neutral" data-t="QFH" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Quantum Foods Holdings Limited <span class="r-ticker">(QFH)</span></div>
   <div class="r-title">Final Results of the Special Resolutions Proposed to Shareholders</div>
@@ -600,7 +607,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/quantum-foods-holdings-limited-final-results-of-the-special-resolutions-proposed-to-shareholders-of-the-company-in-terms-of-section-60-of-the-companies-act/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OUT">
+</div><div class="review neutral" data-t="OUT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #5</span></div>
   <div class="r-company">OUTsurance Group Limited <span class="r-ticker">(OUT)</span></div>
   <div class="r-title">Change in directorate and executive management</div>
@@ -618,7 +625,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-change-in-directorate-and-executive-management/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="NVS">
+</div><div class="review neutral" data-t="NVS" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Novus Holdings Limited <span class="r-ticker">(NVS)</span></div>
   <div class="r-title">Disposal of the Novus Print Letting Enterprise — registration of transfer</div>
@@ -636,7 +643,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/novus-holdings-limited-disposal-of-the-novus-print-letting-enterprise-registration-of-transfer/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="GLN">
+</div><div class="review bullish" data-t="GLN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Glencore PLC <span class="r-ticker">(GLN)</span></div>
   <div class="r-title">ASX secondary listing and updated long-term Marketing Adjusted EBIT guidance range methodology</div>
@@ -654,7 +661,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/glencore-plc-asx-secondary-listing-and-updated-long-term-marketing-adjusted-ebit-guidance-range-methodology/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CGR">
+</div><div class="review neutral" data-t="CGR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Calgro M3 Holdings Limited <span class="r-ticker">(CGR)</span></div>
   <div class="r-title">Disclosure of acquisition of securities</div>
@@ -673,7 +680,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/calgro-m3-holdings-limited-disclosure-of-acquisition-of-securities/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">01 Oct 2026 — 7 reviews</div>
-<div class="review bearish" data-t="WES">
+<div class="review bearish" data-t="WES" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Wesizwe Platinum <span class="r-ticker">(WES)</span></div>
   <div class="r-title">Update on section 189A consultation process at Bakubung Platinum Mine</div>
@@ -685,7 +692,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="TKG">
+</div><div class="review bearish" data-t="TKG" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Trustco Group Holdings <span class="r-ticker">(TKG)</span></div>
   <div class="r-title">Namibian High Court attaches 200,000,000 Riskowitz Value Fund shares with rule nisi</div>
@@ -703,7 +710,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SAP">
+</div><div class="review neutral" data-t="SAP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Sappi <span class="r-ticker">(SAP)</span></div>
   <div class="r-title">Retirement of Mike Haws and appointment of Kirk Ross as President and CEO of Sappi North America</div>
@@ -721,7 +728,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="NRP">
+</div><div class="review neutral" data-t="NRP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Nepi Rockcastle <span class="r-ticker">(NRP)</span></div>
   <div class="r-title">Results of election to receive a capital repayment or cash dividend</div>
@@ -739,7 +746,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BAT">
+</div><div class="review neutral" data-t="BAT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">British American Tobacco <span class="r-ticker">(BAT)</span></div>
   <div class="r-title">Issue of Shares</div>
@@ -757,7 +764,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="BAC">
+</div><div class="review bearish" data-t="BAC" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Africa Bitcoin Corporation <span class="r-ticker">(BAC)</span></div>
   <div class="r-title">Resignation, termination and deferral of Aquis Admission & Placement</div>
@@ -774,7 +781,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="ANG">
+</div><div class="review bearish" data-t="ANG" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">AngloGold Ashanti <span class="r-ticker">(ANG)</span></div>
   <div class="r-title">Censure imposed by the JSE on AngloGold Ashanti plc</div>
@@ -793,7 +800,7 @@ footer {
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-01" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">30 Sep 2026 — 22 reviews</div>
-<div class="review neutral" data-t="YRK">
+<div class="review neutral" data-t="YRK" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">York Timber <span class="r-ticker">(YRK)</span></div>
   <div class="r-title">Audited consolidated annual financial results for the year ended 30 June 2026</div>
@@ -810,7 +817,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/york-timber-holdings-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="THA">
+</div><div class="review neutral" data-t="THA" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #5</span></div>
   <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
   <div class="r-title">Board Succession and Executive Leadership Changes</div>
@@ -827,7 +834,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SSW">
+</div><div class="review neutral" data-t="SSW" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #6</span></div>
   <div class="r-company">Sibanye-Stillwater <span class="r-ticker">(SSW)</span></div>
   <div class="r-title">Sibanye-Stillwater finalises wage agreement at its US PGM operations East Boulder mine</div>
@@ -844,7 +851,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SOL">
+</div><div class="review neutral" data-t="SOL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Sasol <span class="r-ticker">(SOL)</span></div>
   <div class="r-title">Appointment Of Independent Non-Executive Director And Audit Committee Member</div>
@@ -861,7 +868,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sasol-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SKA">
+</div><div class="review neutral" data-t="SKA" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Shuka Minerals <span class="r-ticker">(SKA)</span></div>
   <div class="r-title">Interim Results for the Six Months to 30 June 2026</div>
@@ -878,7 +885,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/shuka-minerals-plc/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="REM">
+</div><div class="review bullish" data-t="REM" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Remgro <span class="r-ticker">(REM)</span></div>
   <div class="r-title">Finalisation announcement regarding the declaration of a special dividend</div>
@@ -895,7 +902,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/remgro-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PPR">
+</div><div class="review neutral" data-t="PPR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Putprop <span class="r-ticker">(PPR)</span></div>
   <div class="r-title">Cautionary Announcement</div>
@@ -912,7 +919,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/putprop-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="NTC">
+</div><div class="review neutral" data-t="NTC" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Netcare <span class="r-ticker">(NTC)</span></div>
   <div class="r-title">Voluntary update on FY 2026 trading</div>
@@ -929,7 +936,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="MTU">
+</div><div class="review bearish" data-t="MTU" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Mantengu <span class="r-ticker">(MTU)</span></div>
   <div class="r-title">RETRACTION OF RESIGNATION BY AUDITOR, ADDITIONAL AUDIT PROCEDURES AND RENEWAL OF CAUTIONARY ANNOUNCEMENT</div>
@@ -946,7 +953,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mantengu-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="MST">
+</div><div class="review neutral" data-t="MST" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Mustek <span class="r-ticker">(MST)</span></div>
   <div class="r-title">Short form announcement: Financial results for the year ended 30 June 2026 and cash dividend declaration</div>
@@ -963,7 +970,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mustek-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="MSP">
+</div><div class="review neutral" data-t="MSP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">MAS PLC <span class="r-ticker">(MSP)</span></div>
   <div class="r-title">Short-form announcement: Audited consolidated financial results for the year to 30 June 2026</div>
@@ -980,7 +987,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mas-plc/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="MCZ">
+</div><div class="review neutral" data-t="MCZ" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">MC Mining <span class="r-ticker">(MCZ)</span></div>
   <div class="r-title">Results for the full year ended 30 June 2026</div>
@@ -997,7 +1004,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mc-mining-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="LSK">
+</div><div class="review neutral" data-t="LSK" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Lesaka Technologies <span class="r-ticker">(LSK)</span></div>
   <div class="r-title">Changes to the Board of Directors in September 2026</div>
@@ -1014,7 +1021,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/lesaka-technologies-inc/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="HET">
+</div><div class="review neutral" data-t="HET" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Heriot REIT <span class="r-ticker">(HET)</span></div>
   <div class="r-title">Short-Form Announcement: Reviewed Condensed Consolidated Financial Statements and Final Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -1031,7 +1038,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/heriot-reit-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="GML">
+</div><div class="review bullish" data-t="GML" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Gemfields <span class="r-ticker">(GML)</span></div>
   <div class="r-title">Reviewed Interim Report for the six months to 30 June 2026</div>
@@ -1048,7 +1055,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="EUZ">
+</div><div class="review neutral" data-t="EUZ" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Europa Metals <span class="r-ticker">(EUZ)</span></div>
   <div class="r-title">Short-Form Announcement: Audited Consolidated Results for the year ended 30 June 2026</div>
@@ -1065,7 +1072,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/europa-metals-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="CPI">
+</div><div class="review bullish" data-t="CPI" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Capitec <span class="r-ticker">(CPI)</span></div>
   <div class="r-title">Unaudited Condensed Consolidated Financial Results And Ordinary Cash Dividend Declaration For The 6 Months Ended 31 August 2026</div>
@@ -1082,7 +1089,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/capitec-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CPI">
+</div><div class="review neutral" data-t="CPI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Capitec <span class="r-ticker">(CPI)</span></div>
   <div class="r-title">Quarterly Pillar 3 Capital Adequacy, Liquidity And Leverage Disclosures At 31 August 2026</div>
@@ -1099,7 +1106,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BLU">
+</div><div class="review bullish" data-t="BLU" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">BLU Label <span class="r-ticker">(BLU)</span></div>
   <div class="r-title">Voluntary Announcement: B-BBEE Refinancing and Share Repurchase Programme</div>
@@ -1116,7 +1123,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/blu-label-unlimited-group-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BAT">
+</div><div class="review neutral" data-t="BAT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Brait PLC <span class="r-ticker">(BAT)</span></div>
   <div class="r-title">Notification of decrease in beneficial interest</div>
@@ -1133,7 +1140,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AXX">
+</div><div class="review neutral" data-t="AXX" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Araxi <span class="r-ticker">(AXX)</span></div>
   <div class="r-title">Business Update for the six months ended 30 September 2026</div>
@@ -1150,7 +1157,7 @@ footer {
   <div class="r-links">
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AGL">
+</div><div class="review neutral" data-t="AGL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Anglo American <span class="r-ticker">(AGL)</span></div>
   <div class="r-title">Notification of transactions by Directors and PDMRs</div>
@@ -1168,7 +1175,7 @@ footer {
     <a href="" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">29 Sep 2026 — 7 reviews</div>
-<div class="review neutral" data-t="SSW">
+<div class="review neutral" data-t="SSW" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #5</span></div>
   <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
   <div class="r-title">Secondary listing on A2X</div>
@@ -1185,7 +1192,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-secondary-listing-on-a2x/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="MTN">
+</div><div class="review bearish" data-t="MTN" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">MTN Group <span class="r-ticker">(MTN)</span></div>
   <div class="r-title">Update on US Anti-Terrorism Act litigation: Zobay and Long</div>
@@ -1202,7 +1209,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mtn-group-limited-update-on-us-anti-terrorism-act-litigation-zobay-and-long/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="JSE">
+</div><div class="review neutral" data-t="JSE" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">JSE Limited <span class="r-ticker">(JSE)</span></div>
   <div class="r-title">Amendments to the JSE Debt & Specialist Securities Listings Requirements</div>
@@ -1219,7 +1226,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/jse-limited-amendments-to-the-jse-debt-specialist-securities-listings-requirements/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="ISB">
+</div><div class="review bullish" data-t="ISB" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Insimbi Industrial Holdings <span class="r-ticker">(ISB)</span></div>
   <div class="r-title">Updated Trading Statement for the six month period ended 31 August 2026</div>
@@ -1237,7 +1244,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/insimbi-industrial-holdings-limited-updated-trading-statement-for-the-six-month-period-ended-31-august-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="FSR">
+</div><div class="review neutral" data-t="FSR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">FirstRand <span class="r-ticker">(FSR)</span></div>
   <div class="r-title">Appointment of an Independent Non-Executive Director</div>
@@ -1254,7 +1261,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/firstrand-limited-appointment-of-an-independent-non-executive-director/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BTI">
+</div><div class="review neutral" data-t="BTI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">British American Tobacco <span class="r-ticker">(BTI)</span></div>
   <div class="r-title">BAT 2026 Capital Markets Day</div>
@@ -1271,7 +1278,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/british-american-tobacco-plc-bat-2026-capital-markets-day/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BRAIT">
+</div><div class="review bullish" data-t="BRAIT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Brait PLC <span class="r-ticker">(BRAIT)</span></div>
   <div class="r-title">Notification of increase in beneficial interest</div>
@@ -1284,7 +1291,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/brait-plc-notification-of-increase-in-beneficial-interest/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">28 Sep 2026 — 18 reviews</div>
-<div class="review neutral" data-t="WEZ">
+<div class="review neutral" data-t="WEZ" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Wesizwe Platinum Limited <span class="r-ticker">(WEZ)</span></div>
   <div class="r-title">Trading statement</div>
@@ -1301,7 +1308,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/wesizwe-platinum-limited-trading-statement-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="TTO">
+</div><div class="review neutral" data-t="TTO" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Trustco Group Holdings <span class="r-ticker">(TTO)</span></div>
   <div class="r-title">Demand to call a shareholders' meeting</div>
@@ -1318,7 +1325,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="THA">
+</div><div class="review bullish" data-t="THA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
   <div class="r-title">Bond Proceeds Placed in Escrow — Condition Precedent Satisfied</div>
@@ -1335,7 +1342,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="TEX">
+</div><div class="review neutral" data-t="TEX" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Texton Property Fund <span class="r-ticker">(TEX)</span></div>
   <div class="r-title">Audited Financial Results and Cash Dividend Declaration for the year ended 30 June 2026</div>
@@ -1352,7 +1359,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="SPP">
+</div><div class="review bearish" data-t="SPP" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">The SPAR Group Limited <span class="r-ticker">(SPP)</span></div>
   <div class="r-title">Voluntary Update on Board Appointment Process, Operational Turnaround and Performance to Date</div>
@@ -1369,7 +1376,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/the-spar-group-limited-voluntary-update-on-board-appointment-process-operational-turnaround-and-performance-to-date/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SOL">
+</div><div class="review neutral" data-t="SOL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Sasol Limited <span class="r-ticker">(SOL)</span></div>
   <div class="r-title">Changes to Sasol Board of Directors (and Correction Announcement)</div>
@@ -1386,7 +1393,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SDL">
+</div><div class="review neutral" data-t="SDL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Southern Palladium Limited <span class="r-ticker">(SDL)</span></div>
   <div class="r-title">Results Announcement: Financial Report for the year ended 30 June 2026</div>
@@ -1403,7 +1410,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/southern-palladium-limited-results-announcement-financial-report-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="SAP">
+</div><div class="review bearish" data-t="SAP" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Sappi Limited <span class="r-ticker">(SAP)</span></div>
   <div class="r-title">Leverage Covenant Relief Extended to December 2027</div>
@@ -1420,7 +1427,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PPC">
+</div><div class="review neutral" data-t="PPC" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">PPC Limited <span class="r-ticker">(PPC)</span></div>
   <div class="r-title">Operating Update for the five months ended 31 August 2026</div>
@@ -1437,7 +1444,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/ppc-limited-operating-update-for-the-five-months-ended-31-august-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="GML">
+</div><div class="review bullish" data-t="GML" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Gemfields Group <span class="r-ticker">(GML)</span></div>
   <div class="r-title">Trading Statement for six months ended 30 June 2026</div>
@@ -1454,7 +1461,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="GFI">
+</div><div class="review neutral" data-t="GFI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Gold Fields Limited <span class="r-ticker">(GFI)</span></div>
   <div class="r-title">Comment on Northern Star announcement responding to media speculation regarding non-binding indicative proposal for combination of Gold Fields and Northern Star</div>
@@ -1471,7 +1478,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/gold-fields-limited-comment-on-northern-star-announcement-responding-to-media-speculation-regarding-a-non-binding-indicative-proposal-for-the-combination-of-gold-fields-and-northern-star/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="EEL">
+</div><div class="review neutral" data-t="EEL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Efura Energy Limited <span class="r-ticker">(EEL)</span></div>
   <div class="r-title">Further cautionary announcement</div>
@@ -1488,7 +1495,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/efora-energy-limited-further-cautionary-announcement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CPR">
+</div><div class="review neutral" data-t="CPR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Copper 360 <span class="r-ticker">(CPR)</span></div>
   <div class="r-title">Appointment of Chief Executive Officer and Chief Financial Officer, Changes to Executive Responsibilities and Board Committees</div>
@@ -1505,7 +1512,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="CLS">
+</div><div class="review bullish" data-t="CLS" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Clicks Group Limited <span class="r-ticker">(CLS)</span></div>
   <div class="r-title">Clicks Group Increases Shareholding in ARC Store to 61%</div>
@@ -1522,7 +1529,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/clicks-group-limited-clicks-group-increases-shareholding-in-arc-store-to-61/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BTN">
+</div><div class="review bullish" data-t="BTN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Burstone Group <span class="r-ticker">(BTN)</span></div>
   <div class="r-title">Category 2 Transaction — Launch of South African Funds Management Business</div>
@@ -1539,7 +1546,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="ART">
+</div><div class="review bullish" data-t="ART" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Argent Industrial <span class="r-ticker">(ART)</span></div>
   <div class="r-title">Voluntary announcement: general repurchase of ordinary shares</div>
@@ -1556,7 +1563,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="APF">
+</div><div class="review bearish" data-t="APF" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num follow">Review #5</span></div>
   <div class="r-company">Accelerate Property Fund <span class="r-ticker">(APF)</span></div>
   <div class="r-title">Disposal of KPMG Crescent and parkade 85 Empire Road Parktown</div>
@@ -1573,7 +1580,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php?date=2026-09-25" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="APF">
+</div><div class="review bullish" data-t="APF" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #5</span></div>
   <div class="r-company">Accelerate Property Fund <span class="r-ticker">(APF)</span></div>
   <div class="r-title">Conclusion of Fourways Mall Property, Development and Asset Management Services Agreement and potential disposal of minority interest in Fourways Mall</div>
@@ -1591,7 +1598,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/accelerate-property-fund-limited-conclusion-of-fourways-mall-property-development-and-asset-management-services-agreement-and-additional-agreements-and-potential-disposal-of-a-minority-interest-in-fourways-mall/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">23 Sep 2026 — 8 reviews</div>
-<div class="review bullish" data-t="SKA">
+<div class="review bullish" data-t="SKA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Shuka Minerals <span class="r-ticker">(SKA)</span></div>
   <div class="r-title">Kabwe Drilling — ALS Laboratories Confirm Scale and High-Grade Results at Pit 2</div>
@@ -1609,7 +1616,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/shuka-minerals-kabwe-drilling/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="REM">
+</div><div class="review neutral" data-t="REM" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Remgro <span class="r-ticker">(REM)</span></div>
   <div class="r-title">Audited Results for the Year Ended June 2026</div>
@@ -1627,7 +1634,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/stadio-targeting-80-000-students" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="RBO">
+</div><div class="review bullish" data-t="RBO" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Rainbow Chicken <span class="r-ticker">(RBO)</span></div>
   <div class="r-title">Finalisation announcement regarding the declaration of a special dividend</div>
@@ -1645,7 +1652,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/rainbow-chicken-limited-finalisation-announcement-special-dividend/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OCE">
+</div><div class="review neutral" data-t="OCE" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Oceana Group <span class="r-ticker">(OCE)</span></div>
   <div class="r-title">Trading Update for the 11 Months Ended August 2026</div>
@@ -1663,7 +1670,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/stadio-targeting-80-000-students" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="MPT">
+</div><div class="review bullish" data-t="MPT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Mpact <span class="r-ticker">(MPT)</span></div>
   <div class="r-title">Disposal of Paarl Property to Inospace for R185 Million</div>
@@ -1681,7 +1688,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/stadio-targeting-80-000-students" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="HAR">
+</div><div class="review neutral" data-t="HAR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Harmony Gold <span class="r-ticker">(HAR)</span></div>
   <div class="r-title">USD $500 Million Convertible Bond Issuance Due 2031</div>
@@ -1699,7 +1706,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/stadio-targeting-80-000-students" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CKS">
+</div><div class="review neutral" data-t="CKS" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Crookes Brothers <span class="r-ticker">(CKS)</span></div>
   <div class="r-title">Details of Disposal of Macadamia Businesses in Mozambique — Nominal $2 Consideration</div>
@@ -1717,7 +1724,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/stadio-targeting-80-000-students" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AEL">
+</div><div class="review neutral" data-t="AEL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Altron <span class="r-ticker">(AEL)</span></div>
   <div class="r-title">Trading Statement for the six months ended 31 August 2026</div>
@@ -1736,7 +1743,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/altron-limited-trading-statement-for-the-six-months-ended-31-august-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">22 Sep 2026 — 2 reviews</div>
-<div class="review bearish" data-t="TTO">
+<div class="review bearish" data-t="TTO" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Trustco Group Holdings <span class="r-ticker">(TTO)</span></div>
   <div class="r-title">Further cautionary announcement regarding delisting</div>
@@ -1754,7 +1761,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/trustco-group-delisting-cautionary/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PIK">
+</div><div class="review neutral" data-t="PIK" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 23 Sep</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Pick n Pay Stores <span class="r-ticker">(PIK)</span></div>
   <div class="r-title">Appointment of Chief Executive Officer-designate — Spencer Sonn from Feb 2027</div>
@@ -1773,7 +1780,7 @@ footer {
     <a href="https://ghostmailsa.beehiiv.com/p/pick-n-pay-s-new-ceo" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">21 Sep 2026 — 3 reviews</div>
-<div class="review bullish" data-t="NRP">
+<div class="review bullish" data-t="NRP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">NEPI Rockcastle <span class="r-ticker">(NRP)</span></div>
   <div class="r-title">Disposal of shopping centre in Lithuania for €200 million</div>
@@ -1790,7 +1797,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/investec-s-local-is-lekker" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="INL">
+</div><div class="review bullish" data-t="INL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Investec <span class="r-ticker">(INL)</span></div>
   <div class="r-title">Pre-close update for the six months ending 30 September 2026</div>
@@ -1807,7 +1814,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/investec-s-local-is-lekker" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AFH">
+</div><div class="review neutral" data-t="AFH" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Alexander Forbes <span class="r-ticker">(AFH)</span></div>
   <div class="r-title">Prudential Financial exit — repurchase of 28.69% stake at R6.75/share and sale to African Rainbow Capital</div>
@@ -1825,7 +1832,7 @@ footer {
     <a href="https://ghostmailsa.beehiiv.com/p/investec-s-local-is-lekker" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">17 Sep 2026 — 4 reviews</div>
-<div class="review neutral" data-t="YRK">
+<div class="review neutral" data-t="YRK" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">York Timber Holdings <span class="r-ticker">(YRK)</span></div>
   <div class="r-title">Trading statement and trading update, including notification of the unbundling of certain assets</div>
@@ -1842,7 +1849,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SRI">
+</div><div class="review neutral" data-t="SRI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Supermarket Income REIT <span class="r-ticker">(SRI)</span></div>
   <div class="r-title">Results for the year ended June 2026</div>
@@ -1859,7 +1866,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/sasol-not-just-a-brent-crude-trade" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OMU">
+</div><div class="review neutral" data-t="OMU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Old Mutual <span class="r-ticker">(OMU)</span></div>
   <div class="r-title">Finalisation Announcement and Dividend Currency Equivalents OMLI</div>
@@ -1876,7 +1883,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/old-mutual-finalisation-announcement-dividend-currency-equivalents-omli/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NPH">
+</div><div class="review bullish" data-t="NPH" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Northam Platinum Holdings <span class="r-ticker">(NPH)</span></div>
   <div class="r-title">Formal sale process — letters of invitation to potential participants</div>
@@ -1894,7 +1901,7 @@ footer {
     <a href="https://ghostmailsa.beehiiv.com/p/sasol-not-just-a-brent-crude-trade" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">16 Sep 2026 — 6 reviews</div>
-<div class="review bearish" data-t="VOD">
+<div class="review bearish" data-t="VOD" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Vodacom <span class="r-ticker">(VOD)</span></div>
   <div class="r-title">Kenyan High Court sets aside Safaricom control transaction</div>
@@ -1911,7 +1918,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/something-stinks-at-premier" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PMR">
+</div><div class="review neutral" data-t="PMR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Premier Group <span class="r-ticker">(PMR)</span></div>
   <div class="r-title">Trading Statement for the six months ending 30 September 2026</div>
@@ -1928,7 +1935,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/something-stinks-at-premier" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="PAN">
+</div><div class="review bullish" data-t="PAN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Pan African Resources <span class="r-ticker">(PAN)</span></div>
   <div class="r-title">Summarised Audited Results for the year ended 30 June 2026</div>
@@ -1945,7 +1952,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/sasol-not-just-a-brent-crude-trade" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="IOC">
+</div><div class="review bullish" data-t="IOC" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">iOCO <span class="r-ticker">(IOC)</span></div>
   <div class="r-title">Trading Statement for the year ended July 2026</div>
@@ -1962,7 +1969,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/something-stinks-at-premier" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="ATT">
+</div><div class="review bullish" data-t="ATT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Attacq <span class="r-ticker">(ATT)</span></div>
   <div class="r-title">Results for the year ended June 2026</div>
@@ -1979,7 +1986,7 @@ footer {
   <div class="r-links">
     <a href="https://ghostmailsa.beehiiv.com/p/something-stinks-at-premier" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="APF">
+</div><div class="review neutral" data-t="APF" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Accelerate Property Fund <span class="r-ticker">(APF)</span></div>
   <div class="r-title">Disposal of Cedar Square for R630 million</div>
@@ -1997,7 +2004,7 @@ footer {
     <a href="https://ghostmailsa.beehiiv.com/p/something-stinks-at-premier" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">15 Sep 2026 — 11 reviews</div>
-<div class="review bullish" data-t="VOD">
+<div class="review bullish" data-t="VOD" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Vodacom Group Limited <span class="r-ticker">(VOD)</span></div>
   <div class="r-title">Update on the Acquisition of a Controlling Interest in Safaricom plc</div>
@@ -2014,7 +2021,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SSU">
+</div><div class="review neutral" data-t="SSU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Southern Sun Limited <span class="r-ticker">(SSU)</span></div>
   <div class="r-title">Results of the Annual General Meeting</div>
@@ -2031,7 +2038,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SPP">
+</div><div class="review neutral" data-t="SPP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Spar Group Limited <span class="r-ticker">(SPP)</span></div>
   <div class="r-title">Notice of an Acquisition of a Beneficial Interest in SPAR Securities</div>
@@ -2048,7 +2055,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="S32">
+</div><div class="review neutral" data-t="S32" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">South32 Limited <span class="r-ticker">(S32)</span></div>
   <div class="r-title">Business Update</div>
@@ -2065,7 +2072,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="PMR">
+</div><div class="review bullish" data-t="PMR" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Premier Group Limited <span class="r-ticker">(PMR)</span></div>
   <div class="r-title">Trading Statement for the six months ending 30 September 2026, Fruit Processing Western Cape and General Share Repurchase Update</div>
@@ -2082,7 +2089,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OUT">
+</div><div class="review bullish" data-t="OUT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">OUTsurance Group Limited <span class="r-ticker">(OUT)</span></div>
   <div class="r-title">Finalisation announcement regarding the declaration of a special dividend</div>
@@ -2099,7 +2106,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="IOC">
+</div><div class="review neutral" data-t="IOC" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">iOCO Limited <span class="r-ticker">(IOC)</span></div>
   <div class="r-title">Trading Statement</div>
@@ -2116,7 +2123,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="HAR">
+</div><div class="review bearish" data-t="HAR" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Harmony Gold Mining Company Limited <span class="r-ticker">(HAR)</span></div>
   <div class="r-title">Loss-of-life incident at Mponeng mine</div>
@@ -2133,7 +2140,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="DCP">
+</div><div class="review neutral" data-t="DCP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Dis-Chem Pharmacies Limited <span class="r-ticker">(DCP)</span></div>
   <div class="r-title">Directorate Change</div>
@@ -2150,7 +2157,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="ATT">
+</div><div class="review bullish" data-t="ATT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Attacq Limited <span class="r-ticker">(ATT)</span></div>
   <div class="r-title">Audited financial results for the year ended 30 June 2026, dividend declaration and guidance</div>
@@ -2167,7 +2174,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="APF">
+</div><div class="review bullish" data-t="APF" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Accelerate Property Fund Limited <span class="r-ticker">(APF)</span></div>
   <div class="r-title">Disposal of Cedar Square Shopping Centre</div>
@@ -2185,7 +2192,7 @@ footer {
     <a href="https://www.sharenet.co.za/v3/sens.php (viewed Sep 16)" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">14 Sep 2026 — 6 reviews</div>
-<div class="review neutral" data-t="TMT">
+<div class="review neutral" data-t="TMT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Trematon Capital Investments Limited <span class="r-ticker">(TMT)</span></div>
   <div class="r-title">Updated pro forma financial effects in respect of the Generation Education Disposal and revised salient dates</div>
@@ -2202,7 +2209,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OPA">
+</div><div class="review bullish" data-t="OPA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Optasia Limited <span class="r-ticker">(OPA)</span></div>
   <div class="r-title">Reviewed Interim Results for the Six Months Ended 30 June 2026</div>
@@ -2219,7 +2226,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OMN">
+</div><div class="review bullish" data-t="OMN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Omnia Holdings Limited <span class="r-ticker">(OMN)</span></div>
   <div class="r-title">Joint announcement of the firm intention of Solar SA Investments Proprietary Limited to make an offer to acquire all of Omnia's issued ordinary shares, subsequent delisting and withdrawal of cautionary</div>
@@ -2236,7 +2243,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="JBL">
+</div><div class="review bullish" data-t="JBL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Jubilee Metals Group PLC <span class="r-ticker">(JBL)</span></div>
   <div class="r-title">FY2026 Production and Operational Update</div>
@@ -2253,7 +2260,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="GCT">
+</div><div class="review neutral" data-t="GCT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Greencoat Renewables PLC <span class="r-ticker">(GCT)</span></div>
   <div class="r-title">2026 Interim Results</div>
@@ -2270,7 +2277,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CHP">
+</div><div class="review neutral" data-t="CHP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Choppies Enterprises Limited <span class="r-ticker">(CHP)</span></div>
   <div class="r-title">Trading Statement</div>
@@ -2288,7 +2295,7 @@ footer {
     <a href="https://www.sharenet.co.za/v3/sens.php" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">11 Sep 2026 — 7 reviews</div>
-<div class="review bullish" data-t="THA">
+<div class="review bullish" data-t="THA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
   <div class="r-title">Successful Pricing of US$300 million Senior Secured Nordic Bond</div>
@@ -2306,7 +2313,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-successful-pricing-of-us-300-million-senior-secured-nordic-bond/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SRI">
+</div><div class="review neutral" data-t="SRI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Supermarket Income REIT <span class="r-ticker">(SRI)</span></div>
   <div class="r-title">Acquisition of six new assets</div>
@@ -2324,7 +2331,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/supermarket-income-reit-plc-acquisition-of-six-new-assets-2026-09-11/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="REM">
+</div><div class="review bullish" data-t="REM" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Remgro <span class="r-ticker">(REM)</span></div>
   <div class="r-title">Trading statement for the year ended 30 June 2026</div>
@@ -2342,7 +2349,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/remgro-limited-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PPR">
+</div><div class="review neutral" data-t="PPR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Putprop <span class="r-ticker">(PPR)</span></div>
   <div class="r-title">Further Trading Statement and Summit Place Disposal Update</div>
@@ -2360,7 +2367,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/putprop-limited-further-trading-statement-2026-09-11/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="PAN">
+</div><div class="review bullish" data-t="PAN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Pan African Resources <span class="r-ticker">(PAN)</span></div>
   <div class="r-title">Pan African Completes Definitive Feasibility Study on the Soweto Tailings Retreatment Project</div>
@@ -2378,7 +2385,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/pan-african-resources-funding-company-limited-pan-african-completes-definitive-feasibility-study-on-the-soweto-tailings-retreatment-project-delivering-a-robust-long-term-growth-pathway-for-the-mogale-tailings-retreatment-complex/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OMN">
+</div><div class="review bullish" data-t="OMN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Omnia Holdings <span class="r-ticker">(OMN)</span></div>
   <div class="r-title">Cautionary announcement</div>
@@ -2396,7 +2403,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/omnia-holdings-limited-cautionary-announcement-2026-09-11/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CAT">
+</div><div class="review neutral" data-t="CAT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Caxton and CTP Publishers and Printers <span class="r-ticker">(CAT)</span></div>
   <div class="r-title">Reviewed Provisional Group Results and Dividend Declaration for the year ended 30 June 2026</div>
@@ -2415,7 +2422,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/caxton-and-ctp-publishers-and-printers-limited-reviewed-provisional-group-results-and-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">10 Sep 2026 — 10 reviews</div>
-<div class="review bullish" data-t="ZZZ">
+<div class="review bullish" data-t="ZZZ" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Transnet SOC Limited <span class="r-ticker">(ZZZ)</span></div>
   <div class="r-title">Audited Annual Financial Statements for the Year Ended 31 March 2026 with Unmodified Audit Opinion</div>
@@ -2427,7 +2434,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910112300&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SLM">
+</div><div class="review neutral" data-t="SLM" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Sanlam Limited <span class="r-ticker">(SLM)</span></div>
   <div class="r-title">Unaudited Interim Results for the Six Months Ended 30 June 2026</div>
@@ -2444,7 +2451,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910090000&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="PAN">
+</div><div class="review bearish" data-t="PAN" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Pan African Resources <span class="r-ticker">(PAN)</span></div>
   <div class="r-title">Group Trading Statement for the Year Ended 30 June 2026</div>
@@ -2461,7 +2468,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910080000&seq=1" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OUT">
+</div><div class="review neutral" data-t="OUT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">OUTsurance Group Limited <span class="r-ticker">(OUT)</span></div>
   <div class="r-title">Results, Ordinary and Special Cash Dividends for the Year Ended 30 June 2026</div>
@@ -2478,7 +2485,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910080000&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NRL">
+</div><div class="review bullish" data-t="NRL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Newpark REIT Limited <span class="r-ticker">(NRL)</span></div>
   <div class="r-title">Firm Intention to Propose a Scheme of Arrangement for Voluntary Repurchase Offer, Withdrawal of Cautionary, Dealings by Associates of a Director and Trading Update</div>
@@ -2495,7 +2502,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910080000&seq=3" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="MST">
+</div><div class="review bullish" data-t="MST" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Mustek Limited <span class="r-ticker">(MST)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
@@ -2512,7 +2519,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910080000&seq=2" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="LSK">
+</div><div class="review bullish" data-t="LSK" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Lesaka Technologies Inc <span class="r-ticker">(LSK)</span></div>
   <div class="r-title">FY2026 Results: Delivers guidance across all metrics, exceeds Adjusted EPS and achieves GAAP profitability</div>
@@ -2529,7 +2536,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910070500&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="FSR">
+</div><div class="review bullish" data-t="FSR" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">FirstRand Limited <span class="r-ticker">(FSR)</span></div>
   <div class="r-title">Audited Results and Ordinary Cash Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -2546,7 +2553,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910083000&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CPI">
+</div><div class="review neutral" data-t="CPI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Capitec Limited <span class="r-ticker">(CPI)</span></div>
   <div class="r-title">Trading Statement</div>
@@ -2563,7 +2570,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910145800&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CLH">
+</div><div class="review neutral" data-t="CLH" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">City Lodge Hotels Limited <span class="r-ticker">(CLH)</span></div>
   <div class="r-title">Consolidated Annual Financial Statements and Cash Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -2581,7 +2588,7 @@ footer {
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260910162600&seq=0" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">09 Sep 2026 — 5 reviews</div>
-<div class="review neutral" data-t="UPL">
+<div class="review neutral" data-t="UPL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Universal Partners <span class="r-ticker">(UPL)</span></div>
   <div class="r-title">Summarised Audited Financial Statements for the Year Ended 30 June 2026</div>
@@ -2599,7 +2606,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/universal-partners-limited-summarised-audited-financial-statements-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SSU">
+</div><div class="review neutral" data-t="SSU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Southern Sun <span class="r-ticker">(SSU)</span></div>
   <div class="r-title">Prepared Comments for the AGM, RMB Morgan Stanley Investor Conference and Preliminary Trading Statement for the Six Months Ending 30 September 2026</div>
@@ -2617,7 +2624,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/southern-sun-limited-prepared-comments-for-the-southern-sun-annual-general-meeting-the-2026-rmb-morgan-stanley-investor-conference-and-a-preliminary-trading-statement-for-the-six-months-ending-30-september-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="HYP">
+</div><div class="review bullish" data-t="HYP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Hyprop Investments <span class="r-ticker">(HYP)</span></div>
   <div class="r-title">Consolidated Audited Results for the Year Ended 30 June 2026, Cash Dividend and Outlook</div>
@@ -2635,7 +2642,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/hyprop-investments-limited-consolidated-audited-results-for-the-year-ended-30-june-2026-cash-dividend-and-outlook/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="GRT">
+</div><div class="review neutral" data-t="GRT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Growthpoint Properties <span class="r-ticker">(GRT)</span></div>
   <div class="r-title">Group Audited Annual Results and Cash Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -2653,7 +2660,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/growthpoint-properties-limited-group-audited-annual-results-and-cash-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CFR">
+</div><div class="review neutral" data-t="CFR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Compagnie Financière Richemont <span class="r-ticker">(CFR)</span></div>
   <div class="r-title">Richemont Announces the Appointment of a Non-Executive Co-Deputy Chairman of its Board of Directors</div>
@@ -2672,7 +2679,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/compagnie-financiere-richemont-sa-richemont-announces-the-appointment-of-a-non-executive-co-deputy-chairman-of-its-board-of-directors/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">08 Sep 2026 — 12 reviews</div>
-<div class="review bullish" data-t="WBO">
+<div class="review bullish" data-t="WBO" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Wilson Bayly Holmes-Ovcon <span class="r-ticker">(WBO)</span></div>
   <div class="r-title">Audited Financial Statements and Cash Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -2689,7 +2696,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/wilson-bayly-holmes-ovcon-limited-audited-financial-statements-and-cash-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="VOD">
+</div><div class="review neutral" data-t="VOD" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Vodacom Group <span class="r-ticker">(VOD)</span></div>
   <div class="r-title">Change in Directorate and Composition of Committees</div>
@@ -2706,7 +2713,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/vodacom-group-limited-change-in-directorate-and-composition-of-committees-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SUI">
+</div><div class="review bullish" data-t="SUI" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Sun International <span class="r-ticker">(SUI)</span></div>
   <div class="r-title">Unaudited Interim Group Financial Results for the Six Months Ended 30 June 2026</div>
@@ -2723,7 +2730,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sun-international-limited-unaudited-interim-group-financial-results-interim-ordinary-cash-dividend-declaration-for-the-six-months-ended-30-june-2026-and-changes-to-risk-committee-responsibilities/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SSW">
+</div><div class="review neutral" data-t="SSW" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
   <div class="r-title">Section 189A Consultations on Proposed Restructuring of Kwezi Shaft at SA PGM Operations</div>
@@ -2740,7 +2747,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-sibanye-stillwater-enters-into-section-189a-consultations-regarding-the-proposed-restructuring-of-kwezi-shaft-at-its-sa-pgm-operations/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SPG">
+</div><div class="review neutral" data-t="SPG" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Super Group <span class="r-ticker">(SPG)</span></div>
   <div class="r-title">Summarised Financial Final Results and Cash Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -2757,7 +2764,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/super-group-limited-summarised-financial-final-results-and-cash-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PBT">
+</div><div class="review neutral" data-t="PBT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">PBT Holdings <span class="r-ticker">(PBT)</span></div>
   <div class="r-title">Transaction to Introduce B-BBEE Investor, Specific Repurchases and Directors' Dealings</div>
@@ -2774,7 +2781,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/pbt-holdings-limited-transaction-to-introduce-a-long-term-b-bbee-investor/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OMU">
+</div><div class="review bullish" data-t="OMU" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Old Mutual <span class="r-ticker">(OMU)</span></div>
   <div class="r-title">Unaudited Interim Results and Interim Dividend Declaration for the Six Months Ended 30 June 2026</div>
@@ -2791,7 +2798,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/old-mutual-limited-unaudited-interim-results-and-interim-dividend-declaration-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="LBR">
+</div><div class="review bearish" data-t="LBR" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Libstar Holdings <span class="r-ticker">(LBR)</span></div>
   <div class="r-title">Unaudited Interim Results for the Six-Month Period Ended 30 June 2026</div>
@@ -2808,7 +2815,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/libstar-holdings-limited-unaudited-interim-results-for-the-six-month-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="HAR">
+</div><div class="review neutral" data-t="HAR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Harmony Gold <span class="r-ticker">(HAR)</span></div>
   <div class="r-title">Loss-of-Life Incident at Moab Khotsong Mine</div>
@@ -2825,7 +2832,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/harmony-gold-mining-company-limited-harmony-reports-a-tragic-loss-of-life-incident-at-its-moab-khotsong-mine-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CLH">
+</div><div class="review neutral" data-t="CLH" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">City Lodge Hotels <span class="r-ticker">(CLH)</span></div>
   <div class="r-title">Voluntary Trading Statement for the Year Ended 30 June 2026</div>
@@ -2842,7 +2849,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/city-lodge-hotels-limited-voluntary-trading-statement-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BWN">
+</div><div class="review neutral" data-t="BWN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Balwin Properties <span class="r-ticker">(BWN)</span></div>
   <div class="r-title">Finalisation Announcement in Respect of the Scheme of Arrangement</div>
@@ -2859,7 +2866,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/balwin-properties-limited-finalisation-announcement-in-respect-of-the-scheme-of-arrangement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="AVI">
+</div><div class="review bullish" data-t="AVI" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">AVI Limited <span class="r-ticker">(AVI)</span></div>
   <div class="r-title">Results for the Year Ended 30 June 2026, and Final and Special Dividend</div>
@@ -2877,7 +2884,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/avi-limited-results-for-the-year-ended-30-june-2026-and-final-and-special-dividend/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">04 Sep 2026 — 4 reviews</div>
-<div class="review neutral" data-t="SAP">
+<div class="review neutral" data-t="SAP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Sappi <span class="r-ticker">(SAP)</span></div>
   <div class="r-title">Changes to the board of directors</div>
@@ -2895,7 +2902,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sappi-limited-changes-to-the-board-of-directors-8/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="EXX">
+</div><div class="review bullish" data-t="EXX" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Exxaro Resources <span class="r-ticker">(EXX)</span></div>
   <div class="r-title">VOLUNTARY ANNOUNCEMENT: Exxaro Exercises Its Pre-emptive Right and Agrees to Disposal of Entire Interest in Moranbah South Project</div>
@@ -2913,7 +2920,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/exxaro-resources-limited-voluntary-announcement-exxaro-exercises-its-pre-emptive-right-and-agrees-to-the-subsequent-disposal-of-its-entire-interest-in-moranbah-south-project/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BEL">
+</div><div class="review neutral" data-t="BEL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Bell Equipment <span class="r-ticker">(BEL)</span></div>
   <div class="r-title">Unaudited Condensed Consolidated Interim Financial Statements for H1 ended 30 June 2026 and Dividend Declaration</div>
@@ -2931,7 +2938,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/bell-equipment-limited-unaudited-condensed-consolidated-interim-financial-statements-for-the-six-months-ended-30-june-2026-and-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="ARI">
+</div><div class="review neutral" data-t="ARI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">African Rainbow Minerals <span class="r-ticker">(ARI)</span></div>
   <div class="r-title">Condensed Reviewed Results for FY ended 30 June 2026 and Final Cash Dividend Declaration</div>
@@ -2950,7 +2957,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/african-rainbow-minerals-limited-condensed-reviewed-results-for-the-financial-year-ended-30-june-2026-and-final-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">03 Sep 2026 — 5 reviews</div>
-<div class="review neutral" data-t="SNT">
+<div class="review neutral" data-t="SNT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Santam <span class="r-ticker">(SNT)</span></div>
   <div class="r-title">Unaudited Condensed Consolidated Interim Financial Statements for the six months ended 30 June 2026 and Declaration of Ordinary Dividend</div>
@@ -2968,7 +2975,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/santam-limited-unaudited-condensed-consolidated-interim-financial-statements-for-the-six-months-ended-30-june-2026-and-declaration-of-ordinary-dividend/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="IMP">
+</div><div class="review bullish" data-t="IMP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Impala Platinum <span class="r-ticker">(IMP)</span></div>
   <div class="r-title">Audited Consolidated Annual Results for the financial year ended 30 June 2026 and Cash Dividend Declaration</div>
@@ -2986,7 +2993,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/impala-platinum-holdings-limited-audited-consolidated-annual-results-for-the-financial-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="FFB">
+</div><div class="review neutral" data-t="FFB" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Fortress REIT <span class="r-ticker">(FFB)</span></div>
   <div class="r-title">Consolidated audited financial results for the year ended 30 June 2026 and prospects</div>
@@ -3004,7 +3011,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/fortress-real-estate-investments-limited-consolidated-audited-financial-results-for-the-year-ended-30-june-2026-and-prospects/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="DSY">
+</div><div class="review bullish" data-t="DSY" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Discovery <span class="r-ticker">(DSY)</span></div>
   <div class="r-title">Annual Results for the year ended 30 June 2026 and Cash Dividend Declaration</div>
@@ -3022,7 +3029,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/discovery-limited-annual-results-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BYI">
+</div><div class="review neutral" data-t="BYI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Bytes Technology Group <span class="r-ticker">(BYI)</span></div>
   <div class="r-title">Chair transition</div>
@@ -3041,7 +3048,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/bytes-technology-group-plc-chair-transition/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">02 Sep 2026 — 7 reviews</div>
-<div class="review neutral" data-t="WHL">
+<div class="review neutral" data-t="WHL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Woolworths Holdings <span class="r-ticker">(WHL)</span></div>
   <div class="r-title">Audited Group Results for the 52 weeks ended 28 June 2026 and Cash Dividend Declaration</div>
@@ -3058,7 +3065,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/woolworths-holdings-limited-audited-group-results-for-the-52-weeks-ended-28-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="THA">
+</div><div class="review neutral" data-t="THA" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
   <div class="r-title">Income Investor Meetings and Contemplated Senior Secured Bond Issue</div>
@@ -3075,7 +3082,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-income-investor-meetings-and-contemplated-senior-secured-bond-issue/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="TFG">
+</div><div class="review neutral" data-t="TFG" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">The Foschini Group <span class="r-ticker">(TFG)</span></div>
   <div class="r-title">Trading update for the 21 weeks ended 22 August 2026</div>
@@ -3092,7 +3099,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/the-foschini-group-limited-trading-update-for-the-21-weeks-ended-22-august-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="SSW">
+</div><div class="review bearish" data-t="SSW" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Sibanye-Stillwater <span class="r-ticker">(SSW)</span></div>
   <div class="r-title">Sibanye-Stillwater receives strike notice for sections of its US PGM operations</div>
@@ -3109,7 +3116,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-sibanye-stillwater-receives-strike-notice-for-sections-of-its-us-pgm-operations/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="MTH">
+</div><div class="review bullish" data-t="MTH" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Motus Holdings <span class="r-ticker">(MTH)</span></div>
   <div class="r-title">Summarised consolidated results and cash dividend declaration for the year ended 30 June 2026</div>
@@ -3126,7 +3133,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/motus-holdings-limited-summarised-consolidated-results-and-cash-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="CSB">
+</div><div class="review bearish" data-t="CSB" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Cashbuild <span class="r-ticker">(CSB)</span></div>
   <div class="r-title">Annual results and dividend declaration for the year ended 28 June 2026</div>
@@ -3143,7 +3150,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/cashbuild-limited-annual-results-and-dividend-declaration-for-the-year-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="APN">
+</div><div class="review bullish" data-t="APN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
   <div class="r-title">Reviewed Condensed Group Financial Results for the year ended 30 June 2026 and Cash Dividend Declaration</div>
@@ -3161,7 +3168,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-reviewed-condensed-group-financial-results-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">01 Sep 2026 — 7 reviews</div>
-<div class="review bullish" data-t="SSW">
+<div class="review bullish" data-t="SSW" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
   <div class="r-title">Financial Results for the Six Months Ended 30 June 2026 and Interim Dividend Declaration</div>
@@ -3179,7 +3186,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-financial-results-for-the-six-months-ended-30-june-2026-and-interim-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SOL">
+</div><div class="review bullish" data-t="SOL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Sasol <span class="r-ticker">(SOL)</span></div>
   <div class="r-title">Short Form Announcement: Audited Financial Results for the Year Ended 30 June 2026</div>
@@ -3197,7 +3204,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sasol-limited-short-form-announcement-audited-financial-results-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SHP">
+</div><div class="review bullish" data-t="SHP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Shoprite <span class="r-ticker">(SHP)</span></div>
   <div class="r-title">Group Results for the 52 Weeks Ended 28 June 2026 and Cash Dividend Declaration</div>
@@ -3215,7 +3222,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/shoprite-holdings-limited-group-results-for-the-52-weeks-ended-28-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SHG">
+</div><div class="review bullish" data-t="SHG" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sea Harvest <span class="r-ticker">(SHG)</span></div>
   <div class="r-title">Unaudited Interim Results and Dividend Declaration for the Six Months Ended 30 June 2026</div>
@@ -3233,7 +3240,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sea-harvest-group-limited-sea-harvest-unaudited-interim-results-and-dividend-declaration-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="GCT">
+</div><div class="review neutral" data-t="GCT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Greencoat Renewables <span class="r-ticker">(GCT)</span></div>
   <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
@@ -3251,7 +3258,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/greencoat-renewables-plc-trading-statement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BRN">
+</div><div class="review bullish" data-t="BRN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Brimstone <span class="r-ticker">(BRN)</span></div>
   <div class="r-title">Unaudited Interim Results for the Six Months Ended 30 June 2026</div>
@@ -3269,7 +3276,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/brimstone-investment-corporation-limited-unaudited-interim-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="BAC">
+</div><div class="review bearish" data-t="BAC" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Africa Bitcoin Corporation <span class="r-ticker">(BAC)</span></div>
   <div class="r-title">FSCA Decisions, Precautionary Governance Measures, Appointment of Interim CEO and Board Resignations</div>
@@ -3288,7 +3295,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/africa-bitcoin-corporation-limited-fsca-decisions-precautionary-governance-measures-appointment-of-interim-chief-executive-officer-and-board-resignations/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">31 Aug 2026 — 10 reviews</div>
-<div class="review bearish" data-t="RNG">
+<div class="review bearish" data-t="RNG" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Randgold & Exploration <span class="r-ticker">(RNG)</span></div>
   <div class="r-title">Summarised Interim Results for H1 2026</div>
@@ -3306,7 +3313,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831120000&seq=27&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="RLO">
+</div><div class="review neutral" data-t="RLO" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Reunert <span class="r-ticker">(RLO)</span></div>
   <div class="r-title">Operating Environment, Share-Based Payments and Strategy Update</div>
@@ -3324,7 +3331,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831170000&seq=45&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="RCL">
+</div><div class="review bearish" data-t="RCL" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">RCL Foods <span class="r-ticker">(RCL)</span></div>
   <div class="r-title">Group Financial Results for the Year Ended June 2026</div>
@@ -3342,7 +3349,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831070500&seq=2&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OMU">
+</div><div class="review neutral" data-t="OMU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Old Mutual <span class="r-ticker">(OMU)</span></div>
   <div class="r-title">Voluntary Operating Update and Trading Statement for H1 2026</div>
@@ -3360,7 +3367,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831083000&seq=13&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NED">
+</div><div class="review bullish" data-t="NED" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num follow">Review #4</span></div>
   <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
   <div class="r-title">Central Bank of Kenya Approval for NCBA Acquisition</div>
@@ -3378,7 +3385,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831135500&seq=34&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="FTA">
+</div><div class="review bullish" data-t="FTA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Fairvest <span class="r-ticker">(FTA)</span></div>
   <div class="r-title">S&P Global Ratings Assigns Initial Issuer Credit Ratings & Inaugural Bond Issuance</div>
@@ -3396,7 +3403,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831153500&seq=36&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BVT">
+</div><div class="review bullish" data-t="BVT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Bidvest <span class="r-ticker">(BVT)</span></div>
   <div class="r-title">Consolidated Financial Results for the Year Ended 30 June 2026</div>
@@ -3414,7 +3421,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831070500&seq=5&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="BEL">
+</div><div class="review bearish" data-t="BEL" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Bell Equipment <span class="r-ticker">(BEL)</span></div>
   <div class="r-title">Updated Trading Statement for H1 2026</div>
@@ -3432,7 +3439,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831115500&seq=26&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="AEL">
+</div><div class="review bullish" data-t="AEL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Altron <span class="r-ticker">(AEL)</span></div>
   <div class="r-title">Voluntary Operational Update for HY27</div>
@@ -3450,7 +3457,7 @@ footer {
   <div class="r-links">
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831070500&seq=3&scode=" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="ACT">
+</div><div class="review neutral" data-t="ACT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Afrocentric Investment Corporation <span class="r-ticker">(ACT)</span></div>
   <div class="r-title">Fulfilment of Conditions Precedent — Disposal of Activo</div>
@@ -3469,7 +3476,7 @@ footer {
     <a href="https://www.sharenet.co.za/v3/sens_display.php?tdate=20260831163000&seq=42&scode=" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">27 Aug 2026 — 10 reviews</div>
-<div class="review neutral" data-t="TRU">
+<div class="review neutral" data-t="TRU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 14 Aug</span></span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
   <div class="r-title">Group Annual Results and Cash Dividend for the 52 Weeks Ended 28 June 2026</div>
@@ -3487,7 +3494,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-group-annual-financial-statements-summarised-audited-group-annual-results-cash-dividend-declaration-for-the-52-weeks-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="TON">
+</div><div class="review bearish" data-t="TON" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Tongaat Hulett <span class="r-ticker">(TON)</span></div>
   <div class="r-title">Constitutional Court Order and RGS Application for Leave to Appeal</div>
@@ -3500,7 +3507,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/tongaat-hulett-limited-notice-to-affected-persons-order-of-the-constitutional-court-and-application-for-leave-to-appeal-by-rgs-group-holdings-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SSW">
+</div><div class="review bullish" data-t="SSW" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 11 May</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sibanye Stillwater <span class="r-ticker">(SSW)</span></div>
   <div class="r-title">Trading Statement and Operating Update for the Six Months Ended 30 June 2026</div>
@@ -3518,7 +3525,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sibanye-stillwater-limited-trading-statement-and-operating-update-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SEA">
+</div><div class="review bullish" data-t="SEA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Spear REIT <span class="r-ticker">(SEA)</span></div>
   <div class="r-title">Implementation of Acquisition of Watergate Centre</div>
@@ -3536,7 +3543,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/spear-reit-limited-implementation-of-acquisition-of-watergate-centre/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="S32">
+</div><div class="review bullish" data-t="S32" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">South32 <span class="r-ticker">(S32)</span></div>
   <div class="r-title">Financial Results for the Year Ended 30 June 2026 and Dividend Declaration</div>
@@ -3553,7 +3560,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/south32-limited-financial-results-for-the-year-ended-30-june-2026-and-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OUT">
+</div><div class="review bullish" data-t="OUT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 27 Feb</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
   <div class="r-title">Trading Update and Trading Statement for the Year Ended 30 June 2026</div>
@@ -3571,7 +3578,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-trading-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="MTU">
+</div><div class="review bearish" data-t="MTU" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH<span class="ghost-date">Ghost: 20 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Mantengu <span class="r-ticker">(MTU)</span></div>
   <div class="r-title">Cautionary — Resignation of Auditor, Withdrawal of Audit Report and Deferred Tax Dispute</div>
@@ -3589,7 +3596,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mantengu-limited-cautionary-ann-resig-of-auditors-withdrawal-of-audit-report-associated-dispute-on-deferred-taxation-agm/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="LAB">
+</div><div class="review bearish" data-t="LAB" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Labat Africa <span class="r-ticker">(LAB)</span></div>
   <div class="r-title">Suspension of Listing</div>
@@ -3607,7 +3614,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/labat-africa-limited-suspension-of-listing-labat-africa-limited/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="HAR">
+</div><div class="review bullish" data-t="HAR" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Harmony Gold <span class="r-ticker">(HAR)</span></div>
   <div class="r-title">Results for the Year Ended 30 June 2026 and a Final Dividend Declaration</div>
@@ -3626,7 +3633,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/harmony-gold-mining-company-limited-financial-results-for-the-year-ended-30-june-2026-and-a-final-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="ACT">
+</div><div class="review bearish" data-t="ACT" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">AfroCentric Investment Corporation <span class="r-ticker">(ACT)</span></div>
   <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
@@ -3645,7 +3652,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/afrocentric-investment-corporation-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">26 Aug 2026 — 8 reviews</div>
-<div class="review neutral" data-t="TPC">
+<div class="review neutral" data-t="TPC" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 19 Feb</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Transpaco <span class="r-ticker">(TPC)</span></div>
   <div class="r-title">Short-Form Announcement: Reviewed Condensed Consolidated Results for the Year Ended 30 June 2026 and Dividend Announcement</div>
@@ -3663,7 +3670,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/transpaco-limited-short-form-announcement-reviewed-condensed-consolidated-results-for-the-year-ended-30-june-2026-and-dividend-announcement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SNT">
+</div><div class="review bullish" data-t="SNT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 19 May</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Santam <span class="r-ticker">(SNT)</span></div>
   <div class="r-title">Operational Update for the Six Months Ended 30 June 2026</div>
@@ -3681,7 +3688,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/santam-limited-operational-update-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SLM">
+</div><div class="review neutral" data-t="SLM" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 22 May</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sanlam <span class="r-ticker">(SLM)</span></div>
   <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
@@ -3699,7 +3706,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sanlam-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="MTA">
+</div><div class="review bullish" data-t="MTA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 04 Aug</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Metair Investments <span class="r-ticker">(MTA)</span></div>
   <div class="r-title">Condensed Unaudited Consolidated Interim Results for the Six Months Ended 30 June 2026</div>
@@ -3717,7 +3724,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/metair-investments-limited-condensed-unaudited-consolidated-interim-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="JBL">
+</div><div class="review bullish" data-t="JBL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 10 Jun</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Jubilee Metals Group <span class="r-ticker">(JBL)</span></div>
   <div class="r-title">Preferred Purchaser Selected for Large Waste Project</div>
@@ -3735,7 +3742,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/jubilee-metals-group-plc-preferred-purchaser-selected-for-large-waste-project/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="DSY">
+</div><div class="review bullish" data-t="DSY" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 27 Feb</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Discovery <span class="r-ticker">(DSY)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
@@ -3753,7 +3760,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/discovery-limited-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BLU">
+</div><div class="review neutral" data-t="BLU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 17 Aug</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Blue Label Telecoms <span class="r-ticker">(BLU)</span></div>
   <div class="r-title">Audited Consolidated Annual Financial Results for the Year Ended 31 May 2026, Dividend Declaration and Changes to the Board</div>
@@ -3771,7 +3778,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/blu-label-unlimited-group-limited-audited-consolidated-annual-financial-results-for-the-year-ended-31-may-2026-dividend-declaration-and-changes-to-the-board/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BID">
+</div><div class="review bullish" data-t="BID" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 26 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Bid Corporation <span class="r-ticker">(BID)</span></div>
   <div class="r-title">Results, Dividend Declaration, and Annual Reporting Suite for the Year Ended 30 June 2026</div>
@@ -3790,7 +3797,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/bid-corporation-limited-results-dividend-declaration-and-annual-reporting-suite-for-the-year-ended-june-30-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">25 Aug 2026 — 8 reviews</div>
-<div class="review bullish" data-t="S32">
+<div class="review bullish" data-t="S32" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">South32 <span class="r-ticker">(S32)</span></div>
   <div class="r-title">61% Increase in Sierra Gorda Ore Reserve Estimate</div>
@@ -3808,7 +3815,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/south32-limited-61-increase-in-sierra-gorda-ore-reserve-estimate/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OPA">
+</div><div class="review bullish" data-t="OPA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Optasia <span class="r-ticker">(OPA)</span></div>
   <div class="r-title">Trading Statement for the Interim Period Ended 30 June 2026</div>
@@ -3826,7 +3833,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/optasia-limited-trading-statement-for-the-interim-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NPH">
+</div><div class="review bullish" data-t="NPH" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 15 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Northam Platinum Holdings <span class="r-ticker">(NPH)</span></div>
   <div class="r-title">Cautionary announcement: Notification of an unsolicited approach and commencement of a strategic, competitive process</div>
@@ -3844,7 +3851,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/northam-platinum-holdings-limited-cautionary-announcement-notification-of-an-unsolicited-approach-and-commencement-of-a-strategic-competitive-process/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="MDI">
+</div><div class="review bullish" data-t="MDI" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Master Drilling Group <span class="r-ticker">(MDI)</span></div>
   <div class="r-title">Unaudited Interim Financial Results for the six months ended 30 June 2026</div>
@@ -3862,7 +3869,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/master-drilling-group-limited-unaudited-interim-financial-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="GND">
+</div><div class="review bullish" data-t="GND" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Grindrod <span class="r-ticker">(GND)</span></div>
   <div class="r-title">Unaudited condensed consolidated interim results and cash dividend declaration for the six months ended 30 June 2026</div>
@@ -3880,7 +3887,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/grindrod-limited-unaudited-condensed-consolidated-interim-results-and-cash-dividend-declaration-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="GFI">
+</div><div class="review bullish" data-t="GFI" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 12 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Gold Fields <span class="r-ticker">(GFI)</span></div>
   <div class="r-title">Financial Results for the Six Months Ended 30 June 2026, Interim Dividend Declaration, Additional Shareholder Returns Programme Increased and Appointment of Interim Company Secretary</div>
@@ -3898,7 +3905,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/gold-fields-limited-financial-results-for-the-six-months-ended-30-june-2026-interim-dividend-declaration-additional-shareholder-returns-programme-increased-and-appointment-of-interim-company-secre/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AGL">
+</div><div class="review neutral" data-t="AGL" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Anglo American <span class="r-ticker">(AGL)</span></div>
   <div class="r-title">Anglo American and Teck announce future Anglo Teck Executive Leadership Team</div>
@@ -3916,7 +3923,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/anglo-american-plc-anglo-american-and-teck-announce-future-anglo-teck-executive-leadership-team/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AFT">
+</div><div class="review neutral" data-t="AFT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Afrimat <span class="r-ticker">(AFT)</span></div>
   <div class="r-title">Afrimat business update and pre-close briefing session</div>
@@ -3935,7 +3942,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/afrimat-limited-afrimat-business-update-and-pre-close-briefing-session-5/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">24 Aug 2026 — 9 reviews</div>
-<div class="review bullish" data-t="THA">
+<div class="review bullish" data-t="THA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 15 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
   <div class="r-title">Karo Platinum Signs Special Mining Lease Agreement with Government of Zimbabwe</div>
@@ -3953,7 +3960,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/tharisa-plc-karo-platinum-signs-special-mining-lease-agreement-with-government-of-zimbabwe/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SBP">
+</div><div class="review bullish" data-t="SBP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 06 Aug</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Sabvest Capital <span class="r-ticker">(SBP)</span></div>
   <div class="r-title">Investment by Sabcap in Frogfoot, Vox and Hypa</div>
@@ -3971,7 +3978,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sabvest-capital-limited-investment-by-sabcap-in-frogfoot-vox-and-hypa/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="MTN">
+</div><div class="review bullish" data-t="MTN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 08 Aug</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">MTN Group <span class="r-ticker">(MTN)</span></div>
   <div class="r-title">Interim Results for the Six Months Ended 30 June 2026 and Share Buyback</div>
@@ -3989,7 +3996,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mtn-group-limited-interim-financial-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="MPT">
+</div><div class="review neutral" data-t="MPT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 17 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Mpact <span class="r-ticker">(MPT)</span></div>
   <div class="r-title">Unaudited Interim Results and Cash Dividend Declaration for the Six Months Ended 30 June 2026</div>
@@ -4007,7 +4014,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/mpact-limited-unaudited-interim-results-and-cash-dividend-declaration-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="ITE">
+</div><div class="review neutral" data-t="ITE" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 03 Mar</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Italtile <span class="r-ticker">(ITE)</span></div>
   <div class="r-title">Reviewed Annual Results for the Year Ended 30 June 2026 and Dividend Declaration</div>
@@ -4025,7 +4032,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/italtile-limited-reviewed-condensed-group-annual-financial-statements-for-the-year-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="DTC">
+</div><div class="review bullish" data-t="DTC" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 29 Jan</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Datatec <span class="r-ticker">(DTC)</span></div>
   <div class="r-title">Declaration of a Special Dividend of R29.00 and Scrip Distribution Alternative</div>
@@ -4043,7 +4050,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/datatec-limited-declaration-of-a-special-dividend-of-2-900-zar-cents-and-scrip-distribution-alternative/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="DIB">
+</div><div class="review bullish" data-t="DIB" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 14 May</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Dipula Properties <span class="r-ticker">(DIB)</span></div>
   <div class="r-title">Category 2 Acquisition of R2.04bn Property Portfolio, Private Placement Results, and Withdrawal of Cautionary</div>
@@ -4061,7 +4068,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/dipula-properties-limited-category-2-acquisition-of-a-portfolio-of-properties-results-of-a-private-placement-and-withdrawal-of-cautionary-announcement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="AEG">
+</div><div class="review neutral" data-t="AEG" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 16 Jan</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Aveng <span class="r-ticker">(AEG)</span></div>
   <div class="r-title">Changes to Executive Management, Resignation of Directors and Appointment of Chairman</div>
@@ -4079,7 +4086,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/aveng-limited-changes-to-executive-management-resignation-of-directors-and-appointment-of-chairman/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="ADH">
+</div><div class="review bullish" data-t="ADH" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 06 Mar</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">ADvTECH <span class="r-ticker">(ADH)</span></div>
   <div class="r-title">Interim Results for the Six Months Ended 30 June 2026 and Dividend Declaration</div>
@@ -4098,7 +4105,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/advtech-limited-interim-results-for-the-six-months-ended-30-june-2026-and-announcement-of-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">21 Aug 2026 — 3 reviews</div>
-<div class="review neutral" data-t="TRU">
+<div class="review neutral" data-t="TRU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 14 Aug</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
   <div class="r-title">Changes to the Board — Retirement of Chairman Hilton Saven after 23 Years</div>
@@ -4116,7 +4123,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-changes-to-the-board-and-board-committees-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="CCD">
+</div><div class="review bullish" data-t="CCD" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Cell C Holdings <span class="r-ticker">(CCD)</span></div>
   <div class="r-title">Audited Financial Results for the Year Ended 31 May 2026</div>
@@ -4134,7 +4141,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/cell-c-holdings-limited-audited-financial-results-for-the-year-ended-31-may-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="APN">
+</div><div class="review neutral" data-t="APN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Aspen Pharmacare <span class="r-ticker">(APN)</span></div>
   <div class="r-title">Business Update and Trading Statement for the Year Ended 30 June 2026</div>
@@ -4153,7 +4160,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/aspen-pharmacare-holdings-limited-business-update-and-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">20 Aug 2026 — 6 reviews</div>
-<div class="review bullish" data-t="SUR">
+<div class="review bullish" data-t="SUR" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Spur Corporation <span class="r-ticker">(SUR)</span></div>
   <div class="r-title">Audited Annual Financial Statements for the Year Ended 30 June 2026 and Cash Dividend</div>
@@ -4171,7 +4178,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/spur-corporation-limited-consolidated-audited-annual-financial-statements-for-the-financial-year-ended-30-june-2026-annual-financial-statements-and-payment-of-cash-dividend/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SUI">
+</div><div class="review neutral" data-t="SUI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sun International <span class="r-ticker">(SUI)</span></div>
   <div class="r-title">Retirement of CFO Norman Basthdaw and Appointment of Vanessa Olver as New CFO</div>
@@ -4189,7 +4196,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sun-international-limited-retirement-of-mr-n-basthdaw-and-appointment-of-ms-v-olver-as-new-chief-financial-officer-and-finance-director-of-sun-international/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SOH">
+</div><div class="review bullish" data-t="SOH" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">South Ocean Holdings <span class="r-ticker">(SOH)</span></div>
   <div class="r-title">Unaudited Summarised Results for the Six Months Ended 30 June 2026</div>
@@ -4207,7 +4214,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/south-ocean-holdings-limited-unaudited-summaried-results-announcement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="LBR">
+</div><div class="review neutral" data-t="LBR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Libstar Holdings <span class="r-ticker">(LBR)</span></div>
   <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
@@ -4225,7 +4232,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/libstar-holdings-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="EXX">
+</div><div class="review neutral" data-t="EXX" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 14 Aug</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Exxaro Resources <span class="r-ticker">(EXX)</span></div>
   <div class="r-title">Reviewed Financial Results for the six-month period ended 30 June 2026 and Interim Dividend</div>
@@ -4243,7 +4250,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/exxaro-resources-limited-reviewed-financial-results-for-the-six-month-period-ended-30-june-2026-and-interim-dividend/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="CAA">
+</div><div class="review neutral" data-t="CAA" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">CA Sales Holdings <span class="r-ticker">(CAA)</span></div>
   <div class="r-title">Unaudited results for the six months ended 30 June 2026</div>
@@ -4262,7 +4269,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/ca-sales-holdings-limited-unaudited-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">19 Aug 2026 — 3 reviews</div>
-<div class="review neutral" data-t="KAP">
+<div class="review neutral" data-t="KAP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">KAP Limited <span class="r-ticker">(KAP)</span></div>
   <div class="r-title">Update on the Merger of PG Bison Southern Cape and Mto Forestry Businesses</div>
@@ -4280,7 +4287,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/kap-limited-update-on-the-merger-of-the-southern-cape-forestry-and-sawmilling-businesses-of-pg-bison-southern-cape-pty-ltd-and-mto-forestry-pty-ltd/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="DRD">
+</div><div class="review bullish" data-t="DRD" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">DRDGOLD <span class="r-ticker">(DRD)</span></div>
   <div class="r-title">Reviewed Condensed Consolidated Financial Statements and Dividend Declaration for the Year Ended 30 June 2026</div>
@@ -4298,7 +4305,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/drdgold-limited-reviewed-condensed-consolidated-financial-statements-and-dividend-declaration-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="CSB">
+</div><div class="review bearish" data-t="CSB" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Cashbuild <span class="r-ticker">(CSB)</span></div>
   <div class="r-title">Trading Statement for the 52 Weeks Ended 28 June 2026</div>
@@ -4317,7 +4324,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/cashbuild-limited-trading-statement-10/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">18 Aug 2026 — 4 reviews</div>
-<div class="review neutral" data-t="TTO">
+<div class="review neutral" data-t="TTO" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Trustco Group Holdings <span class="r-ticker">(TTO)</span></div>
   <div class="r-title">Requisitioned General Meeting — All Resolutions to Remove Directors Fail</div>
@@ -4335,7 +4342,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/trustco-group-holdings-limited-requisitioned-general-meeting/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NRP">
+</div><div class="review bullish" data-t="NRP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">NEPI Rockcastle <span class="r-ticker">(NRP)</span></div>
   <div class="r-title">Reviewed Interim Condensed Consolidated Financial Statements for Six Months Ended 30 June 2026</div>
@@ -4353,7 +4360,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/nepi-rockcastle-nv-reviewed-interim-condensed-consolidated-financial-statements-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BHG">
+</div><div class="review bullish" data-t="BHG" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">BHP Group <span class="r-ticker">(BHG)</span></div>
   <div class="r-title">FY2026 Full Year Results</div>
@@ -4371,7 +4378,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/bhp-group-limited-fy-2026-results-announcement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="ABG">
+</div><div class="review bullish" data-t="ABG" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Absa Group <span class="r-ticker">(ABG)</span></div>
   <div class="r-title">Unaudited Consolidated Interim Results for Six Months Ended 30 June 2026</div>
@@ -4390,7 +4397,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/absa-group-limited-unaudited-consolidated-interim-results-and-ordinary-share-dividend-declaration-for-the-reporting-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">17 Aug 2026 — 6 reviews</div>
-<div class="review bullish" data-t="TGA">
+<div class="review bullish" data-t="TGA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Thungela Resources <span class="r-ticker">(TGA)</span></div>
   <div class="r-title">Interim Results for Six Months Ended 30 June 2026 and R5.50 Dividend</div>
@@ -4408,7 +4415,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/thungela-resources-limited-interim-results-for-the-six-months-ended-30-june-2026-and-ordinary-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="SPP">
+</div><div class="review bearish" data-t="SPP" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">The SPAR Group <span class="r-ticker">(SPP)</span></div>
   <div class="r-title">Resignation of Chairman and Deputy Chair with Immediate Effect</div>
@@ -4426,7 +4433,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/the-spar-group-limited-resignation-of-chairman-and-deputy-chair-appointment-of-interim-chairman-and-update-on-board-succession/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SOH">
+</div><div class="review bullish" data-t="SOH" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">South Ocean Holdings <span class="r-ticker">(SOH)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
@@ -4444,7 +4451,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/south-ocean-holdings-limited-trading-statement-26/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="RCL">
+</div><div class="review bearish" data-t="RCL" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">RCL Foods <span class="r-ticker">(RCL)</span></div>
   <div class="r-title">Trading Statement for the Year Ended June 2026</div>
@@ -4462,7 +4469,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/rcl-foods-limited-trading-statement-year-ended-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="OUT">
+</div><div class="review neutral" data-t="OUT" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 27 Feb</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">OUTsurance Group <span class="r-ticker">(OUT)</span></div>
   <div class="r-title">Appointment of Four Independent Non-Executive Directors</div>
@@ -4480,7 +4487,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/outsurance-group-limited-appointment-of-independent-non-executive-directors/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BWN">
+</div><div class="review neutral" data-t="BWN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Balwin Properties <span class="r-ticker">(BWN)</span></div>
   <div class="r-title">Results of General Meeting — Delisting Scheme Approved</div>
@@ -4499,7 +4506,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/balwin-properties-limited-results-of-general-meeting-of-balwin-shareholders/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">14 Aug 2026 — 5 reviews</div>
-<div class="review bullish" data-t="SDO">
+<div class="review bullish" data-t="SDO" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Stadio Holdings <span class="r-ticker">(SDO)</span></div>
   <div class="r-title">Voluntary Trading Statement and Publication Date of Financial Results</div>
@@ -4516,7 +4523,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/stadio-holdings-limited-voluntary-trading-statement-and-publication-date-of-financial-results-for-the-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="KAP">
+</div><div class="review neutral" data-t="KAP" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">KAP Limited <span class="r-ticker">(KAP)</span></div>
   <div class="r-title">Updated Trading Statement for the Year Ended 30 June 2026</div>
@@ -4533,7 +4540,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/kap-limited-updated-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="EXX">
+</div><div class="review neutral" data-t="EXX" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 14 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Exxaro Resources <span class="r-ticker">(EXX)</span></div>
   <div class="r-title">Trading Statement for the Six-Month Period Ended 30 June 2026</div>
@@ -4550,7 +4557,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/exxaro-resources-limited-exx-trading-statement-for-the-six-month-period-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="CAC">
+</div><div class="review bullish" data-t="CAC" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">CAFCA <span class="r-ticker">(CAC)</span></div>
   <div class="r-title">Trading Update for the 3rd Quarter Ended 30 June 2026</div>
@@ -4567,7 +4574,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/cafca-limited-trading-update-for-the-3rd-quarter-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="BLU">
+</div><div class="review bullish" data-t="BLU" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 17 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Blu Label Unlimited Group <span class="r-ticker">(BLU)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 31 May 2026</div>
@@ -4585,7 +4592,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/blu-label-unlimited-group-limited-trading-statement-for-the-year-ended-31-may-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">13 Aug 2026 — 3 reviews</div>
-<div class="review neutral" data-t="TRU">
+<div class="review neutral" data-t="TRU" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 14 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Truworths International <span class="r-ticker">(TRU)</span></div>
   <div class="r-title">Business Update and Voluntary Trading Statement for the 52 Weeks Ended 28 June 2026</div>
@@ -4602,7 +4609,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/truworths-international-limited-business-update-and-voluntary-trading-statement-for-the-52-week-period-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="RBO">
+</div><div class="review bullish" data-t="RBO" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Rainbow Chicken <span class="r-ticker">(RBO)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 28 June 2026</div>
@@ -4619,7 +4626,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/rainbow-chicken-limited-trading-statement-for-the-year-ended-28-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="DRD">
+</div><div class="review bullish" data-t="DRD" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">DRDGOLD <span class="r-ticker">(DRD)</span></div>
   <div class="r-title">Trading Statement and Trading Update for the Year Ended 30 June 2026</div>
@@ -4637,7 +4644,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/drdgold-limited-trading-statement-and-trading-update-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">12 Aug 2026 — 8 reviews</div>
-<div class="review bearish" data-t="WVR">
+<div class="review bearish" data-t="WVR" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Weaver Fintech <span class="r-ticker">(WVR)</span></div>
   <div class="r-title">Unaudited Interim Results for H1 ended 30 June 2026 and Board Changes</div>
@@ -4655,7 +4662,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/weaver-fintech-limited-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SHP">
+</div><div class="review bullish" data-t="SHP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 12 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Shoprite <span class="r-ticker">(SHP)</span></div>
   <div class="r-title">Operational Update for the 52 Weeks Ended 28 June 2026</div>
@@ -4673,7 +4680,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/shoprite-holdings-limited-operational-update-for-the-52-weeksended-28-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SEB">
+</div><div class="review neutral" data-t="SEB" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sebata Holdings <span class="r-ticker">(SEB)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 31 March 2026</div>
@@ -4691,7 +4698,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sebata-holdings-limited-trading-statement-15/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="RES">
+</div><div class="review bullish" data-t="RES" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 12 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Resilient REIT <span class="r-ticker">(RES)</span></div>
   <div class="r-title">Unaudited Interim Results and Dividend Declaration for H1 ended 30 June 2026</div>
@@ -4709,7 +4716,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/resilient-reit-limited-unaudited-financial-results-and-declaration-of-interim-dividend-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PWR">
+</div><div class="review neutral" data-t="PWR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Powerfleet <span class="r-ticker">(PWR)</span></div>
   <div class="r-title">Form 8-K — CFO Change: David Wilson Out, Paul Lalljie In</div>
@@ -4727,7 +4734,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/powerfleet-inc-form-8-k-current-report-relating-to-a-change-to-the-chief-financial-officer/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="IMP">
+</div><div class="review bullish" data-t="IMP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 12 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Impala Platinum <span class="r-ticker">(IMP)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
@@ -4745,7 +4752,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/naspers-limited-dealing-in-securities-by-director-25/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="GND">
+</div><div class="review neutral" data-t="GND" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Grindrod <span class="r-ticker">(GND)</span></div>
   <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
@@ -4763,7 +4770,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/grindrod-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="CCC">
+</div><div class="review bearish" data-t="CCC" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Cilo Cybin <span class="r-ticker">(CCC)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 31 March 2026</div>
@@ -4782,7 +4789,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/cilo-cybin-holdings-limited-trading-statement-for-the-year-ended-31-march-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">11 Aug 2026 — 3 reviews</div>
-<div class="review neutral" data-t="NPN">
+<div class="review neutral" data-t="NPN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 22 Jun</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Naspers <span class="r-ticker">(NPN)</span></div>
   <div class="r-title">Changes to the Composition of the Board and Committees</div>
@@ -4800,7 +4807,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/naspers-limited-changes-to-the-composition-of-the-board-and-committees-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NHM">
+</div><div class="review bullish" data-t="NHM" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Northam Platinum <span class="r-ticker">(NHM)</span></div>
   <div class="r-title">Increase of the Revolving Credit Facility to R15.0 Billion</div>
@@ -4818,7 +4825,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/northam-platinum-holdings-limited-increase-of-the-revolving-credit-facility-to-r15-0-billion/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="ITE">
+</div><div class="review neutral" data-t="ITE" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 03 Mar</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Italtile <span class="r-ticker">(ITE)</span></div>
   <div class="r-title">Business Update and Voluntary Trading Statement for the Year Ended 30 June 2026</div>
@@ -4837,7 +4844,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/italtile-limited-business-update-and-voluntary-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">07 Aug 2026 — 4 reviews</div>
-<div class="review bullish" data-t="TGA">
+<div class="review bullish" data-t="TGA" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Thungela Resources <span class="r-ticker">(TGA)</span></div>
   <div class="r-title">Trading Statement for the Six Months Ended 30 June 2026</div>
@@ -4855,7 +4862,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/thungela-resources-limited-thungela-resources-limited-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="SUR">
+</div><div class="review neutral" data-t="SUR" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Spur Corporation <span class="r-ticker">(SUR)</span></div>
   <div class="r-title">Market Update and Trading Statement</div>
@@ -4873,7 +4880,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/spur-corporation-limited-market-update-and-trading-statement/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="NED">
+</div><div class="review neutral" data-t="NED" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num follow">Review #3</span></div>
   <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
   <div class="r-title">Resignation of Director and Changes to Board Committees</div>
@@ -4891,7 +4898,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/nedbank-group-limited-resignation-of-director-and-changes-to-board-committees/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="MTN">
+</div><div class="review neutral" data-t="MTN" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 08 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">MTN Group <span class="r-ticker">(MTN)</span></div>
   <div class="r-title">Update on the IHS Holding Transaction and Notice of IHS Latam Towers Sale</div>
@@ -4910,7 +4917,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/mtn-group-limited-update-on-the-ihs-holding-limited-ihs-transaction-and-notice-of-ihs-latam-towers-sale/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">06 Aug 2026 — 6 reviews</div>
-<div class="review bearish" data-t="SAP">
+<div class="review bearish" data-t="SAP" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sappi <span class="r-ticker">(SAP)</span></div>
   <div class="r-title">Results for Third Quarter Ended June 2026</div>
@@ -4928,7 +4935,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sappi-limited-results-for-the-third-quarter-ended-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="REN">
+</div><div class="review bullish" data-t="REN" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Renergen <span class="r-ticker">(REN)</span></div>
   <div class="r-title">Tetra4 Signs Take-or-Pay LNG Contract with Domestic Food Processor</div>
@@ -4941,7 +4948,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/asp-isotopes-inc-aspi-announces-that-renergen-limiteds-subsidiary-has-entered-into-a-take-or-pay-contract/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="QLT">
+</div><div class="review bullish" data-t="QLT" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Quilter <span class="r-ticker">(QLT)</span></div>
   <div class="r-title">Interim Results for Six Months Ended 30 June 2026</div>
@@ -4959,7 +4966,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/quilter-plc-quilter-plc-interim-results-for-the-period-ended-30-june-2026-and-interim-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="PIK">
+</div><div class="review neutral" data-t="PIK" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Pick n Pay <span class="r-ticker">(PIK)</span></div>
   <div class="r-title">Trading Update for 20 Weeks Ended 19 July 2026 and CFO Transition</div>
@@ -4977,7 +4984,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/pick-n-pay-stores-limited-trading-update-for-the-20-weeks-ended-19-july-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="CPR">
+</div><div class="review bullish" data-t="CPR" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Copper 360 <span class="r-ticker">(CPR)</span></div>
   <div class="r-title">Neal Froneman Appointed Chairman</div>
@@ -4995,7 +5002,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/copper-360-limited-changes-to-the-board-of-directors-2/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="BTI">
+</div><div class="review neutral" data-t="BTI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">British American Tobacco <span class="r-ticker">(BTI)</span></div>
   <div class="r-title">Management Board Changes — CMO Succession</div>
@@ -5014,7 +5021,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/british-american-tobacco-plc-bat-announces-management-board-changes-3/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">05 Aug 2026 — 3 reviews</div>
-<div class="review bullish" data-t="SPG">
+<div class="review bullish" data-t="SPG" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Super Group <span class="r-ticker">(SPG)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
@@ -5032,7 +5039,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SOL">
+</div><div class="review bullish" data-t="SOL" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sasol <span class="r-ticker">(SOL)</span></div>
   <div class="r-title">Trading Statement for the Year Ended 30 June 2026</div>
@@ -5050,7 +5057,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/sasol-limited-trading-statement-for-the-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="SBP">
+</div><div class="review bullish" data-t="SBP" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 06 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Sabvest Capital <span class="r-ticker">(SBP)</span></div>
   <div class="r-title">Trading Statement for Six Months Ended 30 June 2026</div>
@@ -5069,7 +5076,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/sabvest-capital-limited-trading-statement-in-respect-of-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">04 Aug 2026 — 5 reviews</div>
-<div class="review neutral" data-t="RDF">
+<div class="review neutral" data-t="RDF" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Redefine Properties <span class="r-ticker">(RDF)</span></div>
   <div class="r-title">Change to the Board and Board Committees</div>
@@ -5087,7 +5094,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/redefine-properties-limited-change-to-the-board-and-board-committees/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="OAO">
+</div><div class="review bullish" data-t="OAO" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Oando PLC <span class="r-ticker">(OAO)</span></div>
   <div class="r-title">H1 2026 Unaudited Results Release</div>
@@ -5105,7 +5112,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/oando-plc-h1-2026-unaudited-results-release/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="NED">
+</div><div class="review bullish" data-t="NED" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
   <div class="r-title">Unaudited Interim Financial Results for the 6 Months ended 30 June 2026 and Cash Dividend Declaration</div>
@@ -5123,7 +5130,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/nedbank-group-limited-unaudited-interim-financial-results-for-the-6-months-ended-30-june-2026-and-cash-dividend-declaration/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="JSE">
+</div><div class="review bullish" data-t="JSE" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">JSE Limited <span class="r-ticker">(JSE)</span></div>
   <div class="r-title">Unreviewed Interim Results for the six months ended 30 June 2026</div>
@@ -5141,7 +5148,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/jse-limited-unreviewed-interim-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="HCI">
+</div><div class="review neutral" data-t="HCI" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Hosken Consolidated Investments <span class="r-ticker">(HCI)</span></div>
   <div class="r-title">Implementation of Transaction and Disclosure of Disposal and Acquisition of Securities</div>
@@ -5160,7 +5167,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/hosken-consolidated-investments-limited-implementation-of-transaction-and-disclosure-of-disposal-and-acquisition-of-securities/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">03 Aug 2026 — 4 reviews</div>
-<div class="review bullish" data-t="TKG">
+<div class="review bullish" data-t="TKG" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Telkom <span class="r-ticker">(TKG)</span></div>
   <div class="r-title">Trading update for Q1 ended 30 June 2026</div>
@@ -5178,7 +5185,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/telkom-sa-soc-limited-trading-update-for-the-first-quarter-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="MTA">
+</div><div class="review neutral" data-t="MTA" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 04 Aug</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Metair Investments <span class="r-ticker">(MTA)</span></div>
   <div class="r-title">Trading update and trading statement for H1 ended 30 June 2026</div>
@@ -5196,7 +5203,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/metair-investments-limited-trading-update-and-trading-statement-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="LSK">
+</div><div class="review bullish" data-t="LSK" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Lesaka Technologies <span class="r-ticker">(LSK)</span></div>
   <div class="r-title">Results of Special Meeting — Executive Chairman Option Award Approved</div>
@@ -5214,7 +5221,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/lesaka-technologies-inc-results-of-lesaka-august-3-2026-special-meeting-of-shareholders/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="HLM">
+</div><div class="review bullish" data-t="HLM" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num follow">Review #2</span></div>
   <div class="r-company">Hulamin <span class="r-ticker">(HLM)</span></div>
   <div class="r-title">Unaudited Consolidated Results for H1 ended 30 June 2026</div>
@@ -5233,7 +5240,7 @@ footer {
     <a href="https://www.moneyweb.co.za/mny_sens/hulamin-limited-unaudited-consolidated-results-for-the-six-months-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
 </div><div class="date-header">31 Jul 2026 — 5 reviews</div>
-<div class="review bullish" data-t="SSS">
+<div class="review bullish" data-t="SSS" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Stor-Age Property REIT <span class="r-ticker">(SSS)</span></div>
   <div class="r-title">Voluntary Announcement — Acquisition of Xtraspace Portfolio</div>
@@ -5251,7 +5258,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/stor-age-property-reit-limited-voluntary-announcement-acquisition-of-xtraspace-portfolio/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="PMV">
+</div><div class="review bullish" data-t="PMV" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Primeserv Group <span class="r-ticker">(PMV)</span></div>
   <div class="r-title">Amendment to Dividend Timetable — 21.5c final dividend declared</div>
@@ -5269,7 +5276,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/primeserv-group-limited-amendment-to-dividend-timetable/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review neutral" data-t="NED">
+</div><div class="review neutral" data-t="NED" data-r="NEUTRAL">
   <div class="r-header"><span class="r-badge neutral">NEUTRAL<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Nedbank Group <span class="r-ticker">(NED)</span></div>
   <div class="r-title">Executive Leadership Change — Retirement of Mfundo Nkuhlu</div>
@@ -5287,7 +5294,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/nedbank-group-limited-nedbank-group-executive-leadership-change-retirement-of-mfundo-nkuhlu/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bullish" data-t="HLM">
+</div><div class="review bullish" data-t="HLM" data-r="BULLISH">
   <div class="r-header"><span class="r-badge bullish">BULLISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Hulamin <span class="r-ticker">(HLM)</span></div>
   <div class="r-title">Trading Statement and Business Review for H1 ended 30 June 2026</div>
@@ -5305,7 +5312,7 @@ footer {
   <div class="r-links">
     <a href="https://www.moneyweb.co.za/mny_sens/hulamin-limited-trading-statement-and-business-review-for-the-half-year-ended-30-june-2026/" target="_blank">📄 SENS announcement</a>
   </div>
-</div><div class="review bearish" data-t="APF">
+</div><div class="review bearish" data-t="APF" data-r="BEARISH">
   <div class="r-header"><span class="r-badge bearish">BEARISH<span class="ghost-date">Ghost: 01 Jul</span></span><span class="r-num first">Review #1</span></div>
   <div class="r-company">Accelerate Property Fund <span class="r-ticker">(APF)</span></div>
   <div class="r-title">Updated Trading Statement for the year ended 31 March 2026</div>
@@ -5325,11 +5332,15 @@ footer {
   </div>
 </div>
 <script>
-function filter(ticker) {
+function filter() {
+  const ticker = document.getElementById('companyFilter').value;
+  const rating = document.getElementById('ratingFilter').value;
   let visible = 0, total = 0;
   document.querySelectorAll('.review').forEach(el => {
     total++;
-    if (!ticker || el.getAttribute('data-t') === ticker) {
+    const matchT = !ticker || el.getAttribute('data-t') === ticker;
+    const matchR = !rating || el.getAttribute('data-r') === rating;
+    if (matchT && matchR) {
       el.style.display = ''; visible++;
     } else {
       el.style.display = 'none';
@@ -5342,9 +5353,10 @@ function filter(ticker) {
       if (sib.style.display !== 'none') hasVisible = true;
       sib = sib.nextElementSibling;
     }
-    el.style.display = (ticker && !hasVisible) ? 'none' : '';
+    el.style.display = hasVisible ? '' : 'none';
   });
-  document.getElementById('filterCount').textContent = ticker ? `(${visible} of ${total} reviews)` : '';
+  const active = ticker || rating;
+  document.getElementById('filterCount').textContent = active ? `(${visible} of ${total} reviews)` : '';
 }
 </script>
 
