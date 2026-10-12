@@ -15,15 +15,15 @@
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 75000.0,
-      "final_cash": 1974.63,
-      "final_holdings_value": 79971.1,
-      "final_portfolio": 81945.72,
-      "return_pct": 9.3,
-      "realized": 9521.82,
-      "unrealized": -1556.03,
-      "total_costs": 1352.0,
+      "final_cash": 8254.91,
+      "final_holdings_value": 71112.08,
+      "final_portfolio": 79366.98,
+      "return_pct": 5.8,
+      "realized": 6881.41,
+      "unrealized": -1368.6,
+      "total_costs": 1477.77,
       "total_dividends": 331.94,
-      "num_trades": 49,
+      "num_trades": 50,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -229,7 +229,7 @@
         ],
         [
           "2026-10-08",
-          81945.72
+          79366.98
         ]
       ],
       "holdings": {
@@ -237,28 +237,28 @@
           "shares": 35.61,
           "cost": 151.25,
           "buy_date": "2026-08-13",
-          "current_price": 148.4,
+          "current_price": 148.55,
           "sector": "financial"
         },
         "SSS": {
           "shares": 154.44,
           "cost": 16.1,
           "buy_date": "2026-08-24",
-          "current_price": 15.55,
+          "current_price": 15.47,
           "sector": "property"
         },
         "HLM": {
           "shares": 616.39,
           "cost": 2.28,
           "buy_date": "2026-08-31",
-          "current_price": 2.18,
+          "current_price": 2.1,
           "sector": "industrial"
         },
         "NED": {
           "shares": 41.86,
           "cost": 295.05,
           "buy_date": "2026-09-01",
-          "current_price": 281.23,
+          "current_price": 276.86,
           "sector": "financial"
         },
         "MTA": {
@@ -272,7 +272,7 @@
           "shares": 7.52,
           "cost": 154.0,
           "buy_date": "2026-09-04",
-          "current_price": 143.0,
+          "current_price": 145.0,
           "sector": "financial"
         },
         "CPR": {
@@ -286,69 +286,61 @@
           "shares": 23.14,
           "cost": 75.19,
           "buy_date": "2026-09-10",
-          "current_price": 75.93,
+          "current_price": 80.96,
           "sector": "tech"
         },
         "APF": {
           "shares": 13676.35,
           "cost": 0.4,
           "buy_date": "2026-09-29",
-          "current_price": 0.37,
+          "current_price": 0.38,
           "sector": "property"
         },
         "QLT": {
           "shares": 35.86,
           "cost": 38.57,
           "buy_date": "2026-10-01",
-          "current_price": 38.46,
+          "current_price": 38.28,
           "sector": "financial"
         },
         "SUR": {
           "shares": 186.05,
           "cost": 42.3,
           "buy_date": "2026-10-02",
-          "current_price": 41.65,
+          "current_price": 40.1,
           "sector": "retail"
         },
         "TGA": {
           "shares": 33.8,
           "cost": 126.0,
           "buy_date": "2026-10-05",
-          "current_price": 129.12,
+          "current_price": 128.0,
           "sector": "mining"
-        },
-        "PMV": {
-          "shares": 6286.69,
-          "cost": 2.93,
-          "buy_date": "2026-10-06",
-          "current_price": 2.93,
-          "sector": "industrial"
         },
         "OAO": {
           "shares": 24560.01,
           "cost": 0.3,
           "buy_date": "2026-10-07",
-          "current_price": 0.3,
+          "current_price": 0.32,
           "sector": "energy"
         },
-        "GND": {
-          "shares": 108.55,
-          "cost": 27.15,
+        "NPN": {
+          "shares": 17.56,
+          "cost": 701.77,
           "buy_date": "2026-10-08",
-          "current_price": 27.15,
-          "sector": "other"
+          "current_price": 701.77,
+          "sector": "tech"
         }
       },
       "sector_composition": {
-        "financial": 23.8,
-        "property": 9.1,
-        "industrial": 31.0,
-        "mining": 9.5,
-        "tech": 2.1,
-        "retail": 9.5,
-        "energy": 9.0,
-        "other": 3.6,
-        "cash": 2.4
+        "financial": 24.4,
+        "property": 9.6,
+        "industrial": 8.7,
+        "mining": 9.8,
+        "tech": 17.9,
+        "retail": 9.4,
+        "energy": 9.9,
+        "cash": 10.4
       },
       "all_trades": [
         {
@@ -785,10 +777,19 @@
         },
         {
           "date": "2026-10-08",
-          "ticker": "GND",
+          "ticker": "PMV",
+          "action": "SELL",
+          "shares": 6286.6931002193105,
+          "price": 2.51,
+          "gain": -2640.4111020921137,
+          "reason": "Cut loss -14%"
+        },
+        {
+          "date": "2026-10-08",
+          "ticker": "NPN",
           "action": "BUY",
-          "shares": 108.55254973785684,
-          "price": 27.15,
+          "shares": 17.556685194650818,
+          "price": 701.77,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         }
@@ -851,7 +852,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY GND @ R27.15 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udd34 SELL PMV \u2014 Cut loss -14% (R-2640)",
+            "\ud83d\udfe2 BUY NPN @ R701.77 \u2014 BULLISH, CAUTIOUS"
           ]
         }
       ]
@@ -861,11 +863,11 @@
       "news_sensitivity": "medium",
       "total_in": 75000.0,
       "final_cash": 3404.27,
-      "final_holdings_value": 67563.26,
-      "final_portfolio": 70967.54,
-      "return_pct": -5.4,
+      "final_holdings_value": 68111.0,
+      "final_portfolio": 71515.27,
+      "return_pct": -4.6,
       "realized": -1422.85,
-      "unrealized": -1879.32,
+      "unrealized": -1331.59,
       "total_costs": 730.29,
       "total_dividends": 0,
       "num_trades": 23,
@@ -1072,7 +1074,7 @@
         ],
         [
           "2026-10-08",
-          70967.54
+          71515.27
         ]
       ],
       "holdings": {
@@ -1080,7 +1082,7 @@
           "shares": 36.66,
           "cost": 154.0,
           "buy_date": "2026-08-21",
-          "current_price": 148.4,
+          "current_price": 148.55,
           "sector": "financial"
         },
         "MTA": {
@@ -1094,57 +1096,57 @@
           "shares": 36.29,
           "cost": 298.81,
           "buy_date": "2026-09-04",
-          "current_price": 281.23,
+          "current_price": 276.86,
           "sector": "financial"
         },
         "SSS": {
           "shares": 147.38,
           "cost": 15.6,
           "buy_date": "2026-09-11",
-          "current_price": 15.55,
+          "current_price": 15.47,
           "sector": "property"
         },
         "SBP": {
           "shares": 69.98,
           "cost": 146.0,
           "buy_date": "2026-09-18",
-          "current_price": 143.0,
+          "current_price": 145.0,
           "sector": "financial"
         },
         "HLM": {
           "shares": 454.12,
           "cost": 2.25,
           "buy_date": "2026-09-25",
-          "current_price": 2.18,
+          "current_price": 2.1,
           "sector": "industrial"
         },
         "LSK": {
           "shares": 41.01,
           "cost": 70.82,
           "buy_date": "2026-09-25",
-          "current_price": 75.93,
+          "current_price": 80.96,
           "sector": "tech"
         },
         "APF": {
           "shares": 46131.54,
           "cost": 0.39,
           "buy_date": "2026-10-02",
-          "current_price": 0.37,
+          "current_price": 0.38,
           "sector": "property"
         },
         "QLT": {
           "shares": 325.81,
           "cost": 38.35,
           "buy_date": "2026-10-02",
-          "current_price": 38.46,
+          "current_price": 38.28,
           "sector": "financial"
         }
       },
       "sector_composition": {
-        "financial": 53.8,
-        "industrial": 9.7,
-        "property": 27.3,
-        "tech": 4.4,
+        "financial": 53.3,
+        "industrial": 9.6,
+        "property": 27.7,
+        "tech": 4.6,
         "cash": 4.8
       },
       "all_trades": [
@@ -1433,11 +1435,11 @@
       "news_sensitivity": "low",
       "total_in": 75000.0,
       "final_cash": 29312.5,
-      "final_holdings_value": 44439.65,
-      "final_portfolio": 73752.15,
-      "return_pct": -1.7,
+      "final_holdings_value": 43297.32,
+      "final_portfolio": 72609.82,
+      "return_pct": -3.2,
       "realized": 0,
-      "unrealized": -1020.55,
+      "unrealized": -2162.88,
       "total_costs": 227.3,
       "total_dividends": 0,
       "num_trades": 6,
@@ -1644,7 +1646,7 @@
         ],
         [
           "2026-10-08",
-          73752.15
+          72609.82
         ]
       ],
       "holdings": {
@@ -1652,35 +1654,35 @@
           "shares": 3109.45,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 2.18,
+          "current_price": 2.1,
           "sector": "industrial"
         },
         "PMV": {
           "shares": 2003.6,
           "cost": 3.1,
           "buy_date": "2026-08-19",
-          "current_price": 2.93,
+          "current_price": 2.51,
           "sector": "industrial"
         },
         "SSS": {
           "shares": 382.93,
           "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 15.55,
+          "current_price": 15.47,
           "sector": "property"
         },
         "LSK": {
           "shares": 32.19,
           "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 75.93,
+          "current_price": 80.96,
           "sector": "tech"
         },
         "NED": {
           "shares": 41.95,
           "cost": 295.85,
           "buy_date": "2026-09-16",
-          "current_price": 281.23,
+          "current_price": 276.86,
           "sector": "financial"
         },
         "MTA": {
@@ -1692,11 +1694,11 @@
         }
       },
       "sector_composition": {
-        "industrial": 32.9,
-        "property": 8.1,
-        "tech": 3.3,
+        "industrial": 31.9,
+        "property": 8.2,
+        "tech": 3.6,
         "financial": 16.0,
-        "cash": 39.7
+        "cash": 40.4
       },
       "all_trades": [
         {
