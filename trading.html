@@ -151,11 +151,15 @@ async function load(){
     html+='</tbody></table>';
     // decision log
     html+='<h3>Decision log</h3><div class="log">';
-    for(const dec of (a.decisions||[]).slice(-6).reverse()){
+    for(const dec of (a.decisions||[]).slice(-14).reverse()){
       html+='<div class="day"><b>'+dec.date+'</b> ['+dec.risk+']';
+      if(dec.no_trade){
+        html+='<div class="l-hold">✅ No action needed — within targets</div>';
+      } else {
       for(const l of dec.log||[]){
         let cls='l-hold';if(l.includes('SELL'))cls='l-sell';else if(l.includes('ROTATE'))cls='l-rot';else if(l.includes('BUY'))cls='l-buy';
         html+='<div class="'+cls+'">'+l+'</div>';
+      }
       }
       html+='</div>';
     }
