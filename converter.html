@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Flash Harry — Order to Pastel Converter</title>
+<style>
+:root{--gold:#c9a84c;--dark:#1a1a1a;--cream:#f4f1ec;--card:#fff;--body:#555;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:#333;line-height:1.6;}
+header{background:var(--dark);color:#fff;padding:0;}
+.header-inner{max-width:900px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.logo{font-family:Georgia,serif;font-size:22px;letter-spacing:-.02em;color:var(--gold);font-style:italic;}
+.logo span{font-style:normal;color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.2em;}
+nav{display:flex;gap:16px;}
+nav a{color:#aaa;font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;text-decoration:none;}
+.container{max-width:900px;margin:0 auto;padding:32px 24px 60px;}
+h1{font-size:24px;margin-bottom:6px;color:var(--dark);}
+.sub{color:var(--body);font-size:14px;margin-bottom:24px;}
+
+/* Upload area */
+.upload-zone{border:2px dashed #ccc;border-radius:12px;padding:40px 20px;text-align:center;background:var(--card);margin-bottom:24px;transition:all .2s;cursor:pointer;}
+.upload-zone.dragover{border-color:var(--gold);background:#faf8f4;}
+.upload-zone .icon{font-size:48px;margin-bottom:8px;}
+.upload-zone h2{font-size:18px;color:var(--dark);margin-bottom:6px;}
+.upload-zone p{color:var(--body);font-size:14px;}
+.upload-zone input{display:none;}
+.upload-zone .hint{font-size:12px;color:#999;margin-top:10px;}
+
+/* Results */
+.preview{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);margin-bottom:16px;display:none;}
+.preview-header{background:var(--dark);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;}
+.preview-header h3{font-size:16px;}
+.preview-body{padding:16px 20px;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{background:#f5f3ef;padding:8px 12px;text-align:left;font-weight:600;font-size:12px;color:#555;border-bottom:2px solid var(--gold);}
+td{padding:8px 12px;border-bottom:1px solid #eee;}
+tr:hover td{background:#faf8f4;}
+.num{text-align:right;}
+
+.csv-output{background:#1a1a1a;border-radius:10px;padding:16px 20px;margin-bottom:16px;display:none;}
+.csv-output h3{color:#fff;font-size:14px;margin-bottom:8px;}
+.csv-output pre{color:#81c784;font-size:12px;overflow-x:auto;padding:8px;background:rgba(0,0,0,.3);border-radius:6px;max-height:200px;overflow-y:auto;}
+
+.btn{display:inline-block;background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:6px;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em;border:none;cursor:pointer;text-decoration:none;}
+.btn:hover{opacity:.85;}
+.btn-dl{display:inline-block;background:var(--dark);color:#fff;padding:10px 24px;border-radius:6px;font-weight:600;font-size:13px;border:none;cursor:pointer;text-decoration:none;}
+
+.status{font-size:13px;color:var(--body);margin-bottom:12px;padding:12px 16px;background:var(--card);border-radius:8px;display:none;border-left:3px solid var(--gold);}
+
+/* Format help */
+.help{background:var(--card);border:1px solid #e0ddd6;border-radius:8px;padding:16px 20px;margin:20px 0;}
+.help h3{font-size:14px;color:var(--dark);margin-bottom:8px;}
+.help p,.help li{font-size:13px;color:var(--body);line-height:1.5;}
+.help ul{padding:4px 16px;}
+
+footer{background:var(--dark);color:#777;padding:20px 24px;text-align:center;font-size:12px;}
+@media(max-width:600px){.header-inner{flex-direction:column;text-align:center;}nav{justify-content:center;gap:10px;}}
+</style>
+</head>
+<body>
+<header><div class="header-inner">
+  <div class="logo">Order Converter <span>Flash Harry</span></div>
+  <nav><a href="#">CSV</a><a href="#">Email</a><a href="#">XLSX</a></nav>
+</div></header>
+<div class="container">
+<h1>📄 Order to Pastel CSV</h1>
+<p class="sub">Upload a BUCO order email, CSV batch, or Cashbuild CSV — download a ready-to-import Pastel file.</p>
+
+<div class="upload-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+  <div class="icon">📁</div>
+  <h2>Drop an order file here</h2>
+  <p>or click to select</p>
+  <div class="hint">Supports: .eml (BUCO email), .csv (Cashbuild or BUCO batch), .xlsx</div>
+  <input type="file" id="fileInput" accept=".eml,.csv,.xlsx,.pdf" onchange="handleFile(this.files[0])">
+</div>
+<div class="status" id="status"></div>
+<div class="preview" id="preview"><div class="preview-header"><h3 id="orderTitle">Order Preview</h3><div><button class="btn-dl" id="downloadBtn" onclick="downloadCSV()">⬇ Download CSV</button></div></div>
+<div class="preview-body"><table id="previewTable"><thead><tr><th>Code</th><th>Description</th><th class="num">Qty</th><th class="num">Unit Price</th><th class="num">Total</th></tr></thead><tbody></tbody></table></div></div>
+<div class="csv-output" id="csvOutput"><h3>📋 Raw CSV</h3><pre id="csvText"></pre></div>
+
+<div class="help">
+<h3>📌 How to use</h3>
+<p><strong>BUCO emails:</strong> Save the "Order Created" email as a .eml file → drag it here → get your Pastel CSV.</p>
+<p><strong>Cashbuild CSVs:</strong> Export from the supplier portal as CSV → drop it here → done.</p>
+<p><strong>BUCO batch CSVs:</strong> Same format — the tool detects which client the order is for automatically.</p>
+<p><strong>Prices</strong> are looked up from the Flash Harry price list. The output matches the format used by <strong>Pastel</strong> for direct import.</p>
+<p style="margin-top:8px;color:#999;">☕ Built for STT Sales / Flash Harry. Not financial advice. Test with real orders.</p>
+</div>
+</div>
+<footer>Flash Harry Order Converter · Demo for STT Sales</footer>
+
+<script>
+// ── Embedded price list (from Flash Harry Price List 1 June 2026) ──
+// Format: code -> {desc, price}
+const PRICES = {
+"9400490001":{"desc":"Fix-a-Leak II Black 10m Kit","price":138},
+"9400490002":{"desc":"Fix-a-Leak II Brown 10m Kit","price":138},
+"9400490003":{"desc":"Fix-a-Leak II Burgundy 10m Kit","price":138},
+"9400490011":{"desc":"Fix-a-Leak II Charcoal 10m Kit","price":138},
+"9400490005":{"desc":"Fix-a-Leak II Green 10m Kit","price":138},
+"9400490006":{"desc":"Fix-a-Leak II Grey 10m Kit","price":138},
+"9400490007":{"desc":"Fix-a-Leak II Red 10m Kit","price":138},
+"9400490008":{"desc":"Fix-a-Leak II Terracotta 10m Kit","price":138},
+"9400490009":{"desc":"Fix-a-Leak II White 10m Kit","price":138},
+"9400809020":{"desc":"Frogskin Roof Paint White 20Lt","price":950},
+"9400421005":{"desc":"Liquid Plastic Black 5Lt","price":321},
+"9400422005":{"desc":"Liquid Plastic Brown 5Lt","price":321},
+"9400421105":{"desc":"Liquid Plastic Charcoal 5Lt","price":321},
+"9400426005":{"desc":"Liquid Plastic Grey 5Lt","price":321},
+"9400427005":{"desc":"Liquid Plastic Red 5Lt","price":321},
+"9400428005":{"desc":"Liquid Plastic T/Cotta 5Lt","price":321},
+"9400429005":{"desc":"Liquid Plastic White 5Lt","price":321},
+"9400425005":{"desc":"Liquid Plastic Green 5Lt","price":321},
+"9400421120":{"desc":"Liquid Plastic Charcoal 20Lt","price":1170},
+"9402102001":{"desc":"Drip Stop 1Lt","price":60},
+"9402102005":{"desc":"Drip Stop 5Lt","price":200},
+"9400210005":{"desc":"Plaster's Pal 5Lt","price":149},
+"9400620005":{"desc":"Slurry Seal 5kg Kit","price":249},
+"9407020050":{"desc":"Alu Flash 50 x 2.5m","price":23},
+"9406010200":{"desc":"F.H. SBP 200mm x 10m","price":25},
+"9407020075":{"desc":"Alu Flash 75 x 2.5m","price":38},
+"9401100500":{"desc":"Bitumen Mastic 500ml","price":47},
+"9402132001":{"desc":"Vala inthonsi Black 1Lt","price":38},
+"9407020100":{"desc":"Alu Flash 100 x 2.5m","price":46},
+"9401100001":{"desc":"Bitumen Mastic 1Lt","price":67},
+"9401100005":{"desc":"Bitumen Mastic 5Lt","price":205},
+"9400431001":{"desc":"One Shot Kit Black 1Lt","price":65},
+"9400432001":{"desc":"One Shot Kit Brown 1Lt","price":65},
+"9400433001":{"desc":"One Shot Kit Burgundy 1Lt","price":65},
+"9400431101":{"desc":"One Shot Kit Charcoal 1Lt","price":65},
+"9400436001":{"desc":"One Shot Kit Grey 1Lt","price":65},
+"9400437001":{"desc":"One Shot Kit Red 1Lt","price":65},
+"9400438001":{"desc":"One Shot Kit Terracotta 1Lt","price":65},
+"9400435001":{"desc":"One Shot Kit Green 1Lt","price":65},
+"9400439001":{"desc":"One Shot Kit White 1Lt","price":65},
+"9400431005":{"desc":"One Shot Kit Black 5Lt","price":154},
+"9400432005":{"desc":"One Shot Kit Brown 5Lt","price":154},
+"9400433005":{"desc":"One Shot Kit Burgundy 5Lt","price":154},
+"9400431105":{"desc":"One Shot Kit Charcoal 5Lt","price":154},
+"9400436005":{"desc":"One Shot Kit Grey 5Lt","price":154},
+"9400437005":{"desc":"One Shot Kit Red 5Lt","price":154},
+"9400438005":{"desc":"One Shot Kit Terracotta 5Lt","price":154},
+"9400435005":{"desc":"One Shot Kit Green 5Lt","price":154},
+"9400439005":{"desc":"One Shot Kit White 5Lt","price":154}
+};
+
+let currentCSV = '';
+let currentOrder = {};
+
+function handleFile(file){
+  if(!file){alert('No file selected');return;}
+  const ext = file.name.split('.').pop().toLowerCase();
+  const status = document.getElementById('status');
+  status.style.display='block';
+  status.innerHTML='⏳ Reading file…';
+  document.getElementById('preview').style.display='none';
+  document.getElementById('csvOutput').style.display='none';
+  
+  if(ext === 'eml'){
+    file.text().then(txt => parseEml(txt)).catch(e => {status.innerHTML='❌ Error reading file: '+e;});
+  } else if(ext === 'csv'){
+    file.text().then(txt => parseCsv(txt, file.name)).catch(e => {status.innerHTML='❌ Error reading file: '+e;});
+  } else {
+    status.innerHTML='❌ Format not yet supported: .'+ext+'<br>Try .eml (BUCO email) or .csv (Cashbuild/BUCO batch)';
+  }
+}
+
+function parseEml(text){
+  const status = document.getElementById('status');
+  const po = text.match(/Order Created \[(\d+)\]/);
+  const branch = text.match(/Branch:\s*(.+)/);
+  const items = [...text.matchAll(/Supplier Product Code:\s*(\S+)\s*\n\n([^\n]+)\s*\n\n\s*Quantity:\s*([\d.]+)/g)];
+  
+  if(!items.length){status.innerHTML='❌ No order items found in this email.';return;}
+  
+  const poNum = po?po[1]:'?';
+  const branchName = branch?branch[1].trim():'Unknown';
+  
+  currentOrder = {source:'BUCO', po:poNum, branch:branchName, items:[]};
+  let total = 0;
+  
+  for(const [_, code, desc, qtyStr] of items){
+    const qty = parseFloat(qtyStr);
+    const prod = PRICES[code]||{desc:'Unknown product', price:0};
+    const price = prod.price;
+    currentOrder.items.push({code, desc:desc||prod.desc, qty, price, total:qty*price});
+    total += qty*price;
+  }
+  
+  buildTable('BUCO Order', poNum, branchName, total);
+}
+
+function parseCsv(text, filename){
+  const status = document.getElementById('status');
+  const lines = text.trim().split('\n').map(l=>l.trim()).filter(l=>l);
+  
+  // Detect header row
+  const header = lines.find(l=>l.startsWith('"Header"'));
+  if(!header){status.innerHTML='❌ Not a recognised order CSV format.';return;}
+  
+  // Simple CSV line parser for quoted fields
+  function parseCSVLine(line){
+    const result=[];let cur='',inQ=false;
+    for(const ch of line){
+      if(ch==='"'){inQ=!inQ;continue;}
+      if(ch===','&&!inQ){result.push(cur);cur='';continue;}
+      cur+=ch;
+    }
+    result.push(cur);
+    return result;
+  }
+  
+  const h = parseCSVLine(header);
+  const customerCode = h[4]?.trim()||'';
+  const poNum = h[7]?.trim()||'';
+  const customerName = (h[10]?.trim()||'');
+  const isBuco = customerName.includes('THE BUILDING COMPANY') || customerName.includes('BUCO');
+  const isCashbuild = customerName.includes('P AND L') || customerName.includes('CASHBUILD') || customerCode==='124200';
+  
+  currentOrder = {source:isBuco?'BUCO':'Cashbuild', po:poNum, customer:customerCode, customerName, items:[]};
+  let total=0;
+  
+  for(const line of lines){
+    if(!line.startsWith('"Detail"')) continue;
+    const d = CSV.parse(line);
+    const code = d[9]?.trim()||'';
+    const desc = d[10]?.trim()||'';
+    const qty = parseFloat(d[2]||'0');
+    const price = parseFloat(d[3]||'0');
+    if(!qty) continue;
+    currentOrder.items.push({code, desc:desc||(PRICES[code]?.desc||''), qty, price, total:qty*price});
+    total += qty*price;
+  }
+  
+  const label = isBuco?'BUCO Batch':(isCashbuild?'Cashbuild Order':'Order');
+  buildTable(label, poNum, customerName, total);
+}
+
+function buildTable(label, ref, detail, total){
+  const status = document.getElementById('status');
+  status.innerHTML=`✅ ${label} <b>${ref}</b> — ${detail} — <b>${currentOrder.items.length} items, R${total.toFixed(2)}</b>`;
+  status.style.borderLeftColor='#2e7d32';
+  
+  const tbody = document.querySelector('#previewTable tbody');
+  tbody.innerHTML='';
+  for(const item of currentOrder.items){
+    const tr = document.createElement('tr');
+    tr.innerHTML=`<td><b>${item.code}</b></td><td>${item.desc}</td><td class="num">${item.qty}</td><td class="num">R${item.price.toFixed(2)}</td><td class="num">R${(item.qty*item.price).toFixed(2)}</td>`;
+    tbody.appendChild(tr);
+  }
+  
+  document.getElementById('orderTitle').textContent = `${label}: ${ref}`;
+  document.getElementById('preview').style.display='block';
+  
+  // Build Pastel CSV
+  const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  const acct = currentOrder.customer||(currentOrder.source==='BUCO'?'123278':'124200');
+  const cName = currentOrder.customerName||(currentOrder.source==='BUCO'?'THE BUILDING COMPANY TRADING (PTY) LTD':'P AND L HARDWARE (PTY) LTD');
+  const po = currentOrder.po;
+  
+  let outLines = [];
+  const pad = (s, n)=>s+' '.repeat(Math.max(0,n-s.length));
+  outLines.push(`"Header","SO000001"," "," ","${pad(acct,6)}","7","${today}","${pad(po,20)}","N","0","${pad(cName,35)}","${' '.repeat(30)}","${' '.repeat(30)}","${' '.repeat(30)}","${' '.repeat(30)}","${' '.repeat(30)}","${' '.repeat(30)}","ZA","     ","0","${today}","                ","                ","                ","1","          ","                "`);
+  
+  for(const item of currentOrder.items){
+    const total = item.qty*item.price;
+    outLines.push(`"Detail","0","${item.qty.toFixed(2)}","${item.price.toFixed(2)}","${total.toFixed(2)}","    ","15","0","0","${pad(item.code,15)}","${pad(item.desc,40)}","4","     ","   "`);
+  }
+  
+  currentCSV = outLines.join('\n');
+  document.getElementById('csvText').textContent = currentCSV;
+  document.getElementById('csvOutput').style.display='block';
+  document.getElementById('downloadBtn').style.display='';
+}
+
+function downloadCSV(){
+  if(!currentCSV){alert('No order data to download');return;}
+  const blob = new Blob([currentCSV], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  a.download = `pastel_import_${today}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+// Drag & drop
+const dz = document.getElementById('dropZone');
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('dragover');});
+dz.addEventListener('dragleave',()=>dz.classList.remove('dragover'));
+dz.addEventListener('drop',e=>{
+  e.preventDefault();dz.classList.remove('dragover');
+  const f = e.dataTransfer.files[0];
+  if(f) handleFile(f);
+});
+</script>
+</body>
+</html>
