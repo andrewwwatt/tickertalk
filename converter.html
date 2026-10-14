@@ -172,6 +172,14 @@ function parseEml(text){
   const branch = text.match(/Branch:\s*(.+)/);
   // Normalize line endings (\r\n → \n) for CRLF emails
   const cleaned = text.replace(/\r\n/g, '\n');
+  
+  // Cashbuild emails don't have items inline — they link to the portal
+  if(text.includes('Cashbuild') || text.includes('cashbuildsupplier')){
+    status.innerHTML='⚠️ This is a Cashbuild <b>notification email</b> only — the order items are not included. Please log into <b>cashbuildsupplier.co.za</b> and export the order as CSV, then upload that CSV here.';
+    status.style.borderLeftColor='#e65100';
+    return;
+  }
+  
   const items = [...cleaned.matchAll(/Supplier Product Code:\s*(\S+)\s*\n\n([^\n]+)\s*\n\n\s*Quantity:\s*([\d.]+)/g)];
   
   if(!items.length){status.innerHTML='❌ No order items found in this email.';return;}
