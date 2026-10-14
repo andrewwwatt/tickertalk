@@ -170,7 +170,9 @@ function parseEml(text){
   const status = document.getElementById('status');
   const po = text.match(/Order Created \[(\d+)\]/);
   const branch = text.match(/Branch:\s*(.+)/);
-  const items = [...text.matchAll(/Supplier Product Code:\s*(\S+)\s*\n\n([^\n]+)\s*\n\n\s*Quantity:\s*([\d.]+)/g)];
+  // Normalize line endings (\r\n → \n) for CRLF emails
+  const cleaned = text.replace(/\r\n/g, '\n');
+  const items = [...cleaned.matchAll(/Supplier Product Code:\s*(\S+)\s*\n\n([^\n]+)\s*\n\n\s*Quantity:\s*([\d.]+)/g)];
   
   if(!items.length){status.innerHTML='❌ No order items found in this email.';return;}
   
