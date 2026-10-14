@@ -22,6 +22,10 @@ h1{font-size:22px;margin-bottom:4px;}
 .btn{padding:6px 14px;border:1px solid #ddd;background:#fff;border-radius:5px;font-size:13px;cursor:pointer;color:var(--ink);}
 .btn:hover{border-color:var(--accent);}
 .btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.search-input{padding:6px 12px;border:1px solid #ddd;border-radius:18px;font-size:13px;background:#fff;color:var(--ink);outline:none;transition:border .2s;margin-left:4px;}
+.search-input:focus{border-color:var(--accent);}
+.search-input::placeholder{color:#aaa;}
+#searchCount{font-size:12px;color:var(--muted);margin-left:4px;}
 .btn.btn-red{color:var(--red);}
 .btn.btn-green{color:var(--green);}
 .legend{display:flex;align-items:center;gap:6px;margin-bottom:14px;font-size:12px;color:var(--muted);}
@@ -60,6 +64,8 @@ h1{font-size:22px;margin-bottom:4px;}
     <button class="btn" id="b1w" onclick="setPeriod('1w')">1 Week</button>
     <button class="btn" id="b1m" onclick="setPeriod('1m')">1 Month</button>
     <button class="btn" id="b1y" onclick="setPeriod('1y')">1 Year</button>
+    <input type="search" id="searchStock" class="search-input" placeholder="Search company or ticker…" oninput="doSearch()" autocomplete="off">
+    <span id="searchCount"></span>
   </div>
   <div class="legend">
     <span>Loss</span><div class="bar"></div><span>Gain</span>
@@ -141,8 +147,10 @@ function render(){
 // Treemap coloring: we add ret as third value [value, ?, ret] via data item ret field
 // Fix: encode ret into value array for visualMap dimension 2
 function buildTree2(){
+  const q = window.searchTerm||'';
   const sectors = {};
   rawData.forEach(r => {
+    if(q && !r.ticker.toLowerCase().includes(q) && !r.company.toLowerCase().includes(q) && !(r.sector||'').includes(q)) return;
     const sec = r.sector || 'other';
     if(!sectors[sec]) sectors[sec] = {name:sec, children:[], _val:0};
     const ret = valFor(r);
@@ -165,6 +173,11 @@ function buildTree2(){
 
 function render2(){
   const tree = buildTree2();
+  // count matches
+  const q = window.searchTerm||'';
+  const matches = q ? rawData.filter(r => r.market_cap && r.ticker.toLowerCase().includes(q) || r.company.toLowerCase().includes(q) || (r.sector||'').includes(q)).length : rawData.filter(r=>r.market_cap).length;
+  const total = rawData.filter(r=>r.market_cap).length;
+  document.getElementById('searchCount').textContent = q ? `${Math.min(matches,total)} of ${total}` : '';
   chart.setOption({
     tooltip: {formatter:function(info){
       const d=info.data;
@@ -195,6 +208,12 @@ function setPeriod(p){
   period=p;
   ['1d','1w','1m','1y'].forEach(x=>document.getElementById('b'+x).classList.toggle('active',x===p));
   if(window.indicators) renderIndicators();
+  render2();
+}
+
+function doSearch(){
+  const v=document.getElementById('searchStock').value.trim().toLowerCase();
+  window.searchTerm=v;
   render2();
 }
 
