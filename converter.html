@@ -39,7 +39,7 @@ td{padding:8px 12px;border-bottom:1px solid #eee}
 <script>
 var curCsv;
 var curCust;
-function gp(code,cust){if(cust=="124200"&&C[code])return C[code];if(P[code])return P[code];return null;}
+function gp(code,cust){if(cust=="124200"&&custPrices124[code])return custPrices124[code];if(masterPrices[code])return masterPrices[code];return null;}
 function go(f){if(!f)return;var e=document.getElementById("msg");e.style.display="block";e.textContent="Reading...";var ext=f.name.split(".").pop().toLowerCase();var r=new FileReader();r.onload=function(ev){parse(ev.target.result,ext)};r.readAsText(f);}
 function parse(text,ext){text=text.replace(/\r\n/g,"\n").replace(/\r/g,"\n");if(ext=="eml"){parseEml(text)}else{parseCsv(text)}}
 function parseEml(t){var m=t.match(/Order Created \[(\d+)\]/);var b=t.match(/Branch:\s*(.+)/);var ref=m?m[1]:"?";var branch=b?b[1].trim():"";curCust="";var msg=document.getElementById("msg");msg.textContent="BUCO Order "+ref+" ("+branch+")";var items=[];var re=/Supplier Product Code:\s*(\S+)\s*\n\n([^\n]+)\s*\n\n\s*Quantity:\s*([\d.]+)/g;var m2;while((m2=re.exec(t))!==null){var code=m2[1];var desc=m2[2];var qty=parseFloat(m2[3]);var prod=gp(code,"");items.push({code:code,desc:prod?prod[0]:desc,qty:qty,price:prod?prod[1]:0})}if(items.length==0){msg.textContent="No items found";return}showTable(items,ref,"BUCO");buildCsv(items,"123278","THE BUILDING COMPANY (PTY) LTD",ref)}
