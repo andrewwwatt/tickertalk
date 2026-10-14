@@ -67,13 +67,13 @@ footer{background:var(--dark);color:#777;padding:20px 24px;text-align:center;fon
 <h1>📄 Order to Pastel CSV</h1>
 <p class="sub">Upload a BUCO order email, CSV batch, or Cashbuild CSV — download a ready-to-import Pastel file.</p>
 
-<div class="upload-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+<label class="upload-zone" id="dropZone">
   <div class="icon">📁</div>
   <h2>Drop an order file here</h2>
   <p>or click to select</p>
   <div class="hint">Supports: .eml (BUCO email), .csv (Cashbuild or BUCO batch), .xlsx</div>
-  <input type="file" id="fileInput" accept=".eml,.csv,.xlsx,.pdf" onchange="handleFile(this.files[0])">
-</div>
+  <input type="file" id="fileInput" accept=".eml,.csv,.xlsx,.pdf" onchange="handleFile(this.files[0])" style="display:none">
+</label>
 <div class="status" id="status"></div>
 <div class="preview" id="preview"><div class="preview-header"><h3 id="orderTitle">Order Preview</h3><div><button class="btn-dl" id="downloadBtn" onclick="downloadCSV()">⬇ Download CSV</button></div></div>
 <div class="preview-body"><table id="previewTable"><thead><tr><th>Code</th><th>Description</th><th class="num">Qty</th><th class="num">Unit Price</th><th class="num">Total</th></tr></thead><tbody></tbody></table></div></div>
