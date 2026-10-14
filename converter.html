@@ -91,9 +91,11 @@ footer{background:var(--dark);color:#777;padding:20px 24px;text-align:center;fon
 <footer>Flash Harry Order Converter · Demo for STT Sales</footer>
 
 <script>
-// ── Embedded price list (from Flash Harry Price List 1 June 2026) ──
-// Format: code -> {desc, price}
-const PRICES = {
+// ── Embedded price lists ──
+// Format: code -> {desc, price} (loaded price excl VAT)
+
+// Master price list (Flash Harry general)
+const MASTER_PRICES = {
 "9400490001":{"desc":"Fix-a-Leak II Black 10m Kit","price":138},
 "9400490002":{"desc":"Fix-a-Leak II Brown 10m Kit","price":138},
 "9400490003":{"desc":"Fix-a-Leak II Burgundy 10m Kit","price":138},
@@ -145,6 +147,67 @@ const PRICES = {
 "9400439005":{"desc":"One Shot Kit White 5Lt","price":154}
 };
 
+// Customer-specific prices for P&L/Cashbuild (account 124200)
+// Takes priority over master prices for this customer
+const CUSTOMER_PRICES_124200 = {
+"9402102001":{"desc":"Drip Stop 1Lt","price":60},
+"9402102005":{"desc":"Drip Stop 5Lt","price":200},
+"9400210005":{"desc":"Plaster's Pal 5Lt","price":149},
+"9400620005":{"desc":"Slurry Seal 5kg Kit","price":249},
+"9407020050":{"desc":"Alu Flash 50 x 2.5m","price":23},
+"9406010200":{"desc":"F.H. SBP 200mm x 10m","price":25},
+"9407020075":{"desc":"Alu Flash 75 x 2.5m","price":38},
+"9401100500":{"desc":"Bitumen Mastic 500ml","price":47},
+"9402132001":{"desc":"Vala inthonsi Black 1Lt","price":38},
+"9407020100":{"desc":"Alu Flash 100 x 2.5m","price":46},
+"9401100001":{"desc":"Bitumen Mastic 1Lt","price":67},
+"9401100005":{"desc":"Bitumen Mastic 5Lt","price":205},
+"9400490001":{"desc":"Fix-a-Leak II Black 10m Kit","price":124},
+"9400490002":{"desc":"Fix-a-Leak II Brown 10m Kit","price":124},
+"9400490003":{"desc":"Fix-a-Leak II Burgundy 10m Kit","price":124},
+"9400490011":{"desc":"Fix-a-Leak II Charcoal 10m Kit","price":124},
+"9400490005":{"desc":"Fix-a-Leak II Green 10m Kit","price":124},
+"9400490006":{"desc":"Fix-a-Leak II Grey 10m Kit","price":124},
+"9400490007":{"desc":"Fix-a-Leak II Red 10m Kit","price":124},
+"9400490008":{"desc":"Fix-a-Leak II Terracotta 10m Kit","price":124},
+"9400490009":{"desc":"Fix-a-Leak II White 10m Kit","price":124},
+"9400421005":{"desc":"Liquid Plastic Black 5Lt","price":321},
+"9400422005":{"desc":"Liquid Plastic Brown 5Lt","price":321},
+"9400421105":{"desc":"Liquid Plastic Charcoal 5Lt","price":321},
+"9400426005":{"desc":"Liquid Plastic Grey 5Lt","price":321},
+"9400427005":{"desc":"Liquid Plastic Red 5Lt","price":321},
+"9400428005":{"desc":"Liquid Plastic T/Cotta 5Lt","price":321},
+"9400429005":{"desc":"Liquid Plastic White 5Lt","price":321},
+"9400425005":{"desc":"Liquid Plastic Green 5Lt","price":321},
+"9400421020":{"desc":"Liquid Plastic Black 20Lt","price":1203},
+"9400422020":{"desc":"Liquid Plastic Brown 20Lt","price":1203},
+"9400426020":{"desc":"Liquid Plastic Grey 20Lt","price":1203},
+"9400427020":{"desc":"Liquid Plastic Red 20Lt","price":1203},
+"9400428020":{"desc":"Liquid Plastic T/Cotta 20Lt","price":1203},
+"9400429020":{"desc":"Liquid Plastic White 20Lt","price":1203},
+"9400421120":{"desc":"Liquid Plastic Charcoal 20Lt","price":1203},
+"9400425020":{"desc":"Liquid Plastic Green 20Lt","price":1203},
+"9400501005":{"desc":"Fibre Flex Black 5Lt","price":271},
+"9400502005":{"desc":"Fibre Flex Brown 5Lt","price":271},
+"9400504005":{"desc":"Fibre Flex Charcoal 5Lt","price":271},
+"9400506005":{"desc":"Fibre Flex Grey 5Lt","price":271},
+"9400507005":{"desc":"Fibre Flex Red 5Lt","price":271},
+"9400508005":{"desc":"Fibre Flex T/Cotta 5Lt","price":271},
+"9400509005":{"desc":"Fibre Flex White 5LT","price":271},
+"9400505005":{"desc":"Fibre Flex Green 5Lt","price":271},
+"9400511005":{"desc":"Fibre Flex Blue 5Lt","price":271},
+"9416010001":{"desc":"Rust Stop Black 1L","price":97},
+"9416050001":{"desc":"Rust Stop Green 1L","price":97},
+"9416060001":{"desc":"Rust Stop Grey 1L","price":97},
+"9416070001":{"desc":"Rust Stop Red 1L","price":97},
+"9416090001":{"desc":"Rust Stop White 1L","price":97},
+"9416010005":{"desc":"Rust Stop Black 5L","price":322},
+"9416050005":{"desc":"Rust Stop Green 5L","price":322},
+"9416060005":{"desc":"Rust Stop Grey 5L","price":322},
+"9416070005":{"desc":"Rust Stop Red 5L","price":322},
+"9416090005":{"desc":"Rust Stop White 5L","price":322}
+};
+
 let currentCSV = '';
 let currentOrder = {};
 
@@ -192,7 +255,8 @@ function parseEml(text){
   
   for(const [_, code, desc, qtyStr] of items){
     const qty = parseFloat(qtyStr);
-    const prod = PRICES[code]||{desc:'Unknown product', price:0};
+    const cust = currentOrder.customer||'';
+      const prod = (cust==='124200'?CUSTOMER_PRICES_124200[code]:null) || MASTER_PRICES[code] || {desc:'', price:0};
     const price = prod.price;
     currentOrder.items.push({code, desc:desc||prod.desc, qty, price, total:qty*price});
     total += qty*price;
@@ -239,7 +303,8 @@ function parseCsv(text, filename){
     const qty = parseFloat(d[2]||'0');
     const price = parseFloat(d[3]||'0');
     if(!qty) continue;
-    currentOrder.items.push({code, desc:desc||(PRICES[code]?.desc||''), qty, price, total:qty*price});
+    const prodCsv = (customerCode==='124200'?CUSTOMER_PRICES_124200[code]:null) || MASTER_PRICES[code] || {desc:'',price:0};
+    currentOrder.items.push({code, desc:desc||prodCsv.desc, qty, price:parseFloat(d[3]||'0'), total:qty*price});
     total += qty*price;
   }
   
