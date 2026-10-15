@@ -3,286 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Today's Reviews — Ticker Talk</title>
+<title>Ticker Talk — Today's Reviews</title>
 <style>
-:root {
-  --bg: #f5f3ef;
-  --card-bg: #ffffff;
-  --border: #e0e0e0;
-  --text: #222222;
-  --muted: #666666;
-  --green: #2e7d32;
-  --red: #c62828;
-  --amber: #e65100;
-  --nav-bg: #1a1a2e;
-}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.6; max-width: 1000px; margin: 0 auto; padding: 0 20px 20px;
-}
-header{background:#1a1a1a;color:#fff;padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;}
-.logo{font-family:Georgia,serif;font-size:26px;letter-spacing:-0.01em;color:#fff;}
-nav {
-  display: flex; gap: 18px; margin-top: 0; align-items: center;
-}
-nav a { color: #aaa; text-decoration: none; font-size: 13px; }
-nav a:hover { color: #fff; }
-h1 { font-size: 1.8em; margin-bottom: 20px; color: #1a1a2e; }
-h2 { font-size: 1.2em; color: var(--muted); margin: 25px 0 15px; font-weight: 400; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f3ef; color: #222222; line-height: 1.6; }
+nav { background: #1a1a2e; padding: 16px 24px; display: flex; gap: 24px; align-items: center; }
+nav a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px; opacity: 0.85; }
+nav a:hover, nav a.active { opacity: 1; }
+nav .brand { font-size: 18px; font-weight: 800; opacity: 1; margin-right: 16px; }
+.container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+h1 { font-size: 24px; margin-bottom: 8px; }
+.subtitle { color: #666666; margin-bottom: 24px; font-size: 15px; }
+.stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat { background: #ffffff; border-radius: 10px; padding: 12px 18px; font-size: 14px; }
+.stat strong { display: block; font-size: 20px; }
 
-.stats { 
-  display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;
-}
-.stat { 
-  padding: 8px 16px; border-radius: 8px; background: var(--card-bg);
-  border: 1px solid var(--border); font-weight: 600;
-}
+/* Review card */
+.review { background: #ffffff; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #ccc; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.review.bullish { border-left-color: #2e7d32; }
+.review.bearish { border-left-color: #c62828; }
+.review.neutral { border-left-color: #e65100; }
+.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.r-badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.r-badge.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge.bearish { background: #ffebee; color: #c62828; }
+.r-badge.neutral { background: #fff3e0; color: #e65100; }
+.r-badge-sm { display: inline-block; padding: 1px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+.r-badge-sm.bullish { background: #e8f5e9; color: #2e7d32; }
+.r-badge-sm.bearish { background: #ffebee; color: #c62828; }
+.r-badge-sm.neutral { background: #fff3e0; color: #e65100; }
+.r-num { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 12px; }
+.r-num.first { background: #e8f5e9; color: #2e7d32; }
+.r-num.follow { background: #fff3e0; color: #e65100; }
+.r-ghost { font-size: 11px; color: #888; margin-bottom: 4px; }
+.r-prev { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-date { font-size: 12px; color: #888; margin-bottom: 4px; }
+.r-company { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.r-ticker { font-size: 14px; font-weight: 500; color: #666666; }
+.r-title { font-size: 14px; color: #666666; margin-bottom: 10px; }
+.r-summary { font-size: 15px; margin-bottom: 12px; font-style: italic; color: #444; }
+.r-review { font-size: 15px; white-space: pre-line; margin-bottom: 14px; }
+.r-metrics { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 13px; color: #666666; flex-wrap: wrap; }
+.r-metrics span { color: #222222; font-weight: 600; }
+.r-link { margin-top: 10px; font-size: 13px; }
+.r-link a { color: #2e7d32; text-decoration: none; }
+.r-link a:hover { text-decoration: underline; }
 
-.review {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-left: 4px solid var(--border); border-radius: 8px;
-  padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-.review.bullish { border-left-color: var(--green); }
-.review.bearish { border-left-color: var(--red); }
-.review.neutral { border-left-color: var(--amber); }
+/* Archive filter */
+.filter-bar { margin-bottom: 20px; }
+.filter-bar select { padding: 8px 16px; border-radius: 8px; border: 1px solid #ccc; font-size: 14px; background: #fff; }
+.date-header { margin: 32px 0 12px; font-size: 18px; font-weight: 700; color: #1a1a2e; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+.grand { background: #1a1a2e; color: #fff; border-radius: 10px; padding: 14px 20px; margin-bottom: 24px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
 
-.r-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
-.r-company { font-size: 1.1em; font-weight: 700; }
-.r-ticker { color: var(--muted); font-size: 0.9em; }
+/* Ratings table */
+.ratings-table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+.ratings-table th { background: #1a1a2e; color: #fff; padding: 10px 14px; text-align: left; font-size: 13px; }
+.ratings-table td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
+.ratings-table tr:hover { background: #fafaf8; }
+.perf-pos { color: #2e7d32; font-weight: 700; }
+.perf-neg { color: #c62828; font-weight: 700; }
+.perf-new { color: #aaa; }
+.perf-neutral { color: #e65100; font-weight: 700; }
 
-.r-badge {
-  display: inline-block; padding: 2px 10px; border-radius: 4px;
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-}
-.r-badge.bullish { background: #e8f5e9; color: var(--green); }
-.r-badge.bearish { background: #ffebee; color: var(--red); }
-.r-badge.neutral { background: #fff3e0; color: var(--amber); }
-.r-num {
-  font-size: 12px; font-weight: 600;
-}
-.r-num.first { color: var(--green); }
-.r-num.follow { color: var(--amber); }
+/* Agreements section */
+.section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; color: #1a1a2e; }
+.agree-item, .disagree-item { background: #fff; border-radius: 10px; padding: 18px; margin-bottom: 12px; border-left: 4px solid #2e7d32; }
+.disagree-item { border-left-color: #c62828; }
 
-.r-price {
-  margin-top: 14px; padding: 10px 14px;
-  background: var(--bg2, #faf8f4); border: 1px solid #e8e3d8; border-radius: 8px;
-  display: flex; flex-wrap: wrap; gap: 6px 18px;
-  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #444;
-}
-.r-price .price-cell b { color: #1a1a1a; }
-.r-price .perf-pos b { color: var(--green, #2e7d32); }
-.r-price .perf-neg b { color: var(--red, #c62828); }
-.r-price .muted { color: #888; }
+/* Methodology */
+.method-box { background: #fff; border-radius: 10px; padding: 18px; margin-top: 32px; font-size: 13px; color: #666; border: 1px solid #e0e0e0; }
+.method-box strong { color: #222; }
 
-.r-title { font-size: 0.95em; color: var(--muted); margin-bottom: 10px; font-style: italic; }
-.r-prev { font-size: 0.8em; color: var(--muted); margin-bottom: 8px; }
-.r-prev span { color: var(--text); }
-
-.r-summary {
-  font-size: 0.95em; margin-bottom: 12px; padding: 10px;
-  background: #f5f3ef; border-radius: 6px;
-  border-left: 3px solid var(--green);
-}
-.r-body { font-size: 0.9em; white-space: pre-line; }
-.r-body p + p { margin-top: 10px; }
-
-.r-metrics {
-  display: flex; gap: 12px; margin-top: 15px; padding-top: 12px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-  flex-wrap: wrap;
-}
-.r-metrics span { color: var(--text); }
-
-.r-links { margin-top: 10px; font-size: 0.8em; }
-.r-links a { color: var(--green); }
-
-.ghost-date { font-size: 0.7em; color: var(--muted); display: block; margin-top: 2px; }
-
-.grand {
-  text-align: center; padding: 15px; margin: 20px 0;
-  background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border);
-  font-size: 0.9em;
-}
-
-.filter-bar {
-  display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;
-}
-.filter-bar select { 
-  background: var(--card-bg); color: var(--text); border: 1px solid var(--border);
-  padding: 6px 12px; border-radius: 6px; font-size: 0.85em;
-}
-.filter-bar label { font-size: 0.85em; color: var(--muted); }
-
-.date-header {
-  color: #1a1a2e; font-size: 1em; font-weight: 600;
-  margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border);
-}
-
-table {
-  width: 100%; border-collapse: collapse; font-size: 0.85em; margin-top: 20px;
-}
-th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
-th { color: var(--muted); font-weight: 600; font-size: 0.8em; text-transform: uppercase; }
-.perf-pos { color: #2e7d32; }
-.perf-neg { color: #c62828; }
-.perf-new { color: var(--muted); }
-
-.agree-section, .disagree-section { margin-top: 25px; }
-.agree-section h3, .disagree-section h3 { font-size: 1em; margin-bottom: 10px; }
-.agree-section h3 { color: #2e7d32; }
-.disagree-section h3 { color: #c62828; }
-.agree-item, .disagree-item {
-  padding: 10px; margin-bottom: 10px; border-radius: 6px; font-size: 0.85em;
-}
-.agree-item { background: #e8f5e9; border: 1px solid #c8e6c9; }
-.disagree-item { background: #ffebee; border: 1px solid #ffcdd2; }
-.agree-item strong, .disagree-item strong { display: block; margin-bottom: 3px; }
-
-.methodology {
-  font-size: 0.75em; color: var(--muted); margin-top: 20px; padding: 10px;
-  background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border);
-}
-
-footer {
-  text-align: center; padding: 20px; margin-top: 40px;
-  border-top: 1px solid var(--border); font-size: 0.8em; color: var(--muted);
-}
+footer { text-align: center; padding: 32px; color: #999; font-size: 13px; }
+footer a { color: #666; }
 </style>
-
 </head>
 <body>
-<header>
-<div class="logo">📊 Ticker Talk</div>
 <nav>
-  <a href="/">Today</a>
-  <a href="/archive.html">Archive</a>
-  <a href="/ratings.html">Ratings</a>
-  <a href="/trading.html">Trading</a>
-  <a href="/heatmap.html">Heatmap</a>
+  <span class="brand">📋 Ticker Talk</span>
+  <a href="index.html" class="active">Today</a>
+  <a href="archive.html" >Archive</a>
+  <a href="trading.html" >🤖 Trading</a>
+  <a href="ratings.html" >Ratings</a>
 </nav>
-</header>
+<div class="container">
 <h1>Today's Reviews</h1>
-
+<div class="subtitle">14 Oct 2026 · 5 reviews</div>
 <div class="stats">
-  <div class="stat">🟢 2 Bullish</div>
-  <div class="stat">🟡 2 Neutral</div>
-  <div class="stat">🔴 2 Bearish</div>
-  <div class="stat">📅 13 Oct 2026</div>
+  <div class="stat">🟢 <strong>3</strong> Bullish</div>
+  <div class="stat">🟡 <strong>1</strong> Neutral</div>
+  <div class="stat">🔴 <strong>1</strong> Bearish</div>
 </div>
-<div class="review bullish" data-t="THA" data-r="BULLISH">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #6</span></div>
-  <div class="r-company">Tharisa <span class="r-ticker">(THA)</span></div>
-  <div class="r-title">Production Report for the fourth quarter and full year ended 30 September 2026</div>
-  <div class="r-prev">← Previous: NEUTRAL on 30 Sep</div>
-  <div class="r-summary">Tharisa's FY2026 production numbers are in — full-year PGM production and chrome output numbers to 30 September. Tharisa is the mid-tier PGM-and-chrome miner on the western Bushveld with a low-cost, high-margin chrome co-product that insulates it from PGM price weakness. FY2026 was a year of operational consistency. Chrome production held steady, PGM output was within guidance, and the balance sheet stays cash-flow positive at lower PGM prices.</div>
-  <div class="r-body"><p>Tharisa is the unsung compounder in the PGM space — a Bushveld miner that produces both PGMs (platinum, palladium, rhodium) and chrome concentrate from the same orebody — the Merensky reef that also holds chromite. The chrome co-product gives Tharisa a margin buffer that pure PGM peers don't have — when PGM prices are weak (they have been: palladium is off its highs, rhodium has pulled back), chrome keeps the lights on. Q4 and full-year production to September show consistent output from the Tharisa mine in the western limb, with steady volumes across both PGM and chrome.</p>
-<p>The share trades at R26.50, stable through the year. The PGM complex in SA is in a wait-and-see phase — high stockpiles, weaker Chinese industrial demand, but supply constraints from Eskom and deeper-cost-push that are taking mines to the margin. Tharisa sits in the first quartile of the cost curve thanks to the chrome revenue offset. At ~5x EV/EBITDA and paying a dividend, it's priced like a PGM company but behaves like a diversified commodity producer. The full-year production confirms steady-state operation. Rating: BULLISH. Tharisa is a boring wealth compounder in a PGM sector that's full of drama. Boring is good.</p></div>
-  <div class="r-metrics"><span>R26.56 at review</span></div>
-  <div class="r-price">
-  <span class="price-cell">At review: <b>R26.56</b></span>
-  <span class="price-cell">Now: <b>R26.50</b></span>
-  <span class="price-cell perf-neg">Total return: <b>-0.2%</b></span>
-  <span class="price-cell muted">Dividends: R0.00</span>
+
+    <div class="review neutral" data-t="VUN">
+      <div class="r-header">
+        <span class="r-badge neutral">NEUTRAL</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">Vunani Limited <span class="r-ticker">(VUN)</span></div>
+      <div class="r-title">Trading Statement</div>
+      <div class="r-summary">Vunani released a trading statement — the small financial services group that operates in the short-term insurance and lending space. At R1.92 the stock is barely registering, and a trading statement from a micro-cap without meaningful disclosure thresholds is often more box-ticking than revealing. The numbers will need scrutiny.</div>
+      <div class="r-review">Vunani's trading statement is one of those SENS filings that could be either revealing or routine. The company operates in the credit and insurance space — a sector that has been hammered by regulatory changes (the National Credit Act amendments, the affordability assessment tightening, and the broader push toward financial inclusion that compresses margins in the micro-lending market). Vunani is tiny — R1.92 a share, virtually no daily volume, and a market cap that puts it in the JSE's micro-cap tail. A trading statement at this level often means the company is pre-announcing results to satisfy JSE listing requirements rather than providing meaningful forward guidance.
+
+The neutral rating here is honest — without the actual numbers in the SENS body text (Sharenet has it paywalled, Moneyweb is Cloudflare-blocked), we can't assess whether Vunani is growing its book, shrinking its impairments, or simply treading water. The insurance book remains under pressure from both claims inflation and premium competition. Until the numbers confirm margin stability or top-line growth, this is a pass. NEUTRAL — a trading statement that demands numbers we can't independently verify.</div>
+      
+      <div class="r-link"><a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-14" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="TTO">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #5</span>
+      </div>
+      
+      <div class="r-prev">← Previous: <span class="r-badge-sm bearish">BEARISH</span> on 05 Oct</div>
+      
+      <div class="r-company">Trustco Group Holdings Limited <span class="r-ticker">(TTO)</span></div>
+      <div class="r-title">Notice of Requisitioned General Meeting</div>
+      <div class="r-summary">Shareholders have forced a general meeting at Trustco Group Holdings, the tiny JSE-listed banking entity that trades at R0.30 a share. A requisitioned GM means the owners are done waiting for management to unlock value — they want changes, possibly a sale, a restructure, or a dividend. At micro-cap prices, activism is the cheapest catalyst for change.</div>
+      <div class="r-review">A shareholder-forced general meeting at Trustco Group Holdings — trading at R0.30 with virtually no daily volume — is the kind of corporate event that wakes up micro-cap boards. Trustco is one of those JSE-listed minnows that barely registers on the index screens; a bank holding company that has never managed to scale into something that moves the needle. At 30 cents a share, the market values this business at roughly diddly. A requisitioned GM means someone with a meaningful block of shares (or a coordinated group) has decided that the boardroom status quo needs to change.
+
+The possibilities range from a push for a special dividend (unlikely given the thin balance sheet) to a motion for the company to explore a sale or unwind. The simple act of forcing a GM creates optionality — it puts the board on notice that minority holders have organised, and it forces disclosure of the requisitioners' intentions. For micro-cap investors, this is the closest thing to activist alpha on the JSE. At R0.30, the downside is limited, and the upside of a board shakeup or M&A process is asymmetric. BULLISH — not on the fundamentals (there aren't any), but on the optionality that shareholder activism creates.</div>
+      
+      <div class="r-link"><a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-14" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="TMT">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #2</span>
+      </div>
+      
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 14 Sep</div>
+      
+      <div class="r-company">Trematon Capital Investments Limited <span class="r-ticker">(TMT)</span></div>
+      <div class="r-title">Results of General Meeting to approve the disposal of the Generation Education Group</div>
+      <div class="r-summary">Trematon Capital's shareholders have voted to approve the disposal of Generation Education Group — one of the company's major operating assets. This is a significant step in Trematon's long-running restructuring, where a small-cap investment holding company sheds assets to simplify and re-focus. At R1.25 a share, this could be the catalyst that unlocks value.</div>
+      <div class="r-review">Trematon Capital has been one of those JSE small caps that defies easy classification — part investment holding company, part education operator (through Generation Education), part property play. The disposal of Generation Education Group, now approved by shareholders at the general meeting, is a clear signal that management is paring down to core holdings. Generation Education has been a drag on the group's valuation — education assets are capital-intensive, operate on thin margins with regulatory overhead, and don't fit neatly into a small-cap listed holding company's skill set. Selling it to a buyer with sector expertise (likely a dedicated education fund or an operational player) makes strategic sense.
+
+At R1.25 and virtually no daily move, Trematon trades at distressed prices. The disposal unlocks two potential outcomes: (1) proceeds from the sale reduce debt or fund a special dividend, or (2) the company simplifies to a point where a re-rating or a reverse takeover becomes viable. For a micro-cap, any corporate action that streamlines the structure is a positive. The risk is that the disposal proceeds get eaten by debt rather than reaching shareholders, but the GM approval means the deal is done. BULLISH — simplification is value creation at the small-cap level, even when the numbers are modest.</div>
+      
+      <div class="r-link"><a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-14" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bullish" data-t="SSW">
+      <div class="r-header">
+        <span class="r-badge bullish">BULLISH</span>
+        <span class="r-num follow">Review #7</span>
+      </div>
+      <div class="r-ghost">Ghost Mail: 11 May · <span class="r-badge-sm bullish">BULLISH</span></div>
+      <div class="r-prev">← Previous: <span class="r-badge-sm neutral">NEUTRAL</span> on 30 Sep</div>
+      
+      <div class="r-company">Sibanye-Stillwater Limited <span class="r-ticker">(SSW)</span></div>
+      <div class="r-title">Notification of acquisition of beneficial interest in securities by UBS Group AG</div>
+      <div class="r-summary">UBS Group AG — one of the world's largest wealth managers — has notified Sibanye-Stillwater that it has acquired a beneficial interest in the company's securities. When a Swiss banking giant publicly builds a stake in a South African platinum miner, the signal is clear: institutional money sees value in SSW at these prices.</div>
+      <div class="r-review">Sibanye-Stillwater has been through the wringer — Stillwater's PGM operations in Montana have been a constant operational headache, the US PGM market has been volatile, and the group's share price has reflected the uncertainty. But UBS Group AG disclosing a beneficial interest in SSW securities is a signal worth heeding. UBS is not a speculative retail punter; it's the world's largest wealth manager, with a balance sheet and research function that does not take undisclosed positions for fun. This is an institutional accumulation, likely via a fund or managed mandate, and it implies a view that Sibanye's asset base — the SA PGM operations, the gold tailings, and even the contested Stillwater mine — is worth owning at these levels.
+
+At R39.23 with no recent daily move, Sibanye is trading in no-man's land — above the crisis lows of 2025 but well below the peak. The UBS disclosure doesn't tell us the size of the position (the threshold for disclosure is crossed at varying levels depending on the type of announcement), but any large-institution flagging is net positive. It adds a credibility bid to the stock's floor. For Sibanye, where the bull case rests on PGM basket pricing staying supportive and the Stillwater restructuring working, having a blue-chip name on the register matters. BULLISH — UBS accumulation provides a floor and a signalling effect that retail can't match.</div>
+      
+      <div class="r-link"><a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-14" target="_blank">SENS announcement →</a></div>
+    </div>
+
+    <div class="review bearish" data-t="APO">
+      <div class="r-header">
+        <span class="r-badge bearish">BEARISH</span>
+        <span class="r-num first">Review #1</span>
+      </div>
+      
+      
+      
+      <div class="r-company">aReit PROP Limited <span class="r-ticker">(APO)</span></div>
+      <div class="r-title">Quarterly Update Announcement — Suspension</div>
+      <div class="r-summary">aReit PROP has suspended its quarterly update — never a good sign for a REIT. When a property investment vehicle can't deliver its standard quarterly reporting, there's usually a valuation dispute, a tenant crisis, or a refinancing issue behind it. At R2.99 the stock has been sliding, and this suspension will do nothing to restore confidence.</div>
+      <div class="r-review">A REIT suspending its quarterly update is the property equivalent of a company missing its trading statement deadline — it signals that management can't or won't report on the portfolio's performance in the normal cadence. For aReit PROP, which holds a mix of commercial and industrial properties predominantly in South Africa, the possible reasons range from a material tenant default (occupancy falling below a trigger threshold) to a refinancing bottleneck or a valuation adjustment on the property portfolio. None of these are things that get resolved quickly or painlessly.
+
+The REIT structure relies on transparency — quarterly updates with net asset values, occupancy rates, rental income, and distributions are the deal investors sign up for. When that cadence breaks, the trust breaks with it. The stock trades at R2.99 with zero daily move, which tells you the market is waiting, not buying. For income-focused investors, the distribution outlook for this quarter is now uncertain. Until aReit explains what triggered the suspension and when normal reporting resumes, the only sensible position is to step aside. BEARISH — suspended reporting is a flashing amber light.</div>
+      
+      <div class="r-link"><a href="https://www.sharenet.co.za/v3/sens.php?date=2026-10-14" target="_blank">SENS announcement →</a></div>
+    </div>
 </div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/tharisa-limited-production-report-for-the-fourth-quarter-and-full-year-ended-30-september-2026/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bearish" data-t="TFG" data-r="BEARISH">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
-  <div class="r-company">The Foschini Group <span class="r-ticker">(TFG)</span></div>
-  <div class="r-title">Cybersecurity incident at TFG London</div>
-  <div class="r-prev">← Previous: NEUTRAL on 02 Sep</div>
-  <div class="r-summary">TFG London — the group's UK retail division (Phase Eight, Whistles, Hobbs) — has been hit by a cybersecurity incident. The group hasn't disclosed the nature (ransomware? data breach? system compromise?) but cybersecurity incidents at a retail division mean operations disruption, data protection liability, and reputational damage. TFG has spent heavily on international growth — London being a key profit contributor — and a cybersecurity incident at the international division is a material risk factor.</div>
-  <div class="r-body"><p>TFG London is not a sideline — the UK division (Phase Eight, Whistles, Hobbs, and the recently-acquired The Vampire's Wife) is a material contributor to TFG's earnings and the growth engine that management has been investing behind as SA retail stagnates. A cybersecurity incident at that division is a material operational risk. TFG hasn't yet quantified the impact, but the typical cost of a mid-size retail cyber incident runs from supply chain disruption (can't process orders) to data breach notification costs (GDPR in the UK: meaningful fines) to reputational damage with UK consumers.</p>
-<p>TFG shares fell from R50.27 to R49.20 on the day - down 2.1% - reflecting the uncertainty but not panic. The market is waiting for the extent disclosure. TFG has been a solid retail performer through the consumer squeeze - the JD Group acquisition was well timed and TFG's credit model gives it a moat. But a cyber event at the crown jewel international division is the kind of thing that can turn a solid year into a distracted year. Rating: BEARISH until the group quantifies the impact and confirms no material data loss or systems disruption. Cyber events at retailers always cost more than initial guidance suggests.</p></div>
-  <div class="r-metrics"><span>R50.27 at review</span></div>
-  <div class="r-price">
-  <span class="price-cell">At review: <b>R50.27</b></span>
-  <span class="price-cell">Now: <b>R49.20</b></span>
-  <span class="price-cell perf-neg">Total return: <b>-2.1%</b></span>
-  <span class="price-cell muted">Dividends: R0.00</span>
-</div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/the-foschini-group-limited-cybersecurity-incident-at-tfg-london/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="RDF" data-r="NEUTRAL">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #2</span></div>
-  <div class="r-company">Redefine Properties <span class="r-ticker">(RDF)</span></div>
-  <div class="r-title">Horse Group S.A R.L. joint venture restructure</div>
-  <div class="r-prev">← Previous: NEUTRAL on 04 Aug</div>
-  <div class="r-summary">Redefine is restructuring its Horse Group S.A R.L. joint venture — a European logistics property investment held through the Redefine Europe platform. Property JV restructures usually mean one partner is buying the other out, or the capital structure is being re-geared. Redefine has been reducing its European exposure to focus on core SA property. This could be the next step in that strategy.</div>
-  <div class="r-body"><p>Redefine Properties is the SA-focused REIT that spent the 2010s building a European property platform, then spent the 2020s unwinding it. The Horse Group S.A R.L. JV is a Luxembourg-based European logistics property investment vehicle — Redefine's share of European assets has been a consistent source of currency volatility and capital recycling complexity. The restructure announcement could mean Redefine is selling down its stake, buying out its partner, or re-gearing the JV's debt.</p>
-<p>Redefine has been selling European assets (the German retail portfolio, the DLF platform) and recycling capital into SA industrial and retail properties. The Horse Group JV holds logistics properties — the best-performing segment of European real estate — so a restructure might crystallise value at a good time. But JV restructures always look clean in an announcement and messy in execution. At R6.06, the stock is steady — the market isn't reading alarm. Rating: NEUTRAL. JV restructures deserve scrutiny on the valuation achieved, not just the headline. Watch the circular or further SENS for the implied valuation of Redefine's stake.</p></div>
-  <div class="r-metrics"><span>R6.03 at review</span></div>
-  <div class="r-price">
-  <span class="price-cell">At review: <b>R6.03</b></span>
-  <span class="price-cell">Now: <b>R6.06</b></span>
-  <span class="price-cell perf-pos">Total return: <b>+0.5%</b></span>
-  <span class="price-cell muted">Dividends: R0.00</span>
-</div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/redefine-properties-limited-horse-group-s-a-r-l-joint-venture-restructure/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review neutral" data-t="IOC" data-r="NEUTRAL">
-  <div class="r-header"><span class="r-badge neutral">NEUTRAL</span><span class="r-num follow">Review #3</span></div>
-  <div class="r-company">iOCO Limited <span class="r-ticker">(IOC)</span></div>
-  <div class="r-title">Audited financial results for the year ended 31 July 2026 and guidance for FY27</div>
-  <div class="r-prev">← Previous: BULLISH on 16 Sep</div>
-  <div class="r-summary">iOCO's FY2026 results are due — the struggling IT services group that was born from the EOH restructuring. Full-year numbers to 31 July 2026 with FY27 guidance attached. iOCO has been restructuring since listing — selling non-core assets, cutting costs, and trying to prove the underlying IT services business can stand alone. The guidance is what investors will focus on: is the turnaround real or is this a value trap?</div>
-  <div class="r-body"><p>iOCO is the post-EOH corporate shell that owns the IT services assets that didn't get sold off. The business spans infrastructure, cloud, security, and software across SA and the rest of Africa. The full-year results for the year to 31 July 2026 come with FY27 guidance — management's view on whether the restructuring is done. The stock trades around R4.00 (385c on the Sharenet board) — down from its post-listing highs and struggling to find a floor.</p>
-<p>The investment case for iOCO is binary. Either the asset sales, cost cuts, and refocusing have produced a leaner, profitable IT services business with a credible growth story — or the turnaround hasn't stuck and the company is stuck in no-man's land between being a going concern and needing more restructuring. The FY27 guidance attached to the results is key. IT services is a steady business in SA (government contracts, enterprise support, cloud migration) but iOCO's legacy cost structure has been the problem. If guidance shows organic revenue growth and margin improvement, there's a case. If not, this is a skip. Rating: NEUTRAL until the numbers are published.</p></div>
-  <div class="r-metrics"><span>R4.00 at review</span></div>
-  <div class="r-price">
-  <span class="price-cell">At review: <b>R4.00</b></span>
-  <span class="price-cell">Now: <b>R4.00</b></span>
-  <span class="price-cell perf-pos">Total return: <b>+0.0%</b></span>
-  <span class="price-cell muted">Dividends: R0.00</span>
-</div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/ioco-limited-results-announcement-audited-financial-results-for-the-year-ended-31-july-2026-and-guidance-for-fy27/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bullish" data-t="BYI" data-r="BULLISH">
-  <div class="r-header"><span class="r-badge bullish">BULLISH</span><span class="r-num follow">Review #2</span></div>
-  <div class="r-company">Bytes Technology Group <span class="r-ticker">(BYI)</span></div>
-  <div class="r-title">Results for the six months ended 31 August 2026, declaration of cash dividend, and acquisition of CyberOne</div>
-  <div class="r-prev">← Previous: NEUTRAL on 03 Sep</div>
-  <div class="r-summary">Bytes delivered a clean half: revenue up 16% to £83.0m, adjusted operating profit of £30.8m (margin 37.1%), and a 40% jump in the interim dividend to 0.94p per share. The £28m CyberOne bolt-on acquisition adds software security and digital transformation to the portfolio. Bytes is a cash-generating IT services compounder with a net cash balance sheet and a track record of disciplined M&A — buying CyberOne out of its own cash flow.</div>
-  <div class="r-body"><p>Bytes Technology Group is the kind of JSE-listed UK-incorporated IT services firm that SA investors sleep on because it trades on the JSE Line (most volume). Six-month revenue of £83.0m, adjusted operating profit of £30.8m (37.1% margin — that's high for IT services, not a reseller model), and 40% more in interim dividend at 0.94p per share. Net cash at £vs50.3m. The H1 revenue was 16% organic growth, software licensing grew. The CyberOne acquisition of CyberOne — a UK-based secure access and digital transformation consultancy for an initial £28m cash plus earn-out — is smaller but sensibly: Bytes paid from existing cash and the deal adds to earnings immediately. CyberOne does secure access and digital transformation, complimentary to what Bytes does in the UK public sector. The M&A discipline is clean — integrated, small, no debt, equity or scrip — paid cash. SA investors pay JSE liquidity premium but get rand-hedge via sterling earnings. At R97 the stock is flat from its year high. BULLISH. Bytes is a quality compounder at a fair price — rare on the JSE.</p></div>
-  <div class="r-metrics"><span>R98.53 at review</span></div>
-  <div class="r-price">
-  <span class="price-cell">At review: <b>R98.53</b></span>
-  <span class="price-cell">Now: <b>R97.18</b></span>
-  <span class="price-cell perf-neg">Total return: <b>-1.4%</b></span>
-  <span class="price-cell muted">Dividends: R0.00</span>
-</div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/bytes-technology-group-plc-results-for-the-six-months-ended-31-august-2026-and-declaration-of-cash-dividend/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div><div class="review bearish" data-t="ARI" data-r="BEARISH">
-  <div class="r-header"><span class="r-badge bearish">BEARISH</span><span class="r-num follow">Review #2</span></div>
-  <div class="r-company">African Rainbow Minerals <span class="r-ticker">(ARI)</span></div>
-  <div class="r-title">ARM to Defend Assore Legal Proceedings and Initiate Counterclaims</div>
-  <div class="r-prev">← Previous: NEUTRAL on 04 Sep</div>
-  <div class="r-summary">ARM is heading to court against Assore — the mining investment company it partly owns. ARM says it will defend the legal proceedings initiated by Assore and has launched counterclaims. Mining litigation is expensive, distracting, and seldom good for minority shareholders. ARM's stock dropped 6.6% on the news, from R156.50 to R146.24 — the market's immediate verdict on the legal overhang.</div>
-  <div class="r-body"><p>Litigation between a JSE-listed mining company and its underlying investee is a mess nobody wins. ARM — Patrice Motsepe's diversified mining group with interests in iron ore (Assore, through the Beeshoek and Khumani operations), manganese, platinum, coal, and chrome — is going to court against Assore. The announcement says ARM will defend the legal proceedings brought by Assore and has launched counterclaims of its own. That's an escalation, not a defence.</p>
-<p>The context: Assore is a 50:50 joint venture between ARM and Assore Ltd (the separate listed company) that holds the bulk of ARM's iron ore interests. When the two JV partners go to law, it means the fundamental relationship between the operating partners is broken. Legal proceedings with counterclaims reads like the partnership has deteriorated beyond mediation. Translate: this is a heavyweight legal scrap that will cost time, management attention, and legal fees. ARM is a R35bn+ market cap miner with strong operations, but legal overhangs at the JV level are value-destructive. At R146.24, the market sold first and asked questions later — a 6.6% drop on the day is the market's first verdict. Rating: BEARISH. Mining litigation within the corporate structure is a cancer on the value of the underlying assets. Stay out until the counterclaims give clarity on the direction and potential cost.</p></div>
-  <div class="r-metrics"><span>R156.50 at review</span></div>
-  <div class="r-price">
-  <span class="price-cell">At review: <b>R156.50</b></span>
-  <span class="price-cell">Now: <b>R146.24</b></span>
-  <span class="price-cell perf-neg">Total return: <b>-6.6%</b></span>
-  <span class="price-cell muted">Dividends: R0.00</span>
-</div>
-  <div class="r-links">
-    <a href="https://www.moneyweb.co.za/mny_sens/african-rainbow-minerals-limited-arm-to-defend-assore-legal-proceedings-and-initiate-counterclaims/" target="_blank">📄 SENS announcement</a>
-  </div>
-</div>
-<footer>
-  Ticker Talk · Daily JSE SENS reviews · Not financial advice<br>
-  <a href="https://tickertalk.co.za" style="color: var(--muted)">tickertalk.co.za</a>
-</footer>
+<footer>Ticker Talk · Daily at 7am SAST · Not financial advice</footer>
 </body>
 </html>
