@@ -1,0 +1,41 @@
+From: Ticker Talk <andrewwatt@portrush.co.za>
+To: andrewwatt@portrush.co.za
+Cc: gregsalterconnect@gmail.com
+Subject: 📋 Ticker Talk — Oct 15: Famous Brands serves up a warning, PSG keeps compounding
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+BURGERS SAFE, EARNINGS NOT: FAMOUS BRANDS WARNS, PSG AND EQUITES KEEP COMPOUNDING
+
+7 significant SENS announcements reviewed yesterday
+
+Ticker | Company                   | Announcement                      | Rating   |   Price | Move
+-----------------------------------------------------------------------------------------------
+🟢 | EQU  | Equites Property Fund Li | Interim results for the six months | BULLISH  |   R18.15 |   new
+🔴 | FBR  | Famous Brands Limited    | Trading Statement for the six mont | BEARISH  |   R49.70 |   new
+🟢 | FTA  | Fairvest                 | Accelerated book build             | BULLISH  |   R19.70 |   new
+🟢 | KST  | PSG Financial Services L | Unaudited Interim Results And Divi | BULLISH  |   R29.04 |   new
+🟡 | MNP  | Mondi                    | Q3 2026 Trading Update             | NEUTRAL  |  R163.29 |   new
+🟢 | SRE  | Sirius Real Estate Limit | Fitch reaffirms Sirius' BBB Invest | BULLISH  |   R20.26 |   new
+🟢 | THA  | Tharisa                  | Valterra Platinum to Purchase 50%  | BULLISH  |   R26.05 |   new
+
+-----------------------------------------------------------------------------------------------
+
+📋 Full reviews: https://tickertalk.co.za
+
+🟢 EQU — Equites hiked its interim distribution 5.1% to 72.57c, reaffirmed full-year guidance of 147.7–150.5c (5–7% growth), completed its UK exit and cut LTV from 35.1% to 28.1% — a clean, confident set of interims.
+
+🔴 FBR — Famous Brands warns headline earnings will fall up to 13% (HEPS 252c–205c) and reported EPS by as much as 33%, dragged down by a R40.9m goodwill impairment on its Botswana Retail Group stake as it cuts from 51% to 30%.
+
+🟢 FTA — Fairvest launched an accelerated book build to raise approximately R500m in new B shares via Java Capital, earmarked to fund 'strategic retail acquisitions under negotiation'.
+
+🟢 KST — PSG Financial Services delivered a 5% rise in recurring headline earnings to 60.9c, a 10% dividend hike to 22c, 15% growth in assets under management to R594.1bn and a 26.5% ROE — a quietly brilliant set of numbers.
+
+🟡 MNP — Mondi's Q3 underlying EBITDA rose to €196m from €167m in Q2 (helped by a zero forestry fair value swing vs a -€43m loss), but ex-forestry earnings fell sequentially as energy and wood costs bit; the market knocked the shares ~10%.
+
+🟢 SRE — Fitch reaffirmed Sirius' BBB investment grade rating with a stable outlook, citing ~7x EBITDA interest cover, disciplined leverage, and growing defence-related exposure in Germany worth around €200m.
+
+🟢 THA — Tharisa signed a binding multi-year deal for Valterra Platinum to take 50% of Tharisa Mine's PGM concentrate from January 2027 — replacing Sibanye-Stillwater as offtake partner — plus a fine-chrome recovery collaboration using its Vulcan X technology.
+
+---
+Ticker Talk · Daily at 7am · Not financial advice
