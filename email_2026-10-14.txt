@@ -1,0 +1,34 @@
+From: Ticker Talk <andrewwatt@portrush.co.za>
+To: andrewwatt@portrush.co.za
+Cc: gregsalterconnect@gmail.com
+Subject: 📋 Ticker Talk — Oct 14: Trustco activism, Sibanye gets UBS backing, and aReit suspends its update
+Content-Type: text/plain; charset=utf-8
+
+REIT SUSPENDED, SHAREHOLDER REVOLT, UBS BETS ON PLATINUM
+
+5 significant SENS announcements reviewed yesterday
+
+Ticker | Company                       | Rating   |   Price | Move
+----------------------------------------------------------------------
+🔴 APO  | aReit PROP Limited             | BEARISH  |    R2.99 |   new
+🟢 TTO  | Trustco Group Holdings Limited | BULLISH  |    R0.30 |   new
+🟢 SSW  | Sibanye-Stillwater Limited     | BULLISH  |   R39.23 |   new
+🟡 VUN  | Vunani Limited                 | NEUTRAL  |    R1.92 |   new
+🟢 TMT  | Trematon Capital Investments L | BULLISH  |    R1.25 |   new
+
+----------------------------------------------------------------------
+
+📋 Full reviews: https://tickertalk.co.za
+
+🔴 APO — aReit PROP has suspended its quarterly update — never a good sign for a REIT. When a property investment vehicle can't deliver its standard quarterly reporting, there's usually a valuation dispute, a tenant crisis, or a refinancing issue behind it. At R2.99 the stock has been ...
+
+🟢 TTO — Shareholders have forced a general meeting at Trustco Group Holdings, the tiny JSE-listed banking entity that trades at R0.30 a share. A requisitioned GM means the owners are done waiting for management to unlock value — they want changes, possibly a sale, a restructure, or a ...
+
+🟢 SSW — UBS Group AG — one of the world's largest wealth managers — has notified Sibanye-Stillwater that it has acquired a beneficial interest in the company's securities. When a Swiss banking giant publicly builds a stake in a South African platinum miner, the signal is clear: instit...
+
+🟡 VUN — Vunani released a trading statement — the small financial services group that operates in the short-term insurance and lending space. At R1.92 the stock is barely registering, and a trading statement from a micro-cap without meaningful disclosure thresholds is often more box-t...
+
+🟢 TMT — Trematon Capital's shareholders have voted to approve the disposal of Generation Education Group — one of the company's major operating assets. This is a significant step in Trematon's long-running restructuring, where a small-cap investment holding company sheds assets to sim...
+
+---
+Ticker Talk · Daily at 7am · Not financial advice
