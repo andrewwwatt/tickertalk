@@ -1,18 +1,29 @@
 {
+  "period": {
+    "start": "2026-07-31",
+    "end": "2026-10-19",
+    "days": 57,
+    "cash_dates": [
+      "2026-08-03",
+      "2026-09-01",
+      "2026-10-01"
+    ],
+    "monthly_cash": 25000.0
+  },
   "agents": {
     "Daily Trader": {
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 75000.0,
-      "final_cash": 533.35,
-      "final_holdings_value": 79385.4,
-      "final_portfolio": 79918.75,
-      "return_pct": 6.6,
-      "realized": 5882.77,
-      "unrealized": 379.15,
-      "total_costs": 1675.1,
+      "final_cash": 1255.75,
+      "final_holdings_value": 79177.03,
+      "final_portfolio": 80432.79,
+      "return_pct": 7.2,
+      "realized": 5616.11,
+      "unrealized": 1276.49,
+      "total_costs": 1791.75,
       "total_dividends": 331.94,
-      "num_trades": 62,
+      "num_trades": 64,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -238,11 +249,15 @@
         ],
         [
           "2026-10-15",
-          79968.62
+          80652.72
         ],
         [
           "2026-10-16",
-          79918.75
+          80549.44
+        ],
+        [
+          "2026-10-19",
+          80432.79
         ]
       ],
       "holdings": {
@@ -250,15 +265,8 @@
           "shares": 154.44,
           "cost": 16.1,
           "buy_date": "2026-08-24",
-          "current_price": 15.85,
+          "current_price": 16.27,
           "sector": "property"
-        },
-        "NED": {
-          "shares": 41.86,
-          "cost": 295.05,
-          "buy_date": "2026-09-01",
-          "current_price": 281.5,
-          "sector": "financial"
         },
         "MTA": {
           "shares": 1158.25,
@@ -271,28 +279,28 @@
           "shares": 23.14,
           "cost": 75.19,
           "buy_date": "2026-09-10",
-          "current_price": 80.48,
+          "current_price": 78.0,
           "sector": "tech"
         },
         "QLT": {
           "shares": 35.86,
           "cost": 38.57,
           "buy_date": "2026-10-01",
-          "current_price": 38.75,
+          "current_price": 39.7,
           "sector": "financial"
         },
         "SUR": {
           "shares": 186.05,
           "cost": 42.3,
           "buy_date": "2026-10-02",
-          "current_price": 41.27,
+          "current_price": 41.5,
           "sector": "retail"
         },
         "TGA": {
           "shares": 33.8,
           "cost": 126.0,
           "buy_date": "2026-10-05",
-          "current_price": 136.19,
+          "current_price": 135.26,
           "sector": "mining"
         },
         "OAO": {
@@ -306,7 +314,7 @@
           "shares": 17.56,
           "cost": 701.77,
           "buy_date": "2026-10-08",
-          "current_price": 708.72,
+          "current_price": 720.65,
           "sector": "tech"
         },
         "PMV": {
@@ -320,55 +328,62 @@
           "shares": 98.08,
           "cost": 27.64,
           "buy_date": "2026-10-12",
-          "current_price": 27.47,
+          "current_price": 27.05,
           "sector": "other"
         },
         "HLM": {
           "shares": 539.49,
           "cost": 2.01,
           "buy_date": "2026-10-13",
-          "current_price": 1.97,
+          "current_price": 1.94,
           "sector": "industrial"
         },
         "IMP": {
           "shares": 18.6,
           "cost": 188.0,
           "buy_date": "2026-10-13",
-          "current_price": 180.02,
+          "current_price": 188.0,
           "sector": "mining"
         },
         "RES": {
           "shares": 64.48,
           "cost": 78.2,
           "buy_date": "2026-10-14",
-          "current_price": 78.2,
+          "current_price": 78.3,
           "sector": "property"
         },
         "SHP": {
-          "shares": 4.41,
-          "cost": 329.61,
+          "shares": 4.34,
+          "cost": 335.23,
           "buy_date": "2026-10-15",
-          "current_price": 329.61,
+          "current_price": 328.37,
           "sector": "retail"
         },
         "DRD": {
-          "shares": 119.26,
-          "cost": 40.05,
+          "shares": 113.78,
+          "cost": 41.98,
           "buy_date": "2026-10-16",
-          "current_price": 40.05,
+          "current_price": 41.98,
           "sector": "mining"
+        },
+        "RBO": {
+          "shares": 2082.51,
+          "cost": 5.4,
+          "buy_date": "2026-10-19",
+          "current_price": 5.4,
+          "sector": "retail"
         }
       },
       "sector_composition": {
         "property": 9.4,
-        "financial": 16.5,
-        "industrial": 15.0,
-        "tech": 17.9,
-        "retail": 11.4,
-        "mining": 15.9,
+        "industrial": 14.9,
+        "tech": 18.0,
+        "financial": 1.8,
+        "retail": 25.4,
+        "mining": 16.0,
         "energy": 9.8,
-        "other": 3.4,
-        "cash": 0.7
+        "other": 3.3,
+        "cash": 1.6
       },
       "all_trades": [
         {
@@ -906,8 +921,8 @@
           "date": "2026-10-15",
           "ticker": "SHP",
           "action": "BUY",
-          "shares": 4.4148632089781525,
-          "price": 329.61,
+          "shares": 4.340849751845863,
+          "price": 335.23,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         },
@@ -924,22 +939,31 @@
           "date": "2026-10-16",
           "ticker": "DRD",
           "action": "BUY",
-          "shares": 119.25820510679105,
-          "price": 40.05,
+          "shares": 113.77539577243881,
+          "price": 41.98,
+          "gain": 0,
+          "reason": "Rotate in \u2014 better BULLISH option"
+        },
+        {
+          "date": "2026-10-19",
+          "ticker": "NED",
+          "action": "SELL",
+          "shares": 41.86162584264128,
+          "price": 288.68,
+          "gain": -266.65855661762544,
+          "reason": "Rotate out \u2014 RBO (BULLISH) is a better option"
+        },
+        {
+          "date": "2026-10-19",
+          "ticker": "RBO",
+          "action": "BUY",
+          "shares": 2082.5113740134766,
+          "price": 5.4,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         }
       ],
       "decisions": [
-        {
-          "date": "2026-10-08",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udd34 SELL PMV \u2014 Cut loss -14% (R-2640)",
-            "\ud83d\udfe2 BUY NPN @ R701.77 \u2014 BULLISH, CAUTIOUS"
-          ]
-        },
         {
           "date": "2026-10-09",
           "risk": "CAUTIOUS",
@@ -982,7 +1006,7 @@
           "news": [],
           "log": [
             "\ud83d\udd01 ROTATE SBP (BULLISH) \u2192 SHP: better BULLISH option",
-            "\ud83d\udfe2 BUY SHP @ R329.61 \u2014 rotated in"
+            "\ud83d\udfe2 BUY SHP @ R335.23 \u2014 rotated in"
           ]
         },
         {
@@ -991,7 +1015,16 @@
           "news": [],
           "log": [
             "\ud83d\udd01 ROTATE APF (BULLISH) \u2192 DRD: better BULLISH option",
-            "\ud83d\udfe2 BUY DRD @ R40.05 \u2014 rotated in"
+            "\ud83d\udfe2 BUY DRD @ R41.98 \u2014 rotated in"
+          ]
+        },
+        {
+          "date": "2026-10-19",
+          "risk": "CAUTIOUS",
+          "news": [],
+          "log": [
+            "\ud83d\udd01 ROTATE NED (BULLISH) \u2192 RBO: better BULLISH option",
+            "\ud83d\udfe2 BUY RBO @ R5.40 \u2014 rotated in"
           ]
         }
       ]
@@ -1000,15 +1033,15 @@
       "name": "Weekly Trader",
       "news_sensitivity": "medium",
       "total_in": 75000.0,
-      "final_cash": 1063.92,
-      "final_holdings_value": 70572.07,
-      "final_portfolio": 71635.99,
-      "return_pct": -4.5,
-      "realized": -1983.58,
-      "unrealized": -440.93,
-      "total_costs": 939.49,
+      "final_cash": 992.89,
+      "final_holdings_value": 71091.18,
+      "final_portfolio": 72084.07,
+      "return_pct": -3.9,
+      "realized": -2150.16,
+      "unrealized": 137.29,
+      "total_costs": 903.06,
       "total_dividends": 0,
-      "num_trades": 31,
+      "num_trades": 30,
       "risk": "AGGRESSIVE",
       "news": [
         "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
@@ -1232,11 +1265,15 @@
         ],
         [
           "2026-10-15",
-          71776.95
+          72387.94
         ],
         [
           "2026-10-16",
-          71635.99
+          72084.07
+        ],
+        [
+          "2026-10-19",
+          72084.07
         ]
       ],
       "holdings": {
@@ -1247,19 +1284,26 @@
           "current_price": 4.85,
           "sector": "industrial"
         },
+        "NED": {
+          "shares": 36.29,
+          "cost": 298.81,
+          "buy_date": "2026-09-04",
+          "current_price": 288.68,
+          "sector": "financial"
+        },
         "SSS": {
           "shares": 147.38,
           "cost": 15.6,
           "buy_date": "2026-09-11",
-          "current_price": 15.85,
+          "current_price": 16.27,
           "sector": "property"
         },
-        "SBP": {
-          "shares": 69.98,
-          "cost": 146.0,
-          "buy_date": "2026-09-18",
-          "current_price": 142.0,
-          "sector": "financial"
+        "LSK": {
+          "shares": 41.01,
+          "cost": 70.82,
+          "buy_date": "2026-09-25",
+          "current_price": 78.0,
+          "sector": "tech"
         },
         "APF": {
           "shares": 46131.54,
@@ -1272,7 +1316,7 @@
           "shares": 325.81,
           "cost": 38.35,
           "buy_date": "2026-10-02",
-          "current_price": 38.75,
+          "current_price": 39.7,
           "sector": "financial"
         },
         "PMV": {
@@ -1290,28 +1334,29 @@
           "sector": "energy"
         },
         "SUR": {
-          "shares": 103.07,
-          "cost": 41.27,
+          "shares": 31.34,
+          "cost": 41.5,
           "buy_date": "2026-10-16",
-          "current_price": 41.27,
+          "current_price": 41.5,
           "sector": "retail"
         },
         "TGA": {
-          "shares": 69.96,
-          "cost": 136.19,
+          "shares": 65.74,
+          "cost": 135.26,
           "buy_date": "2026-10-16",
-          "current_price": 136.19,
+          "current_price": 135.26,
           "sector": "mining"
         }
       },
       "sector_composition": {
-        "industrial": 12.9,
-        "property": 27.7,
-        "financial": 31.5,
+        "industrial": 12.8,
+        "financial": 32.5,
+        "property": 27.6,
+        "tech": 4.4,
         "energy": 7.2,
-        "retail": 5.9,
-        "mining": 13.3,
-        "cash": 1.5
+        "retail": 1.8,
+        "mining": 12.3,
+        "cash": 1.4
       },
       "all_trades": [
         {
@@ -1553,43 +1598,34 @@
           "ticker": "HLM",
           "action": "SELL",
           "shares": 454.1231496058545,
-          "price": 1.97,
-          "gain": -127.15448188963921,
-          "reason": "Cut loss -12%"
-        },
-        {
-          "date": "2026-10-16",
-          "ticker": "LSK",
-          "action": "SELL",
-          "shares": 41.013322165673344,
-          "price": 80.48,
-          "gain": 396.188692120405,
-          "reason": "Take profit +14%"
+          "price": 1.94,
+          "gain": -140.77817637781493,
+          "reason": "Cut loss -14%"
         },
         {
           "date": "2026-10-16",
           "ticker": "SUR",
           "action": "BUY",
-          "shares": 103.0724277185645,
-          "price": 41.27,
+          "shares": 31.338356474067936,
+          "price": 41.5,
           "gain": 0,
           "reason": "TT BULLISH, AGGRESSIVE market"
         },
         {
           "date": "2026-10-16",
-          "ticker": "NED",
+          "ticker": "SBP",
           "action": "SELL",
-          "shares": 36.28873901258335,
-          "price": 281.5,
-          "gain": -628.1580723078187,
+          "shares": 69.98473195980623,
+          "price": 140.5,
+          "gain": -384.91602577893354,
           "reason": "Rotate out \u2014 TGA (BULLISH) is a better option"
         },
         {
           "date": "2026-10-16",
           "ticker": "TGA",
           "action": "BUY",
-          "shares": 69.95852719247064,
-          "price": 136.19,
+          "shares": 65.73686322049467,
+          "price": 135.26,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
         }
@@ -1659,11 +1695,10 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL HLM \u2014 Cut loss -12% (R-127)",
-            "\ud83d\udd34 SELL LSK \u2014 Take profit +14% (R+396)",
-            "\ud83d\udfe2 BUY SUR @ R41.27 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udd01 ROTATE NED (BULLISH) \u2192 TGA: better BULLISH option",
-            "\ud83d\udfe2 BUY TGA @ R136.19 \u2014 rotated in"
+            "\ud83d\udd34 SELL HLM \u2014 Cut loss -14% (R-141)",
+            "\ud83d\udfe2 BUY SUR @ R41.50 \u2014 BULLISH, AGGRESSIVE",
+            "\ud83d\udd01 ROTATE SBP (BULLISH) \u2192 TGA: better BULLISH option",
+            "\ud83d\udfe2 BUY TGA @ R135.26 \u2014 rotated in"
           ]
         }
       ]
@@ -1673,11 +1708,11 @@
       "news_sensitivity": "low",
       "total_in": 75000.0,
       "final_cash": 29312.5,
-      "final_holdings_value": 43618.53,
-      "final_portfolio": 72931.03,
-      "return_pct": -2.8,
+      "final_holdings_value": 43907.48,
+      "final_portfolio": 73219.98,
+      "return_pct": -2.4,
       "realized": 0,
-      "unrealized": -1841.66,
+      "unrealized": -1552.72,
       "total_costs": 227.3,
       "total_dividends": 0,
       "num_trades": 6,
@@ -1904,11 +1939,15 @@
         ],
         [
           "2026-10-15",
-          72931.03
+          73410.35
         ],
         [
           "2026-10-16",
-          72931.03
+          73219.98
+        ],
+        [
+          "2026-10-19",
+          73219.98
         ]
       ],
       "holdings": {
@@ -1916,7 +1955,7 @@
           "shares": 3109.45,
           "cost": 2.0,
           "buy_date": "2026-08-19",
-          "current_price": 1.97,
+          "current_price": 1.94,
           "sector": "industrial"
         },
         "PMV": {
@@ -1930,21 +1969,21 @@
           "shares": 382.93,
           "cost": 16.2,
           "buy_date": "2026-08-19",
-          "current_price": 15.85,
+          "current_price": 16.27,
           "sector": "property"
         },
         "LSK": {
           "shares": 32.19,
           "cost": 78.0,
           "buy_date": "2026-08-19",
-          "current_price": 80.48,
+          "current_price": 78.0,
           "sector": "tech"
         },
         "NED": {
           "shares": 41.95,
           "cost": 295.85,
           "buy_date": "2026-09-16",
-          "current_price": 281.5,
+          "current_price": 288.68,
           "sector": "financial"
         },
         "MTA": {
@@ -1956,11 +1995,11 @@
         }
       },
       "sector_composition": {
-        "industrial": 31.7,
-        "property": 8.3,
-        "tech": 3.6,
-        "financial": 16.2,
-        "cash": 40.2
+        "industrial": 31.5,
+        "property": 8.5,
+        "tech": 3.4,
+        "financial": 16.5,
+        "cash": 40.0
       },
       "all_trades": [
         {
@@ -2043,235 +2082,5 @@
         }
       ]
     }
-  },
-  "Going with the Herd": {
-    "name": "Going with the Herd",
-    "cash": 4312.5,
-    "total_invested": 50000.0,
-    "realized": 0.0,
-    "unrealized": 326.52,
-    "costs": 227.3,
-    "final_portfolio": 50099.22,
-    "holdings": {
-      "AGL": {
-        "shares": 7.129401314513312,
-        "avg_cost": 872.29,
-        "current_price": 891.92,
-        "buy_date": "2026-08-19",
-        "value": 6358.86,
-        "unrealized": 139.95
-      },
-      "EXX": {
-        "shares": 32.6886506793395,
-        "avg_cost": 190.01,
-        "current_price": 177.25,
-        "buy_date": "2026-08-19",
-        "value": 5794.06,
-        "unrealized": -417.11
-      },
-      "ABG": {
-        "shares": 27.49632187899088,
-        "avg_cost": 225.61,
-        "current_price": 213.13,
-        "buy_date": "2026-08-19",
-        "value": 5860.29,
-        "unrealized": -343.15
-      },
-      "NED": {
-        "shares": 8.201605329853093,
-        "avg_cost": 306.13,
-        "current_price": 281.5,
-        "buy_date": "2026-08-19",
-        "value": 2308.75,
-        "unrealized": -202.01
-      },
-      "SOL": {
-        "shares": 53.322585904869804,
-        "avg_cost": 233.26,
-        "current_price": 260.62,
-        "buy_date": "2026-09-16",
-        "value": 13896.93,
-        "unrealized": 1458.91
-      },
-      "MTA": {
-        "shares": 2385.1192790843415,
-        "avg_cost": 4.98,
-        "current_price": 4.85,
-        "buy_date": "2026-09-16",
-        "value": 11567.83,
-        "unrealized": -310.07
-      }
-    },
-    "all_trades": [
-      {
-        "date": "2026-08-19",
-        "ticker": "AGL",
-        "action": "BUY",
-        "shares": 7.129401314513312,
-        "price": 872.29,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "EXX",
-        "action": "BUY",
-        "shares": 32.6886506793395,
-        "price": 190.01,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "ABG",
-        "action": "BUY",
-        "shares": 27.49632187899088,
-        "price": 225.61,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "NED",
-        "action": "BUY",
-        "shares": 8.201605329853093,
-        "price": 306.13,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "SOL",
-        "action": "BUY",
-        "shares": 53.322585904869804,
-        "price": 233.26,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "MTA",
-        "action": "BUY",
-        "shares": 2385.1192790843415,
-        "price": 4.98,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
-      }
-    ]
-  },
-  "The Contrarian": {
-    "name": "The Contrarian",
-    "cash": 4312.5,
-    "total_invested": 50000.0,
-    "realized": 0.0,
-    "unrealized": -1711.23,
-    "costs": 227.3,
-    "final_portfolio": 48061.46,
-    "holdings": {
-      "RDF": {
-        "shares": 998.219176988253,
-        "avg_cost": 6.23,
-        "current_price": 6.12,
-        "buy_date": "2026-08-19",
-        "value": 6109.1,
-        "unrealized": -109.8
-      },
-      "HYP": {
-        "shares": 105.77606463864609,
-        "avg_cost": 58.72,
-        "current_price": 60.44,
-        "buy_date": "2026-08-19",
-        "value": 6393.11,
-        "unrealized": 181.93
-      },
-      "GRT": {
-        "shares": 361.50612931929675,
-        "avg_cost": 17.16,
-        "current_price": 15.34,
-        "buy_date": "2026-08-19",
-        "value": 5545.5,
-        "unrealized": -657.94
-      },
-      "BVT": {
-        "shares": 10.299275738895432,
-        "avg_cost": 243.78,
-        "current_price": 229.33,
-        "buy_date": "2026-08-19",
-        "value": 2361.93,
-        "unrealized": -148.82
-      },
-      "NED": {
-        "shares": 41.36437537418841,
-        "avg_cost": 295.85,
-        "current_price": 281.5,
-        "buy_date": "2026-09-16",
-        "value": 11644.07,
-        "unrealized": -593.58
-      },
-      "ABG": {
-        "shares": 54.8737901211045,
-        "avg_cost": 220.11,
-        "current_price": 213.13,
-        "buy_date": "2026-09-16",
-        "value": 11695.25,
-        "unrealized": -383.02
-      }
-    },
-    "all_trades": [
-      {
-        "date": "2026-08-19",
-        "ticker": "RDF",
-        "action": "BUY",
-        "shares": 998.219176988253,
-        "price": 6.23,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "HYP",
-        "action": "BUY",
-        "shares": 105.77606463864609,
-        "price": 58.72,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "GRT",
-        "action": "BUY",
-        "shares": 361.50612931929675,
-        "price": 17.16,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "BVT",
-        "action": "BUY",
-        "shares": 10.299275738895432,
-        "price": 243.78,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "NED",
-        "action": "BUY",
-        "shares": 41.36437537418841,
-        "price": 295.85,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "ABG",
-        "action": "BUY",
-        "shares": 54.8737901211045,
-        "price": 220.11,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
-      }
-    ]
   }
 }
