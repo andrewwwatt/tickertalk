@@ -1,0 +1,62 @@
+From: Ticker Talk <andrewwatt@portrush.co.za>
+To: andrewwatt@portrush.co.za
+Cc: gregsalterconnect@gmail.com
+Subject: 📋 Ticker Talk — 23 Oct: Steel on spec, Clicks in the R50bn club, Pick n Pay makes peace
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family: Arial, Helvetica, sans-serif; color: #222222; background: #f5f3ef; padding: 20px;">
+<div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 8px; padding: 24px;">
+<h2 style="color: #1a1a2e; margin-top: 0;">Steel on spec, Clicks in the R50bn club, and Pick n Pay makes peace</h2>
+<p style="color: #666666;"><strong>8 significant SENS announcements reviewed — Thursday 22 October 2026</strong></p>
+
+<table style="border-collapse: collapse; width: 100%; font-size: 13px;">
+<tr style="background: #1a1a2e; color: #ffffff; text-align: left;">
+<th style="padding: 8px;">Ticker</th><th style="padding: 8px;">Company</th><th style="padding: 8px;">Announcement</th><th style="padding: 8px;">Rating</th><th style="padding: 8px;">Price</th><th style="padding: 8px;">Move</th>
+</tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">PIK</td><td style="padding: 8px;">Pick n Pay</td><td style="padding: 8px;">Trading statement + labour deal</td><td style="padding: 8px;">🟡 NEUTRAL</td><td style="padding: 8px;">R20.19</td><td style="padding: 8px;">+1.1%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">CLS</td><td style="padding: 8px;">Clicks Group</td><td style="padding: 8px;">FY results: first R50bn+ turnover</td><td style="padding: 8px;">🟢 BULLISH</td><td style="padding: 8px;">R232.79</td><td style="padding: 8px;">-3.6%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">CNP</td><td style="padding: 8px;">Canal+ SA</td><td style="padding: 8px;">9M update + UEFA rights wins</td><td style="padding: 8px;">🟢 BULLISH</td><td style="padding: 8px;">R53.99</td><td style="padding: 8px;">+8.0%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">AFT</td><td style="padding: 8px;">Afrimat</td><td style="padding: 8px;">HY results: headline loss, dividend cut</td><td style="padding: 8px;">🔴 BEARISH</td><td style="padding: 8px;">R32.00</td><td style="padding: 8px;">-5.9%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">SEA</td><td style="padding: 8px;">Spear REIT</td><td style="padding: 8px;">HY results: distribution +8%</td><td style="padding: 8px;">🟢 BULLISH</td><td style="padding: 8px;">R13.10</td><td style="padding: 8px;">-0.3%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">ZED</td><td style="padding: 8px;">Zeder</td><td style="padding: 8px;">HY: NAV -16%, waiting on Zaad cash</td><td style="padding: 8px;">🟡 NEUTRAL</td><td style="padding: 8px;">R1.06</td><td style="padding: 8px;">0.0%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">4SI</td><td style="padding: 8px;">4Sight Holdings</td><td style="padding: 8px;">HY: HEPS +10.9%, revenue +29%</td><td style="padding: 8px;">🟢 BULLISH</td><td style="padding: 8px;">R0.69</td><td style="padding: 8px;">-1.4%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">ACL</td><td style="padding: 8px;">ArcelorMittal SA</td><td style="padding: 8px;">Further cautionary on IDC deal</td><td style="padding: 8px;">🟡 NEUTRAL</td><td style="padding: 8px;">R1.27</td><td style="padding: 8px;">+6.7%</td></tr>
+</table>
+
+<p style="margin-top: 18px;">📋 Full reviews: <a href="https://tickertalk.co.za">tickertalk.co.za</a></p>
+
+<h3 style="color: #1a1a2e; margin-top: 24px;">The quick version</h3>
+
+
+<p>🟡 <strong>PIK</strong> — The loss is shrinking (EPS loss -40.52c to -33.77c vs -67.53c) and Pick n Pay made peace with SACCAWU, formally withdrawing the Section 189A retrenchment process. Still loss-making, but the olive branch matters — real proof lands Monday.</p>
+
+<p>🟢 <strong>CLS</strong> — First time over R50bn turnover, HEPS +4.4%, dividend up 4.4% to 925c, ROE 48.7%. UPD was the laggard and inventory is up 11%, but this is a compounding machine doing compounder things in a squeezed market. Share dipped 3.6% after a 17% monthly run — profit-taking, not panic.</p>
+
+<p>🟢 <strong>CNP</strong> — Revenue +37.5% on the MultiChoice consolidation, 2026 guidance intact, and a stadium's worth of new sports rights (UEFA clubs across 40+ countries from 2027, AFCON 2027). Like-for-like is flat — this is a scale story, and the market loved it, +8%.</p>
+
+<p>🔴 <strong>AFT</strong> — "Toughest period since listing": headline earnings swung to a -58c loss, EPS down 97%, dividend cut to nothing. Iron ore profits collapsed from R445m to R8.6m. Balance sheet is sound; the earnings aren't. The 5.9% sell-off was honest.</p>
+
+<p>🟢 <strong>SEA</strong> — Distribution up 8% to 44.92c, vacancy of just 1.1%, LTV down to 21.9%. The all-Western-Cape specialist keeps quietly compounding while the rest of property whines about empty buildings.</p>
+
+<p>🟡 <strong>ZED</strong> — NAV fell 16% to R1.41, but the story is the cash: ~R1.4bn from the Zaad disposal expected by 30 November, most of it destined for shareholders, plus a sell-side process running on May Seed. Trading at a 25% discount to NAV while you wait.</p>
+
+<p>🟢 <strong>4SI</strong> — Revenue +29% to R748m, HEPS +11% to 7.49c, trading under 7x earnings and below book. Margin dilution is the caveat and micro-cap risk is real — but the numbers quietly keep improving.</p>
+
+<p>🟡 <strong>ACL</strong> — No binding offer, ministerial approval outstanding, "no certainty" — and the share still jumped 6.7% on IDC rescue hopes. Hope is being priced, not earnings. Own the caution, not the rumour.</p>
+
+
+<h3 style="color: #1a1a2e; margin-top: 24px;">🤖 Trading agents</h3>
+
+<p style="font-size: 13px;">
+Daily Trader: R80,005 (+6.7%) &nbsp;·&nbsp; Weekly Trader: R73,145 (-2.5%) &nbsp;·&nbsp; Monthly Trader: R73,680 (-1.8%)<br/>
+FMS Herd: R75,379 &nbsp;·&nbsp; FMS Contrarian: R74,211<br/>
+<i>Daily Trader rotated out of Lesaka into Sasol on Thursday — the FY26 turnaround at ~5x forward earnings beats fintech optionality right now.</i>
+</p>
+
+
+<p style="color: #888888; font-size: 12px; border-top: 1px solid #eee; padding-top: 12px; margin-top: 24px;">
+Ticker Talk · Daily at 7am · Not financial advice
+</p>
+
+</div></body></html>
