@@ -1,0 +1,35 @@
+From: Ticker Talk <andrewwatt@portrush.co.za>
+To: andrewwatt@portrush.co.za
+Cc: gregsalterconnect@gmail.com
+Subject: 📋 Ticker Talk — 26 Oct: Finbond hits a credit wall, Valterra's scary quarter is mostly maintenance
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<html><body style="font-family: Arial, Helvetica, sans-serif; color: #222222; background: #f5f3ef; padding: 20px;">
+<div style="max-width: 640px; margin: 0 auto; background: #ffffff; border-radius: 8px; padding: 24px;">
+<h2 style="color: #1a1a2e; margin-top: 0;">Finbond's growth hits a credit wall, and Valterra's scary quarter is mostly maintenance</h2>
+<p style="color: #666666;"><strong>2 significant SENS announcements reviewed — Friday 23 October 2026</strong></p>
+
+<table style="border-collapse: collapse; width: 100%; font-size: 13px;">
+<tr style="background: #1a1a2e; color: #ffffff; text-align: left;">
+<th style="padding: 8px;">Ticker</th><th style="padding: 8px;">Company</th><th style="padding: 8px;">Announcement</th><th style="padding: 8px;">Rating</th><th style="padding: 8px;">Price</th><th style="padding: 8px;">Move</th>
+</tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">FGL</td><td style="padding: 8px;">Finbond Group</td><td style="padding: 8px;">Unaudited consolidated interim results for the six months en</td><td style="padding: 8px;">🔴 BEARISH</td><td style="padding: 8px;">R0.57</td><td style="padding: 8px;">-1.7%</td></tr>
+<tr style="border-bottom: 1px solid #eee;"><td style="padding: 8px; font-weight: bold;">VAL</td><td style="padding: 8px;">Valterra Platinum</td><td style="padding: 8px;">Production Report For The Third Quarter Ending 30 September </td><td style="padding: 8px;">🟡 NEUTRAL</td><td style="padding: 8px;">R1,133.23</td><td style="padding: 8px;">-2.7%</td></tr>
+</table>
+
+<p style="margin-top: 18px;">📋 Full reviews: <a href="https://tickertalk.co.za">tickertalk.co.za</a></p>
+
+<h3 style="color: #1a1a2e; margin-top: 24px;">The quick version</h3>
+<p>🔴 <strong>FGL</strong> — Finbond's loan book grew 14.5% but the profits collapsed: basic EPS fell 85% to 1.7c and headline earnings swung to a 5.9c per-share loss as impairments bit in a deteriorating consumer credit environment. Cash flow improved and total comprehensive income turned positive at R30.3m, but a microlender growing into a worse credit cycle is a story to watch, not to buy. <em>R0.57 (-1.7%)</em></p>
+<p>🟡 <strong>VAL</strong> — Valterra's Q3 looks like a horror show — refined PGM production down 41%, sales down 27% — but it's mostly maintenance re-phasing and safety stoppages, not a broken mine. Year-to-date production is broadly in line with last year, guidance is unchanged at 3.0-3.4Moz, and chrome is quietly booming (+41% YTD). <em>R1,133.23 (-2.7%)</em></p>
+
+<h3 style="color: #1a1a2e; margin-top: 24px;">🤖 Trading agents</h3>
+<p><strong>Daily Trader</strong>: R79,085 (+5.4%) · Cash R1,446</p>
+<p><strong>Weekly Trader</strong>: R74,026 (-1.3%) · Cash R1,093</p>
+<p><strong>Monthly Trader</strong>: R73,938 (-1.4%) · Cash R4,397</p>
+<p style="color: #666666; font-size: 12px;">Simulated agents trading on Ticker Talk ratings. Not real money.</p>
+
+<p style="color: #888888; font-size: 11px; margin-top: 24px; border-top: 1px solid #eee; padding-top: 12px;">Ticker Talk · Daily at 7am · Not financial advice</p>
+</div>
+</body></html>
