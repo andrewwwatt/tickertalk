@@ -1,4 +1,15 @@
 {
+  "period": {
+    "start": "2026-07-31",
+    "end": "2026-10-27",
+    "days": 63,
+    "cash_dates": [
+      "2026-08-03",
+      "2026-09-01",
+      "2026-10-01"
+    ],
+    "monthly_cash": 25000.0
+  },
   "agents": {
     "Daily Trader": {
       "name": "Daily Trader",
@@ -266,6 +277,10 @@
         ],
         [
           "2026-10-26",
+          79084.56
+        ],
+        [
+          "2026-10-27",
           79084.56
         ]
       ],
@@ -996,7 +1011,7 @@
           "shares": 539.4917764502577,
           "price": 2.3,
           "gain": 156.45261517057475,
-          "reason": "Take profit +14% on Hulamin after the H1 turnaround run \u2014 Ghost's 'most promising update in a very long time' was getting priced in; banked it."
+          "reason": "Take profit +14%"
         },
         {
           "date": "2026-10-22",
@@ -1005,19 +1020,10 @@
           "shares": 7.4541249202205355,
           "price": 289.45,
           "gain": 0,
-          "reason": "Nedbank stays BULLISH \u2014 Ghost calls it the 'quiet achiever' of the Big Four; added on the 22 Oct review day."
+          "reason": "TT BULLISH, CAUTIOUS market"
         }
       ],
       "decisions": [
-        {
-          "date": "2026-10-16",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udd01 ROTATE APF (BULLISH) \u2192 DRD: better BULLISH option",
-            "\ud83d\udfe2 BUY DRD @ R41.98 \u2014 rotated in"
-          ]
-        },
         {
           "date": "2026-10-19",
           "risk": "CAUTIOUS",
@@ -1069,6 +1075,17 @@
         },
         {
           "date": "2026-10-26",
+          "risk": "CAUTIOUS",
+          "news": [
+            "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
+            "Pick n Pay CEO \u2014 turnaround plan showing early results",
+            "Global markets cautious ahead of Jackson Hole"
+          ],
+          "log": [],
+          "no_trade": true
+        },
+        {
+          "date": "2026-10-27",
           "risk": "CAUTIOUS",
           "news": [
             "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -1344,6 +1361,10 @@
         ],
         [
           "2026-10-26",
+          74025.76
+        ],
+        [
+          "2026-10-27",
           74025.76
         ]
       ],
@@ -1706,7 +1727,7 @@
           "shares": 65.73686322049467,
           "price": 152.0,
           "gain": 1100.4350903110808,
-          "reason": "Friday rebalance \u2014 locked in +12% on Thungela's coal cash machine (EPS +467%, net cash R6.1bn) after the August BULLISH run."
+          "reason": "Take profit +12%"
         },
         {
           "date": "2026-10-23",
@@ -1715,7 +1736,7 @@
           "shares": 4257.599597707491,
           "price": 2.3,
           "gain": 0,
-          "reason": "HLM BULLISH on the confirmed H1 turnaround (EBITDA +103%, HEPS 79c) \u2014 Friday weekly rebalance rotated in from TGA profit-taking."
+          "reason": "TT BULLISH, AGGRESSIVE market"
         }
       ],
       "decisions": [
@@ -2056,6 +2077,10 @@
         [
           "2026-10-26",
           73938.44
+        ],
+        [
+          "2026-10-27",
+          73938.44
         ]
       ],
       "holdings": {
@@ -2232,303 +2257,5 @@
         }
       ]
     }
-  },
-  "Going with the Herd": {
-    "name": "Going with the Herd",
-    "cash": 4396.88,
-    "total_invested": 75000.0,
-    "realized": 0.0,
-    "unrealized": 1900.19,
-    "costs": 351.26,
-    "final_portfolio": 76548.93,
-    "holdings": {
-      "AGL": {
-        "shares": 7.129401314513312,
-        "avg_cost": 872.29,
-        "current_price": 808.15,
-        "buy_date": "2026-08-19",
-        "value": 5761.63,
-        "unrealized": -457.28
-      },
-      "EXX": {
-        "shares": 32.6886506793395,
-        "avg_cost": 190.01,
-        "current_price": 186.91,
-        "buy_date": "2026-08-19",
-        "value": 6109.84,
-        "unrealized": -101.33
-      },
-      "ABG": {
-        "shares": 27.49632187899088,
-        "avg_cost": 225.61,
-        "current_price": 219.8,
-        "buy_date": "2026-08-19",
-        "value": 6043.69,
-        "unrealized": -159.75
-      },
-      "NED": {
-        "shares": 8.201605329853093,
-        "avg_cost": 306.13,
-        "current_price": 288.48,
-        "buy_date": "2026-08-19",
-        "value": 2366.0,
-        "unrealized": -144.76
-      },
-      "SOL": {
-        "shares": 53.322585904869804,
-        "avg_cost": 233.26,
-        "current_price": 300.56,
-        "buy_date": "2026-09-16",
-        "value": 16026.64,
-        "unrealized": 3588.61
-      },
-      "MTA": {
-        "shares": 2385.1192790843415,
-        "avg_cost": 4.98,
-        "current_price": 4.6,
-        "buy_date": "2026-09-16",
-        "value": 10971.55,
-        "unrealized": -906.35
-      },
-      "NPN": {
-        "shares": 27.528677187565826,
-        "avg_cost": 682.26,
-        "current_price": 684.3,
-        "buy_date": "2026-10-21",
-        "value": 18837.87,
-        "unrealized": 56.16
-      },
-      "PRX": {
-        "shares": 9.464490344374816,
-        "avg_cost": 635.0,
-        "current_price": 637.63,
-        "buy_date": "2026-10-21",
-        "value": 6034.84,
-        "unrealized": 24.89
-      }
-    },
-    "all_trades": [
-      {
-        "date": "2026-08-19",
-        "ticker": "AGL",
-        "action": "BUY",
-        "shares": 7.129401314513312,
-        "price": 872.29,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "EXX",
-        "action": "BUY",
-        "shares": 32.6886506793395,
-        "price": 190.01,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "ABG",
-        "action": "BUY",
-        "shares": 27.49632187899088,
-        "price": 225.61,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "NED",
-        "action": "BUY",
-        "shares": 8.201605329853093,
-        "price": 306.13,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "SOL",
-        "action": "BUY",
-        "shares": 53.322585904869804,
-        "price": 233.26,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "MTA",
-        "action": "BUY",
-        "shares": 2385.1192790843415,
-        "price": 4.98,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
-      },
-      {
-        "date": "2026-10-21",
-        "ticker": "NPN",
-        "action": "BUY",
-        "shares": 27.528677187565826,
-        "price": 682.26,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials"
-      },
-      {
-        "date": "2026-10-21",
-        "ticker": "PRX",
-        "action": "BUY",
-        "shares": 9.464490344374816,
-        "price": 635.0,
-        "gain": 0,
-        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials"
-      }
-    ]
-  },
-  "The Contrarian": {
-    "name": "The Contrarian",
-    "cash": 4396.88,
-    "total_invested": 75000.0,
-    "realized": 0.0,
-    "unrealized": -148.37,
-    "costs": 351.26,
-    "final_portfolio": 74500.38,
-    "holdings": {
-      "RDF": {
-        "shares": 998.219176988253,
-        "avg_cost": 6.23,
-        "current_price": 6.25,
-        "buy_date": "2026-08-19",
-        "value": 6238.87,
-        "unrealized": 19.96
-      },
-      "HYP": {
-        "shares": 105.77606463864609,
-        "avg_cost": 58.72,
-        "current_price": 60.83,
-        "buy_date": "2026-08-19",
-        "value": 6434.36,
-        "unrealized": 223.19
-      },
-      "GRT": {
-        "shares": 361.50612931929675,
-        "avg_cost": 17.16,
-        "current_price": 15.67,
-        "buy_date": "2026-08-19",
-        "value": 5664.8,
-        "unrealized": -538.64
-      },
-      "BVT": {
-        "shares": 10.299275738895432,
-        "avg_cost": 243.78,
-        "current_price": 239.64,
-        "buy_date": "2026-08-19",
-        "value": 2468.12,
-        "unrealized": -42.64
-      },
-      "NED": {
-        "shares": 41.36437537418841,
-        "avg_cost": 295.85,
-        "current_price": 288.48,
-        "buy_date": "2026-09-16",
-        "value": 11932.8,
-        "unrealized": -304.86
-      },
-      "ABG": {
-        "shares": 54.8737901211045,
-        "avg_cost": 220.11,
-        "current_price": 219.8,
-        "buy_date": "2026-09-16",
-        "value": 12061.26,
-        "unrealized": -17.01
-      },
-      "SPG": {
-        "shares": 1108.5891626080718,
-        "avg_cost": 16.68,
-        "current_price": 17.14,
-        "buy_date": "2026-10-21",
-        "value": 19001.22,
-        "unrealized": 509.95
-      },
-      "MTH": {
-        "shares": 56.16330392551284,
-        "avg_cost": 112.18,
-        "current_price": 112.21,
-        "buy_date": "2026-10-21",
-        "value": 6302.08,
-        "unrealized": 1.68
-      }
-    },
-    "all_trades": [
-      {
-        "date": "2026-08-19",
-        "ticker": "RDF",
-        "action": "BUY",
-        "shares": 998.219176988253,
-        "price": 6.23,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "HYP",
-        "action": "BUY",
-        "shares": 105.77606463864609,
-        "price": 58.72,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "GRT",
-        "action": "BUY",
-        "shares": 361.50612931929675,
-        "price": 17.16,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-08-19",
-        "ticker": "BVT",
-        "action": "BUY",
-        "shares": 10.299275738895432,
-        "price": 243.78,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "NED",
-        "action": "BUY",
-        "shares": 41.36437537418841,
-        "price": 295.85,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
-      },
-      {
-        "date": "2026-09-16",
-        "ticker": "ABG",
-        "action": "BUY",
-        "shares": 54.8737901211045,
-        "price": 220.11,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
-      },
-      {
-        "date": "2026-10-21",
-        "ticker": "SPG",
-        "action": "BUY",
-        "shares": 1108.5891626080718,
-        "price": 16.68,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight cyclicals, reits, gold"
-      },
-      {
-        "date": "2026-10-21",
-        "ticker": "MTH",
-        "action": "BUY",
-        "shares": 56.16330392551284,
-        "price": 112.18,
-        "gain": 0,
-        "reason": "FMS: Going against consensus: buying underweight cyclicals, reits, gold"
-      }
-    ]
   }
 }

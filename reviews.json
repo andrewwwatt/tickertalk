@@ -6113,5 +6113,37 @@
     "ghost_rating": "NEUTRAL",
     "ghost_date": "2026-07-01",
     "dividends_paid": 0
+  },
+  {
+    "date": "2026-10-26",
+    "ticker": "PIK",
+    "company": "Pick n Pay Stores",
+    "title": "Condensed consolidated interim financial results for the 26 weeks ended 30 August 2026 (H1 FY27)",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/pick-n-pay-stores-limited-condensed-consolidated-interim-financial-results-for-the-26-weeks-ended-30-august-2026-h1-fy27/",
+    "rating": "BULLISH",
+    "summary": "Pick n Pay's H1 FY27 is a turnaround still in progress but accelerating: turnover up 2.4% to R60.5bn, trading profit up 58.1% to R490m, headline loss narrowed 31.9% to R299m, and — critically — the Section 189 store labour model restructuring was successfully concluded. Boxer opened its 600th store and grew profit 10.6%. Online grew 35.4%. Still bleeding R1.1bn at trading profit after lease interest level, but the FY29 breakeven target is on the table and the direction of travel is unmistakable.",
+    "review": "Forget the headline loss of R299m. That number is swamped by Boxer's minority interest drag (R232m) and depreciation. Look at the operating level: trading profit of R490m, up 58.1% from R310m a year ago. Gross margin expanded 70 basis points to 18.8%. Pick n Pay's own segment trading loss narrowed 16.9% — R105m less bleeding. And the store labour model restructuring that dominated headlines in May? Successfully concluded, Section 189 withdrawn, labour partners signed on. That alone is worth a rating notch. A retailer that can restructure its store labour model without a strike or a regulatory inquiry is a retailer with management credibility.\n\nBoxer is the unsung engine here — 600 stores, 10.6% profit growth, 6.3% turnover growth, contributing R1.0bn in trading profit that covers the parent's R0.5bn loss and leaves headroom. The group has R10bn in cash — R7.7bn of it inside Pick n Pay. That's not a distressed balance sheet; that's a turnaround funded from cash flow. Online turnover up 35.4%, the Penny AI assistant launched, like-for-like sales growth ahead of internal inflation. The Pick n Pay segment still loses R1.1bn at the trading-profit-after-lease-interest level — FY29 breakeven is a realistic target, not marketing spin. At R21.12, up 4.6% in the week ahead of the announcement, the market is starting to price the recovery. BULLISH. This is the most credible set of results from Pick n Pay in three years.",
+    "price_at_review": 21.12,
+    "price_current": 21.12,
+    "performance_pct": 4.61,
+    "dividends_paid": 0,
+    "ghost_rating": null,
+    "ghost_date": null
+  },
+  {
+    "date": "2026-10-26",
+    "ticker": "CLS",
+    "company": "Clicks Group",
+    "title": "Disclosures of Acquisitions of Securities in Clicks Group Limited — FMR LLC 5.20% and Old Mutual 5.04%",
+    "sens_url": "https://www.moneyweb.co.za/mny_sens/clicks-group-limited-disclosures-of-acquisitions-of-securities-in-clicks-group-limited/",
+    "rating": "BULLISH",
+    "summary": "Two institutional investors filed Section 122 disclosures for crossing the 5% threshold in Clicks on the same day: FMR LLC (Fidelity Investments) at 5.20% and Old Mutual Limited at 5.04%. Clicks just reported its first R50bn turnover year with a 667c dividend, but sold off 9.8% in the past week — meaning institutional buyers and retail sellers are crossed. Fidelity and Old Mutual don't accumulate 5% positions by accident.",
+    "review": "Two section 122 filings on the same day is not a coincidence. FMR LLC — that's Fidelity Management & Research, one of the world's largest asset managers — disclosed a 5.20% beneficial interest. Old Mutual Limited filed at 5.04%. That's Fidelity and Old Mutual both taking meaningful stakes in Clicks Group on the same trading day. The Section 122 threshold is 5% — so both crossed that line simultaneously, suggesting accumulation over multiple trading sessions rather than a single block trade. Clicks' stock price tells the other side of the story: down 9.8% in a week, from R240 to R216.57. The market has been selling while two of the world's most sophisticated institutional investors have been buying.\n\nThe timing is everything. Clicks reported FY2026 annual results on 22 October — turnover exceeding R50bn for the first time, diluted HEPS up 4.4% to 1,422c, a 667c dividend, 13.1 million active ClubCard members, and 41 new stores opened. The ARC Markets acquisition (35.3% for R507m, announced in September) adds a K-beauty and specialty retail angle. The market sold the stock on the results because discretionary retail is tight and the growth rate was moderate. But Fidelity and Old Mutual read the same results and decided to build positions. That's a signal. BULLISH. When the market sells and institutions buy, follow the institutions.",
+    "price_at_review": 216.57,
+    "price_current": 216.57,
+    "performance_pct": -9.76,
+    "dividends_paid": 906,
+    "ghost_rating": null,
+    "ghost_date": null
   }
 ]
