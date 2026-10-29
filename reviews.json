@@ -1481,7 +1481,9 @@
     "price_at_review": 7.51,
     "price_current": 8.9,
     "performance_pct": 18.51,
-    "dividends_paid": 0
+    "dividends_paid": 0,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-28"
   },
   {
     "date": "2026-10-01",
@@ -2201,7 +2203,9 @@
     "price_at_review": 7.71,
     "price_current": 7.46,
     "performance_pct": -3.24,
-    "dividends_paid": 0
+    "dividends_paid": 0,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-28"
   },
   {
     "date": "2026-09-28",
@@ -2272,7 +2276,9 @@
     "price_current": 66.66,
     "performance_pct": 3.53,
     "currency": "ZAR",
-    "dividends_paid": 0
+    "dividends_paid": 0,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-28"
   },
   {
     "date": "2026-09-23",
@@ -6147,7 +6153,7 @@
     "ghost_date": null
   },
   {
-    "date": "2026-10-28",
+    "date": "2026-10-27",
     "ticker": "QFH",
     "company": "Quantum Foods Holdings",
     "title": "Trading Statement and Operational Update",
@@ -6158,10 +6164,12 @@
     "price_at_review": 8.89,
     "price_current": 8.89,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": null,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-28"
   },
   {
-    "date": "2026-10-28",
+    "date": "2026-10-27",
     "ticker": "SNV",
     "company": "Santova",
     "title": "Unaudited Interim Results for the Six Months Ended 31 August 2026 and Cautionary Announcement",
@@ -6175,7 +6183,7 @@
     "performance_pct": null
   },
   {
-    "date": "2026-10-28",
+    "date": "2026-10-27",
     "ticker": "CML",
     "company": "Coronation Fund Managers",
     "title": "Voluntary trading update and assets under management update",
@@ -6186,10 +6194,12 @@
     "price_at_review": 41.13,
     "price_current": 41.13,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": null,
+    "ghost_rating": "NEUTRAL",
+    "ghost_date": "2026-10-28"
   },
   {
-    "date": "2026-10-28",
+    "date": "2026-10-27",
     "ticker": "OCE",
     "company": "Oceana Group",
     "title": "Trading Statement for the year ended 30 September 2026",
@@ -6200,10 +6210,12 @@
     "price_at_review": 66.0,
     "price_current": 66.0,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": null,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-28"
   },
   {
-    "date": "2026-10-28",
+    "date": "2026-10-27",
     "ticker": "PPC",
     "company": "PPC Limited",
     "title": "Successful Disposal of Vacant Land by PPC Zimbabwe (Private) Limited",
@@ -6214,6 +6226,59 @@
     "price_at_review": 7.71,
     "price_current": 7.71,
     "dividends_paid": 0,
-    "performance_pct": null
+    "performance_pct": null,
+    "ghost_rating": "BULLISH",
+    "ghost_date": "2026-10-28"
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "VOD",
+    "company": "Vodacom Group",
+    "title": "Trading statement for the interim results period ended 30 September 2026",
+    "sens_url": "https://www.sharenet.co.za/v3/sens_display.php?tdate=20261028170000&seq=59&scode=",
+    "rating": "BULLISH",
+    "summary": "Vodacom guided H1 HEPS up 22-27% to 570-593c, while EPS looks absurdly up 272-279% thanks to a R23.2bn non-recurring Safaricom fair value gain that doesn't touch headline earnings.",
+    "review": "The headline number looks obscene — EPS up as much as 279% — but don't let it fool you. That's a R23.2bn tax-neutral, non-recurring fair value gain from remeasuring the previously held Safaricom associate stake, stripped clean out of headline earnings. The real story is HEPS up 22-27% to between 570c and 593c, bang in the middle of Vodacom's medium-term growth ambitions.\n\nVodacom's boring-brilliant act continues: a huge subscriber base, steady service revenue and now proof the Safaricom stake is worth more than the market priced it — even if that gain never flows to the dividend. Full interims land 10 November. At 15x trailing earnings with a 25% ROE, this remains one of the JSE's most dependable compounders. Nothing to dislike here.",
+    "pe_ratio": 15.4,
+    "price_to_book": 3.35,
+    "roe": 25.36,
+    "price_at_review": 160.62,
+    "price_current": 160.62,
+    "performance_pct": null,
+    "dividends_paid": 0
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "NPH",
+    "company": "Northam Platinum Holdings",
+    "title": "GCR upgrades Northam's long term issuer rating to AA(ZA) from A+(ZA)",
+    "sens_url": "https://www.sharenet.co.za/v3/sens_display.php?tdate=20261028070500&seq=2&scode=",
+    "rating": "BULLISH",
+    "summary": "GCR lifted Northam to AA(ZA) from A+(ZA) with a stable outlook, citing a stronger operational profile, production growth through the cycle and a net ungeared balance sheet after record FY26 results.",
+    "review": "Credit agencies are the ultimate referees, and GCR just blew the whistle in Northam's favour: long-term issuer rating upgraded to AA(ZA) from A+(ZA), short-term to A1+(ZA), outlook stable. The rationale reads like a management brochure — stronger operational profile, production ramping through the cycle while local peers stalled, and a balance sheet that's now net ungeared.\n\nPGM stocks have been hammered this year and Northam hasn't been immune (-18.8% over 52 weeks), but the upgrade is a reminder of the quality underneath: record FY26 results, R2.6bn net cash on the books and a consensus Buy with an analyst price target a third above the current price. At under 7x trailing earnings, the derating has overshot the fundamentals.",
+    "pe_ratio": 6.89,
+    "price_to_book": 2.21,
+    "roe": 32.1,
+    "price_at_review": 238.3,
+    "price_current": 238.3,
+    "performance_pct": null,
+    "dividends_paid": 0
+  },
+  {
+    "date": "2026-10-28",
+    "ticker": "SDL",
+    "company": "Southern Palladium",
+    "title": "Quarterly Report for quarter ended 30 September 2026",
+    "sens_url": "https://www.sharenet.co.za/v3/sens_display.php?tdate=20261028083500&seq=11&scode=",
+    "rating": "BULLISH",
+    "summary": "Southern Palladium's updated Bengwenyama PFS lifted post-tax NPV 129% to US$1.96bn with a 39.1% IRR, and the 30-year mining right is now in hand — a junior project actually de-risking.",
+    "review": "Southern Palladium is small, speculative and dual-listed down under, but this quarterly just got a whole lot more interesting. The updated PFS lifted post-tax NPV 129% to US$1.96bn, IRR to 39.1% and payback to 2.8 years, while chromite recovery estimates tripled versus the old PFS — chrome as a co-product sweetens the PGM story. Add the 30-year mining right granted in August and you have a junior that's genuinely de-risking.\n\nThis is still a development-stage stock with no earnings yet, so the PE stays blank. But the board has already approved early box-cut and decline development, and the balance sheet is fully funded to complete the DFS. If Bengwenyama is the tier-1 PGM project the numbers suggest, R18.39 looks cheap. If not, you own a risky explorer. Speculative buy — sized as such.",
+    "pe_ratio": null,
+    "price_to_book": 4.84,
+    "roe": null,
+    "price_at_review": 18.39,
+    "price_current": 18.39,
+    "performance_pct": null,
+    "dividends_paid": 0
   }
 ]
