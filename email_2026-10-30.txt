@@ -1,0 +1,37 @@
+From: Ticker Talk <andrewwatt@portrush.co.za>
+To: andrewwatt@portrush.co.za
+Cc: gregsalterconnect@gmail.com
+Subject: 📋 Ticker Talk — 30 Oct: Chickens come home to roost (and they're profitable)
+Content-Type: text/plain; charset=utf-8
+
+Chickens come home to roost (and they're profitable)
+
+7 significant SENS announcements reviewed yesterday — from Astral's 100% earnings pop to Mantengu selling a business for R1,001
+
+TICKER | Company | Announcement | Rating | Price | Move
+ARL | Astral Foods | Trading Statement (+90-100% EPS) | 🟢 BULLISH | R198.40 | -4.1%
+DCP | Dis-Chem | Interim Results (Rev +8%, EPS -13%) | 🟡 NEUTRAL | R27.95 | -0.8%
+ADR | Adcorp | Interim Results (EPS +14%, Div +15%) | 🟢 BULLISH | R6.20 | +0.8%
+ANH | AB InBev | Q3 Results (Rev +4.9%) | 🟡 NEUTRAL | R1,302.09 | -7.1%
+DTC | Datatec | Interim Results (Rev +13.9%) | 🟢 BULLISH | R59.77 | +1.4%
+NPH | Northam | Process Update (Strategic interest!) | 🟢 BULLISH | R245.75 | +5.8%
+MTU | Mantengu | Disposal of Sublime for R1,001 | 🔴 BEARISH | R0.18 | +5.9%
+
+📋 Full reviews: https://tickertalk.co.za
+
+🟢 ARL — Astral Foods dropped a trading statement that looks like a misprint: EPS expected 90-100% higher, driven by softer maize and soya prices slashing feed costs. Poultry farming efficiencies and a shift into higher-margin segments add operational tailwinds. Results drop 23 November — worth the wait.
+
+🟡 DCP — Dis-Chem grew revenue 8% to R23bn on the Better Rewards loyalty programme, but EPS fell 13.3% as the cost of rewarding customers compressed margins. The dividend was trimmed 13% to 25.62c. A good business going through a strategic margin reset.
+
+🟢 ADR — Adcorp's revenue slipped 2.1% but operating profit jumped 24.9% and EPS rose 14.3%. The interim dividend is up 14.9% to 28.46c. Quiet turnaround on a PE of 4.7x — nobody read past the top line.
+
+🟡 ANH — AB InBev grew Q3 revenue 4.9% and underlying profit 21.6% to US$2.4bn. Corona grew 20% outside its home market. But the JSE-listed share dropped 7% on a 34bp margin contraction — market is punishing staples.
+
+🟢 DTC — Datatec grew gross invoiced income 18% and adjusted EBITDA 16.6%. The ICT group trades on 10x trailing PE with a 17.9% ROE and a forward multiple of 7.1x. Cheap, growing, ignored.
+
+🟢 NPH — Northam's strategic process has attracted "significant interest" from SA and multinational corporations, with proposals arriving ahead of the 1 Dec deadline. Ghost Mail also flagged a credit rating upgrade. The share jumped 5.8%.
+
+🔴 MTU — Mantengu is selling its silicon carbide subsidiary for exactly R1,001 after Eskom refused a new tariff. Sublime has generated no income since June 2025. R0.18 share, 50% dilution in a year, 85% negative ROE. House-cleaning, not a turnaround.
+
+---
+Ticker Talk · Daily at 7am · Not financial advice
