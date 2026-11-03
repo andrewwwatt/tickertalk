@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-11-02",
-    "days": 67,
+    "end": "2026-11-03",
+    "days": 68,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01",
@@ -15,15 +15,15 @@
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 75000.0,
-      "final_cash": 586.42,
-      "final_holdings_value": 78853.79,
-      "final_portfolio": 79440.21,
+      "final_cash": 493.47,
+      "final_holdings_value": 78902.8,
+      "final_portfolio": 79396.26,
       "return_pct": 5.9,
-      "realized": 6597.19,
-      "unrealized": -454.69,
-      "total_costs": 2034.23,
+      "realized": 6191.01,
+      "unrealized": -48.51,
+      "total_costs": 2078.18,
       "total_dividends": 331.94,
-      "num_trades": 78,
+      "num_trades": 80,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -298,6 +298,10 @@
         [
           "2026-11-02",
           79440.21
+        ],
+        [
+          "2026-11-03",
+          79396.26
         ]
       ],
       "holdings": {
@@ -364,13 +368,6 @@
           "current_price": 341.9,
           "sector": "retail"
         },
-        "DRD": {
-          "shares": 113.78,
-          "cost": 41.98,
-          "buy_date": "2026-10-16",
-          "current_price": 38.41,
-          "sector": "mining"
-        },
         "RBO": {
           "shares": 2081.27,
           "cost": 5.3,
@@ -426,18 +423,24 @@
           "buy_date": "2026-11-02",
           "current_price": 24.1,
           "sector": "retail"
+        },
+        "RDF": {
+          "shares": 700.34,
+          "cost": 6.31,
+          "buy_date": "2026-11-03",
+          "current_price": 6.31,
+          "sector": "property"
         }
       },
       "sector_composition": {
-        "property": 15.5,
+        "property": 21.1,
         "tech": 17.2,
         "financial": 7.8,
         "retail": 32.4,
         "energy": 10.9,
         "other": 3.5,
-        "mining": 5.5,
         "industrial": 6.6,
-        "cash": 0.7
+        "cash": 0.6
       },
       "all_trades": [
         {
@@ -1141,20 +1144,27 @@
           "price": 24.1,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
+        },
+        {
+          "date": "2026-11-03",
+          "ticker": "DRD",
+          "action": "SELL",
+          "shares": 113.77539577243881,
+          "price": 38.41,
+          "gain": -406.17816290760675,
+          "reason": "Rotate out \u2014 RDF (BULLISH) is a better option"
+        },
+        {
+          "date": "2026-11-03",
+          "ticker": "RDF",
+          "action": "BUY",
+          "shares": 700.3356731367052,
+          "price": 6.31,
+          "gain": 0,
+          "reason": "Rotate in \u2014 better BULLISH option"
         }
       ],
       "decisions": [
-        {
-          "date": "2026-10-23",
-          "risk": "CAUTIOUS",
-          "news": [
-            "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
-            "Pick n Pay CEO \u2014 turnaround plan showing early results",
-            "Global markets cautious ahead of Jackson Hole"
-          ],
-          "log": [],
-          "no_trade": true
-        },
         {
           "date": "2026-10-26",
           "risk": "CAUTIOUS",
@@ -1209,6 +1219,15 @@
             "\ud83d\udfe2 BUY SOL @ R289.45 \u2014 BULLISH, CAUTIOUS",
             "\ud83d\udd01 ROTATE MTA (BULLISH) \u2192 PIK: better BULLISH option",
             "\ud83d\udfe2 BUY PIK @ R24.10 \u2014 rotated in"
+          ]
+        },
+        {
+          "date": "2026-11-03",
+          "risk": "CAUTIOUS",
+          "news": [],
+          "log": [
+            "\ud83d\udd01 ROTATE DRD (BULLISH) \u2192 RDF: better BULLISH option",
+            "\ud83d\udfe2 BUY RDF @ R6.31 \u2014 rotated in"
           ]
         }
       ]
@@ -1497,6 +1516,10 @@
         ],
         [
           "2026-11-02",
+          76628.55
+        ],
+        [
+          "2026-11-03",
           76628.55
         ]
       ],
@@ -2262,6 +2285,10 @@
         ],
         [
           "2026-11-02",
+          76209.79
+        ],
+        [
+          "2026-11-03",
           76209.79
         ]
       ],
