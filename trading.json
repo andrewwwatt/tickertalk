@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-11-09",
-    "days": 72,
+    "end": "2026-11-10",
+    "days": 73,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01",
@@ -318,6 +318,10 @@
         ],
         [
           "2026-11-09",
+          103563.62
+        ],
+        [
+          "2026-11-10",
           103563.62
         ]
       ],
@@ -1234,15 +1238,6 @@
       ],
       "decisions": [
         {
-          "date": "2026-10-30",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udd34 SELL IMP \u2014 Cut loss -13% (R-448)",
-            "\ud83d\udfe2 BUY SBP @ R145.00 \u2014 BULLISH, CAUTIOUS"
-          ]
-        },
-        {
           "date": "2026-11-02",
           "risk": "CAUTIOUS",
           "news": [],
@@ -1292,6 +1287,17 @@
           "log": [
             "\ud83d\udfe2 BUY TGA @ R119.56 \u2014 BULLISH, CAUTIOUS"
           ]
+        },
+        {
+          "date": "2026-11-10",
+          "risk": "CAUTIOUS",
+          "news": [
+            "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
+            "Pick n Pay CEO \u2014 turnaround plan showing early results",
+            "Global markets cautious ahead of Jackson Hole"
+          ],
+          "log": [],
+          "no_trade": true
         }
       ]
     },
@@ -1599,6 +1605,10 @@
         ],
         [
           "2026-11-09",
+          101222.1
+        ],
+        [
+          "2026-11-10",
           101222.1
         ]
       ],
@@ -2421,6 +2431,10 @@
         ],
         [
           "2026-11-09",
+          101782.03
+        ],
+        [
+          "2026-11-10",
           101782.03
         ]
       ],
