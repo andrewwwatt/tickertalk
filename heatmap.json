@@ -1,556 +1,556 @@
 {
- "generated": "2026-11-10T05:01:39Z",
- "count": 202,
+ "generated": "2026-11-11T05:01:41Z",
+ "count": 204,
  "stocks": [
   {
    "ticker": "BHG",
    "company": "BHP Group Limited",
    "sector": "mining",
-   "market_cap": 3448834883584,
+   "market_cap": 3431247904768,
    "returns": {
-    "1d": -0.1,
-    "1w": -1.72,
-    "1m": -7.04,
-    "1y": 36.05
+    "1d": 2.9,
+    "1w": 2.77,
+    "1m": -3.41,
+    "1y": 42.08
    }
   },
   {
    "ticker": "ANH",
    "company": "Anheuser-Busch InBev SA/NV",
    "sector": "other",
-   "market_cap": 2702786953216,
+   "market_cap": 2770052317184,
    "returns": {
-    "1d": -0.81,
-    "1w": 6.21,
-    "1m": 9.72,
-    "1y": 30.42
+    "1d": -0.75,
+    "1w": 3.05,
+    "1m": 7.69,
+    "1y": 27.6
    }
   },
   {
    "ticker": "BTI",
    "company": "British American Tobacco p.l.c.",
    "sector": "retail",
-   "market_cap": 2125067321344,
+   "market_cap": 2151016038400,
    "returns": {
-    "1d": -3.55,
-    "1w": 0.57,
-    "1m": 12.5,
-    "1y": 12.16
+    "1d": -1.88,
+    "1w": -3.14,
+    "1m": 7.85,
+    "1y": 7.53
    }
   },
   {
    "ticker": "CFR",
    "company": "Compagnie Financi\u00e8re Richemont SA",
    "sector": "retail",
-   "market_cap": 2004388413440,
+   "market_cap": 2047419744256,
    "returns": {
-    "1d": -2.78,
-    "1w": 2.13,
-    "1m": -1.71,
-    "1y": -2.65
+    "1d": 0.45,
+    "1w": 1.83,
+    "1m": 1.76,
+    "1y": 0.23
    }
   },
   {
    "ticker": "PRX",
    "company": "Prosus N.V.",
    "sector": "other",
-   "market_cap": 1440439599104,
+   "market_cap": 1459980730368,
    "returns": {
-    "1d": -3.24,
-    "1w": 7.64,
-    "1m": 4.09,
-    "1y": -42.68
+    "1d": 0.5,
+    "1w": 7.86,
+    "1m": 5.12,
+    "1y": -42.6
    }
   },
   {
    "ticker": "GLN",
    "company": "Glencore plc",
    "sector": "mining",
-   "market_cap": 1325957775360,
+   "market_cap": 1315420241920,
    "returns": {
-    "1d": -2.26,
-    "1w": -8.21,
-    "1m": -12.44,
-    "1y": 33.75
+    "1d": 3.73,
+    "1w": -2.35,
+    "1m": -9.78,
+    "1y": 41.6
    }
   },
   {
    "ticker": "AGL",
    "company": "Anglo American plc",
    "sector": "mining",
-   "market_cap": 917043609600,
+   "market_cap": 921286737920,
    "returns": {
-    "1d": -1.49,
-    "1w": -4.08,
-    "1m": -7.78,
-    "1y": 28.7
+    "1d": 4.04,
+    "1w": 3.11,
+    "1m": -3.08,
+    "1y": 37.31
    }
   },
   {
    "ticker": "ANG",
    "company": "AngloGold Ashanti plc",
    "sector": "mining",
-   "market_cap": 811006033920,
+   "market_cap": 794488930304,
    "returns": {
-    "1d": 4.95,
-    "1w": 4.73,
-    "1m": -0.12,
-    "1y": 27.3
-   }
-  },
-  {
-   "ticker": "GFI",
-   "company": "Gold Fields Limited",
-   "sector": "mining",
-   "market_cap": 591023374336,
-   "returns": {
-    "1d": 3.91,
-    "1w": 6.63,
-    "1m": 8.5,
-    "1y": -4.81
-   }
-  },
-  {
-   "ticker": "CPI",
-   "company": "Capitec Limited",
-   "sector": "financial",
-   "market_cap": 574485626880,
-   "returns": {
-    "1d": -0.29,
-    "1w": 4.8,
-    "1m": 17.09,
-    "1y": 26.65
+    "1d": 7.35,
+    "1w": 19.59,
+    "1m": 7.43,
+    "1y": 42.3
    }
   },
   {
    "ticker": "NPN",
    "company": "Naspers Limited",
    "sector": "tech",
-   "market_cap": 573824630784,
+   "market_cap": 582039044096,
    "returns": {
-    "1d": -2.56,
-    "1w": 9.79,
-    "1m": 6.82,
-    "1y": -38.13
+    "1d": 1.29,
+    "1w": 13.03,
+    "1m": 9.3,
+    "1y": -37.86
+   }
+  },
+  {
+   "ticker": "CPI",
+   "company": "Capitec Limited",
+   "sector": "financial",
+   "market_cap": 577320583168,
+   "returns": {
+    "1d": 1.25,
+    "1w": 7.55,
+    "1m": 19.78,
+    "1y": 29.54
+   }
+  },
+  {
+   "ticker": "GFI",
+   "company": "Gold Fields Limited",
+   "sector": "mining",
+   "market_cap": 564987035648,
+   "returns": {
+    "1d": 6.01,
+    "1w": 20.79,
+    "1m": 12.23,
+    "1y": 5.47
    }
   },
   {
    "ticker": "FSR",
    "company": "FirstRand Limited",
    "sector": "financial",
-   "market_cap": 541241212928,
+   "market_cap": 543632621568,
    "returns": {
-    "1d": -0.78,
-    "1w": 4.38,
-    "1m": 10.82,
-    "1y": 17.19
+    "1d": 0.67,
+    "1w": 6.97,
+    "1m": 12.89,
+    "1y": 19.35
    }
   },
   {
    "ticker": "MTN",
    "company": "MTN Group Limited",
    "sector": "telecoms",
-   "market_cap": 410952040448,
+   "market_cap": 419659022336,
    "returns": {
-    "1d": -2.05,
-    "1w": 8.52,
-    "1m": 16.53,
-    "1y": 23.08
+    "1d": 5.17,
+    "1w": 12.99,
+    "1m": 21.36,
+    "1y": 33.37
    }
   },
   {
    "ticker": "VOD",
    "company": "Vodacom Group Limited",
    "sector": "telecoms",
-   "market_cap": 321174863872,
+   "market_cap": 344143527936,
    "returns": {
-    "1d": -2.52,
-    "1w": 1.31,
-    "1m": 6.24,
-    "1y": 16.99
+    "1d": 2.21,
+    "1w": 3.8,
+    "1m": 8.46,
+    "1y": 22.76
    }
   },
   {
    "ticker": "VAL",
    "company": "Valterra Platinum Limited",
    "sector": "other",
-   "market_cap": 317865263104,
+   "market_cap": 313000329216,
    "returns": {
-    "1d": -1.72,
-    "1w": 0.45,
-    "1m": -6.5,
-    "1y": 7.04
+    "1d": 4.57,
+    "1w": 11.5,
+    "1m": -3.11,
+    "1y": 20.15
    }
   },
   {
    "ticker": "S32",
    "company": "South32 Limited",
    "sector": "mining",
-   "market_cap": 234336567296,
+   "market_cap": 228970070016,
    "returns": {
-    "1d": -2.17,
-    "1w": -0.06,
-    "1m": -10.61,
-    "1y": 44.02
+    "1d": 2.81,
+    "1w": 3.56,
+    "1m": -8.09,
+    "1y": 53.4
    }
   },
   {
    "ticker": "ABG",
    "company": "Absa Group Limited",
    "sector": "financial",
-   "market_cap": 193674936320,
+   "market_cap": 195016458240,
    "returns": {
-    "1d": -0.19,
-    "1w": 1.22,
-    "1m": 9.24,
-    "1y": 17.97
-   }
-  },
-  {
-   "ticker": "DSY",
-   "company": "Discovery Limited",
-   "sector": "financial",
-   "market_cap": 186302791680,
-   "returns": {
-    "1d": 0.01,
-    "1w": -1.2,
-    "1m": 6.65,
-    "1y": 25.89
+    "1d": 1.35,
+    "1w": 6.0,
+    "1m": 12.46,
+    "1y": 20.49
    }
   },
   {
    "ticker": "SLM",
    "company": "Sanlam Limited",
    "sector": "financial",
-   "market_cap": 185779126272,
+   "market_cap": 186698629120,
    "returns": {
-    "1d": -0.85,
-    "1w": 1.53,
-    "1m": 9.48,
-    "1y": -3.13
+    "1d": 0.54,
+    "1w": 4.56,
+    "1m": 10.31,
+    "1y": -2.0
+   }
+  },
+  {
+   "ticker": "DSY",
+   "company": "Discovery Limited",
+   "sector": "financial",
+   "market_cap": 184459788288,
+   "returns": {
+    "1d": 0.28,
+    "1w": 0.07,
+    "1m": 7.6,
+    "1y": 26.34
    }
   },
   {
    "ticker": "SHP",
    "company": "Shoprite Holdings Ltd",
    "sector": "retail",
-   "market_cap": 184147984384,
+   "market_cap": 183347625984,
    "returns": {
-    "1d": -1.8,
-    "1w": -1.1,
-    "1m": 4.88,
-    "1y": 17.31
+    "1d": 1.15,
+    "1w": -0.4,
+    "1m": 4.69,
+    "1y": 19.03
    }
   },
   {
    "ticker": "HAR",
    "company": "Harmony Gold Mining Company Limited",
    "sector": "mining",
-   "market_cap": 180084031488,
+   "market_cap": 170603282432,
    "returns": {
-    "1d": 1.38,
-    "1w": 5.68,
-    "1m": 4.09,
-    "1y": -3.86
+    "1d": 3.67,
+    "1w": 16.95,
+    "1m": 7.89,
+    "1y": 4.48
    }
   },
   {
    "ticker": "IMP",
    "company": "Impala Platinum Holdings Limited",
    "sector": "mining",
-   "market_cap": 166678200320,
+   "market_cap": 162549399552,
    "returns": {
-    "1d": -2.78,
-    "1w": 0.97,
-    "1m": -4.68,
-    "1y": -7.67
+    "1d": 5.96,
+    "1w": 13.29,
+    "1m": -0.04,
+    "1y": 3.45
    }
   },
   {
    "ticker": "BID",
    "company": "Bid Corporation Limited",
    "sector": "retail",
-   "market_cap": 156329410560,
+   "market_cap": 151091806208,
    "returns": {
-    "1d": -0.18,
-    "1w": 0.54,
-    "1m": 6.91,
-    "1y": 9.31
+    "1d": -0.19,
+    "1w": -0.04,
+    "1m": 6.96,
+    "1y": 10.62
    }
   },
   {
    "ticker": "NED",
    "company": "Nedbank Group Limited",
    "sector": "financial",
-   "market_cap": 148539047936,
+   "market_cap": 149199765504,
    "returns": {
-    "1d": -1.87,
-    "1w": 0.1,
-    "1m": 5.0,
-    "1y": 25.22
-   }
-  },
-  {
-   "ticker": "SOL",
-   "company": "Sasol Limited",
-   "sector": "energy",
-   "market_cap": 145457872896,
-   "returns": {
-    "1d": -2.82,
-    "1w": -13.65,
-    "1m": 2.72,
-    "1y": 124.83
+    "1d": 0.5,
+    "1w": 3.76,
+    "1m": 7.19,
+    "1y": 25.17
    }
   },
   {
    "ticker": "OUT",
    "company": "OUTsurance Group Limited",
    "sector": "financial",
-   "market_cap": 140864159744,
+   "market_cap": 143542419456,
    "returns": {
-    "1d": 0.32,
-    "1w": 0.77,
-    "1m": 12.07,
-    "1y": 24.07
+    "1d": 0.94,
+    "1w": 5.03,
+    "1m": 12.85,
+    "1y": 29.03
+   }
+  },
+  {
+   "ticker": "SOL",
+   "company": "Sasol Limited",
+   "sector": "energy",
+   "market_cap": 143368077312,
+   "returns": {
+    "1d": -8.13,
+    "1w": -21.61,
+    "1m": -10.44,
+    "1y": 110.98
    }
   },
   {
    "ticker": "REM",
    "company": "Remgro Limited",
    "sector": "financial",
-   "market_cap": 117663973376,
+   "market_cap": 118805266432,
    "returns": {
-    "1d": 0.1,
-    "1w": 1.89,
-    "1m": 4.91,
-    "1y": 22.09
+    "1d": 0.73,
+    "1w": 1.6,
+    "1m": 4.94,
+    "1y": 24.19
    }
   },
   {
    "ticker": "SSW",
    "company": "Sibanye Stillwater Limited",
    "sector": "mining",
-   "market_cap": 114241691648,
+   "market_cap": 110420418560,
    "returns": {
-    "1d": 0.42,
-    "1w": 0.86,
-    "1m": -4.27,
-    "1y": -16.91
+    "1d": 4.67,
+    "1w": 12.83,
+    "1m": -0.25,
+    "1y": -8.27
    }
   },
   {
    "ticker": "NRP",
    "company": "NEPI Rockcastle N.V.",
    "sector": "property",
-   "market_cap": 102763479040,
+   "market_cap": 103265665024,
    "returns": {
-    "1d": 0.37,
-    "1w": 0.5,
-    "1m": 3.41,
-    "1y": 2.98
+    "1d": -0.12,
+    "1w": 1.13,
+    "1m": 3.88,
+    "1y": 3.33
    }
   },
   {
    "ticker": "NPH",
    "company": "Northam Platinum Holdings Limited",
    "sector": "mining",
-   "market_cap": 101254144000,
+   "market_cap": 97127915520,
    "returns": {
-    "1d": -1.88,
-    "1w": -0.13,
-    "1m": 0.59,
-    "1y": -15.37
+    "1d": 4.78,
+    "1w": 12.86,
+    "1m": 5.62,
+    "1y": -3.56
    }
   },
   {
    "ticker": "BVT",
    "company": "The Bidvest Group Limited",
    "sector": "industrial",
-   "market_cap": 84608253952,
+   "market_cap": 84445110272,
    "returns": {
-    "1d": -1.6,
-    "1w": 1.18,
-    "1m": 11.09,
-    "1y": 10.95
+    "1d": 0.46,
+    "1w": 4.04,
+    "1m": 10.6,
+    "1y": 11.13
    }
   },
   {
    "ticker": "MNP",
    "company": "Mondi plc",
    "sector": "other",
-   "market_cap": 77214564352,
+   "market_cap": 77496672256,
    "returns": {
-    "1d": -2.41,
-    "1w": 1.57,
-    "1m": 0.59,
-    "1y": -10.22
-   }
-  },
-  {
-   "ticker": "KIO",
-   "company": "Kumba Iron Ore Limited",
-   "sector": "other",
-   "market_cap": 73678184448,
-   "returns": {
-    "1d": 1.42,
-    "1w": 1.68,
-    "1m": 2.74,
-    "1y": -32.8
-   }
-  },
-  {
-   "ticker": "PPH",
-   "company": "Pepkor Holdings Limited",
-   "sector": "other",
-   "market_cap": 73533014016,
-   "returns": {
-    "1d": 1.24,
-    "1w": 4.74,
-    "1m": 10.02,
-    "1y": -28.05
+    "1d": 1.7,
+    "1w": 3.93,
+    "1m": 3.52,
+    "1y": -8.29
    }
   },
   {
    "ticker": "APN",
    "company": "Aspen Pharmacare Holdings Limited",
    "sector": "healthcare",
-   "market_cap": 73103114240,
+   "market_cap": 75220099072,
    "returns": {
-    "1d": -0.47,
-    "1w": 4.56,
-    "1m": 4.4,
-    "1y": 70.32
+    "1d": 1.48,
+    "1w": 6.87,
+    "1m": 6.4,
+    "1y": 77.84
+   }
+  },
+  {
+   "ticker": "PPH",
+   "company": "Pepkor Holdings Limited",
+   "sector": "other",
+   "market_cap": 72906096640,
+   "returns": {
+    "1d": 1.48,
+    "1w": 8.55,
+    "1m": 11.52,
+    "1y": -25.57
+   }
+  },
+  {
+   "ticker": "KIO",
+   "company": "Kumba Iron Ore Limited",
+   "sector": "other",
+   "market_cap": 72752889856,
+   "returns": {
+    "1d": 1.95,
+    "1w": 5.9,
+    "1m": 5.09,
+    "1y": -30.7
    }
   },
   {
    "ticker": "OMU",
    "company": "Old Mutual Limited",
    "sector": "financial",
-   "market_cap": 59509751808,
+   "market_cap": 59752153088,
    "returns": {
-    "1d": -1.68,
-    "1w": 2.23,
-    "1m": 12.94,
-    "1y": 9.0
-   }
-  },
-  {
-   "ticker": "GRT",
-   "company": "Growthpoint Properties Limited",
-   "sector": "property",
-   "market_cap": 55603544064,
-   "returns": {
-    "1d": 0.31,
-    "1w": 4.06,
-    "1m": 4.79,
-    "1y": -0.24
+    "1d": 0.48,
+    "1w": 4.1,
+    "1m": 13.31,
+    "1y": 10.17
    }
   },
   {
    "ticker": "QLT",
    "company": "Quilter plc",
    "sector": "financial",
-   "market_cap": 55537393664,
+   "market_cap": 56563798016,
    "returns": {
-    "1d": -1.94,
-    "1w": 0.07,
-    "1m": 7.62,
-    "1y": -1.05
-   }
-  },
-  {
-   "ticker": "CNP",
-   "company": "Canal+ SA",
-   "sector": "media",
-   "market_cap": 55084658688,
-   "returns": {
-    "1d": -8.3,
-    "1w": 1.03,
-    "1m": -9.15,
-    "1y": null
-   }
-  },
-  {
-   "ticker": "PAN",
-   "company": "Pan African Resources PLC",
-   "sector": "mining",
-   "market_cap": 54943621120,
-   "returns": {
-    "1d": 1.24,
-    "1w": 2.18,
-    "1m": -1.17,
-    "1y": 29.69
-   }
-  },
-  {
-   "ticker": "SNT",
-   "company": "Santam Ltd",
-   "sector": "financial",
-   "market_cap": 53566169088,
-   "returns": {
-    "1d": 0.08,
-    "1w": 0.29,
-    "1m": 0.89,
-    "1y": 18.0
-   }
-  },
-  {
-   "ticker": "CLS",
-   "company": "Clicks Group Limited",
-   "sector": "retail",
-   "market_cap": 52087955456,
-   "returns": {
-    "1d": -4.14,
-    "1w": 4.82,
-    "1m": 5.07,
-    "1y": -38.99
+    "1d": 0.58,
+    "1w": 1.49,
+    "1m": 8.75,
+    "1y": -1.16
    }
   },
   {
    "ticker": "PHP",
    "company": "Primary Health Properties Plc",
    "sector": "other",
-   "market_cap": 52055699456,
+   "market_cap": 56077950976,
    "returns": {
-    "1d": 3.14,
-    "1w": 5.26,
-    "1m": 12.02,
-    "1y": 2.56
+    "1d": -8.82,
+    "1w": -4.02,
+    "1m": 1.98,
+    "1y": -8.36
+   }
+  },
+  {
+   "ticker": "GRT",
+   "company": "Growthpoint Properties Limited",
+   "sector": "property",
+   "market_cap": 55637405696,
+   "returns": {
+    "1d": 0.12,
+    "1w": 5.59,
+    "1m": 4.92,
+    "1y": -0.3
+   }
+  },
+  {
+   "ticker": "SNT",
+   "company": "Santam Ltd",
+   "sector": "financial",
+   "market_cap": 53545414656,
+   "returns": {
+    "1d": 0.8,
+    "1w": 1.11,
+    "1m": 1.74,
+    "1y": 19.31
+   }
+  },
+  {
+   "ticker": "PAN",
+   "company": "Pan African Resources PLC",
+   "sector": "mining",
+   "market_cap": 52449964032,
+   "returns": {
+    "1d": 4.55,
+    "1w": 14.81,
+    "1m": 4.84,
+    "1y": 39.16
+   }
+  },
+  {
+   "ticker": "CLS",
+   "company": "Clicks Group Limited",
+   "sector": "retail",
+   "market_cap": 50878947328,
+   "returns": {
+    "1d": 1.25,
+    "1w": 5.08,
+    "1m": 5.92,
+    "1y": -36.37
    }
   },
   {
    "ticker": "RDF",
    "company": "Redefine Properties Limited",
    "sector": "property",
-   "market_cap": 46194208768,
+   "market_cap": 46543106048,
    "returns": {
-    "1d": 0.45,
-    "1w": 4.9,
-    "1m": 9.57,
-    "1y": 17.52
+    "1d": -0.3,
+    "1w": 4.91,
+    "1m": 10.52,
+    "1y": 18.85
+   }
+  },
+  {
+   "ticker": "CNP",
+   "company": "Canal+ SA",
+   "sector": "media",
+   "market_cap": 43288535040,
+   "returns": {
+    "1d": 12.05,
+    "1w": 16.52,
+    "1m": 7.67,
+    "1y": null
    }
   },
   {
    "ticker": "EXX",
    "company": "Exxaro Resources Limited",
    "sector": "mining",
-   "market_cap": 43428921344,
+   "market_cap": 43091755008,
    "returns": {
-    "1d": -3.28,
-    "1w": -5.83,
-    "1m": 5.09,
-    "1y": -0.11
+    "1d": 3.34,
+    "1w": -3.13,
+    "1m": 6.35,
+    "1y": 1.16
    }
   },
   {
    "ticker": "FTA",
    "company": "Fairvest Limited",
    "sector": "property",
-   "market_cap": 41540390912,
+   "market_cap": 41118662656,
    "returns": {
     "1d": 0.0,
     "1w": 0.0,
-    "1m": -0.4,
+    "1m": 1.03,
     "1y": 10548.65
    }
   },
@@ -558,300 +558,312 @@
    "ticker": "INL",
    "company": "Investec Group",
    "sector": "financial",
-   "market_cap": 38090326016,
+   "market_cap": 39217176576,
    "returns": {
-    "1d": -1.53,
-    "1w": -0.59,
-    "1m": 4.78,
-    "1y": 2.8
+    "1d": 1.82,
+    "1w": 2.21,
+    "1m": 8.34,
+    "1y": 4.62
    }
   },
   {
    "ticker": "KST",
    "company": "PSG Financial Services Limited",
    "sector": "other",
-   "market_cap": 38001688576,
+   "market_cap": 38793646080,
    "returns": {
-    "1d": -1.52,
-    "1w": -0.94,
-    "1m": 0.03,
-    "1y": 22.94
-   }
-  },
-  {
-   "ticker": "DRD",
-   "company": "DRDGOLD Limited",
-   "sector": "mining",
-   "market_cap": 37955973120,
-   "returns": {
-    "1d": 2.36,
-    "1w": 0.81,
-    "1m": 3.94,
-    "1y": -6.83
+    "1d": 0.89,
+    "1w": -0.32,
+    "1m": 1.12,
+    "1y": 23.83
    }
   },
   {
    "ticker": "WHL",
    "company": "Woolworths Holdings Limited",
    "sector": "retail",
-   "market_cap": 37462028288,
+   "market_cap": 36952031232,
    "returns": {
-    "1d": 0.02,
-    "1w": 3.94,
-    "1m": 12.72,
-    "1y": -20.33
+    "1d": 1.16,
+    "1w": 6.24,
+    "1m": 10.86,
+    "1y": -19.17
    }
   },
   {
    "ticker": "SRE",
    "company": "Sirius Real Estate Limited",
    "sector": "property",
-   "market_cap": 35300950016,
+   "market_cap": 35696521216,
    "returns": {
-    "1d": -0.22,
-    "1w": 1.69,
-    "1m": 13.03,
-    "1y": -2.19
+    "1d": 0.04,
+    "1w": 1.73,
+    "1m": 14.47,
+    "1y": -3.84
    }
   },
   {
-   "ticker": "KRO",
-   "company": "Karooooo Ltd.",
-   "sector": "other",
-   "market_cap": 33364762624,
+   "ticker": "DRD",
+   "company": "DRDGOLD Limited",
+   "sector": "mining",
+   "market_cap": 35349704704,
    "returns": {
-    "1d": -5.0,
-    "1w": -4.13,
-    "1m": 1.95,
-    "1y": 32.96
+    "1d": 6.07,
+    "1w": 13.75,
+    "1m": 10.58,
+    "1y": 0.83
    }
   },
   {
    "ticker": "FFB",
    "company": "Fortress Real Estate Investments Limited",
    "sector": "property",
-   "market_cap": 32668444672,
+   "market_cap": 32890589184,
    "returns": {
-    "1d": 0.2,
-    "1w": 1.02,
-    "1m": 0.2,
-    "1y": 5.25
+    "1d": 0.6,
+    "1w": 1.01,
+    "1m": 1.17,
+    "1y": 5.89
    }
   },
   {
-   "ticker": "TKG",
-   "company": "Telkom SA SOC Ltd",
-   "sector": "telecoms",
-   "market_cap": 30813259776,
+   "ticker": "KRO",
+   "company": "Karooooo Ltd.",
+   "sector": "other",
+   "market_cap": 32747825152,
    "returns": {
-    "1d": 3.53,
-    "1w": 7.54,
-    "1m": 25.64,
-    "1y": 33.26
-   }
-  },
-  {
-   "ticker": "ARI",
-   "company": "African Rainbow Minerals Limited",
-   "sector": "mining",
-   "market_cap": 30512715776,
-   "returns": {
-    "1d": -0.38,
-    "1w": -0.08,
-    "1m": 3.25,
-    "1y": -11.18
+    "1d": 3.35,
+    "1w": 1.37,
+    "1m": 2.08,
+    "1y": 35.0
    }
   },
   {
    "ticker": "PMR",
    "company": "Premier Group Limited",
    "sector": "retail",
-   "market_cap": 29747593216,
+   "market_cap": 31600128000,
    "returns": {
-    "1d": -1.02,
-    "1w": 6.19,
-    "1m": 8.78,
-    "1y": 10.85
+    "1d": 0.65,
+    "1w": 6.89,
+    "1m": 10.6,
+    "1y": 11.51
+   }
+  },
+  {
+   "ticker": "TKG",
+   "company": "Telkom SA SOC Ltd",
+   "sector": "telecoms",
+   "market_cap": 30630467584,
+   "returns": {
+    "1d": -1.48,
+    "1w": 5.5,
+    "1m": 24.69,
+    "1y": 32.7
+   }
+  },
+  {
+   "ticker": "ARI",
+   "company": "African Rainbow Minerals Limited",
+   "sector": "mining",
+   "market_cap": 29602635776,
+   "returns": {
+    "1d": 4.8,
+    "1w": 11.4,
+    "1m": 6.87,
+    "1y": -4.82
    }
   },
   {
    "ticker": "AVI",
    "company": "AVI Limited",
    "sector": "retail",
-   "market_cap": 28210868224,
+   "market_cap": 28241051648,
    "returns": {
-    "1d": 0.08,
-    "1w": 2.06,
-    "1m": 0.24,
-    "1y": -12.85
+    "1d": -0.1,
+    "1w": 1.66,
+    "1m": 1.42,
+    "1y": -12.24
    }
   },
   {
    "ticker": "ADH",
    "company": "ADvTECH Limited",
    "sector": "education",
-   "market_cap": 28005701632,
+   "market_cap": 27869749248,
    "returns": {
-    "1d": 3.65,
-    "1w": -3.27,
-    "1m": 1.31,
-    "1y": 48.06
+    "1d": -0.96,
+    "1w": -3.29,
+    "1m": -0.39,
+    "1y": 47.61
    }
   },
   {
    "ticker": "RES",
    "company": "Resilient REIT Limited",
    "sector": "property",
-   "market_cap": 25950044160,
+   "market_cap": 25976735744,
    "returns": {
-    "1d": -0.75,
-    "1w": -1.5,
-    "1m": 0.92,
-    "1y": 8.31
+    "1d": -0.17,
+    "1w": -1.52,
+    "1m": 0.22,
+    "1y": 8.43
    }
   },
   {
    "ticker": "HYP",
    "company": "Hyprop Investments Limited",
    "sector": "property",
-   "market_cap": 24764049408,
+   "market_cap": 25044649984,
    "returns": {
-    "1d": -0.82,
-    "1w": -1.19,
-    "1m": 0.78,
-    "1y": 15.63
-   }
-  },
-  {
-   "ticker": "NTC",
-   "company": "Netcare Limited",
-   "sector": "healthcare",
-   "market_cap": 22105303040,
-   "returns": {
-    "1d": 1.01,
-    "1w": 5.48,
-    "1m": 8.67,
-    "1y": 29.05
+    "1d": -0.72,
+    "1w": -1.32,
+    "1m": -0.22,
+    "1y": 14.82
    }
   },
   {
    "ticker": "BYI",
    "company": "Bytes Technology Group plc",
    "sector": "tech",
-   "market_cap": 21685524480,
+   "market_cap": 22083784704,
    "returns": {
-    "1d": -1.7,
-    "1w": -4.36,
-    "1m": 0.91,
-    "1y": 14.73
+    "1d": -3.94,
+    "1w": -6.82,
+    "1m": -3.3,
+    "1y": 9.0
    }
   },
   {
-   "ticker": "DCP",
-   "company": "Dis-Chem Pharmacies Limited",
+   "ticker": "NTC",
+   "company": "Netcare Limited",
    "sector": "healthcare",
-   "market_cap": 20752097280,
+   "market_cap": 21862768640,
    "returns": {
-    "1d": -3.1,
-    "1w": -12.63,
-    "1m": -7.81,
-    "1y": -28.18
+    "1d": 0.42,
+    "1w": 6.87,
+    "1m": 8.69,
+    "1y": 29.41
    }
   },
   {
    "ticker": "OPA",
    "company": "Optasia Limited",
    "sector": "tech",
-   "market_cap": 20452624384,
+   "market_cap": 20872546304,
    "returns": {
-    "1d": -3.1,
-    "1w": 6.84,
-    "1m": 12.73,
-    "1y": null
+    "1d": 0.0,
+    "1w": 7.46,
+    "1m": 15.72,
+    "1y": 8444.89
+   }
+  },
+  {
+   "ticker": "DCP",
+   "company": "Dis-Chem Pharmacies Limited",
+   "sector": "healthcare",
+   "market_cap": 20435337216,
+   "returns": {
+    "1d": -0.74,
+    "1w": -0.74,
+    "1m": -9.45,
+    "1y": -29.94
+   }
+  },
+  {
+   "ticker": "APH",
+   "company": "Alphamin Resources Corp.",
+   "sector": "other",
+   "market_cap": 19883237376,
+   "returns": {
+    "1d": -1.62,
+    "1w": -1.94,
+    "1m": -11.21,
+    "1y": 16.03
    }
   },
   {
    "ticker": "DTC",
    "company": "Datatec Limited",
    "sector": "tech",
-   "market_cap": 19614724096,
+   "market_cap": 19746365440,
    "returns": {
-    "1d": -0.41,
-    "1w": -2.11,
-    "1m": -29.96,
-    "1y": -17.66
-   }
-  },
-  {
-   "ticker": "PIK",
-   "company": "Pick n Pay Stores Limited",
-   "sector": "retail",
-   "market_cap": 19093966848,
-   "returns": {
-    "1d": -0.43,
-    "1w": 4.74,
-    "1m": 31.27,
-    "1y": -10.45
+    "1d": -0.68,
+    "1w": -2.87,
+    "1m": -31.22,
+    "1y": -18.43
    }
   },
   {
    "ticker": "OMN",
    "company": "Omnia Holdings Limited",
    "sector": "industrial",
-   "market_cap": 19058153472,
+   "market_cap": 19001823232,
    "returns": {
-    "1d": -0.94,
-    "1w": 0.5,
-    "1m": -1.04,
-    "1y": 59.67
+    "1d": 0.13,
+    "1w": 0.27,
+    "1m": -0.98,
+    "1y": 62.62
+   }
+  },
+  {
+   "ticker": "PIK",
+   "company": "Pick n Pay Stores Limited",
+   "sector": "retail",
+   "market_cap": 18638647296,
+   "returns": {
+    "1d": 3.22,
+    "1w": 7.88,
+    "1m": 34.09,
+    "1y": -6.14
    }
   },
   {
    "ticker": "GND",
    "company": "Grindrod Limited",
    "sector": "industrial",
-   "market_cap": 18659280896,
+   "market_cap": 18318807040,
    "returns": {
-    "1d": -0.79,
-    "1w": -4.62,
-    "1m": 1.88,
-    "1y": 62.23
-   }
-  },
-  {
-   "ticker": "TRU",
-   "company": "Truworths International Limited",
-   "sector": "retail",
-   "market_cap": 18340204544,
-   "returns": {
-    "1d": 3.17,
-    "1w": 5.84,
-    "1m": 15.06,
-    "1y": -2.85
-   }
-  },
-  {
-   "ticker": "MTH",
-   "company": "Motus Holdings Limited",
-   "sector": "industrial",
-   "market_cap": 18274164736,
-   "returns": {
-    "1d": -2.24,
-    "1w": -1.54,
-    "1m": 4.79,
-    "1y": 4.77
+    "1d": 1.05,
+    "1w": -1.55,
+    "1m": 3.83,
+    "1y": 63.83
    }
   },
   {
    "ticker": "TFG",
    "company": "The Foschini Group Limited",
    "sector": "retail",
-   "market_cap": 17883764736,
+   "market_cap": 18063482880,
    "returns": {
-    "1d": 6.98,
-    "1w": 10.11,
-    "1m": 11.79,
-    "1y": -38.55
+    "1d": 3.13,
+    "1w": 14.66,
+    "1m": 15.31,
+    "1y": -34.37
+   }
+  },
+  {
+   "ticker": "MTH",
+   "company": "Motus Holdings Limited",
+   "sector": "industrial",
+   "market_cap": 18038810624,
+   "returns": {
+    "1d": 0.44,
+    "1w": 0.07,
+    "1m": 6.28,
+    "1y": 3.8
+   }
+  },
+  {
+   "ticker": "TRU",
+   "company": "Truworths International Limited",
+   "sector": "retail",
+   "market_cap": 17828550656,
+   "returns": {
+    "1d": 0.95,
+    "1w": 7.52,
+    "1m": 16.34,
+    "1y": 0.95
    }
   },
   {
@@ -870,239 +882,227 @@
    "ticker": "EQU",
    "company": "Equites Property Fund Limited",
    "sector": "other",
-   "market_cap": 15272423424,
+   "market_cap": 15393976320,
    "returns": {
-    "1d": 0.17,
-    "1w": -3.5,
-    "1m": -1.18,
-    "1y": 4.19
+    "1d": -0.4,
+    "1w": -3.88,
+    "1m": -1.35,
+    "1y": 3.65
    }
   },
   {
    "ticker": "TGA",
    "company": "Thungela Resources Limited",
    "sector": "mining",
-   "market_cap": 15039374336,
+   "market_cap": 15053353984,
    "returns": {
-    "1d": -2.57,
-    "1w": -14.32,
-    "1m": -7.4,
-    "1y": 57.3
-   }
-  },
-  {
-   "ticker": "SSU",
-   "company": "Southern Sun Limited",
-   "sector": "retail",
-   "market_cap": 13876151296,
-   "returns": {
-    "1d": -2.36,
-    "1w": 0.1,
-    "1m": 0.88,
-    "1y": 12.01
-   }
-  },
-  {
-   "ticker": "MSP",
-   "company": "MAS P.L.C.",
-   "sector": "property",
-   "market_cap": 13863068672,
-   "returns": {
-    "1d": -0.15,
-    "1w": 0.29,
-    "1m": -0.77,
-    "1y": -2.89
+    "1d": -1.03,
+    "1w": -13.37,
+    "1m": -7.55,
+    "1y": 54.88
    }
   },
   {
    "ticker": "CML",
    "company": "Coronation Fund Managers Limited",
    "sector": "other",
-   "market_cap": 13815886848,
+   "market_cap": 13969707008,
    "returns": {
-    "1d": -2.0,
-    "1w": 0.41,
-    "1m": -5.16,
-    "1y": -20.81
+    "1d": 0.92,
+    "1w": 2.92,
+    "1m": -4.63,
+    "1y": -20.08
+   }
+  },
+  {
+   "ticker": "MSP",
+   "company": "MAS P.L.C.",
+   "sector": "property",
+   "market_cap": 13876489216,
+   "returns": {
+    "1d": 0.78,
+    "1w": 0.63,
+    "1m": 0.54,
+    "1y": -1.62
+   }
+  },
+  {
+   "ticker": "SSU",
+   "company": "Southern Sun Limited",
+   "sector": "retail",
+   "market_cap": 13797681152,
+   "returns": {
+    "1d": 2.51,
+    "1w": 3.82,
+    "1m": 3.31,
+    "1y": 17.89
    }
   },
   {
    "ticker": "JSE",
    "company": "JSE Limited",
    "sector": "financial",
-   "market_cap": 12840785920,
+   "market_cap": 12813360128,
    "returns": {
-    "1d": -1.1,
-    "1w": -1.02,
-    "1m": 5.11,
-    "1y": 9.57
+    "1d": -0.94,
+    "1w": -3.13,
+    "1m": 4.01,
+    "1y": 8.39
    }
   },
   {
    "ticker": "ATT",
    "company": "Attacq Limited",
    "sector": "property",
-   "market_cap": 12707836928,
+   "market_cap": 12735826944,
    "returns": {
-    "1d": -0.44,
-    "1w": -0.11,
-    "1m": 2.15,
-    "1y": 18.18
+    "1d": 0.5,
+    "1w": 0.61,
+    "1m": 2.89,
+    "1y": 18.69
    }
   },
   {
    "ticker": "HCI",
    "company": "Hosken Consolidated Investments Limited",
    "sector": "industrial",
-   "market_cap": 12340265984,
+   "market_cap": 12396772352,
    "returns": {
-    "1d": -3.8,
-    "1w": -4.92,
-    "1m": 5.28,
-    "1y": 23.66
-   }
-  },
-  {
-   "ticker": "SDO",
-   "company": "Stadio Holdings Limited",
-   "sector": "tech",
-   "market_cap": 12318538752,
-   "returns": {
-    "1d": -0.34,
-    "1w": -7.87,
-    "1m": -8.96,
-    "1y": 32.79
+    "1d": 0.74,
+    "1w": -0.01,
+    "1m": 6.27,
+    "1y": 24.32
    }
   },
   {
    "ticker": "PPC",
    "company": "PPC Ltd",
    "sector": "industrial",
-   "market_cap": 12220033024,
+   "market_cap": 12249372672,
    "returns": {
-    "1d": 0.97,
-    "1w": 2.72,
-    "1m": 8.21,
-    "1y": 55.14
+    "1d": 0.36,
+    "1w": 5.04,
+    "1m": 10.92,
+    "1y": 59.58
    }
   },
   {
-   "ticker": "SUI",
-   "company": "Sun International Limited",
-   "sector": "retail",
-   "market_cap": 11389801472,
+   "ticker": "SDO",
+   "company": "Stadio Holdings Limited",
+   "sector": "tech",
+   "market_cap": 12208851968,
    "returns": {
-    "1d": -1.48,
-    "1w": -1.19,
-    "1m": 5.92,
-    "1y": 19.28
+    "1d": -0.95,
+    "1w": -7.3,
+    "1m": -8.35,
+    "1y": 34.81
    }
   },
   {
    "ticker": "AEL",
    "company": "Altron Limited",
    "sector": "tech",
-   "market_cap": 11313384448,
+   "market_cap": 11344690176,
    "returns": {
-    "1d": -1.81,
-    "1w": -1.71,
-    "1m": 2.21,
-    "1y": 67.22
+    "1d": 2.66,
+    "1w": 1.37,
+    "1m": 9.26,
+    "1y": 67.79
+   }
+  },
+  {
+   "ticker": "SUI",
+   "company": "Sun International Limited",
+   "sector": "retail",
+   "market_cap": 11327483904,
+   "returns": {
+    "1d": 2.15,
+    "1w": 0.44,
+    "1m": 9.17,
+    "1y": 24.2
    }
   },
   {
    "ticker": "SPP",
    "company": "The SPAR Group Ltd",
    "sector": "retail",
-   "market_cap": 10377928704,
+   "market_cap": 9992848384,
    "returns": {
-    "1d": 2.61,
-    "1w": 2.87,
-    "1m": 16.34,
-    "1y": -49.76
+    "1d": 1.74,
+    "1w": 6.37,
+    "1m": 14.97,
+    "1y": -48.66
    }
   },
   {
    "ticker": "AFH",
    "company": "Alexander Forbes Group Holdings Limited",
    "sector": "financial",
-   "market_cap": 9597048832,
+   "market_cap": 9099990016,
    "returns": {
-    "1d": 0.27,
-    "1w": -5.07,
-    "1m": -5.81,
-    "1y": -9.88
+    "1d": 3.15,
+    "1w": -0.92,
+    "1m": -2.84,
+    "1y": -9.82
    }
   },
   {
    "ticker": "ITE",
    "company": "Italtile Limited",
    "sector": "retail",
-   "market_cap": 9423088640,
+   "market_cap": 9037280256,
    "returns": {
-    "1d": -0.63,
-    "1w": 1.28,
-    "1m": -2.35,
-    "1y": -15.78
+    "1d": 2.03,
+    "1w": 6.05,
+    "1m": 0.62,
+    "1y": -13.7
    }
   },
   {
    "ticker": "DIB",
    "company": "Dipula Properties Limited",
    "sector": "property",
-   "market_cap": 8630525952,
+   "market_cap": 8559198720,
    "returns": {
-    "1d": 0.0,
-    "1w": 2.26,
-    "1m": 5.07,
-    "1y": 12.58
-   }
-  },
-  {
-   "ticker": "WBO",
-   "company": "Wilson Bayly Holmes-Ovcon Limited",
-   "sector": "industrial",
-   "market_cap": 8572462592,
-   "returns": {
-    "1d": -2.05,
-    "1w": 4.33,
-    "1m": 12.33,
-    "1y": 4.72
-   }
-  },
-  {
-   "ticker": "OCE",
-   "company": "Oceana Group Limited",
-   "sector": "food",
-   "market_cap": 8499406848,
-   "returns": {
-    "1d": 0.29,
-    "1w": 0.01,
-    "1m": 6.33,
-    "1y": 37.96
+    "1d": 0.14,
+    "1w": 2.4,
+    "1m": 5.68,
+    "1y": 15.06
    }
   },
   {
    "ticker": "SSS",
    "company": "Stor-Age Property REIT Limited",
    "sector": "property",
-   "market_cap": 8475918336,
+   "market_cap": 8511811584,
    "returns": {
-    "1d": 1.89,
-    "1w": 1.21,
-    "1m": 7.4,
-    "1y": -1.76
+    "1d": -1.02,
+    "1w": 0.24,
+    "1m": 6.85,
+    "1y": -2.54
+   }
+  },
+  {
+   "ticker": "WBO",
+   "company": "Wilson Bayly Holmes-Ovcon Limited",
+   "sector": "industrial",
+   "market_cap": 8491403776,
+   "returns": {
+    "1d": 1.62,
+    "1w": 7.17,
+    "1m": 14.54,
+    "1y": 8.5
    }
   },
   {
    "ticker": "CCD",
    "company": "Cell C Holdings Limited",
    "sector": "tech",
-   "market_cap": 8438799872,
+   "market_cap": 8465999872,
    "returns": {
-    "1d": -0.04,
-    "1w": 5.0,
-    "1m": 5.45,
+    "1d": -0.64,
+    "1w": -0.28,
+    "1m": 4.73,
     "1y": null
    }
   },
@@ -1110,12 +1110,12 @@
    "ticker": "RLO",
    "company": "Reunert Limited",
    "sector": "industrial",
-   "market_cap": 8416016384,
+   "market_cap": 8439586304,
    "returns": {
-    "1d": 0.28,
-    "1w": -4.64,
-    "1m": -4.17,
-    "1y": -5.13
+    "1d": 0.53,
+    "1w": -0.46,
+    "1m": -2.97,
+    "1y": -5.44
    }
   },
   {
@@ -1126,8 +1126,20 @@
    "returns": {
     "1d": 0.0,
     "1w": 0.0,
-    "1m": 32.16,
+    "1m": 14.29,
     "1y": 17354.55
+   }
+  },
+  {
+   "ticker": "OCE",
+   "company": "Oceana Group Limited",
+   "sector": "food",
+   "market_cap": 8322186752,
+   "returns": {
+    "1d": 4.38,
+    "1w": 6.26,
+    "1m": 11.6,
+    "1y": 43.6
    }
   },
   {
@@ -1143,51 +1155,51 @@
    }
   },
   {
-   "ticker": "RBX",
-   "company": "Raubex Group Limited",
-   "sector": "other",
-   "market_cap": 7750769152,
-   "returns": {
-    "1d": -1.84,
-    "1w": -1.54,
-    "1m": 8.5,
-    "1y": 5.59
-   }
-  },
-  {
    "ticker": "BTN",
    "company": "Burstone Group Limited",
    "sector": "property",
    "market_cap": 7698494464,
    "returns": {
-    "1d": -0.1,
-    "1w": 0.62,
-    "1m": 5.05,
-    "1y": 7.47
+    "1d": 0.1,
+    "1w": 0.41,
+    "1m": 5.72,
+    "1y": 7.11
    }
   },
   {
    "ticker": "ARL",
    "company": "Astral Foods Limited",
    "sector": "other",
-   "market_cap": 7646457856,
+   "market_cap": 7577989120,
    "returns": {
-    "1d": -1.79,
-    "1w": 0.16,
-    "1m": 9.08,
-    "1y": -10.32
+    "1d": -0.53,
+    "1w": -1.39,
+    "1m": 6.97,
+    "1y": -9.48
    }
   },
   {
    "ticker": "BLU",
    "company": "Blu Label Unlimited Group Limited",
    "sector": "tech",
-   "market_cap": 7590291456,
+   "market_cap": 7535816192,
    "returns": {
-    "1d": -0.49,
-    "1w": -0.73,
-    "1m": 18.75,
-    "1y": -35.52
+    "1d": 2.33,
+    "1w": 2.96,
+    "1m": 20.98,
+    "1y": -33.7
+   }
+  },
+  {
+   "ticker": "RBX",
+   "company": "Raubex Group Limited",
+   "sector": "other",
+   "market_cap": 7449540608,
+   "returns": {
+    "1d": -2.72,
+    "1w": -2.67,
+    "1m": 3.94,
+    "1y": 3.17
    }
   },
   {
@@ -1196,10 +1208,22 @@
    "sector": "financial",
    "market_cap": 7416355328,
    "returns": {
-    "1d": -1.54,
-    "1w": -0.52,
-    "1m": -4.0,
+    "1d": 0.0,
+    "1w": -1.54,
+    "1m": -1.54,
     "1y": -6.34
+   }
+  },
+  {
+   "ticker": "SEA",
+   "company": "Spear Reit Limited",
+   "sector": "property",
+   "market_cap": 7076906496,
+   "returns": {
+    "1d": 0.51,
+    "1w": 2.62,
+    "1m": 7.45,
+    "1y": 20.92
    }
   },
   {
@@ -1208,106 +1232,94 @@
    "sector": "mining",
    "market_cap": 6962823680,
    "returns": {
-    "1d": -0.43,
-    "1w": -1.51,
-    "1m": -13.58,
-    "1y": 1.78
-   }
-  },
-  {
-   "ticker": "SEA",
-   "company": "Spear Reit Limited",
-   "sector": "property",
-   "market_cap": 6925258752,
-   "returns": {
-    "1d": -0.87,
-    "1w": 1.41,
-    "1m": 5.41,
-    "1y": 18.62
-   }
-  },
-  {
-   "ticker": "KAP",
-   "company": "KAP Limited",
-   "sector": "industrial",
-   "market_cap": 6770713600,
-   "returns": {
-    "1d": -2.96,
-    "1w": 1.16,
-    "1m": -7.42,
-    "1y": 64.78
+    "1d": 2.62,
+    "1w": 2.17,
+    "1m": -11.35,
+    "1y": 5.86
    }
   },
   {
    "ticker": "CAA",
    "company": "CA Sales Holdings Limited",
    "sector": "retail",
-   "market_cap": 6742346752,
+   "market_cap": 6896788480,
    "returns": {
-    "1d": 1.78,
-    "1w": 2.69,
-    "1m": 3.31,
-    "1y": -16.63
+    "1d": 1.67,
+    "1w": 9.14,
+    "1m": 5.43,
+    "1y": -12.69
    }
   },
   {
-   "ticker": "RCL",
-   "company": "RCL Foods Limited",
-   "sector": "retail",
-   "market_cap": 6597493248,
+   "ticker": "KAP",
+   "company": "KAP Limited",
+   "sector": "industrial",
+   "market_cap": 6896097792,
    "returns": {
-    "1d": -1.35,
-    "1w": 0.0,
-    "1m": 6.57,
-    "1y": -23.96
-   }
-  },
-  {
-   "ticker": "PWR",
-   "company": "PowerFleet, Inc.",
-   "sector": "tech",
-   "market_cap": 6437475328,
-   "returns": {
-    "1d": 0.0,
-    "1w": 8.61,
-    "1m": 2.83,
-    "1y": -40.8
+    "1d": 3.05,
+    "1w": 5.06,
+    "1m": -6.25,
+    "1y": 73.08
    }
   },
   {
    "ticker": "SAP",
    "company": "Sappi Limited",
    "sector": "industrial",
-   "market_cap": 6283303424,
+   "market_cap": 6350082560,
    "returns": {
-    "1d": -13.66,
-    "1w": -4.5,
-    "1m": -13.13,
-    "1y": -49.21
+    "1d": -8.0,
+    "1w": -12.51,
+    "1m": -16.93,
+    "1y": -53.88
+   }
+  },
+  {
+   "ticker": "RCL",
+   "company": "RCL Foods Limited",
+   "sector": "retail",
+   "market_cap": 6327473152,
+   "returns": {
+    "1d": 0.41,
+    "1w": 1.81,
+    "1m": 4.71,
+    "1y": -24.28
    }
   },
   {
    "ticker": "AFT",
    "company": "Afrimat Limited",
    "sector": "industrial",
-   "market_cap": 6048305664,
+   "market_cap": 5947886592,
    "returns": {
-    "1d": 1.04,
-    "1w": 9.57,
-    "1m": 23.74,
-    "1y": -15.52
+    "1d": 3.03,
+    "1w": 12.08,
+    "1m": 26.29,
+    "1y": -7.99
    }
   },
   {
    "ticker": "SPG",
    "company": "Super Group Limited",
    "sector": "industrial",
-   "market_cap": 5883712512,
+   "market_cap": 5880407552,
    "returns": {
-    "1d": 2.39,
-    "1w": 2.63,
-    "1m": 6.64,
-    "1y": 9.97
+    "1d": -1.0,
+    "1w": 3.97,
+    "1m": 4.71,
+    "1y": 8.47
+   }
+  },
+  {
+   "ticker": "PWR",
+   "company": "PowerFleet, Inc.",
+   "sector": "tech",
+   "market_cap": 5828089856,
+   "returns": {
+    "1d": 0.0,
+    "1w": 2.06,
+    "1m": 2.83,
+    "1y": -40.8
    }
   },
   {
@@ -1316,118 +1328,118 @@
    "sector": "financial",
    "market_cap": 5452000256,
    "returns": {
-    "1d": 1.04,
-    "1w": 0.34,
-    "1m": 1.75,
-    "1y": 16.4
-   }
-  },
-  {
-   "ticker": "WVR",
-   "company": "Weaver Fintech Ltd",
-   "sector": "tech",
-   "market_cap": 5397075456,
-   "returns": {
-    "1d": 9.85,
-    "1w": -0.63,
-    "1m": 5.62,
-    "1y": 3.32
+    "1d": -0.34,
+    "1w": 0.0,
+    "1m": 0.0,
+    "1y": 16.0
    }
   },
   {
    "ticker": "LSK",
    "company": "Lesaka Technologies, Inc.",
    "sector": "tech",
-   "market_cap": 5347231232,
+   "market_cap": 5217422848,
    "returns": {
-    "1d": -2.53,
-    "1w": -4.61,
-    "1m": -12.06,
-    "1y": -12.14
+    "1d": -7.46,
+    "1w": -16.5,
+    "1m": -23.68,
+    "1y": -18.69
    }
   },
   {
    "ticker": "OCT",
    "company": "Octodec Investments Limited",
    "sector": "other",
-   "market_cap": 5222795264,
+   "market_cap": 5110992896,
    "returns": {
-    "1d": 1.3,
-    "1w": 6.41,
-    "1m": 6.05,
-    "1y": 47.06
+    "1d": 4.64,
+    "1w": 9.61,
+    "1m": 12.56,
+    "1y": 52.33
+   }
+  },
+  {
+   "ticker": "WVR",
+   "company": "Weaver Fintech Ltd",
+   "sector": "tech",
+   "market_cap": 4977032704,
+   "returns": {
+    "1d": -1.24,
+    "1w": 1.61,
+    "1m": 4.7,
+    "1y": 2.04
    }
   },
   {
    "ticker": "RBO",
    "company": "Rainbow Chicken Limited",
    "sector": "retail",
-   "market_cap": 4916061696,
+   "market_cap": 4907074048,
    "returns": {
-    "1d": 0.19,
-    "1w": -1.83,
-    "1m": 6.99,
-    "1y": 20.18
-   }
-  },
-  {
-   "ticker": "FBR",
-   "company": "Famous Brands Limited",
-   "sector": "other",
-   "market_cap": 4903333888,
-   "returns": {
-    "1d": 2.23,
-    "1w": 1.02,
-    "1m": -1.94,
-    "1y": -6.06
+    "1d": 2.05,
+    "1w": 1.11,
+    "1m": 4.59,
+    "1y": 22.37
    }
   },
   {
    "ticker": "LEW",
    "company": "Lewis Group Limited",
    "sector": "other",
-   "market_cap": 4766987264,
+   "market_cap": 4906433024,
    "returns": {
-    "1d": 2.16,
-    "1w": 4.77,
-    "1m": 7.39,
-    "1y": 10.05
+    "1d": 2.32,
+    "1w": 6.32,
+    "1m": 11.42,
+    "1y": 12.82
+   }
+  },
+  {
+   "ticker": "FBR",
+   "company": "Famous Brands Limited",
+   "sector": "other",
+   "market_cap": 4888609280,
+   "returns": {
+    "1d": -1.09,
+    "1w": 1.88,
+    "1m": -1.87,
+    "1y": -5.75
    }
   },
   {
    "ticker": "CAT",
    "company": "Caxton and CTP Publishers and Printers Limited",
    "sector": "industrial",
-   "market_cap": 4295198208,
+   "market_cap": 4312873472,
    "returns": {
-    "1d": 2.96,
-    "1w": 6.92,
-    "1m": 9.93,
-    "1y": -5.94
+    "1d": -2.88,
+    "1w": 1.5,
+    "1m": 7.52,
+    "1y": -9.6
    }
   },
   {
    "ticker": "BEL",
    "company": "Bell Equipment Limited",
    "sector": "industrial",
-   "market_cap": 3727332864,
+   "market_cap": 3728289024,
    "returns": {
-    "1d": -0.1,
-    "1w": 3.05,
-    "1m": 3.31,
-    "1y": -5.31
+    "1d": 0.0,
+    "1w": 2.38,
+    "1m": 4.39,
+    "1y": -5.6
    }
   },
   {
    "ticker": "SUR",
    "company": "Spur Corporation Ltd",
    "sector": "retail",
-   "market_cap": 3418272256,
+   "market_cap": 3394947584,
    "returns": {
-    "1d": 0.87,
-    "1w": 4.2,
-    "1m": 6.07,
-    "1y": 21.17
+    "1d": -3.8,
+    "1w": 2.41,
+    "1m": 5.99,
+    "1y": 17.24
    }
   },
   {
@@ -1436,10 +1448,10 @@
    "sector": "other",
    "market_cap": 3373821184,
    "returns": {
-    "1d": 0.0,
-    "1w": 0.74,
-    "1m": -0.72,
-    "1y": 24.55
+    "1d": -1.46,
+    "1w": -1.46,
+    "1m": -0.74,
+    "1y": 22.73
    }
   },
   {
@@ -1448,94 +1460,70 @@
    "sector": "food",
    "market_cap": 2907526912,
    "returns": {
-    "1d": 0.11,
+    "1d": 0.0,
     "1w": 0.0,
     "1m": 2.44,
-    "1y": 4.27
-   }
-  },
-  {
-   "ticker": "OAO",
-   "company": "Oando PLC",
-   "sector": "energy",
-   "market_cap": 2867404032,
-   "returns": {
-    "1d": 0.0,
-    "1w": -19.35,
-    "1m": -16.67,
-    "1y": 25.0
+    "1y": 4.89
    }
   },
   {
    "ticker": "IOC",
    "company": "iOCO Limited",
    "sector": "tech",
-   "market_cap": 2781890816,
+   "market_cap": 2738423808,
    "returns": {
-    "1d": -5.27,
-    "1w": 3.7,
-    "1m": 12.25,
-    "1y": 5.9
+    "1d": -0.22,
+    "1w": 2.28,
+    "1m": 12.0,
+    "1y": 6.92
    }
   },
   {
    "ticker": "PPE",
    "company": "Purple Group Limited",
    "sector": "other",
-   "market_cap": 2654178304,
+   "market_cap": 2683345152,
    "returns": {
-    "1d": 0.0,
-    "1w": -1.6,
-    "1m": 13.58,
-    "1y": -22.03
+    "1d": -1.09,
+    "1w": -1.62,
+    "1m": 7.06,
+    "1y": -17.27
    }
   },
   {
    "ticker": "CMH",
    "company": "Combined Motor Holdings Limited",
    "sector": "other",
-   "market_cap": 2613149440,
+   "market_cap": 2603430144,
    "returns": {
-    "1d": 0.4,
-    "1w": 0.4,
-    "1m": -3.09,
-    "1y": 4.32
+    "1d": -0.03,
+    "1w": 0.24,
+    "1m": -0.69,
+    "1y": 5.14
    }
   },
   {
    "ticker": "IVT",
    "company": "Invicta Holdings Limited",
    "sector": "other",
-   "market_cap": 2593380352,
+   "market_cap": 2589049344,
    "returns": {
-    "1d": -1.58,
-    "1w": -12.69,
-    "1m": -12.69,
-    "1y": -23.37
+    "1d": 2.36,
+    "1w": -10.63,
+    "1m": -10.63,
+    "1y": -19.52
    }
   },
   {
    "ticker": "MPT",
    "company": "Mpact Limited",
    "sector": "industrial",
-   "market_cap": 2429226240,
+   "market_cap": 2471385088,
    "returns": {
-    "1d": 0.77,
+    "1d": -1.71,
     "1w": 0.0,
-    "1m": -1.11,
-    "1y": -27.13
-   }
-  },
-  {
-   "ticker": "ART",
-   "company": "Argent Industrial Limited",
-   "sector": "industrial",
-   "market_cap": 2422401536,
-   "returns": {
-    "1d": 4.11,
-    "1w": 7.03,
-    "1m": 14.53,
-    "1y": 57.97
+    "1m": -5.33,
+    "1y": -28.38
    }
   },
   {
@@ -1551,27 +1539,39 @@
    }
   },
   {
-   "ticker": "LBR",
-   "company": "Libstar Holdings Limited",
-   "sector": "food",
-   "market_cap": 2331212288,
+   "ticker": "ART",
+   "company": "Argent Industrial Limited",
+   "sector": "industrial",
+   "market_cap": 2406995968,
    "returns": {
-    "1d": 5.35,
-    "1w": 5.35,
-    "1m": 5.07,
-    "1y": -14.9
+    "1d": -0.46,
+    "1w": 5.43,
+    "1m": 14.14,
+    "1y": 54.58
    }
   },
   {
    "ticker": "CLH",
    "company": "City Lodge Hotels Limited",
    "sector": "industrial",
-   "market_cap": 2274491392,
+   "market_cap": 2344725248,
    "returns": {
-    "1d": -2.35,
-    "1w": -4.6,
-    "1m": -5.9,
-    "1y": 0.0
+    "1d": 1.45,
+    "1w": -4.1,
+    "1m": -4.32,
+    "1y": 3.19
+   }
+  },
+  {
+   "ticker": "LBR",
+   "company": "Libstar Holdings Limited",
+   "sector": "food",
+   "market_cap": 2290107648,
+   "returns": {
+    "1d": 0.76,
+    "1w": 10.28,
+    "1m": 2.85,
+    "1y": -12.36
    }
   },
   {
@@ -1580,41 +1580,53 @@
    "sector": "other",
    "market_cap": 2238595072,
    "returns": {
-    "1d": 0.0,
-    "1w": 4.0,
-    "1m": -3.7,
-    "1y": 30.0
+    "1d": -3.85,
+    "1w": -3.85,
+    "1m": -7.41,
+    "1y": 25.0
    }
   },
   {
    "ticker": "MDI",
    "company": "Master Drilling Group Limited",
    "sector": "industrial",
-   "market_cap": 2152676096,
+   "market_cap": 2212890624,
    "returns": {
-    "1d": 0.0,
-    "1w": -0.21,
-    "1m": -2.83,
-    "1y": -7.28
+    "1d": -0.69,
+    "1w": 0.0,
+    "1m": 1.13,
+    "1y": -12.86
    }
   },
   {
-   "ticker": "MCZ",
-   "company": "MC Mining Limited",
-   "sector": "mining",
-   "market_cap": 2095414528,
+   "ticker": "OAO",
+   "company": "Oando PLC",
+   "sector": "energy",
+   "market_cap": 2064530944,
    "returns": {
     "1d": 0.0,
-    "1w": 0.61,
-    "1m": 0.0,
-    "1y": 54.93
+    "1w": -19.35,
+    "1m": -21.88,
+    "1y": 38.89
+   }
+  },
+  {
+   "ticker": "CPR",
+   "company": "Copper 360 Limited",
+   "sector": "mining",
+   "market_cap": 1958865664,
+   "returns": {
+    "1d": 1.56,
+    "1w": -1.52,
+    "1m": 12.07,
+    "1y": 9458.82
    }
   },
   {
    "ticker": "OAS",
    "company": "Oasis Crescent Property Fund",
    "sector": "other",
-   "market_cap": 1945861760,
+   "market_cap": 1946523904,
    "returns": {
     "1d": 0.0,
     "1w": -0.03,
@@ -1623,99 +1635,99 @@
    }
   },
   {
-   "ticker": "CPR",
-   "company": "Copper 360 Limited",
-   "sector": "mining",
-   "market_cap": 1929185792,
-   "returns": {
-    "1d": -1.54,
-    "1w": -1.54,
-    "1m": 10.34,
-    "1y": 9311.76
-   }
-  },
-  {
-   "ticker": "NVS",
-   "company": "Novus Holdings Limited",
-   "sector": "industrial",
-   "market_cap": 1899117952,
-   "returns": {
-    "1d": -9.52,
-    "1w": 3.7,
-    "1m": -4.92,
-    "1y": -15.13
-   }
-  },
-  {
    "ticker": "CSB",
    "company": "Cashbuild Limited",
    "sector": "retail",
-   "market_cap": 1887266560,
+   "market_cap": 1907180672,
    "returns": {
-    "1d": 1.8,
-    "1w": 5.91,
-    "1m": 9.2,
-    "1y": -24.02
-   }
-  },
-  {
-   "ticker": "QFH",
-   "company": "Quantum Foods Holdings Ltd",
-   "sector": "food",
-   "market_cap": 1803412736,
-   "returns": {
-    "1d": 27.14,
-    "1w": 22.76,
-    "1m": 11.39,
-    "1y": 5.95
+    "1d": -1.48,
+    "1w": 1.27,
+    "1m": 9.31,
+    "1y": -22.94
    }
   },
   {
    "ticker": "AXX",
    "company": "Araxi Limited",
    "sector": "tech",
-   "market_cap": 1711345792,
+   "market_cap": 1757288064,
    "returns": {
-    "1d": -2.0,
-    "1w": -5.16,
-    "1m": 8.09,
-    "1y": 9030.43
+    "1d": 1.36,
+    "1w": 0.68,
+    "1m": 9.56,
+    "1y": 8365.91
+   }
+  },
+  {
+   "ticker": "NVS",
+   "company": "Novus Holdings Limited",
+   "sector": "industrial",
+   "market_cap": 1744023168,
+   "returns": {
+    "1d": 6.95,
+    "1w": 3.45,
+    "1m": 6.19,
+    "1y": -9.23
+   }
+  },
+  {
+   "ticker": "QFH",
+   "company": "Quantum Foods Holdings Ltd",
+   "sector": "food",
+   "market_cap": 1711610112,
+   "returns": {
+    "1d": -0.67,
+    "1w": 21.93,
+    "1m": 19.46,
+    "1y": 5.24
    }
   },
   {
    "ticker": "ZED",
    "company": "Zeder Investments Ltd.",
    "sector": "other",
-   "market_cap": 1678224384,
+   "market_cap": 1693620992,
    "returns": {
-    "1d": 1.87,
-    "1w": 0.93,
-    "1m": 4.81,
+    "1d": 0.0,
+    "1w": 0.0,
+    "1m": 6.86,
     "1y": -12.1
+   }
+  },
+  {
+   "ticker": "MCZ",
+   "company": "MC Mining Limited",
+   "sector": "mining",
+   "market_cap": 1689850368,
+   "returns": {
+    "1d": -24.85,
+    "1w": -24.85,
+    "1m": -18.95,
+    "1y": 15.89
    }
   },
   {
    "ticker": "BRN",
    "company": "Brimstone Investment Corporation Limited",
    "sector": "financial",
-   "market_cap": 1509645696,
+   "market_cap": 1602343296,
    "returns": {
-    "1d": 0.0,
-    "1w": -0.18,
-    "1m": 8.17,
-    "1y": 22.63
+    "1d": 0.18,
+    "1w": 0.0,
+    "1m": 8.37,
+    "1y": 22.84
    }
   },
   {
-   "ticker": "CHP",
-   "company": "Choppies Enterprises Limited",
-   "sector": "retail",
-   "market_cap": 1400831488,
+   "ticker": "ACL",
+   "company": "ArcelorMittal South Africa Limited",
+   "sector": "industrial",
+   "market_cap": 1326389120,
    "returns": {
-    "1d": 2.67,
-    "1w": -12.5,
-    "1m": -13.48,
-    "1y": -72.0
+    "1d": -5.6,
+    "1w": -10.61,
+    "1m": -3.28,
+    "1y": -16.31
    }
   },
   {
@@ -1731,51 +1743,51 @@
    }
   },
   {
-   "ticker": "ACL",
-   "company": "ArcelorMittal South Africa Limited",
-   "sector": "industrial",
-   "market_cap": 1315243008,
+   "ticker": "GML",
+   "company": "Gemfields Group Limited",
+   "sector": "mining",
+   "market_cap": 1310415232,
    "returns": {
-    "1d": 4.17,
-    "1w": -5.3,
-    "1m": 4.17,
-    "1y": -13.19
+    "1d": 2.99,
+    "1w": -1.43,
+    "1m": 1.47,
+    "1y": -48.12
    }
   },
   {
    "ticker": "TPC",
    "company": "Transpaco Limited",
    "sector": "industrial",
-   "market_cap": 1225211520,
+   "market_cap": 1280611840,
    "returns": {
     "1d": 0.0,
-    "1w": -99.0,
-    "1m": -99.04,
-    "1y": -98.71
+    "1w": 0.0,
+    "1m": -4.31,
+    "1y": 29.06
+   }
+  },
+  {
+   "ticker": "CHP",
+   "company": "Choppies Enterprises Limited",
+   "sector": "retail",
+   "market_cap": 1273483136,
+   "returns": {
+    "1d": 0.0,
+    "1w": -11.49,
+    "1m": 1.32,
+    "1y": -72.0
    }
   },
   {
    "ticker": "JBL",
    "company": "Jubilee Metals Group PLC",
    "sector": "mining",
-   "market_cap": 1217278848,
+   "market_cap": 1251092096,
    "returns": {
-    "1d": 0.0,
-    "1w": -11.63,
-    "1m": -11.63,
-    "1y": -45.71
-   }
-  },
-  {
-   "ticker": "GML",
-   "company": "Gemfields Group Limited",
-   "sector": "mining",
-   "market_cap": 1189719040,
-   "returns": {
-    "1d": 1.52,
-    "1w": -16.25,
-    "1m": 1.52,
-    "1y": -49.62
+    "1d": -5.26,
+    "1w": -10.0,
+    "1m": -21.74,
+    "1y": -46.27
    }
   },
   {
@@ -1784,142 +1796,142 @@
    "sector": "property",
    "market_cap": 1063657408,
    "returns": {
-    "1d": 0.0,
-    "1w": 0.0,
-    "1m": 32.43,
-    "1y": -3.92
+    "1d": 6.12,
+    "1w": 10.64,
+    "1m": 36.84,
+    "1y": 8.33
    }
   },
   {
    "ticker": "YRK",
    "company": "York Timber Holdings Limited",
    "sector": "industrial",
-   "market_cap": 1017011264,
+   "market_cap": 1063450112,
    "returns": {
-    "1d": 0.0,
-    "1w": -14.89,
-    "1m": -4.76,
-    "1y": -11.11
+    "1d": 9.5,
+    "1w": -6.81,
+    "1m": 4.29,
+    "1y": -0.9
    }
   },
   {
    "ticker": "SSK",
    "company": "Stefanutti Stocks Holdings Limited",
    "sector": "other",
-   "market_cap": 995099904,
+   "market_cap": 1036910848,
    "returns": {
-    "1d": 0.86,
-    "1w": 1.74,
-    "1m": -0.85,
-    "1y": 17.0
+    "1d": 1.71,
+    "1w": 2.76,
+    "1m": 1.71,
+    "1y": 17.82
    }
   },
   {
    "ticker": "SNV",
    "company": "Santova Limited",
    "sector": "other",
-   "market_cap": 958911104,
+   "market_cap": 976436928,
    "returns": {
-    "1d": -1.27,
-    "1w": -1.27,
-    "1m": -6.02,
-    "1y": 10.33
+    "1d": -1.79,
+    "1w": -1.16,
+    "1m": -7.71,
+    "1y": 8.19
    }
   },
   {
    "ticker": "MTA",
    "company": "Metair Investments Limited",
    "sector": "industrial",
-   "market_cap": 901802368,
+   "market_cap": 897881536,
    "returns": {
     "1d": 0.0,
-    "1w": 0.0,
+    "1w": 2.45,
     "1m": -5.15,
-    "1y": -31.24
-   }
-  },
-  {
-   "ticker": "TEX",
-   "company": "Texton Property Fund Limited",
-   "sector": "property",
-   "market_cap": 816789888,
-   "returns": {
-    "1d": 0.0,
-    "1w": -1.08,
-    "1m": 14.17,
-    "1y": -16.97
-   }
-  },
-  {
-   "ticker": "MST",
-   "company": "Mustek Limited",
-   "sector": "tech",
-   "market_cap": 811977856,
-   "returns": {
-    "1d": 1.93,
-    "1w": -3.17,
-    "1m": -0.97,
-    "1y": 8.36
+    "1y": -30.3
    }
   },
   {
    "ticker": "GPL",
    "company": "Grand Parade Investments Limited",
    "sector": "other",
-   "market_cap": 806017280,
+   "market_cap": 815335424,
    "returns": {
-    "1d": 0.58,
-    "1w": 8.12,
+    "1d": 0.0,
+    "1w": 1.76,
     "1m": 2.37,
-    "1y": -18.01
+    "1y": -19.53
    }
   },
   {
-   "ticker": "HLM",
-   "company": "Hulamin Limited",
-   "sector": "industrial",
-   "market_cap": 748590272,
+   "ticker": "MST",
+   "company": "Mustek Limited",
+   "sector": "tech",
+   "market_cap": 803858048,
    "returns": {
-    "1d": 0.84,
-    "1w": 6.7,
-    "1m": 9.63,
-    "1y": -6.27
+    "1d": -1.9,
+    "1w": -5.0,
+    "1m": -2.66,
+    "1y": 13.64
+   }
+  },
+  {
+   "ticker": "TEX",
+   "company": "Texton Property Fund Limited",
+   "sector": "property",
+   "market_cap": 763132160,
+   "returns": {
+    "1d": 0.0,
+    "1w": -1.08,
+    "1m": 11.84,
+    "1y": 3.4
    }
   },
   {
    "ticker": "PBT",
    "company": "PBT Holdings Limited",
    "sector": "financial",
-   "market_cap": 692100352,
+   "market_cap": 755378112,
    "returns": {
-    "1d": 1.45,
+    "1d": 0.0,
     "1w": 0.43,
     "1m": 1.45,
-    "1y": 18.24
+    "1y": 19.05
+   }
+  },
+  {
+   "ticker": "HLM",
+   "company": "Hulamin Limited",
+   "sector": "industrial",
+   "market_cap": 751722496,
+   "returns": {
+    "1d": 0.0,
+    "1w": 3.91,
+    "1m": 13.81,
+    "1y": -1.24
    }
   },
   {
    "ticker": "ADR",
    "company": "Adcorp Holdings Limited",
    "sector": "other",
-   "market_cap": 664030144,
+   "market_cap": 687292352,
    "returns": {
-    "1d": 4.31,
-    "1w": 9.35,
-    "1m": 7.28,
-    "1y": -4.64
+    "1d": -7.37,
+    "1w": -3.38,
+    "1m": 4.32,
+    "1y": -11.55
    }
   },
   {
    "ticker": "WEZ",
    "company": "Wesizwe Platinum Limited",
    "sector": "mining",
-   "market_cap": 651130816,
+   "market_cap": 618574272,
    "returns": {
-    "1d": 2.78,
-    "1w": -2.63,
-    "1m": -11.9,
-    "1y": 8122.22
+    "1d": 8.11,
+    "1w": 11.11,
+    "1m": -4.76,
+    "1y": 8788.89
    }
   },
   {
@@ -1928,22 +1940,22 @@
    "sector": "other",
    "market_cap": 578409728,
    "returns": {
-    "1d": 0.0,
-    "1w": -2.46,
-    "1m": 0.91,
-    "1y": 4.72
+    "1d": 0.9,
+    "1w": -1.58,
+    "1m": 1.82,
+    "1y": 5.66
    }
   },
   {
    "ticker": "ACT",
    "company": "AfroCentric Investment Corporation Limited",
    "sector": "financial",
-   "market_cap": 564995136,
+   "market_cap": 573183424,
    "returns": {
     "1d": 0.0,
     "1w": -1.43,
-    "1m": 1.47,
-    "1y": -54.61
+    "1m": 4.55,
+    "1y": -48.89
    }
   },
   {
@@ -1962,12 +1974,12 @@
    "ticker": "MHB",
    "company": "Mahube Infrastructure Limited",
    "sector": "other",
-   "market_cap": 540479808,
+   "market_cap": 504631680,
    "returns": {
-    "1d": 2.32,
-    "1w": 46.35,
-    "1m": 17140.7,
-    "1y": 56.21
+    "1d": 11.24,
+    "1w": 62.79,
+    "1m": 19078.08,
+    "1y": 68.97
    }
   },
   {
@@ -1976,34 +1988,46 @@
    "sector": "industrial",
    "market_cap": 500172928,
    "returns": {
+    "1d": -0.78,
+    "1w": -3.79,
+    "1m": -4.99,
+    "1y": -14.0
+   }
+  },
+  {
+   "ticker": "ENX",
+   "company": "enX Group Limited",
+   "sector": "other",
+   "market_cap": 426211904,
+   "returns": {
     "1d": 0.0,
-    "1w": -1.54,
-    "1m": -7.91,
-    "1y": -14.67
+    "1w": 13.04,
+    "1m": -0.85,
+    "1y": -38.74
    }
   },
   {
    "ticker": "PPR",
    "company": "Putprop Limited",
    "sector": "property",
-   "market_cap": 368924672,
+   "market_cap": 369772800,
    "returns": {
-    "1d": 0.12,
-    "1w": -0.34,
-    "1m": -13.13,
-    "1y": 94.83
+    "1d": 0.35,
+    "1w": 0.0,
+    "1m": -12.83,
+    "1y": 95.51
    }
   },
   {
    "ticker": "4SI",
    "company": "4Sight Holdings Limited",
    "sector": "other",
-   "market_cap": 357197856,
+   "market_cap": 368188576,
    "returns": {
-    "1d": 0.0,
-    "1w": 4.62,
-    "1m": -2.86,
-    "1y": -2.86
+    "1d": -4.41,
+    "1w": 1.56,
+    "1m": -5.8,
+    "1y": -9.72
    }
   },
   {
@@ -2022,7 +2046,7 @@
    "ticker": "VUN",
    "company": "Vunani Limited",
    "sector": "other",
-   "market_cap": 337871840,
+   "market_cap": 341089696,
    "returns": {
     "1d": 0.0,
     "1w": 0.0,
@@ -2036,10 +2060,10 @@
    "sector": "property",
    "market_cap": 324294048,
    "returns": {
-    "1d": -2.3,
-    "1w": -0.87,
-    "1m": -11.69,
-    "1y": -32.0
+    "1d": 0.0,
+    "1w": -5.29,
+    "1m": -10.53,
+    "1y": -33.07
    }
   },
   {
@@ -2070,7 +2094,7 @@
    "ticker": "TMT",
    "company": "Trematon Capital Investments Limited",
    "sector": "financial",
-   "market_cap": 271707040,
+   "market_cap": 287296800,
    "returns": {
     "1d": 0.0,
     "1w": 0.0,
@@ -2098,8 +2122,20 @@
    "returns": {
     "1d": 0.0,
     "1w": -37.93,
-    "1m": -40.0,
+    "1m": -39.6,
     "1y": 1895.57
+   }
+  },
+  {
+   "ticker": "SEB",
+   "company": "Sebata Holdings Limited",
+   "sector": "tech",
+   "market_cap": 258558960,
+   "returns": {
+    "1d": 0.0,
+    "1w": 2.33,
+    "1m": 4.76,
+    "1y": 165.06
    }
   },
   {
@@ -2111,7 +2147,7 @@
     "1d": 0.0,
     "1w": 0.0,
     "1m": 5.88,
-    "1y": 33.33
+    "1y": 28.57
    }
   },
   {
@@ -2127,51 +2163,39 @@
    }
   },
   {
-   "ticker": "SEB",
-   "company": "Sebata Holdings Limited",
-   "sector": "tech",
-   "market_cap": 252813184,
-   "returns": {
-    "1d": 0.0,
-    "1w": 2.33,
-    "1m": 4.76,
-    "1y": 165.06
-   }
-  },
-  {
-   "ticker": "RNG",
-   "company": "Randgold & Exploration Company Limited",
-   "sector": "mining",
-   "market_cap": 206165280,
-   "returns": {
-    "1d": -0.69,
-    "1w": -4.0,
-    "1m": -17.71,
-    "1y": 111.76
-   }
-  },
-  {
    "ticker": "FGL",
    "company": "Finbond Group Limited",
    "sector": "other",
-   "market_cap": 204309600,
+   "market_cap": 208952992,
    "returns": {
-    "1d": 2.27,
-    "1w": -10.0,
-    "1m": -39.19,
-    "1y": -60.53
+    "1d": -2.22,
+    "1w": -12.0,
+    "1m": -38.89,
+    "1y": -63.03
    }
   },
   {
    "ticker": "PMV",
    "company": "Primeserv Group Limited",
    "sector": "industrial",
-   "market_cap": 202247440,
+   "market_cap": 200041104,
    "returns": {
     "1d": 0.0,
     "1w": 1.48,
-    "1m": -6.14,
+    "1m": 9.56,
     "1y": -7.41
+   }
+  },
+  {
+   "ticker": "RNG",
+   "company": "Randgold & Exploration Company Limited",
+   "sector": "mining",
+   "market_cap": 188268992,
+   "returns": {
+    "1d": 0.0,
+    "1w": -4.0,
+    "1m": -19.78,
+    "1y": 111.76
    }
   },
   {
@@ -2183,7 +2207,7 @@
     "1d": 0.0,
     "1w": 0.0,
     "1m": 0.0,
-    "1y": 6339.39
+    "1y": 5566.67
    }
   },
   {
@@ -2195,7 +2219,7 @@
     "1d": 0.0,
     "1w": 0.0,
     "1m": -20.0,
-    "1y": 14.29
+    "1y": 9.09
    }
   },
   {
@@ -2207,7 +2231,7 @@
     "1d": 0.0,
     "1w": 0.0,
     "1m": 0.0,
-    "1y": -57.14
+    "1y": -40.0
    }
   },
   {
@@ -2219,19 +2243,31 @@
     "1d": 0.0,
     "1w": 0.0,
     "1m": 0.0,
-    "1y": -40.0
+    "1y": 0.0
    }
   },
   {
    "ticker": "MTU",
    "company": "Mantengu Limited",
    "sector": "mining",
-   "market_cap": 29164070,
+   "market_cap": 35644976,
    "returns": {
-    "1d": -9.09,
-    "1w": -44.44,
-    "1m": -50.0,
-    "1y": -83.05
+    "1d": -10.0,
+    "1w": -47.06,
+    "1m": -52.63,
+    "1y": -84.75
+   }
+  },
+  {
+   "ticker": "EUZ",
+   "company": "Europa Metals Limited",
+   "sector": "mining",
+   "market_cap": 22902476,
+   "returns": {
+    "1d": 0.0,
+    "1w": 30.15,
+    "1m": -37.89,
+    "1y": -55.03
    }
   },
   {
@@ -2244,18 +2280,6 @@
     "1w": 0.0,
     "1m": 0.0,
     "1y": 0.0
-   }
-  },
-  {
-   "ticker": "EUZ",
-   "company": "Europa Metals Limited",
-   "sector": "mining",
-   "market_cap": 22051084,
-   "returns": {
-    "1d": 0.0,
-    "1w": 30.15,
-    "1m": -37.89,
-    "1y": -55.95
    }
   },
   {
@@ -2283,10 +2307,10 @@
    "sector": "other",
    "market_cap": null,
    "returns": {
-    "1d": 7.59,
-    "1w": 7.59,
-    "1m": 4.35,
-    "1y": 12.47
+    "1d": -3.85,
+    "1w": -0.66,
+    "1m": 0.33,
+    "1y": 7.14
    }
   },
   {
@@ -2330,8 +2354,8 @@
    "sector": "industrial",
    "market_cap": null,
    "returns": {
-    "1d": -8.26,
-    "1w": 14.94,
+    "1d": 0.0,
+    "1w": 36.99,
     "1m": -9.09,
     "1y": null
    }
@@ -2343,8 +2367,8 @@
    "market_cap": null,
    "returns": {
     "1d": 0.0,
-    "1w": 0.38,
-    "1m": 5.75,
+    "1w": -0.11,
+    "1m": 6.06,
     "1y": null
    }
   },
@@ -2382,132 +2406,132 @@
    "name": "JSE Top 40",
    "symbol": "STX40.JO",
    "type": "index",
-   "value": 10535.0,
+   "value": 10776.0,
    "returns": {
-    "1d": -0.48,
-    "1w": 2.55,
-    "1m": 3.86,
-    "1y": 3.33
+    "1d": 2.29,
+    "1w": 7.33,
+    "1m": 6.25,
+    "1y": 7.39
    }
   },
   {
    "name": "Financial",
    "symbol": "STXFIN.JO",
    "type": "index",
-   "value": 2695.0,
+   "value": 2701.0,
    "returns": {
-    "1d": -0.26,
-    "1w": 2.24,
-    "1m": 8.36,
-    "1y": 17.38
+    "1d": 0.22,
+    "1w": 4.33,
+    "1m": 9.44,
+    "1y": 18.05
    }
   },
   {
    "name": "Industrial",
    "symbol": "STXIND.JO",
    "type": "index",
-   "value": 12645.0,
+   "value": 12750.0,
    "returns": {
-    "1d": -1.63,
-    "1w": 5.24,
-    "1m": 7.87,
-    "1y": -9.02
+    "1d": 0.83,
+    "1w": 6.06,
+    "1m": 8.32,
+    "1y": -7.18
    }
   },
   {
    "name": "Resources",
    "symbol": "STXRES.JO",
    "type": "index",
-   "value": 12098.0,
+   "value": 12699.0,
    "returns": {
-    "1d": 0.3,
-    "1w": 1.21,
-    "1m": -2.8,
-    "1y": 10.44
+    "1d": 4.97,
+    "1w": 11.82,
+    "1m": 1.07,
+    "1y": 20.76
    }
   },
   {
    "name": "Property",
    "symbol": "STXPRO.JO",
    "type": "index",
-   "value": 1434.0,
+   "value": 1438.0,
    "returns": {
-    "1d": 0.21,
-    "1w": 1.2,
-    "1m": 5.13,
-    "1y": 7.98
+    "1d": 0.28,
+    "1w": 1.55,
+    "1m": 5.5,
+    "1y": 8.2
    }
   },
   {
    "name": "NewGold ETF",
    "symbol": "GLD.JO",
    "type": "commodity",
-   "value": 61585.0,
+   "value": 62316.0,
    "returns": {
-    "1d": -0.91,
-    "1w": -0.16,
-    "1m": -2.23,
-    "1y": -4.51
+    "1d": 1.19,
+    "1w": 3.55,
+    "1m": -1.38,
+    "1y": -2.23
    }
   },
   {
    "name": "World Markets",
    "symbol": "ETFWLD.JO",
    "type": "index",
-   "value": 11556.0,
+   "value": 11602.0,
    "returns": {
-    "1d": -1.68,
-    "1w": -3.8,
-    "1m": -4.17,
-    "1y": 4.55
+    "1d": 0.4,
+    "1w": -2.85,
+    "1m": -3.58,
+    "1y": 4.9
    }
   },
   {
    "name": "USD/ZAR",
    "symbol": "USDZAR=X",
    "type": "currency",
-   "value": 16.362499237060547,
+   "value": 16.51432991027832,
    "returns": {
-    "1d": -1.05,
-    "1w": -1.44,
-    "1m": -0.85,
-    "1y": -4.69
+    "1d": 0.81,
+    "1w": -0.48,
+    "1m": -0.18,
+    "1y": -3.87
    }
   },
   {
    "name": "Gold ($/oz)",
    "symbol": "GC=F",
    "type": "commodity",
-   "value": 4114.5,
+   "value": 4030.199951171875,
    "returns": {
-    "1d": 0.97,
-    "1w": 3.65,
-    "1m": -2.41,
-    "1y": 3.09
+    "1d": -2.05,
+    "1w": 2.28,
+    "1m": -3.83,
+    "1y": 0.51
    }
   },
   {
    "name": "Brent Crude",
    "symbol": "BZ=F",
    "type": "commodity",
-   "value": 92.56999969482422,
+   "value": 91.48999786376953,
    "returns": {
-    "1d": -5.85,
-    "1w": -11.64,
-    "1m": -11.6,
-    "1y": 46.06
+    "1d": -1.17,
+    "1w": -11.69,
+    "1m": -14.21,
+    "1y": 43.78
    }
   },
   {
    "name": "Platinum ($/oz)",
    "symbol": "PL=F",
    "type": "commodity",
-   "value": 1561.199951171875,
+   "value": 1538.9000244140625,
    "returns": {
-    "1d": 1.5,
-    "1w": 7.0,
-    "1m": -7.03,
-    "1y": 2.15
+    "1d": -1.43,
+    "1w": 7.44,
+    "1m": -8.37,
+    "1y": -0.03
    }
   }
  ]
