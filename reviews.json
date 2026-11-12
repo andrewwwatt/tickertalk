@@ -7183,5 +7183,47 @@
     "price_current": 31.35,
     "performance_pct": null,
     "dividends_paid": 0
+  },
+  {
+    "ticker": "WHL",
+    "company": "Woolworths Holdings",
+    "date": "2026-11-11",
+    "title": "Trading Update in Respect of the 19 Weeks ended 8 November 2026",
+    "sens_url": "https://www.sharenet.co.za/v3/sens_display.php?tdate=20261111070500&seq=3&scode=",
+    "rating": "BEARISH",
+    "summary": "Group sales growth stalled at 0.2% as the constrained consumer tightened spending. Woolies Food managed 1.9% growth but CRG collapsed 9.5% and David Jones was placed into administration. The stock got hammered 8.5%.",
+    "review": "Woolworths just served up the kind of trading update that makes you check the date to see if the consumer has actually stopped spending. Group turnover and concession sales grew 0.2% — which is barely a rounding error in a R50bn business. Woolies SA Food did 1.9%, but comparable-store sales were 0.1%, which is zero in all but the most generous reading. FBH declined 0.3%, with fashion in deflation at -0.3% and only homeware (+6.4%) and beauty (+3.1%) keeping the category from looking worse. The in2food acquisition completed on 5 November, which management says will support gross margin — they are going to need it, because price movement of 3.0% in food is barely covering cost inflation and fuel is eating the difference.\n\nThe real damage is in Australia. Country Road Group sales collapsed 9.5%, with all brands under pressure, and here is the part that is going to keep Woolworths management awake: David Jones has been placed into administration and receivership. CRG runs nearly 300 concessions inside David Jones stores. The SENS says management is \"in communication with the appointed receivers and assessing what this means for the continued trading relationship\" — which is corporate-speak for \"we do not know yet, and it could be bad\". Add a financial services impairment rate that ticked up to 7.3% from 6.7%, and you have a retailer where the core SA business is treading water and the Australian leg is taking on water. At R37.78, down 8.5% on the day with 18.6 million shares traded, the market is not overreacting. It is catching up to reality.",
+    "price_at_review": 3778,
+    "price_current": 3778,
+    "performance_pct": null,
+    "dividends_paid": 0
+  },
+  {
+    "ticker": "DIB",
+    "company": "Dipula Properties",
+    "date": "2026-11-11",
+    "title": "Audited consolidated financial results for the year ended 31 August 2026 and guidance",
+    "sens_url": "https://www.sharenet.co.za/v3/sens_display.php?tdate=20261111080000&seq=17&scode=",
+    "rating": "BULLISH",
+    "summary": "Distributable earnings per share up 8.6% to 62.17c, dividend up 8.6% to 55.96c, vacancy down from 8.4% to 6.0%, and guidance of 8-10% growth ahead. NAV per share rose to R7.95 and gearing fell to 31.8%.",
+    "review": "Dipula keeps doing the boring property stuff well, and the numbers prove it. Revenue rose to R1.67bn, distributable earnings per share hit 62.17c (up 8.6%), and the full-year dividend climbed to 55.96c — also up 8.6%. The portfolio grew 13% to R12.2bn across 152 properties, vacancy shrank from 8.4% to 6.0%, and NAV per share improved to R7.95. The balance sheet is the quiet star: gearing fell to 31.8%, LTV sits at 31.66% — well below the 50% covenant — and the unmodified audit opinion means no nasty surprises hiding in the footnotes.\n\nThe guidance is the part that makes this interesting for the year ahead: the board is forecasting distributable earnings growth of 8% to 10% for FY2027. That is a statement of confidence from a REIT that owns convenience retail in townships and rural areas — the parts of the property market that actually hold up when the economy is tight. The R2bn shopping centre acquisition during the year shows management is still building, not coasting. At R7.40 the stock trades at a discount to NAV of R7.95, with a yield around 7.6%. In a property market where most landlords are whining about vacancies, Dipula is lowering them, growing distributions and guiding higher. That is a boring, beautiful REIT doing its job.",
+    "price_at_review": 740,
+    "price_current": 740,
+    "performance_pct": null,
+    "dividends_paid": 0
+  },
+  {
+    "ticker": "SSK",
+    "company": "Stefanutti Stocks Holdings",
+    "date": "2026-11-11",
+    "title": "Trading Statement",
+    "sens_url": "https://www.sharenet.co.za/v3/sens_display.php?tdate=20261111071500&seq=4&scode=",
+    "rating": "BULLISH",
+    "summary": "EPS from continuing operations expected up 110-130% to 97-106c and HEPS up 120-140% to 98-107c. From a base of 46c and 44c respectively — a construction turnaround with teeth.",
+    "review": "Stefanutti Stocks just dropped a trading statement that doubles the earnings of the business. EPS from continuing operations is expected between 97 and 106 cents, up 110% to 130% from 46 cents in the prior period. Headline EPS from continuing ops is even better: 98 to 107 cents, up 120% to 140%. Those are not incremental improvements. That is a business that has gone through the restructuring wringer and come out the other side earning real money again. The share price understood the assignment — up 10.5% to R6.85 on the day, and the stock is now up 65% from its 52-week low of R4.16.\n\nThe fine print matters: these are continuing operations only, while the comparative period includes discontinued operations. The restructuring has cleaned out the parts that did not work, and what remains is apparently working. The weighted average shares in issue barely changed (167.3m vs 167.2m), so there is no dilution masking the recovery. Full results land on 24 November, and that is when we will see the cash flow and order book. But a construction company that grew earnings by 110% in a tough building environment is a story worth watching. The stock at R6.85 on a 6.5x-ish forward multiple is pricing in scepticism. The numbers say the scepticism is wrong.",
+    "price_at_review": 685,
+    "price_current": 685,
+    "performance_pct": null,
+    "dividends_paid": 0
   }
 ]
