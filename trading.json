@@ -1,8 +1,8 @@
 {
   "period": {
     "start": "2026-07-31",
-    "end": "2026-11-16",
-    "days": 77,
+    "end": "2026-11-17",
+    "days": 78,
     "cash_dates": [
       "2026-08-03",
       "2026-09-01",
@@ -16,15 +16,15 @@
       "name": "Daily Trader",
       "news_sensitivity": "high",
       "total_in": 100000.0,
-      "final_cash": 2129.67,
-      "final_holdings_value": 95282.7,
-      "final_portfolio": 97412.37,
+      "final_cash": 533.37,
+      "final_holdings_value": 96826.24,
+      "final_portfolio": 97359.61,
       "return_pct": -2.6,
-      "realized": -949.65,
-      "unrealized": 699.72,
-      "total_costs": 2669.64,
+      "realized": -1221.57,
+      "unrealized": 971.64,
+      "total_costs": 2722.4,
       "total_dividends": 331.94,
-      "num_trades": 95,
+      "num_trades": 98,
       "risk": "CAUTIOUS",
       "news": [
         "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
@@ -339,6 +339,10 @@
         [
           "2026-11-16",
           97412.37
+        ],
+        [
+          "2026-11-17",
+          97359.61
         ]
       ],
       "holdings": {
@@ -376,13 +380,6 @@
           "buy_date": "2026-10-15",
           "current_price": 338.88,
           "sector": "retail"
-        },
-        "DRD": {
-          "shares": 113.78,
-          "cost": 41.98,
-          "buy_date": "2026-10-16",
-          "current_price": 39.59,
-          "sector": "mining"
         },
         "RBO": {
           "shares": 2081.27,
@@ -461,31 +458,45 @@
           "current_price": 0.14,
           "sector": "energy"
         },
-        "APF": {
-          "shares": 14993.47,
-          "cost": 0.53,
+        "IMP": {
+          "shares": 44.75,
+          "cost": 177.56,
           "buy_date": "2026-11-13",
-          "current_price": 0.53,
-          "sector": "property"
+          "current_price": 177.56,
+          "sector": "mining"
         },
-        "MTA": {
-          "shares": 1077.5,
-          "cost": 2.95,
+        "QLT": {
+          "shares": 74.6,
+          "cost": 42.61,
           "buy_date": "2026-11-16",
-          "current_price": 2.95,
+          "current_price": 42.61,
+          "sector": "financial"
+        },
+        "BLU": {
+          "shares": 146.65,
+          "cost": 8.67,
+          "buy_date": "2026-11-17",
+          "current_price": 8.67,
+          "sector": "tech"
+        },
+        "CAC": {
+          "shares": 80276.66,
+          "cost": 0.06,
+          "buy_date": "2026-11-17",
+          "current_price": 0.06,
           "sector": "industrial"
         }
       },
       "sector_composition": {
-        "property": 19.2,
+        "property": 11.0,
         "retail": 30.8,
         "other": 2.8,
-        "mining": 17.0,
-        "financial": 4.9,
-        "industrial": 8.6,
+        "financial": 8.1,
+        "industrial": 10.3,
+        "mining": 20.6,
         "energy": 10.2,
-        "tech": 4.4,
-        "cash": 2.2
+        "tech": 5.7,
+        "cash": 0.5
       },
       "all_trades": [
         {
@@ -1305,7 +1316,7 @@
           "shares": 1158.253108168958,
           "price": 2.95,
           "gain": -2316.5062163379166,
-          "reason": "Cut loss -40%"
+          "reason": "TT rated BEARISH \u2014 thesis broken"
         },
         {
           "date": "2026-11-13",
@@ -1327,33 +1338,51 @@
         },
         {
           "date": "2026-11-13",
-          "ticker": "APF",
+          "ticker": "IMP",
           "action": "BUY",
-          "shares": 14993.471009390421,
-          "price": 0.53,
+          "shares": 44.75410923055262,
+          "price": 177.56,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
         },
         {
           "date": "2026-11-16",
-          "ticker": "MTA",
+          "ticker": "QLT",
           "action": "BUY",
-          "shares": 1077.496899657888,
-          "price": 2.95,
+          "shares": 74.59788439311828,
+          "price": 42.61,
           "gain": 0,
           "reason": "TT BULLISH, CAUTIOUS market"
+        },
+        {
+          "date": "2026-11-17",
+          "ticker": "BLU",
+          "action": "BUY",
+          "shares": 146.6489436673942,
+          "price": 8.67,
+          "gain": 0,
+          "reason": "TT BULLISH, CAUTIOUS market"
+        },
+        {
+          "date": "2026-11-17",
+          "ticker": "DRD",
+          "action": "SELL",
+          "shares": 113.77539577243881,
+          "price": 39.59,
+          "gain": -271.92319589612816,
+          "reason": "Rotate out \u2014 CAC (BULLISH) is a better option"
+        },
+        {
+          "date": "2026-11-17",
+          "ticker": "CAC",
+          "action": "BUY",
+          "shares": 80276.66322166754,
+          "price": 0.059499998092651364,
+          "gain": 0,
+          "reason": "Rotate in \u2014 better BULLISH option"
         }
       ],
       "decisions": [
-        {
-          "date": "2026-11-06",
-          "risk": "CAUTIOUS",
-          "news": [],
-          "log": [
-            "\ud83d\udd34 SELL LSK \u2014 Cut loss -11% (R-195)",
-            "\ud83d\udfe2 BUY MTN @ R213.17 \u2014 BULLISH, CAUTIOUS"
-          ]
-        },
         {
           "date": "2026-11-09",
           "risk": "CAUTIOUS",
@@ -1394,10 +1423,10 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL MTA \u2014 Cut loss -40% (R-2317)",
+            "\ud83d\udd34 SELL MTA \u2014 TT rated BEARISH \u2014 thesis broken (R-2317)",
             "\ud83d\udd34 SELL QLT \u2014 Take profit +10% (R+145)",
             "\ud83d\udd34 SELL MTN \u2014 Take profit +10% (R+468)",
-            "\ud83d\udfe2 BUY APF @ R0.53 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY IMP @ R177.56 \u2014 BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -1405,7 +1434,17 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY MTA @ R2.95 \u2014 BULLISH, CAUTIOUS"
+            "\ud83d\udfe2 BUY QLT @ R42.61 \u2014 BULLISH, CAUTIOUS"
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "risk": "CAUTIOUS",
+          "news": [],
+          "log": [
+            "\ud83d\udfe2 BUY BLU @ R8.67 \u2014 BULLISH, CAUTIOUS",
+            "\ud83d\udd01 ROTATE DRD (BULLISH) \u2192 CAC: better BULLISH option",
+            "\ud83d\udfe2 BUY CAC @ R0.06 \u2014 rotated in"
           ]
         }
       ]
@@ -1414,13 +1453,13 @@
       "name": "Weekly Trader",
       "news_sensitivity": "medium",
       "total_in": 100000.0,
-      "final_cash": 1136.26,
-      "final_holdings_value": 99183.26,
-      "final_portfolio": 100319.52,
-      "return_pct": 0.3,
-      "realized": -1972.35,
-      "unrealized": 3847.95,
-      "total_costs": 1556.08,
+      "final_cash": 2982.74,
+      "final_holdings_value": 97179.04,
+      "final_portfolio": 100161.78,
+      "return_pct": 0.2,
+      "realized": 431.18,
+      "unrealized": 1444.43,
+      "total_costs": 1713.82,
       "total_dividends": 0,
       "num_trades": 44,
       "risk": "AGGRESSIVE",
@@ -1730,14 +1769,25 @@
         ],
         [
           "2026-11-13",
-          100319.52
+          100161.78
         ],
         [
           "2026-11-16",
-          100319.52
+          100161.78
+        ],
+        [
+          "2026-11-17",
+          100161.78
         ]
       ],
       "holdings": {
+        "NED": {
+          "shares": 36.29,
+          "cost": 298.81,
+          "buy_date": "2026-09-04",
+          "current_price": 289.3,
+          "sector": "financial"
+        },
         "SSS": {
           "shares": 147.38,
           "cost": 15.6,
@@ -1780,13 +1830,6 @@
           "current_price": 145.0,
           "sector": "financial"
         },
-        "APF": {
-          "shares": 51460.42,
-          "cost": 0.49,
-          "buy_date": "2026-11-06",
-          "current_price": 0.53,
-          "sector": "property"
-        },
         "RDF": {
           "shares": 559.1,
           "cost": 6.64,
@@ -1802,7 +1845,7 @@
           "sector": "energy"
         },
         "SOL": {
-          "shares": 41.87,
+          "shares": 102.66,
           "cost": 243.0,
           "buy_date": "2026-11-13",
           "current_price": 243.0,
@@ -1810,12 +1853,12 @@
         }
       },
       "sector_composition": {
-        "property": 33.3,
-        "financial": 32.9,
+        "financial": 43.4,
+        "property": 6.1,
         "industrial": 13.1,
         "retail": 1.3,
-        "energy": 18.3,
-        "cash": 1.1
+        "energy": 33.1,
+        "cash": 3.0
       },
       "all_trades": [
         {
@@ -2176,7 +2219,7 @@
           "shares": 1219.591005329067,
           "price": 2.95,
           "gain": -2426.986100604843,
-          "reason": "Cut loss -40%"
+          "reason": "TT rated BEARISH \u2014 thesis broken"
         },
         {
           "date": "2026-11-13",
@@ -2198,18 +2241,18 @@
         },
         {
           "date": "2026-11-13",
-          "ticker": "NED",
+          "ticker": "APF",
           "action": "SELL",
-          "shares": 36.28873901258335,
-          "price": 289.3,
-          "gain": -345.1059080096675,
+          "shares": 51460.42258999916,
+          "price": 0.53,
+          "gain": 2058.4169035999657,
           "reason": "Rotate out \u2014 SOL (BULLISH) is a better option"
         },
         {
           "date": "2026-11-13",
           "ticker": "SOL",
           "action": "BUY",
-          "shares": 41.87418017727805,
+          "shares": 102.66211902345786,
           "price": 243.0,
           "gain": 0,
           "reason": "Rotate in \u2014 better BULLISH option"
@@ -2283,10 +2326,10 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL MTA \u2014 Cut loss -40% (R-2427)",
+            "\ud83d\udd34 SELL MTA \u2014 TT rated BEARISH \u2014 thesis broken (R-2427)",
             "\ud83d\udd34 SELL LSK \u2014 Cut loss -18% (R-536)",
             "\ud83d\udfe2 BUY OAO @ R0.14 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udd01 ROTATE NED (BULLISH) \u2192 SOL: better BULLISH option",
+            "\ud83d\udd01 ROTATE APF (NEUTRAL) \u2192 SOL: better BULLISH option",
             "\ud83d\udfe2 BUY SOL @ R243.00 \u2014 rotated in"
           ]
         }
@@ -2616,6 +2659,10 @@
         ],
         [
           "2026-11-16",
+          96485.68
+        ],
+        [
+          "2026-11-17",
           96485.68
         ]
       ],
