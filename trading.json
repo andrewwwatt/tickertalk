@@ -27,8 +27,8 @@
       "num_trades": 102,
       "risk": "CAUTIOUS",
       "news": [
-        "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
-        "Pick n Pay CEO \u2014 turnaround plan showing early results",
+        "SA PPI inflation 3.8% — pipeline pressures easing",
+        "Pick n Pay CEO — turnaround plan showing early results",
         "Global markets cautious ahead of Jackson Hole"
       ],
       "daily_values": [
@@ -560,7 +560,7 @@
           "shares": 7.609033647654059,
           "price": 295.2,
           "gain": 7.380762638224496,
-          "reason": "Rotate out \u2014 TKG (BULLISH) is a better option"
+          "reason": "Rotate out — TKG (BULLISH) is a better option"
         },
         {
           "date": "2026-08-07",
@@ -569,7 +569,7 @@
           "shares": 40.997301979622655,
           "price": 54.28,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-13",
@@ -578,7 +578,7 @@
           "shares": 2826.7752148349164,
           "price": 2.05,
           "gain": -424.0162822252387,
-          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
+          "reason": "Rotate out — JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-13",
@@ -587,7 +587,7 @@
           "shares": 35.61017584431355,
           "price": 151.25,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-14",
@@ -596,7 +596,7 @@
           "shares": 379.4156072855738,
           "price": 16.21,
           "gain": -53.118185019980956,
-          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
+          "reason": "Rotate out — OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-08-14",
@@ -605,7 +605,7 @@
           "shares": 26168.785431145403,
           "price": 0.23,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-18",
@@ -614,7 +614,7 @@
           "shares": 47.525804229813815,
           "price": 78.05,
           "gain": -45.149514018323316,
-          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
+          "reason": "Rotate out — SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-08-18",
@@ -623,7 +623,7 @@
           "shares": 28.21020775381994,
           "price": 138.5,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-19",
@@ -650,7 +650,7 @@
           "shares": 40.997301979622655,
           "price": 54.23,
           "gain": -2.049865098981172,
-          "reason": "Rotate out \u2014 SSS (BULLISH) is a better option"
+          "reason": "Rotate out — SSS (BULLISH) is a better option"
         },
         {
           "date": "2026-08-24",
@@ -659,7 +659,7 @@
           "shares": 154.4389840629397,
           "price": 16.1,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-28",
@@ -749,7 +749,7 @@
           "shares": 2105.4815307055246,
           "price": 2.75,
           "gain": -421.09630614110483,
-          "reason": "Rotate out \u2014 SOL (BULLISH) is a better option"
+          "reason": "Rotate out — SOL (BULLISH) is a better option"
         },
         {
           "date": "2026-09-04",
@@ -758,7 +758,7 @@
           "shares": 29.714035534686197,
           "price": 197.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-09-07",
@@ -767,7 +767,7 @@
           "shares": 42.8462848592436,
           "price": 76.98,
           "gain": -215.08834999340252,
-          "reason": "Rotate out \u2014 SPG (BULLISH) is a better option"
+          "reason": "Rotate out — SPG (BULLISH) is a better option"
         },
         {
           "date": "2026-09-07",
@@ -776,7 +776,7 @@
           "shares": 201.3888988550681,
           "price": 17.5,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-09-08",
@@ -785,7 +785,7 @@
           "shares": 201.3888988550681,
           "price": 17.82,
           "gain": 64.44444763362208,
-          "reason": "Rotate out \u2014 CPR (BULLISH) is a better option"
+          "reason": "Rotate out — CPR (BULLISH) is a better option"
         },
         {
           "date": "2026-09-08",
@@ -794,7 +794,7 @@
           "shares": 5916.946119236727,
           "price": 0.6,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-09-09",
@@ -866,7 +866,7 @@
           "shares": 128.03274754200112,
           "price": 50.94,
           "gain": -711.8620763335266,
-          "reason": "TT rated BEARISH \u2014 thesis broken"
+          "reason": "TT rated BEARISH — thesis broken"
         },
         {
           "date": "2026-10-01",
@@ -1001,7 +1001,7 @@
           "shares": 5916.946119236727,
           "price": 0.54,
           "gain": -355.01676715420354,
-          "reason": "Rotate out \u2014 IMP (BULLISH) is a better option"
+          "reason": "Rotate out — IMP (BULLISH) is a better option"
         },
         {
           "date": "2026-10-13",
@@ -1010,7 +1010,7 @@
           "shares": 18.604519173760508,
           "price": 188.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-14",
@@ -1019,7 +1019,7 @@
           "shares": 35.61017584431355,
           "price": 147.89,
           "gain": -119.65019083689458,
-          "reason": "Rotate out \u2014 RES (BULLISH) is a better option"
+          "reason": "Rotate out — RES (BULLISH) is a better option"
         },
         {
           "date": "2026-10-14",
@@ -1028,7 +1028,7 @@
           "shares": 64.48022102082604,
           "price": 78.2,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-15",
@@ -1037,7 +1037,7 @@
           "shares": 7.515688557010972,
           "price": 142.0,
           "gain": -90.18826268413159,
-          "reason": "Rotate out \u2014 SHP (BULLISH) is a better option"
+          "reason": "Rotate out — SHP (BULLISH) is a better option"
         },
         {
           "date": "2026-10-15",
@@ -1046,7 +1046,7 @@
           "shares": 4.340849751845863,
           "price": 335.23,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-16",
@@ -1055,7 +1055,7 @@
           "shares": 13676.354498625677,
           "price": 0.38,
           "gain": -273.52708997251375,
-          "reason": "Rotate out \u2014 DRD (BULLISH) is a better option"
+          "reason": "Rotate out — DRD (BULLISH) is a better option"
         },
         {
           "date": "2026-10-16",
@@ -1064,7 +1064,7 @@
           "shares": 113.77539577243881,
           "price": 41.98,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-19",
@@ -1073,7 +1073,7 @@
           "shares": 41.86162584264128,
           "price": 282.92,
           "gain": -507.7815214712391,
-          "reason": "Rotate out \u2014 RBO (BULLISH) is a better option"
+          "reason": "Rotate out — RBO (BULLISH) is a better option"
         },
         {
           "date": "2026-10-19",
@@ -1082,7 +1082,7 @@
           "shares": 2081.266049327838,
           "price": 5.3,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-21",
@@ -1325,7 +1325,7 @@
           "shares": 1158.253108168958,
           "price": 2.95,
           "gain": -2316.5062163379166,
-          "reason": "TT rated BEARISH \u2014 thesis broken"
+          "reason": "TT rated BEARISH — thesis broken"
         },
         {
           "date": "2026-11-13",
@@ -1379,7 +1379,7 @@
           "shares": 113.77539577243881,
           "price": 38.54,
           "gain": -391.3873614571894,
-          "reason": "Rotate out \u2014 QLT (BULLISH) is a better option"
+          "reason": "Rotate out — QLT (BULLISH) is a better option"
         },
         {
           "date": "2026-11-17",
@@ -1388,7 +1388,7 @@
           "shares": 111.40299112397395,
           "price": 41.92,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-11-18",
@@ -1397,7 +1397,7 @@
           "shares": 1448.422677165144,
           "price": 2.27,
           "gain": -159.32649448816574,
-          "reason": "Rotate out \u2014 BLU (BULLISH) is a better option"
+          "reason": "Rotate out — BLU (BULLISH) is a better option"
         },
         {
           "date": "2026-11-18",
@@ -1406,7 +1406,7 @@
           "shares": 382.9407906674973,
           "price": 8.87,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-11-19",
@@ -1415,7 +1415,7 @@
           "shares": 64.48022102082604,
           "price": 75.25,
           "gain": -190.21665201143696,
-          "reason": "Rotate out \u2014 CAC (BULLISH) is a better option"
+          "reason": "Rotate out — CAC (BULLISH) is a better option"
         },
         {
           "date": "2026-11-19",
@@ -1424,7 +1424,7 @@
           "shares": 80359.03380281663,
           "price": 0.059499998092651364,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         }
       ],
       "decisions": [
@@ -1433,8 +1433,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL OAO \u2014 Cut loss -44% (R-3450)",
-            "\ud83d\udfe2 BUY NPN @ R754.52 \u2014 BULLISH, CAUTIOUS"
+            "🔴 SELL OAO — Cut loss -44% (R-3450)",
+            "🟢 BUY NPN @ R754.52 — BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -1442,8 +1442,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL APF \u2014 Take profit +10% (R+496)",
-            "\ud83d\udfe2 BUY OAO @ R0.14 \u2014 BULLISH, CAUTIOUS"
+            "🔴 SELL APF — Take profit +10% (R+496)",
+            "🟢 BUY OAO @ R0.14 — BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -1451,10 +1451,10 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL MTA \u2014 TT rated BEARISH \u2014 thesis broken (R-2317)",
-            "\ud83d\udd34 SELL QLT \u2014 Take profit +10% (R+145)",
-            "\ud83d\udd34 SELL MTN \u2014 Take profit +10% (R+468)",
-            "\ud83d\udfe2 BUY IMP @ R177.56 \u2014 BULLISH, CAUTIOUS"
+            "🔴 SELL MTA — TT rated BEARISH — thesis broken (R-2317)",
+            "🔴 SELL QLT — Take profit +10% (R+145)",
+            "🔴 SELL MTN — Take profit +10% (R+468)",
+            "🟢 BUY IMP @ R177.56 — BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -1462,7 +1462,7 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY TKG @ R69.00 \u2014 BULLISH, CAUTIOUS"
+            "🟢 BUY TKG @ R69.00 — BULLISH, CAUTIOUS"
           ]
         },
         {
@@ -1470,9 +1470,9 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY CPR @ R0.66 \u2014 BULLISH, CAUTIOUS",
-            "\ud83d\udd01 ROTATE DRD (BULLISH) \u2192 QLT: better BULLISH option",
-            "\ud83d\udfe2 BUY QLT @ R41.92 \u2014 rotated in"
+            "🟢 BUY CPR @ R0.66 — BULLISH, CAUTIOUS",
+            "🔁 ROTATE DRD (BULLISH) → QLT: better BULLISH option",
+            "🟢 BUY QLT @ R41.92 — rotated in"
           ]
         },
         {
@@ -1480,8 +1480,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd01 ROTATE HLM (BULLISH) \u2192 BLU: better BULLISH option",
-            "\ud83d\udfe2 BUY BLU @ R8.87 \u2014 rotated in"
+            "🔁 ROTATE HLM (BULLISH) → BLU: better BULLISH option",
+            "🟢 BUY BLU @ R8.87 — rotated in"
           ]
         },
         {
@@ -1489,8 +1489,8 @@
           "risk": "CAUTIOUS",
           "news": [],
           "log": [
-            "\ud83d\udd01 ROTATE RES (BULLISH) \u2192 CAC: better BULLISH option",
-            "\ud83d\udfe2 BUY CAC @ R0.06 \u2014 rotated in"
+            "🔁 ROTATE RES (BULLISH) → CAC: better BULLISH option",
+            "🟢 BUY CAC @ R0.06 — rotated in"
           ]
         }
       ]
@@ -1510,7 +1510,7 @@
       "num_trades": 44,
       "risk": "AGGRESSIVE",
       "news": [
-        "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top \u2014 SA's external position is solid."
+        "Naspers discount narrowing is the single biggest value unlock on the JSE. Italtile confirms the construction recovery. Current account surplus is the cherry on top — SA's external position is solid."
       ],
       "daily_values": [
         [
@@ -1967,7 +1967,7 @@
           "shares": 2892.5141733194496,
           "price": 2.06,
           "gain": -260.3262755987507,
-          "reason": "Rotate out \u2014 JSE (BULLISH) is a better option"
+          "reason": "Rotate out — JSE (BULLISH) is a better option"
         },
         {
           "date": "2026-08-21",
@@ -1976,7 +1976,7 @@
           "shares": 36.657024429460414,
           "price": 154.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-08-28",
@@ -1985,7 +1985,7 @@
           "shares": 377.5681788873483,
           "price": 16.23,
           "gain": -75.51363577746997,
-          "reason": "Rotate out \u2014 MTA (BULLISH) is a better option"
+          "reason": "Rotate out — MTA (BULLISH) is a better option"
         },
         {
           "date": "2026-08-28",
@@ -1994,7 +1994,7 @@
           "shares": 1219.591005329067,
           "price": 4.94,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-09-04",
@@ -2030,7 +2030,7 @@
           "shares": 31.189533411527048,
           "price": 77.0,
           "gain": -109.16336694034453,
-          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
+          "reason": "Rotate out — OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-09-11",
@@ -2039,7 +2039,7 @@
           "shares": 11849.166147044218,
           "price": 0.2,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-09-18",
@@ -2048,7 +2048,7 @@
           "shares": 4978.319489252077,
           "price": 2.25,
           "gain": -945.8807029578948,
-          "reason": "Rotate out \u2014 SBP (BULLISH) is a better option"
+          "reason": "Rotate out — SBP (BULLISH) is a better option"
         },
         {
           "date": "2026-09-18",
@@ -2057,7 +2057,7 @@
           "shares": 69.98473195980623,
           "price": 146.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-09-25",
@@ -2075,7 +2075,7 @@
           "shares": 60.04307089618954,
           "price": 52.38,
           "gain": -213.15290168147249,
-          "reason": "Rotate out \u2014 LSK (BULLISH) is a better option"
+          "reason": "Rotate out — LSK (BULLISH) is a better option"
         },
         {
           "date": "2026-09-25",
@@ -2084,7 +2084,7 @@
           "shares": 41.013322165673344,
           "price": 70.82,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-02",
@@ -2138,7 +2138,7 @@
           "shares": 36.657024429460414,
           "price": 148.5,
           "gain": -201.61363436203192,
-          "reason": "Rotate out \u2014 OAO (BULLISH) is a better option"
+          "reason": "Rotate out — OAO (BULLISH) is a better option"
         },
         {
           "date": "2026-10-09",
@@ -2147,7 +2147,7 @@
           "shares": 16110.384904428625,
           "price": 0.32,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-16",
@@ -2174,7 +2174,7 @@
           "shares": 69.98473195980623,
           "price": 140.5,
           "gain": -384.91602577893354,
-          "reason": "Rotate out \u2014 TGA (BULLISH) is a better option"
+          "reason": "Rotate out — TGA (BULLISH) is a better option"
         },
         {
           "date": "2026-10-16",
@@ -2183,7 +2183,7 @@
           "shares": 65.73686322049467,
           "price": 135.26,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         },
         {
           "date": "2026-10-23",
@@ -2273,7 +2273,7 @@
           "shares": 1219.591005329067,
           "price": 2.95,
           "gain": -2426.986100604843,
-          "reason": "TT rated BEARISH \u2014 thesis broken"
+          "reason": "TT rated BEARISH — thesis broken"
         },
         {
           "date": "2026-11-13",
@@ -2300,7 +2300,7 @@
           "shares": 51460.42258999916,
           "price": 0.53,
           "gain": 2058.4169035999657,
-          "reason": "Rotate out \u2014 SOL (BULLISH) is a better option"
+          "reason": "Rotate out — SOL (BULLISH) is a better option"
         },
         {
           "date": "2026-11-13",
@@ -2309,7 +2309,7 @@
           "shares": 102.66211902345786,
           "price": 243.0,
           "gain": 0,
-          "reason": "Rotate in \u2014 better BULLISH option"
+          "reason": "Rotate in — better BULLISH option"
         }
       ],
       "decisions": [
@@ -2318,10 +2318,10 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL PMV \u2014 Take profit +16% (R+1011)",
-            "\ud83d\udd34 SELL OAO \u2014 Cut loss -35% (R-829)",
-            "\ud83d\udfe2 BUY APF @ R0.39 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udfe2 BUY QLT @ R38.35 \u2014 BULLISH, AGGRESSIVE"
+            "🔴 SELL PMV — Take profit +16% (R+1011)",
+            "🔴 SELL OAO — Cut loss -35% (R-829)",
+            "🟢 BUY APF @ R0.39 — BULLISH, AGGRESSIVE",
+            "🟢 BUY QLT @ R38.35 — BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -2329,9 +2329,9 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY PMV @ R2.51 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udd01 ROTATE JSE (NEUTRAL) \u2192 OAO: better BULLISH option",
-            "\ud83d\udfe2 BUY OAO @ R0.32 \u2014 rotated in"
+            "🟢 BUY PMV @ R2.51 — BULLISH, AGGRESSIVE",
+            "🔁 ROTATE JSE (NEUTRAL) → OAO: better BULLISH option",
+            "🟢 BUY OAO @ R0.32 — rotated in"
           ]
         },
         {
@@ -2339,10 +2339,10 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL HLM \u2014 Cut loss -14% (R-141)",
-            "\ud83d\udfe2 BUY SUR @ R41.50 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udd01 ROTATE SBP (BULLISH) \u2192 TGA: better BULLISH option",
-            "\ud83d\udfe2 BUY TGA @ R135.26 \u2014 rotated in"
+            "🔴 SELL HLM — Cut loss -14% (R-141)",
+            "🟢 BUY SUR @ R41.50 — BULLISH, AGGRESSIVE",
+            "🔁 ROTATE SBP (BULLISH) → TGA: better BULLISH option",
+            "🟢 BUY TGA @ R135.26 — rotated in"
           ]
         },
         {
@@ -2350,8 +2350,8 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL TGA \u2014 Take profit +12% (R+1100)",
-            "\ud83d\udfe2 BUY HLM @ R2.30 \u2014 BULLISH, AGGRESSIVE"
+            "🔴 SELL TGA — Take profit +12% (R+1100)",
+            "🟢 BUY HLM @ R2.30 — BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -2359,9 +2359,9 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL APF \u2014 Take profit +21% (R+3691)",
-            "\ud83d\udfe2 BUY SBP @ R145.00 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udfe2 BUY SOL @ R289.45 \u2014 BULLISH, AGGRESSIVE"
+            "🔴 SELL APF — Take profit +21% (R+3691)",
+            "🟢 BUY SBP @ R145.00 — BULLISH, AGGRESSIVE",
+            "🟢 BUY SOL @ R289.45 — BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -2369,10 +2369,10 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL OAO \u2014 Cut loss -22% (R-1128)",
-            "\ud83d\udd34 SELL SOL \u2014 Cut loss -15% (R-178)",
-            "\ud83d\udfe2 BUY APF @ R0.49 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udfe2 BUY RDF @ R6.64 \u2014 BULLISH, AGGRESSIVE"
+            "🔴 SELL OAO — Cut loss -22% (R-1128)",
+            "🔴 SELL SOL — Cut loss -15% (R-178)",
+            "🟢 BUY APF @ R0.49 — BULLISH, AGGRESSIVE",
+            "🟢 BUY RDF @ R6.64 — BULLISH, AGGRESSIVE"
           ]
         },
         {
@@ -2380,11 +2380,11 @@
           "risk": "AGGRESSIVE",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL MTA \u2014 TT rated BEARISH \u2014 thesis broken (R-2427)",
-            "\ud83d\udd34 SELL LSK \u2014 Cut loss -18% (R-536)",
-            "\ud83d\udfe2 BUY OAO @ R0.14 \u2014 BULLISH, AGGRESSIVE",
-            "\ud83d\udd01 ROTATE APF (NEUTRAL) \u2192 SOL: better BULLISH option",
-            "\ud83d\udfe2 BUY SOL @ R243.00 \u2014 rotated in"
+            "🔴 SELL MTA — TT rated BEARISH — thesis broken (R-2427)",
+            "🔴 SELL LSK — Cut loss -18% (R-536)",
+            "🟢 BUY OAO @ R0.14 — BULLISH, AGGRESSIVE",
+            "🔁 ROTATE APF (NEUTRAL) → SOL: better BULLISH option",
+            "🟢 BUY SOL @ R243.00 — rotated in"
           ]
         }
       ]
@@ -2404,7 +2404,7 @@
       "num_trades": 15,
       "risk": "BALANCED",
       "news": [
-        "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
+        "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% — still attractive yield for foreign investors. Capital inflows supporting the rand."
       ],
       "daily_values": [
         [
@@ -2875,7 +2875,7 @@
           "shares": 2390.3522214149616,
           "price": 2.74,
           "gain": -5354.388975969514,
-          "reason": "TT rated BEARISH \u2014 thesis broken"
+          "reason": "TT rated BEARISH — thesis broken"
         },
         {
           "date": "2026-11-18",
@@ -2928,13 +2928,13 @@
           "date": "2026-08-19",
           "risk": "BALANCED",
           "news": [
-            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% \u2014 still attractive yield for foreign investors. Capital inflows supporting the rand."
+            "August 19: SA equities at 2026 highs. The combination of domestic rate cut expectations + global Fed pivot is powerful. SA bonds at 10.2% — still attractive yield for foreign investors. Capital inflows supporting the rand."
           ],
           "log": [
-            "\ud83d\udfe2 BUY HLM @ R2.00 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY PMV @ R3.10 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY SSS @ R16.20 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY LSK @ R78.00 \u2014 BULLISH, BALANCED"
+            "🟢 BUY HLM @ R2.00 — BULLISH, BALANCED",
+            "🟢 BUY PMV @ R3.10 — BULLISH, BALANCED",
+            "🟢 BUY SSS @ R16.20 — BULLISH, BALANCED",
+            "🟢 BUY LSK @ R78.00 — BULLISH, BALANCED"
           ]
         },
         {
@@ -2942,8 +2942,8 @@
           "risk": "BALANCED",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY NED @ R295.85 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY MTA @ R4.98 \u2014 BULLISH, BALANCED"
+            "🟢 BUY NED @ R295.85 — BULLISH, BALANCED",
+            "🟢 BUY MTA @ R4.98 — BULLISH, BALANCED"
           ]
         },
         {
@@ -2951,8 +2951,8 @@
           "risk": "BALANCED",
           "news": [],
           "log": [
-            "\ud83d\udfe2 BUY APF @ R0.40 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY OAO @ R0.32 \u2014 BULLISH, BALANCED"
+            "🟢 BUY APF @ R0.40 — BULLISH, BALANCED",
+            "🟢 BUY OAO @ R0.32 — BULLISH, BALANCED"
           ]
         },
         {
@@ -2960,16 +2960,385 @@
           "risk": "BALANCED",
           "news": [],
           "log": [
-            "\ud83d\udd34 SELL LSK \u2014 Cut loss -28% (R-708)",
-            "\ud83d\udd34 SELL MTA \u2014 TT rated BEARISH \u2014 thesis broken (R-5354)",
-            "\ud83d\udd34 SELL APF \u2014 Take profit +25% (R+4590)",
-            "\ud83d\udd34 SELL OAO \u2014 Cut loss -56% (R-3618)",
-            "\ud83d\udfe2 BUY TKG @ R69.48 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY RDF @ R6.50 \u2014 BULLISH, BALANCED",
-            "\ud83d\udfe2 BUY SBP @ R143.00 \u2014 BULLISH, BALANCED"
+            "🔴 SELL LSK — Cut loss -28% (R-708)",
+            "🔴 SELL MTA — TT rated BEARISH — thesis broken (R-5354)",
+            "🔴 SELL APF — Take profit +25% (R+4590)",
+            "🔴 SELL OAO — Cut loss -56% (R-3618)",
+            "🟢 BUY TKG @ R69.48 — BULLISH, BALANCED",
+            "🟢 BUY RDF @ R6.50 — BULLISH, BALANCED",
+            "🟢 BUY SBP @ R143.00 — BULLISH, BALANCED"
           ]
         }
       ]
     }
+  },
+  "Going with the Herd": {
+    "name": "Going with the Herd",
+    "cash": 7330.37,
+    "total_invested": 100000.0,
+    "realized": -4745.78,
+    "unrealized": 698.24,
+    "costs": 655.77,
+    "final_portfolio": 95296.68,
+    "holdings": {
+      "AGL": {
+        "shares": 7.129401314513312,
+        "avg_cost": 872.29,
+        "current_price": 825.79,
+        "buy_date": "2026-08-19",
+        "value": 5887.39,
+        "unrealized": -331.52
+      },
+      "EXX": {
+        "shares": 32.6886506793395,
+        "avg_cost": 190.01,
+        "current_price": 177.15,
+        "buy_date": "2026-08-19",
+        "value": 5790.79,
+        "unrealized": -420.38
+      },
+      "ABG": {
+        "shares": 27.49632187899088,
+        "avg_cost": 225.61,
+        "current_price": 220.38,
+        "buy_date": "2026-08-19",
+        "value": 6059.64,
+        "unrealized": -143.81
+      },
+      "NED": {
+        "shares": 8.201605329853093,
+        "avg_cost": 306.13,
+        "current_price": 284.18,
+        "buy_date": "2026-08-19",
+        "value": 2330.73,
+        "unrealized": -180.03
+      },
+      "NPN": {
+        "shares": 27.528677187565826,
+        "avg_cost": 682.26,
+        "current_price": 735.5,
+        "buy_date": "2026-10-21",
+        "value": 20247.34,
+        "unrealized": 1465.63
+      },
+      "PRX": {
+        "shares": 9.464490344374816,
+        "avg_cost": 635.0,
+        "current_price": 667.58,
+        "buy_date": "2026-10-21",
+        "value": 6318.3,
+        "unrealized": 308.35
+      },
+      "DSY": {
+        "shares": 85.91131136979307,
+        "avg_cost": 276.53,
+        "current_price": 276.53,
+        "buy_date": "2026-11-18",
+        "value": 23757.05,
+        "unrealized": 0.0
+      },
+      "NTC": {
+        "shares": 936.3383246451384,
+        "avg_cost": 18.77,
+        "current_price": 18.77,
+        "buy_date": "2026-11-18",
+        "value": 17575.07,
+        "unrealized": 0.0
+      }
+    },
+    "all_trades": [
+      {
+        "date": "2026-08-19",
+        "ticker": "AGL",
+        "action": "BUY",
+        "shares": 7.129401314513312,
+        "price": 872.29,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "EXX",
+        "action": "BUY",
+        "shares": 32.6886506793395,
+        "price": 190.01,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "ABG",
+        "action": "BUY",
+        "shares": 27.49632187899088,
+        "price": 225.61,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "NED",
+        "action": "BUY",
+        "shares": 8.201605329853093,
+        "price": 306.13,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, healthcare, gold"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "SOL",
+        "action": "BUY",
+        "shares": 53.322585904869804,
+        "price": 233.26,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "MTA",
+        "action": "BUY",
+        "shares": 2385.1192790843415,
+        "price": 4.98,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight commodities, banks, energy, em_exposed, cyclicals"
+      },
+      {
+        "date": "2026-10-21",
+        "ticker": "NPN",
+        "action": "BUY",
+        "shares": 27.528677187565826,
+        "price": 682.26,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials"
+      },
+      {
+        "date": "2026-10-21",
+        "ticker": "PRX",
+        "action": "BUY",
+        "shares": 9.464490344374816,
+        "price": 635.0,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "SOL",
+        "action": "SELL",
+        "shares": 53.322585904869804,
+        "price": 241.77,
+        "gain": 453.77520605044265,
+        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials, banks"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "MTA",
+        "action": "SELL",
+        "shares": 2385.1192790843415,
+        "price": 2.8,
+        "gain": -5199.5600284038655,
+        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials, banks"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "DSY",
+        "action": "BUY",
+        "shares": 85.91131136979307,
+        "price": 276.53,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials, banks"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "NTC",
+        "action": "BUY",
+        "shares": 936.3383246451384,
+        "price": 18.77,
+        "gain": 0,
+        "reason": "FMS: Following consensus: overweight technology, healthcare, industrials, banks"
+      }
+    ]
+  },
+  "The Contrarian": {
+    "name": "The Contrarian",
+    "cash": 4791.38,
+    "total_invested": 100000.0,
+    "realized": 47.69,
+    "unrealized": -624.03,
+    "costs": 499.13,
+    "final_portfolio": 98924.53,
+    "holdings": {
+      "RDF": {
+        "shares": 998.219176988253,
+        "avg_cost": 6.23,
+        "current_price": 6.48,
+        "buy_date": "2026-08-19",
+        "value": 6468.46,
+        "unrealized": 249.55
+      },
+      "HYP": {
+        "shares": 105.77606463864609,
+        "avg_cost": 58.72,
+        "current_price": 58.14,
+        "buy_date": "2026-08-19",
+        "value": 6149.82,
+        "unrealized": -61.35
+      },
+      "GRT": {
+        "shares": 361.50612931929675,
+        "avg_cost": 17.16,
+        "current_price": 15.85,
+        "buy_date": "2026-08-19",
+        "value": 5729.87,
+        "unrealized": -473.57
+      },
+      "NED": {
+        "shares": 41.36437537418841,
+        "avg_cost": 295.85,
+        "current_price": 284.18,
+        "buy_date": "2026-09-16",
+        "value": 11754.93,
+        "unrealized": -482.72
+      },
+      "ABG": {
+        "shares": 54.8737901211045,
+        "avg_cost": 220.11,
+        "current_price": 220.38,
+        "buy_date": "2026-09-16",
+        "value": 12093.09,
+        "unrealized": 14.82
+      },
+      "SPG": {
+        "shares": 1108.5891626080718,
+        "avg_cost": 16.68,
+        "current_price": 17.02,
+        "buy_date": "2026-10-21",
+        "value": 18868.19,
+        "unrealized": 376.92
+      },
+      "MTH": {
+        "shares": 56.16330392551284,
+        "avg_cost": 112.18,
+        "current_price": 107.77,
+        "buy_date": "2026-10-21",
+        "value": 6052.72,
+        "unrealized": -247.68
+      },
+      "WHL": {
+        "shares": 684.6816180138549,
+        "avg_cost": 35.99,
+        "current_price": 35.99,
+        "buy_date": "2026-11-18",
+        "value": 24641.69,
+        "unrealized": 0.0
+      },
+      "SOL": {
+        "shares": 9.820801690176568,
+        "avg_cost": 241.77,
+        "current_price": 241.77,
+        "buy_date": "2026-11-18",
+        "value": 2374.38,
+        "unrealized": 0.0
+      }
+    },
+    "all_trades": [
+      {
+        "date": "2026-08-19",
+        "ticker": "RDF",
+        "action": "BUY",
+        "shares": 998.219176988253,
+        "price": 6.23,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "HYP",
+        "action": "BUY",
+        "shares": 105.77606463864609,
+        "price": 58.72,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "GRT",
+        "action": "BUY",
+        "shares": 361.50612931929675,
+        "price": 17.16,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-08-19",
+        "ticker": "BVT",
+        "action": "BUY",
+        "shares": 10.299275738895432,
+        "price": 243.78,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, europe_exposed, bonds_proxy"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "NED",
+        "action": "BUY",
+        "shares": 41.36437537418841,
+        "price": 295.85,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
+      },
+      {
+        "date": "2026-09-16",
+        "ticker": "ABG",
+        "action": "BUY",
+        "shares": 54.8737901211045,
+        "price": 220.11,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight reits, bonds_proxy, defensives"
+      },
+      {
+        "date": "2026-10-21",
+        "ticker": "SPG",
+        "action": "BUY",
+        "shares": 1108.5891626080718,
+        "price": 16.68,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight cyclicals, reits, gold"
+      },
+      {
+        "date": "2026-10-21",
+        "ticker": "MTH",
+        "action": "BUY",
+        "shares": 56.16330392551284,
+        "price": 112.18,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight cyclicals, reits, gold"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "BVT",
+        "action": "SELL",
+        "shares": 10.299275738895432,
+        "price": 248.41,
+        "gain": 47.68564667108603,
+        "reason": "FMS: Going against consensus: buying underweight cyclicals, energy, reits"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "WHL",
+        "action": "BUY",
+        "shares": 684.6816180138549,
+        "price": 35.99,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight cyclicals, energy, reits"
+      },
+      {
+        "date": "2026-11-18",
+        "ticker": "SOL",
+        "action": "BUY",
+        "shares": 9.820801690176568,
+        "price": 241.77,
+        "gain": 0,
+        "reason": "FMS: Going against consensus: buying underweight cyclicals, energy, reits"
+      }
+    ]
   }
 }
