@@ -1,8 +1,8 @@
 {
  "period": {
   "start": "2026-07-31",
-  "end": "2026-11-25",
-  "days": 84,
+  "end": "2026-11-26",
+  "days": 85,
   "cash_dates": [
    "2026-08-03",
    "2026-09-01",
@@ -16,13 +16,13 @@
    "name": "Daily Trader",
    "news_sensitivity": "high",
    "total_in": 100000.0,
-   "final_cash": 314.88,
-   "final_holdings_value": 95150.45,
-   "final_portfolio": 95465.34,
-   "return_pct": -4.5,
-   "realized": -2566.7,
-   "unrealized": 392.16,
-   "total_costs": 2920.05,
+   "final_cash": 189.97,
+   "final_holdings_value": 95681.1,
+   "final_portfolio": 95871.07,
+   "return_pct": -4.1,
+   "realized": -3123.51,
+   "unrealized": 1355.74,
+   "total_costs": 2921.08,
    "total_dividends": 559.92,
    "num_trades": 112,
    "risk": "CAUTIOUS",
@@ -362,11 +362,15 @@
     ],
     [
      "2026-11-24",
-     95389.17
+     95794.79
     ],
     [
      "2026-11-25",
-     95465.34
+     95890.76
+    ],
+    [
+     "2026-11-26",
+     95871.07
     ]
    ],
    "holdings": {
@@ -381,56 +385,63 @@
      "shares": 186.05,
      "cost": 42.3,
      "buy_date": "2026-10-02",
-     "current_price": 43.0,
+     "current_price": 45.96,
      "sector": "retail"
     },
     "GND": {
      "shares": 98.08,
      "cost": 27.64,
      "buy_date": "2026-10-12",
-     "current_price": 26.01,
+     "current_price": 25.76,
      "sector": "other"
     },
     "RES": {
      "shares": 64.48,
      "cost": 78.2,
      "buy_date": "2026-10-14",
-     "current_price": 73.44,
+     "current_price": 73.26,
      "sector": "property"
     },
     "SHP": {
      "shares": 4.34,
      "cost": 335.23,
      "buy_date": "2026-10-15",
-     "current_price": 347.24,
+     "current_price": 345.01,
      "sector": "retail"
     },
     "RBO": {
      "shares": 2081.27,
      "cost": 5.3,
      "buy_date": "2026-10-19",
-     "current_price": 5.39,
+     "current_price": 5.55,
      "sector": "retail"
+    },
+    "NED": {
+     "shares": 7.45,
+     "cost": 289.45,
+     "buy_date": "2026-10-22",
+     "current_price": 268.05,
+     "sector": "financial"
     },
     "SBP": {
      "shares": 17.75,
      "cost": 145.0,
      "buy_date": "2026-10-30",
-     "current_price": 146.0,
+     "current_price": 146.86,
      "sector": "financial"
     },
     "PIK": {
      "shares": 369.93,
      "cost": 25.3,
      "buy_date": "2026-11-05",
-     "current_price": 26.94,
+     "current_price": 26.95,
      "sector": "retail"
     },
     "TGA": {
      "shares": 97.48,
      "cost": 118.33,
      "buy_date": "2026-11-09",
-     "current_price": 117.81,
+     "current_price": 122.24,
      "sector": "mining"
     },
     "OAO": {
@@ -444,84 +455,77 @@
      "shares": 44.75,
      "cost": 177.56,
      "buy_date": "2026-11-13",
-     "current_price": 173.58,
+     "current_price": 166.32,
      "sector": "mining"
     },
     "TKG": {
      "shares": 46.07,
      "cost": 69.0,
      "buy_date": "2026-11-16",
-     "current_price": 67.4,
+     "current_price": 67.74,
      "sector": "telecoms"
     },
     "QLT": {
      "shares": 111.4,
      "cost": 41.92,
      "buy_date": "2026-11-17",
-     "current_price": 41.73,
+     "current_price": 43.04,
      "sector": "financial"
     },
     "DRD": {
      "shares": 184.57,
      "cost": 36.26,
      "buy_date": "2026-11-18",
-     "current_price": 36.94,
+     "current_price": 37.15,
      "sector": "mining"
-    },
-    "PMV": {
-     "shares": 812.91,
-     "cost": 3.39,
-     "buy_date": "2026-11-19",
-     "current_price": 3.39,
-     "sector": "industrial"
     },
     "NPN": {
      "shares": 4.38,
      "cost": 628.0,
      "buy_date": "2026-11-20",
-     "current_price": 649.45,
+     "current_price": 638.94,
      "sector": "tech"
     },
     "RDF": {
      "shares": 494.76,
      "cost": 5.84,
      "buy_date": "2026-11-23",
-     "current_price": 5.84,
+     "current_price": 5.85,
      "sector": "property"
     },
     "HLM": {
-     "shares": 555.66,
-     "cost": 2.08,
+     "shares": 1155.04,
+     "cost": 2.05,
      "buy_date": "2026-11-24",
-     "current_price": 2.08,
+     "current_price": 2.05,
+     "sector": "industrial"
+    },
+    "PMV": {
+     "shares": 400.17,
+     "cost": 2.51,
+     "buy_date": "2026-11-26",
+     "current_price": 2.51,
      "sector": "industrial"
     },
     "BLU": {
-     "shares": 208.38,
-     "cost": 8.6,
-     "buy_date": "2026-11-24",
-     "current_price": 8.6,
+     "shares": 199.91,
+     "cost": 8.51,
+     "buy_date": "2026-11-26",
+     "current_price": 8.51,
      "sector": "tech"
-    },
-    "CAC": {
-     "shares": 32948.66,
-     "cost": 0.06,
-     "buy_date": "2026-11-25",
-     "current_price": 0.06,
-     "sector": "industrial"
     }
    },
    "sector_composition": {
-    "property": 10.6,
-    "retail": 32.1,
-    "other": 2.7,
-    "financial": 7.6,
+    "property": 10.5,
+    "retail": 32.9,
+    "other": 2.6,
+    "financial": 9.8,
     "mining": 27.3,
     "energy": 5.1,
     "telecoms": 3.3,
-    "industrial": 6.2,
-    "tech": 4.9,
-    "cash": 0.3
+    "tech": 4.7,
+    "industrial": 3.5,
+    "cash": 0.2
    },
    "all_trades": [
     {
@@ -1489,15 +1493,33 @@
     },
     {
      "date": "2026-11-24",
+     "ticker": "PMV",
+     "action": "SELL",
+     "shares": 812.9134228007837,
+     "price": 2.51,
+     "gain": -715.3638120646899,
+     "reason": "Cut loss -26%"
+    },
+    {
+     "date": "2026-11-24",
      "ticker": "HLM",
      "action": "BUY",
-     "shares": 555.6559862172656,
-     "price": 2.08,
+     "shares": 1155.039267201972,
+     "price": 2.05,
      "gain": 0,
      "reason": "TT BULLISH, CAUTIOUS market"
     },
     {
-     "date": "2026-11-24",
+     "date": "2026-11-26",
+     "ticker": "PMV",
+     "action": "BUY",
+     "shares": 400.17002276235223,
+     "price": 2.51,
+     "gain": 0,
+     "reason": "TT BULLISH, CAUTIOUS market"
+    },
+    {
+     "date": "2026-11-26",
      "ticker": "CPR",
      "action": "SELL",
      "shares": 1926.433850903497,
@@ -1506,44 +1528,16 @@
      "reason": "Rotate out \u2014 BLU (BULLISH) is a better option"
     },
     {
-     "date": "2026-11-24",
+     "date": "2026-11-26",
      "ticker": "BLU",
      "action": "BUY",
-     "shares": 208.37715293103733,
-     "price": 8.6,
-     "gain": 0,
-     "reason": "Rotate in \u2014 better BULLISH option"
-    },
-    {
-     "date": "2026-11-25",
-     "ticker": "NED",
-     "action": "SELL",
-     "shares": 7.4541249202205355,
-     "price": 268.18,
-     "gain": -158.54923705309034,
-     "reason": "Rotate out \u2014 CAC (BULLISH) is a better option"
-    },
-    {
-     "date": "2026-11-25",
-     "ticker": "CAC",
-     "action": "BUY",
-     "shares": 32948.655427674894,
-     "price": 0.059499998092651364,
+     "shares": 199.91079890574338,
+     "price": 8.51,
      "gain": 0,
      "reason": "Rotate in \u2014 better BULLISH option"
     }
    ],
    "decisions": [
-    {
-     "date": "2026-11-17",
-     "risk": "CAUTIOUS",
-     "news": [],
-     "log": [
-      "\ud83d\udfe2 BUY CPR @ R0.66 \u2014 BULLISH, CAUTIOUS",
-      "\ud83d\udd01 ROTATE DRD (BULLISH) \u2192 QLT: better BULLISH option",
-      "\ud83d\udfe2 BUY QLT @ R41.92 \u2014 rotated in"
-     ]
-    },
     {
      "date": "2026-11-18",
      "risk": "CAUTIOUS",
@@ -1586,18 +1580,29 @@
      "risk": "CAUTIOUS",
      "news": [],
      "log": [
-      "\ud83d\udfe2 BUY HLM @ R2.08 \u2014 BULLISH, CAUTIOUS",
-      "\ud83d\udd01 ROTATE CPR (NEUTRAL) \u2192 BLU: better BULLISH option",
-      "\ud83d\udfe2 BUY BLU @ R8.60 \u2014 rotated in"
+      "\ud83d\udd34 SELL PMV \u2014 Cut loss -26% (R-715)",
+      "\ud83d\udfe2 BUY HLM @ R2.05 \u2014 BULLISH, CAUTIOUS"
      ]
     },
     {
      "date": "2026-11-25",
      "risk": "CAUTIOUS",
+     "news": [
+      "SA PPI inflation 3.8% \u2014 pipeline pressures easing",
+      "Pick n Pay CEO \u2014 turnaround plan showing early results",
+      "Global markets cautious ahead of Jackson Hole"
+     ],
+     "log": [],
+     "no_trade": true
+    },
+    {
+     "date": "2026-11-26",
+     "risk": "CAUTIOUS",
      "news": [],
      "log": [
-      "\ud83d\udd01 ROTATE NED (BULLISH) \u2192 CAC: better BULLISH option",
-      "\ud83d\udfe2 BUY CAC @ R0.06 \u2014 rotated in"
+      "\ud83d\udfe2 BUY PMV @ R2.51 \u2014 BULLISH, CAUTIOUS",
+      "\ud83d\udd01 ROTATE CPR (NEUTRAL) \u2192 BLU: better BULLISH option",
+      "\ud83d\udfe2 BUY BLU @ R8.51 \u2014 rotated in"
      ]
     }
    ]
@@ -1607,11 +1612,11 @@
    "news_sensitivity": "medium",
    "total_in": 100000.0,
    "final_cash": 4047.19,
-   "final_holdings_value": 90806.64,
-   "final_portfolio": 94853.83,
-   "return_pct": -5.1,
+   "final_holdings_value": 91431.92,
+   "final_portfolio": 95479.11,
+   "return_pct": -4.5,
    "realized": -4442.6,
-   "unrealized": 1379.85,
+   "unrealized": 2005.13,
    "total_costs": 2083.42,
    "total_dividends": 0,
    "num_trades": 50,
@@ -1950,11 +1955,15 @@
     ],
     [
      "2026-11-24",
-     94853.83
+     95479.11
     ],
     [
      "2026-11-25",
-     94853.83
+     95479.11
+    ],
+    [
+     "2026-11-26",
+     95479.11
     ]
    ],
    "holdings": {
@@ -1969,28 +1978,28 @@
      "shares": 325.81,
      "cost": 38.35,
      "buy_date": "2026-10-02",
-     "current_price": 41.73,
+     "current_price": 43.04,
      "sector": "financial"
     },
     "SUR": {
      "shares": 31.34,
      "cost": 41.5,
      "buy_date": "2026-10-16",
-     "current_price": 43.0,
+     "current_price": 45.96,
      "sector": "retail"
     },
     "HLM": {
      "shares": 4257.6,
      "cost": 2.3,
      "buy_date": "2026-10-23",
-     "current_price": 2.08,
+     "current_price": 2.05,
      "sector": "industrial"
     },
     "SBP": {
      "shares": 131.64,
      "cost": 145.0,
      "buy_date": "2026-10-30",
-     "current_price": 146.0,
+     "current_price": 146.86,
      "sector": "financial"
     },
     "OAO": {
@@ -2004,7 +2013,7 @@
      "shares": 353.62,
      "cost": 66.37,
      "buy_date": "2026-11-20",
-     "current_price": 67.4,
+     "current_price": 67.74,
      "sector": "telecoms"
     },
     "CPR": {
@@ -2017,13 +2026,13 @@
    },
    "sector_composition": {
     "property": 2.5,
-    "financial": 34.6,
-    "retail": 1.4,
-    "industrial": 9.3,
-    "energy": 8.7,
+    "financial": 34.9,
+    "retail": 1.5,
+    "industrial": 9.1,
+    "energy": 8.6,
     "telecoms": 25.1,
-    "mining": 14.1,
-    "cash": 4.3
+    "mining": 14.0,
+    "cash": 4.2
    },
    "all_trades": [
     {
@@ -2561,11 +2570,11 @@
    "news_sensitivity": "low",
    "total_in": 100000.0,
    "final_cash": 10548.11,
-   "final_holdings_value": 83934.05,
-   "final_portfolio": 94482.16,
-   "return_pct": -5.5,
+   "final_holdings_value": 82270.35,
+   "final_portfolio": 92818.46,
+   "return_pct": -7.2,
    "realized": -5233.97,
-   "unrealized": -563.68,
+   "unrealized": -2227.39,
    "total_costs": 788.38,
    "total_dividends": 1068.2,
    "num_trades": 15,
@@ -2904,11 +2913,15 @@
     ],
     [
      "2026-11-24",
-     94482.16
+     92818.46
     ],
     [
      "2026-11-25",
-     94482.16
+     92818.46
+    ],
+    [
+     "2026-11-26",
+     92818.46
     ]
    ],
    "holdings": {
@@ -2916,14 +2929,14 @@
      "shares": 3109.45,
      "cost": 2.0,
      "buy_date": "2026-08-19",
-     "current_price": 2.08,
+     "current_price": 2.05,
      "sector": "industrial"
     },
     "PMV": {
      "shares": 2003.6,
      "cost": 3.1,
      "buy_date": "2026-08-19",
-     "current_price": 3.39,
+     "current_price": 2.51,
      "sector": "industrial"
     },
     "SSS": {
@@ -2937,37 +2950,37 @@
      "shares": 41.95,
      "cost": 295.85,
      "buy_date": "2026-09-16",
-     "current_price": 268.18,
+     "current_price": 268.05,
      "sector": "financial"
     },
     "TKG": {
      "shares": 355.19,
      "cost": 66.34,
      "buy_date": "2026-11-18",
-     "current_price": 67.4,
+     "current_price": 67.74,
      "sector": "telecoms"
     },
     "RDF": {
      "shares": 3922.33,
      "cost": 6.0,
      "buy_date": "2026-11-18",
-     "current_price": 5.84,
+     "current_price": 5.85,
      "sector": "property"
     },
     "SBP": {
      "shares": 44.44,
      "cost": 143.0,
      "buy_date": "2026-11-18",
-     "current_price": 146.0,
+     "current_price": 146.86,
      "sector": "financial"
     }
    },
    "sector_composition": {
-    "industrial": 14.0,
-    "property": 30.7,
-    "financial": 18.8,
-    "telecoms": 25.3,
-    "cash": 11.2
+    "industrial": 12.3,
+    "property": 31.3,
+    "financial": 19.1,
+    "telecoms": 25.9,
+    "cash": 11.4
    },
    "all_trades": [
     {
