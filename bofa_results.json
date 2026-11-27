@@ -4,73 +4,73 @@
     "cash": 7042.34,
     "total_invested": 100000.0,
     "realized": -6675.65,
-    "unrealized": -5208.74,
+    "unrealized": -4898.01,
     "costs": 638.0,
-    "final_portfolio": 87477.63,
+    "final_portfolio": 87788.35,
     "holdings": {
       "AGL": {
         "shares": 7.129401314513312,
         "avg_cost": 872.29,
-        "current_price": 743.88,
+        "current_price": 717.73,
         "buy_date": "2026-08-19",
-        "value": 5303.42,
-        "unrealized": -915.49
+        "value": 5116.99,
+        "unrealized": -1101.92
       },
       "EXX": {
         "shares": 32.6886506793395,
         "avg_cost": 190.01,
-        "current_price": 167.35,
+        "current_price": 171.05,
         "buy_date": "2026-08-19",
-        "value": 5470.45,
-        "unrealized": -740.72
+        "value": 5591.39,
+        "unrealized": -619.78
       },
       "ABG": {
         "shares": 27.49632187899088,
         "avg_cost": 225.61,
-        "current_price": 205.0,
+        "current_price": 214.37,
         "buy_date": "2026-08-19",
-        "value": 5636.75,
-        "unrealized": -566.7
+        "value": 5894.39,
+        "unrealized": -309.06
       },
       "NED": {
         "shares": 8.201605329853093,
         "avg_cost": 306.13,
-        "current_price": 262.33,
+        "current_price": 266.99,
         "buy_date": "2026-08-19",
-        "value": 2151.53,
-        "unrealized": -359.23
+        "value": 2189.75,
+        "unrealized": -321.01
       },
       "NPN": {
         "shares": 27.528677187565826,
         "avg_cost": 682.26,
-        "current_price": 628.0,
+        "current_price": 611.16,
         "buy_date": "2026-10-21",
-        "value": 17288.01,
-        "unrealized": -1493.71
+        "value": 16824.43,
+        "unrealized": -1957.29
       },
       "PRX": {
         "shares": 9.464490344374816,
         "avg_cost": 635.0,
-        "current_price": 591.69,
+        "current_price": 571.9,
         "buy_date": "2026-10-21",
-        "value": 5600.04,
-        "unrealized": -409.91
+        "value": 5412.74,
+        "unrealized": -597.21
       },
       "DSY": {
         "shares": 83.64925527398596,
         "avg_cost": 268.6,
-        "current_price": 259.3,
+        "current_price": 266.18,
         "buy_date": "2026-11-18",
-        "value": 21690.25,
-        "unrealized": -777.94
+        "value": 22265.76,
+        "unrealized": -202.43
       },
       "NTC": {
         "shares": 916.0401218121223,
         "avg_cost": 18.82,
-        "current_price": 18.88,
+        "current_price": 19.05,
         "buy_date": "2026-11-18",
-        "value": 17294.84,
-        "unrealized": 54.96
+        "value": 17450.56,
+        "unrealized": 210.69
       }
     },
     "all_trades": [
@@ -189,81 +189,81 @@
     "cash": 4783.06,
     "total_invested": 100000.0,
     "realized": -8.03,
-    "unrealized": -4334.93,
+    "unrealized": -2060.23,
     "costs": 498.62,
-    "final_portfolio": 95158.41,
+    "final_portfolio": 97433.11,
     "holdings": {
       "RDF": {
         "shares": 998.219176988253,
         "avg_cost": 6.23,
-        "current_price": 5.72,
+        "current_price": 5.85,
         "buy_date": "2026-08-19",
-        "value": 5709.81,
-        "unrealized": -509.09
+        "value": 5839.58,
+        "unrealized": -379.32
       },
       "HYP": {
         "shares": 105.77606463864609,
         "avg_cost": 58.72,
-        "current_price": 55.0,
+        "current_price": 55.85,
         "buy_date": "2026-08-19",
-        "value": 5817.68,
-        "unrealized": -393.49
+        "value": 5907.59,
+        "unrealized": -303.58
       },
       "GRT": {
         "shares": 361.50612931929675,
         "avg_cost": 17.16,
-        "current_price": 15.26,
+        "current_price": 15.5,
         "buy_date": "2026-08-19",
-        "value": 5516.58,
-        "unrealized": -686.86
+        "value": 5603.35,
+        "unrealized": -600.1
       },
       "NED": {
         "shares": 41.36437537418841,
         "avg_cost": 295.85,
-        "current_price": 262.33,
+        "current_price": 266.99,
         "buy_date": "2026-09-16",
-        "value": 10851.12,
-        "unrealized": -1386.53
+        "value": 11043.87,
+        "unrealized": -1193.78
       },
       "ABG": {
         "shares": 54.8737901211045,
         "avg_cost": 220.11,
-        "current_price": 205.0,
+        "current_price": 214.37,
         "buy_date": "2026-09-16",
-        "value": 11249.13,
-        "unrealized": -829.14
+        "value": 11763.29,
+        "unrealized": -314.98
       },
       "SPG": {
         "shares": 1108.5891626080718,
         "avg_cost": 16.68,
-        "current_price": 16.12,
+        "current_price": 16.45,
         "buy_date": "2026-10-21",
-        "value": 17870.46,
-        "unrealized": -620.81
+        "value": 18236.29,
+        "unrealized": -254.98
       },
       "MTH": {
         "shares": 56.16330392551284,
         "avg_cost": 112.18,
-        "current_price": 106.35,
+        "current_price": 105.15,
         "buy_date": "2026-10-21",
-        "value": 5972.97,
-        "unrealized": -327.43
+        "value": 5905.57,
+        "unrealized": -394.83
       },
       "WHL": {
         "shares": 686.1107320074595,
         "avg_cost": 34.74,
-        "current_price": 35.54,
+        "current_price": 36.94,
         "buy_date": "2026-11-18",
-        "value": 24384.38,
-        "unrealized": 548.89
+        "value": 25344.93,
+        "unrealized": 1509.44
       },
       "SOL": {
         "shares": 14.792720276828984,
         "avg_cost": 211.84,
-        "current_price": 203.02,
+        "current_price": 203.18,
         "buy_date": "2026-11-18",
-        "value": 3003.22,
-        "unrealized": -130.47
+        "value": 3005.58,
+        "unrealized": -128.1
       }
     },
     "all_trades": [
